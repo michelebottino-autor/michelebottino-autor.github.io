@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Biografia — Michele Bottino</title>
-  <meta name="description" content="Biografia di Michele Bottino, autore e ricercatore indipendente. Attività, metodo e pubblicazioni.">
+  <title>Biografia – Michele Bottino</title>
+  <meta name="description" content="Biografia di Michele Bottino, autore e ricercatore indipendente.">
 
   <style>
-
     body {
       font-family: Arial, sans-serif;
       background: #1f2623;
@@ -18,7 +17,7 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
@@ -27,14 +26,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       gap: 20px;
+      flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 16px;
     }
 
     .logo img {
       height: 64px;
+      width: auto;
       display: block;
     }
 
@@ -50,47 +50,72 @@
     .nav a {
       text-decoration: none;
       color: #c2a46d;
-      padding: 6px 8px;
-    }
-
-    section {
-      margin-bottom: 36px;
+      font-size: 0.95rem;
     }
 
     h1, h2 {
-      margin-bottom: 12px;
+      color: #e5d3a3;
     }
 
     a {
       color: #c2a46d;
     }
 
+    section {
+      margin-bottom: 30px;
+    }
+
+    .block {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+    }
+
     footer {
-      color: #8f7748;
       padding-bottom: 30px;
+      color: #8f7748;
     }
 
     @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
       .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
+      }
+
+      .logo img {
+        height: 56px;
       }
 
       .nav ul {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 8px;
+      }
+
+      .nav li {
         width: 100%;
       }
 
       .nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
         border: 1px solid #8f7748;
         background: #2a312d;
-        padding: 10px;
-        display: block;
+        padding: 10px 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
       }
     }
-
   </style>
 </head>
 
@@ -98,94 +123,88 @@
 
 <header class="container">
   <nav class="nav">
-
     <div class="logo">
-      <img src="../images/logo.png" alt="Michele Bottino">
+      <a href="../">
+        <img src="../images/logo.png" alt="Michele Bottino">
+      </a>
     </div>
 
     <ul>
-      <li><a href="../">Home</a></li>
+      <li><a href="../biografia/">Biografia</a></li>
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../articoli/">Articoli</a></li>
+      <li><a href="../articoli/">Scritti</a></li>
       <li><a href="../testi-musicali/">Testi musicali</a></li>
-      <li><a href="../media/">Media</a></li>
+      <li><a href="../media/">Rassegna stampa</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
-
   </nav>
 </header>
 
 <main class="container">
 
 <section>
-  <h1>Michele Bottino</h1>
-  <p><strong>Autore e ricercatore indipendente</strong></p>
-</section>
+  <h1>Biografia</h1>
 
-<section>
-  <h2>Profilo</h2>
   <p>
-    Michele Bottino è autore e ricercatore indipendente. La sua attività si sviluppa
-    nell’ambito della narrativa, della saggistica e dell’analisi storico-documentaria,
-    con particolare attenzione alla relazione tra struttura dei dati e configurazione narrativa.
+    Michele Bottino è autore e ricercatore indipendente. La sua attività si sviluppa tra narrativa,
+    saggistica e analisi documentaria, con un approccio fondato sulla distinzione tra dato,
+    elemento riportato e costruzione narrativa.
+  </p>
+
+  <p>
+    Il lavoro si caratterizza per una scrittura orientata alla coerenza strutturale,
+    alla verifica delle fonti e alla rappresentazione controllata dei casi,
+    evitando l’introduzione di elementi non tracciabili.
   </p>
 </section>
 
 <section>
-  <h2>Ambiti di lavoro</h2>
-  <p>
-    La produzione si articola in tre ambiti principali:
-  </p>
-  <ul>
-    <li>produzione narrativa</li>
-    <li>produzione saggistica</li>
-    <li>ricerca documentaria e metodologica</li>
-  </ul>
+  <h2>Attività</h2>
+
+  <div class="block">
+    <p>
+      L’attività comprende produzione narrativa, scrittura musicale e sviluppo di modelli metodologici
+      applicati all’analisi dei sistemi documentari complessi.
+    </p>
+
+    <p>
+      In questo ambito è stato sviluppato il Metodo delle Rotture Narrative (MRN),
+      un sistema strutturale per l’analisi dei casi documentari fondato sulla separazione
+      dei livelli informativi e sulla tracciabilità degli elementi.
+    </p>
+  </div>
 </section>
 
 <section>
   <h2>Ricerca</h2>
+
   <p>
-    L’attività di ricerca è orientata allo sviluppo di modelli strutturali per l’analisi dei sistemi documentari.
-    Il lavoro si fonda sulla distinzione tra livelli informativi e sulla separazione tra dati, elementi riportati
-    e costruzione narrativa.
+    La ricerca è orientata alla costruzione di strumenti che consentano di descrivere un caso
+    senza introdurre inferenze non verificabili, rendendo espliciti i limiti della ricostruzione.
+  </p>
+
+  <p>
+    Il lavoro metodologico è pubblicato su Zenodo e comprende diversi sviluppi del modello,
+    tra cui una prima formulazione basata su metriche e teoria dei regimi (versione 1.0)
+    e un successivo aggiornamento del Metodo delle Rotture Narrative (versione 1.2).
+  </p>
+
+  <p>
+    Per maggiori dettagli:
+    <a href="../metodo/">vai alla pagina Metodo</a>.
   </p>
 </section>
 
 <section>
-  <h2>Metodo</h2>
-  <p>
-    Ha sviluppato il Metodo delle Rotture Narrative (MRN), un sistema strutturale che consente di analizzare
-    configurazioni documentarie complesse mantenendo separati i livelli informativi e impedendo l’introduzione
-    di elementi non tracciabili.
-  </p>
+  <h2>Ambiti</h2>
 
-  <p>
-    Il metodo non stabilisce verità fattuali e non sostituisce l’indagine, ma descrive il comportamento delle
-    configurazioni narrative in relazione alla struttura dei dati disponibili.
-  </p>
-</section>
-
-<section>
-  <h2>Pubblicazioni e identificazione</h2>
-
-  <p>
-    Le pubblicazioni sono disponibili su:
-  </p>
-
-  <p>
-    <a href="https://zenodo.org/" target="_blank">Zenodo</a>
-  </p>
-
-  <p>
-    Identificatore ORCID:
-    <br>
-    <a href="https://orcid.org/0009-0009-2797-9267" target="_blank">
-      https://orcid.org/0009-0009-2797-9267
-    </a>
-  </p>
-
+  <ul>
+    <li>narrativa realistica</li>
+    <li>analisi documentaria</li>
+    <li>metodologie di analisi delle fonti</li>
+    <li>scrittura musicale</li>
+  </ul>
 </section>
 
 </main>
