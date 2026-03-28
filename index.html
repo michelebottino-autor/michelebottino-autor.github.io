@@ -8,6 +8,7 @@
   <meta name="description" content="Autore e ricercatore indipendente. Narrativa, saggistica, analisi storico-documentaria e metodologie di analisi delle fonti.">
 
   <style>
+
     body {
       font-family: Arial, sans-serif;
       background: #1f2623;
@@ -77,12 +78,16 @@
       background: #2a312d;
       border: 1px solid #8f7748;
       padding: 15px;
+      text-align: center;
     }
 
+    /* ✅ IMMAGINI CORRETTE */
     .card img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+      background: #1f2623;
       display: block;
     }
 
@@ -166,7 +171,7 @@
       }
 
       .card img {
-        height: 260px;
+        max-height: 220px;
       }
 
       .hero {
@@ -182,6 +187,7 @@
         line-height: 1.25;
       }
     }
+
   </style>
 </head>
 
@@ -189,6 +195,7 @@
 
 <header class="container">
   <nav class="nav">
+
     <div class="logo">
       <img src="images/logo.png" alt="Michele Bottino">
     </div>
@@ -202,6 +209,7 @@
       <li><a href="media/">Media</a></li>
       <li><a href="contatti/">Contatti</a></li>
     </ul>
+
   </nav>
 </header>
 
@@ -254,6 +262,7 @@
   <h2>Opere in evidenza</h2>
 
   <div class="grid-3">
+
     <div class="card">
       <img src="images/opere/michele-bottino_stige_copertina.jpg" alt="Stige Michele Bottino">
       <h3>Stige</h3>
@@ -271,6 +280,7 @@
       <h3>Intrighi Invisibili</h3>
       <a href="opere/intrighi-invisibili/">Scheda</a>
     </div>
+
   </div>
 </section>
 
