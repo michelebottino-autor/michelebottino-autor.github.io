@@ -84,6 +84,23 @@
       opacity: 0.9;
     }
 
+    /* ✅ BLOCCO PRIVACY */
+    .privacy-box {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .privacy-box label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .privacy-box input {
+      width: auto;
+      margin-top: 4px;
+    }
+
     footer {
       color: #8f7748;
       padding-bottom: 30px;
@@ -146,7 +163,7 @@
 
 <form action="https://formsubmit.co/michelebottino.adc@gmail.com" method="POST">
 
-  <!-- Protezione base -->
+  <!-- configurazione -->
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_subject" value="Nuovo messaggio dal sito">
 
@@ -155,6 +172,18 @@
   <input type="text" name="oggetto" placeholder="Oggetto">
 
   <textarea name="messaggio" placeholder="Messaggio" required></textarea>
+
+  <!-- ✅ CONSENSO PRIVACY -->
+  <div class="privacy-box">
+    <label>
+      <input type="checkbox" name="privacy" required>
+      <span>
+        Ho letto l’
+        <a href="../privacy/">informativa privacy</a>
+        e acconsento al trattamento dei dati per la gestione della richiesta.
+      </span>
+    </label>
+  </div>
 
   <button type="submit">Invia</button>
 
