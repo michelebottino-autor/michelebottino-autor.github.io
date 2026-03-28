@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contatti — Michele Bottino</title>
+  <meta name="description" content="Contatti Michele Bottino. Modulo di contatto diretto.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1f2623;
+      color: #e5d3a3;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid #8f7748;
+      padding-bottom: 16px;
+    }
+
+    .logo img {
+      height: 64px;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #c2a46d;
+      padding: 6px 8px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    input, textarea {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      color: #e5d3a3;
+      padding: 12px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      background: #c2a46d;
+      color: #1f2623;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      color: #8f7748;
+      padding-bottom: 30px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .nav a {
+        border: 1px solid #8f7748;
+        background: #2a312d;
+        padding: 10px;
+        display: block;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Michele Bottino">
+    </div>
+
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../biografia/">Biografia</a></li>
+      <li><a href="../metodo/">Metodo</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../opere/">Opere</a></li>
+      <li><a href="../articoli/">Articoli</a></li>
+      <li><a href="../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../media/">Media</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+<section>
+  <h1>Contatti</h1>
+  <p>
+    Per richieste editoriali, collaborazioni o comunicazioni, è possibile utilizzare il modulo seguente.
+  </p>
+</section>
+
+<form action="https://formsubmit.co/michelebottino.adc@gmail.com" method="POST">
+
+  <!-- Protezione base -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="Nuovo messaggio dal sito">
+
+  <input type="text" name="nome" placeholder="Nome" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="text" name="oggetto" placeholder="Oggetto">
+
+  <textarea name="messaggio" placeholder="Messaggio" required></textarea>
+
+  <button type="submit">Invia</button>
+
+</form>
+
+</main>
+
+<footer class="container">
+  <p>© Michele Bottino</p>
+</footer>
+
+</body>
+</html>
