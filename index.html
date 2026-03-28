@@ -8,7 +8,6 @@
   <meta name="description" content="Autore e ricercatore indipendente. Narrativa, saggistica, analisi storico-documentaria e metodologie di analisi delle fonti.">
 
   <style>
-
     body {
       font-family: Arial, sans-serif;
       background: #1f2623;
@@ -81,7 +80,6 @@
       text-align: center;
     }
 
-    /* ✅ IMMAGINI CORRETTE */
     .card img {
       width: 100%;
       height: auto;
@@ -124,6 +122,55 @@
     footer {
       padding-bottom: 30px;
       color: #8f7748;
+    }
+
+    /* Banner cookie */
+    .cookie-banner {
+      position: fixed;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+      z-index: 9999;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .cookie-banner p {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-actions button,
+    .cookie-actions a {
+      padding: 10px 14px;
+      border: 1px solid #c2a46d;
+      background: transparent;
+      color: #c2a46d;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .cookie-actions .accept {
+      background: #c2a46d;
+      color: #1f2623;
+    }
+
+    .cookie-actions .reject {
+      background: transparent;
+      color: #c2a46d;
+    }
+
+    .hidden {
+      display: none;
     }
 
     @media (max-width: 900px) {
@@ -186,8 +233,18 @@
       h2 {
         line-height: 1.25;
       }
-    }
 
+      .cookie-banner {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 14px;
+      }
+
+      .cookie-actions {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -195,7 +252,6 @@
 
 <header class="container">
   <nav class="nav">
-
     <div class="logo">
       <img src="images/logo.png" alt="Michele Bottino">
     </div>
@@ -209,7 +265,6 @@
       <li><a href="media/">Media</a></li>
       <li><a href="contatti/">Contatti</a></li>
     </ul>
-
   </nav>
 </header>
 
@@ -262,7 +317,6 @@
   <h2>Opere in evidenza</h2>
 
   <div class="grid-3">
-
     <div class="card">
       <img src="images/opere/michele-bottino_stige_copertina.jpg" alt="Stige Michele Bottino">
       <h3>Stige</h3>
@@ -280,7 +334,6 @@
       <h3>Intrighi Invisibili</h3>
       <a href="opere/intrighi-invisibili/">Scheda</a>
     </div>
-
   </div>
 </section>
 
@@ -310,6 +363,72 @@
 <footer class="container">
   <p>© Michele Bottino</p>
 </footer>
+
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>
+    Questo sito utilizza cookie tecnici e, previo consenso, strumenti di analytics e tracciamento.
+    Puoi accettare o rifiutare i cookie non tecnici. Per maggiori informazioni consulta la
+    <a href="privacy/">Privacy Policy</a> e la <a href="cookie/">Cookie Policy</a>.
+  </p>
+
+  <div class="cookie-actions">
+    <button id="accept-cookies" class="accept" type="button">Accetta</button>
+    <button id="reject-cookies" class="reject" type="button">Rifiuta</button>
+    <a href="cookie/">Approfondisci</a>
+  </div>
+</div>
+
+<script>
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptCookies = document.getElementById('accept-cookies');
+  const rejectCookies = document.getElementById('reject-cookies');
+
+  function loadGA() {
+    if (window.gaLoaded) return;
+    window.gaLoaded = true;
+
+    const script1 = document.createElement('script');
+    script1.async = true;
+    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(script1);
+
+    const script2 = document.createElement('script');
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    `;
+    document.head.appendChild(script2);
+  }
+
+  const consent = localStorage.getItem('mb_cookie_consent');
+
+  if (!consent) {
+    cookieBanner.classList.remove('hidden');
+  }
+
+  if (consent === 'accepted') {
+    loadGA();
+  }
+
+  acceptCookies.addEventListener('click', function () {
+    localStorage.setItem('mb_cookie_consent', 'accepted');
+    cookieBanner.classList.add('hidden');
+    loadGA();
+  });
+
+  rejectCookies.addEventListener('click', function () {
+    localStorage.setItem('mb_cookie_consent', 'rejected');
+    cookieBanner.classList.add('hidden');
+  });
+</script>
 
 </body>
 </html>
