@@ -80,15 +80,6 @@
       text-align: center;
     }
 
-    .card img {
-      width: 100%;
-      height: auto;
-      max-height: 260px;
-      object-fit: contain;
-      background: #1f2623;
-      display: block;
-    }
-
     .card h3 {
       margin-top: 12px;
       margin-bottom: 8px;
@@ -124,7 +115,31 @@
       color: #8f7748;
     }
 
-    /* Banner cookie */
+    .featured-book {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      align-items: start;
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 20px;
+    }
+
+    .featured-book img {
+      width: 100%;
+      height: auto;
+      max-height: 460px;
+      object-fit: contain;
+      background: #1f2623;
+      display: block;
+    }
+
+    .book-meta {
+      color: #c2a46d;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
     .cookie-banner {
       position: fixed;
       left: 20px;
@@ -177,6 +192,14 @@
       .grid-3 {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .featured-book {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-book img {
+        max-height: 380px;
+      }
     }
 
     @media (max-width: 680px) {
@@ -215,10 +238,6 @@
 
       .grid-3 {
         grid-template-columns: 1fr;
-      }
-
-      .card img {
-        max-height: 220px;
       }
 
       .hero {
@@ -260,9 +279,9 @@
       <li><a href="biografia/">Biografia</a></li>
       <li><a href="opere/">Opere</a></li>
       <li><a href="ricerca/">Ricerca</a></li>
-      <li><a href="articoli/">Articoli</a></li>
+      <li><a href="articoli/">Scritti</a></li>
       <li><a href="testi-musicali/">Testi musicali</a></li>
-      <li><a href="media/">Media</a></li>
+      <li><a href="media/">Rassegna stampa</a></li>
       <li><a href="contatti/">Contatti</a></li>
     </ul>
   </nav>
@@ -276,7 +295,8 @@
 
   <p>
     Michele Bottino opera nell’ambito della narrativa, della saggistica e della ricerca storico-documentaria,
-    con un metodo fondato sulla verifica delle fonti e sulla distinzione tra dato e interpretazione.
+    con un metodo fondato sulla verifica delle fonti, sulla distinzione tra dato e interpretazione
+    e sulla costruzione controllata della rappresentazione.
   </p>
 
   <div class="cta">
@@ -289,7 +309,7 @@
   <h2>Scrittura, ricerca, metodo</h2>
   <p>
     Il lavoro si sviluppa lungo tre direttrici: produzione editoriale, ricerca indipendente e definizione
-    di modelli metodologici applicati all’analisi delle fonti.
+    di modelli metodologici applicati all’analisi delle fonti e dei sistemi documentari complessi.
   </p>
 </section>
 
@@ -302,57 +322,73 @@
 
   <div class="card">
     <h3>Ricerca</h3>
-    <p>Analisi documentaria e metodologie.</p>
+    <p>Analisi documentaria, tracciabilità del dato e metodologie.</p>
     <a href="ricerca/">Vai alla ricerca</a>
   </div>
 
   <div class="card">
-    <h3>Articoli</h3>
-    <p>Approfondimenti e note di metodo.</p>
-    <a href="articoli/">Vai agli articoli</a>
+    <h3>Scritti</h3>
+    <p>Testi, analisi e note di metodo su fonti, casi documentari e costruzione narrativa.</p>
+    <a href="articoli/">Vai agli scritti</a>
   </div>
 </section>
 
 <section class="container">
-  <h2>Opere in evidenza</h2>
+  <h2>Opera in evidenza</h2>
 
-  <div class="grid-3">
-    <div class="card">
-      <img src="images/opere/michele-bottino_stige_copertina.jpg" alt="Stige Michele Bottino">
-      <h3>Stige</h3>
-      <a href="opere/stige/">Scheda</a>
+  <div class="featured-book">
+    <div>
+      <img src="images/opere/michele-bottino_stige_copertina.jpg" alt="Copertina di Stige di Michele Bottino">
     </div>
 
-    <div class="card">
-      <img src="images/opere/michele-bottino_oniro_copertina.jpg" alt="Oniro Michele Bottino">
-      <h3>Oniro</h3>
-      <a href="opere/oniro/">Scheda</a>
-    </div>
+    <div>
+      <h3>Stige: Una lettera senza destinatario</h3>
+      <div class="book-meta">ISBN: 979-8273513433</div>
 
-    <div class="card">
-      <img src="images/opere/michele-bottino_intrighi-invisibili_copertina.jpg" alt="Intrighi Invisibili Michele Bottino">
-      <h3>Intrighi Invisibili</h3>
-      <a href="opere/intrighi-invisibili/">Scheda</a>
+      <p>
+        <em>Stige</em> è un’opera narrativa costruita su una tensione interiore costante,
+        dove la dimensione simbolica e quella emotiva si intrecciano in una scrittura
+        controllata, essenziale e orientata alla profondità del vissuto.
+      </p>
+
+      <p>
+        Il romanzo sviluppa una narrazione raccolta e intensa, centrata sul rapporto tra
+        assenza, memoria e ricerca di senso, mantenendo una forte coerenza stilistica
+        e una struttura compatta. 
+      </p>
+
+      <div class="cta">
+        <a href="https://www.foyles.co.uk/book/stige/michele-bottino/9798273513433" class="btn primary" target="_blank" rel="noopener noreferrer">Acquista</a>
+        <a href="opere/" class="btn secondary">Guarda le altre opere</a>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="container">
   <h2>Ricerca e metodo</h2>
+
   <p>
     Attività di ricerca centrata sull’analisi storico-documentaria, sulla tracciabilità del dato e sulla costruzione
     di modelli metodologici verificabili.
   </p>
 
+  <p>
+    Il lavoro metodologico di Michele Bottino è pubblicato su Zenodo e comprende diversi sviluppi del modello,
+    tra cui il Metodo delle Rotture Narrative (MRN) e il successivo aggiornamento in versione 1.2. 
+  </p>
+
   <div class="cta">
     <a href="ricerca/" class="btn secondary">Approfondisci</a>
+    <a href="metodo/" class="btn secondary">Vai al metodo</a>
   </div>
 </section>
 
 <section class="container">
   <h2>Profilo</h2>
   <p>
-    Michele Bottino è autore e ricercatore indipendente. La sua attività integra narrativa, saggistica e ricerca metodologica.
+    Michele Bottino è autore e ricercatore indipendente. La sua attività integra narrativa,
+    saggistica e sviluppo del Metodo delle Rotture Narrative (MRN).
   </p>
 
   <a href="biografia/">Leggi la biografia completa</a>
