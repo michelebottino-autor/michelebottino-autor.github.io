@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Scritti – Michele Bottino</title>
-  <meta name="description" content="Articoli e testi di Michele Bottino su analisi documentaria, scrittura e ricerca.">
+  <meta name="description" content="Scritti e analisi di Michele Bottino su casi documentari e di cronaca, in Italia e all'estero.">
 
   <style>
     body {
@@ -17,7 +17,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
       padding: 20px;
     }
@@ -34,6 +34,8 @@
 
     .logo img {
       height: 64px;
+      width: auto;
+      display: block;
     }
 
     .nav ul {
@@ -49,17 +51,30 @@
       text-decoration: none;
       color: #c2a46d;
       font-size: 0.95rem;
+      padding: 6px 8px;
+      display: inline-block;
     }
 
     h1, h2, h3 {
       color: #e5d3a3;
     }
 
+    a {
+      color: #c2a46d;
+    }
+
     section {
       margin-bottom: 30px;
     }
 
-    .article {
+    .block {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .entry {
       background: #2a312d;
       border: 1px solid #8f7748;
       padding: 18px;
@@ -81,6 +96,10 @@
       color: #c2a46d;
     }
 
+    ul {
+      padding-left: 20px;
+    }
+
     footer {
       padding-bottom: 30px;
       color: #8f7748;
@@ -96,6 +115,10 @@
         align-items: flex-start;
       }
 
+      .logo img {
+        height: 56px;
+      }
+
       .nav ul {
         width: 100%;
         display: grid;
@@ -103,11 +126,22 @@
         gap: 8px;
       }
 
+      .nav li {
+        width: 100%;
+      }
+
       .nav a {
         display: block;
+        width: 100%;
+        box-sizing: border-box;
         border: 1px solid #8f7748;
         background: #2a312d;
-        padding: 10px;
+        padding: 10px 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
       }
     }
   </style>
@@ -142,49 +176,83 @@
   <h1>Scritti</h1>
 
   <p>
-    Questa sezione raccoglie testi e articoli di Michele Bottino dedicati alla scrittura,
-    all’analisi documentaria e alla costruzione dei contenuti.
+    Questa sezione raccoglie analisi originali di casi documentari e di cronaca,
+    in Italia e all'estero, sviluppate da Michele Bottino secondo un approccio
+    strutturale fondato sulla distinzione tra dati accertabili, elementi riportati
+    e costruzione narrativa.
   </p>
 
   <p>
-    I contenuti qui presenti sono materiali autoriali e si distinguono dalla rassegna stampa,
-    che raccoglie invece articoli e pubblicazioni esterne.
+    I testi non sostituiscono l’indagine, non formulano tesi accusatorie
+    e non mirano a colmare artificialmente i vuoti della ricostruzione.
+    Il loro obiettivo è rappresentare con chiarezza ciò che è determinabile
+    e ciò che non lo è.
   </p>
 </section>
 
 <section>
-  <h2>Articoli</h2>
+  <h2>Criterio di lavoro</h2>
 
-  <div class="article">
-    <h3>Titolo articolo</h3>
-    <div class="meta">Anno · Tema</div>
-
+  <div class="block">
     <p>
-      Breve introduzione o estratto dell’articolo. Il testo completo può essere sviluppato
-      in una pagina dedicata oppure inserito direttamente qui.
+      Ogni scritto nasce da un’esigenza precisa: separare il piano dei fatti accertabili
+      da quello delle versioni, delle interpretazioni e delle ricostruzioni diffuse nel tempo.
     </p>
 
-    <a href="#" class="btn">Leggi</a>
-  </div>
-
-  <div class="article">
-    <h3>Titolo articolo</h3>
-    <div class="meta">Anno · Tema</div>
-
     <p>
-      Secondo articolo. Struttura replicabile per tutti i contenuti futuri.
+      L’attenzione si concentra sulla qualità delle fonti, sulla coerenza del materiale disponibile,
+      sui punti di frattura del caso e sui limiti della sua ricostruzione.
     </p>
 
-    <a href="#" class="btn">Leggi</a>
+    <p>
+      Per il quadro metodologico di riferimento:
+      <a href="../metodo/">vai alla pagina Metodo</a>.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Casi pubblicati</h2>
+
+  <div class="entry">
+    <h3>Titolo del caso</h3>
+    <div class="meta">Italia · analisi documentaria</div>
+    <p>
+      Breve descrizione del contenuto. Qui va inserito un riassunto di 3-4 righe che chiarisca
+      l’oggetto del testo, il contesto del caso e il punto di osservazione adottato.
+    </p>
+    <a class="btn" href="#">Leggi lo scritto</a>
   </div>
 
+  <div class="entry">
+    <h3>Titolo del caso</h3>
+    <div class="meta">Estero · analisi documentaria</div>
+    <p>
+      Secondo scritto. Anche qui il testo introduttivo deve restare sintetico e orientato
+      al contenuto, senza anticipare conclusioni e senza trasformarsi in commento generico.
+    </p>
+    <a class="btn" href="#">Leggi lo scritto</a>
+  </div>
+</section>
+
+<section>
+  <h2>Ambiti</h2>
+
+  <ul>
+    <li>casi di cronaca italiani</li>
+    <li>casi documentari internazionali</li>
+    <li>analisi della struttura delle fonti</li>
+    <li>verifica della tenuta della ricostruzione</li>
+    <li>distinzione tra dato, riportato e narrazione</li>
+  </ul>
 </section>
 
 <section>
   <h2>Nota</h2>
 
   <p>
-    Questa sezione è in aggiornamento e verrà progressivamente integrata con nuovi contenuti.
+    La sezione è destinata a crescere progressivamente con la pubblicazione di nuovi testi.
+    Ogni caso sarà presentato in una pagina dedicata, autonoma e strutturata in modo uniforme.
   </p>
 </section>
 
