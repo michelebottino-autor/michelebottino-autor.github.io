@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Media — Michele Bottino</title>
-  <meta name="description" content="Area media e materiali di riferimento su Michele Bottino: profilo, presentazione e contenuti per uso professionale.">
+  <title>Rassegna stampa e pubblicazioni – Michele Bottino</title>
+  <meta name="description" content="Rassegna stampa e pubblicazioni di Michele Bottino: articoli, profili, scrittura musicale e lavori metodologici pubblicati su Zenodo.">
 
   <style>
     body {
@@ -17,7 +17,7 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
@@ -26,14 +26,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       gap: 20px;
+      flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 16px;
     }
 
     .logo img {
       height: 64px;
+      width: auto;
       display: block;
     }
 
@@ -49,72 +50,80 @@
     .nav a {
       text-decoration: none;
       color: #c2a46d;
-      padding: 6px 8px;
+      font-size: 0.95rem;
     }
 
     h1, h2, h3 {
-      margin-bottom: 12px;
-    }
-
-    section {
-      margin-bottom: 36px;
-    }
-
-    .box {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 18px;
-      margin-bottom: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .media-card {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 18px;
-    }
-
-    .media-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+      color: #e5d3a3;
     }
 
     a {
       color: #c2a46d;
     }
 
+    section {
+      margin-bottom: 30px;
+    }
+
+    .block {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .small {
+      color: #c2a46d;
+      font-size: 0.95rem;
+    }
+
     footer {
-      color: #8f7748;
       padding-bottom: 30px;
+      color: #8f7748;
     }
 
     @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
       .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
+      }
+
+      .logo img {
+        height: 56px;
       }
 
       .nav ul {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 8px;
+      }
+
+      .nav li {
         width: 100%;
       }
 
       .nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
         border: 1px solid #8f7748;
         background: #2a312d;
-        padding: 10px;
-        display: block;
+        padding: 10px 12px;
       }
 
-      .grid-2 {
-        grid-template-columns: 1fr;
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        line-height: 1.25;
       }
     }
   </style>
@@ -125,17 +134,18 @@
 <header class="container">
   <nav class="nav">
     <div class="logo">
-      <img src="../images/logo.png" alt="Michele Bottino">
+      <a href="../">
+        <img src="../images/logo.png" alt="Michele Bottino">
+      </a>
     </div>
 
     <ul>
-      <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Biografia</a></li>
-      <li><a href="../metodo/">Metodo</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
       <li><a href="../opere/">Opere</a></li>
-      <li><a href="../articoli/">Articoli</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../articoli/">Scritti</a></li>
       <li><a href="../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../media/">Rassegna stampa</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
@@ -144,82 +154,87 @@
 <main class="container">
 
 <section>
-  <h1>Media</h1>
+  <h1>Rassegna stampa e pubblicazioni</h1>
+
   <p>
-    Questa sezione raccoglie materiali di riferimento destinati a uso professionale,
-    redazionale e informativo. L’obiettivo è rendere disponibili in forma chiara e controllata
-    gli elementi essenziali per la presentazione di Michele Bottino.
+    Una selezione di articoli, profili e pubblicazioni dedicati all’attività di Michele Bottino.
+    La pagina distingue tra contenuti esterni di rassegna e pubblicazioni metodologiche rese disponibili su Zenodo.
   </p>
 </section>
 
 <section>
-  <h2>Funzione della sezione</h2>
-  <div class="box">
+  <h2>Rassegna stampa</h2>
+
+  <div class="block">
+    <h3>Michele Bottino, lo scrittore siciliano che unisce thriller e storie vere con una voce originale</h3>
+    <p class="small">Arte — 16 luglio 2025</p>
     <p>
-      L’area Media è pensata per giornalisti, editori, organizzatori, interlocutori culturali
-      e soggetti che necessitano di una presentazione sintetica, ordinata e coerente del profilo,
-      delle attività e delle aree di lavoro.
+      Profilo dedicato al percorso narrativo dell’autore, con attenzione al rapporto tra esperienza personale,
+      costruzione realistica dei contesti e interesse per tematiche sociali e documentarie.
+    </p>
+    <p>
+      Link alla pubblicazione esterna da inserire.
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>Michele Bottino e la scrittura musicale: testi tra introspezione e realtà</h3>
+    <p class="small">Libri — 27 marzo 2026</p>
+    <p>
+      Articolo dedicato alla scrittura musicale come sviluppo parallelo dell’attività narrativa,
+      con attenzione alla centralità del testo, alla continuità tematica e al rapporto tra parola,
+      identità e tensione interiore.
+    </p>
+    <p>
+      Link alla pubblicazione esterna da inserire.
     </p>
   </div>
 </section>
 
 <section>
-  <h2>Contenuti previsti</h2>
-  <div class="grid-2">
-    <div class="media-card">
-      <h3>Profilo breve</h3>
-      <p>
-        Sintesi professionale utilizzabile per presentazioni, schede evento e contesti informativi.
-      </p>
-    </div>
+  <h2>Pubblicazioni metodologiche</h2>
 
-    <div class="media-card">
-      <h3>Profilo esteso</h3>
-      <p>
-        Versione più articolata del percorso autoriale e di ricerca, con riferimento agli ambiti di lavoro.
-      </p>
-    </div>
-
-    <div class="media-card">
-      <h3>Catalogo essenziale</h3>
-      <p>
-        Selezione delle opere e delle aree principali del lavoro editoriale.
-      </p>
-    </div>
-
-    <div class="media-card">
-      <h3>Riferimenti metodologici</h3>
-      <p>
-        Indicazione sintetica del lavoro di ricerca e del quadro metodologico sviluppato.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Uso dei materiali</h2>
-  <p>
-    I contenuti di questa sezione sono destinati a presentazioni, schede autore, introduzioni editoriali,
-    contesti informativi e richieste professionali. La loro funzione è garantire uniformità nella
-    presentazione pubblica del profilo e ridurre il rischio di descrizioni imprecise o non coerenti.
-  </p>
-</section>
-
-<section>
-  <h2>Materiali in integrazione</h2>
-  <div class="box">
+  <div class="block">
+    <h3>Versione 1.0</h3>
+    <p class="small">Zenodo — 27 marzo 2026</p>
     <p>
-      La sezione verrà progressivamente integrata con materiali sintetici, versioni di profilo,
-      elementi bibliografici essenziali e risorse utili alla presentazione del lavoro editoriale e di ricerca.
+      <strong>Modello strutturale della convergenza narrativa nei sistemi documentari: metriche, modello predittivo e teoria dei regimi</strong>
+    </p>
+    <p>
+      Pubblicazione dedicata all’estensione del modello attraverso metriche interne, costruzione di tesi,
+      modello predittivo e teoria dei regimi.
+    </p>
+    <p>
+      <a href="https://doi.org/10.5281/zenodo.19263152" target="_blank" rel="noopener noreferrer">
+        DOI 10.5281/zenodo.19263152
+      </a>
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>Versione 1.2</h3>
+    <p class="small">Zenodo — 2026</p>
+    <p>
+      <strong>Modello strutturale della convergenza narrativa nei sistemi documentari: Metodo delle Rotture Narrative (MRN) — Versione 1.2</strong>
+    </p>
+    <p>
+      Aggiornamento del metodo con introduzione del livello preliminare di validazione delle entità documentarie,
+      rafforzamento della tracciabilità e consolidamento del protocollo operativo.
+    </p>
+    <p>
+      <a href="https://doi.org/10.5281/zenodo.19284625" target="_blank" rel="noopener noreferrer">
+        DOI 10.5281/zenodo.19284625
+      </a>
     </p>
   </div>
 </section>
 
 <section>
-  <h2>Posizionamento</h2>
+  <h2>Nota</h2>
+
   <p>
-    L’area Media non sostituisce le sezioni Biografia, Metodo, Ricerca o Opere, ma ne fornisce
-    una rappresentazione sintetica e operativa, pensata per l’uso esterno e professionale.
+    La rassegna stampa raccoglie contenuti esterni dedicati all’autore. Le pubblicazioni metodologiche
+    rinviano invece a documenti originali pubblicati in forma autonoma e accessibili tramite DOI.
   </p>
 </section>
 
