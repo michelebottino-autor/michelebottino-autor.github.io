@@ -140,6 +140,44 @@
       margin-bottom: 12px;
     }
 
+    .updates-box {
+      background: #2a312d;
+      border: 1px solid #c2a46d;
+      padding: 20px;
+    }
+
+    .updates-box h2 {
+      margin-top: 0;
+    }
+
+    .updates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .update-item {
+      border: 1px solid #8f7748;
+      padding: 16px;
+      background: #1f2623;
+    }
+
+    .update-label {
+      display: inline-block;
+      font-size: 0.82rem;
+      color: #1f2623;
+      background: #c2a46d;
+      padding: 4px 8px;
+      margin-bottom: 10px;
+    }
+
+    .update-item h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
     .cookie-banner {
       position: fixed;
       left: 20px;
@@ -199,6 +237,10 @@
 
       .featured-book img {
         max-height: 380px;
+      }
+
+      .updates-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -305,6 +347,47 @@
   <div class="cta">
     <a href="opere/" class="btn primary">Opere</a>
     <a href="ricerca/" class="btn secondary">Ricerca</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="updates-box">
+    <h2>Ultimi aggiornamenti</h2>
+    <p>
+      Una selezione delle novità più recenti pubblicate nel sito.
+    </p>
+
+    <div class="updates-grid">
+      <div class="update-item">
+        <div class="update-label">Nuovo articolo</div>
+        <h3>Alessia Pifferi</h3>
+        <p>
+          È online un nuovo scritto dedicato al caso Alessia Pifferi,
+          con analisi documentaria del rapporto tra fatto, percezione pubblica e interpretazione.
+        </p>
+        <a href="articoli/alessia-pifferi/" class="btn secondary">Leggi</a>
+      </div>
+
+      <div class="update-item">
+        <div class="update-label">Opera in evidenza</div>
+        <h3>Stige</h3>
+        <p>
+          L’ultima opera in evidenza nella homepage resta <em>Stige: Una lettera senza destinatario</em>,
+          con scheda dedicata e collegamento all’acquisto.
+        </p>
+        <a href="opere/stige/" class="btn secondary">Vai alla scheda</a>
+      </div>
+
+      <div class="update-item">
+        <div class="update-label">Pubblicazione metodologica</div>
+        <h3>MRN – Versione 1.2</h3>
+        <p>
+          È disponibile la pubblicazione metodologica aggiornata del Metodo delle Rotture Narrative,
+          con rinvio alla sezione dedicata.
+        </p>
+        <a href="metodo/" class="btn secondary">Approfondisci</a>
+      </div>
+    </div>
   </div>
 </section>
 
