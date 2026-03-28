@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Contatti – Michele Bottino</title>
-  <meta name="description" content="Contatti di Michele Bottino.">
+  <meta name="description" content="Contatti di Michele Bottino per richieste editoriali, professionali o informative.">
 
   <style>
     body {
@@ -51,9 +51,11 @@
       text-decoration: none;
       color: #c2a46d;
       font-size: 0.95rem;
+      padding: 6px 8px;
+      display: inline-block;
     }
 
-    h1 {
+    h1, h2 {
       color: #e5d3a3;
     }
 
@@ -61,55 +63,72 @@
       color: #c2a46d;
     }
 
+    section {
+      margin-bottom: 30px;
+    }
+
     form {
-      margin-top: 20px;
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 20px;
     }
 
     label {
       display: block;
-      margin-bottom: 6px;
       margin-top: 14px;
+      margin-bottom: 6px;
+      color: #e5d3a3;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
+      box-sizing: border-box;
       padding: 10px;
       border: 1px solid #8f7748;
-      background: #2a312d;
+      background: #1f2623;
       color: #e5d3a3;
-      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
     }
 
     textarea {
-      min-height: 140px;
+      min-height: 160px;
       resize: vertical;
     }
 
-    .checkbox {
+    .checkbox-group {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .checkbox input {
-      width: auto;
-      margin-top: 3px;
-    }
-
-    button {
+      gap: 10px;
       margin-top: 16px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      margin-top: 18px;
       padding: 10px 16px;
       border: 1px solid #c2a46d;
       background: #c2a46d;
       color: #1f2623;
       cursor: pointer;
+      font-size: 1rem;
     }
 
     .note {
-      font-size: 0.9rem;
       color: #c2a46d;
-      margin-top: 10px;
+      font-size: 0.92rem;
+      margin-top: 14px;
     }
 
     footer {
@@ -125,7 +144,6 @@
       .nav {
         flex-direction: column;
         align-items: flex-start;
-        gap: 14px;
       }
 
       .logo img {
@@ -139,12 +157,22 @@
         gap: 8px;
       }
 
+      .nav li {
+        width: 100%;
+      }
+
       .nav a {
         display: block;
         width: 100%;
+        box-sizing: border-box;
         border: 1px solid #8f7748;
         background: #2a312d;
         padding: 10px 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
       }
     }
   </style>
@@ -161,6 +189,7 @@
     </div>
 
     <ul>
+      <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Biografia</a></li>
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../ricerca/">Ricerca</a></li>
@@ -178,12 +207,13 @@
   <h1>Contatti</h1>
 
   <p>
-    Per informazioni, richieste editoriali o collaborazioni è possibile utilizzare il modulo sottostante.
+    Per richieste editoriali, comunicazioni professionali o informazioni relative alle opere e alle pubblicazioni,
+    è possibile utilizzare il modulo sottostante.
   </p>
+</section>
 
-  <!-- Form con Formspree (sostituire con il proprio endpoint) -->
+<section>
   <form action="https://formspree.io/f/XXXXXXXX" method="POST">
-
     <label for="nome">Nome</label>
     <input type="text" id="nome" name="nome" required>
 
@@ -193,21 +223,20 @@
     <label for="messaggio">Messaggio</label>
     <textarea id="messaggio" name="messaggio" required></textarea>
 
-    <div class="checkbox">
-      <input type="checkbox" id="consenso" required>
+    <div class="checkbox-group">
+      <input type="checkbox" id="consenso" name="consenso" required>
       <label for="consenso">
-        Dichiaro di aver letto la <a href="../privacy/">Privacy Policy</a>
+        Acconsento al trattamento dei dati personali ai sensi della
+        <a href="../privacy/">Privacy Policy</a>.
       </label>
     </div>
 
-    <button type="submit">Invia</button>
+    <button type="submit" class="btn">Invia</button>
 
+    <p class="note">
+      I dati inviati tramite questo modulo vengono utilizzati esclusivamente per rispondere alla richiesta.
+    </p>
   </form>
-
-  <p class="note">
-    I dati inviati tramite questo modulo vengono utilizzati esclusivamente per rispondere alla richiesta.
-  </p>
-
 </section>
 
 </main>
