@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Testi musicali — Michele Bottino</title>
-  <meta name="description" content="Attività di Michele Bottino come autore di testi musicali, distinta dalla produzione libraria e dalla ricerca.">
+  <title>Testi musicali – Michele Bottino</title>
+  <meta name="description" content="Testi musicali scritti da Michele Bottino, con collegamenti Spotify ai brani distribuiti sulle piattaforme digitali.">
 
   <style>
     body {
@@ -17,7 +17,7 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
@@ -34,6 +34,7 @@
 
     .logo img {
       height: 64px;
+      width: auto;
       display: block;
     }
 
@@ -49,78 +50,85 @@
     .nav a {
       text-decoration: none;
       color: #c2a46d;
-      padding: 6px 8px;
+      font-size: 0.95rem;
     }
 
     h1, h2, h3 {
-      margin-bottom: 12px;
-    }
-
-    section {
-      margin-bottom: 36px;
-    }
-
-    .box {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 18px;
-      margin-bottom: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .track-card {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 18px;
-    }
-
-    .track-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    .meta {
-      color: #c2a46d;
-      font-size: 0.92rem;
-      margin-bottom: 10px;
+      color: #e5d3a3;
     }
 
     a {
       color: #c2a46d;
     }
 
+    section {
+      margin-bottom: 30px;
+    }
+
+    .track {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #c2a46d;
+      margin-bottom: 10px;
+    }
+
+    .listen {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border: 1px solid #c2a46d;
+      text-decoration: none;
+    }
+
     footer {
-      color: #8f7748;
       padding-bottom: 30px;
+      color: #8f7748;
     }
 
     @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
       .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
+      }
+
+      .logo img {
+        height: 56px;
       }
 
       .nav ul {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 8px;
+      }
+
+      .nav li {
         width: 100%;
       }
 
       .nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
         border: 1px solid #8f7748;
         background: #2a312d;
-        padding: 10px;
-        display: block;
+        padding: 10px 12px;
       }
 
-      .grid-2 {
-        grid-template-columns: 1fr;
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
       }
     }
   </style>
@@ -131,17 +139,18 @@
 <header class="container">
   <nav class="nav">
     <div class="logo">
-      <img src="../images/logo.png" alt="Michele Bottino">
+      <a href="../">
+        <img src="../images/logo.png" alt="Michele Bottino">
+      </a>
     </div>
 
     <ul>
-      <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Biografia</a></li>
-      <li><a href="../metodo/">Metodo</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
       <li><a href="../opere/">Opere</a></li>
-      <li><a href="../articoli/">Articoli</a></li>
-      <li><a href="../media/">Media</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../articoli/">Scritti</a></li>
+      <li><a href="../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../media/">Rassegna stampa</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
@@ -151,79 +160,108 @@
 
 <section>
   <h1>Testi musicali</h1>
+
   <p>
-    Questa sezione documenta l’attività di Michele Bottino come autore di testi musicali.
-    Si tratta di un ambito distinto dalla produzione libraria e dalla ricerca metodologica,
-    e viene presentato in forma autonoma per evitare sovrapposizioni tra piani diversi.
+    Questa sezione raccoglie i brani di cui Michele Bottino è autore dei testi.
+    I collegamenti aprono la relativa ricerca su Spotify in una nuova scheda,
+    così l’ascolto non interrompe la navigazione del sito.
+  </p>
+
+  <p>
+    Michele Bottino opera in questa area come autore dei testi. Non è interprete né musicista.
   </p>
 </section>
 
 <section>
-  <h2>Ruolo</h2>
-  <div class="box">
-    <p>
-      In questo contesto, Michele Bottino opera come <strong>autore dei testi</strong>.
-      La sezione non coincide con una discografia intesa in senso performativo o interpretativo,
-      ma con la documentazione del contributo autoriale relativo alla scrittura dei brani.
-    </p>
+  <h2>Brani</h2>
+
+  <div class="track">
+    <h3>Riconquistarti</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Riconquistarti" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
   </div>
-</section>
 
-<section>
-  <h2>Struttura della sezione</h2>
-  <div class="grid-2">
-    <div class="box">
-      <h3>Brani</h3>
-      <p>
-        Elenco dei brani collegati all’attività di scrittura dei testi.
-      </p>
-    </div>
-
-    <div class="box">
-      <h3>Piattaforme</h3>
-      <p>
-        Collegamenti alle piattaforme di riferimento e ai contesti di distribuzione,
-        da integrare progressivamente.
-      </p>
-    </div>
-
-    <div class="box">
-      <h3>Ruolo autoriale</h3>
-      <p>
-        Specificazione del contributo svolto, mantenendo distinzione tra scrittura,
-        esecuzione e produzione.
-      </p>
-    </div>
-
-    <div class="box">
-      <h3>Schede brano</h3>
-      <p>
-        Possibile sviluppo futuro di pagine dedicate per singoli brani o gruppi di pubblicazione.
-      </p>
-    </div>
+  <div class="track">
+    <h3>Senza fare Rumore</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Senza%20fare%20Rumore" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
   </div>
-</section>
 
-<section>
-  <h2>Brani in catalogazione</h2>
-
-  <div class="track-card">
-    <h3>Catalogazione in corso</h3>
-    <p class="meta">Testi musicali</p>
-    <p>
-      La sezione verrà integrata progressivamente con i brani, i riferimenti esterni
-      e le informazioni essenziali relative al ruolo autoriale svolto.
-    </p>
+  <div class="track">
+    <h3>Parlami Ancora</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Parlami%20Ancora" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
   </div>
-</section>
 
-<section>
-  <h2>Posizione nel sito</h2>
-  <p>
-    L’area dei testi musicali completa il profilo autoriale di Michele Bottino,
-    ma resta distinta dal catalogo editoriale e dalla ricerca. Questa separazione
-    consente di mantenere leggibile la pluralità delle attività senza confusione semantica.
-  </p>
+  <div class="track">
+    <h3>Casanova</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Casanova" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
+  </div>
+
+  <div class="track">
+    <h3>Un Sogno che resta</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Un%20Sogno%20che%20resta" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
+  </div>
+
+  <div class="track">
+    <h3>Vivo da Re</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Vivo%20da%20Re" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
+  </div>
+
+  <div class="track">
+    <h3>Spento ma resto vivo</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Spento%20ma%20resto%20vivo" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
+  </div>
+
+  <div class="track">
+    <h3>Notte Di Mezza Estate</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Notte%20Di%20Mezza%20Estate" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
+  </div>
+
+  <div class="track">
+    <h3>Un'altra Notte a Metà</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Un'altra%20Notte%20a%20Metà" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
+  </div>
+
+  <div class="track">
+    <h3>Dovevi solo Aspettare</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Dovevi%20solo%20Aspettare" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
+  </div>
+
+  <div class="track">
+    <h3>Nel respiro di te</h3>
+    <div class="meta">Ruolo: autore dei testi · Distribuzione: TuneCore</div>
+    <a class="listen" href="https://open.spotify.com/search/Nel%20respiro%20di%20te" target="_blank" rel="noopener noreferrer">
+      Ascolta su Spotify
+    </a>
+  </div>
 </section>
 
 </main>
