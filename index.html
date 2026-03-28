@@ -240,13 +240,70 @@
       }
 
       .updates-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 680px) {
-      .updates-grid {
+      .container {
+        padding: 16px;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .logo img {
+        height: 56px;
+      }
+
+      .nav ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .nav li {
+        width: 100%;
+      }
+
+      .nav a {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #8f7748;
+        background: #2a312d;
+        padding: 10px 12px;
+      }
+
+      .grid-3 {
         grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 24px 16px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        line-height: 1.25;
+      }
+
+      .cookie-banner {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 14px;
+      }
+
+      .cookie-actions {
+        flex-direction: column;
       }
     }
   </style>
@@ -301,7 +358,6 @@
     </p>
 
     <div class="updates-grid">
-
       <div class="update-item">
         <div class="update-label">Nuovo articolo</div>
         <h3>Alessia Pifferi</h3>
@@ -313,6 +369,16 @@
       </div>
 
       <div class="update-item">
+        <div class="update-label">Opera</div>
+        <h3>Stige: Una lettera senza destinatario</h3>
+        <p>
+          Romanzo di Michele Bottino costruito su una tensione interiore costante,
+          tra assenza, memoria e ricerca di senso.
+        </p>
+        <a href="opere/stige/" class="btn secondary">Scopri l’opera</a>
+      </div>
+
+      <div class="update-item">
         <div class="update-label">Pubblicazione metodologica</div>
         <h3>MRN – Versione 1.2</h3>
         <p>
@@ -321,14 +387,170 @@
         </p>
         <a href="metodo/" class="btn secondary">Approfondisci</a>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- resto del file invariato -->
+<section class="container">
+  <h2>Scrittura, ricerca, metodo</h2>
+  <p>
+    Il lavoro si sviluppa lungo tre direttrici: produzione editoriale, ricerca indipendente e definizione
+    di modelli metodologici applicati all’analisi delle fonti e dei sistemi documentari complessi.
+  </p>
+</section>
+
+<section class="container grid-3">
+  <div class="card">
+    <h3>Opere</h3>
+    <p>Romanzi, saggi e opere analitiche.</p>
+    <a href="opere/">Vai alle opere</a>
+  </div>
+
+  <div class="card">
+    <h3>Ricerca</h3>
+    <p>Analisi documentaria, tracciabilità del dato e metodologie.</p>
+    <a href="ricerca/">Vai alla ricerca</a>
+  </div>
+
+  <div class="card">
+    <h3>Scritti</h3>
+    <p>Testi, analisi e note di metodo su fonti, casi documentari e costruzione narrativa.</p>
+    <a href="articoli/">Vai agli scritti</a>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Opera in evidenza</h2>
+
+  <div class="featured-book">
+    <div>
+      <img src="images/opere/michele-bottino_stige_copertina.jpg" alt="Copertina di Stige di Michele Bottino">
+    </div>
+
+    <div>
+      <h3>Stige: Una lettera senza destinatario</h3>
+      <div class="book-meta">ISBN: 979-8273513433</div>
+
+      <p>
+        <em>Stige</em> è un’opera narrativa costruita su una tensione interiore costante,
+        dove la dimensione simbolica e quella emotiva si intrecciano in una scrittura
+        controllata, essenziale e orientata alla profondità del vissuto.
+      </p>
+
+      <p>
+        Il romanzo sviluppa una narrazione raccolta e intensa, centrata sul rapporto tra
+        assenza, memoria e ricerca di senso, mantenendo una forte coerenza stilistica
+        e una struttura compatta.
+      </p>
+
+      <div class="cta">
+        <a href="https://www.foyles.co.uk/book/stige/michele-bottino/9798273513433" class="btn primary" target="_blank" rel="noopener noreferrer">Acquista</a>
+        <a href="opere/" class="btn secondary">Guarda le altre opere</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Ricerca e metodo</h2>
+
+  <p>
+    Attività di ricerca centrata sull’analisi storico-documentaria, sulla tracciabilità del dato e sulla costruzione
+    di modelli metodologici verificabili.
+  </p>
+
+  <p>
+    Il lavoro metodologico di Michele Bottino è pubblicato su Zenodo e comprende diversi sviluppi del modello,
+    tra cui il Metodo delle Rotture Narrative (MRN) e il successivo aggiornamento in versione 1.2.
+  </p>
+
+  <div class="cta">
+    <a href="ricerca/" class="btn secondary">Approfondisci</a>
+    <a href="metodo/" class="btn secondary">Vai al metodo</a>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Profilo</h2>
+  <p>
+    Michele Bottino è autore e ricercatore indipendente. La sua attività integra narrativa,
+    saggistica e sviluppo del Metodo delle Rotture Narrative (MRN).
+  </p>
+
+  <a href="biografia/">Leggi la biografia completa</a>
+</section>
 
 </main>
+
+<footer class="container">
+  <p>© Michele Bottino</p>
+</footer>
+
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>
+    Questo sito utilizza cookie tecnici e, previo consenso, strumenti di analytics e tracciamento.
+    Puoi accettare o rifiutare i cookie non tecnici. Per maggiori informazioni consulta la
+    <a href="privacy/">Privacy Policy</a> e la <a href="cookie/">Cookie Policy</a>.
+  </p>
+
+  <div class="cookie-actions">
+    <button id="accept-cookies" class="accept" type="button">Accetta</button>
+    <button id="reject-cookies" class="reject" type="button">Rifiuta</button>
+    <a href="cookie/">Approfondisci</a>
+  </div>
+</div>
+
+<script>
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptCookies = document.getElementById('accept-cookies');
+  const rejectCookies = document.getElementById('reject-cookies');
+
+  function loadGA() {
+    if (window.gaLoaded) return;
+    window.gaLoaded = true;
+
+    const script1 = document.createElement('script');
+    script1.async = true;
+    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(script1);
+
+    const script2 = document.createElement('script');
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    `;
+    document.head.appendChild(script2);
+  }
+
+  const consent = localStorage.getItem('mb_cookie_consent');
+
+  if (!consent) {
+    cookieBanner.classList.remove('hidden');
+  }
+
+  if (consent === 'accepted') {
+    loadGA();
+  }
+
+  acceptCookies.addEventListener('click', function () {
+    localStorage.setItem('mb_cookie_consent', 'accepted');
+    cookieBanner.classList.add('hidden');
+    loadGA();
+  });
+
+  rejectCookies.addEventListener('click', function () {
+    localStorage.setItem('mb_cookie_consent', 'rejected');
+    cookieBanner.classList.add('hidden');
+  });
+</script>
 
 </body>
 </html>
