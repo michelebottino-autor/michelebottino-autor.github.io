@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Articoli — Michele Bottino</title>
-  <meta name="description" content="Articoli e approfondimenti di Michele Bottino su metodo, ricerca documentaria e scrittura.">
+  <title>Scritti – Michele Bottino</title>
+  <meta name="description" content="Scritti di Michele Bottino: testi e analisi su casi documentari, fonti, costruzione narrativa e limiti della ricostruzione.">
 
   <style>
     body {
@@ -17,7 +17,7 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
@@ -26,14 +26,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       gap: 20px;
+      flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 16px;
     }
 
     .logo img {
       height: 64px;
+      width: auto;
       display: block;
     }
 
@@ -49,78 +50,80 @@
     .nav a {
       text-decoration: none;
       color: #c2a46d;
-      padding: 6px 8px;
+      font-size: 0.95rem;
     }
 
     h1, h2, h3 {
-      margin-bottom: 12px;
-    }
-
-    section {
-      margin-bottom: 36px;
-    }
-
-    .box {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 18px;
-      margin-bottom: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .article-card {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 18px;
-    }
-
-    .article-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    .meta {
-      color: #c2a46d;
-      font-size: 0.92rem;
-      margin-bottom: 10px;
+      color: #e5d3a3;
     }
 
     a {
       color: #c2a46d;
     }
 
+    section {
+      margin-bottom: 30px;
+    }
+
+    .block {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .small {
+      color: #c2a46d;
+      font-size: 0.95rem;
+    }
+
     footer {
-      color: #8f7748;
       padding-bottom: 30px;
+      color: #8f7748;
     }
 
     @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
       .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
+      }
+
+      .logo img {
+        height: 56px;
       }
 
       .nav ul {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 8px;
+      }
+
+      .nav li {
         width: 100%;
       }
 
       .nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
         border: 1px solid #8f7748;
         background: #2a312d;
-        padding: 10px;
-        display: block;
+        padding: 10px 12px;
       }
 
-      .grid-2 {
-        grid-template-columns: 1fr;
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        line-height: 1.25;
       }
     }
   </style>
@@ -131,17 +134,18 @@
 <header class="container">
   <nav class="nav">
     <div class="logo">
-      <img src="../images/logo.png" alt="Michele Bottino">
+      <a href="../">
+        <img src="../images/logo.png" alt="Michele Bottino">
+      </a>
     </div>
 
     <ul>
-      <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Biografia</a></li>
-      <li><a href="../metodo/">Metodo</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
       <li><a href="../opere/">Opere</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../articoli/">Scritti</a></li>
       <li><a href="../testi-musicali/">Testi musicali</a></li>
-      <li><a href="../media/">Media</a></li>
+      <li><a href="../media/">Rassegna stampa</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
@@ -150,105 +154,82 @@
 <main class="container">
 
 <section>
-  <h1>Articoli</h1>
+  <h1>Scritti</h1>
+
   <p>
-    Questa sezione raccoglie approfondimenti, note di metodo e testi brevi dedicati alla ricerca,
-    alla scrittura documentaria e ai principali temi di lavoro di Michele Bottino.
+    Testi e analisi su casi documentari, costruzione narrativa e rapporto tra fonti e rappresentazione.
+    I contenuti qui raccolti si sviluppano secondo un approccio strutturale, con attenzione alla tracciabilità
+    degli elementi e ai limiti della ricostruzione.
   </p>
 </section>
 
 <section>
-  <h2>Funzione della sezione</h2>
-  <div class="box">
+  <h2>Articoli</h2>
+
+  <div class="block">
+    <h3>Quando un caso non può essere ricostruito</h3>
+    <p class="small">Testo di analisi</p>
     <p>
-      Gli articoli non sostituiscono né le opere né i documenti metodologici, ma costituiscono
-      uno spazio intermedio di chiarificazione, approfondimento e sviluppo. Ogni testo deve mantenere
-      coerenza con il profilo generale del sito e con la distinzione tra livelli informativi.
+      Nei sistemi documentari complessi, la quantità di informazioni disponibili non coincide con la possibilità
+      di ricostruire un evento. Un caso può presentare numerosi elementi, versioni multiple e ampia copertura pubblica,
+      e tuttavia non consentire una ricostruzione completa.
+    </p>
+    <p>
+      Il problema non è soltanto la mancanza di dati, ma la loro struttura. Quando gli elementi disponibili
+      non sono tutti tracciabili, non sono coerenti tra loro o non permettono connessioni dirette,
+      la ricostruzione si interrompe.
+    </p>
+    <p>
+      In questi casi, il tentativo di chiudere il caso introduce inevitabilmente elementi non verificabili.
+      Un’analisi controllata non completa ciò che manca: si limita a descrivere ciò che è determinabile.
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>Il problema delle fonti nei casi documentari</h3>
+    <p class="small">Testo di analisi</p>
+    <p>
+      Nei casi documentari, le fonti non sono tutte equivalenti. Esistono differenze strutturali tra
+      dati documentati, dichiarazioni riportate e contenuti diffusi nel tempo. Queste differenze non riguardano
+      soltanto il contenuto, ma la posizione che ciascun elemento occupa nel sistema.
+    </p>
+    <p>
+      Un elemento documentato è verificabile e stabile. Un elemento riportato può essere tracciabile,
+      ma non verificabile in modo diretto. Altri elementi non sono riconducibili a una fonte identificabile.
+    </p>
+    <p>
+      Separare le fonti non significa escludere informazioni, ma impedirne l’uso improprio.
+      Gli elementi riportati possono essere registrati e osservati, ma non utilizzati per costruire
+      la struttura del caso.
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>La differenza tra narrazione e ricostruzione</h3>
+    <p class="small">Testo di analisi</p>
+    <p>
+      Narrazione e ricostruzione non coincidono. La narrazione tende a collegare elementi,
+      ridurre le ambiguità e costruire una sequenza continua. La ricostruzione documentaria,
+      invece, è vincolata dai dati disponibili.
+    </p>
+    <p>
+      Quando una sequenza presenta lacune, la narrazione tende a riempirle. Una ricostruzione controllata,
+      al contrario, mantiene visibile ciò che non può essere determinato.
+    </p>
+    <p>
+      Il risultato è che molte rappresentazioni appaiono complete, ma non sono verificabili.
+      Una rappresentazione controllata accetta l’incompletezza come parte del sistema.
     </p>
   </div>
 </section>
 
 <section>
-  <h2>Aree tematiche</h2>
-  <div class="grid-2">
-    <div class="box">
-      <h3>Metodo</h3>
-      <p>
-        Articoli orientati alla spiegazione dei principi metodologici, dei limiti inferenziali
-        e delle regole di costruzione del testo.
-      </p>
-    </div>
+  <h2>Nota di metodo</h2>
 
-    <div class="box">
-      <h3>Ricerca documentaria</h3>
-      <p>
-        Testi dedicati alla lettura delle fonti, alla tracciabilità degli elementi e alla struttura
-        dei casi documentari.
-      </p>
-    </div>
-
-    <div class="box">
-      <h3>Scrittura</h3>
-      <p>
-        Approfondimenti su forma, controllo del linguaggio, densità descrittiva e rapporto tra struttura
-        e leggibilità.
-      </p>
-    </div>
-
-    <div class="box">
-      <h3>Temi specifici</h3>
-      <p>
-        Analisi mirate su questioni teoriche, casi, modelli o problemi legati al lavoro autoriale e di ricerca.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Struttura degli articoli</h2>
-  <div class="box">
-    <p>
-      Ogni articolo sarà presentato con titolo, data, inquadramento sintetico e collegamento alla pagina dedicata.
-      La sezione verrà costruita progressivamente, mantenendo ordine cronologico o tematico in base
-      allo sviluppo del sito.
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Articoli in preparazione</h2>
-
-  <div class="article-card">
-    <h3>Distinzione tra dato e interpretazione</h3>
-    <p class="meta">Metodo</p>
-    <p>
-      Testo dedicato alla separazione tra elementi osservabili, elementi riportati e costruzione narrativa.
-    </p>
-  </div>
-
-  <div class="article-card">
-    <h3>Tracciabilità e limiti inferenziali</h3>
-    <p class="meta">Ricerca documentaria</p>
-    <p>
-      Articolo dedicato al ruolo della fonte identificabile e ai limiti del completamento non controllato.
-    </p>
-  </div>
-
-  <div class="article-card">
-    <h3>Concretezza e controllo nella scrittura documentaria</h3>
-    <p class="meta">Scrittura</p>
-    <p>
-      Approfondimento sul rapporto tra densità descrittiva, neutralità e leggibilità del testo.
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Funzione nel sistema del sito</h2>
   <p>
-    La sezione Articoli collega il lavoro metodologico, la ricerca e la scrittura, ma senza confondere
-    le diverse aree. Il suo compito è ampliare, chiarire e sviluppare contenuti che nelle altre sezioni
-    sono presentati in forma più sintetica o strutturale.
+    Questi scritti non sostituiscono le pubblicazioni metodologiche, ma ne rappresentano un’estensione
+    applicativa e riflessiva in forma web. Per una presentazione strutturata del modello,
+    consulta la sezione <a href="../metodo/">Metodo</a>.
   </p>
 </section>
 
