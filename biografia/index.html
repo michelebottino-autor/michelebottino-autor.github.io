@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Michele Bottino – Biografia ufficiale</title>
-  <meta name="description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, opere e linea di scrittura.">
+  <meta name="description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, attività, opere e linea di scrittura.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/biografia/">
 
   <meta property="og:type" content="profile">
@@ -55,40 +54,18 @@
       color: #e5d3a3;
       margin: 0;
       line-height: 1.7;
-      letter-spacing: 0.01em;
       overflow-x: hidden;
     }
 
-    h1, h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+    h1, h2, h3 {
+      font-family: Georgia, serif;
       margin-top: 0;
       color: #e5d3a3;
     }
 
-    h1 {
-      font-size: 2.8rem;
-      line-height: 1.08;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      line-height: 1.2;
-      margin-top: 30px;
-      margin-bottom: 14px;
-    }
-
-    p {
-      max-width: 68ch;
-      margin-top: 0;
-      margin-bottom: 1.1em;
-    }
-
     .container {
       width: 100%;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -97,17 +74,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
       border-bottom: 1px solid #8f7748;
-      padding-bottom: 16px;
-      position: relative;
+      padding-bottom: 14px;
     }
 
     .logo img {
-      height: 64px;
-      width: auto;
-      display: block;
-      max-width: 100%;
+      height: 60px;
     }
 
     .nav-menu {
@@ -122,16 +94,15 @@
     .nav a {
       color: #c2a46d;
       text-decoration: none;
-      display: inline-block;
+      font-size: 0.95rem;
     }
 
     .menu-toggle {
       display: none;
       background: transparent;
       border: 1px solid #8f7748;
-      padding: 10px;
+      padding: 8px;
       cursor: pointer;
-      flex-shrink: 0;
     }
 
     .menu-toggle span {
@@ -142,33 +113,43 @@
       margin: 4px 0;
     }
 
-    section {
-      margin-bottom: 30px;
+    .page.container {
+      padding-top: 30px;
+      padding-bottom: 24px;
+    }
+
+    .page h1 {
+      font-size: 2.8rem;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .page h2 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-top: 30px;
+      margin-bottom: 14px;
+    }
+
+    .page p {
+      max-width: 68ch;
+      margin-top: 0;
+      margin-bottom: 1.1em;
     }
 
     .block {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 24px;
-      min-width: 0;
-    }
-
-    .block p {
-      max-width: 64ch;
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
     .section-link {
       display: inline-block;
-      margin-top: 8px;
-      padding-bottom: 2px;
+      margin-top: 10px;
       color: #c2a46d;
       text-decoration: none;
       border-bottom: 1px solid #c2a46d;
-      font-size: 0.95rem;
-    }
-
-    .section-link:hover {
-      opacity: 0.82;
     }
 
     footer {
@@ -181,62 +162,39 @@
         padding: 16px;
       }
 
-      h1 {
-        font-size: 2.1rem;
-        line-height: 1.08;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-        line-height: 1.2;
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      .nav {
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding-bottom: 12px;
-      }
-
-      .logo img {
-        height: 52px;
-      }
-
       .menu-toggle {
         display: block;
       }
 
       .nav-menu {
         display: none;
-        width: 100%;
         flex-direction: column;
-        margin-top: 14px;
-        gap: 8px;
+        width: 100%;
+        margin-top: 10px;
       }
 
       .nav-menu.active {
         display: flex;
       }
 
-      .nav-menu li {
-        width: 100%;
-      }
-
       .nav-menu a {
         display: block;
-        width: 100%;
         border: 1px solid #8f7748;
+        padding: 10px;
         background: #2a312d;
-        padding: 10px 12px;
       }
 
-      .block {
-        padding: 18px;
+      .page.container {
+        padding-top: 24px;
+        padding-bottom: 18px;
+      }
+
+      .page h1 {
+        font-size: 2.2rem;
+      }
+
+      .page h2 {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -247,29 +205,26 @@
 <header class="container">
   <nav class="nav">
     <div class="logo">
-      <a href="../">
-        <img src="../images/logo.png" alt="Michele Bottino">
-      </a>
+      <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </button>
 
-    <ul id="site-menu" class="nav-menu">
+    <ul class="nav-menu" id="menu">
       <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="container">
+<main class="page container">
 
 <section>
   <h1>Michele Bottino</h1>
@@ -316,14 +271,15 @@
   <h2>Attività</h2>
 
   <p>
-    L’attività di Michele Bottino è interamente orientata alla produzione di testi narrativi e saggistici.
-    All’interno di questo percorso, la forma del testo viene trattata come struttura e non come ornamento,
-    secondo un principio di essenzialità che privilegia la tenuta complessiva dell’opera.
+    L’attività di Michele Bottino è orientata alla produzione di testi narrativi e saggistici.
+    All’interno di questo percorso, la forma del testo viene trattata come struttura e non come
+    ornamento, secondo un principio di essenzialità che privilegia la tenuta complessiva dell’opera.
   </p>
 
   <p>
-    La narrativa e la saggistica non vengono sviluppate come ambiti separati, ma come espressioni diverse
-    di una stessa visione autoriale, fondata su controllo formale, linearità espositiva e coerenza interna.
+    La narrativa e la saggistica non vengono sviluppate come ambiti separati, ma come espressioni
+    diverse di una stessa visione autoriale, fondata su controllo formale, linearità espositiva
+    e coerenza interna.
   </p>
 </section>
 
@@ -333,13 +289,15 @@
   <div class="block">
     <p>
       Tra le sue opere figurano <em>Stige</em>, <em>Il deposito delle anime</em>,
-      <em>Intrighi Invisibili</em>, <em>Oniro</em>, <em>EUROPA: Anatomia di un crimine</em>
-      e <em>L’Uomo Consapevole</em>.
+      <em>Intrighi Invisibili</em>, <em>Oniro</em>, <em>Per tutta la mia vita</em>,
+      <em>L’Enigma dei Templari</em>, <em>EUROPA: Anatomia di un crimine</em>,
+      <em>L’Uomo Consapevole</em> e <em>Calatabiano Sacra</em>.
     </p>
 
     <p>
-      La produzione comprende sia narrativa sia saggistica, all’interno di una linea espressiva
-      che privilegia la solidità strutturale, la precisione dei contenuti e l’aderenza al reale.
+      Il catalogo comprende narrativa, saggistica e opere di taglio storico-simbolico,
+      all’interno di una linea espressiva che privilegia la solidità strutturale,
+      la precisione dei contenuti e l’aderenza al reale.
     </p>
 
     <a href="../opere/" class="section-link">Vai alle opere</a>
@@ -387,13 +345,9 @@
 </footer>
 
 <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
 </script>
 
 </body>
