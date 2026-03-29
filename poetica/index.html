@@ -4,56 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Opere – Michele Bottino, scrittore e saggista italiano</title>
-  <meta name="description" content="Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.">
+  <title>Poetica – Michele Bottino</title>
+  <meta name="description" content="Linea di scrittura e poetica di Michele Bottino, scrittore e saggista italiano.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#1f2623">
-  <link rel="canonical" href="https://michelebottino-autor.github.io/opere/">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/poetica/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
-  <meta property="og:title" content="Opere – Michele Bottino, scrittore e saggista italiano">
-  <meta property="og:description" content="Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.">
-  <meta property="og:url" content="https://michelebottino-autor.github.io/opere/">
+  <meta property="og:title" content="Poetica – Michele Bottino">
+  <meta property="og:description" content="Linea di scrittura e poetica di Michele Bottino, scrittore e saggista italiano.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/poetica/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
   <meta property="og:image:alt" content="Logo di Michele Bottino">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Opere – Michele Bottino, scrittore e saggista italiano">
-  <meta name="twitter:description" content="Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.">
+  <meta name="twitter:title" content="Poetica – Michele Bottino">
+  <meta name="twitter:description" content="Linea di scrittura e poetica di Michele Bottino, scrittore e saggista italiano.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Opere – Michele Bottino",
-    "url": "https://michelebottino-autor.github.io/opere/",
-    "description": "Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.",
-    "inLanguage": "it-IT",
-    "author": {
-      "@type": "Person",
-      "name": "Michele Bottino",
-      "url": "https://michelebottino-autor.github.io/",
-      "jobTitle": "Scrittore e saggista italiano"
-    }
+    "@type": "WebPage",
+    "name": "Poetica – Michele Bottino",
+    "url": "https://michelebottino-autor.github.io/poetica/",
+    "description": "Linea di scrittura e poetica di Michele Bottino, scrittore e saggista italiano."
   }
   </script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #1f2623;
       color: #e5d3a3;
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, serif;
+      margin-top: 0;
+      color: #e5d3a3;
     }
 
     .container {
-      max-width: 1000px;
-      margin: auto;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 20px;
     }
 
@@ -61,29 +65,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
-      padding-bottom: 16px;
-      position: relative;
+      padding-bottom: 14px;
     }
 
     .logo img {
-      height: 64px;
+      height: 60px;
     }
 
     .nav-menu {
       list-style: none;
       display: flex;
       gap: 14px;
-      padding: 0;
       margin: 0;
+      padding: 0;
       flex-wrap: wrap;
     }
 
     .nav a {
-      text-decoration: none;
       color: #c2a46d;
+      text-decoration: none;
       font-size: 0.95rem;
     }
 
@@ -91,93 +92,73 @@
       display: none;
       background: transparent;
       border: 1px solid #8f7748;
-      padding: 10px;
+      padding: 8px;
       cursor: pointer;
     }
 
     .menu-toggle span {
       display: block;
-      width: 24px;
+      width: 22px;
       height: 2px;
       background: #c2a46d;
-      margin: 5px 0;
+      margin: 4px 0;
     }
 
-    h1, h2, h3 {
-      color: #e5d3a3;
+    .page.container {
+      padding-top: 30px;
+      padding-bottom: 24px;
     }
 
-    section {
-      margin-bottom: 30px;
+    .page h1 {
+      font-size: 2.8rem;
+      line-height: 1.08;
+      margin-bottom: 14px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    .page h2 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-top: 30px;
+      margin-bottom: 14px;
     }
 
-    .book {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 18px;
-    }
-
-    .meta {
-      color: #c2a46d;
-      font-size: 0.9rem;
+    .page h3 {
+      font-size: 1.15rem;
+      line-height: 1.2;
       margin-bottom: 10px;
     }
 
-    .actions {
-      margin-top: 12px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    .page p {
+      max-width: 68ch;
+      margin-top: 0;
+      margin-bottom: 1.1em;
     }
 
-    .btn {
-      padding: 10px 14px;
-      border: 1px solid #c2a46d;
-      text-decoration: none;
+    .intro {
+      font-size: 1.05rem;
+      max-width: 62ch;
+    }
+
+    .block {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .note {
       color: #c2a46d;
-      display: inline-block;
-    }
-
-    .primary {
-      background: #c2a46d;
-      color: #1f2623;
-    }
-
-    .muted {
-      color: #c2a46d;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
     footer {
-      padding-bottom: 30px;
+      padding: 30px 0;
       color: #8f7748;
-    }
-
-    @media (max-width: 780px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 680px) {
       .container {
         padding: 16px;
-      }
-
-      .nav {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo img {
-        height: 56px;
       }
 
       .menu-toggle {
@@ -186,24 +167,33 @@
 
       .nav-menu {
         display: none;
-        width: 100%;
         flex-direction: column;
-        margin-top: 14px;
+        width: 100%;
+        margin-top: 10px;
       }
 
       .nav-menu.active {
         display: flex;
       }
 
-      .nav-menu li {
-        width: 100%;
-      }
-
-      .nav a {
+      .nav-menu a {
         display: block;
         border: 1px solid #8f7748;
-        background: #2a312d;
         padding: 10px;
+        background: #2a312d;
+      }
+
+      .page.container {
+        padding-top: 24px;
+        padding-bottom: 18px;
+      }
+
+      .page h1 {
+        font-size: 2.2rem;
+      }
+
+      .page h2 {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -214,144 +204,112 @@
 <header class="container">
   <nav class="nav">
     <div class="logo">
-      <a href="../">
-        <img src="../images/logo.png" alt="Michele Bottino">
-      </a>
+      <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </button>
 
-    <ul id="site-menu" class="nav-menu">
+    <ul class="nav-menu" id="menu">
       <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="container">
+<main class="page container">
 
 <section>
-  <h1>Opere</h1>
+  <h1>Poetica</h1>
+
+  <p class="intro">
+    La scrittura di Michele Bottino si sviluppa all’interno di una linea espressiva orientata
+    al realismo, inteso come adesione alla struttura del reale e rifiuto di ogni costruzione
+    artificiale non necessaria.
+  </p>
 
   <p>
-    Catalogo delle opere di Michele Bottino, scrittore e saggista italiano.
-    La produzione comprende narrativa e saggistica sviluppate all’interno
-    di un percorso autoriale coerente.
+    Il testo non è concepito come esercizio stilistico, ma come spazio di rappresentazione
+    controllata, in cui ogni elemento è subordinato alla coerenza interna e alla precisione della forma.
   </p>
 </section>
 
 <section>
-  <h2>Narrativa</h2>
+  <h2>Principi</h2>
 
-  <div class="grid">
+  <div class="block">
+    <p>
+      La scrittura si fonda su alcuni principi costanti: riduzione dell’enfasi,
+      eliminazione del superfluo, controllo del linguaggio e costruzione strutturale rigorosa.
+    </p>
 
-    <div class="book">
-      <h3>Stige: Una lettera senza destinatario</h3>
-      <div class="meta">ISBN: 979-8273513433 · Narrativa</div>
-      <p>Opera narrativa centrata su tensione interiore e costruzione simbolica.</p>
-      <div class="actions">
-        <a href="stige/" class="btn">Scheda</a>
-        <a href="https://www.foyles.co.uk/book/stige/michele-bottino/9798273513433" target="_blank" rel="noopener noreferrer" class="btn primary">Acquista</a>
-      </div>
-    </div>
-
-    <div class="book">
-      <h3>Oniro</h3>
-      <div class="meta">ISBN: 979-8328172820 · Narrativa</div>
-      <p>Esplorazione narrativa tra realtà e dimensione onirica.</p>
-      <div class="actions">
-        <a href="oniro/" class="btn">Scheda</a>
-        <span class="muted">Acquisto in aggiornamento</span>
-      </div>
-    </div>
-
-    <div class="book">
-      <h3>Intrighi Invisibili</h3>
-      <div class="meta">ISBN: 979-8326162311 · Narrativa</div>
-      <p>Thriller su dinamiche di potere e strutture invisibili.</p>
-      <div class="actions">
-        <a href="intrighi-invisibili/" class="btn">Scheda</a>
-        <span class="muted">Acquisto in aggiornamento</span>
-      </div>
-    </div>
-
-    <div class="book">
-      <h3>Il deposito delle anime</h3>
-      <div class="meta">ISBN: 978-1729307960 · Narrativa</div>
-      <p>Opera narrativa con elementi psicologici e simbolici.</p>
-      <div class="actions">
-        <span class="muted">Scheda in preparazione</span>
-        <a href="https://www.worldofbooks.com/en-gb/books/michele-bottino/il-deposito-delle-anime-dietro-l-ombra-dell-occupante/9781729307960" target="_blank" rel="noopener noreferrer" class="btn primary">Acquista</a>
-      </div>
-    </div>
-
-    <div class="book">
-      <h3>Per tutta la mia vita</h3>
-      <div class="meta">ISBN: 978-1729078532 · Narrativa</div>
-      <p>Testo a carattere autobiografico.</p>
-      <div class="actions">
-        <span class="muted">Scheda in preparazione</span>
-        <a href="https://www.waterstones.com/book/per-tutta-la-mia-vita/michele-bottino//9781729078532" target="_blank" rel="noopener noreferrer" class="btn primary">Acquista</a>
-      </div>
-    </div>
-
-    <div class="book">
-      <h3>L’Enigma dei Templari</h3>
-      <div class="meta">ISBN: 979-8333941565 · Narrativa</div>
-      <p>Opera a tema storico con struttura investigativa.</p>
-      <div class="actions">
-        <span class="muted">Scheda in preparazione</span>
-        <a href="https://www.walmart.com/ip/L-Enigma-dei-Templari-Alla-scoperta-del-Segreto-Siciliano/9798333941565" target="_blank" rel="noopener noreferrer" class="btn primary">Acquista</a>
-      </div>
-    </div>
-
+    <p>
+      L’obiettivo non è impressionare, ma restituire. Il testo deve mantenere una tensione
+      interna continua, evitando deviazioni decorative e conservando una direzione chiara.
+    </p>
   </div>
 </section>
 
 <section>
-  <h2>Saggistica</h2>
+  <h2>Struttura narrativa</h2>
 
-  <div class="grid">
+  <div class="block">
+    <p>
+      Le opere si sviluppano attraverso architetture compatte, costruite su relazioni interne
+      tra eventi, personaggi e contesto. La narrazione procede per necessità, non per accumulo.
+    </p>
 
-    <div class="book">
-      <h3>EUROPA: Anatomia di un crimine</h3>
-      <div class="meta">ISBN: 979-8335804790 · Saggistica</div>
-      <p>Analisi critica di sistemi politici ed economici.</p>
-      <div class="actions">
-        <span class="muted">Scheda in preparazione</span>
-        <span class="muted">Acquisto in aggiornamento</span>
-      </div>
-    </div>
-
-    <div class="book">
-      <h3>L’Uomo Consapevole</h3>
-      <div class="meta">ISBN: 979-8327178380 · Saggistica</div>
-      <p>Riflessione su consapevolezza e struttura individuale.</p>
-      <div class="actions">
-        <span class="muted">Scheda in preparazione</span>
-        <span class="muted">Acquisto in aggiornamento</span>
-      </div>
-    </div>
-
-    <div class="book">
-      <h3>Calatabiano Sacra: Il mistero della luce sull’acqua</h3>
-      <div class="meta">ISBN: 979-8272417756 · Saggistica</div>
-      <p>Opera dedicata al territorio di Calatabiano, con attenzione alle componenti storiche, religiose e culturali.</p>
-      <div class="actions">
-        <span class="muted">Scheda in preparazione</span>
-        <a href="https://bookshop.org/books/calatabiano-sacra-il-mistero-della-luce-sull-acqua/9798272417756" target="_blank" rel="noopener noreferrer" class="btn primary">Acquista</a>
-      </div>
-    </div>
-
+    <p>
+      Ogni elemento introdotto deve avere una funzione precisa all’interno del sistema narrativo,
+      evitando dispersioni e incoerenze.
+    </p>
   </div>
+</section>
+
+<section>
+  <h2>Lingua e forma</h2>
+
+  <div class="block">
+    <p>
+      La lingua è essenziale, priva di artifici e orientata alla chiarezza.
+      La scelta lessicale è funzionale alla precisione del contenuto e non alla ricerca di effetto.
+    </p>
+
+    <p>
+      La forma non è decorazione, ma struttura: definisce il modo in cui il contenuto prende corpo
+      e si rende leggibile.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Finalità</h2>
+
+  <div class="block">
+    <p>
+      La scrittura si propone come strumento di comprensione, non come esercizio autoreferenziale.
+      Il testo deve essere leggibile, coerente e verificabile nella sua costruzione interna.
+    </p>
+
+    <p>
+      In questa prospettiva, la letteratura diventa uno spazio di osservazione e restituzione,
+      in cui il reale viene organizzato senza essere alterato.
+    </p>
+  </div>
+</section>
+
+<section>
+  <p class="note">
+    La poetica di Michele Bottino si definisce attraverso una scrittura essenziale,
+    rigorosa e priva di artifici, in cui realismo, coerenza strutturale e controllo formale
+    costituiscono gli elementi centrali.
+  </p>
 </section>
 
 </main>
@@ -361,13 +319,9 @@
 </footer>
 
 <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  menuToggle.addEventListener('click', function () {
-    const isOpen = navMenu.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
 </script>
 
 </body>
