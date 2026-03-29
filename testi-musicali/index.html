@@ -5,24 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Testi musicali – Michele Bottino</title>
-  <meta name="description" content="Testi musicali di Michele Bottino, autore dei testi. Elenco dei brani pubblicati e distribuiti sulle piattaforme digitali.">
+  <meta name="description" content="Produzione di testi musicali di Michele Bottino, autore dei testi. Brani pubblicati e distribuiti sulle piattaforme digitali.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/testi-musicali/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
   <meta property="og:title" content="Testi musicali – Michele Bottino">
-  <meta property="og:description" content="Testi musicali di Michele Bottino, autore dei testi.">
+  <meta property="og:description" content="Produzione di testi musicali di Michele Bottino, autore dei testi.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/testi-musicali/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
   <meta property="og:image:alt" content="Logo di Michele Bottino">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Testi musicali – Michele Bottino">
-  <meta name="twitter:description" content="Testi musicali di Michele Bottino, autore dei testi.">
+  <meta name="twitter:description" content="Produzione di testi musicali di Michele Bottino, autore dei testi.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
   <script type="application/ld+json">
@@ -31,20 +30,7 @@
     "@type": "CollectionPage",
     "name": "Testi musicali – Michele Bottino",
     "url": "https://michelebottino-autor.github.io/testi-musicali/",
-    "description": "Raccolta dei testi musicali di Michele Bottino, autore dei testi."
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Michele Bottino",
-    "url": "https://michelebottino-autor.github.io/",
-    "jobTitle": "Scrittore e saggista italiano",
-    "sameAs": [
-      "https://www.facebook.com/michelebottinoautore"
-    ]
+    "description": "Produzione di testi musicali di Michele Bottino, autore dei testi."
   }
   </script>
 
@@ -59,46 +45,18 @@
       color: #e5d3a3;
       margin: 0;
       line-height: 1.7;
-      letter-spacing: 0.01em;
       overflow-x: hidden;
     }
 
     h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+      font-family: Georgia, serif;
+      margin-top: 0;
       color: #e5d3a3;
-      margin-top: 0;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      line-height: 1.08;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      line-height: 1.2;
-      margin-top: 30px;
-      margin-bottom: 14px;
-    }
-
-    h3 {
-      font-size: 1.3rem;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    p {
-      max-width: 68ch;
-      margin-top: 0;
-      margin-bottom: 1.1em;
     }
 
     .container {
       width: 100%;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -107,17 +65,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
       border-bottom: 1px solid #8f7748;
-      padding-bottom: 16px;
-      position: relative;
+      padding-bottom: 14px;
     }
 
     .logo img {
-      height: 64px;
-      width: auto;
-      display: block;
-      max-width: 100%;
+      height: 60px;
     }
 
     .nav-menu {
@@ -132,16 +85,15 @@
     .nav a {
       color: #c2a46d;
       text-decoration: none;
-      display: inline-block;
+      font-size: 0.95rem;
     }
 
     .menu-toggle {
       display: none;
       background: transparent;
       border: 1px solid #8f7748;
-      padding: 10px;
+      padding: 8px;
       cursor: pointer;
-      flex-shrink: 0;
     }
 
     .menu-toggle span {
@@ -152,38 +104,68 @@
       margin: 4px 0;
     }
 
-    section {
-      margin-bottom: 30px;
+    .page.container {
+      padding-top: 30px;
+      padding-bottom: 24px;
+    }
+
+    .page h1 {
+      font-size: 2.8rem;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .page h2 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-top: 30px;
+      margin-bottom: 14px;
+    }
+
+    .page h3 {
+      font-size: 1.15rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .page p {
+      max-width: 68ch;
+      margin-top: 0;
+      margin-bottom: 1.1em;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      max-width: 62ch;
     }
 
     .block {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 24px;
-      min-width: 0;
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
-    .grid {
+    .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
-    .entry {
+    .card {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 22px;
-      min-width: 0;
+      padding: 20px;
     }
 
     .meta {
       color: #c2a46d;
-      font-size: 0.94rem;
-      margin-bottom: 12px;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
     }
 
     .actions {
-      margin-top: 14px;
+      margin-top: 12px;
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
@@ -194,29 +176,16 @@
       text-decoration: none;
       display: inline-block;
       text-align: center;
-      font-size: 0.95rem;
     }
 
     .secondary {
       border: 1px solid #c2a46d;
       color: #c2a46d;
-      background: transparent;
     }
 
-    .section-link {
-      display: inline-block;
-      margin-top: 8px;
-      padding-bottom: 2px;
+    .note {
       color: #c2a46d;
-      text-decoration: none;
-      border-bottom: 1px solid #c2a46d;
-      font-size: 0.95rem;
-    }
-
-    .section-link:hover,
-    .btn:hover,
-    .nav a:hover {
-      opacity: 0.82;
+      font-size: 0.92rem;
     }
 
     footer {
@@ -225,7 +194,7 @@
     }
 
     @media (max-width: 900px) {
-      .grid {
+      .grid-2 {
         grid-template-columns: 1fr;
       }
     }
@@ -235,67 +204,39 @@
         padding: 16px;
       }
 
-      h1 {
-        font-size: 2.1rem;
-        line-height: 1.08;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-        line-height: 1.2;
-      }
-
-      h3 {
-        font-size: 1.15rem;
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      .nav {
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding-bottom: 12px;
-      }
-
-      .logo img {
-        height: 52px;
-      }
-
       .menu-toggle {
         display: block;
       }
 
       .nav-menu {
         display: none;
-        width: 100%;
         flex-direction: column;
-        margin-top: 14px;
-        gap: 8px;
+        width: 100%;
+        margin-top: 10px;
       }
 
       .nav-menu.active {
         display: flex;
       }
 
-      .nav-menu li {
-        width: 100%;
-      }
-
       .nav-menu a {
         display: block;
-        width: 100%;
         border: 1px solid #8f7748;
+        padding: 10px;
         background: #2a312d;
-        padding: 10px 12px;
       }
 
-      .block,
-      .entry {
-        padding: 18px;
+      .page.container {
+        padding-top: 24px;
+        padding-bottom: 18px;
+      }
+
+      .page h1 {
+        font-size: 2.2rem;
+      }
+
+      .page h2 {
+        font-size: 1.3rem;
       }
 
       .actions {
@@ -314,50 +255,50 @@
 <header class="container">
   <nav class="nav">
     <div class="logo">
-      <a href="../">
-        <img src="../images/logo.png" alt="Michele Bottino">
-      </a>
+      <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </button>
 
-    <ul id="site-menu" class="nav-menu">
+    <ul class="nav-menu" id="menu">
       <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="container">
+<main class="page container">
 
 <section>
   <h1>Testi musicali</h1>
 
-  <p>
-    Questa sezione raccoglie i brani di cui Michele Bottino è autore dei testi.
+  <p class="intro">
+    Accanto alla narrativa e alla saggistica, Michele Bottino sviluppa una produzione
+    di testi musicali che si colloca entro lo stesso orizzonte di scrittura:
+    attenzione alla misura, controllo linguistico e continuità espressiva.
   </p>
 
   <p>
-    Si tratta di una produzione testuale distinta dalla narrativa e dalla saggistica,
-    ma pienamente riconducibile al medesimo orizzonte autoriale.
+    Questa sezione raccoglie i brani pubblicati di cui Bottino è autore dei testi,
+    documentando una forma ulteriore della sua attività autoriale. 1
   </p>
 </section>
 
 <section>
+  <h2>Ruolo autoriale</h2>
+
   <div class="block">
-    <h2>Ruolo</h2>
     <p>
-      Michele Bottino interviene in questa area come <strong>autore dei testi</strong>.
+      In questa produzione Michele Bottino interviene come <strong>autore dei testi</strong>.
       Non è interprete né musicista. I brani risultano distribuiti tramite TuneCore
-      e presenti sulle principali piattaforme digitali. 1
+      e presenti su Spotify e YouTube. 2
     </p>
   </div>
 </section>
@@ -365,8 +306,8 @@
 <section>
   <h2>Brani pubblicati</h2>
 
-  <div class="grid">
-    <div class="entry">
+  <div class="grid-2">
+    <div class="card">
       <h3>Riconquistarti</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -375,7 +316,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Senza fare Rumore</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -384,7 +325,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Parlami Ancora</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -393,7 +334,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Casanova</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -402,7 +343,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Un Sogno che resta</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -411,7 +352,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Vivo da Re</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -420,7 +361,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Spento ma resto vivo</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -429,7 +370,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Notte Di Mezza Estate</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -438,7 +379,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Un'altra Notte a Metà</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -447,7 +388,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Dovevi solo Aspettare</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -456,7 +397,7 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="card">
       <h3>Nel respiro di te</h3>
       <div class="meta">Autore dei testi · TuneCore</div>
       <div class="actions">
@@ -468,11 +409,17 @@
 </section>
 
 <section>
+  <h2>Nota</h2>
+
   <div class="block">
-    <h2>Nota</h2>
     <p>
-      Questa sezione documenta una parte specifica della produzione testuale dell’autore,
-      distinta dalla narrativa e dalla saggistica ma coerente con il suo percorso di scrittura.
+      Questa produzione non viene presentata come percorso performativo o musicale in senso stretto,
+      ma come parte specifica di un’attività di scrittura più ampia, in cui il testo mantiene
+      la propria centralità. 3
+    </p>
+
+    <p class="note">
+      Discografia ricostruita sulla base del documento allegato. 4
     </p>
   </div>
 </section>
@@ -484,13 +431,9 @@
 </footer>
 
 <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
 </script>
 
 </body>
