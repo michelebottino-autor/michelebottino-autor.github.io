@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Opere – Michele Bottino</title>
-  <meta name="description" content="Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.">
+  <meta name="description" content="Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa, saggistica e opere storico-simboliche.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/opere/">
 
   <meta property="og:type" content="website">
@@ -31,14 +30,7 @@
     "@type": "CollectionPage",
     "name": "Opere – Michele Bottino",
     "url": "https://michelebottino-autor.github.io/opere/",
-    "description": "Catalogo delle opere di Michele Bottino, scrittore e saggista italiano.",
-    "inLanguage": "it-IT",
-    "author": {
-      "@type": "Person",
-      "name": "Michele Bottino",
-      "url": "https://michelebottino-autor.github.io/",
-      "jobTitle": "Scrittore e saggista italiano"
-    }
+    "description": "Catalogo delle opere di Michele Bottino, scrittore e saggista italiano."
   }
   </script>
 
@@ -53,46 +45,18 @@
       color: #e5d3a3;
       margin: 0;
       line-height: 1.7;
-      letter-spacing: 0.01em;
       overflow-x: hidden;
     }
 
     h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+      font-family: Georgia, serif;
+      margin-top: 0;
       color: #e5d3a3;
-      margin-top: 0;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      line-height: 1.08;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      line-height: 1.2;
-      margin-top: 30px;
-      margin-bottom: 14px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    p {
-      max-width: 68ch;
-      margin-top: 0;
-      margin-bottom: 1.1em;
     }
 
     .container {
       width: 100%;
-      max-width: 1020px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -101,17 +65,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
       border-bottom: 1px solid #8f7748;
-      padding-bottom: 16px;
-      position: relative;
+      padding-bottom: 14px;
     }
 
     .logo img {
-      height: 64px;
-      width: auto;
-      display: block;
-      max-width: 100%;
+      height: 60px;
     }
 
     .nav-menu {
@@ -126,16 +85,15 @@
     .nav a {
       color: #c2a46d;
       text-decoration: none;
-      display: inline-block;
+      font-size: 0.95rem;
     }
 
     .menu-toggle {
       display: none;
       background: transparent;
       border: 1px solid #8f7748;
-      padding: 10px;
+      padding: 8px;
       cursor: pointer;
-      flex-shrink: 0;
     }
 
     .menu-toggle span {
@@ -146,75 +104,56 @@
       margin: 4px 0;
     }
 
-    section {
-      margin-bottom: 32px;
+    .page.container {
+      padding-top: 30px;
+      padding-bottom: 24px;
+    }
+
+    .page h1 {
+      font-size: 2.8rem;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .page h2 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-top: 30px;
+      margin-bottom: 14px;
+    }
+
+    .page p {
+      max-width: 68ch;
+      margin-top: 0;
+      margin-bottom: 1.1em;
     }
 
     .intro {
       font-size: 1.05rem;
-      line-height: 1.8;
       max-width: 62ch;
     }
 
-    .grid {
+    .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
-    .book {
+    .card {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 22px;
-      min-width: 0;
+      padding: 20px;
     }
 
     .meta {
       color: #c2a46d;
-      font-size: 0.94rem;
-      margin-bottom: 12px;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
     }
 
-    .actions {
-      margin-top: 14px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 10px 14px;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-      font-size: 0.95rem;
-    }
-
-    .secondary {
-      border: 1px solid #c2a46d;
-      color: #c2a46d;
-      background: transparent;
-    }
-
-    .muted {
+    .note {
       color: #c2a46d;
       font-size: 0.92rem;
-    }
-
-    .section-link {
-      display: inline-block;
-      margin-top: 8px;
-      padding-bottom: 2px;
-      color: #c2a46d;
-      text-decoration: none;
-      border-bottom: 1px solid #c2a46d;
-      font-size: 0.95rem;
-    }
-
-    .section-link:hover,
-    .btn:hover,
-    .nav a:hover {
-      opacity: 0.82;
     }
 
     footer {
@@ -223,7 +162,7 @@
     }
 
     @media (max-width: 900px) {
-      .grid {
+      .grid-2 {
         grid-template-columns: 1fr;
       }
     }
@@ -233,74 +172,39 @@
         padding: 16px;
       }
 
-      h1 {
-        font-size: 2.1rem;
-        line-height: 1.08;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-        line-height: 1.2;
-      }
-
-      h3 {
-        font-size: 1.1rem;
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      .nav {
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding-bottom: 12px;
-      }
-
-      .logo img {
-        height: 52px;
-      }
-
       .menu-toggle {
         display: block;
       }
 
       .nav-menu {
         display: none;
-        width: 100%;
         flex-direction: column;
-        margin-top: 14px;
-        gap: 8px;
+        width: 100%;
+        margin-top: 10px;
       }
 
       .nav-menu.active {
         display: flex;
       }
 
-      .nav-menu li {
-        width: 100%;
-      }
-
       .nav-menu a {
         display: block;
-        width: 100%;
         border: 1px solid #8f7748;
+        padding: 10px;
         background: #2a312d;
-        padding: 10px 12px;
       }
 
-      .book {
-        padding: 18px;
+      .page.container {
+        padding-top: 24px;
+        padding-bottom: 18px;
       }
 
-      .actions {
-        flex-direction: column;
+      .page h1 {
+        font-size: 2.2rem;
       }
 
-      .actions .btn {
-        width: 100%;
+      .page h2 {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -311,29 +215,26 @@
 <header class="container">
   <nav class="nav">
     <div class="logo">
-      <a href="../">
-        <img src="../images/logo.png" alt="Michele Bottino">
-      </a>
+      <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </button>
 
-    <ul id="site-menu" class="nav-menu">
+    <ul class="nav-menu" id="menu">
       <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="container">
+<main class="page container">
 
 <section>
   <h1>Opere</h1>
@@ -348,38 +249,38 @@
 <section>
   <h2>Narrativa</h2>
 
-  <div class="grid">
-    <div class="book">
+  <div class="grid-2">
+    <div class="card">
       <h3>Stige: Una lettera senza destinatario</h3>
       <div class="meta">ISBN-13: 979-8273513433 · 152 pagine</div>
       <p>Romanzo introspettivo con struttura drammatica e forte componente simbolica.</p>
     </div>
 
-    <div class="book">
+    <div class="card">
       <h3>Il deposito delle anime: Dietro l’ombra dell’occupante</h3>
       <div class="meta">ISBN-13: 978-1729307960 · 190 pagine · 26 ottobre 2018</div>
       <p>Opera narrativa che combina mistero e introspezione psicologica.</p>
     </div>
 
-    <div class="book">
+    <div class="card">
       <h3>Intrighi Invisibili</h3>
       <div class="meta">ISBN-13: 979-8326162311</div>
       <p>Thriller centrato su dinamiche di potere occulto e verità nascoste.</p>
     </div>
 
-    <div class="book">
+    <div class="card">
       <h3>Oniro: Dove la realtà si dissolve</h3>
       <div class="meta">ISBN-13: 979-8328172820</div>
       <p>Romanzo che esplora il confine tra realtà e dimensione onirica.</p>
     </div>
 
-    <div class="book">
+    <div class="card">
       <h3>Per tutta la mia vita</h3>
       <div class="meta">ISBN-13: 978-1729078534</div>
       <p>Racconto autobiografico con focus su esperienza personale ed emotiva.</p>
     </div>
 
-    <div class="book">
+    <div class="card">
       <h3>L’Enigma dei Templari</h3>
       <div class="meta">ISBN-13: 979-8333941565 · 276 pagine · 23 luglio 2024</div>
       <p>Opera mystery storico sui Templari.</p>
@@ -390,20 +291,20 @@
 <section>
   <h2>Saggistica</h2>
 
-  <div class="grid">
-    <div class="book">
+  <div class="grid-2">
+    <div class="card">
       <h3>EUROPA: Anatomia di un crimine</h3>
       <div class="meta">ISBN-13: 979-8335804790</div>
       <p>Analisi critica delle dinamiche di potere politico ed economico europee.</p>
     </div>
 
-    <div class="book">
+    <div class="card">
       <h3>L’Uomo Consapevole: Il risveglio della coscienza tra filosofia e realtà</h3>
       <div class="meta">ISBN-13: 979-8327178380</div>
       <p>Saggio filosofico sulla consapevolezza individuale e i condizionamenti sociali.</p>
     </div>
 
-    <div class="book">
+    <div class="card">
       <h3>Calatabiano Sacra: Il mistero della luce sull’acqua</h3>
       <div class="meta">ISBN-13: 979-8272417756 · ASIN: B0FYXD5VNC · 133 pagine · 1 novembre 2025</div>
       <p>Opera storico-simbolica dedicata al territorio di Calatabiano.</p>
@@ -412,9 +313,9 @@
 </section>
 
 <section>
-  <p class="muted">
-    I dati bibliografici riportati in questa pagina derivano dal catalogo bibliografico professionale
-    e dal catalogo bibliografico completo allegati. 2 3
+  <p class="note">
+    Il catalogo bibliografico qui presentato riunisce narrativa, saggistica e opere di taglio storico-simbolico
+    entro un unico percorso autoriale coerente.
   </p>
 </section>
 
@@ -425,13 +326,9 @@
 </footer>
 
 <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
 </script>
 
 </body>
