@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Michele Bottino – Scrittore e saggista italiano</title>
-  <meta name="description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere di narrativa e saggistica, profilo autore, linea di scrittura e materiali editoriali.">
+  <meta name="description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere di narrativa e saggistica, profilo autore e linea di scrittura.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
@@ -16,16 +16,16 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
   <meta property="og:title" content="Michele Bottino – Scrittore e saggista italiano">
-  <meta property="og:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere di narrativa e saggistica, profilo autore e linea di scrittura.">
+  <meta property="og:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
-  <meta property="og:image:alt" content="Logo di Michele Bottino">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Michele Bottino – Scrittore e saggista italiano">
-  <meta name="twitter:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano.">
+  <meta name="twitter:description" content="Sito ufficiale di Michele Bottino.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
+  <!-- SEO STRUTTURATO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,8 +36,7 @@
     "description": "Sito ufficiale di Michele Bottino, scrittore e saggista italiano.",
     "publisher": {
       "@type": "Person",
-      "name": "Michele Bottino",
-      "url": "https://michelebottino-autor.github.io/"
+      "name": "Michele Bottino"
     }
   }
   </script>
@@ -48,7 +47,10 @@
     "@type": "Person",
     "name": "Michele Bottino",
     "url": "https://michelebottino-autor.github.io/",
-    "jobTitle": "Scrittore e saggista italiano"
+    "jobTitle": "Scrittore e saggista italiano",
+    "sameAs": [
+      "https://www.facebook.com/michelebottinoautore"
+    ]
   }
   </script>
 
@@ -71,87 +73,44 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 16px;
-      position: relative;
     }
 
     .logo img {
       height: 64px;
-      width: auto;
-      display: block;
     }
 
     .nav-menu {
       list-style: none;
       display: flex;
       gap: 14px;
-      padding: 0;
       margin: 0;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      padding: 0;
     }
 
     .nav a {
-      text-decoration: none;
       color: #c2a46d;
-      font-size: 0.95rem;
-      padding: 6px 8px;
-      display: inline-block;
+      text-decoration: none;
     }
 
     .menu-toggle {
       display: none;
-      background: transparent;
-      border: 1px solid #8f7748;
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #c2a46d;
-      margin: 5px 0;
     }
 
     .hero {
-      padding: 40px 20px 30px 20px;
+      padding: 40px 0;
     }
 
     .cta {
+      margin-top: 20px;
       display: flex;
       gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 15px;
-      text-align: center;
-    }
-
-    .card h3 {
-      margin-top: 12px;
-      margin-bottom: 8px;
-      color: #e5d3a3;
     }
 
     .btn {
       padding: 10px 15px;
       text-decoration: none;
-      display: inline-block;
     }
 
     .primary {
@@ -164,228 +123,49 @@
       color: #c2a46d;
     }
 
-    a {
-      color: #c2a46d;
-    }
-
-    section {
-      margin-bottom: 36px;
-    }
-
-    footer {
-      padding-bottom: 30px;
-      color: #8f7748;
-    }
-
-    .featured-book {
+    .grid-3 {
       display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 20px;
-    }
-
-    .featured-book img {
-      width: 100%;
-      height: auto;
-      max-height: 460px;
-      object-fit: contain;
-      background: #1f2623;
-      display: block;
-    }
-
-    .book-meta {
-      color: #c2a46d;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    .updates-box {
-      background: #2a312d;
-      border: 1px solid #c2a46d;
-      padding: 20px;
-    }
-
-    .updates-box h2 {
-      margin-top: 0;
-    }
-
-    .updates-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .update-item {
-      border: 1px solid #8f7748;
-      padding: 16px;
-      background: #1f2623;
-    }
-
-    .update-label {
-      display: inline-block;
-      font-size: 0.82rem;
-      color: #1f2623;
-      background: #c2a46d;
-      padding: 4px 8px;
-      margin-bottom: 10px;
-    }
-
-    .update-item h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 1.05rem;
+      padding: 15px;
     }
 
     .subtle-block {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 18px;
+      padding: 20px;
     }
 
-    .small-note {
-      color: #c2a46d;
-      font-size: 0.92rem;
-    }
-
-    .cookie-banner {
-      position: fixed;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 18px;
-      z-index: 9999;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
-    }
-
-    .cookie-banner p {
-      margin-top: 0;
-      margin-bottom: 12px;
-    }
-
-    .cookie-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .cookie-actions button,
-    .cookie-actions a {
-      padding: 10px 14px;
-      border: 1px solid #c2a46d;
-      background: transparent;
-      color: #c2a46d;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    .cookie-actions .accept {
-      background: #c2a46d;
-      color: #1f2623;
-    }
-
-    .cookie-actions .reject {
-      background: transparent;
-      color: #c2a46d;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 900px) {
-      .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .featured-book {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-book img {
-        max-height: 380px;
-      }
-
-      .updates-grid {
-        grid-template-columns: 1fr;
-      }
+    footer {
+      padding: 30px 0;
+      color: #8f7748;
     }
 
     @media (max-width: 680px) {
-      .container {
-        padding: 16px;
-      }
-
-      .nav {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-      }
-
-      .logo img {
-        height: 56px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
       .nav-menu {
         display: none;
-        width: 100%;
         flex-direction: column;
-        margin-top: 14px;
+        width: 100%;
       }
 
       .nav-menu.active {
         display: flex;
       }
 
-      .nav-menu li {
-        width: 100%;
-      }
-
-      .nav-menu a {
-        width: 100%;
-        box-sizing: border-box;
+      .menu-toggle {
+        display: block;
+        background: none;
         border: 1px solid #8f7748;
-        background: #2a312d;
-        padding: 10px 12px;
+        padding: 10px;
       }
 
       .grid-3 {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 24px 16px;
-      }
-
-      h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-      }
-
-      h2 {
-        line-height: 1.25;
-      }
-
-      .cookie-banner {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        padding: 14px;
-      }
-
-      .cookie-actions {
-        flex-direction: column;
       }
     }
   </style>
@@ -401,13 +181,9 @@
       </a>
     </div>
 
-    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <button class="menu-toggle">Menu</button>
 
-    <ul id="site-menu" class="nav-menu">
+    <ul class="nav-menu">
       <li><a href="./">Home</a></li>
       <li><a href="biografia/">Autore</a></li>
       <li><a href="opere/">Opere</a></li>
@@ -425,9 +201,9 @@
   <h2>Scrittore e saggista italiano</h2>
 
   <p>
-    La sua produzione comprende opere di narrativa e di saggistica sviluppate all’interno
-    di una linea espressiva orientata al realismo, alla coerenza strutturale e al controllo
-    formale del testo.
+    La sua produzione comprende opere di narrativa e di saggistica sviluppate
+    all’interno di una linea espressiva orientata al realismo, alla coerenza
+    strutturale e al controllo formale del testo.
   </p>
 
   <div class="cta">
@@ -436,131 +212,36 @@
   </div>
 </section>
 
-<section class="container">
-  <div class="updates-box">
-    <h2>Profilo autore</h2>
-    <p>
-      Michele Bottino (1972) è uno scrittore e saggista italiano.
-      I suoi lavori affrontano temi legati alla dimensione umana,
-      alle dinamiche di potere e al rapporto tra esperienza individuale
-      e contesto storico.
-    </p>
-
-    <div class="updates-grid">
-      <div class="update-item">
-        <div class="update-label">Narrativa</div>
-        <h3>Romanzi</h3>
-        <p>
-          Una produzione narrativa sviluppata attraverso una scrittura essenziale,
-          controllata e coerente, orientata al realismo e alla tenuta strutturale del testo.
-        </p>
-        <a href="opere/" class="btn secondary">Scopri le opere</a>
-      </div>
-
-      <div class="update-item">
-        <div class="update-label">Saggistica</div>
-        <h3>Saggi</h3>
-        <p>
-          Una linea saggistica fondata su chiarezza espositiva, precisione linguistica
-          e costruzione rigorosa dei contenuti.
-        </p>
-        <a href="opere/" class="btn secondary">Vai ai saggi</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container">
-  <h2>Linea di scrittura</h2>
-  <p>
-    La scrittura di Michele Bottino si distingue per un’impostazione essenziale e priva di artifici,
-    fondata su precisione linguistica, chiarezza espositiva e coerenza narrativa.
-  </p>
-  <p>
-    L’elaborazione delle opere si fonda su un processo rigoroso di costruzione e verifica del testo,
-    integrato nella pratica della scrittura e orientato alla produzione di opere solide, leggibili
-    e prive di ridondanze.
-  </p>
-
-  <div class="cta">
-    <a href="poetica/" class="btn secondary">Leggi la poetica</a>
-  </div>
-</section>
-
 <section class="container grid-3">
   <div class="card">
     <h3>Opere</h3>
-    <p>Romanzi e saggi che definiscono il percorso autoriale.</p>
-    <a href="opere/">Vai alle opere</a>
+    <p>Romanzi e saggi.</p>
+    <a href="opere/">Vai</a>
   </div>
 
   <div class="card">
     <h3>Autore</h3>
-    <p>Biografia, profilo ufficiale e nota autore.</p>
-    <a href="biografia/">Leggi il profilo</a>
+    <p>Biografia ufficiale.</p>
+    <a href="biografia/">Vai</a>
   </div>
 
   <div class="card">
     <h3>Poetica</h3>
-    <p>Una scrittura orientata al realismo, alla misura e alla coerenza.</p>
-    <a href="poetica/">Approfondisci</a>
+    <p>Linea di scrittura.</p>
+    <a href="poetica/">Vai</a>
   </div>
-</section>
-
-<section class="container">
-  <h2>Opera in evidenza</h2>
-
-  <div class="featured-book">
-    <div>
-      <img src="images/opere/michele-bottino_stige_copertina.jpg" alt="Copertina di Stige di Michele Bottino">
-    </div>
-
-    <div>
-      <h3>Stige: Una lettera senza destinatario</h3>
-      <div class="book-meta">ISBN: 979-8273513433</div>
-
-      <p>
-        <em>Stige</em> è un’opera narrativa costruita su una tensione interiore costante,
-        dove la dimensione simbolica e quella emotiva si intrecciano in una scrittura
-        controllata, essenziale e orientata alla profondità del vissuto.
-      </p>
-
-      <p>
-        Il romanzo sviluppa una narrazione raccolta e intensa, centrata sul rapporto tra
-        assenza, memoria e ricerca di senso, mantenendo una forte coerenza stilistica
-        e una struttura compatta.
-      </p>
-
-      <div class="cta">
-        <a href="https://www.foyles.co.uk/book/stige/michele-bottino/9798273513433" class="btn primary" target="_blank" rel="noopener noreferrer">Acquista</a>
-        <a href="opere/" class="btn secondary">Guarda le altre opere</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container">
-  <h2>Opere principali</h2>
-  <p>
-    Nel corso della sua attività ha pubblicato romanzi e saggi, tra cui
-    <em>Stige</em>, <em>Il deposito delle anime</em>, <em>Intrighi Invisibili</em>,
-    <em>Oniro</em>, <em>EUROPA: Anatomia di un crimine</em> e
-    <em>L’Uomo Consapevole</em>.
-  </p>
 </section>
 
 <section class="container">
   <div class="subtle-block">
-    <h2>Materiali e percorsi complementari</h2>
+    <h2>Aggiornamenti</h2>
     <p>
-      Accanto alla produzione narrativa e saggistica, il sito ospiterà anche una sezione dedicata
-      ad attività documentarie e materiali specialistici, organizzata in forma distinta rispetto
-      al profilo autoriale principale.
+      Per aggiornamenti editoriali, articoli e contenuti,
+      è possibile seguire la pagina Facebook ufficiale.
     </p>
-    <p class="small-note">
-      Sezione predisposta per sviluppi futuri:
-      <a href="ricerca/">Ricerca documentaria</a>
-    </p>
+    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" class="btn secondary">
+      Segui su Facebook
+    </a>
   </div>
 </section>
 
@@ -568,14 +249,8 @@
   <h2>Nota autore</h2>
   <p>
     Michele Bottino (1972) è uno scrittore e saggista italiano.
-    La sua produzione comprende opere di narrativa e di saggistica sviluppate
-    all’interno di una linea espressiva orientata al realismo, alla coerenza
-    strutturale e al controllo formale del testo.
-  </p>
-  <p>
     Una scrittura essenziale che restituisce il reale senza artifici.
   </p>
-  <a href="biografia/">Leggi la biografia completa</a>
 </section>
 
 </main>
@@ -584,76 +259,12 @@
   <p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.</p>
 </footer>
 
-<div id="cookie-banner" class="cookie-banner hidden">
-  <p>
-    Questo sito utilizza cookie tecnici e, previo consenso, strumenti di analytics e tracciamento.
-    Puoi accettare o rifiutare i cookie non tecnici. Per maggiori informazioni consulta la
-    <a href="privacy/">Privacy Policy</a> e la <a href="cookie/">Cookie Policy</a>.
-  </p>
-
-  <div class="cookie-actions">
-    <button id="accept-cookies" class="accept" type="button">Accetta</button>
-    <button id="reject-cookies" class="reject" type="button">Rifiuta</button>
-    <a href="cookie/">Approfondisci</a>
-  </div>
-</div>
-
 <script>
-  const cookieBanner = document.getElementById('cookie-banner');
-  const acceptCookies = document.getElementById('accept-cookies');
-  const rejectCookies = document.getElementById('reject-cookies');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.nav-menu');
 
-  function loadGA() {
-    if (window.gaLoaded) return;
-    window.gaLoaded = true;
-
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-    document.head.appendChild(script1);
-
-    const script2 = document.createElement('script');
-    script2.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        analytics_storage: 'granted',
-        ad_storage: 'granted',
-        ad_user_data: 'granted',
-        ad_personalization: 'granted'
-      });
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    `;
-    document.head.appendChild(script2);
-  }
-
-  const consent = localStorage.getItem('mb_cookie_consent');
-
-  if (!consent) {
-    cookieBanner.classList.remove('hidden');
-  }
-
-  if (consent === 'accepted') {
-    loadGA();
-  }
-
-  acceptCookies.addEventListener('click', function () {
-    localStorage.setItem('mb_cookie_consent', 'accepted');
-    cookieBanner.classList.add('hidden');
-    loadGA();
-  });
-
-  rejectCookies.addEventListener('click', function () {
-    localStorage.setItem('mb_cookie_consent', 'rejected');
-    cookieBanner.classList.add('hidden');
-  });
-
-  menuToggle.addEventListener('click', function () {
-    const isOpen = navMenu.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
   });
 </script>
 
