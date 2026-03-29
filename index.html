@@ -46,6 +46,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #8f7748;
+      position: relative;
     }
 
     .logo img {
@@ -130,12 +131,17 @@
 
 <header class="container">
   <nav class="nav">
+
     <div class="logo">
-      <a href="./"><img src="images/logo.png" alt="Michele Bottino"></a>
+      <a href="./">
+        <img src="images/logo.png" alt="Michele Bottino">
+      </a>
     </div>
 
-    <button class="menu-toggle">
-      <span></span><span></span><span></span>
+    <button class="menu-toggle" aria-label="Apri il menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
     <ul class="nav-menu">
@@ -146,6 +152,7 @@
       <li><a href="media/">Media</a></li>
       <li><a href="contatti/">Contatti</a></li>
     </ul>
+
   </nav>
 </header>
 
@@ -154,7 +161,10 @@
 <section class="hero">
   <h1>Michele Bottino</h1>
   <h2>Scrittore e saggista italiano</h2>
-  <p>Una scrittura essenziale che restituisce il reale senza artifici.</p>
+
+  <p>
+    Una scrittura essenziale che restituisce il reale senza artifici.
+  </p>
 
   <div class="cta">
     <a href="opere/" class="btn primary">Opere</a>
@@ -177,6 +187,9 @@
     La sua scrittura si distingue per un’impostazione essenziale,
     fondata su precisione linguistica, chiarezza espositiva e coerenza narrativa.
   </p>
+
+  <!-- collegamento strategico alla poetica -->
+  <a href="poetica/" class="btn secondary">Leggi la poetica</a>
 </section>
 
 <section>
