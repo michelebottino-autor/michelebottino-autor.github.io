@@ -5,20 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Testi musicali – Michele Bottino</title>
-  <meta name="description" content="Testi musicali scritti da Michele Bottino con collegamenti ai brani su Spotify.">
+  <meta name="description" content="Testi musicali di Michele Bottino, autore dei testi. Elenco dei brani pubblicati e distribuiti sulle piattaforme digitali.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/testi-musicali/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Testi musicali – Michele Bottino">
+  <meta property="og:description" content="Testi musicali di Michele Bottino, autore dei testi.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/testi-musicali/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
+  <meta property="og:image:alt" content="Logo di Michele Bottino">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Testi musicali – Michele Bottino">
+  <meta name="twitter:description" content="Testi musicali di Michele Bottino, autore dei testi.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Testi musicali – Michele Bottino",
+    "url": "https://michelebottino-autor.github.io/testi-musicali/",
+    "description": "Raccolta dei testi musicali di Michele Bottino, autore dei testi."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michele Bottino",
+    "url": "https://michelebottino-autor.github.io/",
+    "jobTitle": "Scrittore e saggista italiano",
+    "sameAs": [
+      "https://www.facebook.com/michelebottinoautore"
+    ]
+  }
+  </script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #1f2623;
       color: #e5d3a3;
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #e5d3a3;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-top: 30px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 68ch;
+      margin-top: 0;
+      margin-bottom: 1.1em;
     }
 
     .container {
-      max-width: 900px;
-      margin: auto;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
       padding: 20px;
     }
 
@@ -27,63 +108,126 @@
       justify-content: space-between;
       align-items: center;
       gap: 20px;
-      flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 16px;
+      position: relative;
     }
 
     .logo img {
       height: 64px;
+      width: auto;
+      display: block;
+      max-width: 100%;
     }
 
-    .nav ul {
+    .nav-menu {
       list-style: none;
       display: flex;
       gap: 14px;
-      padding: 0;
       margin: 0;
+      padding: 0;
       flex-wrap: wrap;
     }
 
     .nav a {
-      text-decoration: none;
       color: #c2a46d;
-      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-block;
     }
 
-    h1, h2, h3 {
-      color: #e5d3a3;
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #8f7748;
+      padding: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 4px 0;
     }
 
     section {
       margin-bottom: 30px;
     }
 
-    .track {
+    .block {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 18px;
-      margin-bottom: 18px;
+      padding: 24px;
+      min-width: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .entry {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 22px;
+      min-width: 0;
     }
 
     .meta {
       color: #c2a46d;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
+      font-size: 0.94rem;
+      margin-bottom: 12px;
+    }
+
+    .actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-      margin-top: 10px;
       padding: 10px 14px;
-      border: 1px solid #c2a46d;
       text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .secondary {
+      border: 1px solid #c2a46d;
       color: #c2a46d;
+      background: transparent;
+    }
+
+    .section-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding-bottom: 2px;
+      color: #c2a46d;
+      text-decoration: none;
+      border-bottom: 1px solid #c2a46d;
+      font-size: 0.95rem;
+    }
+
+    .section-link:hover,
+    .btn:hover,
+    .nav a:hover {
+      opacity: 0.82;
     }
 
     footer {
-      padding-bottom: 30px;
+      padding: 30px 0;
       color: #8f7748;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 680px) {
@@ -91,23 +235,75 @@
         padding: 16px;
       }
 
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
+      h1 {
+        font-size: 2.1rem;
+        line-height: 1.08;
       }
 
-      .nav ul {
+      h2 {
+        font-size: 1.3rem;
+        line-height: 1.2;
+      }
+
+      h3 {
+        font-size: 1.15rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .nav {
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 12px;
+      }
+
+      .logo img {
+        height: 52px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
+        margin-top: 14px;
         gap: 8px;
       }
 
-      .nav a {
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
+        width: 100%;
+      }
+
+      .nav-menu a {
         display: block;
+        width: 100%;
         border: 1px solid #8f7748;
         background: #2a312d;
-        padding: 10px;
+        padding: 10px 12px;
+      }
+
+      .block,
+      .entry {
+        padding: 18px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .actions .btn {
+        width: 100%;
       }
     }
   </style>
@@ -123,14 +319,18 @@
       </a>
     </div>
 
-    <ul>
+    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul id="site-menu" class="nav-menu">
       <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Biografia</a></li>
+      <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../articoli/">Scritti</a></li>
-      <li><a href="../testi-musicali/">Testi musicali</a></li>
-      <li><a href="../media/">Rassegna stampa</a></li>
+      <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
@@ -142,91 +342,156 @@
   <h1>Testi musicali</h1>
 
   <p>
-    Questa sezione raccoglie i testi musicali scritti da Michele Bottino.
-    I brani sono disponibili su Spotify tramite collegamenti esterni.
+    Questa sezione raccoglie i brani di cui Michele Bottino è autore dei testi.
   </p>
 
   <p>
-    In questo ambito, Michele Bottino opera come autore dei testi.
+    Si tratta di una produzione testuale distinta dalla narrativa e dalla saggistica,
+    ma pienamente riconducibile al medesimo orizzonte autoriale.
   </p>
 </section>
 
 <section>
-  <h2>Brani</h2>
-
-  <div class="track">
-    <h3>Riconquistarti</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Riconquistarti" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
+  <div class="block">
+    <h2>Ruolo</h2>
+    <p>
+      Michele Bottino interviene in questa area come <strong>autore dei testi</strong>.
+      Non è interprete né musicista. I brani risultano distribuiti tramite TuneCore
+      e presenti sulle principali piattaforme digitali. 1
+    </p>
   </div>
+</section>
 
-  <div class="track">
-    <h3>Senza fare Rumore</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Senza%20fare%20Rumore" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
+<section>
+  <h2>Brani pubblicati</h2>
+
+  <div class="grid">
+    <div class="entry">
+      <h3>Riconquistarti</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Riconquistarti" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Riconquistarti" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Senza fare Rumore</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Senza%20fare%20Rumore" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Senza+fare+Rumore" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Parlami Ancora</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Parlami%20Ancora" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Parlami+Ancora" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Casanova</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Casanova" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Casanova" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Un Sogno che resta</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Un%20Sogno%20che%20resta" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Un+Sogno+che+resta" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Vivo da Re</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Vivo%20da%20Re" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Vivo+da+Re" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Spento ma resto vivo</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Spento%20ma%20resto%20vivo" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Spento+ma+resto+vivo" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Notte Di Mezza Estate</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Notte%20Di%20Mezza%20Estate" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Notte+Di+Mezza+Estate" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Un'altra Notte a Metà</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Un'altra%20Notte%20a%20Metà" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Un'altra+Notte+a+Metà" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Dovevi solo Aspettare</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Dovevi%20solo%20Aspettare" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Dovevi+solo+Aspettare" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h3>Nel respiro di te</h3>
+      <div class="meta">Autore dei testi · TuneCore</div>
+      <div class="actions">
+        <a href="https://open.spotify.com/search/Nel%20respiro%20di%20te" target="_blank" rel="noopener noreferrer" class="btn secondary">Spotify</a>
+        <a href="https://www.youtube.com/results?search_query=Nel+respiro+di+te" target="_blank" rel="noopener noreferrer" class="btn secondary">YouTube</a>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="track">
-    <h3>Parlami Ancora</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Parlami%20Ancora" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
+<section>
+  <div class="block">
+    <h2>Nota</h2>
+    <p>
+      Questa sezione documenta una parte specifica della produzione testuale dell’autore,
+      distinta dalla narrativa e dalla saggistica ma coerente con il suo percorso di scrittura.
+    </p>
   </div>
-
-  <div class="track">
-    <h3>Casanova</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Casanova" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
-  </div>
-
-  <div class="track">
-    <h3>Un Sogno che resta</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Un%20Sogno%20che%20resta" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
-  </div>
-
-  <div class="track">
-    <h3>Vivo da Re</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Vivo%20da%20Re" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
-  </div>
-
-  <div class="track">
-    <h3>Spento ma resto vivo</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Spento%20ma%20resto%20vivo" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
-  </div>
-
-  <div class="track">
-    <h3>Notte Di Mezza Estate</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Notte%20Di%20Mezza%20Estate" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
-  </div>
-
-  <div class="track">
-    <h3>Un'altra Notte a Metà</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Un'altra%20Notte%20a%20Metà" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
-  </div>
-
-  <div class="track">
-    <h3>Dovevi solo Aspettare</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Dovevi%20solo%20Aspettare" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
-  </div>
-
-  <div class="track">
-    <h3>Nel respiro di te</h3>
-    <div class="meta">Distribuzione: TuneCore</div>
-    <a class="btn" href="https://open.spotify.com/search/Nel%20respiro%20di%20te" target="_blank" rel="noopener noreferrer">Ascolta su Spotify</a>
-  </div>
-
 </section>
 
 </main>
 
 <footer class="container">
-  <p>© Michele Bottino</p>
+  <p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.</p>
 </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+</script>
 
 </body>
 </html>
