@@ -144,6 +144,9 @@
       text-decoration: none;
       color: #c2a46d;
       display: inline-block;
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.95rem;
     }
 
     .secondary {
@@ -154,6 +157,30 @@
     .muted {
       color: #c2a46d;
       font-size: 0.92rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      background: #1f2623;
+      border: 1px solid #8f7748;
+      color: #e5d3a3;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #c2a46d;
+    }
+
+    label {
+      display: block;
+      margin-top: 8px;
+      color: #e5d3a3;
     }
 
     footer {
@@ -272,14 +299,28 @@
 </section>
 
 <section>
-  <h2>Contatti editoriali</h2>
+  <h2>Contatto diretto</h2>
 
   <div class="block">
-    <p>
-      Ulteriori riferimenti o modalità di contatto diretto possono essere inseriti in questa sezione.
-    </p>
-    <p class="muted">
-      Sezione predisposta per aggiornamenti futuri.
+    <form action="https://formsubmit.co/michelebottino.adc@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nuovo messaggio dal sito Michele Bottino">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="messaggio">Messaggio</label>
+      <textarea id="messaggio" name="messaggio" rows="6" required></textarea>
+
+      <button type="submit" class="btn secondary">Invia messaggio</button>
+    </form>
+
+    <p class="muted" style="margin-top: 14px;">
+      Il modulo invia il messaggio all’indirizzo ufficiale indicato per i contatti del sito.
     </p>
   </div>
 </section>
