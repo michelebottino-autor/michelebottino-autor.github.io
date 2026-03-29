@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Opere – Michele Bottino</title>
-  <meta name="description" content="Catalogo delle opere di Michele Bottino: narrativa, saggistica e ricerca.">
+  <title>Opere – Michele Bottino, scrittore e saggista italiano</title>
+  <meta name="description" content="Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
@@ -14,15 +14,15 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
-  <meta property="og:title" content="Opere – Michele Bottino">
-  <meta property="og:description" content="Catalogo delle opere di Michele Bottino: narrativa, saggistica e ricerca.">
+  <meta property="og:title" content="Opere – Michele Bottino, scrittore e saggista italiano">
+  <meta property="og:description" content="Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/opere/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
   <meta property="og:image:alt" content="Logo di Michele Bottino">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Opere – Michele Bottino">
-  <meta name="twitter:description" content="Catalogo delle opere di Michele Bottino: narrativa, saggistica e ricerca.">
+  <meta name="twitter:title" content="Opere – Michele Bottino, scrittore e saggista italiano">
+  <meta name="twitter:description" content="Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
   <script type="application/ld+json">
@@ -31,12 +31,13 @@
     "@type": "CollectionPage",
     "name": "Opere – Michele Bottino",
     "url": "https://michelebottino-autor.github.io/opere/",
-    "description": "Catalogo delle opere di Michele Bottino: narrativa, saggistica e ricerca.",
+    "description": "Catalogo delle opere di Michele Bottino, scrittore e saggista italiano. Narrativa e saggistica.",
     "inLanguage": "it-IT",
     "author": {
       "@type": "Person",
       "name": "Michele Bottino",
-      "url": "https://michelebottino-autor.github.io/"
+      "url": "https://michelebottino-autor.github.io/",
+      "jobTitle": "Scrittore e saggista italiano"
     }
   }
   </script>
@@ -167,13 +168,14 @@
       flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 16px;
+      position: relative;
     }
 
     .logo img {
       height: 64px;
     }
 
-    .nav ul {
+    .nav-menu {
       list-style: none;
       display: flex;
       gap: 14px;
@@ -186,6 +188,22 @@
       text-decoration: none;
       color: #c2a46d;
       font-size: 0.95rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #8f7748;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 5px 0;
     }
 
     h1, h2, h3 {
@@ -226,6 +244,7 @@
       border: 1px solid #c2a46d;
       text-decoration: none;
       color: #c2a46d;
+      display: inline-block;
     }
 
     .primary {
@@ -255,15 +274,32 @@
       }
 
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
       }
 
-      .nav ul {
+      .logo img {
+        height: 56px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        flex-direction: column;
+        margin-top: 14px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
+        width: 100%;
       }
 
       .nav a {
@@ -286,14 +322,18 @@
       </a>
     </div>
 
-    <ul>
+    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul id="site-menu" class="nav-menu">
       <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Biografia</a></li>
+      <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../articoli/">Scritti</a></li>
-      <li><a href="../testi-musicali/">Testi musicali</a></li>
-      <li><a href="../media/">Rassegna stampa</a></li>
+      <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
@@ -305,13 +345,14 @@
   <h1>Opere</h1>
 
   <p>
-    Catalogo completo delle opere di Michele Bottino.  
-    L’ordine segue una logica editoriale interna, con priorità alle opere più rappresentative.
+    Catalogo delle opere di Michele Bottino, scrittore e saggista italiano.
+    La produzione comprende narrativa e saggistica sviluppate all’interno
+    di un percorso autoriale coerente.
   </p>
 </section>
 
 <section>
-  <h2>Catalogo</h2>
+  <h2>Narrativa</h2>
 
   <div class="grid">
 
@@ -322,16 +363,6 @@
       <div class="actions">
         <a href="stige/" class="btn">Scheda</a>
         <a href="https://www.foyles.co.uk/book/stige/michele-bottino/9798273513433" target="_blank" rel="noopener noreferrer" class="btn primary">Acquista</a>
-      </div>
-    </div>
-
-    <div class="book">
-      <h3>Calatabiano Sacra: Il mistero della luce sull’acqua</h3>
-      <div class="meta">ISBN: 979-8272417756 · Ricerca</div>
-      <p>Opera storico-documentaria con componente simbolica e territoriale.</p>
-      <div class="actions">
-        <span class="muted">Scheda in preparazione</span>
-        <a href="https://bookshop.org/books/calatabiano-sacra-il-mistero-della-luce-sull-acqua/9798272417756" target="_blank" rel="noopener noreferrer" class="btn primary">Acquista</a>
       </div>
     </div>
 
@@ -385,6 +416,14 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<section>
+  <h2>Saggistica</h2>
+
+  <div class="grid">
+
     <div class="book">
       <h3>EUROPA: Anatomia di un crimine</h3>
       <div class="meta">ISBN: 979-8335804790 · Saggistica</div>
@@ -405,14 +444,34 @@
       </div>
     </div>
 
+    <div class="book">
+      <h3>Calatabiano Sacra: Il mistero della luce sull’acqua</h3>
+      <div class="meta">ISBN: 979-8272417756 · Saggistica</div>
+      <p>Opera dedicata al territorio di Calatabiano, con attenzione alle componenti storiche, religiose e culturali.</p>
+      <div class="actions">
+        <span class="muted">Scheda in preparazione</span>
+        <a href="https://bookshop.org/books/calatabiano-sacra-il-mistero-della-luce-sull-acqua/9798272417756" target="_blank" rel="noopener noreferrer" class="btn primary">Acquista</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
 </main>
 
 <footer class="container">
-  <p>© Michele Bottino</p>
+  <p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.</p>
 </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', function () {
+    const isOpen = navMenu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+</script>
 
 </body>
 </html>
