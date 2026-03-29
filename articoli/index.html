@@ -87,38 +87,313 @@
   }
   </script>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1f2623;
+      color: #e5d3a3;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #8f7748;
+      padding-bottom: 16px;
+    }
+
+    .logo img {
+      height: 64px;
+      width: auto;
+      display: block;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #c2a46d;
+      font-size: 0.95rem;
+      padding: 6px 8px;
+      display: inline-block;
+    }
+
+    h1, h2, h3 {
+      color: #e5d3a3;
+    }
+
+    a {
+      color: #c2a46d;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 0.82rem;
+      color: #1f2623;
+      background: #c2a46d;
+      padding: 4px 8px;
+      margin-bottom: 12px;
+    }
+
+    .actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border: 1px solid #c2a46d;
+      text-decoration: none;
+      color: #c2a46d;
+      display: inline-block;
+    }
+
+    .small-note {
+      color: #c2a46d;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding-bottom: 30px;
+      color: #8f7748;
+    }
+
+    @media (max-width: 780px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .logo img {
+        height: 56px;
+      }
+
+      .nav ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .nav li {
+        width: 100%;
+      }
+
+      .nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #8f7748;
+        background: #2a312d;
+        padding: 10px 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        line-height: 1.25;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Analisi di casi reali</h1>
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../">
+        <img src="../images/logo.png" alt="Michele Bottino">
+      </a>
+    </div>
 
-<p>
-Questa sezione raccoglie analisi documentarie di casi di cronaca italiani e internazionali,
-costruite attraverso un approccio basato sulla distinzione tra dato verificabile,
-narrazione e interpretazione.
-</p>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../biografia/">Biografia</a></li>
+      <li><a href="../opere/">Opere</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../articoli/">Scritti</a></li>
+      <li><a href="../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../media/">Rassegna stampa</a></li>
+      <li><a href="../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
 
-<h2>Casi italiani</h2>
+<main class="container">
 
-<ul>
-  <li><a href="alessia-pifferi/">Caso Alessia Pifferi</a></li>
-  <li><a href="denise-pipitone/">Caso Denise Pipitone</a></li>
-  <li><a href="emanuela-orlandi/">Caso Emanuela Orlandi</a></li>
-  <li><a href="garlasco/">Caso Garlasco</a></li>
-  <li><a href="yara-gambirasio/">Caso Yara Gambirasio</a></li>
-</ul>
+<section>
+  <h1>Analisi di casi reali</h1>
 
-<h2>Casi internazionali</h2>
+  <div class="intro">
+    <p>
+      Questa sezione raccoglie analisi documentarie di casi di cronaca italiani e internazionali,
+      costruite attraverso un approccio fondato sulla distinzione tra dato verificabile,
+      elemento riportato, narrazione e interpretazione.
+    </p>
 
-<ul>
-  <li><a href="madeleine-mccann/">Caso Madeleine McCann</a></li>
-</ul>
+    <p>
+      Il lavoro non mira a sostituire l’indagine né a produrre ricostruzioni speculative,
+      ma a mantenere separati i livelli informativi, rendendo leggibili sia ciò che è accertabile
+      sia ciò che non può essere determinato con sufficiente precisione.
+    </p>
 
-<p>
-Ogni articolo è costruito separando gli elementi accertati dalle interpretazioni,
-al fine di mantenere una struttura analitica coerente e verificabile.
-</p>
+    <p class="small-note">
+      Ogni articolo è costruito in modo coerente, con attenzione alla tracciabilità degli elementi
+      e ai limiti della ricostruzione.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Casi italiani</h2>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Caso italiano</div>
+      <h3>Alessia Pifferi</h3>
+      <p>
+        Analisi documentaria di un caso contemporaneo in cui il rapporto tra fatto,
+        percezione pubblica e interpretazione assume un ruolo centrale.
+      </p>
+      <div class="actions">
+        <a href="alessia-pifferi/" class="btn">Leggi l’analisi</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="label">Caso italiano</div>
+      <h3>Denise Pipitone</h3>
+      <p>
+        Caso di scomparsa caratterizzato da una lunga stratificazione di ipotesi,
+        segnalazioni e ricostruzioni non sempre verificabili in modo uniforme.
+      </p>
+      <div class="actions">
+        <a href="denise-pipitone/" class="btn">Leggi l’analisi</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="label">Caso italiano</div>
+      <h3>Emanuela Orlandi</h3>
+      <p>
+        Uno dei casi più complessi e persistenti della storia italiana recente,
+        segnato da una forte sovrapposizione tra dati, ipotesi e narrazioni.
+      </p>
+      <div class="actions">
+        <a href="emanuela-orlandi/" class="btn">Leggi l’analisi</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="label">Caso italiano</div>
+      <h3>Garlasco</h3>
+      <p>
+        Analisi del caso relativo all’omicidio di Chiara Poggi, con attenzione
+        alla distinzione tra elementi accertati e ricostruzioni interpretative.
+      </p>
+      <div class="actions">
+        <a href="garlasco/" class="btn">Leggi l’analisi</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="label">Caso italiano</div>
+      <h3>Yara Gambirasio</h3>
+      <p>
+        Caso documentariamente complesso, in cui la relazione tra indagine,
+        prova, rappresentazione e ricezione pubblica richiede particolare controllo.
+      </p>
+      <div class="actions">
+        <a href="yara-gambirasio/" class="btn">Leggi l’analisi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Casi internazionali</h2>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Caso internazionale</div>
+      <h3>Madeleine McCann</h3>
+      <p>
+        Caso internazionale di scomparsa segnato da forte esposizione mediatica,
+        pluralità di ipotesi e lunga persistenza dell’incertezza documentaria.
+      </p>
+      <div class="actions">
+        <a href="madeleine-mccann/" class="btn">Leggi l’analisi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>© Michele Bottino</p>
+</footer>
 
 </body>
 </html>
