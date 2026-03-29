@@ -4,8 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Rassegna stampa e pubblicazioni – Michele Bottino</title>
-  <meta name="description" content="Rassegna stampa e pubblicazioni di Michele Bottino: articoli, profili e lavori pubblicati su Zenodo.">
+  <title>Media – Michele Bottino, scrittore e saggista italiano</title>
+  <meta name="description" content="Rassegna media e presenza pubblica di Michele Bottino, scrittore e saggista italiano.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/media/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Media – Michele Bottino, scrittore e saggista italiano">
+  <meta property="og:description" content="Rassegna media e presenza pubblica di Michele Bottino, scrittore e saggista italiano.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/media/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
+  <meta property="og:image:alt" content="Logo di Michele Bottino">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Media – Michele Bottino, scrittore e saggista italiano">
+  <meta name="twitter:description" content="Rassegna media e presenza pubblica di Michele Bottino, scrittore e saggista italiano.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Media – Michele Bottino",
+    "url": "https://michelebottino-autor.github.io/media/",
+    "description": "Rassegna media e presenza pubblica di Michele Bottino, scrittore e saggista italiano."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michele Bottino",
+    "url": "https://michelebottino-autor.github.io/",
+    "jobTitle": "Scrittore e saggista italiano",
+    "sameAs": [
+      "https://www.facebook.com/michelebottinoautore"
+    ]
+  }
+  </script>
 
   <style>
     body {
@@ -30,6 +71,7 @@
       flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 16px;
+      position: relative;
     }
 
     .logo img {
@@ -38,7 +80,7 @@
       display: block;
     }
 
-    .nav ul {
+    .nav-menu {
       list-style: none;
       display: flex;
       gap: 14px;
@@ -55,6 +97,23 @@
       display: inline-block;
     }
 
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #8f7748;
+      padding: 10px;
+      cursor: pointer;
+      color: #c2a46d;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 5px 0;
+    }
+
     h1, h2, h3 {
       color: #e5d3a3;
     }
@@ -67,26 +126,48 @@
       margin-bottom: 30px;
     }
 
+    .block {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 18px;
+    }
+
     .entry {
       background: #2a312d;
       border: 1px solid #8f7748;
       padding: 18px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
-    .meta {
+    .entry-meta {
       color: #c2a46d;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    .actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-      margin-top: 10px;
       padding: 10px 14px;
       border: 1px solid #c2a46d;
       text-decoration: none;
       color: #c2a46d;
+      display: inline-block;
+    }
+
+    .secondary {
+      border: 1px solid #c2a46d;
+      color: #c2a46d;
+    }
+
+    .muted {
+      color: #c2a46d;
+      font-size: 0.92rem;
     }
 
     footer {
@@ -100,26 +181,36 @@
       }
 
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
       }
 
       .logo img {
         height: 56px;
       }
 
-      .nav ul {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+      .menu-toggle {
+        display: block;
       }
 
-      .nav li {
+      .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 14px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
         width: 100%;
       }
 
-      .nav a {
+      .nav-menu a {
         display: block;
         width: 100%;
         box-sizing: border-box;
@@ -146,14 +237,18 @@
       </a>
     </div>
 
-    <ul>
+    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul id="site-menu" class="nav-menu">
       <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Biografia</a></li>
+      <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../articoli/">Scritti</a></li>
-      <li><a href="../testi-musicali/">Testi musicali</a></li>
-      <li><a href="../media/">Rassegna stampa</a></li>
+      <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
@@ -162,73 +257,100 @@
 <main class="container">
 
 <section>
-  <h1>Rassegna stampa e pubblicazioni</h1>
+  <h1>Media</h1>
 
   <p>
-    Questa sezione raccoglie articoli, profili e pubblicazioni dedicati all’attività di Michele Bottino.
-    Sono inclusi sia contenuti esterni di rassegna sia lavori pubblicati in forma autonoma.
+    Questa sezione raccoglie la presenza pubblica e i canali di aggiornamento di Michele Bottino,
+    scrittore e saggista italiano.
   </p>
 </section>
 
 <section>
-  <h2>Rassegna stampa</h2>
+  <h2>Presenza online</h2>
 
-  <div class="entry">
-    <h3>Michele Bottino, lo scrittore siciliano che unisce thriller e storie vere con una voce originale</h3>
-    <div class="meta">16 luglio 2025 · Profilo autore</div>
+  <div class="block">
     <p>
-      Articolo dedicato al percorso narrativo dell’autore, con attenzione alla scrittura realistica,
-      al rapporto con i casi documentari e alla costruzione di opere fondate su una forte tenuta concreta.
+      Per aggiornamenti editoriali, articoli, note di lettura e contenuti pubblicati con continuità,
+      è possibile seguire la pagina Facebook ufficiale dell’autore.
     </p>
-  </div>
 
-  <div class="entry">
-    <h3>Michele Bottino e la scrittura musicale: testi tra introspezione e realtà</h3>
-    <div class="meta">27 marzo 2026 · Scrittura musicale</div>
-    <p>
-      Contenuto dedicato alla produzione di testi musicali come sviluppo parallelo dell’attività autoriale,
-      con attenzione al ruolo del testo e alla continuità tematica con la narrativa.
-    </p>
+    <div class="actions">
+      <a href="https://www.facebook.com/michelebottinoautore"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn secondary">
+         Segui su Facebook
+      </a>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>Pubblicazioni</h2>
+  <h2>Rassegna</h2>
 
   <div class="entry">
-    <h3>Modello strutturale della convergenza narrativa nei sistemi documentari: metriche, modello predittivo e teoria dei regimi</h3>
-    <div class="meta">Zenodo · Versione 1.0</div>
+    <h3>Pagina Facebook ufficiale</h3>
+    <div class="entry-meta">Canale ufficiale di aggiornamento</div>
     <p>
-      Pubblicazione dedicata allo sviluppo del modello attraverso metriche interne,
-      costruzione di tesi, modello predittivo e teoria dei regimi.
+      La pagina Facebook dell’autore costituisce il riferimento principale per aggiornamenti,
+      pubblicazioni, note e contenuti condivisi con continuità.
     </p>
-    <a class="btn" href="https://doi.org/10.5281/zenodo.19263152" target="_blank" rel="noopener noreferrer">Apri pubblicazione</a>
+    <div class="actions">
+      <a href="https://www.facebook.com/michelebottinoautore"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn secondary">
+         Apri la pagina
+      </a>
+    </div>
   </div>
 
   <div class="entry">
-    <h3>Modello strutturale della convergenza narrativa nei sistemi documentari: Metodo delle Rotture Narrative (MRN) — Versione 1.2</h3>
-    <div class="meta">Zenodo · Versione 1.2</div>
+    <h3>Materiali e segnalazioni</h3>
+    <div class="entry-meta">Sezione in aggiornamento</div>
     <p>
-      Aggiornamento del Metodo delle Rotture Narrative con consolidamento del protocollo operativo
-      e introduzione di una fase preliminare di validazione delle entità documentarie.
+      Questa area potrà raccogliere in seguito interviste, segnalazioni, recensioni,
+      menzioni e altri materiali pubblici relativi all’autore e alle sue opere.
     </p>
-    <a class="btn" href="https://doi.org/10.5281/zenodo.19284625" target="_blank" rel="noopener noreferrer">Apri pubblicazione</a>
+    <div class="actions">
+      <span class="muted">Contenuti in aggiornamento</span>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>Nota</h2>
-  <p>
-    La rassegna stampa raccoglie contenuti esterni dedicati all’autore. Le pubblicazioni rinviano invece
-    a lavori originali pubblicati in forma autonoma.
-  </p>
+  <div class="block">
+    <h2>Condividi questa pagina</h2>
+    <p>
+      Puoi condividere questa pagina su Facebook.
+    </p>
+    <div class="actions">
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/media/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn secondary">
+        Condividi su Facebook
+      </a>
+    </div>
+  </div>
 </section>
 
 </main>
 
 <footer class="container">
-  <p>© Michele Bottino</p>
+  <p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.</p>
 </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', function () {
+    const isOpen = navMenu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+</script>
 
 </body>
 </html>
