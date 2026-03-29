@@ -60,12 +60,45 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #1f2623;
       color: #e5d3a3;
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
       overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #e5d3a3;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.45rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1.1em;
+      max-width: 68ch;
     }
 
     .container {
@@ -73,7 +106,6 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
-      box-sizing: border-box;
     }
 
     .nav {
@@ -126,29 +158,29 @@
     }
 
     .hero {
-      padding: 30px 20px 24px 20px;
-      box-sizing: border-box;
+      padding: 34px 20px 26px 20px;
     }
 
     .hero h1 {
-      margin: 0 0 12px 0;
-      font-size: 3.2rem;
-      line-height: 1.08;
-      word-break: break-word;
+      font-size: 3.4rem;
+      line-height: 1.02;
+      margin-bottom: 10px;
     }
 
     .hero h2 {
-      margin: 0 0 18px 0;
-      font-size: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.7rem;
+      font-weight: 600;
       line-height: 1.2;
-      word-break: break-word;
+      margin-bottom: 18px;
+      letter-spacing: 0;
     }
 
     .hero p {
-      margin: 0;
-      max-width: 100%;
       font-size: 1.08rem;
-      line-height: 1.75;
+      line-height: 1.8;
+      max-width: 62ch;
+      margin-bottom: 0;
     }
 
     .cta {
@@ -160,12 +192,13 @@
     }
 
     .btn {
-      padding: 10px 14px;
+      padding: 12px 18px;
       text-decoration: none;
       display: inline-block;
       max-width: 100%;
-      box-sizing: border-box;
       text-align: center;
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
     }
 
     .primary {
@@ -176,6 +209,7 @@
     .secondary {
       border: 1px solid #c2a46d;
       color: #c2a46d;
+      background: transparent;
     }
 
     .grid-3 {
@@ -187,19 +221,43 @@
     .card {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 20px;
+      padding: 24px;
       min-width: 0;
     }
 
     .card h3 {
-      margin: 0 0 10px 0;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 0.9em;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 14px;
+      padding-bottom: 2px;
+      color: #c2a46d;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #c2a46d;
+    }
+
+    .card-link:hover {
+      opacity: 0.82;
     }
 
     .subtle-block {
       background: #2a312d;
       border: 1px solid #8f7748;
-      padding: 20px;
+      padding: 24px;
       min-width: 0;
+    }
+
+    .subtle-block p {
+      max-width: 64ch;
     }
 
     section {
@@ -220,6 +278,26 @@
     @media (max-width: 680px) {
       .container {
         padding: 16px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        line-height: 1.08;
+      }
+
+      h2 {
+        font-size: 1.45rem;
+        line-height: 1.2;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        line-height: 1.25;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.65;
       }
 
       .nav {
@@ -267,7 +345,7 @@
 
       .hero h1 {
         font-size: 2.2rem;
-        line-height: 1.1;
+        line-height: 1.08;
         margin-bottom: 10px;
       }
 
@@ -279,7 +357,7 @@
 
       .hero p {
         font-size: 1rem;
-        line-height: 1.55;
+        line-height: 1.65;
       }
 
       .cta {
@@ -292,10 +370,7 @@
         width: 100%;
       }
 
-      .card {
-        padding: 18px;
-      }
-
+      .card,
       .subtle-block {
         padding: 18px;
       }
@@ -356,19 +431,19 @@
   <div class="card">
     <h3>Opere</h3>
     <p>Romanzi e saggi.</p>
-    <a href="opere/">Vai</a>
+    <a href="opere/" class="card-link">Scopri</a>
   </div>
 
   <div class="card">
     <h3>Autore</h3>
     <p>Biografia ufficiale.</p>
-    <a href="biografia/">Vai</a>
+    <a href="biografia/" class="card-link">Leggi</a>
   </div>
 
   <div class="card">
     <h3>Poetica</h3>
     <p>Linea di scrittura.</p>
-    <a href="poetica/">Vai</a>
+    <a href="poetica/" class="card-link">Approfondisci</a>
   </div>
 </section>
 
