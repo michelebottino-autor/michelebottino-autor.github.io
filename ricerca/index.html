@@ -10,164 +10,392 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://michelebottino-autor.github.io/ricerca/">
 
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Ricerca – Michele Bottino">
+  <meta property="og:description" content="Attività di ricerca di Michele Bottino: analisi storico-documentaria, modelli metodologici e pubblicazioni.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/ricerca/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
+  <meta property="og:image:alt" content="Logo di Michele Bottino">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ricerca – Michele Bottino">
+  <meta name="twitter:description" content="Attività di ricerca di Michele Bottino: analisi storico-documentaria, modelli metodologici e pubblicazioni.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Michele Bottino",
-      "jobTitle": "Scrittore e saggista italiano"
-    }
+    "@type": "CollectionPage",
+    "name": "Ricerca – Michele Bottino",
+    "url": "https://michelebottino-autor.github.io/ricerca/",
+    "description": "Attività di ricerca di Michele Bottino: analisi storico-documentaria, modelli metodologici e pubblicazioni."
   }
   </script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #1f2623;
       color: #e5d3a3;
       margin: 0;
       line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, serif;
+      margin-top: 0;
+      color: #e5d3a3;
     }
 
     .container {
-      max-width: 900px;
-      margin: auto;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 20px;
     }
 
-    h1, h2 {
-      font-family: Georgia, serif;
-      color: #e5d3a3;
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #8f7748;
+      padding-bottom: 14px;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #c2a46d;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #8f7748;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 4px 0;
+    }
+
+    .page.container {
+      padding-top: 30px;
+      padding-bottom: 24px;
+    }
+
+    .page h1 {
+      font-size: 2.8rem;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .page h2 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-top: 30px;
+      margin-bottom: 14px;
+    }
+
+    .page h3 {
+      font-size: 1.15rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .page p {
+      max-width: 68ch;
+      margin-top: 0;
+      margin-bottom: 1.1em;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      max-width: 62ch;
     }
 
     .block {
       background: #2a312d;
       border: 1px solid #8f7748;
       padding: 20px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
-    .pub {
-      margin-bottom: 14px;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 20px;
     }
 
     .meta {
       color: #c2a46d;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    .note {
+      color: #c2a46d;
+      font-size: 0.92rem;
+    }
+
+    .section-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #c2a46d;
+      text-decoration: none;
+      border-bottom: 1px solid #c2a46d;
     }
 
     footer {
-      color: #8f7748;
       padding: 30px 0;
+      color: #8f7748;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid #8f7748;
+        padding: 10px;
+        background: #2a312d;
+      }
+
+      .page.container {
+        padding-top: 24px;
+        padding-bottom: 18px;
+      }
+
+      .page h1 {
+        font-size: 2.2rem;
+      }
+
+      .page h2 {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<main class="container">
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="menu">
+      <li><a href="../">Home</a></li>
+      <li><a href="../biografia/">Autore</a></li>
+      <li><a href="../opere/">Opere</a></li>
+      <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../media/">Media</a></li>
+      <li><a href="../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page container">
 
 <section>
   <h1>Ricerca</h1>
 
-  <p>
+  <p class="intro">
     L’attività di ricerca di Michele Bottino si sviluppa nell’ambito dell’analisi
     storico-documentaria e della costruzione di modelli metodologici applicati
-    a sistemi complessi.
+    a sistemi complessi. 1
   </p>
 
   <p>
     Il lavoro si fonda sulla distinzione tra dato, interpretazione e rappresentazione,
-    con particolare attenzione alla verificabilità delle fonti e alla coerenza dei processi analitici.
+    con particolare attenzione alla verificabilità delle fonti, alla tracciabilità
+    del processo analitico e alla coerenza metodologica. 2
   </p>
-</section>
-
-<section class="block">
-  <h2>Linea di ricerca</h2>
-
-  <p>
-    La ricerca è orientata allo studio di sistemi documentari complessi, caratterizzati da
-    fonti frammentarie, eterogeneità archivistica e stratificazione istituzionale.
-  </p>
-
-  <p>
-    L’approccio prevede l’analisi diretta delle fonti primarie, la tracciabilità del dato
-    e la separazione sistematica tra elemento attestato e costruzione interpretativa.
-  </p>
-</section>
-
-<section class="block">
-  <h2>Metodo</h2>
-
-  <p>
-    Il lavoro metodologico è rappresentato dall’Integrated Archival Analysis System
-    (Bottino Method), un modello strutturato per l’analisi documentaria.
-  </p>
-
-  <p>
-    Il sistema si articola in fasi progressive: acquisizione dei dati, normalizzazione,
-    correlazione inter-archivistica, validazione critica e ricostruzione strutturata.
-  </p>
-
-  <p>
-    L’obiettivo è trasformare insiemi documentari dispersi in sistemi coerenti,
-    verificabili e replicabili.
-  </p>
-</section>
-
-<section class="block">
-  <h2>Applicazioni</h2>
-
-  <p>
-    Il metodo è stato applicato allo studio del territorio di Calatabiano, con particolare
-    attenzione ai processi feudali, alle strutture ecclesiastiche e alla continuità giuridica.
-  </p>
-
-  <p>
-    Le analisi evidenziano la trasformazione del sistema feudale in struttura economica,
-    la continuità istituzionale e le relazioni tra potere locale, diritto e gestione patrimoniale.
-  </p>
-</section>
-
-<section class="block">
-  <h2>Pubblicazioni</h2>
-
-  <div class="pub">
-    <strong>Storia Critica del Territorio di Calatabiano (XIV–XVII secolo)</strong>
-  </div>
-
-  <div class="pub">
-    <strong>Calatabiano, Volume I: Investitura e gestione della Baronia</strong>
-  </div>
-
-  <div class="pub">
-    <strong>Le chiese medievali di Calatabiano</strong>
-  </div>
-
-  <div class="pub">
-    <strong>Integrated Archival Analysis System (Bottino Method)</strong>
-  </div>
-
-  <div class="pub">
-    <strong>SOSA Framework (SCL – EXE)</strong>
-  </div>
-
 </section>
 
 <section>
-  <p>
-    L’attività di ricerca si integra con la produzione saggistica, contribuendo alla
-    costruzione di testi fondati su criteri di coerenza, verificabilità e controllo formale.
+  <h2>Linea di ricerca</h2>
+
+  <div class="block">
+    <p>
+      La ricerca è orientata allo studio di sistemi documentari complessi,
+      caratterizzati da fonti frammentarie, eterogeneità archivistica
+      e stratificazione istituzionale. 3
+    </p>
+
+    <p>
+      L’approccio prevede l’analisi diretta delle fonti primarie, la normalizzazione dei dati,
+      la correlazione inter-archivistica e la distinzione costante tra dato attestato,
+      dato correlato e interpretazione. 4
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Metodo</h2>
+
+  <div class="block">
+    <p>
+      Il nucleo metodologico di questa attività è rappresentato dall’<em>Integrated Archival Analysis System</em>,
+      definito anche <em>Bottino Method</em>, un quadro strutturato per la ricerca storico-documentaria
+      in contesti caratterizzati da complessità istituzionale e dispersione delle fonti. 5
+    </p>
+
+    <p>
+      Il sistema si articola in fasi progressive: acquisizione dei dati, normalizzazione,
+      correlazione inter-archivistica, validazione critica e ricostruzione strutturata,
+      con l’obiettivo di trasformare insiemi documentari dispersi in sistemi coerenti,
+      verificabili e replicabili. 6
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Applicazioni</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Calatabiano e continuità giuridica</h3>
+      <div class="meta">XIV–XVII secolo</div>
+      <p>
+        Una parte centrale della ricerca è dedicata al territorio di Calatabiano,
+        con particolare attenzione alla continuità giuridica, alle strutture feudali,
+        ai processi d’investitura, ai rapporti con il potere regio e alle dinamiche ecclesiastiche locali. 7
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Chiese medievali e istituzioni</h3>
+      <div class="meta">XIII–XVIII secolo</div>
+      <p>
+        Le applicazioni includono anche l’analisi sistematica delle chiese medievali di Calatabiano,
+        condotta esclusivamente su fonti primarie documentarie e archivistiche, con ricostruzione
+        delle strutture, delle funzioni e delle continuità istituzionali. 8
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Pubblicazioni</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Integrated Archival Analysis System (Bottino Method)</h3>
+      <div class="meta">Report · 17 marzo 2026</div>
+      <p>Quadro metodologico per la ricerca storico-documentaria in contesti archivistici complessi. 9</p>
+    </div>
+
+    <div class="card">
+      <h3>Storia Critica del Territorio di Calatabiano (XIV–XVII secolo)</h3>
+      <div class="meta">Journal article · 28 febbraio 2026</div>
+      <p>Ricostruzione critica e documentaria del territorio di Calatabiano basata su fonti primarie. 10</p>
+    </div>
+
+    <div class="card">
+      <h3>Calatabiano, Volume I</h3>
+      <div class="meta">Journal · 1 marzo 2026</div>
+      <p>Analisi integrale dei Processi 334 e 184 relativi alla Baronia di Calatabiano. 11</p>
+    </div>
+
+    <div class="card">
+      <h3>Le chiese medievali di Calatabiano</h3>
+      <div class="meta">Journal article · 1 marzo 2026</div>
+      <p>Analisi sistematica delle strutture religiose documentate tra XIII e XVIII secolo. 12</p>
+    </div>
+
+    <div class="card">
+      <h3>SOSA-SCL</h3>
+      <div class="meta">Journal article · 22 marzo 2026</div>
+      <p>Linguaggio strutturato di vincoli per il controllo deterministico nei sistemi LLM. 13</p>
+    </div>
+
+    <div class="card">
+      <h3>SOSA-EXE</h3>
+      <div class="meta">Journal article · 22 marzo 2026</div>
+      <p>Layer esecutivo deterministico per la generazione controllata di output nei sistemi LLM. 14</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="note">
+    L’attività di ricerca si integra con la produzione saggistica, contribuendo alla costruzione
+    di testi fondati su criteri di coerenza, verificabilità e controllo formale. 15
   </p>
 </section>
 
 </main>
 
 <footer class="container">
-  <p>© 2026 Michele Bottino. Tutti i diritti riservati.</p>
+  <p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
