@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Biografia – Michele Bottino</title>
-  <meta name="description" content="Biografia di Michele Bottino, autore e ricercatore indipendente.">
+  <title>Biografia – Michele Bottino, scrittore e saggista italiano</title>
+  <meta name="description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, linea di scrittura e opere.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
@@ -14,15 +14,15 @@
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
-  <meta property="og:title" content="Biografia – Michele Bottino">
-  <meta property="og:description" content="Biografia di Michele Bottino, autore e ricercatore indipendente.">
+  <meta property="og:title" content="Biografia – Michele Bottino, scrittore e saggista italiano">
+  <meta property="og:description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/biografia/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
   <meta property="og:image:alt" content="Logo di Michele Bottino">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Biografia – Michele Bottino">
-  <meta name="twitter:description" content="Biografia di Michele Bottino, autore e ricercatore indipendente.">
+  <meta name="twitter:title" content="Biografia – Michele Bottino, scrittore e saggista italiano">
+  <meta name="twitter:description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
   <script type="application/ld+json">
@@ -31,15 +31,12 @@
     "@type": "ProfilePage",
     "url": "https://michelebottino-autor.github.io/biografia/",
     "name": "Biografia – Michele Bottino",
-    "description": "Biografia di Michele Bottino, autore e ricercatore indipendente.",
+    "description": "Biografia ufficiale di Michele Bottino, scrittore e saggista italiano.",
     "mainEntity": {
       "@type": "Person",
       "name": "Michele Bottino",
       "url": "https://michelebottino-autor.github.io/",
-      "jobTitle": "Autore e ricercatore indipendente",
-      "sameAs": [
-        "https://orcid.org/0009-0009-2797-9267"
-      ]
+      "jobTitle": "Scrittore e saggista italiano"
     }
   }
   </script>
@@ -50,10 +47,7 @@
     "@type": "Person",
     "name": "Michele Bottino",
     "url": "https://michelebottino-autor.github.io/",
-    "jobTitle": "Autore e ricercatore indipendente",
-    "sameAs": [
-      "https://orcid.org/0009-0009-2797-9267"
-    ]
+    "jobTitle": "Scrittore e saggista italiano"
   }
   </script>
 
@@ -80,6 +74,7 @@
       flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 16px;
+      position: relative;
     }
 
     .logo img {
@@ -88,7 +83,7 @@
       display: block;
     }
 
-    .nav ul {
+    .nav-menu {
       list-style: none;
       display: flex;
       gap: 14px;
@@ -103,6 +98,22 @@
       font-size: 0.95rem;
       padding: 6px 8px;
       display: inline-block;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #8f7748;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 5px 0;
     }
 
     h1, h2 {
@@ -134,8 +145,9 @@
       }
 
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 14px;
       }
 
@@ -143,18 +155,26 @@
         height: 56px;
       }
 
-      .nav ul {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+      .menu-toggle {
+        display: block;
       }
 
-      .nav li {
+      .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 14px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
         width: 100%;
       }
 
-      .nav a {
+      .nav-menu a {
         display: block;
         width: 100%;
         box-sizing: border-box;
@@ -181,14 +201,18 @@
       </a>
     </div>
 
-    <ul>
+    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul id="site-menu" class="nav-menu">
       <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Biografia</a></li>
+      <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../articoli/">Scritti</a></li>
-      <li><a href="../testi-musicali/">Testi musicali</a></li>
-      <li><a href="../media/">Rassegna stampa</a></li>
+      <li><a href="../poetica/">Poetica</a></li>
+      <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
@@ -200,93 +224,107 @@
   <h1>Biografia</h1>
 
   <p>
-    Michele Bottino è autore e ricercatore indipendente. La sua attività si sviluppa tra narrativa,
-    saggistica, analisi documentaria e scrittura musicale, con un approccio fondato sulla precisione
-    del testo, sulla verifica delle fonti e sulla costruzione controllata dei contenuti.
+    Michele Bottino (1972) è uno scrittore e saggista italiano.
   </p>
 
   <p>
-    Il suo lavoro unisce produzione letteraria e ricerca metodologica, mantenendo come punto costante
-    la distinzione tra dato, interpretazione e rappresentazione. In ambito autoriale e di ricerca,
-    l’obiettivo resta quello di costruire testi leggibili, strutturati e verificabili.
+    La sua produzione comprende opere di narrativa e di saggistica sviluppate all’interno
+    di una linea espressiva orientata al realismo, alla coerenza strutturale e al controllo
+    formale del testo.
+  </p>
+
+  <p>
+    I suoi lavori affrontano temi legati alla dimensione umana, alle dinamiche di potere
+    e al rapporto tra esperienza individuale e contesto storico, attraverso una scrittura
+    fondata su chiarezza espositiva, precisione linguistica e costruzione narrativa rigorosa.
   </p>
 </section>
 
 <section>
-  <h2>Profilo</h2>
+  <h2>Profilo autore</h2>
 
   <div class="block">
     <p>
-      Come autore, Michele Bottino opera in ambito narrativo e saggistico con una scrittura orientata
-      alla coerenza interna, alla concretezza e alla riduzione di artifici superflui. La produzione
-      editoriale comprende romanzi, saggi e testi analitici.
+      La scrittura di Michele Bottino si distingue per un’impostazione essenziale e priva di artifici,
+      orientata alla leggibilità, alla misura e alla coerenza interna del testo.
     </p>
 
     <p>
-      Parallelamente, sviluppa un’attività di ricerca indipendente dedicata ai sistemi documentari
-      complessi, con particolare attenzione alle fonti primarie, alla tracciabilità del dato,
-      alla separazione tra elemento attestato e interpretazione e alla formalizzazione dei processi
-      analitici.
+      Nel corso della sua attività ha pubblicato romanzi e saggi che si collocano in un percorso
+      autoriale coerente, sviluppato tra narrazione e riflessione saggistica.
     </p>
 
     <p>
-      La produzione scientifica comprende pubblicazioni su Zenodo e lo sviluppo di modelli
-      metodologici per l’analisi documentaria, la correlazione delle fonti e il controllo
-      della costruzione testuale. Dai materiali disponibili emerge anche una produzione
-      multidisciplinare che integra editoria, ricerca e progettazione metodologica. 
+      L’elaborazione delle opere si fonda su un processo rigoroso di costruzione e verifica del testo,
+      pienamente integrato nella pratica della scrittura.
     </p>
   </div>
 </section>
 
 <section>
-  <h2>Ambiti di lavoro</h2>
+  <h2>Opere</h2>
 
-  <ul>
-    <li>narrativa</li>
-    <li>saggistica e analisi documentaria</li>
-    <li>ricerca storico-documentaria</li>
-    <li>sviluppo di protocolli metodologici</li>
-    <li>scrittura di testi musicali</li>
-  </ul>
+  <div class="block">
+    <p>
+      Tra le sue opere figurano <em>Stige</em>, <em>Il deposito delle anime</em>,
+      <em>Intrighi Invisibili</em>, <em>Oniro</em>, <em>EUROPA: Anatomia di un crimine</em>
+      e <em>L’Uomo Consapevole</em>.
+    </p>
+
+    <p>
+      La produzione comprende sia narrativa sia saggistica, all’interno di una linea espressiva
+      che privilegia la solidità strutturale, la precisione dei contenuti e l’aderenza al reale.
+    </p>
+  </div>
 </section>
 
 <section>
-  <h2>Ricerca e metodologia</h2>
+  <h2>Linea di scrittura</h2>
 
   <p>
-    Una parte centrale del lavoro di Michele Bottino riguarda la ricerca storico-documentaria su
-    sistemi complessi, con particolare attenzione alla gestione di fonti frammentarie, alla
-    ricostruzione territoriale e alla definizione di procedure verificabili.
+    Al centro del suo lavoro vi è una concezione della scrittura come forma controllata,
+    in cui ogni elemento del testo risponde a criteri di chiarezza, coerenza e necessità espressiva.
   </p>
 
   <p>
-    A questa linea si affianca lo sviluppo di modelli metodologici e architetturali per l’analisi,
-    la validazione e la costruzione controllata del testo. Nei documenti caricati emergono in modo
-    ricorrente il lavoro su RCTM, Bottino Method, SOSA, SOSA-WEB e Metodo delle Rotture Narrative,
-    insieme a una produzione Zenodo ampia e coerente sul piano metodologico. 2
+    La forma non amplifica artificialmente il contenuto, ma lo rende leggibile,
+    stabile e coerente, mantenendo un equilibrio costante tra costruzione narrativa
+    e controllo linguistico.
   </p>
 </section>
 
 <section>
-  <h2>Percorso</h2>
+  <h2>Nota autore</h2>
 
-  <p>
-    Il percorso di Michele Bottino si caratterizza per un’impostazione autonoma e multidisciplinare,
-    in cui scrittura, ricerca e metodo non costituiscono ambiti separati, ma parti di uno stesso
-    lavoro orientato alla costruzione di contenuti coerenti, tracciabili e formalmente controllati.
-  </p>
+  <div class="block">
+    <p>
+      Michele Bottino (1972) è uno scrittore e saggista italiano.
+      La sua produzione comprende opere di narrativa e di saggistica sviluppate
+      all’interno di una linea espressiva orientata al realismo, alla coerenza
+      strutturale e al controllo formale del testo.
+    </p>
 
-  <p>
-    Il sito raccoglie queste attività nelle diverse sezioni dedicate alle opere, alla ricerca,
-    agli scritti, ai testi musicali e alle pubblicazioni.
-  </p>
+    <p>
+      Una scrittura essenziale che restituisce il reale senza artifici.
+    </p>
+  </div>
 </section>
 
 </main>
 
 <footer class="container">
-  <p>© Michele Bottino</p>
+  <p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.</p>
 </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', function () {
+    const isOpen = navMenu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+</script>
 
 </body>
 </html>
