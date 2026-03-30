@@ -72,6 +72,10 @@
       max-width: 68ch;
     }
 
+    a {
+      color: #c2a46d;
+    }
+
     .container {
       width: 100%;
       max-width: 1100px;
@@ -187,6 +191,19 @@
     footer {
       padding: 30px 0;
       color: #8f7748;
+    }
+
+    footer a {
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: #c2a46d;
     }
 
     @media (max-width: 900px) {
@@ -396,7 +413,13 @@
 </main>
 
 <footer class="container">
-  <p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.</p>
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../privacy/">Privacy Policy</a> |
+    <a href="../cookie/">Cookie Policy</a> |
+    <a href="../disclaimer/">Disclaimer</a>
+  </p>
 </footer>
 
 <script>
