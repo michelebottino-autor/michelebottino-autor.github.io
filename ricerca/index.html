@@ -8,6 +8,7 @@
   <meta name="description" content="Attività di ricerca di Michele Bottino: analisi storico-documentaria, modelli metodologici e pubblicazioni.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/ricerca/">
 
   <meta property="og:type" content="website">
@@ -30,7 +31,18 @@
     "@type": "CollectionPage",
     "name": "Ricerca – Michele Bottino",
     "url": "https://michelebottino-autor.github.io/ricerca/",
-    "description": "Attività di ricerca di Michele Bottino: analisi storico-documentaria, modelli metodologici e pubblicazioni."
+    "description": "Attività di ricerca di Michele Bottino: analisi storico-documentaria, modelli metodologici e pubblicazioni.",
+    "about": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/",
+      "jobTitle": "Scrittore e saggista italiano",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138828334",
+        "https://orcid.org/0009-0009-2797-9267",
+        "https://www.facebook.com/michelebottinoautore"
+      ]
+    }
   }
   </script>
 
@@ -49,9 +61,15 @@
     }
 
     h1, h2, h3 {
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
       margin-top: 0;
       color: #e5d3a3;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1.1em;
+      max-width: 68ch;
     }
 
     .container {
@@ -67,10 +85,13 @@
       align-items: center;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 14px;
+      gap: 20px;
     }
 
     .logo img {
       height: 60px;
+      width: auto;
+      display: block;
     }
 
     .nav-menu {
@@ -128,12 +149,6 @@
       margin-bottom: 10px;
     }
 
-    .page p {
-      max-width: 68ch;
-      margin-top: 0;
-      margin-bottom: 1.1em;
-    }
-
     .intro {
       font-size: 1.05rem;
       max-width: 62ch;
@@ -167,14 +182,6 @@
     .note {
       color: #c2a46d;
       font-size: 0.92rem;
-    }
-
-    .section-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: #c2a46d;
-      text-decoration: none;
-      border-bottom: 1px solid #c2a46d;
     }
 
     footer {
@@ -239,7 +246,7 @@
       <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
       <span></span><span></span><span></span>
     </button>
 
@@ -249,6 +256,7 @@
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../poetica/">Poetica</a></li>
       <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../testi-musicali/">Testi musicali</a></li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
