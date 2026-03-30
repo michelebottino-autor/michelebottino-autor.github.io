@@ -72,6 +72,10 @@
       max-width: 68ch;
     }
 
+    a {
+      color: #c2a46d;
+    }
+
     .container {
       width: 100%;
       max-width: 1100px;
@@ -169,6 +173,7 @@
       text-align: center;
       background: transparent;
       cursor: pointer;
+      font: inherit;
     }
 
     .secondary {
@@ -205,9 +210,42 @@
       border-color: #c2a46d;
     }
 
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 8px 0 18px 0;
+      max-width: 68ch;
+    }
+
+    .consent input[type="checkbox"] {
+      width: auto;
+      margin: 4px 0 0 0;
+      padding: 0;
+      flex: 0 0 auto;
+    }
+
+    .consent label {
+      margin: 0;
+      line-height: 1.5;
+    }
+
     footer {
       padding: 30px 0;
       color: #8f7748;
+    }
+
+    footer a {
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: #c2a46d;
     }
 
     @media (max-width: 680px) {
@@ -338,6 +376,13 @@
       <label for="messaggio">Messaggio</label>
       <textarea id="messaggio" name="messaggio" rows="6" required></textarea>
 
+      <div class="consent">
+        <input type="checkbox" id="consenso-privacy" required>
+        <label for="consenso-privacy">
+          Dichiaro di aver letto la <a href="../privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+        </label>
+      </div>
+
       <button type="submit" class="btn secondary">Invia messaggio</button>
     </form>
 
@@ -361,7 +406,13 @@
 </main>
 
 <footer class="container">
-  <p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.</p>
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../privacy/">Privacy Policy</a> |
+    <a href="../cookie/">Cookie Policy</a> |
+    <a href="../disclaimer/">Disclaimer</a>
+  </p>
 </footer>
 
 <script>
