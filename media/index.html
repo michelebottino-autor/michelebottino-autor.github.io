@@ -8,6 +8,7 @@
   <meta name="description" content="Presenza pubblica, aggiornamenti e canali ufficiali di Michele Bottino.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/media/">
 
   <meta property="og:type" content="website">
@@ -30,7 +31,18 @@
     "@type": "CollectionPage",
     "name": "Media – Michele Bottino",
     "url": "https://michelebottino-autor.github.io/media/",
-    "description": "Presenza pubblica, aggiornamenti e canali ufficiali di Michele Bottino."
+    "description": "Presenza pubblica, aggiornamenti e canali ufficiali di Michele Bottino.",
+    "about": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/",
+      "jobTitle": "Scrittore e saggista italiano",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138828334",
+        "https://orcid.org/0009-0009-2797-9267",
+        "https://www.facebook.com/michelebottinoautore"
+      ]
+    }
   }
   </script>
 
@@ -49,9 +61,15 @@
     }
 
     h1, h2, h3 {
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
       margin-top: 0;
       color: #e5d3a3;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1.1em;
+      max-width: 68ch;
     }
 
     .container {
@@ -67,10 +85,13 @@
       align-items: center;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 14px;
+      gap: 20px;
     }
 
     .logo img {
       height: 60px;
+      width: auto;
+      display: block;
     }
 
     .nav-menu {
@@ -126,12 +147,6 @@
       font-size: 1.15rem;
       line-height: 1.2;
       margin-bottom: 10px;
-    }
-
-    .page p {
-      max-width: 68ch;
-      margin-top: 0;
-      margin-bottom: 1.1em;
     }
 
     .intro {
@@ -258,7 +273,7 @@
       <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
       <span></span><span></span><span></span>
     </button>
 
@@ -268,6 +283,7 @@
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../poetica/">Poetica</a></li>
       <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../testi-musicali/">Testi musicali</a></li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
@@ -326,9 +342,9 @@
   <div class="block">
     <p>
       La presenza pubblica di Michele Bottino si articola attraverso il sito ufficiale,
-      il catalogo delle opere, la sezione di ricerca e i canali di aggiornamento,
-      mantenendo una distinzione chiara tra profilo autoriale, attività editoriale
-      e materiali documentari.
+      il catalogo delle opere, la sezione di ricerca, la pagina dedicata ai testi musicali
+      e i canali di aggiornamento, mantenendo una distinzione chiara tra profilo autoriale,
+      attività editoriale e materiali documentari.
     </p>
   </div>
 </section>
@@ -338,8 +354,9 @@
 
   <div class="block">
     <p>
-      Questa sezione può ospitare in seguito segnalazioni, recensioni, interviste,
-      riferimenti stampa e altri materiali relativi alla ricezione pubblica delle opere.
+      Questa sezione può ospitare segnalazioni, recensioni, interviste,
+      riferimenti stampa e altri materiali relativi alla ricezione pubblica delle opere
+      e alla presenza online dell’autore.
     </p>
 
     <p class="note">
