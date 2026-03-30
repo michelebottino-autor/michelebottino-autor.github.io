@@ -8,6 +8,7 @@
   <meta name="description" content="Contatti e canali ufficiali di Michele Bottino.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/contatti/">
 
   <meta property="og:type" content="website">
@@ -30,7 +31,18 @@
     "@type": "ContactPage",
     "name": "Contatti – Michele Bottino",
     "url": "https://michelebottino-autor.github.io/contatti/",
-    "description": "Contatti e canali ufficiali di Michele Bottino."
+    "description": "Contatti e canali ufficiali di Michele Bottino.",
+    "about": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/",
+      "jobTitle": "Scrittore e saggista italiano",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138828334",
+        "https://orcid.org/0009-0009-2797-9267",
+        "https://www.facebook.com/michelebottinoautore"
+      ]
+    }
   }
   </script>
 
@@ -49,9 +61,15 @@
     }
 
     h1, h2, h3 {
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
       margin-top: 0;
       color: #e5d3a3;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1.1em;
+      max-width: 68ch;
     }
 
     .container {
@@ -67,10 +85,13 @@
       align-items: center;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 14px;
+      gap: 20px;
     }
 
     .logo img {
       height: 60px;
+      width: auto;
+      display: block;
     }
 
     .nav-menu {
@@ -122,12 +143,6 @@
       margin-bottom: 14px;
     }
 
-    .page p {
-      max-width: 68ch;
-      margin-top: 0;
-      margin-bottom: 1.1em;
-    }
-
     .intro {
       font-size: 1.05rem;
       max-width: 62ch;
@@ -172,7 +187,8 @@
       color: #e5d3a3;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 10px;
       margin-bottom: 14px;
@@ -183,7 +199,8 @@
       font-size: 1rem;
     }
 
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus {
       outline: none;
       border-color: #c2a46d;
     }
@@ -252,7 +269,7 @@
       <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
       <span></span><span></span><span></span>
     </button>
 
@@ -262,6 +279,7 @@
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../poetica/">Poetica</a></li>
       <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../testi-musicali/">Testi musicali</a></li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
@@ -324,7 +342,7 @@
     </form>
 
     <p class="note" style="margin-top: 14px;">
-      Il modulo inoltra il messaggio all’indirizzo ufficiale indicato per i contatti del sito.
+      Il modulo inoltra il messaggio al canale ufficiale predisposto per i contatti del sito.
     </p>
   </div>
 </section>
