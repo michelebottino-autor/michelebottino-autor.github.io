@@ -273,6 +273,12 @@
       color: #c2a46d;
     }
 
+    .visit-counter {
+      margin-top: 12px;
+      color: #c2a46d;
+      font-size: 0.92rem;
+    }
+
     @media (max-width: 900px) {
       .grid-3 {
         grid-template-columns: 1fr;
@@ -482,12 +488,45 @@
     <a href="cookie/">Cookie Policy</a> |
     <a href="disclaimer/">Disclaimer</a>
   </p>
+
+  <div class="visit-counter">
+    Visite: <span id="visit-count">...</span>
+  </div>
 </footer>
 
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
+
+async function updateVisitCounter() {
+  const namespace = "michelebottino-autor.github.io";
+
+  let key = window.location.pathname
+    .replace(/^\/|\/$/g, "")
+    .replace(/\//g, "-");
+
+  if (!key) key = "homepage";
+
+  const el = document.getElementById("visit-count");
+  if (!el) return;
+
+  try {
+    const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`);
+
+    if (!response.ok) {
+      throw new Error("Counter API non disponibile");
+    }
+
+    const data = await response.json();
+    el.textContent = data.data ?? data.count ?? "—";
+  } catch (error) {
+    el.textContent = "—";
+    console.error("Errore contatore visite:", error);
+  }
+}
+
+updateVisitCounter();
 </script>
 
 </body>
