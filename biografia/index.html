@@ -147,6 +147,29 @@
       margin-bottom: 14px;
     }
 
+    .bio-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .bio-image {
+      flex: 0 0 260px;
+    }
+
+    .bio-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #8f7748;
+    }
+
+    .bio-text {
+      flex: 1;
+      min-width: 0;
+    }
+
     .block {
       background: #2a312d;
       border: 1px solid #8f7748;
@@ -219,6 +242,15 @@
       .page h2 {
         font-size: 1.3rem;
       }
+
+      .bio-flex {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .bio-image {
+        flex: none;
+      }
     }
   </style>
 </head>
@@ -250,19 +282,27 @@
 
 <main class="page container">
 
-<section>
+<section class="bio-intro">
   <h1>Michele Bottino</h1>
 
-  <p>
-    Michele Bottino (1972) è uno scrittore e saggista italiano.
-  </p>
+  <div class="bio-flex">
+    <div class="bio-image">
+      <img src="../images/michele-bottino-ritratto.jpg" alt="Michele Bottino, scrittore e saggista italiano">
+    </div>
 
-  <p>
-    La sua produzione comprende opere di narrativa e di saggistica sviluppate all’interno
-    di una linea espressiva orientata al realismo, alla coerenza strutturale e al controllo
-    formale del testo. I suoi lavori affrontano temi legati alla dimensione umana,
-    alle dinamiche di potere e al rapporto tra esperienza individuale e contesto storico.
-  </p>
+    <div class="bio-text">
+      <p>
+        Michele Bottino (1972) è uno scrittore e saggista italiano.
+      </p>
+
+      <p>
+        La sua produzione comprende opere di narrativa e di saggistica sviluppate all’interno
+        di una linea espressiva orientata al realismo, alla coerenza strutturale e al controllo
+        formale del testo. I suoi lavori affrontano temi legati alla dimensione umana,
+        alle dinamiche di potere e al rapporto tra esperienza individuale e contesto storico.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section>
