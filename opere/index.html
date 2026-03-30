@@ -307,6 +307,12 @@
       color: #c2a46d;
     }
 
+    .visit-counter {
+      margin-top: 12px;
+      color: #c2a46d;
+      font-size: 0.92rem;
+    }
+
     @media (max-width: 900px) {
       .grid-2 {
         grid-template-columns: 1fr;
@@ -485,19 +491,17 @@
     <a href="../cookie/">Cookie Policy</a> |
     <a href="../disclaimer/">Disclaimer</a>
   </p>
+
+  <div class="visit-counter">
+    Visite: <span id="visit-count">...</span>
+  </div>
 </footer>
 
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
-</script>
 
-<div class="visit-counter">
-  Visite: <span id="visit-count">...</span>
-</div>
-
-<script>
 async function updateVisitCounter() {
   const namespace = "michelebottino-autor.github.io";
 
