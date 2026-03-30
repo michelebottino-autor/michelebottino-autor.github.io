@@ -129,6 +129,32 @@
       padding-bottom: 26px;
     }
 
+    .hero-flex {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+      display: block;
+      border: 1px solid #8f7748;
+    }
+
     .hero h1 {
       font-size: 3rem;
       line-height: 1.05;
@@ -237,6 +263,14 @@
       .grid-3 {
         grid-template-columns: 1fr;
       }
+
+      .hero-flex {
+        gap: 28px;
+      }
+
+      .hero-image img {
+        max-width: 400px;
+      }
     }
 
     @media (max-width: 680px) {
@@ -271,12 +305,26 @@
         padding-bottom: 18px;
       }
 
+      .hero-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+      }
+
       .hero h1 {
         font-size: 2.2rem;
       }
 
       .hero h2 {
         font-size: 1.2rem;
+      }
+
+      .hero-image {
+        justify-content: flex-start;
+      }
+
+      .hero-image img {
+        max-width: 100%;
       }
 
       .cta {
@@ -318,26 +366,34 @@
 <main>
 
 <section class="hero container">
-  <h1>Michele Bottino</h1>
-  <h2>Scrittore e saggista italiano</h2>
+  <div class="hero-flex">
+    <div class="hero-text">
+      <h1>Michele Bottino</h1>
+      <h2>Scrittore e saggista italiano</h2>
 
-  <p>
-    Autore di opere narrative e saggistiche, Michele Bottino sviluppa una scrittura
-    orientata al realismo, alla coerenza strutturale e al controllo formale del testo.
-  </p>
+      <p>
+        Autore di opere narrative e saggistiche, Michele Bottino sviluppa una scrittura
+        orientata al realismo, alla coerenza strutturale e al controllo formale del testo.
+      </p>
 
-  <div class="cta">
-    <a href="opere/" class="btn primary">Opere</a>
-    <a href="biografia/" class="btn secondary">Profilo autore</a>
-  </div>
+      <div class="cta">
+        <a href="opere/" class="btn primary">Opere</a>
+        <a href="biografia/" class="btn secondary">Profilo autore</a>
+      </div>
 
-  <div class="identity-block">
-    <p>
-      Riferimenti esterni:
-      <a href="https://orcid.org/0009-0009-2797-9267" target="_blank" rel="noopener noreferrer">ORCID</a> ·
-      <a href="https://www.wikidata.org/wiki/Q138828334" target="_blank" rel="noopener noreferrer">Wikidata</a> ·
-      <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Facebook</a>
-    </p>
+      <div class="identity-block">
+        <p>
+          Riferimenti esterni:
+          <a href="https://orcid.org/0009-0009-2797-9267" target="_blank" rel="noopener noreferrer">ORCID</a> ·
+          <a href="https://www.wikidata.org/wiki/Q138828334" target="_blank" rel="noopener noreferrer">Wikidata</a> ·
+          <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/michele-bottino-autore.jpg" alt="Michele Bottino, scrittore e saggista italiano">
+    </div>
   </div>
 </section>
 
