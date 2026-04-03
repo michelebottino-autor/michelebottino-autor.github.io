@@ -15,14 +15,14 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
   <meta property="og:title" content="Il caso Emanuela Orlandi | Michele Bottino">
-  <meta property="og:description" content="Analisi del caso Emanuela Orlandi tra scomparsa, molteplicità di piste e assenza di convergenza definitiva.">
+  <meta property="og:description" content="Analisi del caso Emanuela Orlandi tra scomparsa, molteplicità di piste, interferenze istituzionali e assenza di convergenza definitiva.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/orlandi/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_ORLANDI_V1.png">
   <meta property="og:image:alt" content="Copertina dell'articolo sul caso Emanuela Orlandi">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Il caso Emanuela Orlandi | Michele Bottino">
-  <meta name="twitter:description" content="Analisi del caso Emanuela Orlandi tra scomparsa, molteplicità di piste e assenza di convergenza definitiva.">
+  <meta name="twitter:description" content="Analisi del caso Emanuela Orlandi tra scomparsa, molteplicità di piste, interferenze istituzionali e assenza di convergenza definitiva.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_ORLANDI_V1.png">
 
   <meta name="keywords" content="Emanuela Orlandi, Vaticano, Banda della Magliana, caso irrisolto, scomparsa, analisi documentaria">
@@ -33,7 +33,7 @@
     "@type": "Article",
     "headline": "Il caso Emanuela Orlandi",
     "alternativeHeadline": "Una struttura aperta tra piste concorrenti e assenza di convergenza",
-    "description": "Analisi del caso Emanuela Orlandi tra scomparsa, molteplicità di piste e assenza di convergenza definitiva.",
+    "description": "Analisi del caso Emanuela Orlandi tra scomparsa, molteplicità di piste, interferenze istituzionali e assenza di convergenza definitiva.",
     "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_ORLANDI_V1.png",
     "author": {
       "@type": "Person",
@@ -62,127 +62,511 @@
   </script>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     :root {
-      --bg-main:#1f2623;--bg-panel:#2a312d;--bg-panel-2:#313a35;
-      --text-main:#e5d3a3;--text-soft:#cdb989;--text-muted:#a9915f;
-      --line:#8f7748;--accent:#c2a46d;
-      --shadow:0 18px 42px rgba(0,0,0,0.28);
-      --shadow-soft:0 10px 24px rgba(0,0,0,0.18);
-      --radius:14px;
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family:Arial,Helvetica,sans-serif;
-      background:linear-gradient(180deg,#202825,#1f2623);
-      color:var(--text-main);
-      margin:0;
-      line-height:1.72;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
     }
 
-    h1,h2 {font-family:Georgia,serif;margin:0;color:var(--text-main);}
-    a{color:var(--accent);text-decoration:none;}
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
 
-    .container{max-width:1140px;margin:0 auto;padding:22px;}
+    p {
+      margin: 0;
+    }
 
-    .nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:14px;}
-    .nav-menu{display:flex;gap:14px;list-style:none;margin:0;padding:0;}
-    .menu-toggle{display:none;}
+    a {
+      color: var(--accent);
+    }
 
-    .article-cover{margin-bottom:28px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
-    .article-heading-box{background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-soft);}
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
 
-    .article-meta,.article-tags,.article-warning,.article-update-box{margin-bottom:12px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--bg-panel);}
-    .article-warning,.article-update-box{border-left:4px solid var(--accent);}
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
 
-    .article-box{max-width:920px;margin:30px auto;background:var(--bg-panel-2);border:1px solid var(--line);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);}
-    .article-text{font-family:Georgia,serif;font-size:1.15rem;line-height:1.9;text-align:justify;color:#eadbb4;}
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
 
-    .back-links{max-width:920px;margin:20px auto;display:flex;gap:10px;}
-    .back-link{padding:10px 14px;border:1px solid var(--accent);border-radius:8px;}
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
 
-    footer{padding:30px 0;color:var(--text-muted);}
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.28rem;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box,
+    .article-share,
+    .author-box {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning,
+    .article-update-box {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-update-box p,
+    .article-share p,
+    .author-box p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-update-box p:last-child,
+    .article-share p:last-child,
+    .author-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+    .article-share,
+    .author-box {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a,
+    .author-box a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover,
+    .author-box a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: var(--accent);
+    }
+
+    @media (max-width: 860px) {
+      .article-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-header h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .article-share,
+      .author-box,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header {
+        padding-top: 24px;
+      }
+
+      .article-heading-box {
+        padding: 22px 18px 18px;
+      }
+
+      .article-header h1 {
+        font-size: 2.05rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.06rem;
+      }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links {
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
 
 <header class="container">
-<nav class="nav">
-<div class="logo"><a href="../../"><img src="../../images/logo.png" height="60"></a></div>
-<ul class="nav-menu">
-<li><a href="../../">Home</a></li>
-<li><a href="../../articoli/">Articoli</a></li>
-</ul>
-</nav>
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
 
-<section class="container">
-<div class="article-cover">
-<img src="../../images/articoli/MB_COVER_ORLANDI_V1.png">
-</div>
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/articoli/MB_COVER_ORLANDI_V1.png" alt="Copertina dell'articolo sul caso Emanuela Orlandi">
+  </div>
 
-<div class="article-heading-box">
-<h1>Il caso Emanuela Orlandi</h1>
-<h2>Una struttura aperta tra piste concorrenti e assenza di convergenza</h2>
+  <div class="article-heading-box">
+    <h1>Il caso Emanuela Orlandi</h1>
+    <h2>Una struttura aperta tra piste concorrenti e assenza di convergenza</h2>
 
-<div class="article-meta">
-<p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
-<p><strong>Stato:</strong> Aperto</p>
-<p><strong>Livello di certezza:</strong> Molto basso</p>
-</div>
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
+        <p><strong>Stato del caso:</strong> Aperto</p>
+        <p><strong>Livello di certezza:</strong> Molto basso sul piano ricostruttivo</p>
+        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+      </div>
 
-<div class="article-tags">
-<p><strong>Tag:</strong> Vaticano, Banda della Magliana, scomparsa, caso irrisolto</p>
-</div>
+      <div class="article-stack">
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Emanuela Orlandi, Vaticano, Banda della Magliana, scomparsa, caso irrisolto, analisi documentaria</p>
+        </div>
 
-<div class="article-update-box">
-<p><strong>Aggiornamento:</strong> Il caso continua a essere oggetto di indagini e verifiche senza esito definitivo.</p>
-</div>
+        <div class="article-update-box">
+          <p><strong>Aggiornamento:</strong> Il caso resta aperto e strutturalmente privo di un punto di convergenza definitivo. Tra il 2025 e il 2026 sono emersi nuovi elementi nel lavoro della Commissione bicamerale e nelle attività investigative: il ritrovamento di un appunto inedito emerso dai lavori parlamentari, l’iscrizione di una donna nel registro degli indagati per false informazioni ai pm nel dicembre 2025 e, nel febbraio 2026, la convocazione di Dolores Brugnoli sul tema della possibile BMW collegata alla fase iniziale della scomparsa. Questi sviluppi mantengono il caso in movimento, ma non producono ancora una ricostruzione conclusiva unitaria.</p>
+        </div>
 
-<div class="article-warning">
-<p><strong>Nota metodologica:</strong> Caso ad alta dispersione narrativa e assenza di centro probatorio stabile.</p>
-</div>
-
-</div>
+        <div class="article-warning">
+          <p><strong>Nota metodologica:</strong> Caso ad alta dispersione narrativa e assenza di centro probatorio stabile. Le piste concorrenti non devono essere fuse in una falsa sintesi, ma mantenute separate in base al loro statuto informativo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="container">
-<div class="article-box">
-<div class="article-text">
-Il caso di Emanuela Orlandi rappresenta una delle strutture più complesse e irrisolte della cronaca italiana. La scomparsa avviene il 22 giugno 1983 a Roma, in un contesto apparentemente ordinario, ma destinato a trasformarsi in uno dei più lunghi e controversi casi aperti della storia recente. Fin dalle prime ore, la vicenda non si sviluppa secondo un’unica linea investigativa, ma si frammenta rapidamente in una pluralità di piste concorrenti. Questa frammentazione diventa il tratto dominante dell’intero caso e ne impedisce la stabilizzazione.
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">
+      Il caso di Emanuela Orlandi rappresenta una delle strutture più complesse e irrisolte della cronaca italiana. La scomparsa avviene il 22 giugno 1983 a Roma, in un contesto apparentemente ordinario, ma destinato a trasformarsi in uno dei più lunghi e controversi casi aperti della storia recente. Fin dalle prime ore, la vicenda non si sviluppa secondo un’unica linea investigativa, ma si frammenta rapidamente in una pluralità di piste concorrenti. Questa frammentazione diventa il tratto dominante dell’intero caso e ne impedisce la stabilizzazione.
 
-Le prime ipotesi si muovono tra il rapimento a scopo politico e il coinvolgimento di strutture criminali. La pista legata all’attentato a Giovanni Paolo II introduce un possibile collegamento internazionale, mentre altre ricostruzioni chiamano in causa la Banda della Magliana e ambienti criminali romani. Parallelamente emergono elementi che suggeriscono possibili connessioni interne al Vaticano. Queste linee non si integrano mai in un quadro unitario. Rimangono sovrapposte, spesso incompatibili, e prive di un punto di convergenza definitivo.
+      Le prime ipotesi si muovono tra il rapimento a scopo politico e il coinvolgimento di strutture criminali. La pista legata all’attentato a Giovanni Paolo II introduce un possibile collegamento internazionale, mentre altre ricostruzioni chiamano in causa la Banda della Magliana e ambienti criminali romani. Parallelamente emergono elementi che suggeriscono possibili connessioni interne al Vaticano. Queste linee non si integrano mai in un quadro unitario. Rimangono sovrapposte, spesso incompatibili, e prive di un punto di convergenza definitivo.
 
-Nel corso degli anni, il caso si alimenta di testimonianze, documenti, presunte rivelazioni, intercettazioni e nuove ipotesi investigative. Ogni elemento aggiunge complessità, ma non produce chiusura. Al contrario, contribuisce ad ampliare la struttura narrativa. Il risultato è una continua espansione del campo informativo senza un corrispondente consolidamento probatorio. La vicenda si trasforma progressivamente in un sistema aperto, in cui ogni nuova informazione tende a generare ulteriori ramificazioni.
+      Nel corso degli anni, il caso si alimenta di testimonianze, documenti, presunte rivelazioni, intercettazioni e nuove ipotesi investigative. Ogni elemento aggiunge complessità, ma non produce chiusura. Al contrario, contribuisce ad ampliare la struttura narrativa. Il risultato è una continua espansione del campo informativo senza un corrispondente consolidamento probatorio. La vicenda si trasforma progressivamente in un sistema aperto, in cui ogni nuova informazione tende a generare ulteriori ramificazioni.
 
-Un elemento determinante è l’assenza del corpo. Senza un riscontro materiale, ogni ricostruzione resta incompleta. Questo fattore impedisce la formazione di un asse stabile attorno a cui organizzare le informazioni disponibili. La scomparsa rimane l’unico dato certo e non contestato. Tutto il resto si colloca in una zona intermedia tra ipotesi, ricostruzioni e interpretazioni.
+      Un elemento determinante è l’assenza del corpo. Senza un riscontro materiale, ogni ricostruzione resta incompleta. Questo fattore impedisce la formazione di un asse stabile attorno a cui organizzare le informazioni disponibili. La scomparsa rimane l’unico dato certo e non contestato. Tutto il resto si colloca in una zona intermedia tra ipotesi, ricostruzioni e interpretazioni.
 
-La dimensione istituzionale aggiunge un ulteriore livello di complessità. Il coinvolgimento del Vaticano, diretto o indiretto, introduce variabili che rendono il caso ancora più difficile da definire. La gestione delle informazioni, la presenza di archivi non accessibili e la sovrapposizione tra livelli giuridici diversi contribuiscono a rendere la struttura opaca. Questo non produce necessariamente una spiegazione alternativa, ma rafforza la percezione di incompletezza.
+      La dimensione istituzionale aggiunge un ulteriore livello di complessità. Il coinvolgimento del Vaticano, diretto o indiretto, introduce variabili che rendono il caso ancora più difficile da definire. La gestione delle informazioni, la presenza di archivi non accessibili e la sovrapposizione tra livelli giuridici diversi contribuiscono a rendere la struttura opaca. Questo non produce necessariamente una spiegazione alternativa, ma rafforza la percezione di incompletezza.
 
-Il caso Orlandi non è caratterizzato dalla mancanza di dati, ma dalla loro dispersione. Esistono molte informazioni, ma nessuna ha assunto un ruolo dominante sufficiente a riordinare l’intero quadro. Ogni tentativo di convergenza si è dissolto nel tempo. Questa condizione rende il caso strutturalmente instabile e lo mantiene aperto anche a distanza di decenni.
+      Il caso Orlandi non è caratterizzato dalla mancanza di dati, ma dalla loro dispersione. Esistono molte informazioni, ma nessuna ha assunto un ruolo dominante sufficiente a riordinare l’intero quadro. Ogni tentativo di convergenza si è dissolto nel tempo. Questa condizione rende il caso strutturalmente instabile e lo mantiene aperto anche a distanza di decenni.
 
-In termini analitici, il caso rappresenta una forma estrema di divergenza narrativa. Non esiste una linea prevalente che possa essere considerata definitiva. Esistono invece molte linee, ciascuna con un proprio grado di plausibilità, ma nessuna capace di imporsi sulle altre. È questa molteplicità non risolta a definire la natura reale del caso.
+      In termini analitici, il caso rappresenta una forma estrema di divergenza narrativa. Non esiste una linea prevalente che possa essere considerata definitiva. Esistono invece molte linee, ciascuna con un proprio grado di plausibilità, ma nessuna capace di imporsi sulle altre. È questa molteplicità non risolta a definire la natura reale del caso.
 
-La scomparsa di Emanuela Orlandi continua quindi a esistere come spazio aperto, più che come sequenza chiusa. Non è soltanto un caso irrisolto. È un caso che non ha mai trovato un centro stabile. Ed è proprio questa assenza di convergenza a costituire il suo elemento strutturale fondamentale.
-</div>
-</div>
+      La scomparsa di Emanuela Orlandi continua quindi a esistere come spazio aperto, più che come sequenza chiusa. Non è soltanto un caso irrisolto. È un caso che non ha mai trovato un centro stabile. Ed è proprio questa assenza di convergenza a costituire il suo elemento strutturale fondamentale.
+    </div>
+  </div>
 
-<div class="back-links">
-<a href="../../" class="back-link">Home</a>
-<a href="../../articoli/" class="back-link">Articoli</a>
-</div>
+  <div class="article-share">
+    <p><strong>Condividi l’articolo:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/orlandi/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/orlandi/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/orlandi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
 
+  <div class="author-box">
+    <p><strong>Canali autore:</strong></p>
+    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../../articoli/" class="back-link">Torna agli articoli</a>
+  </div>
 </section>
 
 </main>
 
 <footer class="container">
-<p>© 2026 Michele Bottino</p>
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
