@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Il Mostro di Firenze | Michele Bottino</title>
-  <meta name="description" content="Ricostruzione del caso del Mostro di Firenze tra evidenza tecnica, giudicato parziale e persistenza narrativa.">
+  <meta name="description" content="Ricostruzione del caso del Mostro di Firenze tra evidenza tecnica, giudicato parziale, nuove istanze e persistenza narrativa.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
@@ -15,14 +15,14 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
   <meta property="og:title" content="Il Mostro di Firenze | Michele Bottino">
-  <meta property="og:description" content="Ricostruzione del caso del Mostro di Firenze tra evidenza tecnica, giudicato parziale e persistenza narrativa.">
+  <meta property="og:description" content="Ricostruzione del caso del Mostro di Firenze tra evidenza tecnica, giudicato parziale, nuove istanze e persistenza narrativa.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/mostro-di-firenze/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_MOSTRO_DI_FIRENZE_V1.png">
   <meta property="og:image:alt" content="Copertina dell'articolo sul Mostro di Firenze">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Il Mostro di Firenze | Michele Bottino">
-  <meta name="twitter:description" content="Ricostruzione del caso del Mostro di Firenze tra evidenza tecnica, giudicato parziale e persistenza narrativa.">
+  <meta name="twitter:description" content="Ricostruzione del caso del Mostro di Firenze tra evidenza tecnica, giudicato parziale, nuove istanze e persistenza narrativa.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_MOSTRO_DI_FIRENZE_V1.png">
 
   <meta name="keywords" content="Mostro di Firenze, duplici omicidi, cronaca nera, analisi documentaria, giudicato parziale, serialità criminale">
@@ -32,8 +32,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Il Mostro di Firenze",
-    "alternativeHeadline": "Tra evidenza tecnica, giudicato parziale e persistenza narrativa",
-    "description": "Ricostruzione del caso del Mostro di Firenze tra evidenza tecnica, giudicato parziale e persistenza narrativa.",
+    "alternativeHeadline": "Tra evidenza tecnica, giudicato parziale, nuove istanze e persistenza narrativa",
+    "description": "Ricostruzione del caso del Mostro di Firenze tra evidenza tecnica, giudicato parziale, nuove istanze e persistenza narrativa.",
     "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_MOSTRO_DI_FIRENZE_V1.png",
     "author": {
       "@type": "Person",
@@ -221,7 +221,8 @@
     .article-tags,
     .article-warning,
     .article-update-box,
-    .article-share {
+    .article-share,
+    .author-box {
       padding: 16px 18px;
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
@@ -238,7 +239,8 @@
     .article-tags p,
     .article-warning p,
     .article-update-box p,
-    .article-share p {
+    .article-share p,
+    .author-box p {
       margin-bottom: 8px;
       color: var(--text-main);
     }
@@ -247,7 +249,8 @@
     .article-tags p:last-child,
     .article-warning p:last-child,
     .article-update-box p:last-child,
-    .article-share p:last-child {
+    .article-share p:last-child,
+    .author-box p:last-child {
       margin-bottom: 0;
     }
 
@@ -283,21 +286,26 @@
       white-space: normal;
     }
 
-    .article-share {
+    .article-share,
+    .author-box {
       max-width: 920px;
       margin: 22px auto 0;
     }
 
-    .article-share a {
+    .article-share a,
+    .author-box a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
       color: var(--accent);
       text-decoration: none;
-      margin-right: 12px;
       padding-bottom: 2px;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s ease, opacity 0.2s ease;
     }
 
-    .article-share a:hover {
+    .article-share a:hover,
+    .author-box a:hover {
       border-color: var(--accent);
       opacity: 0.85;
     }
@@ -368,6 +376,7 @@
       }
 
       .article-share,
+      .author-box,
       .back-links {
         max-width: 100%;
       }
@@ -475,7 +484,7 @@
 
   <div class="article-heading-box">
     <h1>Il Mostro di Firenze</h1>
-    <h2>Tra evidenza tecnica, giudicato parziale e persistenza narrativa</h2>
+    <h2>Tra evidenza tecnica, giudicato parziale, nuove istanze e persistenza narrativa</h2>
 
     <div class="article-meta-grid">
       <div class="article-meta">
@@ -491,11 +500,11 @@
         </div>
 
         <div class="article-update-box">
-          <p><strong>Aggiornamento:</strong> Il caso continua a riattivarsi periodicamente sul piano mediatico e consulenziale, ma il nucleo storico-giudiziario resta segnato da un giudicato soltanto parziale e da una persistente instabilità narrativa.</p>
+          <p><strong>Aggiornamento:</strong> Nel febbraio 2026 la Cassazione ha respinto il tentativo di riaprire il filone della revisione relativo a Mario Vanni, confermando che il quadro non presenta nuove prove idonee a rovesciare il giudicato residuo. Nel gennaio 2026 è stato inoltre depositato un nuovo esposto che rilancia una pista alternativa collegata a tre delitti della sequenza. Questi sviluppi riattivano il caso sul piano mediatico e consulenziale, ma non modificano il nucleo storico-giudiziario già stabilizzato solo in parte.</p>
         </div>
 
         <div class="article-warning">
-          <p><strong>Nota metodologica:</strong> In questo caso è essenziale distinguere tra continuità tecnica della sequenza, perimetro del giudicato e successive riattivazioni interpretative. I tre livelli non coincidono.</p>
+          <p><strong>Nota metodologica:</strong> In questo caso è essenziale distinguere tra continuità tecnica della sequenza, perimetro del giudicato e successive riattivazioni interpretative. I tre livelli non coincidono e non devono essere fusi.</p>
         </div>
       </div>
     </div>
@@ -526,10 +535,15 @@
   </div>
 
   <div class="article-share">
-    <p><strong>Condividi:</strong></p>
+    <p><strong>Condividi l’articolo:</strong></p>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/mostro-di-firenze/" target="_blank" rel="noopener noreferrer">Facebook</a>
     <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/mostro-di-firenze/" target="_blank" rel="noopener noreferrer">X</a>
     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/mostro-di-firenze/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="author-box">
+    <p><strong>Canali autore:</strong></p>
+    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
   </div>
 
   <div class="back-links">
