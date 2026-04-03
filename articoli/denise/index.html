@@ -1,66 +1,560 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Caso Denise Pipitone | Michele Bottino</title>
-<meta name="description" content="Caso Denise Pipitone: scomparsa, piste divergenti e assenza di convergenza.">
+  <title>Il caso Denise Pipitone | Michele Bottino</title>
+  <meta name="description" content="Analisi del caso Denise Pipitone tra scomparsa, dispersione informativa, piste divergenti e assenza di convergenza definitiva.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/denise/">
 
-<style>
-body{font-family:Arial;background:#1f2623;color:#e5d3a3;margin:0;line-height:1.75;}
-.container{max-width:900px;margin:0 auto;padding:24px;}
-.article-box{background:#2a312d;border:1px solid #8f7748;padding:32px;}
-.article-text{font-family:Georgia,serif;text-align:justify;font-size:1.12rem;line-height:1.95;}
-.meta,.update{border:1px solid #8f7748;padding:16px;margin-bottom:16px;}
-.update{border-left:4px solid #c2a46d;}
-</style>
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Il caso Denise Pipitone | Michele Bottino">
+  <meta property="og:description" content="Analisi del caso Denise Pipitone tra scomparsa, dispersione informativa, piste divergenti e assenza di convergenza definitiva.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/denise/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_DENISE_V1.png">
+  <meta property="og:image:alt" content="Copertina dell'articolo sul caso Denise Pipitone">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Il caso Denise Pipitone | Michele Bottino">
+  <meta name="twitter:description" content="Analisi del caso Denise Pipitone tra scomparsa, dispersione informativa, piste divergenti e assenza di convergenza definitiva.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_DENISE_V1.png">
+
+  <meta name="keywords" content="Denise Pipitone, Mazara del Vallo, scomparsa, caso aperto, cronaca nera, analisi documentaria">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Il caso Denise Pipitone",
+    "alternativeHeadline": "Una scomparsa senza punto di convergenza",
+    "description": "Analisi del caso Denise Pipitone tra scomparsa, dispersione informativa, piste divergenti e assenza di convergenza definitiva.",
+    "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_DENISE_V1.png",
+    "author": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michele Bottino"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/articoli/denise/"
+    },
+    "articleSection": "Casi reali",
+    "keywords": [
+      "Denise Pipitone",
+      "Mazara del Vallo",
+      "scomparsa",
+      "caso aperto",
+      "cronaca nera",
+      "analisi documentaria"
+    ],
+    "inLanguage": "it-IT"
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.28rem;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box,
+    .article-share {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning,
+    .article-update-box {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-update-box p,
+    .article-share p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-update-box p:last-child,
+    .article-share p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+    .article-share {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: var(--accent);
+    }
+
+    @media (max-width: 860px) {
+      .article-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-header h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .article-share,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header {
+        padding-top: 24px;
+      }
+
+      .article-heading-box {
+        padding: 22px 18px 18px;
+      }
+
+      .article-header h1 {
+        font-size: 2.05rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.06rem;
+      }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links {
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
 
-<h1>Il caso Denise Pipitone: una struttura senza punto di convergenza</h1>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
 
-<div class="meta">
-<strong>Classificazione:</strong> Casi reali / Analisi documentaria<br>
-<strong>Stato:</strong> Aperto<br>
-<strong>Livello di certezza:</strong> Basso<br>
-<strong>Metodo:</strong> Bottino System (MRN)<br>
-<strong>Nota strutturale:</strong> Convergenza assente
-</div>
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="update">
-<strong>Aggiornamento al 3 aprile 2026:</strong>
-Il caso resta aperto. Le segnalazioni e le verifiche successive non hanno prodotto elementi definitivi né l’individuazione dei responsabili.
-</div>
+<main>
 
-<div class="article-box">
-<div class="article-text">
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/articoli/MB_COVER_DENISE_V1.png" alt="Copertina dell'articolo sul caso Denise Pipitone">
+  </div>
 
-Il caso di Denise Pipitone presenta una struttura che, fin dalle prime fasi, si configura come priva di un punto di convergenza. Il 1 settembre 2004, a Mazara del Vallo, la bambina scompare in un arco temporale estremamente ridotto. La rapidità dell’evento e l’assenza di una ricostruzione diretta determinano immediatamente una condizione di instabilità.
+  <div class="article-heading-box">
+    <h1>Il caso Denise Pipitone</h1>
+    <h2>Una scomparsa senza punto di convergenza</h2>
 
-Le prime testimonianze introducono una possibile direzione. La presenza di una donna con una bambina viene segnalata, ma non viene mai stabilizzata in modo definitivo. L’identificazione rimane incerta e non produce un elemento consolidato.
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
+        <p><strong>Stato del caso:</strong> Aperto</p>
+        <p><strong>Livello di certezza:</strong> Basso sul piano ricostruttivo</p>
+        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+      </div>
 
-Parallelamente, l’attenzione investigativa si concentra sul contesto familiare. Le dinamiche pregresse, le relazioni e le tensioni vengono analizzate come possibili elementi di contesto. Tuttavia, anche in questo caso, la quantità di informazioni raccolte non si traduce in una struttura probatoria stabile. Il processo che coinvolge Jessica Pulizzi si conclude con un’assoluzione definitiva, eliminando questa linea come punto di convergenza giudiziaria.
+      <div class="article-stack">
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Denise Pipitone, Mazara del Vallo, scomparsa, caso aperto, cronaca nera, analisi documentaria</p>
+        </div>
 
-Nel tempo, il caso si espande attraverso una molteplicità di piste. Le segnalazioni provenienti da diverse aree geografiche introducono continuamente nuovi scenari. Alcune ipotesi suggeriscono un allontanamento della bambina dal territorio italiano, altre mantengono una dimensione locale. Nessuna di queste direzioni produce una chiusura.
+        <div class="article-update-box">
+          <p><strong>Aggiornamento:</strong> Il caso resta aperto. Le numerose segnalazioni, le verifiche successive e le riattivazioni investigative non hanno prodotto, fino a oggi, un elemento definitivo in grado di chiudere la vicenda.</p>
+        </div>
 
-Questa espansione continua genera una dispersione informativa significativa. Ogni nuova segnalazione amplia il campo, ma riduce la capacità di costruire una sequenza coerente. Il caso non evolve verso una sintesi, ma verso una moltiplicazione delle possibilità.
+        <div class="article-warning">
+          <p><strong>Nota metodologica:</strong> In questo caso la difficoltà principale non è soltanto l’assenza di prova materiale, ma la dispersione continua delle piste e la mancanza di un punto di convergenza stabile.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-L’assenza del corpo rappresenta il nodo centrale della struttura. Senza un riscontro materiale, ogni ipotesi resta aperta. Non esiste un elemento che permetta di stabilire una linea definitiva, e questo impedisce la formazione di una verità giudiziaria.
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">
+      Il caso di Denise Pipitone è uno dei più emblematici quando si cerca di comprendere la differenza tra scomparsa, indagine e costruzione narrativa. Il 1 settembre 2004, a Mazara del Vallo, una bambina di quasi quattro anni scompare in un arco di tempo brevissimo nei pressi dell’abitazione familiare. Da quel momento, la vicenda si trasforma in una struttura aperta che, anziché chiudersi progressivamente attorno a un nucleo di prova, tende a disperdersi nel tempo in una molteplicità di piste, segnalazioni e ricostruzioni mai del tutto stabilizzate.
 
-Nel corso degli anni, le indagini vengono riattivate più volte. Ogni riapertura produce verifiche, ma non produce convergenza. Il caso continua a esistere come struttura aperta, in cui il livello documentale non è sufficiente a contenere il livello narrativo.
+      La caratteristica fondamentale del caso emerge subito: la scomparsa avviene in un contesto urbano, in pieno giorno, in una finestra temporale minima e senza che si consolidi un testimone diretto certo del momento decisivo. Questo elemento iniziale determina l’intera struttura successiva. Non esiste una scena del crimine in senso classico, non esiste un corpo, non esiste un reperto centrale attorno a cui possa organizzarsi una convergenza probatoria. Esiste, invece, una sottrazione improvvisa che apre uno spazio di possibilità enorme e difficilmente controllabile.
 
-Il caso Denise Pipitone evidenzia una condizione precisa: quando i dati certi sono limitati e non esiste un elemento stabilizzante, la narrazione tende a espandersi indefinitamente. Questa espansione non porta alla soluzione, ma alla permanenza del caso nel tempo.
+      Fin dalle prime fasi, l’indagine si orienta su più livelli. Da una parte c’è il contesto familiare, con tensioni pregresse, rapporti conflittuali e dinamiche affettive complesse. Dall’altra c’è la pista del rapimento da parte di terzi, che può implicare uno spostamento rapido della bambina, anche fuori dal territorio locale o nazionale. Questa doppia apertura non si risolve mai del tutto. Nel tempo, le due direzioni non vengono sintetizzate in una sequenza unica, ma continuano a coesistere come possibilità concorrenti.
 
-La struttura rimane quindi incompleta. Non esiste una sequenza definitiva, non esiste una responsabilità accertata, non esiste un punto di chiusura. Esiste solo un sistema aperto, in cui ogni elemento aggiunto modifica la percezione senza modificare la struttura.
+      All’interno del primo blocco investigativo, il nome che assume maggiore rilievo è quello di Jessica Pulizzi. Il processo che la riguarda rappresenta il momento di massima definizione giudiziaria del caso. Tuttavia, proprio qui emerge uno dei punti più importanti dell’intera vicenda: l’assoluzione definitiva elimina quel segmento come punto di convergenza processuale. Non significa che il contesto familiare scompaia dalla narrazione, ma significa che non si consolida in una responsabilità giudiziariamente accertata. Questo passaggio è decisivo, perché lascia il caso formalmente aperto, ma già gravato da una forte dispersione interpretativa.
 
-</div>
-</div>
+      A complicare ulteriormente la struttura interviene il flusso continuo delle segnalazioni. Nel corso degli anni, il caso Denise si alimenta di avvistamenti, ipotesi internazionali, presunti riconoscimenti, immagini televisive, piste estere, verifiche genetiche e richiami ciclici dell’attenzione pubblica. Ogni nuovo elemento sembra, per un momento, promettere una svolta. Ma quasi sempre il risultato è opposto: la moltiplicazione delle piste allarga il campo e riduce la capacità di costruire una linea coerente. È qui che il caso assume la sua forma specifica. Non una struttura chiusa che si apre, ma una struttura che non riesce mai a chiudersi perché non trova un centro stabile.
 
-</div>
+      L’assenza del corpo è il nodo che domina tutto il caso. Senza un riscontro materiale, ogni ipotesi resta sospesa. Non c’è solo l’assenza di una prova definitiva: manca proprio l’oggetto centrale capace di trasformare la sequenza delle possibilità in un tracciato verificabile. Questo non significa che il caso sia vuoto di dati. Significa che i dati disponibili non sono abbastanza forti da imporsi sugli altri e da assorbire la dispersione narrativa.
+
+      Il punto più delicato del caso Denise non è quindi la mancanza totale di informazioni, ma la loro natura. Esistono testimonianze, esistono contesti, esistono verifiche, esistono segmenti investigativi concreti. Ma nessuno di questi elementi ha prodotto, fino a oggi, una convergenza definitiva. Ogni tentativo di chiusura si è trasformato, col tempo, in una nuova riapertura. E ogni riapertura ha generato ulteriore materiale, senza però modificare la struttura profonda del caso.
+
+      Da un punto di vista documentario, Denise Pipitone è un caso in cui la narrazione tende a espandersi molto più della prova. Questa asimmetria è il suo tratto dominante. La vicenda resta presente nella memoria pubblica proprio perché non dispone di un punto fermo sufficiente a saturarla. L’assenza di una conclusione genera una permanenza narrativa continua. Il caso non smette di esistere perché non è mai stato davvero chiuso. E non è mai stato chiuso non soltanto perché manchi un colpevole, ma perché manca una sequenza definitiva, un corpo, una prova stabilizzante, un baricentro.
+
+      È per questo che il caso Denise Pipitone continua a rappresentare una delle forme più pure di dispersione investigativa. Tutto ciò che emerge sembra aggiungere qualcosa, ma quasi nulla riesce a ridefinire davvero la struttura. La scomparsa resta il solo dato assolutamente stabile. Tutto il resto si organizza intorno ad essa come campo aperto, non come percorso chiuso. E proprio in questa impossibilità di convergenza si trova la natura reale del caso.
+    </div>
+  </div>
+
+  <div class="article-share">
+    <p><strong>Condividi:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/denise/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/denise/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/denise/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../../articoli/" class="back-link">Torna agli articoli</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
