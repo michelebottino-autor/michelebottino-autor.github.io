@@ -1,60 +1,561 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Strage di Erba | Michele Bottino</title>
-<meta name="description" content="Strage di Erba: convergenza giudiziaria e persistenza di instabilità narrativa.">
+  <title>La strage di Erba | Michele Bottino</title>
+  <meta name="description" content="Analisi della strage di Erba tra convergenza giudiziaria, confessioni ritrattate, testimonianza decisiva e persistenza del conflitto narrativo.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/erba/">
 
-<style>
-body{font-family:Arial;background:#1f2623;color:#e5d3a3;margin:0;line-height:1.75;}
-.container{max-width:900px;margin:0 auto;padding:24px;}
-.article-box{background:#2a312d;border:1px solid #8f7748;padding:32px;}
-.article-text{font-family:Georgia,serif;text-align:justify;font-size:1.12rem;line-height:1.95;}
-.meta,.update{border:1px solid #8f7748;padding:16px;margin-bottom:16px;}
-.update{border-left:4px solid #c2a46d;}
-</style>
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="La strage di Erba | Michele Bottino">
+  <meta property="og:description" content="Analisi della strage di Erba tra convergenza giudiziaria, confessioni ritrattate, testimonianza decisiva e persistenza del conflitto narrativo.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/erba/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_ERBA_V1.png">
+  <meta property="og:image:alt" content="Copertina dell'articolo sulla strage di Erba">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La strage di Erba | Michele Bottino">
+  <meta name="twitter:description" content="Analisi della strage di Erba tra convergenza giudiziaria, confessioni ritrattate, testimonianza decisiva e persistenza del conflitto narrativo.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_ERBA_V1.png">
+
+  <meta name="keywords" content="Erba, Olindo Romano, Rosa Bazzi, Mario Frigerio, strage di Erba, cronaca giudiziaria, analisi documentaria">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "La strage di Erba",
+    "alternativeHeadline": "Convergenza giudiziaria e persistenza del conflitto narrativo",
+    "description": "Analisi della strage di Erba tra convergenza giudiziaria, confessioni ritrattate, testimonianza decisiva e persistenza del conflitto narrativo.",
+    "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_ERBA_V1.png",
+    "author": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michele Bottino"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/articoli/erba/"
+    },
+    "articleSection": "Casi reali",
+    "keywords": [
+      "Erba",
+      "Olindo Romano",
+      "Rosa Bazzi",
+      "Mario Frigerio",
+      "strage di Erba",
+      "cronaca giudiziaria",
+      "analisi documentaria"
+    ],
+    "inLanguage": "it-IT"
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.28rem;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box,
+    .article-share {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning,
+    .article-update-box {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-update-box p,
+    .article-share p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-update-box p:last-child,
+    .article-share p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+    .article-share {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: var(--accent);
+    }
+
+    @media (max-width: 860px) {
+      .article-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-header h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .article-share,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header {
+        padding-top: 24px;
+      }
+
+      .article-heading-box {
+        padding: 22px 18px 18px;
+      }
+
+      .article-header h1 {
+        font-size: 2.05rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.06rem;
+      }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links {
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
 
-<h1>La strage di Erba: convergenza giudiziaria e frattura narrativa</h1>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
 
-<div class="meta">
-<strong>Classificazione:</strong> Casi reali / Analisi documentaria<br>
-<strong>Stato:</strong> Chiuso (giudiziariamente)<br>
-<strong>Livello di certezza:</strong> Medio-alto<br>
-<strong>Metodo:</strong> Bottino System (MRN)<br>
-<strong>Nota strutturale:</strong> Convergenza giudiziaria con instabilità narrativa residua
-</div>
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="update">
-<strong>Aggiornamento al 3 aprile 2026:</strong>
-Le condanne restano definitive. Persistono iniziative di revisione e dibattito pubblico senza modifica dello stato giudiziario.
-</div>
+<main>
 
-<div class="article-box">
-<div class="article-text">
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/articoli/MB_COVER_ERBA_V1.png" alt="Copertina dell'articolo sulla strage di Erba">
+  </div>
 
-La strage avvenuta a Erba l’11 dicembre 2006 rappresenta una struttura complessa in cui coesistono due livelli distinti: una convergenza giudiziaria consolidata e una persistenza di instabilità narrativa. L’evento si sviluppa all’interno di un’abitazione, dove l’aggressione produce quattro vittime e un unico sopravvissuto.
+  <div class="article-heading-box">
+    <h1>La strage di Erba</h1>
+    <h2>Convergenza giudiziaria e persistenza del conflitto narrativo</h2>
 
-La dinamica presenta elementi definiti. L’utilizzo di armi multiple e il successivo incendio indicano un’azione violenta accompagnata da un tentativo di alterare la scena. Questo dato introduce una struttura già orientata verso la distruzione delle tracce.
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
+        <p><strong>Stato del caso:</strong> Chiuso sul piano giudiziario</p>
+        <p><strong>Livello di certezza:</strong> Alto sul piano processuale, discusso sul piano narrativo</p>
+        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+      </div>
 
-L’elemento centrale della costruzione probatoria è rappresentato dalla testimonianza del sopravvissuto, Mario Frigerio. Il riconoscimento degli aggressori costituisce un punto di convergenza decisivo. A questo si aggiungono le confessioni degli imputati, successivamente ritrattate. Questa oscillazione introduce una frattura narrativa, ma non altera l’esito giudiziario.
+      <div class="article-stack">
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Erba, Olindo Romano, Rosa Bazzi, Mario Frigerio, strage di Erba, cronaca giudiziaria, analisi documentaria</p>
+        </div>
 
-Il processo porta alla condanna definitiva di Olindo Romano e Rosa Bazzi. La struttura giudiziaria si chiude con un livello di stabilità elevato. Tuttavia, il caso non si chiude sul piano narrativo. Le richieste di revisione e le discussioni pubbliche mantengono aperta una dimensione parallela.
+        <div class="article-update-box">
+          <p><strong>Aggiornamento:</strong> Le condanne restano definitive. Le iniziative successive e le richieste di rilettura non hanno modificato il quadro giudiziario, ma continuano ad alimentare un conflitto interpretativo sul caso.</p>
+        </div>
 
-Questa coesistenza evidenzia un aspetto centrale: la convergenza giudiziaria non elimina necessariamente la divergenza narrativa. Il sistema probatorio raggiunge una chiusura, ma il sistema interpretativo continua a produrre variazioni.
+        <div class="article-warning">
+          <p><strong>Nota metodologica:</strong> In questo caso è essenziale separare la stabilità del giudicato dalla persistenza di una narrazione alternativa. La seconda non ha rovesciato la prima, ma ne contesta continuamente la percezione pubblica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-La strage di Erba si configura quindi come una struttura bifasica. Da un lato, un esito definitivo; dall’altro, una persistenza di instabilità che non incide sulla sentenza ma incide sulla percezione del caso. Questa doppia natura rappresenta uno degli elementi più rilevanti nell’analisi documentaria contemporanea.
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">
+      La strage di Erba è uno dei casi in cui la distanza tra definizione giudiziaria e conflitto narrativo si manifesta in modo più netto. L’11 dicembre 2006, all’interno di un contesto condominiale segnato da rapporti difficili e tensioni pregresse, si consuma un massacro che lascia quattro vittime: Raffaella Castagna, il piccolo Youssef Marzouk, Valeria Cherubini e Paola Galli. La scena è brutalmente segnata dalla violenza e da un incendio appiccato dopo l’aggressione. Fin dall’inizio, quindi, il caso si presenta come una struttura in cui omicidio plurimo e alterazione della scena coincidono.
 
-</div>
-</div>
+      Dal punto di vista dei dati stabili, alcuni elementi emergono con forza. Le vittime vengono colpite all’interno dell’abitazione. L’incendio interviene successivamente, in una funzione chiaramente compatibile con la distruzione o la compromissione delle tracce. C’è un unico sopravvissuto, Mario Frigerio, e proprio la sua testimonianza assumerà un peso centrale. Questo dettaglio è decisivo, perché colloca il caso in una forma particolare: non una sequenza costruita solo su indizi materiali, ma una struttura in cui dichiarazioni, confessioni e riscontri si intrecciano in modo molto stretto.
 
-</div>
+      Il nome di Olindo Romano e Rosa Bazzi emerge rapidamente come nucleo dell’ipotesi accusatoria. Il processo si costruisce attorno a più elementi: le confessioni rese nelle prime fasi, la loro successiva ritrattazione, i rapporti di vicinato, la testimonianza del sopravvissuto, alcuni riscontri materiali e la ricostruzione complessiva della dinamica. Ed è proprio questo intreccio a definire la natura del caso. Non esiste, da solo, un unico elemento che possa spiegare tutto. La forza del quadro processuale deriva dalla convergenza di più segmenti.
+
+      Le confessioni rappresentano uno dei punti più delicati. Da una parte costituiscono un elemento fortissimo: due imputati che descrivono il delitto. Dall’altra, la successiva ritrattazione apre una frattura immediata. Questo produce una tensione strutturale che accompagnerà il caso per anni. Le confessioni sono state spontanee o indotte? Hanno un valore diretto o vanno lette solo in relazione agli altri dati? Sono il cuore della prova o un elemento da trattare con cautela? La persistenza di queste domande ha alimentato una parte rilevante del conflitto narrativo successivo.
+
+      Accanto alle confessioni, la testimonianza di Mario Frigerio ha avuto un peso enorme. È il solo sopravvissuto e, di conseguenza, il solo testimone diretto dell’aggressione. Il suo riconoscimento degli aggressori diventa uno dei cardini della struttura accusatoria. Ma anche qui si inserisce uno dei principali terreni di contestazione: le condizioni fisiche, la memoria, la possibilità di influenza, il tempo intercorso, la qualità della percezione in una scena di violenza estrema. Come in altri casi molto esposti, un elemento fortissimo diventa anche il centro della frattura interpretativa.
+
+      Il processo arriva comunque a una definizione stabile. Le condanne diventano definitive. Sul piano giudiziario, il caso si chiude. Questo è un punto che non può essere eluso: esiste una verità processuale consolidata, e questa verità attribuisce la responsabilità a Olindo Romano e Rosa Bazzi. Tuttavia, è proprio dopo la chiusura giudiziaria che il caso continua a vivere in modo anomalo. Le richieste di revisione, le nuove consulenze, i tentativi di rilettura e la costante esposizione mediatica tengono aperta una seconda vita del caso, non processuale ma narrativa.
+
+      La strage di Erba mostra quindi una forma bifasica molto precisa. Da un lato c’è una convergenza giudiziaria forte, fondata su più elementi che i giudici hanno ritenuto coerenti. Dall’altro c’è una persistenza del conflitto narrativo che, pur non avendo modificato il giudicato, continua a erodere la percezione di stabilità presso una parte dell’opinione pubblica. Questa seconda dimensione non è irrilevante, perché dimostra come un caso possa essere chiuso formalmente e, al tempo stesso, rimanere aperto come oggetto di disputa simbolica.
+
+      In termini strutturali, il caso Erba non è assimilabile né ai casi aperti senza convergenza né ai casi totalmente fondati su una sola prova dominante. Qui il punto decisivo è l’intreccio. Confessioni, ritrattazioni, testimonianza, dinamica e contesto si sostengono a vicenda nella costruzione del quadro processuale. Ed è proprio questo intreccio che viene successivamente attaccato dalla narrazione alternativa: non un singolo elemento, ma la coerenza complessiva del sistema.
+
+      È per questo che la strage di Erba continua a occupare uno spazio così rilevante nella memoria pubblica. Non solo per la violenza del fatto, ma perché rappresenta uno dei casi in cui si vede con maggiore chiarezza la differenza tra stabilità del giudicato e instabilità del racconto. La sentenza esiste, è definitiva e non è stata rovesciata. Ma la struttura narrativa che si sviluppa attorno al caso continua a produrre attrito, a contestare, a riaprire simbolicamente ciò che sul piano processuale è chiuso. Ed è proprio in questa frattura, più ancora che nella cronaca del massacro, che si trova la vera persistenza del caso Erba.
+    </div>
+  </div>
+
+  <div class="article-share">
+    <p><strong>Condividi:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/erba/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/erba/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/erba/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../../articoli/" class="back-link">Torna agli articoli</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
