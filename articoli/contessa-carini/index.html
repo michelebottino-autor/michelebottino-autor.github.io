@@ -1,111 +1,538 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>La Contessa di Carini | Michele Bottino</title>
-<meta name="description" content="Analisi del caso storico della Contessa di Carini tra documento e costruzione narrativa.">
+  <title>La Contessa di Carini | Michele Bottino</title>
+  <meta name="description" content="La Contessa di Carini: analisi del caso storico tra documento, ricostruzione narrativa e tradizione popolare.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/contessa-carini/">
 
-<style>
-:root {
-  --bg:#1f2623;
-  --card:#2a312d;
-  --line:#8f7748;
-  --gold:#e5d3a3;
-}
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="La Contessa di Carini | Michele Bottino">
+  <meta property="og:description" content="Analisi del caso storico della Contessa di Carini tra documento, ricostruzione narrativa e tradizione popolare.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/contessa-carini/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_CARINI_V1.png">
+  <meta property="og:image:alt" content="Copertina dell'articolo sulla Contessa di Carini">
 
-body {
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:var(--bg);
-  color:var(--gold);
-  line-height:1.7;
-}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La Contessa di Carini | Michele Bottino">
+  <meta name="twitter:description" content="Analisi del caso storico della Contessa di Carini tra documento, ricostruzione narrativa e tradizione popolare.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_CARINI_V1.png">
 
-.container {
-  max-width:1100px;
-  margin:0 auto;
-  padding:20px;
-}
+  <meta name="keywords" content="Contessa di Carini, Laura Lanza, Cesare Lanza, Carini, Sicilia, caso storico, ricostruzione storica, folklore">
 
-.nav {
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid var(--line);
-  padding-bottom:10px;
-}
-
-a {
-  color:#c2a46d;
-  text-decoration:none;
-}
-
-.hero img {
-  width:100%;
-  border:1px solid var(--line);
-  margin-top:20px;
-}
-
-.article-box {
-  max-width:820px;
-  margin:40px auto;
-  background:var(--card);
-  border:1px solid var(--line);
-  padding:34px;
-}
-
-.article-text {
-  font-family:Georgia, serif;
-  font-size:1.13rem;
-  line-height:1.9;
-  text-align:justify;
-  hyphens:auto;
-}
-
-@media (max-width:680px){
-  .article-text{
-    text-align:left;
-    font-size:1rem;
-    hyphens:none;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "La Contessa di Carini",
+    "alternativeHeadline": "Tra documento storico e costruzione narrativa",
+    "description": "Analisi del caso storico della Contessa di Carini tra documento, ricostruzione narrativa e tradizione popolare.",
+    "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_CARINI_V1.png",
+    "author": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michele Bottino"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/articoli/contessa-carini/"
+    },
+    "articleSection": "Casi storici",
+    "keywords": [
+      "Contessa di Carini",
+      "Laura Lanza",
+      "Cesare Lanza",
+      "Carini",
+      "Sicilia",
+      "caso storico",
+      "ricostruzione storica",
+      "folklore"
+    ],
+    "inLanguage": "it-IT"
   }
-}
+  </script>
 
-.footer {
-  border-top:1px solid var(--line);
-  margin-top:40px;
-  padding-top:20px;
-  color:#8f7748;
-}
-</style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.28rem;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-share {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-share p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-share p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+    .article-share {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: var(--accent);
+    }
+
+    @media (max-width: 860px) {
+      .article-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-header h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .article-share,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header {
+        padding-top: 24px;
+      }
+
+      .article-heading-box {
+        padding: 22px 18px 18px;
+      }
+
+      .article-header h1 {
+        font-size: 2.05rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.06rem;
+      }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links {
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
 
-<div class="nav">
-  <div>Articoli</div>
-  <div><a href="../../">← Home</a></div>
-</div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
 
-<h1>La Contessa di Carini</h1>
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="hero">
-<img src="../../images/articoli/MB_COVER_CARINI_V1.png">
-</div>
+<main>
 
-<div class="article-box">
-<div class="article-text">
-Il caso della Laura Lanza rappresenta una struttura in cui il dato storico e la costruzione narrativa si sovrappongono fino a diventare difficilmente distinguibili. L’evento si colloca nel 1563, in un contesto sociale in cui il codice d’onore aristocratico definisce non solo i comportamenti, ma anche la loro legittimazione. L’elemento documentale principale è costituito da un atto notarile che attesta l’uccisione della giovane da parte del padre, Cesare Lanza, conte di Mussomeli, all’interno del castello di Carini. Il documento non descrive le modalità dettagliate dell’evento, ma ne certifica l’esito e il quadro giuridico. A partire da questo nucleo minimo, nel corso dei secoli si sviluppa una stratificazione narrativa che introduce elementi non verificabili, tra cui la relazione adulterina della giovane e la dinamica passionale dell’omicidio. La trasmissione orale e la rielaborazione letteraria trasformano progressivamente l’evento in una struttura mitica, in cui il dato storico originario viene assorbito all’interno di una narrazione emotivamente coerente ma documentalmente instabile. La figura della Contessa diventa così un nodo simbolico, utilizzato per rappresentare tensioni sociali, morali e familiari, mentre la distinzione tra fatto e racconto perde progressivamente definizione. Il caso evidenzia quindi un processo di convergenza narrativa non controllata, in cui livelli informativi diversi vengono fusi senza possibilità di recupero dello statuto originario. L’analisi mostra come, in assenza di una struttura documentaria solida e continuamente verificabile, il racconto tenda a occupare lo spazio del dato, generando una configurazione in cui la verità storica e la costruzione narrativa risultano strutturalmente indistinguibili.
-</div>
-</div>
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/articoli/MB_COVER_CARINI_V1.png" alt="Copertina dell'articolo sulla Contessa di Carini">
+  </div>
 
-<div class="footer">
-© 2026 Michele Bottino
-</div>
+  <div class="article-heading-box">
+    <h1>La Contessa di Carini</h1>
+    <h2>Tra documento storico e costruzione narrativa</h2>
 
-</div>
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Caso storico / Analisi documentaria</p>
+        <p><strong>Stato del caso:</strong> Evento storico documentato</p>
+        <p><strong>Livello di certezza:</strong> Medio sul piano storico</p>
+        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+      </div>
+
+      <div class="article-stack">
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Contessa di Carini, Laura Lanza, Cesare Lanza, Carini, Sicilia, caso storico, ricostruzione storica, folklore</p>
+        </div>
+
+        <div class="article-warning">
+          <p><strong>Nota metodologica:</strong> Il caso presenta una stratificazione tra documento notarile, ricostruzione narrativa e tradizione popolare. I livelli non risultano completamente separabili nella trasmissione storica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">
+      Il caso della Laura Lanza rappresenta una struttura in cui il dato storico e la costruzione narrativa si sovrappongono fino a diventare difficilmente distinguibili. L’evento si colloca nel 1563, in un contesto sociale in cui il codice d’onore aristocratico definisce non solo i comportamenti, ma anche la loro legittimazione. L’elemento documentale principale è costituito da un atto notarile che attesta l’uccisione della giovane da parte del padre, Cesare Lanza, conte di Mussomeli, all’interno del castello di Carini. Il documento non descrive le modalità dettagliate dell’evento, ma ne certifica l’esito e il quadro giuridico. A partire da questo nucleo minimo, nel corso dei secoli si sviluppa una stratificazione narrativa che introduce elementi non verificabili, tra cui la relazione adulterina della giovane e la dinamica passionale dell’omicidio. La trasmissione orale e la rielaborazione letteraria trasformano progressivamente l’evento in una struttura mitica, in cui il dato storico originario viene assorbito all’interno di una narrazione emotivamente coerente ma documentalmente instabile. La figura della Contessa diventa così un nodo simbolico, utilizzato per rappresentare tensioni sociali, morali e familiari, mentre la distinzione tra fatto e racconto perde progressivamente definizione. Il caso evidenzia quindi un processo di convergenza narrativa non controllata, in cui livelli informativi diversi vengono fusi senza possibilità di recupero dello statuto originario. L’analisi mostra come, in assenza di una struttura documentaria solida e continuamente verificabile, il racconto tenda a occupare lo spazio del dato, generando una configurazione in cui la verità storica e la costruzione narrativa risultano strutturalmente indistinguibili.
+    </div>
+  </div>
+
+  <div class="article-share">
+    <p><strong>Condividi:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/contessa-carini/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/contessa-carini/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/contessa-carini/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../../articoli/" class="back-link">Torna agli articoli</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
