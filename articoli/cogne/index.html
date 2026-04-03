@@ -1,102 +1,560 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Delitto di Cogne | Michele Bottino</title>
-<meta name="description" content="Delitto di Cogne: ricostruzione documentale tra fatti, limiti probatori e rapporto tra prova e narrazione.">
+  <title>Il delitto di Cogne | Michele Bottino</title>
+  <meta name="description" content="Analisi del delitto di Cogne tra dati stabili, limiti probatori e frattura tra fatto e narrazione.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/cogne/">
 
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #1f2623;
-  color: #e5d3a3;
-  margin: 0;
-  line-height: 1.75;
-}
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Il delitto di Cogne | Michele Bottino">
+  <meta property="og:description" content="Analisi del delitto di Cogne tra dati stabili, limiti probatori e frattura tra fatto e narrazione.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/cogne/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_COGNE_V1.png">
+  <meta property="og:image:alt" content="Copertina dell'articolo sul delitto di Cogne">
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px;
-}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Il delitto di Cogne | Michele Bottino">
+  <meta name="twitter:description" content="Analisi del delitto di Cogne tra dati stabili, limiti probatori e frattura tra fatto e narrazione.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_COGNE_V1.png">
 
-.article-box {
-  background: #2a312d;
-  border: 1px solid #8f7748;
-  padding: 30px;
-}
+  <meta name="keywords" content="Cogne, Annamaria Franzoni, Samuele Lorenzi, caso giudiziario, cronaca nera, analisi documentaria">
 
-.article-text {
-  font-family: Georgia, serif;
-  text-align: justify;
-  font-size: 1.1rem;
-  line-height: 1.9;
-}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Il delitto di Cogne",
+    "alternativeHeadline": "Cosa sappiamo davvero e cosa non sapremo mai",
+    "description": "Analisi del delitto di Cogne tra dati stabili, limiti probatori e frattura tra fatto e narrazione.",
+    "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_COGNE_V1.png",
+    "author": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michele Bottino"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/articoli/cogne/"
+    },
+    "articleSection": "Casi reali",
+    "keywords": [
+      "Cogne",
+      "Annamaria Franzoni",
+      "Samuele Lorenzi",
+      "caso giudiziario",
+      "cronaca nera",
+      "analisi documentaria"
+    ],
+    "inLanguage": "it-IT"
+  }
+  </script>
 
-.meta, .update {
-  border: 1px solid #8f7748;
-  padding: 15px;
-  margin-bottom: 15px;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.update {
-  border-left: 4px solid #c2a46d;
-}
-</style>
+    :root {
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.28rem;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box,
+    .article-share {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning,
+    .article-update-box {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-update-box p,
+    .article-share p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-update-box p:last-child,
+    .article-share p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+    .article-share {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: var(--accent);
+    }
+
+    @media (max-width: 860px) {
+      .article-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-header h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .article-share,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header {
+        padding-top: 24px;
+      }
+
+      .article-heading-box {
+        padding: 22px 18px 18px;
+      }
+
+      .article-header h1 {
+        font-size: 2.05rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.06rem;
+      }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links {
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
 
-<h1>Il delitto di Cogne: cosa sappiamo davvero (e cosa non sapremo mai)</h1>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
 
-<div class="meta">
-<strong>Classificazione:</strong> Casi reali / Analisi documentaria<br>
-<strong>Stato del caso:</strong> Definito sul piano giudiziario<br>
-<strong>Livello di certezza:</strong> Parziale (assenze rilevanti)<br>
-<strong>Metodo applicato:</strong> Bottino System (MRN)<br>
-<strong>Nota:</strong> Distinzione tra dati stabilizzati e limiti probatori non colmati
-</div>
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="update">
-<strong>Aggiornamento al 3 aprile 2026:</strong>
-Non risultano, allo stato delle informazioni pubblicamente disponibili, nuovi sviluppi investigativi o giudiziari successivi alla conclusione definitiva del caso. Il quadro resta stabilizzato nella sentenza definitiva e nella pena già interamente scontata.
-</div>
+<main>
 
-<div class="article-box">
-<div class="article-text">
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/articoli/MB_COVER_COGNE_V1.png" alt="Copertina dell'articolo sul delitto di Cogne">
+  </div>
 
-Il delitto di Cogne non è solo uno dei casi più noti della cronaca italiana. È uno di quelli in cui il punto centrale non è soltanto ciò che è accaduto, ma il modo in cui ciò che è accaduto è stato ricostruito, discusso e infine fissato in una verità giudiziaria che convive con limiti strutturali non risolti. 0
+  <div class="article-heading-box">
+    <h1>Il delitto di Cogne</h1>
+    <h2>Cosa sappiamo davvero e cosa non sapremo mai</h2>
 
-La mattina del 30 gennaio 2002, in una villetta isolata di Cogne, un bambino di tre anni, Samuele Lorenzi, viene trovato gravemente ferito nel letto dei genitori. Morirà poche ore dopo. Da quel momento, il caso non resta confinato all’indagine, ma diventa un punto di frattura tra livelli: fatti, interpretazioni, narrazione pubblica. 1
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
+        <p><strong>Stato del caso:</strong> Chiuso sul piano giudiziario</p>
+        <p><strong>Livello di certezza:</strong> Misto</p>
+        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+      </div>
 
-I dati iniziali delineano una finestra temporale estremamente ristretta. Il padre esce di casa intorno alle 7:30. Restano in casa la madre, Annamaria Franzoni, e i figli. Poco dopo, la donna esce per accompagnare il figlio maggiore allo scuolabus. Quando rientra, il fatto è già avvenuto. Alle 8:27 iniziano le chiamate di emergenza. 2
+      <div class="article-stack">
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Cogne, Samuele Lorenzi, Annamaria Franzoni, caso giudiziario, cronaca nera, analisi documentaria</p>
+        </div>
 
-Un elemento strutturalmente decisivo emerge immediatamente: la scena cambia. Nel tentativo di salvare il bambino, il medico interviene, pulisce il sangue, sposta il corpo, tenta la rianimazione. Sono azioni necessarie, ma producono una conseguenza tecnica precisa: la scena originaria non è più integralmente recuperabile. 3
+        <div class="article-update-box">
+          <p><strong>Aggiornamento:</strong> Il caso resta definito sul piano giudiziario. Non emergono sviluppi recenti tali da modificarne l’esito processuale, ma la vicenda continua a essere riletta sul piano umano, probatorio e narrativo.</p>
+        </div>
 
-Nonostante questo, alcuni dati restano stabili. L’autopsia stabilisce che il bambino è stato colpito ripetutamente alla testa con un oggetto contundente. Non si tratta di un evento accidentale. Nella casa non emergono tracce di estranei, né segni di effrazione. 4
+        <div class="article-warning">
+          <p><strong>Nota metodologica:</strong> In questo caso è essenziale distinguere tra dati stabili, scena alterata nelle fasi iniziali e limiti probatori rimasti irrisolti. La chiusura giudiziaria non coincide con una chiusura strutturale totale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-L’ipotesi dell’intruso viene avanzata, ma non trova riscontro nei dati materiali. Non esistono elementi concreti che attestino la presenza di una terza persona. Questo non equivale a impossibilità, ma a mancanza di supporto documentale. 5
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">
+      La mattina del 30 gennaio 2002, in una villetta isolata di Cogne, accade qualcosa che cambierà per sempre la cronaca italiana. Un bambino di tre anni, Samuele Lorenzi, viene trovato gravemente ferito nel letto dei genitori. Morirà poche ore dopo. Da quel momento, il caso non sarà solo un’indagine. Diventerà un punto di frattura tra fatti e racconto, tra giustizia e percezione pubblica, tra ciò che è certo e ciò che rimane sospeso.
 
-Nel corso delle indagini emergono incongruenze e instabilità nel racconto. Dettagli apparentemente marginali, come la gestione della porta di casa o alcune dichiarazioni, introducono elementi di discontinuità narrativa. Da soli non costituiscono prova, ma incidono sulla struttura complessiva. 6
+      I fatti iniziali sono semplici, almeno in apparenza. Il padre esce di casa intorno alle 7:30. In casa restano la madre, Annamaria Franzoni, e i due figli. Poco dopo, la donna esce per accompagnare il figlio maggiore allo scuolabus. Si tratta di pochi minuti. Quando rientra, qualcosa è già successo. Alle 8:27 iniziano le telefonate: medico, emergenza, marito. Le parole sono confuse, drammatiche. Si parla di sangue, di qualcosa di improvviso e incomprensibile. Nel giro di pochi minuti arrivano i primi soccorsi. Ma la scena che trovano non è più quella originaria.
 
-Restano poi due assenze centrali: l’arma del delitto non viene trovata e il movente non viene chiarito. Questi due vuoti accompagnano l’intero caso fino alla conclusione. 7
+      Nel tentativo di salvare il bambino, il medico interviene immediatamente: pulisce il sangue, sposta il corpo, tenta una rianimazione. Sono gesti necessari. Ma hanno una conseguenza inevitabile: la scena del crimine viene alterata. Questo elemento, spesso sottovalutato, è uno dei punti più delicati dell’intero caso. Perché da quel momento in poi, ciò che viene analizzato non è più la scena originaria, ma una sua versione modificata.
 
-Nonostante questi limiti, il sistema giudiziario arriva a una conclusione. Annamaria Franzoni viene condannata in via definitiva a 16 anni di reclusione. La sentenza si fonda su un insieme di elementi convergenti, non su una prova singola. Nel 2018 la pena viene interamente scontata. 8
+      Nonostante questo, alcuni elementi restano solidi. L’autopsia stabilisce che il bambino è stato colpito almeno diciassette volte alla testa con un oggetto contundente. Non si tratta di un evento naturale. Non si tratta di una caduta. Sul corpo e sugli oggetti emergono tracce precise: sangue, frammenti, segni di difesa. Nella casa, però, non ci sono tracce di estranei. Nessuna impronta, nessun segno di effrazione. Questi dati non cambiano nel tempo. Restano il punto più stabile dell’intera vicenda.
 
-Il caso è quindi chiuso sul piano giudiziario, ma non sul piano strutturale. Rimangono aperte domande che non trovano risposta nei dati disponibili: l’assenza di un movente, il peso di una scena alterata, il rapporto tra racconto e prova. 9
+      Fin dall’inizio, la difesa propone una possibilità: qualcuno è entrato in casa durante quei pochi minuti e ha compiuto l’omicidio. È un’ipotesi che, a livello logico, si inserisce in quello spazio temporale ristretto. Ma presenta un problema decisivo: non trova riscontro nei dati materiali. Non ci sono tracce di passaggio, né dentro né fuori dalla casa. Nessun elemento concreto che confermi la presenza di una terza persona. Questo non significa che l’ipotesi sia impossibile. Significa che non è supportata.
 
-Il delitto di Cogne mostra con chiarezza una dinamica fondamentale: la distanza tra dato e narrazione. I dati sono pochi, stabili e limitati. Le interpretazioni sono molteplici e variabili. Tra questi due livelli si genera lo spazio in cui il caso continua a essere discusso. 10
+      Nel corso delle indagini emergono anche alcune incongruenze. Una su tutte: la porta di casa. In un primo momento viene descritta come chiusa, poi come lasciata aperta. È un dettaglio, ma nei sistemi complessi i dettagli contano. Ci sono poi intercettazioni e dichiarazioni ambigue, frasi interrotte, correzioni immediate. Elementi che non provano nulla da soli, ma che contribuiscono a creare instabilità nel racconto.
 
-In questo senso, Cogne non è soltanto un caso chiuso. È un caso-limite che evidenzia quanto sia complesso separare ciò che è accertato da ciò che viene costruito attorno ai dati. 11
+      E poi ci sono le assenze. L’arma del delitto non viene mai trovata. Il movente non viene mai chiarito. Due vuoti che accompagnano tutto il caso, dall’inizio alla fine. Nonostante questi limiti, il sistema giudiziario arriva a una conclusione. Annamaria Franzoni viene condannata in via definitiva a sedici anni di reclusione. La sentenza si basa su un insieme di elementi: le tracce, l’assenza di intrusi, le incongruenze. Non su una prova unica, ma su una struttura complessiva. Nel 2018 la pena è completamente scontata.
 
-</div>
-</div>
+      Il caso Cogne è quindi chiuso dal punto di vista giudiziario, ma non lo è dal punto di vista umano e strutturale. Perché lascia aperte alcune domande fondamentali: come interpretare l’assenza di un movente, quanto pesa una scena alterata nelle prime fasi, fino a che punto un racconto può divergere dai dati senza essere sostenuto da prove. Questo caso mostra qualcosa di più profondo. Non riguarda solo ciò che è accaduto. Riguarda come ciò che è accaduto viene ricostruito, discusso, trasformato. Da una parte ci sono i dati: pochi, duri, stabili. Dall’altra, le interpretazioni: molte, variabili, spesso divergenti. Nel mezzo, c’è lo spazio in cui si costruisce ogni storia.
 
-</div>
+      Il delitto di Cogne non è solo uno dei casi più noti della cronaca italiana. È un esempio di quanto sia difficile separare ciò che sappiamo da ciò che crediamo di sapere. Ed è forse proprio qui che continua a parlare, a distanza di anni: non nel mistero residuo di un processo chiuso, ma nella frattura permanente tra fatto, prova e narrazione.
+    </div>
+  </div>
+
+  <div class="article-share">
+    <p><strong>Condividi:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/cogne/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/cogne/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/cogne/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../../articoli/" class="back-link">Torna agli articoli</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
