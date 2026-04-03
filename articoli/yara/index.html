@@ -1,61 +1,560 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Caso Yara Gambirasio | Michele Bottino</title>
-<meta name="description" content="Caso Yara Gambirasio: struttura probatoria, DNA e limiti ricostruttivi.">
+  <title>Il caso Yara Gambirasio | Michele Bottino</title>
+  <meta name="description" content="Analisi del caso Yara Gambirasio tra centralità della prova scientifica, ricostruzione giudiziaria e limiti della dinamica.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/yara/">
 
-<style>
-body{font-family:Arial;background:#1f2623;color:#e5d3a3;margin:0;line-height:1.75;}
-.container{max-width:900px;margin:0 auto;padding:24px;}
-.article-box{background:#2a312d;border:1px solid #8f7748;padding:32px;}
-.article-text{font-family:Georgia,serif;text-align:justify;font-size:1.12rem;line-height:1.95;}
-.meta,.update{border:1px solid #8f7748;padding:16px;margin-bottom:16px;}
-.update{border-left:4px solid #c2a46d;}
-</style>
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Il caso Yara Gambirasio | Michele Bottino">
+  <meta property="og:description" content="Analisi del caso Yara Gambirasio tra centralità della prova scientifica, ricostruzione giudiziaria e limiti della dinamica.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/yara/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_YARA_V1.png">
+  <meta property="og:image:alt" content="Copertina dell'articolo sul caso Yara Gambirasio">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Il caso Yara Gambirasio | Michele Bottino">
+  <meta name="twitter:description" content="Analisi del caso Yara Gambirasio tra centralità della prova scientifica, ricostruzione giudiziaria e limiti della dinamica.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_YARA_V1.png">
+
+  <meta name="keywords" content="Yara Gambirasio, Massimo Bossetti, DNA, caso giudiziario, cronaca nera, analisi documentaria">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Il caso Yara Gambirasio",
+    "alternativeHeadline": "La centralità della prova scientifica e i limiti della ricostruzione",
+    "description": "Analisi del caso Yara Gambirasio tra centralità della prova scientifica, ricostruzione giudiziaria e limiti della dinamica.",
+    "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_YARA_V1.png",
+    "author": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michele Bottino"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/articoli/yara/"
+    },
+    "articleSection": "Casi reali",
+    "keywords": [
+      "Yara Gambirasio",
+      "Massimo Bossetti",
+      "DNA",
+      "caso giudiziario",
+      "cronaca nera",
+      "analisi documentaria"
+    ],
+    "inLanguage": "it-IT"
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.28rem;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box,
+    .article-share {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning,
+    .article-update-box {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-update-box p,
+    .article-share p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-update-box p:last-child,
+    .article-share p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+    .article-share {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: var(--accent);
+    }
+
+    @media (max-width: 860px) {
+      .article-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-header h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .article-share,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header {
+        padding-top: 24px;
+      }
+
+      .article-heading-box {
+        padding: 22px 18px 18px;
+      }
+
+      .article-header h1 {
+        font-size: 2.05rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.06rem;
+      }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links {
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
 
-<h1>Il caso Yara Gambirasio: la centralità della prova scientifica</h1>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
 
-<div class="meta">
-<strong>Classificazione:</strong> Casi reali / Analisi documentaria<br>
-<strong>Stato:</strong> Definito<br>
-<strong>Livello di certezza:</strong> Alto (probatorio) / Parziale (dinamico)<br>
-<strong>Metodo:</strong> Bottino System (MRN)
-</div>
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="update">
-<strong>Aggiornamento al 3 aprile 2026:</strong>
-Non risultano nuovi elementi che modifichino la condanna definitiva. Il caso resta chiuso sul piano giudiziario, ma oggetto di discussione sul piano tecnico-scientifico.
-</div>
+<main>
 
-<div class="article-box">
-<div class="article-text">
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/articoli/MB_COVER_YARA_V1.png" alt="Copertina dell'articolo sul caso Yara Gambirasio">
+  </div>
 
-Il caso di Yara Gambirasio si sviluppa secondo una struttura diversa rispetto ai casi caratterizzati da instabilità narrativa. In questo caso, il punto di convergenza esiste ed è rappresentato dalla prova genetica. Il 26 novembre 2010 la giovane scompare a Brembate di Sopra dopo essere uscita dal centro sportivo. L’ultimo segmento della sua presenza non viene ricostruito in modo completo, e questo introduce una prima zona di incertezza.
+  <div class="article-heading-box">
+    <h1>Il caso Yara Gambirasio</h1>
+    <h2>La centralità della prova scientifica e i limiti della ricostruzione</h2>
 
-Il ritrovamento del corpo, avvenuto mesi dopo in un’area distante, modifica radicalmente la struttura dell’indagine. La scena non coincide con il luogo dell’evento, e questo implica una separazione tra momento del delitto e luogo del rinvenimento. Questa distanza introduce una difficoltà ricostruttiva che non verrà completamente risolta.
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
+        <p><strong>Stato del caso:</strong> Chiuso sul piano giudiziario</p>
+        <p><strong>Livello di certezza:</strong> Alto sul piano probatorio, parziale sul piano dinamico</p>
+        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+      </div>
 
-L’indagine trova un punto di svolta nell’analisi genetica. Il profilo denominato Ignoto 1 rappresenta un elemento di alta stabilità. A differenza di altri casi, qui il dato scientifico non si colloca come elemento accessorio, ma come asse portante dell’intera struttura probatoria. La successiva identificazione, attraverso una complessa ricostruzione genealogica, conduce a Massimo Bossetti.
+      <div class="article-stack">
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Yara Gambirasio, Massimo Bossetti, DNA, caso giudiziario, cronaca nera, analisi documentaria</p>
+        </div>
 
-Il processo si sviluppa attorno a questo elemento centrale. Il DNA viene considerato compatibile in modo diretto e viene integrato con altri elementi di contesto, tra cui dati di localizzazione e ricostruzioni comportamentali. Tuttavia, questi elementi secondari non assumono mai la stessa forza strutturale della prova genetica.
+        <div class="article-update-box">
+          <p><strong>Aggiornamento:</strong> Il caso resta definito sul piano giudiziario. Le discussioni successive riguardano soprattutto il peso e la gestione della prova genetica, senza aver modificato l’esito processuale definitivo.</p>
+        </div>
 
-Il caso presenta quindi una caratteristica specifica: la convergenza probatoria non coincide con una convergenza ricostruttiva completa. La responsabilità viene accertata, ma la sequenza esatta del delitto rimane parzialmente indefinita. Non esiste una ricostruzione pienamente dettagliata delle modalità operative, né una sequenza temporale completamente chiusa.
+        <div class="article-warning">
+          <p><strong>Nota metodologica:</strong> In questo caso la convergenza giudiziaria è fortemente centrata sulla prova scientifica. Questo non elimina, però, i margini di incompiutezza nella ricostruzione esatta della dinamica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-Dopo la condanna definitiva, il caso entra in una fase di discussione tecnica. Le contestazioni si concentrano sull’analisi genetica, sulle modalità di acquisizione e sulla possibilità di verifiche indipendenti. Tuttavia, queste contestazioni non producono una revisione del giudicato.
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">
+      Il caso di Yara Gambirasio è uno di quelli in cui la forza della prova scientifica ha orientato in modo determinante l’intera struttura giudiziaria. Il 26 novembre 2010 la ragazza scompare a Brembate di Sopra dopo essere uscita dal centro sportivo. Da quel momento si apre una lunga fase di ricerca che si concluderà, il 26 febbraio 2011, con il ritrovamento del corpo in un campo a Chignolo d’Isola. Questo passaggio iniziale definisce già una struttura complessa: la scena del ritrovamento non coincide con il luogo dell’evento e introduce immediatamente una separazione tra scomparsa, trasporto del corpo e dinamica omicidiaria.
 
-Il caso Yara mostra quindi una struttura in cui la prova scientifica produce stabilità sul piano giudiziario, ma non elimina completamente le zone di incertezza sul piano ricostruttivo. La distinzione tra questi due livelli è essenziale. La verità giudiziaria si fonda su un elemento forte e convergente, mentre la dinamica del fatto mantiene margini non completamente definiti.
+      Fin dalle prime fasi, il caso presenta un problema classico delle indagini complesse: l’assenza di testimoni diretti in grado di ricostruire il passaggio decisivo tra l’uscita dal centro sportivo e la morte della vittima. La dinamica resta quindi, fin dall’inizio, parzialmente oscura. Questo vuoto non impedisce però la costruzione progressiva di un asse probatorio molto forte, destinato a cambiare il corso delle indagini. Tale asse è il DNA.
 
-</div>
-</div>
+      L’elemento centrale dell’intero caso è il profilo genetico identificato sugli indumenti della vittima e denominato Ignoto 1. A differenza di altri procedimenti in cui la prova scientifica entra come supporto di un quadro già orientato, qui la genetica diventa il nucleo portante dell’indagine. La risalita genealogica che conduce alla famiglia Guerinoni e, successivamente, a Massimo Bossetti, è uno dei passaggi più caratteristici dell’intera vicenda. Non si tratta soltanto di una compatibilità generica, ma di un percorso investigativo costruito intorno alla progressiva identificazione di una linea biologica.
 
-</div>
+      È questo il punto che distingue strutturalmente il caso Yara da molti altri casi di cronaca italiana. La convergenza probatoria non si forma attorno a una pluralità di indizi deboli, ma attorno a un elemento di forte stabilità tecnica che poi viene integrato da ulteriori riscontri. Il DNA non è accessorio: è il centro del sistema. Gli altri elementi, come i movimenti dell’imputato, la localizzazione, le incongruenze e i dati di contesto, hanno un ruolo importante ma secondario rispetto alla centralità della traccia genetica.
+
+      Tuttavia, la forza della prova scientifica non coincide automaticamente con una ricostruzione dinamica completa. Questo è uno degli aspetti più importanti del caso. La responsabilità giudiziaria viene accertata, ma non tutte le fasi della sequenza sono pienamente definite. Rimangono parzialmente aperte le modalità esatte dell’aggressione, il luogo originario del delitto e la successione temporale completa dei fatti. In altre parole, il caso mostra una convergenza probatoria molto forte e, al tempo stesso, una ricostruzione solo parzialmente chiusa sul piano della dinamica.
+
+      Il processo porta alla condanna definitiva di Massimo Bossetti. La giustizia considera il quadro probatorio sufficiente e coerente. Da quel momento il caso entra in una seconda fase, non più processuale ma interpretativa. Ed è proprio qui che comincia la frattura tra il piano giudiziario e quello del dibattito pubblico. Le contestazioni successive non si concentrano tanto su ipotesi alternative strutturate, quanto sul cuore scientifico del caso: la tracciabilità del DNA, la replicabilità delle analisi, l’accessibilità piena ai dati grezzi e la possibilità di verifiche indipendenti. È la prova stessa, non il contesto, a diventare il punto di attrito.
+
+      Ma anche in questa fase il dato centrale non cambia. La sentenza definitiva non viene incrinata. Le richieste e le polemiche non trasformano il quadro giudiziario in un quadro aperto, bensì in un quadro discusso. Questa distinzione è essenziale. Il caso Yara non è un caso irrisolto. Non è neppure, però, un caso totalmente trasparente in ogni sua componente. È un caso in cui la decisione giudiziaria poggia su un centro probatorio fortissimo, mentre la ricostruzione complessiva conserva margini di incompletezza.
+
+      Da un punto di vista strutturale, questo produce una forma molto precisa. Il caso è stabile sul piano dell’attribuzione di responsabilità, ma non completamente saturo sul piano della narrazione del fatto. La prova genetica chiude il problema dell’identificazione, ma non scioglie ogni nodo relativo alla modalità del delitto. Ed è proprio questa tensione a rendere il caso ancora centrale nel dibattito: non tanto per la presenza di un’incertezza sulla sentenza, quanto per il contrasto tra la precisione della prova biologica e la parziale opacità della sequenza concreta.
+
+      Il caso Yara Gambirasio rappresenta quindi una struttura diversa sia dai casi puramente indiziari sia dai casi dominati dalla dispersione narrativa. Qui la convergenza esiste, è forte ed è scientificamente ancorata. Ciò che resta parziale non è l’attribuzione, ma la completezza del racconto. È questa distinzione che permette di comprendere la natura reale del caso: un processo chiuso sul piano giudiziario, fondato su una prova centrale di altissimo peso, e al tempo stesso un evento che conserva un margine non secondario di incompiutezza nella sua rappresentazione integrale.
+    </div>
+  </div>
+
+  <div class="article-share">
+    <p><strong>Condividi:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/yara/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/yara/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/yara/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../../articoli/" class="back-link">Torna agli articoli</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
