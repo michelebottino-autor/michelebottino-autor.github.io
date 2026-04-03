@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Il delitto di Avetrana | Michele Bottino</title>
+  <meta name="description" content="Analisi del delitto di Avetrana tra confessioni contraddittorie, dati tecnici ridimensionati e costruzione giudiziaria della verità.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/avetrana/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Il delitto di Avetrana | Michele Bottino">
+  <meta property="og:description" content="Analisi del delitto di Avetrana tra confessioni contraddittorie, dati tecnici ridimensionati e costruzione giudiziaria della verità.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/avetrana/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_AVETRANA_V1.png">
+  <meta property="og:image:alt" content="Copertina dell'articolo sul delitto di Avetrana">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Il delitto di Avetrana | Michele Bottino">
+  <meta name="twitter:description" content="Analisi del delitto di Avetrana tra confessioni contraddittorie, dati tecnici ridimensionati e costruzione giudiziaria della verità.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_AVETRANA_V1.png">
+
+  <meta name="keywords" content="Avetrana, Sarah Scazzi, Sabrina Misseri, Cosima Serrano, Michele Misseri, cronaca giudiziaria, analisi documentaria">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Il delitto di Avetrana",
+    "alternativeHeadline": "La verità costruita pezzo per pezzo",
+    "description": "Analisi del delitto di Avetrana tra confessioni contraddittorie, dati tecnici ridimensionati e costruzione giudiziaria della verità.",
+    "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_AVETRANA_V1.png",
+    "author": {
+      "@type": "Person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michele Bottino"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/articoli/avetrana/"
+    },
+    "articleSection": "Casi reali",
+    "keywords": [
+      "Avetrana",
+      "Sarah Scazzi",
+      "Sabrina Misseri",
+      "Cosima Serrano",
+      "Michele Misseri",
+      "cronaca giudiziaria",
+      "analisi documentaria"
+    ],
+    "inLanguage": "it-IT"
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.28rem;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box,
+    .article-share,
+    .author-box {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning,
+    .article-update-box {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-update-box p,
+    .article-share p,
+    .author-box p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-update-box p:last-child,
+    .article-share p:last-child,
+    .author-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+    .article-share,
+    .author-box {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a,
+    .author-box a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover,
+    .author-box a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: var(--accent);
+    }
+
+    @media (max-width: 860px) {
+      .article-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-header h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .article-share,
+      .author-box,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header {
+        padding-top: 24px;
+      }
+
+      .article-heading-box {
+        padding: 22px 18px 18px;
+      }
+
+      .article-header h1 {
+        font-size: 2.05rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.06rem;
+      }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links {
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/articoli/MB_COVER_AVETRANA_V1.png" alt="Copertina dell'articolo sul delitto di Avetrana">
+  </div>
+
+  <div class="article-heading-box">
+    <h1>Il delitto di Avetrana</h1>
+    <h2>La verità costruita pezzo per pezzo</h2>
+
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
+        <p><strong>Stato del caso:</strong> Chiuso sul piano giudiziario</p>
+        <p><strong>Livello di certezza:</strong> Alto sul piano del giudicato, disomogeneo sul piano narrativo</p>
+        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+      </div>
+
+      <div class="article-stack">
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Avetrana, Sarah Scazzi, Sabrina Misseri, Cosima Serrano, Michele Misseri, cronaca giudiziaria, analisi documentaria</p>
+        </div>
+
+        <div class="article-update-box">
+          <p><strong>Aggiornamento:</strong> Il quadro giudiziario del caso resta fermo. Gli sviluppi recenti riguardano soprattutto la riattivazione pubblica e culturale della vicenda: nell’ottobre 2024 il tribunale di Taranto aveva sospeso cautelarmente la serie sul caso per l’uso del nome “Avetrana” nel titolo, mentre nel marzo 2025 il titolo originale è stato ripristinato. Nell’agosto 2025 il quindicesimo anniversario ha riportato il caso al centro dell’attenzione pubblica, senza modificare il giudicato definitivo. </p>
+        </div>
+
+        <div class="article-warning">
+          <p><strong>Nota metodologica:</strong> Questo caso richiede di distinguere tra confessioni contraddittorie, dati tecnici ridimensionati e nucleo finale del giudicato. La verità processuale non coincide con una versione unica e lineare dei fatti, ma con la selezione degli elementi che reggono dopo il crollo di quelli incompatibili.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">
+      Il 26 agosto 2010, ad Avetrana, una ragazza di quindici anni esce di casa per raggiungere la cugina. Non tornerà più.
+
+      Il caso di Sarah Scazzi, negli anni, è diventato uno dei più discussi in Italia. Non solo per la gravità del fatto, ma per la sua struttura: confessioni che cambiano, indizi che sembrano decisivi e poi perdono forza, ricostruzioni che si scontrano tra loro.
+
+      Eppure, alla fine, il processo arriva a una conclusione definitiva, confermata dalla Corte di Cassazione nel 2017. Ma quella conclusione non nasce da un unico racconto chiaro. Nasce da un lavoro molto più complesso.
+
+      Il punto fermo è ciò che, nel quadro finale stabilito dalla giustizia, non è più in discussione. Sarah Scazzi muore per strangolamento. Non è un’ipotesi, ma un dato medico-legale consolidato: asfissia meccanica da costrizione. Anche il luogo è definito: l’omicidio avviene dentro la casa dei Misseri, non nel garage. Questo dettaglio è decisivo, perché separa due momenti diversi: l’uccisione e ciò che accade dopo. La fascia oraria è altrettanto chiara. La morte viene collocata tra le 14:00 e le 14:25. È questa la cerniera temporale su cui si regge tutta la ricostruzione. Infine, il processo si chiude con la conferma delle responsabilità di Sabrina Misseri e Cosima Serrano, mentre Michele Misseri resta condannato per la soppressione del cadavere. Questi sono i punti solidi. Tutto il resto, nel caso Avetrana, è molto meno lineare.
+
+      Se c’è un elemento che ha segnato il caso, è la sequenza delle dichiarazioni di Michele Misseri. All’inizio si accusa: dice di aver ucciso la ragazza nel garage. Poi cambia versione: indica la figlia Sabrina Misseri come responsabile. Poi ancora: modifica i dettagli, riorganizza i ruoli. Infine, torna ad accusare sé stesso. Non si tratta di aggiustamenti. Le versioni si contraddicono tra loro. Non possono essere tutte vere, e nemmeno essere ricomposte in un unico racconto coerente. È qui che il caso prende una direzione particolare: la confessione, che in molti processi rappresenta il punto centrale, qui perde il suo ruolo dominante. Non viene ignorata. Ma viene smontata, analizzata pezzo per pezzo, e utilizzata solo dove è compatibile con gli altri elementi.
+
+      Un altro punto cruciale riguarda il telefono di Sarah. Alle 14:42:48, durante una chiamata, il cellulare aggancia una cella telefonica associata alla zona del garage. Per molto tempo questo dato è stato considerato un possibile elemento decisivo. Se il telefono è nel garage, allora forse l’omicidio è avvenuto lì. Ma la questione non è così semplice. Le analisi tecniche mostrano che quella stessa cella poteva essere agganciata anche dall’interno dell’abitazione. Il dato resta valido, ma perde la sua apparente precisione. È un passaggio chiave: un elemento reale non è automaticamente una prova decisiva. Dipende da come viene interpretato e da come si inserisce nel resto del quadro. Nel processo, questo dato non viene ignorato. Viene ridimensionato.
+
+      La cronologia del 26 agosto 2010 è solo parzialmente ricostruibile. Ci sono punti fermi: la morte tra le 14:00 e le 14:25; la chiamata delle 14:42; una telefonata alle 15:08 che suggerisce una fase successiva di gestione del corpo. Ma tra questi momenti esistono zone meno definite. Non tutto è ricostruito minuto per minuto. Questo non impedisce al processo di arrivare a una conclusione. Ma mostra chiaramente che la verità giudiziaria non è sempre una sequenza perfettamente continua.
+
+      Il punto più interessante del caso Avetrana è proprio questo: la verità finale non nasce da un elemento decisivo. Non è la confessione. Non è un singolo indizio. Non è un dato tecnico isolato. È il risultato di un lavoro di selezione. Le dichiarazioni vengono analizzate e scartate dove non reggono. I dati tecnici vengono verificati e ridimensionati. La cronologia viene stabilizzata solo nei suoi punti essenziali. Alla fine resta un nucleo solido, costruito eliminando ciò che non è compatibile.
+
+      Il delitto di Avetrana mostra qualcosa che raramente emerge con tanta chiarezza: la verità giudiziaria non è sempre una storia lineare. È spesso un sistema complesso, fatto di elementi che non combaciano subito. In questo caso, la decisione finale non coincide con una versione unica dei fatti. È piuttosto il risultato di un montaggio: una ricostruzione ottenuta scegliendo cosa tenere e cosa scartare. E proprio per questo, più che un caso di confessione o di indizio decisivo, Avetrana resta un caso di costruzione.
+    </div>
+  </div>
+
+  <div class="article-share">
+    <p><strong>Condividi l’articolo:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/avetrana/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/avetrana/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/avetrana/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="author-box">
+    <p><strong>Canali autore:</strong></p>
+    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../../articoli/" class="back-link">Torna agli articoli</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
