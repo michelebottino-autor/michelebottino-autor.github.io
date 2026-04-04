@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Narrazione espansa | Percorsi strutturali | Michele Bottino</title>
+  <meta name="description" content="Percorso strutturale dedicato ai casi in cui il livello narrativo cresce più rapidamente del dato, producendo una distanza crescente tra struttura documentaria e percezione pubblica.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/strutture-irrisolto/percorsi/narrazione-espansa/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Narrazione espansa | Percorsi strutturali | Michele Bottino">
+  <meta property="og:description" content="Percorso strutturale dedicato ai casi in cui il livello narrativo cresce più rapidamente del dato, producendo una distanza crescente tra struttura documentaria e percezione pubblica.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/strutture-irrisolto/percorsi/narrazione-espansa/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png">
+  <meta property="og:image:alt" content="Percorso strutturale Narrazione espansa">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Narrazione espansa | Percorsi strutturali | Michele Bottino">
+  <meta name="twitter:description" content="Percorso strutturale dedicato ai casi in cui il livello narrativo cresce più rapidamente del dato, producendo una distanza crescente tra struttura documentaria e percezione pubblica.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png">
+
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --bg-main: #1f2623; --bg-panel: #2a312d; --bg-panel-2: #313a35;
+      --text-main: #e5d3a3; --text-soft: #cdb989; --text-muted: #a9915f;
+      --line: #8f7748; --accent: #c2a46d; --accent-strong: #e1c07e;
+      --shadow: 0 18px 42px rgba(0,0,0,.28); --shadow-soft: 0 10px 24px rgba(0,0,0,.18);
+      --radius: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.72; color: var(--text-main);
+      background: radial-gradient(circle at top left, rgba(194,164,109,.05), transparent 34%), linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      overflow-x: hidden;
+    }
+    h1,h2,h3 { margin-top: 0; color: var(--text-main); font-family: Georgia, "Times New Roman", serif; letter-spacing: .01em; }
+    p { margin: 0; }
+    a { color: var(--accent); }
+    .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 22px; }
+    .nav {
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      padding-bottom: 14px; border-bottom: 1px solid var(--line);
+    }
+    .logo img { display: block; width: auto; height: 60px; }
+    .nav-menu { display: flex; flex-wrap: wrap; gap: 14px; list-style: none; margin: 0; padding: 0; }
+    .nav a {
+      color: var(--accent); text-decoration: none; font-size: .95rem;
+      transition: opacity .2s ease, border-color .2s ease; border-bottom: 1px solid transparent; padding-bottom: 2px;
+    }
+    .nav a:hover { opacity: .82; }
+    .nav a.active { color: var(--accent-strong); border-bottom-color: var(--accent-strong); }
+    .menu-toggle { display: none; background: transparent; border: 1px solid var(--line); padding: 8px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 22px; height: 2px; margin: 4px 0; background: var(--accent); }
+
+    .breadcrumb { padding-top: 18px; padding-bottom: 4px; color: var(--text-soft); font-size: .92rem; }
+    .breadcrumb a { color: var(--text-soft); text-decoration: none; border-bottom: 1px solid transparent; }
+    .breadcrumb a:hover { border-bottom-color: var(--text-soft); }
+
+    .page-header, .content-box, .card, .share-box, .author-box {
+      background: linear-gradient(180deg, rgba(42,49,45,.96), rgba(36,43,39,.96));
+      border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-soft);
+    }
+    .page-header { padding: 28px 26px 24px; }
+    .page-header h1 { font-size: 3rem; line-height: 1.06; margin-bottom: 12px; }
+    .page-header .subtitle { margin-bottom: 18px; color: var(--text-soft); font-size: 1.18rem; font-weight: 600; }
+
+    .section { padding-top: 22px; }
+    .content-box { padding: 22px; }
+    .content-box h2 { font-size: 1.9rem; margin-bottom: 10px; }
+    .content-box p { margin-bottom: 10px; color: var(--text-main); }
+
+    .cards-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+    .card { overflow: hidden; display: flex; flex-direction: column; min-width: 0; background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%); }
+    .card img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--line); }
+    .card-content { padding: 18px; }
+    .category-pill {
+      display: inline-block; margin-bottom: 10px; padding: 5px 9px; font-size: .8rem; color: var(--text-soft);
+      border: 1px solid var(--line); border-radius: 999px;
+    }
+    .meta-line { font-size: .92rem; color: var(--text-soft); margin-bottom: 10px; }
+    .card-link, .section-link { display: inline-block; width: fit-content; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+    .pending-note { color: var(--text-soft); border-bottom: 1px solid var(--line); width: fit-content; display: inline-block; }
+
+    .share-box, .author-box { max-width: 920px; margin: 24px auto 0; padding: 16px 18px; }
+    .share-box p, .author-box p { margin-bottom: 10px; }
+    .share-box a, .author-box a {
+      display: inline-block; margin-right: 14px; margin-bottom: 8px; padding-bottom: 2px;
+      color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s ease, opacity .2s ease;
+    }
+    .share-box a:hover, .author-box a:hover { opacity: .85; border-bottom-color: var(--accent); }
+
+    footer { padding: 30px 0 36px; color: var(--text-muted); }
+    footer p { margin: 0; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 860px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 2.3rem; }
+    }
+    @media (max-width: 680px) {
+      .container { padding: 16px; }
+      .menu-toggle { display: block; }
+      .nav-menu { display: none; flex-direction: column; width: 100%; margin-top: 10px; }
+      .nav-menu.active { display: flex; }
+      .nav-menu a { display: block; padding: 10px; background: var(--bg-panel); border: 1px solid var(--line); border-radius: 8px; }
+      .page-header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../../"><img src="../../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../../">Home</a></li>
+      <li><a href="../../../biografia/">Autore</a></li>
+      <li><a href="../../../opere/">Opere</a></li>
+      <li><a href="../../../poetica/">Poetica</a></li>
+      <li><a href="../../../ricerca/">Ricerca</a></li>
+      <li><a href="../../../articoli/">Articoli</a></li>
+      <li><a href="../../" class="active" aria-current="page">Strutture dell’irrisolto</a></li>
+      <li><a href="../../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../../media/">Media</a></li>
+      <li><a href="../../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container breadcrumb">
+  <a href="../../../">Home</a> / <a href="../../">Strutture dell’irrisolto</a> / <span>Narrazione espansa</span>
+</div>
+
+<main>
+<section class="container">
+  <div class="page-header">
+    <h1>Narrazione espansa</h1>
+    <div class="subtitle">Percorso strutturale</div>
+    <p>Questo percorso raccoglie i casi in cui il livello narrativo cresce più rapidamente del dato, producendo una distanza crescente tra struttura documentaria e percezione pubblica.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="content-box">
+    <h2>Che cosa definisce questo percorso</h2>
+    <p>Qui il caso continua a vivere pubblicamente in misura maggiore rispetto alla sua effettiva capacità di convergenza. La narrazione amplia, prolunga, moltiplica e simbolizza il caso oltre il livello documentario stabile.</p>
+    <p>Il racconto resta aperto anche quando la struttura documentaria non avanza con la stessa forza.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Strutture pubblicate</h2>
+  <div class="cards-grid">
+    <article class="card">
+      <img src="../../../images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png" alt="Copertina della struttura dedicata a Jack lo Squartatore">
+      <div class="card-content">
+        <span class="category-pill">Serie metodologica</span>
+        <h3>Jack lo Squartatore</h3>
+        <p>Un caso in cui la forza simbolica e narrativa continua a espandersi oltre l’assenza di chiusura probatoria e giudiziaria.</p>
+        <div class="meta-line">Tipologia strutturale: serialità senza soluzione</div>
+        <div class="meta-line">Livello di convergenza: basso</div>
+        <a href="../../jack-lo-squartatore/" class="card-link">Apri la struttura</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Strutture correlate in preparazione</h2>
+  <div class="cards-grid">
+    <article class="card">
+      <div class="card-content">
+        <span class="category-pill">Serie metodologica</span>
+        <h3>Emanuela Orlandi</h3>
+        <p>Configurazione potenzialmente centrale per il percorso, con una fortissima espansione narrativa e una persistente distanza dal dato stabilizzato.</p>
+        <div class="pending-note">Struttura in preparazione</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-content">
+        <span class="category-pill">Serie metodologica</span>
+        <h3>Mostro di Firenze</h3>
+        <p>Configurazione potenzialmente compatibile per persistenza pubblica, pluralità interpretativa e sovrapposizione tra dato e racconto.</p>
+        <div class="pending-note">Struttura in preparazione</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="content-box">
+    <h2>Torna alla serie</h2>
+    <p>Per rientrare nella visione complessiva della serie metodologica e consultare gli altri casi classificati, torna all’indice generale.</p>
+    <a href="../../" class="section-link">Torna a Le strutture dell’irrisolto</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="share-box">
+    <p><strong>Condividi il percorso:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/strutture-irrisolto/percorsi/narrazione-espansa/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/strutture-irrisolto/percorsi/narrazione-espansa/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/strutture-irrisolto/percorsi/narrazione-espansa/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="author-box">
+    <p><strong>Canali autore:</strong></p>
+    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+  </div>
+</section>
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../../privacy/">Privacy Policy</a> |
+    <a href="../../../cookie/">Cookie Policy</a> |
+    <a href="../../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
