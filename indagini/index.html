@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>La stanza vuota | Michele Bottino</title>
+  <meta name="description" content="Primo episodio della serie narrativa Le indagini di Elia Ferri. Una stanza in ordine, una porta socchiusa, un’assenza che comincia molto prima di essere vista.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/indagini/la-stanza-vuota/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="La stanza vuota | Michele Bottino">
+  <meta property="og:description" content="Primo episodio della serie narrativa Le indagini di Elia Ferri. Una stanza in ordine, una porta socchiusa, un’assenza che comincia molto prima di essere vista.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/indagini/la-stanza-vuota/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/indagini/la-stanza-vuota/cover-og.png">
+  <meta property="og:image:alt" content="Copertina del racconto La stanza vuota">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La stanza vuota | Michele Bottino">
+  <meta name="twitter:description" content="Primo episodio della serie narrativa Le indagini di Elia Ferri.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/indagini/la-stanza-vuota/cover-og.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://michelebottino-autor.github.io/indagini/la-stanza-vuota/#article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/indagini/la-stanza-vuota/"
+    },
+    "headline": "La stanza vuota",
+    "alternativeHeadline": "Le indagini di Elia Ferri",
+    "description": "Primo episodio della serie narrativa Le indagini di Elia Ferri.",
+    "image": "https://michelebottino-autor.github.io/images/indagini/la-stanza-vuota/cover-og.png",
+    "articleSection": "Narrativa investigativa",
+    "inLanguage": "it-IT",
+    "author": {
+      "@type": "Person",
+      "@id": "https://michelebottino-autor.github.io/#person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "@id": "https://michelebottino-autor.github.io/#person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    }
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --accent-strong: #e1c07e;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    p { margin: 0; }
+
+    a { color: var(--accent); }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .nav a:hover { opacity: 0.82; }
+
+    .nav a.active {
+      color: var(--accent-strong);
+      border-bottom-color: var(--accent-strong);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .breadcrumb {
+      padding-top: 18px;
+      padding-bottom: 4px;
+      color: var(--text-soft);
+      font-size: 0.92rem;
+    }
+
+    .breadcrumb a {
+      color: var(--text-soft);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .breadcrumb a:hover { border-bottom-color: var(--text-soft); }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .byline {
+      margin-bottom: 18px;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box,
+    .article-share,
+    .author-box {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning,
+    .article-update-box {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: pre-line;
+    }
+
+    .signature {
+      margin-top: 28px;
+      text-align: right;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    .article-share,
+    .author-box {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a,
+    .author-box a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover,
+    .author-box a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p { margin: 0; }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    footer a:visited { color: var(--accent); }
+
+    @media (max-width: 860px) {
+      .article-meta-grid { grid-template-columns: 1fr; }
+      .article-header h1 { font-size: 2.45rem; }
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+      .article-share,
+      .author-box,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container { padding: 16px; }
+
+      .menu-toggle { display: block; }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active { display: flex; }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header { padding-top: 24px; }
+
+      .article-heading-box { padding: 22px 18px 18px; }
+
+      .article-header h1 { font-size: 2.05rem; }
+
+      .article-header h2 { font-size: 1.02rem; }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links { flex-direction: column; }
+
+      .back-link { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../strutture-irrisolto/">Strutture dell’irrisolto</a></li>
+      <li><a href="../" class="active" aria-current="page">Indagini</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container breadcrumb">
+  <a href="../../">Home</a> / <a href="../">Indagini</a> / <span>La stanza vuota</span>
+</div>
+
+<main>
+
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/indagini/la-stanza-vuota/cover.png" alt="Copertina del racconto La stanza vuota">
+  </div>
+
+  <div class="article-heading-box">
+    <h2>Le indagini di Elia Ferri</h2>
+    <h1>La stanza vuota</h1>
+    <div class="byline">di Michele Bottino</div>
+
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Fiction investigativa / Serie narrativa</p>
+        <p><strong>Struttura del caso:</strong> Continuità assente</p>
+        <p><strong>Tono:</strong> Investigativo, realistico, narrativo</p>
+      </div>
+
+      <div class="article-stack">
+        <div class="article-warning">
+          <p><strong>Nota iniziale:</strong> Questo racconto è un’opera di finzione. Non ricostruisce fatti reali, ma mette in scena configurazioni investigative ispirate ai modelli dei casi irrisolti.</p>
+        </div>
+
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Elia Ferri, narrativa investigativa, racconto, mistero, continuità assente</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">Quando arrivarono, la porta era già aperta.
+
+Non spalancata. Appena socchiusa, come se qualcuno l’avesse lasciata così senza pensarci davvero. O come se non avesse avuto il tempo di chiuderla.
+
+Marco fu il primo a entrare.
+
+“Non mi piace.”
+
+Elia non rispose subito. Rimase sulla soglia, fermo. Guardava la porta, non la stanza.
+
+“È stata forzata?” chiese Marco.
+
+“No.”
+
+“Sei sicuro?”
+
+Elia fece un passo avanti, sfiorando il bordo della porta con le dita. “Se fosse stata forzata, lo vedresti. Qui no. Qui è stata aperta.”
+
+Marco si voltò verso di lui. “È quello che ho detto.”
+
+“No. Tu hai detto un’altra cosa.”
+
+Marco sospirò. “Va bene, correggimi dopo. Intanto guardiamo.”
+
+La stanza era piccola. Un tavolo, due sedie, una libreria contro il muro. Niente fuori posto, almeno a prima vista. Nessun segno evidente di colluttazione, nessun oggetto rovesciato, nessuna traccia che suggerisse fretta.
+
+Troppo ordinata.
+
+Marco fece un giro lento, poi si fermò davanti al tavolo. “Qui qualcuno viveva. Non è una stanza usata di passaggio.”
+
+Elia annuì appena, ma non guardava il tavolo. Guardava il pavimento, poco più indietro.
+
+“Che c’è?” chiese Marco.
+
+“Niente.”
+
+“Quando dici ‘niente’ di solito c’è qualcosa.”
+
+Elia indicò una zona vicino alla parete. “Lì.”
+
+Marco si avvicinò. “Non vedo nulla.”
+
+“Appunto.”
+
+Marco si fermò. Lo guardò, poi tornò a osservare il punto. “Spiegati.”
+
+Elia entrò finalmente nella stanza, superando Marco senza fretta. “Se una stanza è usata, qualcosa resta. Sempre. Polvere spostata, segni minimi, discontinuità. Qui invece no.”
+
+“Quindi?”
+
+“Quindi quel punto è stato ripulito.”
+
+Marco si accovacciò. “Stai dicendo che qualcuno ha pulito solo un pezzo di pavimento?”
+
+“Sì.”
+
+“E ha lasciato tutto il resto così?”
+
+“Sì.”
+
+Marco rimase in silenzio per qualche secondo. Poi si alzò. “Non ha senso.”
+
+Elia si voltò verso di lui. “Esatto.”
+
+Marco fece un mezzo sorriso. “Perfetto. Siamo già messi bene.”
+
+Si spostò verso la libreria. I libri erano allineati con una precisione quasi fastidiosa. Ne tirò fuori uno, lo sfogliò senza attenzione.
+
+“Non è il mio genere,” disse.
+
+Elia si avvicinò. “Rimettilo.”
+
+Marco lo guardò. “Perché?”
+
+“Perché non sei qui per leggere.”
+
+“Era per capire il tipo.”
+
+Elia scosse la testa appena. “Il tipo lo capisci da cosa manca, non da cosa c’è.”
+
+Marco lo fissò per un attimo, poi rimise il libro al suo posto. “A volte mi chiedo se ti ascolti mentre parli.”
+
+“A volte sì.”
+
+“E non ti preoccupi?”
+
+“No.”
+
+Marco sbuffò piano, ma senza fastidio vero. Poi tornò verso il tavolo.
+
+“Ok. Ricapitoliamo. Porta aperta, nessun segno di forzatura. Stanza in ordine. Un punto del pavimento pulito. E basta?”
+
+Elia non rispose subito. Si era fermato davanti alla sedia più vicina al tavolo. Non la toccava. La guardava.
+
+“Non è ‘e basta’.”
+
+“Allora dimmelo.”
+
+Elia fece un piccolo gesto con il mento. “Quella sedia.”
+
+Marco si avvicinò. “Che ha?”
+
+“Guardala.”
+
+“La sto guardando.”
+
+Elia si chinò leggermente. “No. Guardala davvero.”
+
+Marco abbassò lo sguardo. Rimase in silenzio qualche secondo.
+
+“È fuori asse.”
+
+“Sì.”
+
+“Di poco.”
+
+“Abbastanza.”
+
+Marco fece un passo indietro. “Quindi qualcuno si è alzato da lì.”
+
+Elia annuì.
+
+“E poi?”
+
+“E poi non è tornato.”
+
+Marco incrociò le braccia. “Questa è una deduzione, non un fatto.”
+
+Elia si raddrizzò. “È una struttura.”
+
+Marco lo guardò, quasi divertito. “Sempre meglio.”
+
+Per qualche secondo nessuno dei due parlò. La stanza sembrava ancora più vuota di prima.
+
+Marco si passò una mano tra i capelli. “Sai cosa non mi torna?”
+
+Elia non si voltò. “Dimmi.”
+
+“Se qualcuno si alza, si muove. Se si muove, lascia tracce. Qui non ce ne sono.”
+
+Elia fece un passo verso il punto pulito. “Ci sono. Solo che non sono dove ti aspetti.”
+
+Marco seguì il suo sguardo. Poi tornò a guardare la sedia.
+
+“Quindi uno si alza, succede qualcosa qui…” indicò il pavimento “…e poi sparisce senza lasciare niente?”
+
+Elia rimase fermo. “Non sparisce.”
+
+“E allora?”
+
+Elia alzò gli occhi verso di lui. “Viene tolto.”
+
+Marco rimase immobile.
+
+“Tolto?”
+
+“Sì.”
+
+“Da chi?”
+
+Elia non rispose.
+
+Marco fece un passo indietro, poi un altro. Guardò la porta, poi la stanza.
+
+“Ok,” disse piano. “Questa mi mancava.”
+
+Elia si avvicinò alla porta, la osservò ancora una volta. “No.”
+
+“No cosa?”
+
+“Non ti mancava.”
+
+Marco lo guardò, senza capire.
+
+Elia appoggiò una mano sul legno. “Era già qui.”
+
+Silenzio.
+
+“Solo che non lo avevi visto.”
+
+Marco lasciò uscire un respiro lento. Poi accennò un sorriso.
+
+“Perfetto,” disse. “Allora siamo arrivati.”
+
+Elia lo guardò appena. “No.”
+
+“No?”
+
+“Siamo all’inizio.”
+
+Marco annuì piano.
+
+“Peggio.”</div>
+
+    <div class="signature">— Michele Bottino</div>
+  </div>
+
+  <div class="article-update-box" style="max-width: 920px; margin: 22px auto 0;">
+    <p><strong>Struttura del caso:</strong> Una stanza chiusa solo in apparenza, un ordine troppo perfetto, una continuità che si spezza prima di essere vista.</p>
+  </div>
+
+  <div class="article-share">
+    <p><strong>Condividi il racconto:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/indagini/la-stanza-vuota/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/indagini/la-stanza-vuota/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/indagini/la-stanza-vuota/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="author-box">
+    <p><strong>Canali autore:</strong></p>
+    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../" class="back-link">Torna alle indagini</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
