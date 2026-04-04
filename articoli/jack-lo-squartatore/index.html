@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jack lo Squartatore | Michele Bottino</title>
+  <meta name="description" content="Analisi del caso di Jack lo Squartatore tra serialità omicidiaria, indagine frammentata, assenza di giudicato e persistenza narrativa.">
+  <meta name="author" content="Michele Bottino">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f2623">
+  <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Jack lo Squartatore | Michele Bottino">
+  <meta property="og:description" content="Analisi del caso di Jack lo Squartatore tra serialità omicidiaria, indagine frammentata, assenza di giudicato e persistenza narrativa.">
+  <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png">
+  <meta property="og:image:alt" content="Copertina dell'articolo su Jack lo Squartatore">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jack lo Squartatore | Michele Bottino">
+  <meta name="twitter:description" content="Analisi del caso di Jack lo Squartatore tra serialità omicidiaria, indagine frammentata, assenza di giudicato e persistenza narrativa.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png">
+
+  <meta name="keywords" content="Jack lo Squartatore, Whitechapel, serial killer, Londra 1888, vittime canoniche, caso storico, analisi documentaria">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/#article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/"
+    },
+    "headline": "Jack lo Squartatore",
+    "alternativeHeadline": "Il primo caso moderno di serialità senza soluzione",
+    "description": "Analisi del caso di Jack lo Squartatore tra serialità omicidiaria, indagine frammentata, assenza di giudicato e persistenza narrativa.",
+    "image": "https://michelebottino-autor.github.io/images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png",
+    "articleSection": "Casi storici",
+    "keywords": [
+      "Jack lo Squartatore",
+      "Whitechapel",
+      "serial killer",
+      "Londra 1888",
+      "vittime canoniche",
+      "caso storico",
+      "analisi documentaria"
+    ],
+    "inLanguage": "it-IT",
+    "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "@id": "https://michelebottino-autor.github.io/articoli/#series",
+      "name": "Collana di analisi documentarie"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://michelebottino-autor.github.io/#person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "@id": "https://michelebottino-autor.github.io/#person",
+      "name": "Michele Bottino",
+      "url": "https://michelebottino-autor.github.io/"
+    }
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #1f2623;
+      --bg-panel: #2a312d;
+      --bg-panel-2: #313a35;
+      --bg-panel-3: #242b27;
+      --text-main: #e5d3a3;
+      --text-soft: #cdb989;
+      --text-muted: #a9915f;
+      --line: #8f7748;
+      --accent: #c2a46d;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
+        linear-gradient(180deg, #202825 0%, #1f2623 100%);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      margin: 4px 0;
+    }
+
+    .article-header {
+      padding-top: 36px;
+      padding-bottom: 14px;
+    }
+
+    .article-cover {
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-heading-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-header h1 {
+      font-size: 3rem;
+      line-height: 1.06;
+      margin-bottom: 8px;
+    }
+
+    .article-header h2 {
+      font-size: 1.28rem;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    .article-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box,
+    .article-share,
+    .author-box {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .article-warning,
+    .article-update-box {
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-update-box p,
+    .article-share p,
+    .author-box p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-update-box p:last-child,
+    .article-share p:last-child,
+    .author-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .article-body {
+      padding-top: 22px;
+      padding-bottom: 16px;
+    }
+
+    .article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px 44px 38px;
+    }
+
+    .article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: normal;
+      letter-spacing: normal;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+    .article-share,
+    .author-box {
+      max-width: 920px;
+      margin: 22px auto 0;
+    }
+
+    .article-share a,
+    .author-box a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .article-share a:hover,
+    .author-box a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      max-width: 920px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(194, 164, 109, 0.09);
+    }
+
+    footer {
+      padding: 30px 0 36px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: var(--accent);
+    }
+
+    @media (max-width: 860px) {
+      .article-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-header h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-box {
+        max-width: 100%;
+        padding: 30px 26px 26px;
+      }
+
+      .article-text {
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .article-share,
+      .author-box,
+      .back-links {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--bg-panel);
+        border-radius: 8px;
+      }
+
+      .article-header {
+        padding-top: 24px;
+      }
+
+      .article-heading-box {
+        padding: 22px 18px 18px;
+      }
+
+      .article-header h1 {
+        font-size: 2.05rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.06rem;
+      }
+
+      .article-box {
+        padding: 22px 18px 20px;
+        border-radius: 10px;
+      }
+
+      .article-text {
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .back-links {
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="container">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../"><img src="../../images/logo.png" alt="Michele Bottino"></a>
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="menu">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../biografia/">Autore</a></li>
+      <li><a href="../../opere/">Opere</a></li>
+      <li><a href="../../poetica/">Poetica</a></li>
+      <li><a href="../../ricerca/">Ricerca</a></li>
+      <li><a href="../../articoli/">Articoli</a></li>
+      <li><a href="../../testi-musicali/">Testi musicali</a></li>
+      <li><a href="../../media/">Media</a></li>
+      <li><a href="../../contatti/">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="container article-header">
+  <div class="article-cover">
+    <img src="../../images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png" alt="Copertina dell'articolo su Jack lo Squartatore">
+  </div>
+
+  <div class="article-heading-box">
+    <h1>Jack lo Squartatore</h1>
+    <h2>Il primo caso moderno di serialità senza soluzione</h2>
+
+    <div class="article-meta-grid">
+      <div class="article-meta">
+        <p><strong>Classificazione:</strong> Caso storico / Analisi documentaria</p>
+        <p><strong>Stato del caso:</strong> Aperto sul piano storico-investigativo, privo di chiusura giudiziaria</p>
+        <p><strong>Livello di certezza:</strong> Alto sulla serie omicidiaria, basso sull’identificazione dell’autore</p>
+        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+      </div>
+
+      <div class="article-stack">
+        <div class="article-tags">
+          <p><strong>Tag:</strong> Jack lo Squartatore, Whitechapel, serial killer, Londra 1888, vittime canoniche, caso storico, analisi documentaria</p>
+        </div>
+
+        <div class="article-update-box">
+          <p><strong>Aggiornamento:</strong> Il caso non ha mai raggiunto una chiusura strutturale. Continuano a emergere ipotesi, attribuzioni e riletture storiche, ma nessuna ha prodotto un livello probatorio tale da trasformare il caso in una soluzione definitiva o in una verità giudiziaria.</p>
+        </div>
+
+        <div class="article-warning">
+          <p><strong>Nota metodologica:</strong> Analisi documentaria costruita secondo il Bottino Method, fondata sulla separazione dei livelli informativi e sul controllo della struttura narrativa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container article-body">
+  <div class="article-box">
+    <div class="article-text">
+      Nel 1888, nel quartiere di Whitechapel, nella zona est di Londra, si sviluppa uno dei casi criminali più noti e persistenti della storia moderna: quello di Jack lo Squartatore. A distanza di oltre un secolo, il caso continua a essere discusso, analizzato, reinterpretato. Non perché manchino completamente i dati. Ma perché i dati esistenti non si sono mai trasformati in una soluzione definitiva. Questo è il punto centrale: Jack lo Squartatore non è semplicemente un caso irrisolto. È un caso che non ha mai raggiunto una chiusura strutturale.
+
+      Tra agosto e novembre 1888 vengono uccise almeno cinque donne, considerate oggi le vittime canoniche: Mary Ann Nichols, Annie Chapman, Elizabeth Stride, Catherine Eddowes e Mary Jane Kelly. Gli omicidi avvengono in un’area geografica ristretta e in un arco temporale breve. Le caratteristiche principali si ripetono: attacchi notturni, vittime in condizioni di vulnerabilità, taglio della gola, mutilazioni addominali. Questo produce una serialità riconoscibile. Non perfetta, ma sufficientemente coerente da permettere il collegamento tra i delitti. Nel caso Kelly, la violenza raggiunge un livello estremo. Nel caso Stride, invece, le mutilazioni non sono presenti. La serie, quindi, è forte ma non meccanica.
+
+      Whitechapel, alla fine dell’Ottocento, è uno dei quartieri più poveri di Londra. Sovraffollamento, marginalità sociale, prostituzione diffusa e condizioni igieniche precarie creano un ambiente favorevole alla criminalità e, allo stesso tempo, estremamente difficile da controllare. Questo contesto non è secondario. Influisce su tre elementi fondamentali: vulnerabilità delle vittime, difficoltà di raccolta delle prove e inefficienza operativa delle indagini.
+
+      Le indagini vengono condotte dalla Metropolitan Police e dalla City of London Police. Fin dall’inizio emergono limiti strutturali: assenza di tecniche forensi moderne, contaminazione delle scene del crimine, mancanza di coordinamento efficace, pressione mediatica crescente. Il risultato è una proliferazione di piste. Vengono identificati numerosi sospettati, ma nessuno viene mai formalmente accusato in modo definitivo. Tra i nomi più citati compaiono Montague John Druitt, Aaron Kosminski e George Chapman. Nessuna di queste ipotesi ha mai raggiunto un livello probatorio sufficiente per chiudere il caso.
+
+      Durante le indagini vengono inviate numerose lettere alla polizia e ai giornali. La più famosa è la Dear Boss, che introduce il nome Jack the Ripper. Questo elemento segna una svolta. Il caso non è più solo investigativo. Diventa mediatico. Il problema è che molte di queste lettere sono considerate falsificazioni. Di conseguenza, il livello comunicativo del caso si separa da quello reale. Nasce così una dinamica che continuerà per oltre un secolo: la sovrapposizione tra fatti e costruzione narrativa.
+
+      Il dato più importante è questo: non esiste alcuna soluzione giudiziaria. Nessun processo conclusivo. Nessuna condanna. Nessuna identificazione certa dell’autore. Questo distingue radicalmente Jack lo Squartatore da molti altri casi storici. Qui non esiste una verità processuale.
+
+      Se si osserva il caso nel suo insieme, emerge una configurazione precisa. Il livello più solido è quello della serie omicidiaria. Il livello investigativo è frammentato. Il livello probatorio è limitato. Il livello giudiziario è assente. Il livello narrativo è espanso. Questo significa che il caso funziona su piani diversi che non coincidono tra loro.
+
+      Jack lo Squartatore continua a essere studiato perché rappresenta un modello particolare. Non è un enigma senza elementi. È un sistema in cui gli elementi esistono, ma non convergono. La serie è chiara. Le indagini no. Le prove non bastano. La narrazione continua. Questa combinazione produce un effetto raro: il caso non si chiude mai davvero.
+
+      Jack lo Squartatore è il primo grande caso moderno di serialità senza soluzione. Non perché manchino i fatti. Ma perché i fatti non si sono mai trasformati in una struttura unitaria. È un sistema aperto. Un sistema in cui la realtà degli omicidi è stabile, la verità investigativa è incompleta, la prova è insufficiente e la narrazione è infinita. Ed è proprio questa distanza tra livelli a renderlo uno dei casi più persistenti della storia criminale.
+    </div>
+  </div>
+
+  <div class="article-share">
+    <p><strong>Condividi l’articolo:</strong></p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+  <div class="author-box">
+    <p><strong>Canali autore:</strong></p>
+    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+  </div>
+
+  <div class="back-links">
+    <a href="../../" class="back-link">Torna alla home</a>
+    <a href="../../articoli/" class="back-link">Torna agli articoli</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="../../privacy/">Privacy Policy</a> |
+    <a href="../../cookie/">Cookie Policy</a> |
+    <a href="../../disclaimer/">Disclaimer</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
