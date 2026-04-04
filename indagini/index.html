@@ -4,26 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Le indagini di Elia Ferri | Michele Bottino</title>
-  <meta name="description" content="Serie narrativa investigativa di Michele Bottino. Le indagini di Elia Ferri mettono in scena casi di finzione costruiti attorno ai punti di frattura delle storie irrisolte.">
+  <title>Le indagini di Leone Varga | Michele Bottino</title>
+  <meta name="description" content="Serie narrativa investigativa: le indagini di Leone Varga. Racconti tra mistero, testimonianza e verità che non si lascia afferrare.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/indagini/">
 
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="it_IT">
-  <meta property="og:site_name" content="Michele Bottino">
-  <meta property="og:title" content="Le indagini di Elia Ferri | Michele Bottino">
-  <meta property="og:description" content="Serie narrativa investigativa di Michele Bottino. Racconti di finzione costruiti attorno ai punti di frattura delle storie irrisolte.">
+  <meta property="og:title" content="Le indagini di Leone Varga">
+  <meta property="og:description" content="Serie narrativa investigativa tra mistero e verità elusive.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/indagini/">
-  <meta property="og:image" content="https://michelebottino-autor.github.io/images/indagini/MB_SERIE_INDAGINI_ELIA_FERRI_V1.png">
-  <meta property="og:image:alt" content="Copertina della serie Le indagini di Elia Ferri">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Le indagini di Elia Ferri | Michele Bottino">
-  <meta name="twitter:description" content="Serie narrativa investigativa di Michele Bottino. Racconti di finzione costruiti attorno ai punti di frattura delle storie irrisolte.">
-  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/indagini/MB_SERIE_INDAGINI_ELIA_FERRI_V1.png">
+  <meta property="og:image" content="https://michelebottino-autor.github.io/images/indagini/MB_COVER_SERIE_INDAGINI_VARGA_V1.png">
 
   <style>
     * { box-sizing: border-box; }
@@ -37,314 +28,92 @@
       --text-muted: #a9915f;
       --line: #8f7748;
       --accent: #c2a46d;
-      --accent-strong: #e1c07e;
-      --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
-      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --shadow: 0 18px 42px rgba(0,0,0,0.28);
       --radius: 14px;
     }
 
-    html { scroll-behavior: smooth; }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(194, 164, 109, 0.05), transparent 34%),
-        linear-gradient(180deg, #202825 0%, #1f2623 100%);
-      color: var(--text-main);
       margin: 0;
-      line-height: 1.72;
-      overflow-x: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1f2623;
+      color: var(--text-main);
+      line-height: 1.7;
     }
 
     h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: Georgia, serif;
       margin-top: 0;
-      color: var(--text-main);
-      letter-spacing: 0.01em;
     }
 
-    p { margin: 0; }
-    a { color: var(--accent); }
-
     .container {
-      width: 100%;
-      max-width: 1140px;
-      margin: 0 auto;
+      max-width: 1100px;
+      margin: auto;
       padding: 22px;
     }
 
     .nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       border-bottom: 1px solid var(--line);
       padding-bottom: 14px;
-      gap: 20px;
-    }
-
-    .logo img {
-      height: 60px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 14px;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
     }
 
     .nav a {
       color: var(--accent);
       text-decoration: none;
-      font-size: 0.95rem;
-      transition: opacity 0.2s ease, border-color 0.2s ease;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
+      margin-right: 10px;
     }
 
-    .nav a:hover { opacity: 0.82; }
-
-    .nav a.active {
-      color: var(--accent-strong);
-      border-bottom-color: var(--accent-strong);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: transparent;
-      border: 1px solid var(--line);
-      padding: 8px;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--accent);
-      margin: 4px 0;
-    }
-
-    .breadcrumb {
-      padding-top: 18px;
-      padding-bottom: 4px;
-      color: var(--text-soft);
-      font-size: 0.92rem;
-    }
-
-    .breadcrumb a {
-      color: var(--text-soft);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-
-    .breadcrumb a:hover { border-bottom-color: var(--text-soft); }
-
-    .hero-box, .content-box, .share-box, .author-box {
-      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
-      border: 1px solid var(--line);
+    .cover {
+      margin-top: 30px;
       border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero {
-      padding-top: 12px;
-      padding-bottom: 14px;
-    }
-
-    .hero-box { padding: 28px 26px 24px; }
-
-    .hero h1 {
-      font-size: 3rem;
-      line-height: 1.06;
-      margin-bottom: 8px;
-    }
-
-    .hero h2 {
-      font-size: 1.18rem;
-      margin-bottom: 18px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 600;
-      color: var(--text-soft);
-    }
-
-    .section { padding-top: 22px; }
-
-    .content-box { padding: 22px; }
-
-    .content-box h2 {
-      font-size: 1.9rem;
-      margin-bottom: 10px;
-    }
-
-    .content-box p {
-      margin-bottom: 10px;
-      color: var(--text-main);
-    }
-
-    .content-box p:last-child { margin-bottom: 0; }
-
-    .featured-box {
-      display: grid;
-      grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
-      gap: 22px;
-      align-items: center;
-      padding: 22px;
-      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+      overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
-    .featured-box img,
-    .card img {
+    .cover img {
       width: 100%;
-      height: auto;
       display: block;
-      border: 1px solid var(--line);
-      border-radius: 10px;
     }
 
-    .featured-label,
-    .category-pill,
-    .coming-badge {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      font-size: 0.82rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--text-soft);
-    }
-
-    .coming-badge {
-      color: #f0d9a7;
-      border-color: #b69152;
-    }
-
-    .featured-box h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .featured-box p,
-    .card p {
-      color: var(--text-main);
-      margin-bottom: 10px;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, var(--bg-panel-2) 0%, var(--bg-panel) 100%);
+    .box {
+      background: var(--bg-panel);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
+      padding: 24px;
+      margin-top: 24px;
     }
 
-    .card-content { padding: 18px; }
-
-    .card h3 {
-      font-size: 1.28rem;
-      margin-bottom: 10px;
-      line-height: 1.22;
+    .episodes {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
     }
 
-    .card-link,
-    .section-link {
-      display: inline-block;
+    .episode {
+      border: 1px solid var(--line);
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--bg-panel-2);
+    }
+
+    .episode a {
       color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      width: fit-content;
+      font-weight: bold;
     }
 
-    .card.coming { opacity: 0.72; }
-    .card.coming .card-link { display: none; }
-
-    .share-box,
-    .author-box {
-      max-width: 920px;
-      margin: 22px auto 0;
-      padding: 16px 18px;
-    }
-
-    .share-box a,
-    .author-box a {
-      display: inline-block;
-      margin-right: 14px;
-      margin-bottom: 8px;
-      color: var(--accent);
-      text-decoration: none;
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease, opacity 0.2s ease;
-    }
-
-    .share-box a:hover,
-    .author-box a:hover {
-      border-color: var(--accent);
-      opacity: 0.85;
+    .coming {
+      opacity: 0.6;
     }
 
     footer {
-      padding: 30px 0 36px;
+      margin-top: 40px;
       color: var(--text-muted);
+      font-size: 0.9rem;
     }
 
-    footer p { margin: 0; }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover { text-decoration: underline; }
-    footer a:visited { color: var(--accent); }
-
-    @media (max-width: 980px) {
-      .featured-box { grid-template-columns: 1fr; }
-      .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 680px) {
-      .container { padding: 16px; }
-
-      .menu-toggle { display: block; }
-
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .nav-menu.active { display: flex; }
-
-      .nav-menu a {
-        display: block;
-        border: 1px solid var(--line);
-        padding: 10px;
-        background: var(--bg-panel);
-        border-radius: 8px;
-      }
-
-      .hero h1 { font-size: 2.15rem; }
-      .hero h2 { font-size: 1.06rem; }
-      .cards-grid { grid-template-columns: 1fr; }
-    }
   </style>
 </head>
 
@@ -352,159 +121,77 @@
 
 <header class="container">
   <nav class="nav">
-    <div class="logo">
-      <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
+    <div>
+      <a href="../">Home</a>
+      <a href="../articoli/">Articoli</a>
+      <a href="./">Indagini</a>
     </div>
-
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
-      <span></span><span></span><span></span>
-    </button>
-
-    <ul class="nav-menu" id="menu">
-      <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Autore</a></li>
-      <li><a href="../opere/">Opere</a></li>
-      <li><a href="../poetica/">Poetica</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../articoli/">Articoli</a></li>
-      <li><a href="../strutture-irrisolto/">Strutture dell’irrisolto</a></li>
-      <li><a href="./" class="active" aria-current="page">Indagini</a></li>
-      <li><a href="../media/">Media</a></li>
-      <li><a href="../contatti/">Contatti</a></li>
-    </ul>
   </nav>
 </header>
 
-<div class="container breadcrumb">
-  <a href="../">Home</a> / <span>Indagini</span>
-</div>
+<main class="container">
 
-<main>
-
-<section class="container hero">
-  <div class="hero-box">
-    <h1>Le indagini di Elia Ferri</h1>
-    <h2>Serie narrativa investigativa</h2>
-    <p>Una serie di racconti di finzione costruiti attorno ai punti di frattura delle storie irrisolte. Non cronaca, non analisi documentaria, ma narrazione investigativa fondata sul momento in cui una vicenda smette di essere chiara.</p>
+  <!-- COPERTINA SERIE -->
+  <div class="cover">
+    <img src="../images/indagini/MB_COVER_SERIE_INDAGINI_VARGA_V1.png" alt="Le indagini di Leone Varga">
   </div>
-</section>
 
-<section class="container section">
-  <div class="content-box">
-    <h2>Che cos’è questa serie</h2>
-    <p>Le indagini di Elia Ferri è una serie narrativa firmata da Michele Bottino. Ogni racconto mette in scena una configurazione investigativa diversa: un passaggio mancante, una testimonianza che non regge, una versione troppo perfetta per essere vera.</p>
-    <p>Questi testi non ricostruiscono casi reali. Sono opere di finzione, costruite per esplorare la forma con cui una storia si deforma, si interrompe o rimane sospesa.</p>
+  <!-- DESCRIZIONE SERIE -->
+  <div class="box">
+    <h1>Le indagini di Leone Varga</h1>
+    <p>
+      Leone Varga non cerca colpevoli. Cerca fratture.
+      Lavora dove la realtà smette di essere lineare, dove le testimonianze non coincidono,
+      dove i fatti esistono ma non si lasciano organizzare in una verità definitiva.
+    </p>
+    <p>
+      Le sue indagini non seguono piste: osservano configurazioni.  
+      Ogni caso è un punto in cui qualcosa si è interrotto.
+    </p>
   </div>
-</section>
 
-<section class="container section">
-  <h2>Ultima indagine</h2>
-  <div class="featured-box">
-    <div>
-      <img src="../images/indagini/MB_INDAGINI_01_LA_STANZA_VUOTA_COVER.png" alt="Copertina dell'episodio La stanza vuota">
+  <!-- PERSONAGGIO -->
+  <div class="box">
+    <h2>Il personaggio</h2>
+    <p>
+      Leone Varga è un investigatore indipendente. Non appartiene a strutture ufficiali,
+      non lavora per chi cerca risposte rapide.
+    </p>
+    <p>
+      Accetta solo casi in cui qualcosa non torna.  
+      Non per risolverli, ma per capire perché non si risolvono.
+    </p>
+  </div>
+
+  <!-- EPISODI -->
+  <div class="box">
+    <h2>Episodi</h2>
+
+    <div class="episodes">
+
+      <div class="episode">
+        <a href="la-stanza-vuota/">La stanza vuota</a>
+        <p>Un luogo chiuso, nessun segno di ingresso, nessuna uscita osservata. Eppure qualcosa è accaduto.</p>
+      </div>
+
+      <div class="episode coming">
+        <strong>Il testimone che arriva tardi</strong>
+        <p>Prossimamente</p>
+      </div>
+
+      <div class="episode coming">
+        <strong>Traccia interrotta</strong>
+        <p>Prossimamente</p>
+      </div>
+
     </div>
-    <div>
-      <span class="featured-label">Le indagini di Elia Ferri</span>
-      <h2>La stanza vuota</h2>
-      <p>Quando arrivano, la porta è già aperta. La stanza è in ordine. Il problema è che tutto sembra troppo fermo per essere vero.</p>
-      <a href="./la-stanza-vuota/" class="section-link">Leggi l’episodio</a>
-    </div>
   </div>
-</section>
-
-<section class="container section">
-  <h2>Archivio delle indagini</h2>
-  <div class="cards-grid">
-
-    <article class="card">
-      <img src="../images/indagini/MB_INDAGINI_01_LA_STANZA_VUOTA_COVER.png" alt="Copertina dell'episodio La stanza vuota">
-      <div class="card-content">
-        <span class="category-pill">Le indagini di Elia Ferri</span>
-        <h3>La stanza vuota</h3>
-        <p>Un uomo scompare da un edificio che sembra chiuso. Ma il caso comincia a mentire molto prima della sua assenza.</p>
-        <a href="./la-stanza-vuota/" class="card-link">Leggi</a>
-      </div>
-    </article>
-
-    <article class="card coming">
-      <img src="../images/indagini/MB_INDAGINI_02_IL_TESTIMONE_CHE_ARRIVA_TARDI_COVER.png" alt="Copertina dell'episodio Il testimone che arriva tardi">
-      <div class="card-content">
-        <span class="coming-badge">Prossimamente</span>
-        <h3>Il testimone che arriva tardi</h3>
-        <p>Una voce compare quando la storia sembra già chiusa. Il problema è capire se porta chiarezza o un nuovo inganno.</p>
-      </div>
-    </article>
-
-    <article class="card coming">
-      <img src="../images/indagini/MB_INDAGINI_03_LA_VERSIONE_PERFETTA_COVER.png" alt="Copertina dell'episodio La versione perfetta">
-      <div class="card-content">
-        <span class="coming-badge">Prossimamente</span>
-        <h3>La versione perfetta</h3>
-        <p>Quando un racconto è troppo lineare, Ferri diffida. Le versioni impeccabili sono spesso le prime a nascondere una frattura.</p>
-      </div>
-    </article>
-
-    <article class="card coming">
-      <img src="../images/indagini/MB_INDAGINI_04_LERRORE_CHE_NON_ESISTE_COVER.png" alt="Copertina dell'episodio L’errore che non esiste">
-      <div class="card-content">
-        <span class="coming-badge">Prossimamente</span>
-        <h3>L’errore che non esiste</h3>
-        <p>Un’inchiesta senza sbavature apparenti. Ma proprio l’assenza di errori diventa il primo elemento sospetto.</p>
-      </div>
-    </article>
-
-    <article class="card coming">
-      <img src="../images/indagini/MB_INDAGINI_05_LUOMO_CHE_MANCA_DUE_VOLTE_COVER.png" alt="Copertina dell'episodio L’uomo che manca due volte">
-      <div class="card-content">
-        <span class="coming-badge">Prossimamente</span>
-        <h3>L’uomo che manca due volte</h3>
-        <p>Un’assenza si ripete in due tempi diversi. Ferri capisce che la seconda sparizione serve a coprire la prima.</p>
-      </div>
-    </article>
-
-    <article class="card coming">
-      <img src="../images/indagini/MB_INDAGINI_06_IL_CASO_GIA_CHIUSO_COVER.png" alt="Copertina dell'episodio Il caso già chiuso">
-      <div class="card-content">
-        <span class="coming-badge">Prossimamente</span>
-        <h3>Il caso già chiuso</h3>
-        <p>Quando tutti dicono che non c’è più nulla da vedere, per Ferri è il momento esatto in cui bisogna tornare a guardare.</p>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<section class="container">
-  <div class="share-box">
-    <p><strong>Condividi la sezione:</strong></p>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/indagini/" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/indagini/" target="_blank" rel="noopener noreferrer">X</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/indagini/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  </div>
-
-  <div class="author-box">
-    <p><strong>Canali autore:</strong></p>
-    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
-  </div>
-</section>
 
 </main>
 
 <footer class="container">
-  <p>
-    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
-    <br>
-    <a href="../privacy/">Privacy Policy</a> |
-    <a href="../cookie/">Cookie Policy</a> |
-    <a href="../disclaimer/">Disclaimer</a>
-  </p>
+  <p>© 2026 Michele Bottino — Tutti i diritti riservati</p>
 </footer>
-
-<script>
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
-}
-</script>
 
 </body>
 </html>
