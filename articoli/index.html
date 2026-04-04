@@ -83,6 +83,7 @@
       --text-muted: #a9915f;
       --line: #8f7748;
       --accent: #c2a46d;
+      --accent-strong: #e1c07e;
       --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
       --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
       --radius: 14px;
@@ -153,11 +154,18 @@
       color: var(--accent);
       text-decoration: none;
       font-size: 0.95rem;
-      transition: opacity 0.2s ease;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
     }
 
     .nav a:hover {
       opacity: 0.82;
+    }
+
+    .nav a.active {
+      color: var(--accent-strong);
+      border-bottom-color: var(--accent-strong);
     }
 
     .menu-toggle {
@@ -176,17 +184,40 @@
       margin: 4px 0;
     }
 
+    .breadcrumb {
+      padding-top: 18px;
+      padding-bottom: 4px;
+      color: var(--text-soft);
+      font-size: 0.92rem;
+    }
+
+    .breadcrumb a {
+      color: var(--text-soft);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .breadcrumb a:hover {
+      border-bottom-color: var(--text-soft);
+    }
+
     .page-header {
-      padding-top: 36px;
+      padding-top: 12px;
       padding-bottom: 14px;
     }
 
-    .page-header-box {
+    .page-header-box,
+    .content-box,
+    .share-box,
+    .author-box {
       background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 28px 26px 24px;
       box-shadow: var(--shadow-soft);
+    }
+
+    .page-header-box {
+      padding: 28px 26px 24px;
     }
 
     .page-header h1 {
@@ -210,9 +241,26 @@
       border-left: 4px solid var(--accent);
     }
 
-    .featured-section {
+    .section {
       padding-top: 22px;
-      padding-bottom: 8px;
+    }
+
+    .content-box {
+      padding: 22px;
+    }
+
+    .content-box h2 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+    }
+
+    .content-box p {
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .content-box p:last-child {
+      margin-bottom: 0;
     }
 
     .featured-box {
@@ -240,9 +288,9 @@
       margin-bottom: 12px;
       padding: 6px 10px;
       font-size: 0.82rem;
-      color: #1f2623;
-      background: var(--accent);
-      border: 1px solid var(--accent);
+      color: var(--text-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
     }
 
     .featured-box h2 {
@@ -263,7 +311,6 @@
     }
 
     .section-title {
-      padding-top: 18px;
       margin-bottom: 12px;
     }
 
@@ -316,10 +363,6 @@
       color: var(--text-main);
     }
 
-    .card .tag-line {
-      margin-bottom: 14px;
-    }
-
     .card-link,
     .section-link {
       display: inline-block;
@@ -334,10 +377,6 @@
       max-width: 920px;
       margin: 24px auto 0;
       padding: 16px 18px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
-      border-radius: 12px;
-      box-shadow: var(--shadow-soft);
     }
 
     .share-box p,
@@ -423,10 +462,6 @@
         border-radius: 8px;
       }
 
-      .page-header {
-        padding-top: 24px;
-      }
-
       .page-header h1 {
         font-size: 2.1rem;
       }
@@ -460,13 +495,18 @@
       <li><a href="../opere/">Opere</a></li>
       <li><a href="../poetica/">Poetica</a></li>
       <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="./">Articoli</a></li>
+      <li><a href="./" class="active" aria-current="page">Articoli</a></li>
+      <li><a href="../strutture-irrisolto/">Strutture dell’irrisolto</a></li>
       <li><a href="../testi-musicali/">Testi musicali</a></li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
+
+<div class="container breadcrumb">
+  <a href="../">Home</a> / <span>Articoli</span>
+</div>
 
 <main>
 
@@ -481,13 +521,22 @@
   </div>
 </section>
 
-<section class="container featured-section">
+<section class="container section">
+  <div class="content-box">
+    <h2>Lettura strutturale dei casi</h2>
+    <p>Accanto alla sezione Articoli, il sito ospita anche la serie <strong>Le strutture dell’irrisolto</strong>, dedicata alla lettura metodologica dei casi documentali già pubblicati. Qui il focus non è soltanto sui fatti, ma sulla forma con cui i casi smettono di convergere.</p>
+    <a href="../strutture-irrisolto/" class="section-link">Vai a Le strutture dell’irrisolto</a>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Ultimo articolo pubblicato</h2>
   <div class="featured-box">
     <div>
       <img src="../images/articoli/MB_COVER_ANGELA_CELENTANO_V2.png" alt="Copertina dell'articolo sul caso Angela Celentano">
     </div>
     <div>
-      <span class="featured-label">Ultimo articolo pubblicato</span>
+      <span class="featured-label">Caso reale</span>
       <h2>Il caso Angela Celentano</h2>
       <p>Ricostruzione documentale e analisi strutturale.</p>
       <div class="meta-line">Classificazione: Caso reale / Analisi documentaria</div>
@@ -497,10 +546,43 @@
   </div>
 </section>
 
-<section class="container">
+<section class="container section">
   <h2 class="section-title">Archivio</h2>
 
   <div class="articles-grid">
+
+    <article class="card">
+      <img src="../images/articoli/MB_COVER_ANGELA_CELENTANO_V2.png" alt="Copertina dell'articolo sul caso Angela Celentano">
+      <div class="card-content">
+        <span class="category-pill">Caso reale</span>
+        <h3>Il caso Angela Celentano</h3>
+        <p>Ricostruzione documentale e analisi strutturale.</p>
+        <div class="tag-line">Tag: Monte Faito, scomparsa, pista turca</div>
+        <a href="angela-celentano/" class="card-link">Leggi l’articolo</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="../images/articoli/MB_COVER_DENISE_V1.png" alt="Copertina dell'articolo sul caso Denise Pipitone">
+      <div class="card-content">
+        <span class="category-pill">Caso reale</span>
+        <h3>Il caso Denise Pipitone</h3>
+        <p>Una scomparsa senza punto di convergenza.</p>
+        <div class="tag-line">Tag: Mazara del Vallo, scomparsa, caso aperto</div>
+        <a href="denise/" class="card-link">Leggi l’articolo</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="../images/articoli/MB_COVER_CRISTINA_GOLINUCCI_V1.png" alt="Copertina dell'articolo sul caso Cristina Golinucci">
+      <div class="card-content">
+        <span class="category-pill">Caso reale</span>
+        <h3>Il caso Cristina Golinucci</h3>
+        <p>Ricostruzione documentale e analisi strutturale.</p>
+        <div class="tag-line">Tag: Cesena, Ronta, Emanuel Boke</div>
+        <a href="cristina-golinucci/" class="card-link">Leggi l’articolo</a>
+      </div>
+    </article>
 
     <article class="card">
       <img src="../images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png" alt="Copertina dell'articolo su Jack lo Squartatore">
@@ -576,17 +658,6 @@
         <p>La centralità della prova scientifica e i limiti della ricostruzione.</p>
         <div class="tag-line">Tag: Massimo Bossetti, DNA, prova scientifica</div>
         <a href="yara/" class="card-link">Leggi l’articolo</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <img src="../images/articoli/MB_COVER_DENISE_V1.png" alt="Copertina dell'articolo sul caso Denise Pipitone">
-      <div class="card-content">
-        <span class="category-pill">Caso reale</span>
-        <h3>Il caso Denise Pipitone</h3>
-        <p>Una scomparsa senza punto di convergenza.</p>
-        <div class="tag-line">Tag: Mazara del Vallo, scomparsa, caso aperto</div>
-        <a href="denise/" class="card-link">Leggi l’articolo</a>
       </div>
     </article>
 
