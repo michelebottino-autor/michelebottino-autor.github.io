@@ -91,6 +91,11 @@
   </url>
 
   <url>
+
+<url>
+  <loc>https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/</loc>
+  <priority>0.8</priority>
+</url>
     <loc>https://michelebottino-autor.github.io/articoli/contessa-carini/</loc>
     <priority>0.7</priority>
   </url>
