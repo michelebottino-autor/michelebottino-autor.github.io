@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Sitemap principale
 Sitemap: https://michelebottino-autor.github.io/sitemap.xml
