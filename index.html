@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Michele Bottino | Scrittore e saggista italiano – Sito ufficiale</title>
-  <meta name="description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, ricerca storico-documentaria, pubblicazioni e attività autoriale.">
+  <meta name="description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, scritti, ricerca storico-documentaria, pubblicazioni e attività autoriale.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
@@ -16,14 +16,14 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
   <meta property="og:title" content="Michele Bottino | Scrittore e saggista italiano – Sito ufficiale">
-  <meta property="og:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, ricerca storico-documentaria, pubblicazioni e attività autoriale.">
+  <meta property="og:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, scritti, ricerca storico-documentaria, pubblicazioni e attività autoriale.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
   <meta property="og:image:alt" content="Logo di Michele Bottino">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Michele Bottino | Scrittore e saggista italiano – Sito ufficiale">
-  <meta name="twitter:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, ricerca storico-documentaria, pubblicazioni e attività autoriale.">
+  <meta name="twitter:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, scritti, ricerca storico-documentaria, pubblicazioni e attività autoriale.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
   <script type="application/ld+json">
@@ -33,7 +33,7 @@
     "name": "Michele Bottino",
     "url": "https://michelebottino-autor.github.io/",
     "jobTitle": "Scrittore e saggista italiano",
-    "description": "Scrittore e saggista italiano, autore di opere narrative e di ricerca storico-documentaria.",
+    "description": "Scrittore e saggista italiano, autore di opere narrative, scritti saggistici e ricerca storico-documentaria.",
     "sameAs": [
       "https://www.wikidata.org/wiki/Q138828334",
       "https://orcid.org/0009-0009-2797-9267",
@@ -90,6 +90,7 @@
       border-bottom: 1px solid #8f7748;
       padding-bottom: 14px;
       gap: 20px;
+      position: relative;
     }
 
     .logo img {
@@ -105,6 +106,7 @@
       margin: 0;
       padding: 0;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .nav a {
@@ -127,6 +129,44 @@
       height: 2px;
       background: #c2a46d;
       margin: 4px 0;
+    }
+
+    .has-submenu {
+      position: relative;
+    }
+
+    .submenu-toggle {
+      background: transparent;
+      border: none;
+      color: #c2a46d;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .submenu {
+      list-style: none;
+      margin: 8px 0 0 0;
+      padding: 0;
+      display: none;
+    }
+
+    .submenu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 8px 0 8px 14px;
+      font-size: 0.92rem;
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    .has-submenu.open .submenu {
+      display: block;
     }
 
     .hero.container {
@@ -279,6 +319,31 @@
       font-size: 0.92rem;
     }
 
+    @media (min-width: 681px) {
+      .nav-menu {
+        align-items: center;
+      }
+
+      .has-submenu {
+        display: inline-block;
+      }
+
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: #2a312d;
+        border: 1px solid #8f7748;
+        padding: 8px 12px;
+        z-index: 50;
+      }
+
+      .submenu li a {
+        padding: 8px 0;
+      }
+    }
+
     @media (max-width: 900px) {
       .grid-3 {
         grid-template-columns: 1fr;
@@ -307,17 +372,32 @@
         flex-direction: column;
         width: 100%;
         margin-top: 10px;
+        align-items: stretch;
       }
 
       .nav-menu.active {
         display: flex;
       }
 
-      .nav-menu a {
+      .nav-menu > li > a,
+      .submenu-toggle {
         display: block;
+        width: 100%;
         border: 1px solid #8f7748;
         padding: 10px;
         background: #2a312d;
+        text-align: left;
+      }
+
+      .submenu {
+        margin-top: 0;
+        padding-top: 6px;
+      }
+
+      .submenu li a {
+        border: 1px solid #8f7748;
+        padding: 10px 10px 10px 18px;
+        background: #242a27;
       }
 
       .hero.container {
@@ -372,12 +452,42 @@
 
     <ul class="nav-menu" id="menu">
       <li><a href="./">Home</a></li>
-      <li><a href="biografia/">Autore</a></li>
-      <li><a href="opere/">Opere</a></li>
-      <li><a href="poetica/">Poetica</a></li>
-      <li><a href="ricerca/">Ricerca</a></li>
-      <li><a href="articoli/">Articoli</a></li>
-      <li><a href="testi-musicali/">Testi musicali</a></li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" type="button">Autore</button>
+        <ul class="submenu">
+          <li><a href="biografia/">Biografia</a></li>
+          <li><a href="poetica/">Poetica</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" type="button">Opere</button>
+        <ul class="submenu">
+          <li><a href="opere/">Romanzi e saggi</a></li>
+          <li><a href="testi-musicali/">Testi musicali</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" type="button">Scritti</button>
+        <ul class="submenu">
+          <li><a href="articoli/">Articoli</a></li>
+          <li><a href="dossier/">Dossier</a></li>
+          <li><a href="racconti/">Racconti</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" type="button">Metodo e ricerca</button>
+        <ul class="submenu">
+          <li><a href="ricerca/">Ricerca</a></li>
+          <li><a href="bottino-method/">Bottino Method</a></li>
+          <li><a href="mrn/">MRN</a></li>
+          <li><a href="pubblicazioni/">Pubblicazioni</a></li>
+        </ul>
+      </li>
+
       <li><a href="media/">Media</a></li>
       <li><a href="contatti/">Contatti</a></li>
     </ul>
@@ -392,19 +502,20 @@
       <h1>Michele Bottino</h1>
       <h2>Scrittore e saggista italiano</h2>
 
-      <p class="hero-lead-note"><strong>Sito ufficiale dell’autore Michele Bottino.</strong></p>
+      <p class="hero-lead-note"><strong>Sito ufficiale dello scrittore e saggista Michele Bottino.</strong></p>
 
       <p>
-        Autore di opere narrative e saggistiche, Michele Bottino sviluppa una scrittura
-        orientata al realismo, alla coerenza strutturale e al controllo formale del testo.
+        Michele Bottino sviluppa un percorso autoriale che unisce narrativa,
+        saggistica e ricerca documentaria, all’interno di una scrittura fondata
+        su rigore formale, coerenza strutturale e controllo del linguaggio.
       </p>
 
       <p class="hero-links">
         Approfondisci:
         <a href="biografia/">biografia</a>,
         <a href="opere/">opere</a>,
-        <a href="ricerca/">ricerca storico-documentaria</a>,
-        <a href="articoli/">articoli</a>.
+        <a href="ricerca/">metodo e ricerca</a>,
+        <a href="articoli/">articoli e scritti</a>.
       </p>
 
       <div class="cta">
@@ -435,30 +546,66 @@
 <section class="container grid-3">
   <div class="card">
     <h3>Opere</h3>
-    <p>Romanzi e saggi.</p>
+    <p>Romanzi e saggi che definiscono il percorso letterario e saggistico dell’autore.</p>
     <a href="opere/" class="card-link">Scopri</a>
   </div>
 
   <div class="card">
-    <h3>Autore</h3>
-    <p>Biografia ufficiale.</p>
-    <a href="biografia/" class="card-link">Leggi</a>
+    <h3>Scritti</h3>
+    <p>Articoli, dossier e testi narrativi che affiancano e ampliano il lavoro editoriale.</p>
+    <a href="articoli/" class="card-link">Esplora</a>
   </div>
 
   <div class="card">
-    <h3>Poetica</h3>
-    <p>Linea di scrittura.</p>
-    <a href="poetica/" class="card-link">Approfondisci</a>
+    <h3>Metodo e ricerca</h3>
+    <p>Analisi documentaria, modelli metodologici e pubblicazioni dedicate alla struttura dei contenuti.</p>
+    <a href="ricerca/" class="card-link">Approfondisci</a>
   </div>
 </section>
 
 <section class="container">
   <div class="subtle-block">
-    <h2>Ricerca</h2>
-    <p>Analisi documentaria e modelli metodologici.</p>
+    <h2>Scritti</h2>
+    <p>
+      Una sezione dedicata ad articoli, dossier e racconti, dove la scrittura
+      si sviluppa tra analisi, indagine documentaria e costruzione narrativa.
+    </p>
+    <a href="articoli/" class="section-link">Vai agli articoli</a>
+    <br>
+    <a href="racconti/" class="section-link">Vai ai racconti</a>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>Articoli</h3>
+      <p>Approfondimenti su casi, temi e questioni documentarie trattati con rigore espositivo.</p>
+      <a href="articoli/" class="card-link">Leggi</a>
+    </div>
+
+    <div class="card">
+      <h3>Dossier</h3>
+      <p>Materiali strutturati e percorsi di analisi dedicati a vicende e contesti specifici.</p>
+      <a href="dossier/" class="card-link">Consulta</a>
+    </div>
+
+    <div class="card">
+      <h3>Racconti</h3>
+      <p>Testi narrativi sviluppati all’interno della linea autoriale di Michele Bottino.</p>
+      <a href="racconti/" class="card-link">Scopri</a>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="subtle-block">
+    <h2>Metodo e ricerca</h2>
+    <p>
+      Analisi documentaria, sviluppo metodologico e pubblicazioni dedicate
+      alla struttura dei dati, delle fonti e delle narrazioni.
+    </p>
     <a href="ricerca/" class="section-link">Approfondisci</a>
     <br>
-    <a href="articoli/" class="section-link">Vai agli articoli</a>
+    <a href="pubblicazioni/" class="section-link">Vai alle pubblicazioni</a>
   </div>
 
   <div class="subtle-block">
@@ -480,9 +627,9 @@
   <h2>Nota autore</h2>
   <p>
     Michele Bottino (1972) è uno scrittore e saggista italiano.
-    La sua produzione si sviluppa tra narrativa e saggistica, all’interno di una linea
-    espressiva orientata alla precisione del testo, alla chiarezza espositiva
-    e alla coerenza interna della scrittura.
+    La sua produzione comprende opere narrative e saggistiche sviluppate
+    all’interno di una linea espressiva orientata al realismo,
+    alla coerenza strutturale e al controllo formale del testo.
   </p>
 </section>
 
@@ -506,6 +653,30 @@
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
+
+document.querySelectorAll(".submenu-toggle").forEach(button => {
+  button.addEventListener("click", function () {
+    const parent = this.parentElement;
+
+    if (window.innerWidth <= 680) {
+      parent.classList.toggle("open");
+    } else {
+      document.querySelectorAll(".has-submenu").forEach(item => {
+        if (item !== parent) item.classList.remove("open");
+      });
+      parent.classList.toggle("open");
+    }
+  });
+});
+
+document.addEventListener("click", function (event) {
+  const isInsideMenu = event.target.closest(".has-submenu");
+  if (!isInsideMenu) {
+    document.querySelectorAll(".has-submenu").forEach(item => {
+      item.classList.remove("open");
+    });
+  }
+});
 
 async function updateVisitCounter() {
   const namespace = "michelebottino-autor.github.io";
