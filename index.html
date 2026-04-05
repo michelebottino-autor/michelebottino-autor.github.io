@@ -35,7 +35,6 @@
       position: relative;
     }
     .logo img { height: 60px; width: auto; }
-    
     .nav-menu { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     
     .menu-toggle {
@@ -56,16 +55,14 @@
       padding: 10px; min-width: 200px; z-index: 1000; list-style: none;
     }
     .has-submenu.open .submenu { display: block; }
-    .submenu li { border-bottom: 1px solid rgba(143, 119, 72, 0.2); }
-    .submenu li:last-child { border: none; }
     .submenu a { display: block; padding: 10px; font-size: 0.9rem; width: 100%; }
-    .submenu a:hover { background: rgba(194, 164, 109, 0.1); }
+    .submenu li { border-bottom: 1px solid rgba(143, 119, 72, 0.1); }
 
-    /* Hero - La tua versione elegante */
+    /* Hero Professionale */
     .hero { padding: 60px 0; display: flex; gap: 50px; align-items: center; }
     .hero-content { flex: 1.2; border-left: 2px solid var(--accent); padding-left: 40px; }
-    .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-    .bio-text { font-family: Georgia, serif; font-size: 1.2rem; font-style: italic; color: #d1c19a; }
+    .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; }
+    .bio-text { font-family: Georgia, serif; font-size: 1.25rem; font-style: italic; color: #d1c19a; }
     .bio-text p { margin-bottom: 1.5em; }
     .bio-text strong { font-style: normal; color: var(--accent); }
 
@@ -74,35 +71,28 @@
       border: 1px solid var(--border); object-fit: cover;
     }
 
-    /* Actions */
+    /* Bottoni */
     .actions { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
-    .btn { 
-        padding: 12px 25px; border: 1px solid var(--accent); 
-        font-weight: bold; cursor: pointer; background: none; 
-        color: var(--accent); font-family: inherit; text-align: center;
-    }
+    .btn { padding: 12px 25px; border: 1px solid var(--accent); font-weight: bold; cursor: pointer; display: inline-block; }
     .btn-primary { background: var(--accent); color: var(--bg); }
 
-    /* Sezioni Card */
+    /* Griglia Card basata sulle tue cartelle */
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin: 40px 0; }
     .card { background: var(--card-bg); border: 1px solid var(--border); padding: 25px; }
     .card h3 { margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 
     footer { border-top: 1px solid var(--border); padding: 40px 0; color: #8f7748; font-size: 0.85rem; }
+    .footer-links { display: flex; gap: 15px; margin-top: 10px; }
 
-    /* Mobile Responsive Corretto */
     @media (max-width: 850px) {
       .menu-toggle { display: block; }
       .nav-menu {
-        display: none; 
-        position: absolute; top: 100%; left: 0; width: 100%;
-        background: var(--bg); flex-direction: column; padding: 20px; 
-        border-bottom: 1px solid var(--border); z-index: 1000;
+        display: none; position: absolute; top: 100%; left: 0; width: 100%;
+        background: var(--bg); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border); z-index: 1000;
       }
       .nav-menu.active { display: flex; }
-      .hero { flex-direction: column-reverse; text-align: left; }
+      .hero { flex-direction: column-reverse; }
       .hero-content { padding-left: 20px; border-left: 3px solid var(--accent); }
-      .hero h1 { font-size: 2.8rem; }
       .grid-3 { grid-template-columns: 1fr; }
       .submenu { position: static; border: none; padding-left: 20px; background: transparent; }
     }
@@ -116,7 +106,7 @@
       <a href="./"><img src="images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" id="m-btn" onclick="toggleMenu()">Menu ☰</button>
+    <button class="menu-toggle" onclick="toggleMenu()">Menu ☰</button>
 
     <ul class="nav-menu" id="main-menu">
       <li><a href="./">Home</a></li>
@@ -125,6 +115,7 @@
         <ul class="submenu">
           <li><a href="biografia/">Biografia</a></li>
           <li><a href="poetica/">Poetica</a></li>
+          <li><a href="metodo/">Metodo</a></li>
         </ul>
       </li>
       <li class="has-submenu">
@@ -132,6 +123,7 @@
         <ul class="submenu">
           <li><a href="opere/">Romanzi e Saggi</a></li>
           <li><a href="testi-musicali/">Testi Musicali</a></li>
+          <li><a href="indagini/">Indagini</a></li>
         </ul>
       </li>
       <li><a href="ricerca/">Ricerca</a></li>
@@ -160,25 +152,25 @@
     </div>
 
     <div class="hero-image">
-      <img src="images/michele-bottino-autore.jpg" alt="Michele Bottino" fetchpriority="high">
+      <img src="images/michele-bottino-autore.jpg" alt="Michele Bottino">
     </div>
   </section>
 
   <section class="grid-3">
     <div class="card">
       <h3>Opere</h3>
-      <p>La produzione letteraria completa dal 2010 ad oggi.</p>
-      <a href="opere/">Vedi tutti i volumi →</a>
+      <p>La produzione letteraria completa: saggi e romanzi pubblicati dal 2010.</p>
+      <a href="opere/">Archivio Opere →</a>
     </div>
     <div class="card">
-      <h3>Scritti</h3>
-      <p>Dossier e articoli nati dall'indagine sui fatti.</p>
-      <a href="articoli/">Leggi gli scritti →</a>
+      <h3>Articoli</h3>
+      <p>Analisi, dossier e scritti nati dall'attività di ricerca e indagine.</p>
+      <a href="articoli/">Leggi gli articoli →</a>
     </div>
     <div class="card">
-      <h3>Metodo</h3>
-      <p>Modelli di analisi strutturata e il sistema MRN.</p>
-      <a href="ricerca/">Approfondisci →</a>
+      <h3>Ricerca</h3>
+      <p>Il sistema MRN e il Bottino Method applicati alla struttura dei contenuti.</p>
+      <a href="ricerca/">Il Metodo →</a>
     </div>
   </section>
 </main>
@@ -187,10 +179,12 @@
   <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
     <div>
       <p>© 2026 Michele Bottino. Tutti i diritti riservati.</p>
-      <nav>
-        <a href="mailto:info@michelebottino.it">Email</a> | 
-        <a href="privacy/">Privacy Policy</a>
-      </nav>
+      <div class="footer-links">
+        <a href="mailto:info@michelebottino.it">Contatti</a> | 
+        <a href="privacy/">Privacy</a> | 
+        <a href="cookie/">Cookie</a> | 
+        <a href="disclaimer/">Disclaimer</a>
+      </div>
     </div>
     <div style="color: var(--accent);">
       Visite: <span id="v-count">—</span>
@@ -199,48 +193,38 @@
 </footer>
 
 <script>
-  // Logica Menu Mobile corretta
-  function toggleMenu() {
-    const mMenu = document.getElementById('main-menu');
-    mMenu.classList.toggle('active');
-  }
+  function toggleMenu() { document.getElementById('main-menu').classList.toggle('active'); }
 
-  // Logica Sottomenu
   function toggleSub(event, btn) {
     event.stopPropagation();
     const parent = btn.parentElement;
     document.querySelectorAll('.has-submenu').forEach(li => {
-        if (li !== parent) li.classList.remove('open');
+      if (li !== parent) li.classList.remove('open');
     });
     parent.classList.toggle('open');
   }
 
-  // Chiusura menu cliccando fuori
   document.addEventListener('click', () => {
     document.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('open'));
   });
 
-  // Funzione Condividi
   async function sharePage() {
-    const data = { title: 'Michele Bottino', url: window.location.href };
     try {
-      if (navigator.share) await navigator.share(data);
-      else {
+      if (navigator.share) {
+        await navigator.share({ title: 'Michele Bottino', url: window.location.href });
+      } else {
         await navigator.clipboard.writeText(window.location.href);
-        alert('Link copiato negli appunti!');
+        alert('Link copiato!');
       }
     } catch (e) {}
   }
 
-  // Contatore Visite
   async function getVisits() {
     try {
       const res = await fetch('https://api.counterapi.dev/v1/michelebottino-autor.github.io/homepage/up');
       const d = await res.json();
       document.getElementById('v-count').textContent = d.count || "—";
-    } catch (e) {
-      document.getElementById('v-count').textContent = "—";
-    }
+    } catch (e) {}
   }
   getVisits();
 </script>
