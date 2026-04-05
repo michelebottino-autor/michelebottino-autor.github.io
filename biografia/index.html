@@ -7,275 +7,101 @@
   <title>Michele Bottino | Biografia ufficiale dello scrittore e saggista italiano</title>
   <meta name="description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, attività, opere, linea di scrittura e ricerca storico-documentaria.">
   <meta name="author" content="Michele Bottino">
-  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/biografia/">
-
-  <meta property="og:type" content="profile">
-  <meta property="og:locale" content="it_IT">
-  <meta property="og:site_name" content="Michele Bottino">
-  <meta property="og:title" content="Michele Bottino | Biografia ufficiale dello scrittore e saggista italiano">
-  <meta property="og:description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, attività, opere, linea di scrittura e ricerca storico-documentaria.">
-  <meta property="og:url" content="https://michelebottino-autor.github.io/biografia/">
-  <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
-  <meta property="og:image:alt" content="Logo di Michele Bottino">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Michele Bottino | Biografia ufficiale dello scrittore e saggista italiano">
-  <meta name="twitter:description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, attività, opere, linea di scrittura e ricerca storico-documentaria.">
-  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "url": "https://michelebottino-autor.github.io/biografia/",
-    "name": "Michele Bottino | Biografia ufficiale dello scrittore e saggista italiano",
-    "description": "Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, attività, opere, linea di scrittura e ricerca storico-documentaria.",
     "mainEntity": {
       "@type": "Person",
       "name": "Michele Bottino",
       "birthDate": "1972-06-21",
-      "birthPlace": {
-        "@type": "Place",
-        "name": "Catania, Italia"
-      },
-      "url": "https://michelebottino-autor.github.io/",
-      "jobTitle": "Scrittore e saggista italiano",
-      "description": "Scrittore e saggista italiano attivo nella narrativa, nella saggistica e nella ricerca storico-documentaria strutturata.",
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q138828334",
-        "https://orcid.org/0009-0009-2797-9267",
-        "https://www.facebook.com/michelebottinoautore"
-      ]
+      "jobTitle": "Scrittore e saggista italiano"
     }
   }
   </script>
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg: #1f2623;
+      --text: #e5d3a3;
+      --accent: #c2a46d;
+      --card-bg: #2a312d;
+      --border: #8f7748;
     }
 
+    * { box-sizing: border-box; }
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #1f2623;
-      color: #e5d3a3;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       line-height: 1.7;
-      overflow-x: hidden;
     }
 
-    h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      margin-top: 0;
-      color: #e5d3a3;
-    }
+    h1, h2, h3 { font-family: Georgia, serif; margin: 0; color: var(--text); }
+    a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-    p {
-      margin-top: 0;
-      margin-bottom: 1.1em;
-      max-width: 68ch;
-    }
-
-    a {
-      color: #c2a46d;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
+    /* Navigazione coerente con Index */
     .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #8f7748;
-      padding-bottom: 14px;
-      gap: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 0; border-bottom: 1px solid var(--border);
+      position: relative;
     }
-
-    .logo img {
-      height: 60px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 14px;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-    }
-
-    .nav a {
-      color: #c2a46d;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
+    .logo img { height: 60px; width: auto; }
+    .nav-menu { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+    
     .menu-toggle {
-      display: none;
-      background: transparent;
-      border: 1px solid #8f7748;
-      padding: 8px;
-      cursor: pointer;
+      display: none; background: none; border: 1px solid var(--border);
+      padding: 8px 15px; cursor: pointer; color: var(--accent); font-weight: bold;
     }
 
-    .menu-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #c2a46d;
-      margin: 4px 0;
+    /* Gestione Sottomenu */
+    .has-submenu { position: relative; }
+    .submenu-toggle { background: none; border: none; color: var(--accent); cursor: pointer; font-family: inherit; font-size: 1rem; padding: 5px 0; }
+    .submenu {
+      display: none; position: absolute; top: 100%; left: 0; 
+      background: var(--card-bg); border: 1px solid var(--border); 
+      padding: 10px; min-width: 200px; z-index: 1000; list-style: none;
+    }
+    .has-submenu.open .submenu { display: block; }
+    .submenu a { display: block; padding: 10px; font-size: 0.9rem; }
+
+    /* Layout Biografia */
+    .bio-intro { padding: 40px 0; }
+    .bio-flex { display: flex; gap: 40px; align-items: flex-start; margin-top: 30px; }
+    .bio-image { flex: 0 0 280px; }
+    .bio-image img { width: 100%; border: 1px solid var(--border); }
+    .bio-text { flex: 1; }
+    .bio-text p { margin-bottom: 1.5em; max-width: 70ch; }
+
+    /* Blocchi di contenuto */
+    .content-section { margin-bottom: 40px; }
+    .block { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; margin: 20px 0; }
+    
+    .btn-action {
+      display: inline-block; padding: 10px 20px; border: 1px solid var(--accent);
+      color: var(--accent); font-weight: bold; margin-top: 10px;
     }
 
-    .page.container {
-      padding-top: 30px;
-      padding-bottom: 24px;
-    }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; color: #8f7748; font-size: 0.85rem; }
 
-    .page h1 {
-      font-size: 2.8rem;
-      line-height: 1.08;
-      margin-bottom: 14px;
-    }
-
-    .page h2 {
-      font-size: 1.6rem;
-      line-height: 1.2;
-      margin-top: 30px;
-      margin-bottom: 14px;
-    }
-
-    .bio-flex {
-      display: flex;
-      align-items: flex-start;
-      gap: 30px;
-      margin-top: 20px;
-    }
-
-    .bio-image {
-      flex: 0 0 260px;
-    }
-
-    .bio-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 1px solid #8f7748;
-    }
-
-    .bio-text {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .intro-note {
-      margin-bottom: 14px;
-      color: #e5d3a3;
-    }
-
-    .intro-links {
-      margin-top: 14px;
-    }
-
-    .block {
-      background: #2a312d;
-      border: 1px solid #8f7748;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .section-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: #c2a46d;
-      text-decoration: none;
-      border-bottom: 1px solid #c2a46d;
-    }
-
-    footer {
-      padding: 30px 0;
-      color: #8f7748;
-    }
-
-    footer a {
-      color: #c2a46d;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    footer a:visited {
-      color: #c2a46d;
-    }
-
-    .visit-counter {
-      margin-top: 12px;
-      color: #c2a46d;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 680px) {
-      .container {
-        padding: 16px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
+    @media (max-width: 850px) {
+      .menu-toggle { display: block; }
       .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
+        display: none; position: absolute; top: 100%; left: 0; width: 100%;
+        background: var(--bg); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border); z-index: 1000;
       }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .nav-menu a {
-        display: block;
-        border: 1px solid #8f7748;
-        padding: 10px;
-        background: #2a312d;
-      }
-
-      .page.container {
-        padding-top: 24px;
-        padding-bottom: 18px;
-      }
-
-      .page h1 {
-        font-size: 2.2rem;
-      }
-
-      .page h2 {
-        font-size: 1.3rem;
-      }
-
-      .bio-flex {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .bio-image {
-        flex: none;
-      }
+      .nav-menu.active { display: flex; }
+      .bio-flex { flex-direction: column; align-items: center; text-align: left; }
+      .bio-image { flex: none; width: 100%; max-width: 300px; }
+      .submenu { position: static; border: none; padding-left: 20px; background: transparent; }
     }
   </style>
 </head>
-
 <body>
 
 <header class="container">
@@ -284,175 +110,94 @@
       <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="menu-toggle" onclick="toggleMenu()">Menu ☰</button>
 
-    <ul class="nav-menu" id="menu">
+    <ul class="nav-menu" id="main-menu">
       <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Autore</a></li>
-      <li><a href="../opere/">Opere</a></li>
-      <li><a href="../poetica/">Poetica</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" onclick="toggleSub(event, this)">Autore ▾</button>
+        <ul class="submenu">
+          <li><a href="../biografia/">Biografia</a></li>
+          <li><a href="../poetica/">Poetica</a></li>
+          <li><a href="../metodo/">Metodo</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" onclick="toggleSub(event, this)">Opere ▾</button>
+        <ul class="submenu">
+          <li><a href="../opere/">Romanzi e Saggi</a></li>
+          <li><a href="../testi-musicali/">Testi Musicali</a></li>
+        </ul>
+      </li>
       <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../testi-musicali/">Testi musicali</a></li>
-      <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="page container">
-
-<section class="bio-intro">
+<main class="container bio-intro">
   <h1>Michele Bottino</h1>
 
   <div class="bio-flex">
     <div class="bio-image">
-      <img src="../images/michele-bottino-ritratto-2026.jpg"
-           alt="Michele Bottino, scrittore e saggista italiano"
-           loading="lazy"
-           width="260"
-           height="320">
+      <img src="../images/michele-bottino-ritratto-2026.jpg" alt="Michele Bottino" fetchpriority="high">
     </div>
 
     <div class="bio-text">
-      <p class="intro-note"><strong>Scrittore e saggista italiano.</strong></p>
-
-      <p>
-        Michele Bottino (Catania, 21 giugno 1972) è uno scrittore e saggista italiano la cui attività si sviluppa tra narrativa, saggistica e ricerca storico-documentaria strutturata.
-      </p>
-
-      <p>
-        La sua produzione si caratterizza per un’impostazione rigorosa fondata su controllo formale, coerenza strutturale e verificabilità del contenuto. La sua attività si colloca nell’ambito della produzione autoriale contemporanea con un orientamento metodologico definito, che integra scrittura narrativa e analisi documentaria all’interno di un sistema coerente.
-      </p>
-
-      <p>
-        Il suo lavoro è identificato e tracciato attraverso infrastrutture internazionali di ricerca, con pubblicazioni dotate di DOI e profilo ORCID, collocando la sua produzione in un contesto documentato, verificabile e integrato nei sistemi di indicizzazione scientifica.
-      </p>
-
-      <p class="intro-links">
-        Approfondisci:
-        <a href="../opere/">opere</a>,
-        <a href="../poetica/">poetica</a>,
-        <a href="../ricerca/">ricerca storico-documentaria</a>.
-      </p>
+      <p><strong>Scrittore e saggista italiano.</strong></p>
+      <p>Michele Bottino (Catania, 21 giugno 1972) è uno scrittore e saggista italiano la cui attività si sviluppa tra narrativa, saggistica e ricerca storico-documentaria strutturata.</p>
+      <p>La sua produzione si caratterizza per un’impostazione rigorosa fondata su controllo formale, coerenza strutturale e verificabilità del contenuto...</p>
+      <p>Il suo lavoro è identificato e tracciato attraverso infrastrutture internazionali di ricerca (DOI, ORCID).</p>
     </div>
   </div>
-</section>
 
-<section>
-  <h2>Attività letteraria</h2>
+  <section class="content-section">
+    <h2>Attività letteraria</h2>
+    <p>Dal 2010 sviluppa una produzione che comprende romanzi e saggi costruiti secondo criteri di essenzialità e precisione linguistica.</p>
+    <div class="block">
+      <p>Tra i titoli principali: <em>EUROPA: Anatomia di un crimine</em>, <em>L’Uomo Consapevole</em>, <em>Stige</em>.</p>
+      <a href="../opere/" class="btn-action">Esplora il catalogo opere</a>
+    </div>
+  </section>
 
-  <p>
-    Dal 2010 sviluppa una produzione che comprende romanzi e saggi costruiti secondo criteri di essenzialità, precisione linguistica e coerenza interna.
-  </p>
-
-  <p>
-    Le opere affrontano dinamiche di potere, dimensione umana e psicologica, rapporto tra individuo e contesto storico e strutture sociali e istituzionali.
-  </p>
-
-  <div class="block">
-    <p>
-      Tra i titoli principali: <em>Stige: Una lettera senza destinatario</em>, <em>Il deposito delle anime</em>, <em>Intrighi Invisibili</em>, <em>Oniro</em>, <em>EUROPA: Anatomia di un crimine</em> e <em>L’Uomo Consapevole</em>.
-    </p>
-
-    <a href="../opere/" class="section-link">Vai alle opere</a>
-  </div>
-</section>
-
-<section>
-  <h2>Attività di ricerca</h2>
-
-  <p>
-    La ricerca sviluppata da Bottino è orientata all’analisi dei sistemi documentari complessi, con particolare riferimento alla storia territoriale e istituzionale della Sicilia tra XIII e XVIII secolo.
-  </p>
-
-  <p>
-    L’attività si basa su analisi diretta di fonti primarie, ricostruzione documentaria verificabile, correlazione di dati archivistici eterogenei e tracciabilità delle informazioni.
-  </p>
-</section>
-
-<section>
-  <h2>Metodo</h2>
-
-  <div class="block">
-    <p>
-      Il lavoro di Bottino è definito da un impianto metodologico fondato sulla distinzione tra dato attestato, ricostruzione e interpretazione, sull’eliminazione di elementi non verificabili e su una costruzione narrativa subordinata alla struttura logica.
-    </p>
-
-    <p>
-      La scrittura è trattata come processo operativo, orientato al controllo formale del linguaggio e alla coerenza interna del testo.
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Attività parallele</h2>
-
-  <p>
-    Accanto alla produzione letteraria e alla ricerca, è autore di testi musicali distribuiti sulle principali piattaforme digitali, mantenendo una linea coerente basata su precisione linguistica e struttura controllata.
-  </p>
-</section>
-
-<section>
-  <h2>Posizione autoriale</h2>
-
-  <div class="block">
-    <p>
-      Michele Bottino si configura come autore con un sistema integrato di produzione narrativa e analisi documentaria, caratterizzato da rigore metodologico, identificazione scientifica delle opere e coerenza strutturale del testo.
-    </p>
-  </div>
-</section>
-
-</main>
+  </main>
 
 <footer class="container">
-  <p>
-    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
-    <br>
-    <a href="../privacy/">Privacy Policy</a> |
-    <a href="../cookie/">Cookie Policy</a> |
-    <a href="../disclaimer/">Disclaimer</a>
-  </p>
-
-  <div class="visit-counter">
-    Visite: <span id="visit-count">...</span>
+  <p>© 2026 Michele Bottino. Sito ufficiale dell’autore.</p>
+  <nav>
+    <a href="../privacy/">Privacy</a> | <a href="../cookie/">Cookie</a> | <a href="../disclaimer/">Disclaimer</a>
+  </nav>
+  <div style="margin-top: 15px; color: var(--accent);">
+    Visite: <span id="v-count">...</span>
   </div>
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
-}
-
-async function updateVisitCounter() {
-  const namespace = "michelebottino-autor.github.io";
-
-  let key = window.location.pathname
-    .replace(/^\/|\/$/g, "")
-    .replace(/\//g, "-");
-
-  if (!key) key = "homepage";
-
-  const el = document.getElementById("visit-count");
-  if (!el) return;
-
-  try {
-    const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`);
-
-    if (!response.ok) {
-      throw new Error("Counter API non disponibile");
-    }
-
-    const data = await response.json();
-    el.textContent = data.data ?? data.count ?? "—";
-  } catch (error) {
-    el.textContent = "—";
-    console.error("Errore contatore visite:", error);
+  function toggleMenu() { document.getElementById('main-menu').classList.toggle('active'); }
+  
+  function toggleSub(event, btn) {
+    event.stopPropagation();
+    const parent = btn.parentElement;
+    document.querySelectorAll('.has-submenu').forEach(li => {
+      if (li !== parent) li.classList.remove('open');
+    });
+    parent.classList.toggle('open');
   }
-}
 
-updateVisitCounter();
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('open'));
+  });
+
+  // Funzione contatore (stesso namespace della Home per coerenza)
+  async function getVisits() {
+    const key = "biografia"; 
+    try {
+      const res = await fetch(`https://api.counterapi.dev/v1/michelebottino-autor.github.io/${key}/up`);
+      const d = await res.json();
+      document.getElementById('v-count').textContent = d.count || "—";
+    } catch (e) { document.getElementById('v-count').textContent = "—"; }
+  }
+  getVisits();
 </script>
 
 </body>
