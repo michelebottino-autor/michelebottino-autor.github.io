@@ -4,34 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Disclaimer – Michele Bottino</title>
-  <meta name="description" content="Limitazioni di responsabilità e condizioni d’uso del sito ufficiale di Michele Bottino.">
+  <title>Disclaimer | Michele Bottino – condizioni d’uso e limitazioni di responsabilità</title>
+  <meta name="description" content="Disclaimer del sito ufficiale di Michele Bottino: condizioni d’uso, limitazioni di responsabilità, collegamenti esterni e diritti d’autore.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/disclaimer/">
 
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  ">
+
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
-  <meta property="og:title" content="Disclaimer – Michele Bottino">
-  <meta property="og:description" content="Limitazioni di responsabilità e condizioni d’uso del sito ufficiale di Michele Bottino.">
+  <meta property="og:title" content="Disclaimer | Michele Bottino – condizioni d’uso e limitazioni di responsabilità">
+  <meta property="og:description" content="Disclaimer del sito ufficiale di Michele Bottino: condizioni d’uso, limitazioni di responsabilità, collegamenti esterni e diritti d’autore.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/disclaimer/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
   <meta property="og:image:alt" content="Logo di Michele Bottino">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Disclaimer – Michele Bottino">
-  <meta name="twitter:description" content="Limitazioni di responsabilità e condizioni d’uso del sito ufficiale di Michele Bottino.">
+  <meta name="twitter:title" content="Disclaimer | Michele Bottino – condizioni d’uso e limitazioni di responsabilità">
+  <meta name="twitter:description" content="Disclaimer del sito ufficiale di Michele Bottino: condizioni d’uso, limitazioni di responsabilità, collegamenti esterni e diritti d’autore.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Disclaimer – Michele Bottino",
+    "name": "Disclaimer | Michele Bottino",
     "url": "https://michelebottino-autor.github.io/disclaimer/",
-    "description": "Limitazioni di responsabilità e condizioni d’uso del sito ufficiale di Michele Bottino."
+    "description": "Disclaimer del sito ufficiale di Michele Bottino: condizioni d’uso, limitazioni di responsabilità, collegamenti esterni e diritti d’autore."
   }
   </script>
 
@@ -59,6 +72,10 @@
       max-width: 68ch;
     }
 
+    a {
+      color: #c2a46d;
+    }
+
     .container {
       width: 100%;
       max-width: 1100px;
@@ -70,35 +87,94 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
       border-bottom: 1px solid #8f7748;
-      padding-bottom: 16px;
+      padding-bottom: 14px;
+      gap: 20px;
+      position: relative;
     }
 
     .logo img {
-      height: 64px;
+      height: 60px;
+      width: auto;
       display: block;
     }
 
-    .nav ul {
+    .nav-menu {
       list-style: none;
       display: flex;
       gap: 14px;
-      padding: 0;
       margin: 0;
+      padding: 0;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .nav a {
-      text-decoration: none;
       color: #c2a46d;
+      text-decoration: none;
       font-size: 0.95rem;
-      padding: 6px 8px;
     }
 
-    section {
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #8f7748;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 4px 0;
+    }
+
+    .has-submenu {
+      position: relative;
+    }
+
+    .submenu-toggle {
+      background: transparent;
+      border: none;
+      color: #c2a46d;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .submenu {
+      list-style: none;
+      margin: 8px 0 0 0;
+      padding: 0;
+      display: none;
+    }
+
+    .submenu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 8px 0 8px 14px;
+      font-size: 0.92rem;
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    .has-submenu.open .submenu {
+      display: block;
+    }
+
+    main section {
       margin-bottom: 30px;
+    }
+
+    .intro {
+      padding-top: 10px;
     }
 
     .block {
@@ -112,12 +188,42 @@
       color: #8f7748;
     }
 
+    footer a {
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: #c2a46d;
+    }
+
     ul {
       padding-left: 20px;
     }
 
-    a {
-      color: #c2a46d;
+    @media (min-width: 681px) {
+      .has-submenu {
+        display: inline-block;
+      }
+
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: #2a312d;
+        border: 1px solid #8f7748;
+        padding: 8px 12px;
+        z-index: 50;
+      }
+
+      .submenu li a {
+        padding: 8px 0;
+      }
     }
 
     @media (max-width: 680px) {
@@ -125,23 +231,41 @@
         padding: 16px;
       }
 
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav ul {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-
-      .nav a {
+      .menu-toggle {
         display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        align-items: stretch;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu > li > a,
+      .submenu-toggle {
+        display: block;
+        width: 100%;
         border: 1px solid #8f7748;
-        background: #2a312d;
         padding: 10px;
+        background: #2a312d;
+        text-align: left;
+      }
+
+      .submenu {
+        margin-top: 0;
+        padding-top: 6px;
+      }
+
+      .submenu li a {
+        border: 1px solid #8f7748;
+        padding: 10px 10px 10px 18px;
+        background: #242a27;
       }
 
       h1 {
@@ -154,20 +278,88 @@
 <body>
 
 <header class="container">
-  <nav class="nav">
+  <nav class="nav" id="site-nav">
     <div class="logo">
       <a href="../">
         <img src="../images/logo.png" alt="Michele Bottino">
       </a>
     </div>
 
-    <ul>
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      onclick="toggleMenu()"
+      aria-label="Apri il menu di navigazione"
+      aria-controls="menu"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="menu">
       <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Autore</a></li>
-      <li><a href="../opere/">Opere</a></li>
-      <li><a href="../poetica/">Poetica</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../testi-musicali/">Testi musicali</a></li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-autore">
+          Autore
+        </button>
+        <ul class="submenu" id="submenu-autore">
+          <li><a href="../biografia/">Biografia</a></li>
+          <li><a href="../poetica/">Poetica</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-opere">
+          Opere
+        </button>
+        <ul class="submenu" id="submenu-opere">
+          <li><a href="../opere/">Romanzi e saggi</a></li>
+          <li><a href="../testi-musicali/">Testi musicali</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-scritti">
+          Scritti
+        </button>
+        <ul class="submenu" id="submenu-scritti">
+          <li><a href="../articoli/">Articoli</a></li>
+          <li><a href="../indagini/">Indagini</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-metodo">
+          Metodo e ricerca
+        </button>
+        <ul class="submenu" id="submenu-metodo">
+          <li><a href="../metodo/">Metodo</a></li>
+          <li><a href="../ricerca/">Ricerca</a></li>
+          <li><a href="../strutture-irrisolto/">Strutture irrisolte</a></li>
+        </ul>
+      </li>
+
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
@@ -176,87 +368,93 @@
 
 <main class="container">
 
-<section>
-  <h1>Disclaimer</h1>
+  <section class="intro">
+    <h1>Disclaimer</h1>
 
-  <p>
-    Il presente sito costituisce il sito ufficiale di Michele Bottino
-    e ha finalità esclusivamente informative e divulgative.
-  </p>
-</section>
+    <p>
+      Il presente sito costituisce il sito ufficiale di Michele Bottino
+      e ha finalità esclusivamente informative, divulgative e di presentazione dell’attività autoriale.
+    </p>
 
-<section class="block">
-  <h2>Contenuti</h2>
+    <p>
+      L’accesso e la consultazione dei contenuti implicano l’accettazione delle condizioni indicate in questa pagina.
+    </p>
+  </section>
 
-  <p>
-    I contenuti pubblicati sono redatti con attenzione alla correttezza
-    e alla coerenza informativa. Tuttavia, non è garantita l’assenza
-    di errori, omissioni o aggiornamenti non tempestivi.
-  </p>
+  <section class="block">
+    <h2>Contenuti</h2>
 
-  <p>
-    Le informazioni presenti non costituiscono consulenza professionale
-    né sostituiscono fonti ufficiali o specialistiche.
-  </p>
-</section>
+    <p>
+      I contenuti pubblicati sono redatti con attenzione alla correttezza,
+      alla coerenza informativa e all’aggiornamento generale del sito.
+      Tuttavia, non è garantita l’assenza di errori, omissioni o aggiornamenti non tempestivi.
+    </p>
 
-<section class="block">
-  <h2>Responsabilità</h2>
+    <p>
+      Le informazioni presenti non costituiscono consulenza professionale
+      né sostituiscono fonti ufficiali, istituzionali o specialistiche.
+    </p>
+  </section>
 
-  <p>
-    Michele Bottino non è responsabile per eventuali danni diretti o indiretti
-    derivanti dall’utilizzo delle informazioni contenute nel sito.
-  </p>
+  <section class="block">
+    <h2>Responsabilità</h2>
 
-  <p>
-    L’utilizzo dei contenuti è sotto la piena responsabilità dell’utente.
-  </p>
-</section>
+    <p>
+      Michele Bottino non assume responsabilità per eventuali danni diretti,
+      indiretti o conseguenti derivanti dall’utilizzo delle informazioni contenute nel sito
+      o dall’impossibilità di accedere ai contenuti.
+    </p>
 
-<section class="block">
-  <h2>Collegamenti esterni</h2>
+    <p>
+      L’uso delle informazioni pubblicate avviene sotto la piena responsabilità dell’utente.
+    </p>
+  </section>
 
-  <p>
-    Il sito può contenere collegamenti a siti esterni.
-  </p>
+  <section class="block">
+    <h2>Collegamenti esterni</h2>
 
-  <p>
-    Tali collegamenti sono forniti a scopo informativo e non implicano
-    approvazione o responsabilità rispetto ai contenuti presenti
-    su siti terzi.
-  </p>
-</section>
+    <p>
+      Il sito può contenere collegamenti a siti esterni o a piattaforme di terzi.
+    </p>
 
-<section class="block">
-  <h2>Diritti d’autore</h2>
+    <p>
+      Tali collegamenti sono forniti esclusivamente a scopo informativo
+      e non implicano approvazione, controllo o responsabilità rispetto ai contenuti,
+      ai servizi o alle politiche adottate dai siti terzi collegati.
+    </p>
+  </section>
 
-  <p>
-    Tutti i contenuti del sito, salvo diversa indicazione,
-    sono di proprietà di Michele Bottino.
-  </p>
+  <section class="block">
+    <h2>Diritti d’autore</h2>
 
-  <p>
-    È vietata la riproduzione, anche parziale, senza autorizzazione.
-  </p>
-</section>
+    <p>
+      Tutti i contenuti del sito, salvo diversa indicazione,
+      sono di proprietà di Michele Bottino o comunque utilizzati legittimamente.
+    </p>
 
-<section class="block">
-  <h2>Aggiornamenti</h2>
+    <p>
+      È vietata la riproduzione, la distribuzione o la riutilizzazione,
+      anche parziale, dei contenuti senza preventiva autorizzazione scritta.
+    </p>
+  </section>
 
-  <p>
-    Il contenuto del sito può essere modificato o aggiornato in qualsiasi momento,
-    senza preavviso.
-  </p>
-</section>
+  <section class="block">
+    <h2>Aggiornamenti</h2>
 
-<section class="block">
-  <h2>Contatti</h2>
+    <p>
+      Il contenuto del sito può essere modificato, aggiornato,
+      integrato o rimosso in qualsiasi momento, senza preavviso.
+    </p>
+  </section>
 
-  <p>
-    Per segnalazioni o richieste è possibile utilizzare la sezione
-    <a href="../contatti/">Contatti</a>.
-  </p>
-</section>
+  <section class="block">
+    <h2>Contatti</h2>
+
+    <p>
+      Per segnalazioni, richieste o comunicazioni relative ai contenuti del sito
+      è possibile utilizzare la sezione <a href="../contatti/">Contatti</a>.
+    </p>
+  </section>
 
 </main>
 
@@ -265,9 +463,95 @@
     © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
     <br>
     <a href="../privacy/">Privacy Policy</a> |
-    <a href="../cookie/">Cookie Policy</a>
+    <a href="../cookie/">Cookie Policy</a> |
+    <a href="./" aria-current="page">Disclaimer</a>
   </p>
 </footer>
+
+<script>
+function setMenuExpandedState(isExpanded) {
+  const toggle = document.getElementById("menu-toggle");
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", String(isExpanded));
+  }
+}
+
+function closeAllSubmenus(except = null) {
+  document.querySelectorAll(".has-submenu").forEach(item => {
+    if (item !== except) {
+      item.classList.remove("open");
+      const button = item.querySelector(".submenu-toggle");
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById("menu");
+  if (menu) {
+    menu.classList.remove("active");
+  }
+  setMenuExpandedState(false);
+  closeAllSubmenus();
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  if (!menu) return;
+
+  const isActive = menu.classList.toggle("active");
+  setMenuExpandedState(isActive);
+
+  if (!isActive) {
+    closeAllSubmenus();
+  }
+}
+
+document.querySelectorAll(".submenu-toggle").forEach(button => {
+  button.addEventListener("click", function () {
+    const parent = this.parentElement;
+    const willOpen = !parent.classList.contains("open");
+
+    if (window.innerWidth > 680) {
+      closeAllSubmenus(parent);
+    }
+
+    parent.classList.toggle("open");
+    this.setAttribute("aria-expanded", String(willOpen));
+  });
+
+  button.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      this.click();
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeAllSubmenus();
+      this.blur();
+    }
+  });
+});
+
+document.addEventListener("click", function (event) {
+  const nav = document.getElementById("site-nav");
+  if (!nav) return;
+
+  const clickedInsideNav = nav.contains(event.target);
+  if (!clickedInsideNav) {
+    closeMobileMenu();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeMobileMenu();
+  }
+});
+</script>
 
 </body>
 </html>
