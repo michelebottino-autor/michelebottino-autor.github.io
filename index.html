@@ -50,9 +50,6 @@
         cursor: pointer; font-family: inherit; font-size: 1rem; 
         padding: 5px 0;
     }
-    .submenu-toggle span { display: inline-block; transition: transform 0.3s; }
-    .has-submenu.open .submenu-toggle span { transform: rotate(180deg); }
-
     .submenu {
       display: none; position: absolute; top: 100%; left: 0; 
       background: var(--card-bg); border: 1px solid var(--border); 
@@ -64,11 +61,13 @@
     .submenu a { display: block; padding: 10px; font-size: 0.9rem; width: 100%; }
     .submenu a:hover { background: rgba(194, 164, 109, 0.1); }
 
-    /* Hero */
+    /* Hero - La tua versione elegante */
     .hero { padding: 60px 0; display: flex; gap: 50px; align-items: center; }
     .hero-content { flex: 1.2; border-left: 2px solid var(--accent); padding-left: 40px; }
     .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
     .bio-text { font-family: Georgia, serif; font-size: 1.2rem; font-style: italic; color: #d1c19a; }
+    .bio-text p { margin-bottom: 1.5em; }
+    .bio-text strong { font-style: normal; color: var(--accent); }
 
     .hero-image img {
       width: 100%; max-width: 420px; height: auto; aspect-ratio: 460/575;
@@ -91,19 +90,19 @@
 
     footer { border-top: 1px solid var(--border); padding: 40px 0; color: #8f7748; font-size: 0.85rem; }
 
-    /* Mobile Responsive */
+    /* Mobile Responsive Corretto */
     @media (max-width: 850px) {
       .menu-toggle { display: block; }
       .nav-menu {
-        display: none; /* Nasconde di default su mobile */
+        display: none; 
         position: absolute; top: 100%; left: 0; width: 100%;
         background: var(--bg); flex-direction: column; padding: 20px; 
         border-bottom: 1px solid var(--border); z-index: 1000;
       }
-      .nav-menu.active { display: flex; } /* MOSTRA IL MENU QUANDO ATTIVO */
-      
+      .nav-menu.active { display: flex; }
       .hero { flex-direction: column-reverse; text-align: left; }
       .hero-content { padding-left: 20px; border-left: 3px solid var(--accent); }
+      .hero h1 { font-size: 2.8rem; }
       .grid-3 { grid-template-columns: 1fr; }
       .submenu { position: static; border: none; padding-left: 20px; background: transparent; }
     }
@@ -122,14 +121,14 @@
     <ul class="nav-menu" id="main-menu">
       <li><a href="./">Home</a></li>
       <li class="has-submenu">
-        <button class="submenu-toggle" onclick="toggleSub(event, this)">Autore <span>▾</span></button>
+        <button class="submenu-toggle" onclick="toggleSub(event, this)">Autore ▾</button>
         <ul class="submenu">
           <li><a href="biografia/">Biografia</a></li>
           <li><a href="poetica/">Poetica</a></li>
         </ul>
       </li>
       <li class="has-submenu">
-        <button class="submenu-toggle" onclick="toggleSub(event, this)">Opere <span>▾</span></button>
+        <button class="submenu-toggle" onclick="toggleSub(event, this)">Opere ▾</button>
         <ul class="submenu">
           <li><a href="opere/">Romanzi e Saggi</a></li>
           <li><a href="testi-musicali/">Testi Musicali</a></li>
@@ -146,8 +145,12 @@
     <div class="hero-content">
       <h1>Michele Bottino</h1>
       <div class="bio-text">
-        <p>Attivo dal <strong>2010</strong>, muovo la mia scrittura lungo il confine tra verità documentale e potenza evocativa della narrativa.</p>
-        <p>Dal <strong>2026</strong>, la mia attività di ricercatore potenzia questa indagine: il documento diventa trama, l’analisi si fa racconto.</p>
+        <p>
+          Attivo nel panorama editoriale dal <strong>2010</strong>, muovo la mia scrittura lungo il confine sottile che separa la verità documentale dalla potenza evocativa della narrativa.
+        </p>
+        <p>
+          Fondo il rigore della ricerca metodica con una cifra stilistica volta a esplorare le pieghe della storia e i misteri della consapevolezza umana. Dal <strong>2026</strong>, la mia attività di ricercatore potenzia questa indagine: il documento diventa trama, l’analisi si fa racconto.
+        </p>
       </div>
       
       <div class="actions">
@@ -186,7 +189,7 @@
       <p>© 2026 Michele Bottino. Tutti i diritti riservati.</p>
       <nav>
         <a href="mailto:info@michelebottino.it">Email</a> | 
-        <a href="privacy/">Privacy</a>
+        <a href="privacy/">Privacy Policy</a>
       </nav>
     </div>
     <div style="color: var(--accent);">
@@ -196,59 +199,47 @@
 </footer>
 
 <script>
-  // Logica Menu Mobile
+  // Logica Menu Mobile corretta
   function toggleMenu() {
-    const menu = document.getElementById('main-menu');
-    menu.classList.toggle('active');
+    const mMenu = document.getElementById('main-menu');
+    mMenu.classList.toggle('active');
   }
 
   // Logica Sottomenu
   function toggleSub(event, btn) {
     event.stopPropagation();
     const parent = btn.parentElement;
-    
     document.querySelectorAll('.has-submenu').forEach(li => {
         if (li !== parent) li.classList.remove('open');
     });
-    
     parent.classList.toggle('open');
   }
 
   // Chiusura menu cliccando fuori
   document.addEventListener('click', () => {
     document.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('open'));
-    // Opzionale: chiude il menu mobile se clicchi fuori
-    // document.getElementById('main-menu').classList.remove('active');
   });
 
-  // Condivisione
+  // Funzione Condividi
   async function sharePage() {
-    const data = { 
-        title: 'Michele Bottino - Scrittore e Saggista', 
-        url: window.location.href 
-    };
+    const data = { title: 'Michele Bottino', url: window.location.href };
     try {
-      if (navigator.share) {
-          await navigator.share(data);
-      } else {
+      if (navigator.share) await navigator.share(data);
+      else {
         await navigator.clipboard.writeText(window.location.href);
         alert('Link copiato negli appunti!');
       }
-    } catch (e) {
-        console.error("Errore condivisione:", e);
-    }
+    } catch (e) {}
   }
 
   // Contatore Visite
   async function getVisits() {
     try {
       const res = await fetch('https://api.counterapi.dev/v1/michelebottino-autor.github.io/homepage/up');
-      if (res.ok) {
-        const d = await res.json();
-        document.getElementById('v-count').textContent = d.count || "—";
-      }
+      const d = await res.json();
+      document.getElementById('v-count').textContent = d.count || "—";
     } catch (e) {
-        console.warn("API contatore non raggiungibile.");
+      document.getElementById('v-count').textContent = "—";
     }
   }
   getVisits();
