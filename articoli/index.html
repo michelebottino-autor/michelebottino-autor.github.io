@@ -4,25 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Articoli | Michele Bottino</title>
-  <meta name="description" content="Archivio articoli di Michele Bottino. Casi reali, casi storici e analisi documentarie pubblicate sul sito ufficiale.">
+  <title>Articoli | Michele Bottino – analisi documentarie, casi reali e casi storici</title>
+  <meta name="description" content="Archivio articoli di Michele Bottino: casi reali, casi storici e analisi documentarie pubblicate sul sito ufficiale.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/">
 
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  ">
+
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
-  <meta property="og:title" content="Articoli | Michele Bottino">
-  <meta property="og:description" content="Archivio articoli di Michele Bottino. Casi reali, casi storici e analisi documentarie pubblicate sul sito ufficiale.">
+  <meta property="og:title" content="Articoli | Michele Bottino – analisi documentarie, casi reali e casi storici">
+  <meta property="og:description" content="Archivio articoli di Michele Bottino: casi reali, casi storici e analisi documentarie pubblicate sul sito ufficiale.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
   <meta property="og:image:alt" content="Logo di Michele Bottino">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Articoli | Michele Bottino">
-  <meta name="twitter:description" content="Archivio articoli di Michele Bottino. Casi reali, casi storici e analisi documentarie pubblicate sul sito ufficiale.">
+  <meta name="twitter:title" content="Articoli | Michele Bottino – analisi documentarie, casi reali e casi storici">
+  <meta name="twitter:description" content="Archivio articoli di Michele Bottino: casi reali, casi storici e analisi documentarie pubblicate sul sito ufficiale.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
   <script type="application/ld+json">
@@ -33,26 +46,13 @@
     "url": "https://michelebottino-autor.github.io/articoli/",
     "name": "Articoli | Michele Bottino",
     "headline": "Articoli",
-    "description": "Questa collana raccoglie analisi documentarie costruite secondo il Bottino Method, fondate sulla separazione dei livelli informativi e sul controllo della struttura narrativa.",
+    "description": "Archivio di articoli dedicati a casi reali, casi storici e analisi documentarie pubblicati sul sito ufficiale di Michele Bottino.",
     "inLanguage": "it-IT",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://michelebottino-autor.github.io/#website",
       "url": "https://michelebottino-autor.github.io/",
       "name": "Michele Bottino"
-    },
-    "about": {
-      "@type": "CreativeWorkSeries",
-      "@id": "https://michelebottino-autor.github.io/articoli/#series",
-      "name": "Collana di analisi documentarie",
-      "description": "Collana di analisi documentarie costruite secondo il Bottino Method, fondate sulla separazione dei livelli informativi e sul controllo della struttura narrativa.",
-      "inLanguage": "it-IT",
-      "author": {
-        "@type": "Person",
-        "@id": "https://michelebottino-autor.github.io/#person",
-        "name": "Michele Bottino",
-        "url": "https://michelebottino-autor.github.io/"
-      }
     },
     "author": {
       "@type": "Person",
@@ -133,6 +133,7 @@
       border-bottom: 1px solid var(--line);
       padding-bottom: 14px;
       gap: 20px;
+      position: relative;
     }
 
     .logo img {
@@ -148,6 +149,7 @@
       margin: 0;
       padding: 0;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .nav a {
@@ -166,6 +168,44 @@
     .nav a.active {
       color: var(--accent-strong);
       border-bottom-color: var(--accent-strong);
+    }
+
+    .has-submenu {
+      position: relative;
+    }
+
+    .submenu-toggle {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .submenu {
+      list-style: none;
+      margin: 8px 0 0 0;
+      padding: 0;
+      display: none;
+    }
+
+    .submenu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 8px 0 8px 14px;
+      font-size: 0.92rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .has-submenu.open .submenu {
+      display: block;
     }
 
     .menu-toggle {
@@ -278,6 +318,8 @@
     .featured-box img {
       width: 100%;
       height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
       display: block;
       border: 1px solid var(--line);
       border-radius: 10px;
@@ -334,6 +376,8 @@
     .card img {
       width: 100%;
       height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
       display: block;
       border-bottom: 1px solid var(--line);
     }
@@ -424,6 +468,27 @@
       color: var(--accent);
     }
 
+    @media (min-width: 681px) {
+      .has-submenu {
+        display: inline-block;
+      }
+
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: var(--bg-panel);
+        border: 1px solid var(--line);
+        padding: 8px 12px;
+        z-index: 50;
+      }
+
+      .submenu li a {
+        padding: 8px 0;
+      }
+    }
+
     @media (max-width: 980px) {
       .articles-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -448,17 +513,33 @@
         flex-direction: column;
         width: 100%;
         margin-top: 10px;
+        align-items: stretch;
       }
 
       .nav-menu.active {
         display: flex;
       }
 
-      .nav-menu a {
+      .nav-menu > li > a,
+      .submenu-toggle {
         display: block;
+        width: 100%;
         border: 1px solid var(--line);
         padding: 10px;
         background: var(--bg-panel);
+        border-radius: 8px;
+        text-align: left;
+      }
+
+      .submenu {
+        margin-top: 0;
+        padding-top: 6px;
+      }
+
+      .submenu li a {
+        border: 1px solid var(--line);
+        padding: 10px 10px 10px 18px;
+        background: #242a27;
         border-radius: 8px;
       }
 
@@ -480,24 +561,86 @@
 <body>
 
 <header class="container">
-  <nav class="nav">
+  <nav class="nav" id="site-nav">
     <div class="logo">
       <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      onclick="toggleMenu()"
+      aria-label="Apri il menu di navigazione"
+      aria-controls="menu"
+      aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
     <ul class="nav-menu" id="menu">
       <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Autore</a></li>
-      <li><a href="../opere/">Opere</a></li>
-      <li><a href="../poetica/">Poetica</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="./" class="active" aria-current="page">Articoli</a></li>
-      <li><a href="../strutture-irrisolto/">Strutture dell’irrisolto</a></li>
-      <li><a href="../testi-musicali/">Testi musicali</a></li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-autore">
+          Autore
+        </button>
+        <ul class="submenu" id="submenu-autore">
+          <li><a href="../biografia/">Biografia</a></li>
+          <li><a href="../poetica/">Poetica</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-opere">
+          Opere
+        </button>
+        <ul class="submenu" id="submenu-opere">
+          <li><a href="../opere/">Romanzi e saggi</a></li>
+          <li><a href="../testi-musicali/">Testi musicali</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="true"
+          aria-controls="submenu-scritti">
+          Scritti
+        </button>
+        <ul class="submenu" id="submenu-scritti">
+          <li><a href="./" class="active" aria-current="page">Articoli</a></li>
+          <li><a href="../indagini/">Indagini</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-metodo">
+          Metodo e ricerca
+        </button>
+        <ul class="submenu" id="submenu-metodo">
+          <li><a href="../metodo/">Metodo</a></li>
+          <li><a href="../ricerca/">Ricerca</a></li>
+          <li><a href="../strutture-irrisolto/">Strutture irrisolte</a></li>
+        </ul>
+      </li>
+
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
@@ -513,10 +656,15 @@
 <section class="container page-header">
   <div class="page-header-box">
     <h1>Articoli</h1>
-    <p>Questa sezione raccoglie casi reali e casi storici pubblicati sul sito. Ogni articolo segue una struttura editoriale stabile, con distinzione tra quadro del caso, aggiornamenti successivi e nota metodologica.</p>
+    <p>
+      Questa sezione raccoglie articoli dedicati a casi reali, casi storici
+      e analisi documentarie pubblicate sul sito.
+      Ogni testo è costruito secondo una struttura editoriale controllata,
+      con attenzione alla coerenza espositiva e alla leggibilità documentaria.
+    </p>
 
     <div class="page-note">
-      Questa collana raccoglie analisi documentarie costruite secondo il Bottino Method, fondate sulla separazione dei livelli informativi e sul controllo della struttura narrativa.
+      La sezione articoli raccoglie materiali di analisi costruiti secondo un’impostazione metodologica orientata alla distinzione dei livelli informativi e al controllo della struttura narrativa.
     </div>
   </div>
 </section>
@@ -524,8 +672,12 @@
 <section class="container section">
   <div class="content-box">
     <h2>Lettura strutturale dei casi</h2>
-    <p>Accanto alla sezione Articoli, il sito ospita anche la serie <strong>Le strutture dell’irrisolto</strong>, dedicata alla lettura metodologica dei casi documentali già pubblicati. Qui il focus non è soltanto sui fatti, ma sulla forma con cui i casi smettono di convergere.</p>
-    <a href="../strutture-irrisolto/" class="section-link">Vai a Le strutture dell’irrisolto</a>
+    <p>
+      Accanto alla sezione Articoli, il sito ospita anche la serie
+      <strong>Strutture irrisolte</strong>, dedicata alla lettura metodologica dei casi documentali già pubblicati.
+      Qui il fuoco non è soltanto sui fatti, ma sulle configurazioni in cui i casi smettono di convergere.
+    </p>
+    <a href="../strutture-irrisolto/" class="section-link">Vai a Strutture irrisolte</a>
   </div>
 </section>
 
@@ -533,7 +685,7 @@
   <h2 class="section-title">Articolo in evidenza</h2>
   <div class="featured-box">
     <div>
-      <img src="../images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png" alt="Copertina dell'articolo su Jack lo Squartatore">
+      <img src="../images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png" alt="Copertina dell'articolo su Jack lo Squartatore" loading="eager" decoding="async" fetchpriority="high">
     </div>
     <div>
       <span class="featured-label">Caso storico</span>
@@ -552,7 +704,7 @@
   <div class="articles-grid">
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png" alt="Copertina dell'articolo su Jack lo Squartatore">
+      <img src="../images/articoli/MB_COVER_JACK_LO_SQUARTATORE_V1.png" alt="Copertina dell'articolo su Jack lo Squartatore" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso storico</span>
         <h3>Jack lo Squartatore</h3>
@@ -563,7 +715,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_ANGELA_CELENTANO_V2.png" alt="Copertina dell'articolo sul caso Angela Celentano">
+      <img src="../images/articoli/MB_COVER_ANGELA_CELENTANO_V2.png" alt="Copertina dell'articolo sul caso Angela Celentano" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il caso Angela Celentano</h3>
@@ -574,7 +726,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_DENISE_V1.png" alt="Copertina dell'articolo sul caso Denise Pipitone">
+      <img src="../images/articoli/MB_COVER_DENISE_V1.png" alt="Copertina dell'articolo sul caso Denise Pipitone" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il caso Denise Pipitone</h3>
@@ -585,7 +737,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_CRISTINA_GOLINUCCI_V1.png" alt="Copertina dell'articolo sul caso Cristina Golinucci">
+      <img src="../images/articoli/MB_COVER_CRISTINA_GOLINUCCI_V1.png" alt="Copertina dell'articolo sul caso Cristina Golinucci" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il caso Cristina Golinucci</h3>
@@ -596,7 +748,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_AVETRANA_V1.png" alt="Copertina dell'articolo sul delitto di Avetrana">
+      <img src="../images/articoli/MB_COVER_AVETRANA_V1.png" alt="Copertina dell'articolo sul delitto di Avetrana" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il delitto di Avetrana</h3>
@@ -607,7 +759,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_CARINI_V1.png" alt="Copertina dell'articolo sulla Contessa di Carini">
+      <img src="../images/articoli/MB_COVER_CARINI_V1.png" alt="Copertina dell'articolo sulla Contessa di Carini" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso storico</span>
         <h3>La Contessa di Carini</h3>
@@ -618,7 +770,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_MOSTRO_DI_FIRENZE_V1.png" alt="Copertina dell'articolo sul Mostro di Firenze">
+      <img src="../images/articoli/MB_COVER_MOSTRO_DI_FIRENZE_V1.png" alt="Copertina dell'articolo sul Mostro di Firenze" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il Mostro di Firenze</h3>
@@ -629,7 +781,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_GARLASCO_V1.png" alt="Copertina dell'articolo sul delitto di Garlasco">
+      <img src="../images/articoli/MB_COVER_GARLASCO_V1.png" alt="Copertina dell'articolo sul delitto di Garlasco" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il delitto di Garlasco</h3>
@@ -640,7 +792,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_COGNE_V1.png" alt="Copertina dell'articolo sul delitto di Cogne">
+      <img src="../images/articoli/MB_COVER_COGNE_V1.png" alt="Copertina dell'articolo sul delitto di Cogne" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il delitto di Cogne</h3>
@@ -651,7 +803,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_YARA_V1.png" alt="Copertina dell'articolo sul caso Yara Gambirasio">
+      <img src="../images/articoli/MB_COVER_YARA_V1.png" alt="Copertina dell'articolo sul caso Yara Gambirasio" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il caso Yara Gambirasio</h3>
@@ -662,7 +814,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_ERBA_V1.png" alt="Copertina dell'articolo sulla strage di Erba">
+      <img src="../images/articoli/MB_COVER_ERBA_V1.png" alt="Copertina dell'articolo sulla strage di Erba" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>La strage di Erba</h3>
@@ -673,7 +825,7 @@
     </article>
 
     <article class="card">
-      <img src="../images/articoli/MB_COVER_ORLANDI_V1.png" alt="Copertina dell'articolo sul caso Emanuela Orlandi">
+      <img src="../images/articoli/MB_COVER_ORLANDI_V1.png" alt="Copertina dell'articolo sul caso Emanuela Orlandi" loading="lazy" decoding="async">
       <div class="card-content">
         <span class="category-pill">Caso reale</span>
         <h3>Il caso Emanuela Orlandi</h3>
@@ -713,9 +865,88 @@
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
+function setMenuExpandedState(isExpanded) {
+  const toggle = document.getElementById("menu-toggle");
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", String(isExpanded));
+  }
 }
+
+function closeAllSubmenus(except = null) {
+  document.querySelectorAll(".has-submenu").forEach(item => {
+    if (item !== except) {
+      item.classList.remove("open");
+      const button = item.querySelector(".submenu-toggle");
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById("menu");
+  if (menu) {
+    menu.classList.remove("active");
+  }
+  setMenuExpandedState(false);
+  closeAllSubmenus();
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  if (!menu) return;
+
+  const isActive = menu.classList.toggle("active");
+  setMenuExpandedState(isActive);
+
+  if (!isActive) {
+    closeAllSubmenus();
+  }
+}
+
+document.querySelectorAll(".submenu-toggle").forEach(button => {
+  button.addEventListener("click", function () {
+    const parent = this.parentElement;
+    const willOpen = !parent.classList.contains("open");
+
+    if (window.innerWidth > 680) {
+      closeAllSubmenus(parent);
+    }
+
+    parent.classList.toggle("open");
+    this.setAttribute("aria-expanded", String(willOpen));
+  });
+
+  button.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      this.click();
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeAllSubmenus();
+      this.blur();
+    }
+  });
+});
+
+document.addEventListener("click", function (event) {
+  const nav = document.getElementById("site-nav");
+  if (!nav) return;
+
+  const clickedInsideNav = nav.contains(event.target);
+  if (!clickedInsideNav) {
+    closeMobileMenu();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeMobileMenu();
+  }
+});
 </script>
 
 </body>
