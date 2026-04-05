@@ -2,169 +2,476 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src https://api.counterapi.dev; img-src 'self' data: https://michelebottino-autor.github.io;">
-  
+  <meta name="google-site-verification" content="SHE16qd4qwiNzoct42zFbUdlPiSc3U6vLx2myFcnAEI">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Michele Bottino | Scrittore e saggista italiano – Sito ufficiale</title>
-  
-  <meta name="description" content="Sito ufficiale di Michele Bottino, scrittore e saggista. Esplora le opere narrative e la ricerca saggistica di un autore attivo dal 2010.">
+  <meta name="description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, scritti, ricerca metodologica, pubblicazioni e attività autoriale.">
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/">
 
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    connect-src 'self' https://api.counterapi.dev;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  ">
+
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Michele Bottino | Scrittore e saggista">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Michele Bottino">
+  <meta property="og:title" content="Michele Bottino | Scrittore e saggista italiano – Sito ufficiale">
+  <meta property="og:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, scritti, ricerca metodologica, pubblicazioni e attività autoriale.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
+  <meta property="og:image:alt" content="Logo di Michele Bottino">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Michele Bottino | Scrittore e saggista italiano – Sito ufficiale">
+  <meta name="twitter:description" content="Sito ufficiale di Michele Bottino, scrittore e saggista italiano. Opere, scritti, ricerca metodologica, pubblicazioni e attività autoriale.">
+  <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michele Bottino",
+    "url": "https://michelebottino-autor.github.io/",
+    "jobTitle": "Scrittore e saggista italiano",
+    "description": "Scrittore e saggista italiano, autore di opere narrative e saggistiche, scritti di analisi documentaria e ricerca metodologica.",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138828334",
+      "https://orcid.org/0009-0009-2797-9267",
+      "https://www.facebook.com/michelebottinoautore"
+    ],
+    "knowsAbout": [
+      "Narrativa",
+      "Saggistica",
+      "Ricerca storico-documentaria",
+      "Analisi documentaria",
+      "Strutture narrative"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michelebottino-autor.github.io/"
+    }
+  }
+  </script>
 
   <style>
-    :root {
-      --bg-color: #1f2623;
-      --text-color: #e5d3a3;
-      --accent-color: #c2a46d;
-      --card-bg: #2a312d;
-      --border-color: #8f7748;
+    * {
+      box-sizing: border-box;
     }
-
-    * { box-sizing: border-box; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
+      background: #1f2623;
+      color: #e5d3a3;
       margin: 0;
-      line-height: 1.8;
+      line-height: 1.7;
       overflow-x: hidden;
     }
 
     h1, h2, h3 {
       font-family: Georgia, "Times New Roman", serif;
       margin-top: 0;
-      color: var(--text-color);
+      color: #e5d3a3;
     }
 
-    p { margin-bottom: 1.2em; max-width: 70ch; }
-    a { color: var(--accent-color); text-decoration: none; transition: opacity 0.2s; }
-    a:hover { opacity: 0.8; }
+    p {
+      margin-top: 0;
+      margin-bottom: 1.1em;
+      max-width: 68ch;
+    }
+
+    a {
+      color: #c2a46d;
+    }
 
     .container {
       width: 100%;
-      max-width: 1150px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
     }
 
-    /* Header & Nav */
     .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 15px;
+      border-bottom: 1px solid #8f7748;
+      padding-bottom: 14px;
+      gap: 20px;
       position: relative;
     }
 
-    .logo img { height: 65px; width: auto; display: block; }
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
 
     .nav-menu {
       list-style: none;
       display: flex;
-      gap: 18px;
+      gap: 14px;
       margin: 0;
       padding: 0;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav a {
+      color: #c2a46d;
+      text-decoration: none;
+      font-size: 0.95rem;
     }
 
     .menu-toggle {
       display: none;
       background: transparent;
-      border: 1px solid var(--border-color);
-      padding: 10px;
+      border: 1px solid #8f7748;
+      padding: 8px;
       cursor: pointer;
     }
 
     .menu-toggle span {
-      display: block; width: 22px; height: 2px;
-      background: var(--accent-color); margin: 4px 0;
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 4px 0;
     }
 
-    /* Submenu Accessibile */
-    .has-submenu { position: relative; }
+    .has-submenu {
+      position: relative;
+    }
+
     .submenu-toggle {
-      background: transparent; border: none;
-      color: var(--accent-color); font-size: 0.95rem;
-      cursor: pointer; font-family: inherit;
+      background: transparent;
+      border: none;
+      color: #c2a46d;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .submenu {
-      list-style: none; display: none;
-      position: absolute; top: 100%; left: 0;
-      background: var(--card-bg); border: 1px solid var(--border-color);
-      padding: 10px; min-width: 200px; z-index: 100;
+      list-style: none;
+      margin: 8px 0 0 0;
+      padding: 0;
+      display: none;
     }
 
-    .has-submenu.open .submenu { display: block; }
-    .submenu li a { display: block; padding: 8px 5px; font-size: 0.9rem; }
+    .submenu li {
+      margin: 0;
+      padding: 0;
+    }
 
-    /* Hero Section */
-    .hero { padding: 50px 20px; }
-    .hero-flex { display: flex; align-items: center; gap: 50px; }
-    .hero-text { flex: 1.2; }
-    .hero-image { flex: 0.8; display: flex; justify-content: center; }
-    
+    .submenu li a {
+      display: block;
+      padding: 8px 0 8px 14px;
+      font-size: 0.92rem;
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    .has-submenu.open .submenu {
+      display: block;
+    }
+
+    .hero.container {
+      padding-top: 34px;
+      padding-bottom: 26px;
+    }
+
+    .hero-flex {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+    }
+
+    .hero-text p,
+    .hero-text .hero-links {
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 60ch;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .hero-image img {
-      width: 100%; max-width: 440px; height: auto;
-      aspect-ratio: 460 / 575; border: 1px solid var(--border-color);
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+      aspect-ratio: 460 / 575;
       object-fit: cover;
+      display: block;
+      border: 1px solid #8f7748;
     }
 
-    .hero h1 { font-size: 3.2rem; line-height: 1.1; margin-bottom: 15px; }
-    .hero h2 { font-size: 1.5rem; color: var(--accent-color); margin-bottom: 25px; font-weight: normal; }
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
 
-    .cta { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
-    .btn { padding: 12px 24px; text-align: center; border: 1px solid var(--accent-color); }
-    .primary { background: var(--accent-color); color: var(--bg-color); font-weight: bold; }
-    .secondary { color: var(--accent-color); }
+    .hero h2 {
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
 
-    /* Grid layout */
+    .hero p {
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    .hero-lead-note {
+      margin-bottom: 14px;
+      color: #e5d3a3;
+    }
+
+    .hero-links {
+      margin-top: 14px;
+    }
+
+    .cta {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 12px 16px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .primary {
+      background: #c2a46d;
+      color: #1f2623;
+    }
+
+    .secondary {
+      border: 1px solid #c2a46d;
+      color: #c2a46d;
+      background: transparent;
+    }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin: 40px 0;
+      gap: 20px;
     }
 
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 20px;
     }
 
-    .card h3 { border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
-    .card-link { margin-top: auto; color: var(--accent-color); font-weight: bold; }
+    .card-link,
+    .section-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #c2a46d;
+      text-decoration: none;
+      border-bottom: 1px solid #c2a46d;
+    }
+
+    .subtle-block {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .identity-block {
+      border-top: 1px solid #8f7748;
+      padding-top: 20px;
+      margin-top: 20px;
+      color: #c2a46d;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .identity-block a {
+      color: #c2a46d;
+      text-decoration: none;
+      border-bottom: 1px solid #8f7748;
+    }
 
     footer {
-      border-top: 1px solid var(--border-color);
-      padding: 40px 0;
+      padding: 30px 0;
       color: #8f7748;
-      font-size: 0.9rem;
     }
 
-    /* Mobile Responsive */
-    @media (max-width: 850px) {
-      .hero-flex { flex-direction: column-reverse; text-align: center; }
-      .hero h1 { font-size: 2.5rem; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .menu-toggle { display: block; }
+    footer a {
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: #c2a46d;
+    }
+
+    .visit-counter {
+      margin-top: 12px;
+      color: #c2a46d;
+      font-size: 0.92rem;
+    }
+
+    @media (min-width: 681px) {
       .nav-menu {
-        display: none; position: absolute; top: 100%; left: 0; width: 100%;
-        background: var(--bg-color); flex-direction: column; padding: 20px;
-        border-bottom: 1px solid var(--border-color); z-index: 99;
+        align-items: center;
       }
-      .nav-menu.active { display: flex; }
-      .submenu { position: static; width: 100%; border: none; padding-left: 20px; }
+
+      .has-submenu {
+        display: inline-block;
+      }
+
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: #2a312d;
+        border: 1px solid #8f7748;
+        padding: 8px 12px;
+        z-index: 50;
+      }
+
+      .submenu li a {
+        padding: 8px 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-flex {
+        gap: 28px;
+      }
+
+      .hero-image img {
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        align-items: stretch;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu > li > a,
+      .submenu-toggle {
+        display: block;
+        width: 100%;
+        border: 1px solid #8f7748;
+        padding: 10px;
+        background: #2a312d;
+        text-align: left;
+      }
+
+      .submenu {
+        margin-top: 0;
+        padding-top: 6px;
+      }
+
+      .submenu li a {
+        border: 1px solid #8f7748;
+        padding: 10px 10px 10px 18px;
+        background: #242a27;
+      }
+
+      .hero.container {
+        padding-top: 24px;
+        padding-bottom: 18px;
+      }
+
+      .hero-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .hero-image {
+        justify-content: flex-start;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+      }
+
+      .cta {
+        flex-direction: column;
+      }
+
+      .cta .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -172,176 +479,381 @@
 <body>
 
 <header class="container">
-  <nav class="nav" aria-label="Menu principale">
+  <nav class="nav" id="site-nav">
     <div class="logo">
       <a href="./"><img src="images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" id="menu-btn" onclick="toggleMenu()" aria-label="Apri menu" aria-expanded="false" aria-controls="main-menu">
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      onclick="toggleMenu()"
+      aria-label="Apri il menu di navigazione"
+      aria-controls="menu"
+      aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
-    <ul class="nav-menu" id="main-menu">
-      <li><a href="./">Home</a></li>
+    <ul class="nav-menu" id="menu">
+      <li><a href="./" aria-current="page">Home</a></li>
+
       <li class="has-submenu">
-        <button class="submenu-toggle" aria-haspopup="true" aria-expanded="false">Autore</button>
-        <ul class="submenu">
+        <button
+          class="submenu-toggle"
+          id="toggle-autore"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-autore">
+          Autore
+        </button>
+        <ul class="submenu" id="submenu-autore">
           <li><a href="biografia/">Biografia</a></li>
           <li><a href="poetica/">Poetica</a></li>
         </ul>
       </li>
+
       <li class="has-submenu">
-        <button class="submenu-toggle" aria-haspopup="true" aria-expanded="false">Opere</button>
-        <ul class="submenu">
-          <li><a href="opere/">Romanzi e Saggi</a></li>
-          <li><a href="testi-musicali/">Testi Musicali</a></li>
+        <button
+          class="submenu-toggle"
+          id="toggle-opere"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-opere">
+          Opere
+        </button>
+        <ul class="submenu" id="submenu-opere">
+          <li><a href="opere/">Romanzi e saggi</a></li>
+          <li><a href="testi-musicali/">Testi musicali</a></li>
         </ul>
       </li>
+
       <li class="has-submenu">
-        <button class="submenu-toggle" aria-haspopup="true" aria-expanded="false">Scritti</button>
-        <ul class="submenu">
+        <button
+          class="submenu-toggle"
+          id="toggle-scritti"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-scritti">
+          Scritti
+        </button>
+        <ul class="submenu" id="submenu-scritti">
           <li><a href="articoli/">Articoli</a></li>
           <li><a href="dossier/">Dossier</a></li>
           <li><a href="racconti/">Racconti</a></li>
         </ul>
       </li>
-      <li><a href="ricerca/">Metodo e Ricerca</a></li>
+
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          id="toggle-metodo"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-metodo">
+          Metodo e ricerca
+        </button>
+        <ul class="submenu" id="submenu-metodo">
+          <li><a href="ricerca/">Ricerca</a></li>
+          <li><a href="bottino-method/">Bottino Method</a></li>
+          <li><a href="mrn/">MRN</a></li>
+          <li><a href="pubblicazioni/">Pubblicazioni</a></li>
+        </ul>
+      </li>
+
+      <li><a href="media/">Media</a></li>
       <li><a href="contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <section class="hero container">
-    <div class="hero-flex">
-      <div class="hero-text">
-        <h1>Michele Bottino</h1>
-        <h2>Scrittore e Saggista</h2>
 
-        <p>
-          Attivo nel panorama editoriale dal <strong>2010</strong>, Michele Bottino muove la sua scrittura lungo il confine sottile che separa la verità documentale dalla potenza evocativa della narrativa.
-        </p>
-        <p>
-          Autore di romanzi e saggi, fonde il rigore della ricerca metodica con una cifra stilistica volta a esplorare le pieghe della storia e i misteri della consapevolezza umana. Dal 2026, la sua attività di ricercatore potenzia questa indagine, strutturando un percorso dove il documento diventa trama e l'analisi si fa racconto.
-        </p>
+<section class="hero container">
+  <div class="hero-flex">
+    <div class="hero-text">
+      <h1>Michele Bottino</h1>
+      <h2>Scrittore e saggista italiano</h2>
 
-        <div class="cta">
-          <a href="opere/" class="btn primary">Esplora le Opere</a>
-          <a href="ricerca/" class="btn secondary">Metodo e Ricerca</a>
-        </div>
+      <p class="hero-lead-note"><strong>Sito ufficiale dello scrittore e saggista Michele Bottino.</strong></p>
+
+      <p>
+        Michele Bottino è autore di opere narrative e saggistiche,
+        con una scrittura orientata alla precisione del testo,
+        alla coerenza strutturale e al controllo formale del linguaggio.
+      </p>
+
+      <p class="hero-links">
+        Approfondisci:
+        <a href="biografia/">biografia</a>,
+        <a href="opere/">opere</a>,
+        <a href="articoli/">articoli</a>.
+      </p>
+
+      <div class="cta">
+        <a href="opere/" class="btn primary">Scopri le opere</a>
+        <a href="biografia/" class="btn secondary">Profilo autore</a>
       </div>
 
-      <div class="hero-image">
-        <img src="images/michele-bottino-autore.jpg" 
-             alt="Ritratto di Michele Bottino" 
-             width="460" height="575"
-             fetchpriority="high">
+      <div class="identity-block">
+        <p>
+          Riferimenti esterni:
+          <a href="https://orcid.org/0009-0009-2797-9267" target="_blank" rel="noopener noreferrer">ORCID</a> ·
+          <a href="https://www.wikidata.org/wiki/Q138828334" target="_blank" rel="noopener noreferrer">Wikidata</a> ·
+          <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </p>
       </div>
     </div>
-  </section>
 
-  <section class="container">
-    <div class="grid-3">
-      <div class="card">
-        <h3>Opere</h3>
-        <p>Dalla narrativa d'inchiesta ai saggi storici: la produzione letteraria completa dal 2010 ad oggi.</p>
-        <a href="opere/" class="card-link">Vai ai volumi →</a>
-      </div>
-      <div class="card">
-        <h3>Scritti e Dossier</h3>
-        <p>Analisi documentali, articoli e racconti brevi che approfondiscono temi di attualità e storia.</p>
-        <a href="articoli/" class="card-link">Leggi gli scritti →</a>
-      </div>
-      <div class="card">
-        <h3>Metodo MRN</h3>
-        <p>L'approccio strutturato alla ricerca e all'organizzazione dei contenuti: il Bottino Method.</p>
-        <a href="ricerca/" class="card-link">Scopri il metodo →</a>
-      </div>
+    <div class="hero-image">
+      <img
+        src="images/michele-bottino-autore.jpg"
+        alt="Michele Bottino, scrittore e saggista italiano"
+        width="460"
+        height="575"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async">
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="container grid-3">
+  <div class="card">
+    <h3>Opere</h3>
+    <p>Romanzi e saggi che definiscono il percorso letterario e saggistico dell’autore.</p>
+    <a href="opere/" class="card-link">Scopri</a>
+  </div>
+
+  <div class="card">
+    <h3>Scritti</h3>
+    <p>Articoli, dossier e racconti che sviluppano il lavoro editoriale dell’autore.</p>
+    <a href="articoli/" class="card-link">Esplora</a>
+  </div>
+
+  <div class="card">
+    <h3>Metodo e ricerca</h3>
+    <p>Ricerca documentaria, modelli strutturali e pubblicazioni dedicate all’analisi dei contenuti.</p>
+    <a href="ricerca/" class="card-link">Approfondisci</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="subtle-block">
+    <h2>In primo piano</h2>
+    <p>
+      Il sito raccoglie in un unico percorso opere narrative e saggistiche,
+      scritti di analisi documentaria e ricerca metodologica, distinguendo con chiarezza
+      identità autoriale, produzione editoriale e sviluppo dei modelli di lavoro.
+    </p>
+    <a href="opere/" class="section-link">Vai alle opere</a>
+    <br>
+    <a href="pubblicazioni/" class="section-link">Vai alle pubblicazioni</a>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Scritti</h2>
+  <div class="grid-3">
+    <div class="card">
+      <h3>Articoli</h3>
+      <p>Analisi e approfondimenti su casi, temi e questioni documentarie.</p>
+      <a href="articoli/" class="card-link">Leggi</a>
+    </div>
+
+    <div class="card">
+      <h3>Dossier</h3>
+      <p>Materiali strutturati e percorsi di analisi dedicati a vicende e contesti specifici.</p>
+      <a href="dossier/" class="card-link">Consulta</a>
+    </div>
+
+    <div class="card">
+      <h3>Racconti</h3>
+      <p>Testi narrativi appartenenti alla produzione letteraria dell’autore.</p>
+      <a href="racconti/" class="card-link">Scopri</a>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="subtle-block">
+    <h2>Metodo</h2>
+    <p>
+      La ricerca di Michele Bottino si concentra sull’analisi documentaria
+      e sulla definizione di modelli operativi applicati alla struttura dei contenuti
+      e delle narrazioni.
+    </p>
+    <a href="bottino-method/" class="section-link">Bottino Method</a>
+    <br>
+    <a href="mrn/" class="section-link">Metodo delle Rotture Narrative</a>
+  </div>
+
+  <div class="subtle-block">
+    <h2>Testi musicali</h2>
+    <p>Scrittura musicale come estensione del lavoro autoriale.</p>
+    <a href="testi-musicali/" class="section-link">Consulta</a>
+  </div>
+
+  <div class="subtle-block">
+    <h2>Aggiornamenti</h2>
+    <p>Pubblicazioni e contenuti aggiornati.</p>
+    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer" class="btn secondary">
+      Facebook
+    </a>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Nota autore</h2>
+  <p>
+    Michele Bottino (1972) è uno scrittore e saggista italiano.
+    La sua produzione si articola tra narrativa e saggistica,
+    con un approccio fondato su precisione linguistica, chiarezza espositiva e coerenza formale.
+  </p>
+</section>
+
 </main>
 
 <footer class="container">
-  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-    <div>
-      <p>© 2026 Michele Bottino. Tutti i diritti riservati.<br>
-      <small>Sito Ufficiale dell'Autore</small></p>
-    </div>
-    <div class="visit-counter">
-      Visite: <span id="visit-count">...</span>
-    </div>
-    <nav>
-      <a href="privacy/">Privacy</a> | <a href="cookie/">Cookie</a> | <a href="disclaimer/">Disclaimer</a>
-    </nav>
+  <p>
+    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    <br>
+    <a href="privacy/">Privacy Policy</a> |
+    <a href="cookie/">Cookie Policy</a> |
+    <a href="disclaimer/">Disclaimer</a>
+  </p>
+
+  <div class="visit-counter">
+    Visite: <span id="visit-count">...</span>
   </div>
 </footer>
 
 <script>
-  // Gestione Menu Mobile
-  const menuBtn = document.getElementById('menu-btn');
-  const mainMenu = document.getElementById('main-menu');
-
-  function toggleMenu() {
-    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-expanded', !expanded);
-    mainMenu.classList.toggle('active');
+function setMenuExpandedState(isExpanded) {
+  const toggle = document.getElementById("menu-toggle");
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", String(isExpanded));
   }
+}
 
-  // Chiusura menu con Esc o click esterno
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeAll();
-  });
-
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.nav')) closeAll();
-  });
-
-  function closeAll() {
-    menuBtn.setAttribute('aria-expanded', 'false');
-    mainMenu.classList.remove('active');
-    document.querySelectorAll('.has-submenu').forEach(s => s.classList.remove('open'));
-    document.querySelectorAll('.submenu-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
-  }
-
-  // Gestione Sottomenu
-  document.querySelectorAll('.submenu-toggle').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const parent = this.parentElement;
-      const expanded = this.getAttribute('aria-expanded') === 'true';
-      
-      // Chiudi altri sottomenu
-      document.querySelectorAll('.submenu-toggle').forEach(other => {
-        if (other !== this) {
-          other.setAttribute('aria-expanded', 'false');
-          other.parentElement.classList.remove('open');
-        }
-      });
-
-      this.setAttribute('aria-expanded', !expanded);
-      parent.classList.toggle('open');
-    });
-  });
-
-  // Fetch Contatore con Timeout e AbortController
-  async function updateCounter() {
-    const el = document.getElementById('visit-count');
-    if (!el) return;
-    
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 4000);
-
-    try {
-      const res = await fetch('https://api.counterapi.dev/v1/michelebottino-autor.github.io/homepage/up', { signal: controller.signal });
-      const data = await res.json();
-      el.textContent = data.count || "—";
-    } catch (err) {
-      el.textContent = "—";
-    } finally {
-      clearTimeout(timeout);
+function closeAllSubmenus(except = null) {
+  document.querySelectorAll(".has-submenu").forEach(item => {
+    if (item !== except) {
+      item.classList.remove("open");
+      const button = item.querySelector(".submenu-toggle");
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
+      }
     }
+  });
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById("menu");
+  if (menu) {
+    menu.classList.remove("active");
   }
-  updateCounter();
+  setMenuExpandedState(false);
+  closeAllSubmenus();
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  if (!menu) return;
+
+  const isActive = menu.classList.toggle("active");
+  setMenuExpandedState(isActive);
+
+  if (!isActive) {
+    closeAllSubmenus();
+  }
+}
+
+document.querySelectorAll(".submenu-toggle").forEach(button => {
+  button.addEventListener("click", function () {
+    const parent = this.parentElement;
+    const willOpen = !parent.classList.contains("open");
+
+    if (window.innerWidth > 680) {
+      closeAllSubmenus(parent);
+    }
+
+    parent.classList.toggle("open");
+    this.setAttribute("aria-expanded", String(willOpen));
+  });
+
+  button.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      this.click();
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeAllSubmenus();
+      this.blur();
+    }
+  });
+});
+
+document.addEventListener("click", function (event) {
+  const nav = document.getElementById("site-nav");
+  if (!nav) return;
+
+  const clickedInsideNav = nav.contains(event.target);
+  if (!clickedInsideNav) {
+    closeMobileMenu();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeMobileMenu();
+  }
+});
+
+async function updateVisitCounter() {
+  const namespace = "michelebottino-autor.github.io";
+
+  let key = window.location.pathname
+    .replace(/^\/|\/$/g, "")
+    .replace(/\//g, "-");
+
+  if (!key) key = "homepage";
+
+  const el = document.getElementById("visit-count");
+  if (!el) return;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 2500);
+
+  try {
+    const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`, {
+      method: "GET",
+      signal: controller.signal,
+      cache: "no-store"
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error("Counter API non disponibile");
+    }
+
+    const data = await response.json();
+    el.textContent = data.data ?? data.count ?? "—";
+  } catch (error) {
+    clearTimeout(timeoutId);
+    el.textContent = "—";
+    console.error("Errore contatore visite:", error);
+  }
+}
+
+updateVisitCounter();
 </script>
 
 </body>
