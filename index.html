@@ -12,6 +12,20 @@
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/">
 
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    connect-src 'self' https://api.counterapi.dev;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  ">
+
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
@@ -38,6 +52,13 @@
       "https://www.wikidata.org/wiki/Q138828334",
       "https://orcid.org/0009-0009-2797-9267",
       "https://www.facebook.com/michelebottinoautore"
+    ],
+    "knowsAbout": [
+      "Narrativa",
+      "Saggistica",
+      "Ricerca storico-documentaria",
+      "Analisi documentaria",
+      "Strutture narrative"
     ],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -196,6 +217,8 @@
       width: 100%;
       max-width: 460px;
       height: auto;
+      aspect-ratio: 460 / 575;
+      object-fit: cover;
       display: block;
       border: 1px solid #8f7748;
     }
@@ -441,37 +464,68 @@
 <body>
 
 <header class="container">
-  <nav class="nav">
+  <nav class="nav" id="site-nav">
     <div class="logo">
       <a href="./"><img src="images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      onclick="toggleMenu()"
+      aria-label="Apri il menu di navigazione"
+      aria-controls="menu"
+      aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
     <ul class="nav-menu" id="menu">
-      <li><a href="./">Home</a></li>
+      <li><a href="./" aria-current="page">Home</a></li>
 
       <li class="has-submenu">
-        <button class="submenu-toggle" type="button">Autore</button>
-        <ul class="submenu">
+        <button
+          class="submenu-toggle"
+          id="toggle-autore"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-autore">
+          Autore
+        </button>
+        <ul class="submenu" id="submenu-autore">
           <li><a href="biografia/">Biografia</a></li>
           <li><a href="poetica/">Poetica</a></li>
         </ul>
       </li>
 
       <li class="has-submenu">
-        <button class="submenu-toggle" type="button">Opere</button>
-        <ul class="submenu">
+        <button
+          class="submenu-toggle"
+          id="toggle-opere"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-opere">
+          Opere
+        </button>
+        <ul class="submenu" id="submenu-opere">
           <li><a href="opere/">Romanzi e saggi</a></li>
           <li><a href="testi-musicali/">Testi musicali</a></li>
         </ul>
       </li>
 
       <li class="has-submenu">
-        <button class="submenu-toggle" type="button">Scritti</button>
-        <ul class="submenu">
+        <button
+          class="submenu-toggle"
+          id="toggle-scritti"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-scritti">
+          Scritti
+        </button>
+        <ul class="submenu" id="submenu-scritti">
           <li><a href="articoli/">Articoli</a></li>
           <li><a href="dossier/">Dossier</a></li>
           <li><a href="racconti/">Racconti</a></li>
@@ -479,8 +533,16 @@
       </li>
 
       <li class="has-submenu">
-        <button class="submenu-toggle" type="button">Metodo e ricerca</button>
-        <ul class="submenu">
+        <button
+          class="submenu-toggle"
+          id="toggle-metodo"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="submenu-metodo">
+          Metodo e ricerca
+        </button>
+        <ul class="submenu" id="submenu-metodo">
           <li><a href="ricerca/">Ricerca</a></li>
           <li><a href="bottino-method/">Bottino Method</a></li>
           <li><a href="mrn/">MRN</a></li>
@@ -514,13 +576,11 @@
         Approfondisci:
         <a href="biografia/">biografia</a>,
         <a href="opere/">opere</a>,
-        <a href="ricerca/">metodo e ricerca</a>,
-        <a href="articoli/">articoli e scritti</a>.
+        <a href="articoli/">articoli</a>.
       </p>
 
       <div class="cta">
-        <a href="opere/" class="btn primary">Opere</a>
-        <a href="articoli/" class="btn secondary">Articoli</a>
+        <a href="opere/" class="btn primary">Scopri le opere</a>
         <a href="biografia/" class="btn secondary">Profilo autore</a>
       </div>
 
@@ -535,10 +595,14 @@
     </div>
 
     <div class="hero-image">
-      <img src="images/michele-bottino-autore.jpg"
-           alt="Michele Bottino, scrittore e saggista italiano"
-           width="460"
-           height="575">
+      <img
+        src="images/michele-bottino-autore.jpg"
+        alt="Michele Bottino, scrittore e saggista italiano"
+        width="460"
+        height="575"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async">
     </div>
   </div>
 </section>
@@ -565,15 +629,20 @@
 
 <section class="container">
   <div class="subtle-block">
-    <h2>Scritti</h2>
+    <h2>In primo piano</h2>
     <p>
-      Raccolta di contenuti editoriali organizzati tra analisi, dossier e narrativa.
+      Una selezione di contenuti utili per orientarsi tra produzione editoriale,
+      analisi documentaria e percorsi di ricerca.
     </p>
-    <a href="articoli/" class="section-link">Vai agli articoli</a>
+    <a href="articoli/" class="section-link">Ultimi articoli</a>
     <br>
-    <a href="racconti/" class="section-link">Vai ai racconti</a>
+    <a href="opere/" class="section-link">Opere pubblicate</a>
+    <br>
+    <a href="pubblicazioni/" class="section-link">Pubblicazioni di ricerca</a>
   </div>
+</section>
 
+<section class="container">
   <div class="grid-3">
     <div class="card">
       <h3>Articoli</h3>
@@ -597,14 +666,14 @@
 
 <section class="container">
   <div class="subtle-block">
-    <h2>Metodo e ricerca</h2>
+    <h2>Metodo</h2>
     <p>
-      Sviluppo di modelli strutturali per l’analisi documentaria
-      e l’organizzazione dei contenuti.
+      La ricerca sviluppata da Michele Bottino si concentra sulla struttura dei contenuti,
+      sull’analisi documentaria e sulla definizione di modelli operativi applicati alla lettura dei dati e delle narrazioni.
     </p>
-    <a href="ricerca/" class="section-link">Approfondisci</a>
+    <a href="bottino-method/" class="section-link">Bottino Method</a>
     <br>
-    <a href="pubblicazioni/" class="section-link">Vai alle pubblicazioni</a>
+    <a href="mrn/" class="section-link">Metodo delle Rotture Narrative</a>
   </div>
 
   <div class="subtle-block">
@@ -648,31 +717,86 @@
 </footer>
 
 <script>
+function setMenuExpandedState(isExpanded) {
+  const toggle = document.getElementById("menu-toggle");
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", String(isExpanded));
+  }
+}
+
+function closeAllSubmenus(except = null) {
+  document.querySelectorAll(".has-submenu").forEach(item => {
+    if (item !== except) {
+      item.classList.remove("open");
+      const button = item.querySelector(".submenu-toggle");
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById("menu");
+  if (menu) {
+    menu.classList.remove("active");
+  }
+  setMenuExpandedState(false);
+  closeAllSubmenus();
+}
+
 function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
+  const menu = document.getElementById("menu");
+  if (!menu) return;
+
+  const isActive = menu.classList.toggle("active");
+  setMenuExpandedState(isActive);
+
+  if (!isActive) {
+    closeAllSubmenus();
+  }
 }
 
 document.querySelectorAll(".submenu-toggle").forEach(button => {
   button.addEventListener("click", function () {
     const parent = this.parentElement;
+    const willOpen = !parent.classList.contains("open");
 
-    if (window.innerWidth <= 680) {
-      parent.classList.toggle("open");
-    } else {
-      document.querySelectorAll(".has-submenu").forEach(item => {
-        if (item !== parent) item.classList.remove("open");
-      });
-      parent.classList.toggle("open");
+    if (window.innerWidth > 680) {
+      closeAllSubmenus(parent);
+    }
+
+    parent.classList.toggle("open");
+    this.setAttribute("aria-expanded", String(willOpen));
+  });
+
+  button.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      this.click();
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeAllSubmenus();
+      this.blur();
     }
   });
 });
 
 document.addEventListener("click", function (event) {
-  const isInsideMenu = event.target.closest(".has-submenu");
-  if (!isInsideMenu) {
-    document.querySelectorAll(".has-submenu").forEach(item => {
-      item.classList.remove("open");
-    });
+  const nav = document.getElementById("site-nav");
+  if (!nav) return;
+
+  const clickedInsideNav = nav.contains(event.target);
+  if (!clickedInsideNav) {
+    closeMobileMenu();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeMobileMenu();
   }
 });
 
@@ -688,8 +812,17 @@ async function updateVisitCounter() {
   const el = document.getElementById("visit-count");
   if (!el) return;
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 2500);
+
   try {
-    const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`);
+    const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`, {
+      method: "GET",
+      signal: controller.signal,
+      cache: "no-store"
+    });
+
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       throw new Error("Counter API non disponibile");
@@ -698,6 +831,7 @@ async function updateVisitCounter() {
     const data = await response.json();
     el.textContent = data.data ?? data.count ?? "—";
   } catch (error) {
+    clearTimeout(timeoutId);
     el.textContent = "—";
     console.error("Errore contatore visite:", error);
   }
