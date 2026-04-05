@@ -50,6 +50,9 @@
         cursor: pointer; font-family: inherit; font-size: 1rem; 
         padding: 5px 0;
     }
+    .submenu-toggle span { display: inline-block; transition: transform 0.3s; }
+    .has-submenu.open .submenu-toggle span { transform: rotate(180deg); }
+
     .submenu {
       display: none; position: absolute; top: 100%; left: 0; 
       background: var(--card-bg); border: 1px solid var(--border); 
@@ -92,11 +95,13 @@
     @media (max-width: 850px) {
       .menu-toggle { display: block; }
       .nav-menu {
-        display: none; position: absolute; top: 100%; left: 0; width: 100%;
+        display: none; /* Nasconde di default su mobile */
+        position: absolute; top: 100%; left: 0; width: 100%;
         background: var(--bg); flex-direction: column; padding: 20px; 
         border-bottom: 1px solid var(--border); z-index: 1000;
       }
-      .nav-menu.active { display: flex; }
+      .nav-menu.active { display: flex; } /* MOSTRA IL MENU QUANDO ATTIVO */
+      
       .hero { flex-direction: column-reverse; text-align: left; }
       .hero-content { padding-left: 20px; border-left: 3px solid var(--accent); }
       .grid-3 { grid-template-columns: 1fr; }
@@ -117,14 +122,14 @@
     <ul class="nav-menu" id="main-menu">
       <li><a href="./">Home</a></li>
       <li class="has-submenu">
-        <button class="submenu-toggle" onclick="toggleSub(event, this)">Autore ▾</button>
+        <button class="submenu-toggle" onclick="toggleSub(event, this)">Autore <span>▾</span></button>
         <ul class="submenu">
           <li><a href="biografia/">Biografia</a></li>
           <li><a href="poetica/">Poetica</a></li>
         </ul>
       </li>
       <li class="has-submenu">
-        <button class="submenu-toggle" onclick="toggleSub(event, this)">Opere ▾</button>
+        <button class="submenu-toggle" onclick="toggleSub(event, this)">Opere <span>▾</span></button>
         <ul class="submenu">
           <li><a href="opere/">Romanzi e Saggi</a></li>
           <li><a href="testi-musicali/">Testi Musicali</a></li>
@@ -152,7 +157,7 @@
     </div>
 
     <div class="hero-image">
-      <img src="images/michele-bottino-autore.jpg" alt="Michele Bottino">
+      <img src="images/michele-bottino-autore.jpg" alt="Michele Bottino" fetchpriority="high">
     </div>
   </section>
 
@@ -192,16 +197,16 @@
 
 <script>
   // Logica Menu Mobile
-  const mBtn = document.getElementById('m-btn');
-  const mMenu = document.getElementById('main-menu');
-  function toggleMenu() { mMenu.classList.toggle('active'); }
+  function toggleMenu() {
+    const menu = document.getElementById('main-menu');
+    menu.classList.toggle('active');
+  }
 
-  // Logica Sottomenu (permette l'apertura cliccando)
+  // Logica Sottomenu
   function toggleSub(event, btn) {
     event.stopPropagation();
     const parent = btn.parentElement;
     
-    // Chiude gli altri sottomenu aperti
     document.querySelectorAll('.has-submenu').forEach(li => {
         if (li !== parent) li.classList.remove('open');
     });
@@ -212,27 +217,39 @@
   // Chiusura menu cliccando fuori
   document.addEventListener('click', () => {
     document.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('open'));
+    // Opzionale: chiude il menu mobile se clicchi fuori
+    // document.getElementById('main-menu').classList.remove('active');
   });
 
   // Condivisione
   async function sharePage() {
-    const data = { title: 'Michele Bottino', url: window.location.href };
+    const data = { 
+        title: 'Michele Bottino - Scrittore e Saggista', 
+        url: window.location.href 
+    };
     try {
-      if (navigator.share) await navigator.share(data);
-      else {
+      if (navigator.share) {
+          await navigator.share(data);
+      } else {
         await navigator.clipboard.writeText(window.location.href);
-        alert('Link copiato!');
+        alert('Link copiato negli appunti!');
       }
-    } catch (e) {}
+    } catch (e) {
+        console.error("Errore condivisione:", e);
+    }
   }
 
   // Contatore Visite
   async function getVisits() {
     try {
       const res = await fetch('https://api.counterapi.dev/v1/michelebottino-autor.github.io/homepage/up');
-      const d = await res.json();
-      document.getElementById('v-count').textContent = d.count || "—";
-    } catch (e) {}
+      if (res.ok) {
+        const d = await res.json();
+        document.getElementById('v-count').textContent = d.count || "—";
+      }
+    } catch (e) {
+        console.warn("API contatore non raggiungibile.");
+    }
   }
   getVisits();
 </script>
