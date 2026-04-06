@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Michele Bottino | Biografia ufficiale dello scrittore e saggista italiano</title>
-  <meta name="description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, attività, opere, linea di scrittura e ricerca storico-documentaria.">
+  <meta name="description" content="Biografia ufficiale di Michele Bottino, scrittore e saggista italiano. Profilo autore, opere, attività e linea di scrittura.">
   <meta name="author" content="Michele Bottino">
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/biografia/">
 
+  <!-- Sicurezza base -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self'; script-src 'self' 'unsafe-inline' https://api.counterapi.dev; style-src 'self' 'unsafe-inline'; connect-src https://api.counterapi.dev;">
+
+  <!-- JSON-LD migliorato -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -18,7 +23,18 @@
       "@type": "Person",
       "name": "Michele Bottino",
       "birthDate": "1972-06-21",
-      "jobTitle": "Scrittore e saggista italiano"
+      "jobTitle": "Scrittore e saggista italiano",
+      "url": "https://michelebottino-autor.github.io/",
+      "sameAs": [
+        "https://orcid.org/0009-0009-2797-9267",
+        "https://www.wikidata.org/wiki/Q138828334"
+      ],
+      "knowsAbout": [
+        "Scrittura narrativa",
+        "Saggistica",
+        "Analisi documentaria",
+        "Struttura narrativa"
+      ]
     }
   }
   </script>
@@ -33,6 +49,7 @@
     }
 
     * { box-sizing: border-box; }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
@@ -41,67 +58,122 @@
       line-height: 1.7;
     }
 
-    h1, h2, h3 { font-family: Georgia, serif; margin: 0; color: var(--text); }
-    a { color: var(--accent); text-decoration: none; transition: 0.2s; }
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 20px; }
+    h1, h2 { font-family: Georgia, serif; margin-top: 0; }
 
-    /* Navigazione coerente con Index */
+    a { color: var(--accent); text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
     .nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 15px 0; border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
       position: relative;
     }
-    .logo img { height: 60px; width: auto; }
-    .nav-menu { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-    
+
+    .logo img { height: 60px; }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
     .menu-toggle {
-      display: none; background: none; border: 1px solid var(--border);
-      padding: 8px 15px; cursor: pointer; color: var(--accent); font-weight: bold;
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 8px;
+      cursor: pointer;
+      color: var(--accent);
     }
 
-    /* Gestione Sottomenu */
     .has-submenu { position: relative; }
-    .submenu-toggle { background: none; border: none; color: var(--accent); cursor: pointer; font-family: inherit; font-size: 1rem; padding: 5px 0; }
+
     .submenu {
-      display: none; position: absolute; top: 100%; left: 0; 
-      background: var(--card-bg); border: 1px solid var(--border); 
-      padding: 10px; min-width: 200px; z-index: 1000; list-style: none;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 10px;
+      list-style: none;
     }
+
     .has-submenu.open .submenu { display: block; }
-    .submenu a { display: block; padding: 10px; font-size: 0.9rem; }
 
-    /* Layout Biografia */
     .bio-intro { padding: 40px 0; }
-    .bio-flex { display: flex; gap: 40px; align-items: flex-start; margin-top: 30px; }
-    .bio-image { flex: 0 0 280px; }
-    .bio-image img { width: 100%; border: 1px solid var(--border); }
-    .bio-text { flex: 1; }
-    .bio-text p { margin-bottom: 1.5em; max-width: 70ch; }
 
-    /* Blocchi di contenuto */
-    .content-section { margin-bottom: 40px; }
-    .block { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; margin: 20px 0; }
-    
-    .btn-action {
-      display: inline-block; padding: 10px 20px; border: 1px solid var(--accent);
-      color: var(--accent); font-weight: bold; margin-top: 10px;
+    .bio-flex {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 30px;
     }
 
-    footer { border-top: 1px solid var(--border); padding: 40px 0; color: #8f7748; font-size: 0.85rem; }
+    .bio-image { flex: 0 0 280px; }
+
+    .bio-image img {
+      width: 100%;
+      border: 1px solid var(--border);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .bio-text p {
+      margin-bottom: 1.4em;
+      max-width: 70ch;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      color: #8f7748;
+      font-size: 0.85rem;
+    }
 
     @media (max-width: 850px) {
       .menu-toggle { display: block; }
+
       .nav-menu {
-        display: none; position: absolute; top: 100%; left: 0; width: 100%;
-        background: var(--bg); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border); z-index: 1000;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--bg);
+        padding: 20px;
       }
+
       .nav-menu.active { display: flex; }
-      .bio-flex { flex-direction: column; align-items: center; text-align: left; }
-      .bio-image { flex: none; width: 100%; max-width: 300px; }
-      .submenu { position: static; border: none; padding-left: 20px; background: transparent; }
+
+      .bio-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .bio-image {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .submenu {
+        position: static;
+        border: none;
+        padding-left: 15px;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <header class="container">
@@ -110,94 +182,131 @@
       <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()">Menu ☰</button>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-expanded="false">
+      Menu
+    </button>
 
-    <ul class="nav-menu" id="main-menu">
+    <ul class="nav-menu" id="menu">
       <li><a href="../">Home</a></li>
+
       <li class="has-submenu">
-        <button class="submenu-toggle" onclick="toggleSub(event, this)">Autore ▾</button>
+        <button onclick="toggleSub(this)" aria-expanded="false">Autore</button>
         <ul class="submenu">
           <li><a href="../biografia/">Biografia</a></li>
           <li><a href="../poetica/">Poetica</a></li>
-          <li><a href="../metodo/">Metodo</a></li>
         </ul>
       </li>
-      <li class="has-submenu">
-        <button class="submenu-toggle" onclick="toggleSub(event, this)">Opere ▾</button>
-        <ul class="submenu">
-          <li><a href="../opere/">Romanzi e Saggi</a></li>
-          <li><a href="../testi-musicali/">Testi Musicali</a></li>
-        </ul>
-      </li>
+
+      <li><a href="../opere/">Opere</a></li>
       <li><a href="../ricerca/">Ricerca</a></li>
+      <li><a href="../articoli/">Articoli</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
 
 <main class="container bio-intro">
-  <h1>Michele Bottino</h1>
 
-  <div class="bio-flex">
-    <div class="bio-image">
-      <img src="../images/michele-bottino-ritratto-2026.jpg" alt="Michele Bottino" fetchpriority="high">
-    </div>
+<h1>Michele Bottino</h1>
 
-    <div class="bio-text">
-      <p><strong>Scrittore e saggista italiano.</strong></p>
-      <p>Michele Bottino (Catania, 21 giugno 1972) è uno scrittore e saggista italiano la cui attività si sviluppa tra narrativa, saggistica e ricerca storico-documentaria strutturata.</p>
-      <p>La sua produzione si caratterizza per un’impostazione rigorosa fondata su controllo formale, coerenza strutturale e verificabilità del contenuto...</p>
-      <p>Il suo lavoro è identificato e tracciato attraverso infrastrutture internazionali di ricerca (DOI, ORCID).</p>
-    </div>
+<div class="bio-flex">
+
+  <div class="bio-image">
+    <img src="../images/michele-bottino-ritratto-2026.jpg"
+         alt="Michele Bottino, scrittore e saggista italiano"
+         fetchpriority="high">
   </div>
 
-  <section class="content-section">
-    <h2>Attività letteraria</h2>
-    <p>Dal 2010 sviluppa una produzione che comprende romanzi e saggi costruiti secondo criteri di essenzialità e precisione linguistica.</p>
-    <div class="block">
-      <p>Tra i titoli principali: <em>EUROPA: Anatomia di un crimine</em>, <em>L’Uomo Consapevole</em>, <em>Stige</em>.</p>
-      <a href="../opere/" class="btn-action">Esplora il catalogo opere</a>
-    </div>
-  </section>
+  <div class="bio-text">
 
-  </main>
+    <p><strong>Scrittore e saggista italiano.</strong></p>
+
+    <p>
+      Michele Bottino (1972) è uno scrittore e saggista italiano.
+      La sua produzione comprende opere di narrativa e di saggistica sviluppate
+      all’interno di una linea espressiva orientata al realismo,
+      alla coerenza strutturale e al controllo formale del testo.
+    </p>
+
+    <p>
+      I suoi lavori affrontano temi legati alla dimensione umana,
+      alle dinamiche di potere e al rapporto tra esperienza individuale
+      e contesto storico.
+    </p>
+
+    <p>
+      Nel corso della sua attività ha pubblicato romanzi e saggi, tra cui
+      <em>Stige</em>, <em>Il deposito delle anime</em>, <em>Intrighi Invisibili</em>,
+      <em>Oniro</em>, <em>EUROPA: Anatomia di un crimine</em> e
+      <em>L’Uomo Consapevole</em>.
+    </p>
+
+    <p>
+      La sua scrittura si distingue per un’impostazione essenziale e priva di artifici,
+      fondata su precisione linguistica, chiarezza espositiva e coerenza narrativa.
+      L’elaborazione delle opere si basa su un processo rigoroso di costruzione
+      e verifica del testo.
+    </p>
+
+    <p>
+      Accanto alla produzione narrativa e saggistica,
+      svolge attività di scrittura di testi per ambito musicale.
+    </p>
+
+    <p>
+      Il suo lavoro si colloca nella scrittura contemporanea con un’impostazione
+      fondata sul controllo formale e sulla leggibilità, attraverso una costruzione
+      rigorosa orientata alla stabilità del testo e alla chiarezza del contenuto.
+    </p>
+
+  </div>
+
+</div>
+
+</main>
 
 <footer class="container">
-  <p>© 2026 Michele Bottino. Sito ufficiale dell’autore.</p>
-  <nav>
-    <a href="../privacy/">Privacy</a> | <a href="../cookie/">Cookie</a> | <a href="../disclaimer/">Disclaimer</a>
-  </nav>
-  <div style="margin-top: 15px; color: var(--accent);">
+  <p>
+    © 2026 Michele Bottino. Sito ufficiale dell’autore.
+    <br>
+    <a href="../privacy/">Privacy</a> |
+    <a href="../cookie/">Cookie</a> |
+    <a href="../disclaimer/">Disclaimer</a>
+  </p>
+
+  <div style="margin-top:10px;">
     Visite: <span id="v-count">...</span>
   </div>
 </footer>
 
 <script>
-  function toggleMenu() { document.getElementById('main-menu').classList.toggle('active'); }
-  
-  function toggleSub(event, btn) {
-    event.stopPropagation();
-    const parent = btn.parentElement;
-    document.querySelectorAll('.has-submenu').forEach(li => {
-      if (li !== parent) li.classList.remove('open');
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("active");
+}
+
+function toggleSub(btn) {
+  const parent = btn.parentElement;
+  parent.classList.toggle("open");
+}
+
+async function getVisits() {
+  try {
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 3000);
+
+    const res = await fetch("https://api.counterapi.dev/v1/michelebottino-autor.github.io/biografia/up", {
+      signal: controller.signal
     });
-    parent.classList.toggle('open');
-  }
 
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('open'));
-  });
-
-  // Funzione contatore (stesso namespace della Home per coerenza)
-  async function getVisits() {
-    const key = "biografia"; 
-    try {
-      const res = await fetch(`https://api.counterapi.dev/v1/michelebottino-autor.github.io/${key}/up`);
-      const d = await res.json();
-      document.getElementById('v-count').textContent = d.count || "—";
-    } catch (e) { document.getElementById('v-count').textContent = "—"; }
+    const data = await res.json();
+    document.getElementById("v-count").textContent = data.count || "—";
+  } catch {
+    document.getElementById("v-count").textContent = "—";
   }
-  getVisits();
+}
+
+getVisits();
 </script>
 
 </body>
