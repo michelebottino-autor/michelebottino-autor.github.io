@@ -16,6 +16,7 @@
     script-src 'self' 'unsafe-inline';
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: https:;
+    connect-src 'self' https://api.counterapi.dev;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -161,11 +162,13 @@
       padding-bottom: 2px;
     }
 
-    .nav a:hover {
+    .nav a:hover,
+    .submenu-toggle:hover {
       opacity: 0.82;
     }
 
-    .nav a.active {
+    .nav a.active,
+    .submenu-toggle.active {
       color: var(--accent-strong);
       border-bottom-color: var(--accent-strong);
     }
@@ -182,6 +185,7 @@
       cursor: pointer;
       padding: 0;
       font-family: Arial, Helvetica, sans-serif;
+      border-bottom: 1px solid transparent;
     }
 
     .submenu {
@@ -466,6 +470,12 @@
       color: var(--accent);
     }
 
+    .visit-counter {
+      margin-top: 12px;
+      color: var(--accent);
+      font-size: 0.92rem;
+    }
+
     @media (min-width: 681px) {
       .has-submenu {
         display: inline-block;
@@ -608,12 +618,12 @@
         </ul>
       </li>
 
-      <li class="has-submenu open">
+      <li class="has-submenu">
         <button
-          class="submenu-toggle"
+          class="submenu-toggle active"
           type="button"
           aria-haspopup="true"
-          aria-expanded="true"
+          aria-expanded="false"
           aria-controls="submenu-scritti">
           Scritti
         </button>
@@ -847,6 +857,10 @@
     <a href="../cookie/">Cookie Policy</a> |
     <a href="../disclaimer/">Disclaimer</a>
   </p>
+
+  <div class="visit-counter">
+    Visite: <span id="visit-count">...</span>
+  </div>
 </footer>
 
 <script>
@@ -932,6 +946,45 @@ document.addEventListener("keydown", function (event) {
     closeMobileMenu();
   }
 });
+
+async function updateVisitCounter() {
+  const namespace = "michelebottino-autor.github.io";
+
+  let key = window.location.pathname
+    .replace(/^\/|\/$/g, "")
+    .replace(/\//g, "-");
+
+  if (!key) key = "homepage";
+
+  const el = document.getElementById("visit-count");
+  if (!el) return;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 2500);
+
+  try {
+    const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`, {
+      method: "GET",
+      signal: controller.signal,
+      cache: "no-store"
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error("Counter API non disponibile");
+    }
+
+    const data = await response.json();
+    el.textContent = data.data ?? data.count ?? "—";
+  } catch (error) {
+    clearTimeout(timeoutId);
+    el.textContent = "—";
+    console.error("Errore contatore visite:", error);
+  }
+}
+
+updateVisitCounter();
 </script>
 
 </body>
