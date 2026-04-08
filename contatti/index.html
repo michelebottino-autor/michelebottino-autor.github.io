@@ -11,6 +11,7 @@
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/contatti/">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
@@ -18,13 +19,14 @@
   <meta property="og:description" content="Contatti e canali ufficiali di Michele Bottino.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/contatti/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/logo.png">
-  <meta property="og:image:alt" content="Logo di Michele Bottino">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Contatti – Michele Bottino">
   <meta name="twitter:description" content="Contatti e canali ufficiali di Michele Bottino.">
   <meta name="twitter:image" content="https://michelebottino-autor.github.io/images/logo.png">
 
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,9 +49,7 @@
   </script>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -57,27 +57,16 @@
       color: #e5d3a3;
       margin: 0;
       line-height: 1.7;
-      overflow-x: hidden;
     }
 
-    h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
+    h1, h2 {
+      font-family: Georgia, serif;
       margin-top: 0;
-      color: #e5d3a3;
     }
 
-    p {
-      margin-top: 0;
-      margin-bottom: 1.1em;
-      max-width: 68ch;
-    }
-
-    a {
-      color: #c2a46d;
-    }
+    a { color: #c2a46d; }
 
     .container {
-      width: 100%;
       max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
@@ -89,14 +78,9 @@
       align-items: center;
       border-bottom: 1px solid #8f7748;
       padding-bottom: 14px;
-      gap: 20px;
     }
 
-    .logo img {
-      height: 60px;
-      width: auto;
-      display: block;
-    }
+    .logo img { height: 60px; }
 
     .nav-menu {
       list-style: none;
@@ -104,52 +88,22 @@
       gap: 14px;
       margin: 0;
       padding: 0;
-      flex-wrap: wrap;
     }
 
     .nav a {
-      color: #c2a46d;
       text-decoration: none;
       font-size: 0.95rem;
     }
 
     .menu-toggle {
       display: none;
-      background: transparent;
       border: 1px solid #8f7748;
       padding: 8px;
-      cursor: pointer;
+      background: transparent;
     }
 
-    .menu-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #c2a46d;
-      margin: 4px 0;
-    }
-
-    .page.container {
+    .page {
       padding-top: 30px;
-      padding-bottom: 24px;
-    }
-
-    .page h1 {
-      font-size: 2.8rem;
-      line-height: 1.08;
-      margin-bottom: 14px;
-    }
-
-    .page h2 {
-      font-size: 1.6rem;
-      line-height: 1.2;
-      margin-top: 30px;
-      margin-bottom: 14px;
-    }
-
-    .intro {
-      font-size: 1.05rem;
-      max-width: 62ch;
     }
 
     .block {
@@ -159,75 +113,21 @@
       margin-bottom: 20px;
     }
 
-    .actions {
-      margin-top: 12px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 10px 14px;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-      background: transparent;
-      cursor: pointer;
-      font: inherit;
-    }
-
-    .secondary {
-      border: 1px solid #c2a46d;
-      color: #c2a46d;
-    }
-
-    .note {
-      color: #c2a46d;
-      font-size: 0.92rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      color: #e5d3a3;
-    }
-
-    input,
-    textarea {
+    input, textarea {
       width: 100%;
       padding: 10px;
       margin-bottom: 14px;
       background: #1f2623;
       border: 1px solid #8f7748;
       color: #e5d3a3;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
     }
 
-    input:focus,
-    textarea:focus {
-      outline: none;
-      border-color: #c2a46d;
-    }
-
-    .consent {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin: 8px 0 18px 0;
-      max-width: 68ch;
-    }
-
-    .consent input[type="checkbox"] {
-      width: auto;
-      margin: 4px 0 0 0;
-      padding: 0;
-      flex: 0 0 auto;
-    }
-
-    .consent label {
-      margin: 0;
-      line-height: 1.5;
+    .btn {
+      border: 1px solid #c2a46d;
+      color: #c2a46d;
+      background: transparent;
+      padding: 10px 14px;
+      cursor: pointer;
     }
 
     footer {
@@ -235,65 +135,16 @@
       color: #8f7748;
     }
 
-    footer a {
-      color: #c2a46d;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    footer a:visited {
-      color: #c2a46d;
-    }
-
     @media (max-width: 680px) {
-      .container {
-        padding: 16px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+      .menu-toggle { display: block; }
 
       .nav-menu {
         display: none;
         flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
       }
 
       .nav-menu.active {
         display: flex;
-      }
-
-      .nav-menu a {
-        display: block;
-        border: 1px solid #8f7748;
-        padding: 10px;
-        background: #2a312d;
-      }
-
-      .page.container {
-        padding-top: 24px;
-        padding-bottom: 18px;
-      }
-
-      .page h1 {
-        font-size: 2.2rem;
-      }
-
-      .page h2 {
-        font-size: 1.3rem;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .actions .btn {
-        width: 100%;
       }
     }
   </style>
@@ -307,7 +158,7 @@
       <a href="../"><img src="../images/logo.png" alt="Michele Bottino"></a>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu di navigazione">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
@@ -315,102 +166,82 @@
       <li><a href="../">Home</a></li>
       <li><a href="../biografia/">Autore</a></li>
       <li><a href="../opere/">Opere</a></li>
-      <li><a href="../poetica/">Poetica</a></li>
       <li><a href="../ricerca/">Ricerca</a></li>
-      <li><a href="../testi-musicali/">Testi musicali</a></li>
-      <li><a href="../media/">Media</a></li>
-      <li><a href="../contatti/">Contatti</a></li>
+      <li><a href="../articoli/">Articoli</a></li>
+      <li><a href="../contatti/" aria-current="page">Contatti</a></li>
     </ul>
   </nav>
 </header>
 
 <main class="page container">
 
-<section>
-  <h1>Contatti</h1>
+<h1>Contatti</h1>
 
-  <p class="intro">
-    Questa pagina raccoglie i riferimenti e i canali ufficiali collegati al sito di Michele Bottino.
-  </p>
+<p>
+Questa pagina raccoglie i riferimenti e i canali ufficiali collegati al sito di Michele Bottino.
+</p>
 
-  <p>
-    Per aggiornamenti e contenuti pubblici è possibile seguire anche la pagina Facebook ufficiale.
-  </p>
-</section>
+<h2>Canali ufficiali</h2>
 
-<section>
-  <h2>Canali ufficiali</h2>
+<div class="block">
+  <p>Pagina Facebook ufficiale per aggiornamenti e contenuti pubblici.</p>
 
-  <div class="block">
-    <p>
-      La pagina Facebook ufficiale costituisce il canale di aggiornamento dedicato
-      a pubblicazioni, articoli, note e contenuti condivisi con continuità.
-    </p>
+  <a href="https://www.facebook.com/michelebottinoautore"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="btn">
+     Facebook ufficiale
+  </a>
+</div>
 
-    <div class="actions">
-      <a href="https://www.facebook.com/michelebottinoautore"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="btn secondary">
-         Facebook ufficiale
-      </a>
+<h2>Contatto diretto</h2>
+
+<div class="block">
+  <form action="https://formsubmit.co/michelebottino.adc@gmail.com" method="POST">
+
+    <!-- sicurezza -->
+    <input type="hidden" name="_subject" value="Nuovo messaggio dal sito">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="messaggio">Messaggio</label>
+    <textarea id="messaggio" name="messaggio" rows="6" required></textarea>
+
+    <!-- GDPR FIX -->
+    <div>
+      <input type="checkbox" id="consenso-privacy" name="consenso" required>
+      <label for="consenso-privacy">
+        Accetto la <a href="../privacy/" target="_blank">Privacy Policy</a>
+      </label>
     </div>
-  </div>
-</section>
 
-<section>
-  <h2>Contatto diretto</h2>
+    <button type="submit" class="btn">Invia messaggio</button>
+  </form>
+</div>
 
-  <div class="block">
-    <form action="https://formsubmit.co/michelebottino.adc@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Nuovo messaggio dal sito Michele Bottino">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none">
+<h2>Nota</h2>
 
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="messaggio">Messaggio</label>
-      <textarea id="messaggio" name="messaggio" rows="6" required></textarea>
-
-      <div class="consent">
-        <input type="checkbox" id="consenso-privacy" required>
-        <label for="consenso-privacy">
-          Dichiaro di aver letto la <a href="../privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
-        </label>
-      </div>
-
-      <button type="submit" class="btn secondary">Invia messaggio</button>
-    </form>
-
-    <p class="note" style="margin-top: 14px;">
-      Il modulo inoltra il messaggio al canale ufficiale predisposto per i contatti del sito.
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Nota</h2>
-
-  <div class="block">
-    <p>
-      Il sito ufficiale costituisce il riferimento principale per il profilo autoriale,
-      il catalogo delle opere e i principali ambiti di scrittura di Michele Bottino.
-    </p>
-  </div>
-</section>
+<div class="block">
+  <p>
+    Il sito ufficiale rappresenta il riferimento principale per opere,
+    ricerca e produzione autoriale.
+  </p>
+</div>
 
 </main>
 
 <footer class="container">
   <p>
-    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
+    © 2026 Michele Bottino
     <br>
-    <a href="../privacy/">Privacy Policy</a> |
-    <a href="../cookie/">Cookie Policy</a> |
+    <a href="../privacy/">Privacy</a> |
+    <a href="../cookie/">Cookie</a> |
     <a href="../disclaimer/">Disclaimer</a>
   </p>
 </footer>
