@@ -11,6 +11,20 @@
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/articoli/angela-celentano/">
 
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    connect-src 'self' https://api.counterapi.dev;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  ">
+
   <meta property="og:type" content="article">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
@@ -429,6 +443,12 @@
       color: var(--accent);
     }
 
+    .visit-counter {
+      margin-top: 12px;
+      color: var(--accent);
+      font-size: 0.92rem;
+    }
+
     @media (max-width: 860px) {
       .article-meta-grid {
         grid-template-columns: 1fr;
@@ -693,12 +713,55 @@
     <a href="../../cookie/">Cookie Policy</a> |
     <a href="../../disclaimer/">Disclaimer</a>
   </p>
+
+  <div class="visit-counter">
+    Visite: <span id="visit-count">...</span>
+  </div>
 </footer>
 
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
+
+async function updateVisitCounter() {
+  const namespace = "michelebottino-autor.github.io";
+
+  let key = window.location.pathname
+    .replace(/^\/|\/$/g, "")
+    .replace(/\//g, "-");
+
+  if (!key) key = "homepage";
+
+  const el = document.getElementById("visit-count");
+  if (!el) return;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 2500);
+
+  try {
+    const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`, {
+      method: "GET",
+      signal: controller.signal,
+      cache: "no-store"
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error("Counter API non disponibile");
+    }
+
+    const data = await response.json();
+    el.textContent = data.data ?? data.count ?? "—";
+  } catch (error) {
+    clearTimeout(timeoutId);
+    el.textContent = "—";
+    console.error("Errore contatore visite:", error);
+  }
+}
+
+updateVisitCounter();
 </script>
 
 </body>
