@@ -11,6 +11,20 @@
   <meta name="theme-color" content="#1f2623">
   <link rel="canonical" href="https://michelebottino-autor.github.io/strutture-irrisolto/cristina-golinucci/">
 
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    connect-src 'self' https://api.counterapi.dev;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  ">
+
   <meta property="og:type" content="article">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Michele Bottino">
@@ -268,7 +282,8 @@
 
     .article-meta,
     .article-tags,
-    .article-note {
+    .article-note,
+    .article-update {
       padding: 16px 18px;
       border: 1px solid var(--line);
       border-radius: 12px;
@@ -276,20 +291,23 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .article-note {
+    .article-note,
+    .article-update {
       border-left: 4px solid var(--accent);
     }
 
     .article-meta p,
     .article-tags p,
-    .article-note p {
+    .article-note p,
+    .article-update p {
       margin-bottom: 8px;
       color: var(--text-main);
     }
 
     .article-meta p:last-child,
     .article-tags p:last-child,
-    .article-note p:last-child {
+    .article-note p:last-child,
+    .article-update p:last-child {
       margin-bottom: 0;
     }
 
@@ -384,14 +402,6 @@
       margin-bottom: 10px;
     }
 
-    .related-link.pending {
-      color: var(--text-soft);
-      border-bottom-color: var(--line);
-      cursor: default;
-      text-decoration: none;
-      pointer-events: none;
-    }
-
     .back-links {
       display: flex;
       flex-wrap: wrap;
@@ -466,6 +476,12 @@
 
     footer a:visited {
       color: var(--accent);
+    }
+
+    .visit-counter {
+      margin-top: 12px;
+      color: var(--accent);
+      font-size: 0.92rem;
     }
 
     @media (max-width: 860px) {
@@ -604,6 +620,10 @@
           <p><strong>Tag:</strong> Cristina Golinucci, analisi strutturale, vuoto osservativo originario, scomparsa, Bottino Method</p>
         </div>
 
+        <div class="article-update">
+          <p><strong>Aggiornamento sul caso documentale:</strong> L’ultimo passaggio pubblico rilevante resta l’archiviazione disposta nel settembre 2024, con possibilità di riapertura solo in presenza di elementi nuovi. Il quadro successivo non ha prodotto, allo stato, una riattivazione procedimentale stabile.</p>
+        </div>
+
         <div class="article-note">
           <p><strong>Nota metodologica:</strong> Questa pagina non ricostruisce il caso in senso cronachistico. Osserva la forma con cui il sistema perde continuità nel punto iniziale dell’osservazione e non riesce più a trasformare gli elementi successivi in una concatenazione probatoria stabile.</p>
         </div>
@@ -712,12 +732,55 @@
     <a href="../../cookie/">Cookie Policy</a> |
     <a href="../../disclaimer/">Disclaimer</a>
   </p>
+
+  <div class="visit-counter">
+    Visite: <span id="visit-count">...</span>
+  </div>
 </footer>
 
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
+
+async function updateVisitCounter() {
+  const namespace = "michelebottino-autor.github.io";
+
+  let key = window.location.pathname
+    .replace(/^\/|\/$/g, "")
+    .replace(/\//g, "-");
+
+  if (!key) key = "homepage";
+
+  const el = document.getElementById("visit-count");
+  if (!el) return;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 2500);
+
+  try {
+    const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`, {
+      method: "GET",
+      signal: controller.signal,
+      cache: "no-store"
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error("Counter API non disponibile");
+    }
+
+    const data = await response.json();
+    el.textContent = data.data ?? data.count ?? "—";
+  } catch (error) {
+    clearTimeout(timeoutId);
+    el.textContent = "—";
+    console.error("Errore contatore visite:", error);
+  }
+}
+
+updateVisitCounter();
 </script>
 
 </body>
