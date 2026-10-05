@@ -24,3 +24,22 @@
  .materials{grid-template-columns:1fr}.materials div{min-height:120px}
  .certificate{padding:30px 14px}.certificate h2{font-size:25px}.certificate h3{font-size:29px;margin:24px 0}
 }
+
+/* Phone hard override v3 — tuned from real-device screenshots */
+@media screen and (max-width:760px){
+ header{height:58px!important;padding:0 14px!important}
+ header nav{display:none!important}
+ .brand{font-size:12px!important;letter-spacing:1.4px!important}.brand small{font-size:6px!important}
+ .login{margin-left:auto!important;font-size:10px!important;padding:9px 10px!important}
+ .hero{display:block!important;min-height:auto!important;padding:34px 20px 30px!important}
+ .hero>div:first-child{width:100%!important}.hero h1{font-size:36px!important;line-height:1!important}.hero .lead{font-size:18px!important}.hero p{font-size:13px!important}
+ .visual{display:none!important}.gold{width:100%!important;max-width:320px!important}
+ .facts{grid-template-columns:1fr 1fr!important;padding:6px 12px!important}
+ .facts b{font-size:20px!important;padding:15px 6px!important;border-right:0!important}.facts b:nth-child(odd){border-right:1px solid #31485b!important}
+ .panelhead{display:block!important}.progressbox{min-width:0!important;width:100%!important;margin-top:20px!important}.progressbox strong{display:block!important;font-size:24px!important}.bar{width:100%!important}
+ .units{grid-template-columns:1fr!important;gap:9px!important}.unit{min-height:0!important;padding:16px 18px!important}.unit .num{font-size:24px!important}.unit h3{font-size:17px!important;margin:6px 0!important}.unit small{margin:8px 0!important}
+ .lesson{display:block!important;grid-template-columns:1fr!important}.lesson aside{display:none!important}.lesson article{padding:24px 18px!important}
+ .callouts{grid-template-columns:1fr!important}
+ .materials{grid-template-columns:1fr!important}.materials div{min-height:105px!important}
+ .certificate{padding:28px 14px!important}.certificate h2{font-size:24px!important}.certificate h3{font-size:28px!important}
+}
