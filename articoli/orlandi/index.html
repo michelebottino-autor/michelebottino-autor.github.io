@@ -64,6 +64,7 @@
       "analisi documentaria"
     ],
     "inLanguage": "it-IT",
+    "dateModified": "2026-10-05T13:00:00+02:00",
     "isPartOf": {
       "@type": "CreativeWorkSeries",
       "@id": "https://michelebottino-autor.github.io/articoli/#series",
@@ -384,21 +385,32 @@
     }
 
     .article-share a,
+    .article-share button,
     .author-box a {
       display: inline-block;
-      margin-right: 14px;
+      margin-right: 10px;
       margin-bottom: 8px;
       color: var(--accent);
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
       text-decoration: none;
-      padding-bottom: 2px;
+      padding: 5px 0;
+      border: 0;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s ease, opacity 0.2s ease;
     }
 
     .article-share a:hover,
+    .article-share button:hover,
     .author-box a:hover {
       border-color: var(--accent);
       opacity: 0.85;
+    }
+
+    #share-status {
+      color: var(--text-soft);
+      font-size: 0.92rem;
     }
 
     .back-links {
@@ -646,8 +658,7 @@
         </button>
         <ul class="submenu" id="submenu-scritti">
           <li><a href="../../articoli/" class="active">Articoli</a></li>
-          <li><a href="../../indagini/">Indagini</a></li>
-        </ul>
+</ul>
       </li>
 
       <li class="has-submenu">
@@ -697,7 +708,7 @@
         <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
         <p><strong>Stato del caso:</strong> Aperto</p>
         <p><strong>Livello di certezza:</strong> Molto basso sul piano ricostruttivo</p>
-        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+        <p><strong>Metodo applicato:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
       </div>
 
       <div class="article-stack">
@@ -706,11 +717,15 @@
         </div>
 
         <div class="article-update-box">
-          <p><strong>Aggiornamento:</strong> Tra il 2025 e il 2026 il caso ha registrato nuovi sviluppi su piani distinti: lavori della Commissione parlamentare, attività investigative e nuove acquisizioni testimoniali. Tra questi, l’emersione di un appunto inedito collegato a un cineforum, l’iscrizione di Laura Casagrande nel registro degli indagati per false informazioni e l’audizione di Dolores Brugnoli sul tema della BMW più volte richiamata nella fase iniziale della scomparsa. Tali elementi mantengono il caso in movimento, ma non producono ancora una ricostruzione unitaria né una convergenza probatoria definitiva.</p>
+          <p><strong>Aggiornamento al 5 ottobre 2026:</strong> Nel 2026 la nuova inchiesta della Procura di Roma sulla scomparsa di Emanuela Orlandi ha prodotto ulteriori attività investigative. Marco Fassoni Accetti risulta indagato nell'ambito degli accertamenti sulle scomparse di Emanuela Orlandi e Mirella Gregori; nelle indagini sono emersi anche i nomi di Laura Casagrande e, nel settembre 2026, di Gabriella Boggiani. Boggiani ha riferito davanti alla Commissione parlamentare di avere effettuato nel 1983, su richiesta di Accetti, una telefonata nella quale si affermava di sapere dove si trovasse Emanuela, sostenendo di avere creduto che si trattasse di uno scherzo. Parallelamente il RIS dei Carabinieri ha svolto nuovi accertamenti genetici su un flauto collegato da Accetti alla vicenda. I primi esami non avrebbero prodotto un profilo genetico utile; il 2 ottobre sono stati disposti ulteriori accertamenti su una componente in sughero dello strumento, precedentemente non analizzata. Non è dimostrato che il flauto appartenesse a Emanuela: in passato il suo maestro di musica aveva inoltre segnalato una discordanza sulla marca dello strumento. Le persone citate sono coinvolte a diverso titolo negli accertamenti e ciò non costituisce prova di responsabilità; allo stato, la dinamica della scomparsa resta irrisolta.</p>
         </div>
 
         <div class="article-warning">
-          <p><strong>Nota metodologica:</strong> Caso ad alta dispersione narrativa e assenza di centro probatorio stabile. Le piste concorrenti non devono essere fuse in una falsa sintesi, ma mantenute separate in base al loro statuto informativo.</p>
+          <p><strong>Applicazione Bottino Method · MRN v1.2:</strong> le piste, gli atti investigativi, le dichiarazioni e gli oggetti sottoposti ad accertamento vengono mantenuti separati secondo provenienza e statuto informativo.</p>
+          <p><strong>CERTO:</strong> Emanuela Orlandi è scomparsa a Roma il 22 giugno 1983; nel 2026 risultano nuove attività della Procura di Roma e accertamenti RIS su un flauto collegato al caso da Marco Fassoni Accetti.</p>
+          <p><strong>RIPORTATO:</strong> l’asserita appartenenza del flauto a Emanuela deriva dal collegamento proposto da Accetti e non costituisce, allo stato, un’identificazione accertata dello strumento.</p>
+          <p><strong>LIMITE:</strong> gli accertamenti genetici e le nuove dichiarazioni non hanno stabilito pubblicamente una dinamica della scomparsa né una responsabilità individuale.</p>
+          <p><strong>ROTTURA MRN:</strong> la presenza di un oggetto fisico analizzabile aumenta la verificabilità di una specifica pista, ma non rende vera la narrazione da cui l’oggetto proviene. Entità materiale, provenienza dichiarata e interpretazione investigativa restano tre livelli distinti.</p>
         </div>
       </div>
     </div>
@@ -738,16 +753,24 @@
     </div>
   </div>
 
-  <div class="article-share">
+  <div class="article-share" aria-label="Condivisione articolo">
     <p><strong>Condividi l’articolo:</strong></p>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/orlandi/" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/orlandi/" target="_blank" rel="noopener noreferrer">X</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/orlandi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <button type="button" id="native-share">Condividi</button>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Forlandi%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://wa.me/?text=Il%20caso%20Emanuela%20Orlandi%20https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Forlandi%2F" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="https://t.me/share/url?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Forlandi%2F&amp;text=Il%20caso%20Emanuela%20Orlandi" target="_blank" rel="noopener noreferrer">Telegram</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Forlandi%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="mailto:?subject=Il%20caso%20Emanuela%20Orlandi&amp;body=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Forlandi%2F">E-mail</a>
+    <button type="button" id="copy-link">Copia link</button>
+    <span id="share-status" role="status" aria-live="polite"></span>
   </div>
 
   <div class="author-box">
-    <p><strong>Canali autore:</strong></p>
-    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+    <p><strong>Analisi:</strong> <a href="../../biografia/">Michele Bottino</a></p>
+    <p><strong>Ultimo aggiornamento:</strong> 5 ottobre 2026</p>
+    <p><strong>Metodo:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
+    <p><strong>Principio:</strong> separazione tra CERTO, RIPORTATO e LIMITE; le divergenze restano distinte e verificabili.</p>
+    <p><strong>Canali autore:</strong> <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a></p>
   </div>
 
   <div class="back-links">
@@ -894,6 +917,34 @@ async function updateVisitCounter() {
 }
 
 updateVisitCounter();
+
+const canonicalUrl = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
+const shareTitle = document.title;
+const nativeShareButton = document.getElementById("native-share");
+const copyLinkButton = document.getElementById("copy-link");
+const shareStatus = document.getElementById("share-status");
+
+if (nativeShareButton) {
+  if (!navigator.share) nativeShareButton.hidden = true;
+  nativeShareButton.addEventListener("click", async () => {
+    try {
+      await navigator.share({ title: shareTitle, url: canonicalUrl });
+    } catch (error) {
+      if (error.name !== "AbortError") console.error("Condivisione non disponibile:", error);
+    }
+  });
+}
+
+if (copyLinkButton) {
+  copyLinkButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(canonicalUrl);
+      if (shareStatus) shareStatus.textContent = "Link copiato.";
+    } catch (error) {
+      if (shareStatus) shareStatus.textContent = "Copia non disponibile.";
+    }
+  });
+}
 </script>
 
 </body>
