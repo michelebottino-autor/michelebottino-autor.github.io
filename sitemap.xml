@@ -1,119 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- ROOT -->
-  <url>
-    <loc>https://michelebottino-autor.github.io/</loc>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- PAGINE PRINCIPALI -->
-  <url>
-    <loc>https://michelebottino-autor.github.io/biografia/</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/opere/</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/poetica/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/ricerca/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/testi-musicali/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/media/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/contatti/</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- SEZIONE ARTICOLI -->
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ARTICOLI -->
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/avetrana/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/mostro-di-firenze/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/garlasco/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/cogne/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/yara/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/denise/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/erba/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/articoli/orlandi/</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-
-<url>
-  <loc>https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/</loc>
-  <priority>0.8</priority>
-</url>
-    <loc>https://michelebottino-autor.github.io/articoli/contessa-carini/</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- LEGALI -->
-  <url>
-    <loc>https://michelebottino-autor.github.io/privacy/</loc>
-    <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/cookie/</loc>
-    <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://michelebottino-autor.github.io/disclaimer/</loc>
-    <priority>0.4</priority>
-  </url>
-
+  <url><loc>https://michelebottino-autor.github.io/</loc><priority>1.0</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/biografia/</loc><priority>0.9</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/opere/</loc><priority>0.9</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/poetica/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/ricerca/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/metodo/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/testi-musicali/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/media/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/contatti/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/</loc><priority>0.9</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/angela-celentano/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/avetrana/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/cogne/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/contessa-carini/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/cristina-golinucci/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/denise/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/erba/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/garlasco/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/montagnareale/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/mostro-di-firenze/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/orlandi/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/yara/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/strutture-irrisolto/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/strutture-irrisolto/angela-celentano/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/strutture-irrisolto/cristina-golinucci/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/strutture-irrisolto/denise-pipitone/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/strutture-irrisolto/jack-lo-squartatore/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/strutture-irrisolto/percorsi/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/privacy/</loc><priority>0.4</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/cookie/</loc><priority>0.4</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/disclaimer/</loc><priority>0.4</priority></url>
 </urlset>
