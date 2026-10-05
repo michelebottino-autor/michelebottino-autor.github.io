@@ -581,7 +581,21 @@
         width: 100%;
       }
     }
-  </style>
+      .article-share button {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+      padding: 5px 0;
+      border: 0;
+      border-bottom: 1px solid transparent;
+    }
+    .article-share button:hover { border-color: var(--accent); opacity: 0.85; }
+    .share-status { color: var(--text-soft); font-size: 0.92rem; }
+</style>
 </head>
 
 <body>
@@ -647,8 +661,7 @@
         </button>
         <ul class="submenu" id="submenu-scritti">
           <li><a href="../../articoli/" class="active">Articoli</a></li>
-          <li><a href="../../indagini/">Indagini</a></li>
-        </ul>
+</ul>
       </li>
 
       <li class="has-submenu">
@@ -697,8 +710,8 @@
       <div class="article-meta">
         <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
         <p><strong>Stato del caso:</strong> Chiuso sul piano giudiziario</p>
-        <p><strong>Livello di certezza:</strong> Alto sul piano del giudicato, disomogeneo sul piano narrativo</p>
-        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+        <p><strong>Stato dell’evidenza:</strong> Giudicato definitivo; ricostruzione processuale stabilizzata, a fronte di dichiarazioni successive che non ne hanno modificato gli effetti</p>
+        <p><strong>Metodo applicato:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
       </div>
 
       <div class="article-stack">
@@ -707,11 +720,12 @@
         </div>
 
         <div class="article-update-box">
-          <p><strong>Aggiornamento:</strong> Il quadro giudiziario del caso resta fermo. Gli sviluppi recenti riguardano soprattutto la riattivazione pubblica e culturale della vicenda: nell’ottobre 2024 il tribunale di Taranto aveva sospeso cautelarmente la serie sul caso per l’uso del nome “Avetrana” nel titolo, mentre nel marzo 2025 il titolo originale è stato ripristinato. Nell’agosto 2025 il quindicesimo anniversario ha riportato il caso al centro dell’attenzione pubblica, senza modificare il giudicato definitivo.</p>
+          <p><strong>Aggiornamento al 5 ottobre 2026:</strong> Il giudicato resta invariato: la Cassazione ha reso definitive nel 2017 le condanne all'ergastolo di Sabrina Misseri e Cosima Serrano. Nel novembre 2024 la Corte europea dei diritti dell'uomo ha dichiarato inammissibile il loro ricorso. Michele Misseri è libero dal febbraio 2024 dopo avere espiato la pena inflittagli per soppressione del cadavere e inquinamento delle prove e continua pubblicamente ad attribuirsi l'omicidio. Nel 2025 i difensori delle due condannate hanno annunciato iniziative orientate a una possibile revisione, compresa la richiesta di nuovi accertamenti; tali iniziative non hanno modificato il giudicato.</p>
         </div>
 
         <div class="article-warning">
-          <p><strong>Nota metodologica:</strong> Analisi documentaria costruita secondo il Bottino Method, fondata sulla separazione dei livelli informativi e sul controllo della struttura narrativa.</p>
+          <p><strong>Come leggo questo caso:</strong> tengo separato ciò che le sentenze definitive hanno stabilito dalle versioni contraddittorie emerse nel tempo. Le dichiarazioni successive non riaprono automaticamente il processo e non acquistano maggiore forza soltanto perché riportano il caso nell’attenzione pubblica.</p>
+          <p>Anche i singoli indizi vanno mantenuti nel loro contesto: un dato tecnico, una telefonata o una dichiarazione possono concorrere alla ricostruzione giudiziaria senza diventare, isolatamente, la prova decisiva dell’intero caso.</p>
         </div>
       </div>
     </div>
@@ -727,30 +741,37 @@
 
       Eppure, alla fine, il processo arriva a una conclusione definitiva, confermata dalla Corte di Cassazione nel 2017. Ma quella conclusione non nasce da un unico racconto chiaro. Nasce da un lavoro molto più complesso.
 
-      Il punto fermo è ciò che, nel quadro finale stabilito dalla giustizia, non è più in discussione. Sarah Scazzi muore per strangolamento. Non è un’ipotesi, ma un dato medico-legale consolidato: asfissia meccanica da costrizione. Anche il luogo è definito: l’omicidio avviene dentro la casa dei Misseri, non nel garage. Questo dettaglio è decisivo, perché separa due momenti diversi: l’uccisione e ciò che accade dopo. La fascia oraria è altrettanto chiara. La morte viene collocata tra le 14:00 e le 14:25. È questa la cerniera temporale su cui si regge tutta la ricostruzione. Infine, il processo si chiude con la conferma delle responsabilità di Sabrina Misseri e Cosima Serrano, mentre Michele Misseri resta condannato per la soppressione del cadavere. Questi sono i punti solidi. Tutto il resto, nel caso Avetrana, è molto meno lineare.
+      Il primo livello da mantenere distinto è quello stabilizzato dalle sentenze. Sarah Scazzi morì per asfissia meccanica da costrizione; la ricostruzione accolta nel giudicato colloca l’omicidio nell’abitazione dei Misseri e attribuisce la responsabilità a Sabrina Misseri e Cosima Serrano. Michele Misseri è stato invece condannato per la fase successiva di soppressione del cadavere. Questi elementi appartengono al quadro giudiziario definitivo: descriverli come tali non significa sostenere che ogni passaggio della dinamica sia ricostruito con identico grado di dettaglio.
 
-      Se c’è un elemento che ha segnato il caso, è la sequenza delle dichiarazioni di Michele Misseri. All’inizio si accusa: dice di aver ucciso la ragazza nel garage. Poi cambia versione: indica la figlia Sabrina Misseri come responsabile. Poi ancora: modifica i dettagli, riorganizza i ruoli. Infine, torna ad accusare sé stesso. Non si tratta di aggiustamenti. Le versioni si contraddicono tra loro. Non possono essere tutte vere, e nemmeno essere ricomposte in un unico racconto coerente. È qui che il caso prende una direzione particolare: la confessione, che in molti processi rappresenta il punto centrale, qui perde il suo ruolo dominante. Non viene ignorata. Ma viene smontata, analizzata pezzo per pezzo, e utilizzata solo dove è compatibile con gli altri elementi.
+      Un secondo livello riguarda le dichiarazioni di Michele Misseri. Nel corso dell’indagine ha fornito versioni incompatibili tra loro, passando dall’autoaccusa all’indicazione di altri soggetti e tornando successivamente ad attribuirsi l’omicidio. Proprio questa instabilità impedisce di trattare una singola versione come chiave autonoma dell’intero caso. Le sentenze hanno valutato le sue dichiarazioni insieme agli altri elementi disponibili, distinguendo ciò che ritenevano riscontrato da ciò che non consideravano attendibile. Le autoaccuse successive al giudicato restano quindi dichiarazioni di Michele Misseri: per modificare una decisione definitiva occorrono gli strumenti e i presupposti previsti dall’ordinamento.
 
-      Un altro punto cruciale riguarda il telefono di Sarah. Alle 14:42:48, durante una chiamata, il cellulare aggancia una cella telefonica associata alla zona del garage. Per molto tempo questo dato è stato considerato un possibile elemento decisivo. Se il telefono è nel garage, allora forse l’omicidio è avvenuto lì. Ma la questione non è così semplice. Le analisi tecniche mostrano che quella stessa cella poteva essere agganciata anche dall’interno dell’abitazione. Il dato resta valido, ma perde la sua apparente precisione. È un passaggio chiave: un elemento reale non è automaticamente una prova decisiva. Dipende da come viene interpretato e da come si inserisce nel resto del quadro. Nel processo, questo dato non viene ignorato. Viene ridimensionato.
+      Un altro punto cruciale riguarda il telefono di Sarah. Alle 14:42:48, durante la chiamata effettuata da Sabrina, il cellulare della ragazza agganciò la cella 60241. Nella ricostruzione accolta dai giudici questo dato fu collegato al garage di casa Misseri; nel procedimento venne però discussa anche la possibilità tecnica che la stessa cella potesse essere agganciata dall’interno dell’abitazione. Il dato telefonico, quindi, va conservato insieme al modo in cui è stato valutato e alle contestazioni tecniche emerse: non consente, isolatamente, di ricostruire l’intera dinamica.
 
-      La cronologia del 26 agosto 2010 è solo parzialmente ricostruibile. Ci sono punti fermi: la morte tra le 14:00 e le 14:25; la chiamata delle 14:42; una telefonata alle 15:08 che suggerisce una fase successiva di gestione del corpo. Ma tra questi momenti esistono zone meno definite. Non tutto è ricostruito minuto per minuto. Questo non impedisce al processo di arrivare a una conclusione. Ma mostra chiaramente che la verità giudiziaria non è sempre una sequenza perfettamente continua.
+      Anche la cronologia richiede la stessa precisione. Alle 15:08:26 Michele Misseri telefonò al fratello Carmine da un'area coperta dalla cella che comprendeva la zona del pozzo-cisterna dove il corpo sarebbe stato ritrovato. Il collegamento di quella chiamata con la fase di occultamento appartiene al ragionamento probatorio sviluppato negli atti, non al solo dato telefonico. La sequenza temporale contiene quindi punti documentati e inferenze giudiziarie che devono restare distinguibili, pur facendo parte della medesima ricostruzione definitiva.
 
-      Il punto più interessante del caso Avetrana è proprio questo: la verità finale non nasce da un elemento decisivo. Non è la confessione. Non è un singolo indizio. Non è un dato tecnico isolato. È il risultato di un lavoro di selezione. Le dichiarazioni vengono analizzate e scartate dove non reggono. I dati tecnici vengono verificati e ridimensionati. La cronologia viene stabilizzata solo nei suoi punti essenziali. Alla fine resta un nucleo solido, costruito eliminando ciò che non è compatibile.
+      La ricostruzione definitiva non dipende quindi da una confessione o da un singolo dato tecnico considerato isolatamente. È il risultato della valutazione giudiziaria di dichiarazioni, riscontri, cronologia e compatibilità reciproca degli elementi acquisiti. Alcuni passaggi restano più dettagliati di altri, ma questa incompletezza descrittiva non equivale, da sola, all’assenza di un accertamento definitivo delle responsabilità.
 
-      Il delitto di Avetrana mostra qualcosa che raramente emerge con tanta chiarezza: la verità giudiziaria non è sempre una storia lineare. È spesso un sistema complesso, fatto di elementi che non combaciano subito. In questo caso, la decisione finale non coincide con una versione unica dei fatti. È piuttosto il risultato di un montaggio: una ricostruzione ottenuta scegliendo cosa tenere e cosa scartare. E proprio per questo, più che un caso di confessione o di indizio decisivo, Avetrana resta un caso di costruzione.
+      Nella mia lettura, Avetrana mostra soprattutto perché occorre distinguere tra stabilità del giudicato e completezza narrativa. Il processo ha prodotto una decisione definitiva; ciò non obbliga a presentare ogni minuto della vicenda come perfettamente ricostruito, né autorizza a trattare ogni versione successiva come equivalente alle conclusioni raggiunte nelle sentenze. Il compito dell’analisi è conservare entrambe le informazioni: ciò che è stato giudiziariamente stabilito e ciò che, pur dentro quel quadro, rimane meno definito.
     </div>
   </div>
 
-  <div class="article-share">
-    <p><strong>Condividi l’articolo:</strong></p>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/avetrana/" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/avetrana/" target="_blank" rel="noopener noreferrer">X</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/avetrana/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <div class="article-share" aria-label="Condivisione articolo">
+    <p><strong>Condividi l'articolo:</strong></p>
+    <button type="button" class="native-share">Condividi</button>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Favetrana%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://wa.me/?text=Il%20delitto%20di%20Avetrana%20https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Favetrana%2F" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="https://t.me/share/url?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Favetrana%2F&amp;text=Il%20delitto%20di%20Avetrana" target="_blank" rel="noopener noreferrer">Telegram</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Favetrana%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="mailto:?subject=Il%20delitto%20di%20Avetrana&amp;body=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Favetrana%2F">E-mail</a>
+    <button type="button" class="copy-link">Copia link</button>
+    <span class="share-status" role="status" aria-live="polite"></span>
   </div>
 
   <div class="author-box">
-    <p><strong>Canali autore:</strong></p>
-    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+    <p><strong>Analisi:</strong> <a href="../../biografia/">Michele Bottino</a></p>
+    <p><strong>Metodo:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
+    <p><strong>Principio:</strong> separazione tra CERTO, RIPORTATO e LIMITE; le divergenze restano distinte e verificabili.</p>
+    <p><strong>Canali autore:</strong> <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a></p>
   </div>
 
   <div class="back-links">
@@ -897,6 +918,42 @@ async function updateVisitCounter() {
 }
 
 updateVisitCounter();
+
+const nativeShareButton = document.querySelector(".native-share");
+const copyLinkButton = document.querySelector(".copy-link");
+const shareStatus = document.querySelector(".share-status");
+
+if (nativeShareButton) {
+  nativeShareButton.addEventListener("click", async () => {
+    if (!navigator.share) {
+      if (shareStatus) shareStatus.textContent = "Condivisione diretta non disponibile su questo dispositivo.";
+      return;
+    }
+
+    try {
+      await navigator.share({
+        title: document.title,
+        url: window.location.href
+      });
+      if (shareStatus) shareStatus.textContent = "";
+    } catch (error) {
+      if (error.name !== "AbortError" && shareStatus) {
+        shareStatus.textContent = "Condivisione non riuscita.";
+      }
+    }
+  });
+}
+
+if (copyLinkButton) {
+  copyLinkButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      if (shareStatus) shareStatus.textContent = "Link copiato.";
+    } catch (error) {
+      if (shareStatus) shareStatus.textContent = "Impossibile copiare automaticamente il link.";
+    }
+  });
+}
 </script>
 
 </body>
