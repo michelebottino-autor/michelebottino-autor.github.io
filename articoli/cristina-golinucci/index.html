@@ -64,6 +64,7 @@
       "analisi documentaria"
     ],
     "inLanguage": "it-IT",
+    "dateModified": "2026-10-05T13:00:00+02:00",
     "isPartOf": {
       "@type": "CreativeWorkSeries",
       "@id": "https://michelebottino-autor.github.io/articoli/#series",
@@ -620,7 +621,21 @@
         width: 100%;
       }
     }
-  </style>
+      .article-share button {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+      padding: 5px 0;
+      border: 0;
+      border-bottom: 1px solid transparent;
+    }
+    .article-share button:hover { border-color: var(--accent); opacity: 0.85; }
+    .share-status { color: var(--text-soft); font-size: 0.92rem; }
+</style>
 </head>
 
 <body>
@@ -686,8 +701,7 @@
         </button>
         <ul class="submenu" id="submenu-scritti">
           <li><a href="../../articoli/" class="active" aria-current="page">Articoli</a></li>
-          <li><a href="../../indagini/">Indagini</a></li>
-        </ul>
+</ul>
       </li>
 
       <li class="has-submenu">
@@ -736,8 +750,8 @@
       <div class="article-meta">
         <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
         <p><strong>Stato del caso:</strong> Archiviato, ma riapribile in presenza di elementi nuovi</p>
-        <p><strong>Livello di certezza:</strong> Alto sull’evento iniziale, basso sulla concatenazione probatoria</p>
-        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+        <p><strong>Stato dell’evidenza:</strong> Scomparsa irrisolta; fascicolo contro ignoti archiviato nel 2024; identificazione Boke–Quist confermata nel 2025 senza accertamento di responsabilità nel caso Golinucci</p>
+        <p><strong>Metodo applicato:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
       </div>
 
       <div class="article-stack">
@@ -746,11 +760,12 @@
         </div>
 
         <div class="article-update-box">
-          <p><strong>Aggiornamento:</strong> Il procedimento non ha prodotto una soluzione definitiva. Il caso resta segnato da archiviazioni successive, ma permane la possibilità teorica di riapertura qualora emergano elementi nuovi, rilevanti e concretamente utilizzabili sul piano investigativo o probatorio.</p>
+          <p><strong>Aggiornamento al 5 ottobre 2026:</strong> Dopo l'archiviazione del fascicolo per omicidio contro ignoti del settembre 2024, nel marzo 2025 il RIS dei Carabinieri ha confermato geneticamente che Emanuel Boke e Kwame Quist sono la stessa persona, identità già collegata attraverso le impronte digitali. Il risultato identifica Boke con la persona ricercata in Francia, ma non dimostra un suo coinvolgimento nella scomparsa di Cristina Golinucci. Nel febbraio 2026 il caso è stato oggetto di un'interrogazione parlamentare al Ministro della Giustizia, che ha richiamato gli accertamenti svolti e l'assenza di un'imputazione formalizzata verso soggetti determinati.</p>
         </div>
 
         <div class="article-warning">
-          <p><strong>Nota metodologica:</strong> Analisi documentaria costruita secondo il Bottino Method, fondata sulla separazione dei livelli informativi e sul controllo della struttura narrativa.</p>
+          <p><strong>Come leggo questo aggiornamento:</strong> il riscontro genetico del 2025 risolve una questione di identità: Emanuel Boke e Kwame Quist risultano la stessa persona, dopo il precedente collegamento attraverso le impronte digitali. Non risolve però la questione centrale del caso Golinucci, perché quel DNA non collega Boke a Cristina né dimostra un suo coinvolgimento nella scomparsa.</p>
+          <p>Anche l’interrogazione parlamentare del febbraio 2026 va collocata nel proprio livello: documenta l’attenzione istituzionale sul caso e richiama gli accertamenti compiuti, ma non equivale a una riapertura dell’indagine o a un nuovo accertamento di responsabilità. Identità personale, precedenti e dichiarazioni attribuite a Boke restano quindi distinti dalla prova eventualmente necessaria per collegarlo alla sorte di Cristina.</p>
         </div>
       </div>
     </div>
@@ -810,92 +825,43 @@
 
       <p>Molti anni dopo.</p>
 
-      <p>Nel 2024, ad esempio, riemerge una testimonianza che modifica la percezione del luogo. Una donna racconta di aver visto Cristina nel parcheggio del convento mentre discuteva con un uomo. Il racconto introduce un elemento nuovo: un possibile contatto, un possibile conflitto, un’interazione nel punto esatto in cui prima esisteva solo un vuoto.</p>
+      <p>Nel 2024 torna al centro degli accertamenti una testimonianza relativa al parcheggio del convento. Il GIP chiede di identificare la donna che avrebbe riferito di aver visto una giovane litigare con un uomo; successivamente la Procura comunica di non aver potuto sentirla perché deceduta e richiama gli approfondimenti svolti all’epoca, secondo i quali la descrizione fornita non corrispondeva a Cristina. Questo episodio non può quindi essere trasformato in un avvistamento certo della ragazza: documenta piuttosto un elemento testimoniale rimasto controverso e non verificabile direttamente oggi.</p>
 
-      <p>Sempre nello stesso periodo emerge un altro blocco testimoniale, ancora più complesso. La figlia di un uomo ormai anziano riferisce ciò che il padre avrebbe visto nel 1992: un frate e una giovane donna inoltrarsi in un’area boschiva nella zona di Montepetra. A questo racconto si aggiunge il riferimento a sacchi neri maleodoranti trovati tra i rovi.</p>
+      <p>Altri racconti emersi a distanza di molti anni hanno proposto scenari ulteriori. Proprio il tempo trascorso impone però di non saldarli automaticamente alla scomparsa: una testimonianza tardiva può indicare una pista da verificare, ma la sua forza dipende dalla provenienza, dalla possibilità di riscontro e dalla compatibilità con gli altri atti.</p>
 
-      <p>Questi elementi hanno un impatto forte.</p>
+      <p>Tra i nomi esaminati nel corso delle indagini quello di Emanuel Boke assume un rilievo particolare. Era ospite del convento nel periodo della scomparsa e successivamente fu condannato per violenze sessuali. Le fonti pubbliche riportano inoltre che, durante un colloquio in carcere, avrebbe confessato a padre Lino di avere ucciso Cristina, salvo poi ritrattare; gli approfondimenti successivi non produssero però una prova capace di attribuirgli giudiziariamente la scomparsa. La confessione riferita dal sacerdote, la successiva ritrattazione e l’assenza di un riscontro conclusivo devono quindi restare tre dati distinti.</p>
 
-      <p>Ma presentano una caratteristica decisiva:</p>
+      <p>Un ulteriore elemento riguarda un rullino fotografico sequestrato a Boke nel 1994 e sviluppato soltanto nel 2022. Le immagini e il materiale conservato possono essere oggetto di nuove verifiche, ma il semplice fatto che il reperto gli appartenesse non crea da solo un collegamento con Cristina. Lo stesso vale per il riscontro genetico del 2025: stabilisce l’identità Boke–Quist, non la responsabilità nella scomparsa.</p>
 
-      <p>arrivano tardi e non si stabilizzano.</p>
+      <p>Nella mia lettura, questo è il punto che impedisce di trasformare una pista investigativamente rilevante in una soluzione narrativa. Intorno a Boke esistono elementi reali e documentabili, ma appartengono a categorie differenti e non formano, allo stato, una catena probatoria conclusiva. Tenerli separati non indebolisce l’analisi: impedisce che la loro vicinanza nel racconto venga scambiata per prova.</p>
 
-      <p>Non diventano una sequenza ricostruttiva continua. Restano frammenti.</p>
+      <p>Il quadro che rimane non è quindi privo di direzioni investigative, ma privo di una concatenazione probatoria capace di trasformarne una in accertamento giudiziario. Cristina aveva una destinazione nota e la sua automobile fu ritrovata davanti al convento; ciò che manca è un'osservazione verificata che consenta di ricostruire con continuità che cosa avvenne da quel momento in poi. Le testimonianze tardive, le piste personali e i reperti esaminati negli anni hanno aggiunto possibilità di verifica, senza colmare questo passaggio.</p>
 
-      <p>Il caso, quindi, non è privo di osservazioni. È un caso in cui le osservazioni emergono fuori tempo.</p>
+      <p>Anche la posizione di Emanuel Boke va mantenuta entro questi limiti. Le fonti istituzionali riportano che l'8 giugno 1999 disse a padre Lino di avere ucciso e fatto sparire Cristina; il sacerdote riferì il fatto ai Carabinieri un anno dopo e Boke successivamente smentì quella confessione. L'assenza di riscontri oggettivi sufficienti non consentì di trasformare quelle dichiarazioni in un'imputazione. Il successivo riscontro Boke–Quist chiarisce chi sia il soggetto ricercato in Francia, ma non modifica da solo questo limite probatorio.</p>
 
-      <p>All’interno di questo sistema, nel tempo, si consolida un nome più degli altri. Quello di Emanuel Boke.</p>
+      <p>Al 5 ottobre 2026 il fascicolo contro ignoti resta archiviato; il decreto del 2024 prevede la possibilità di riavviare l'indagine qualora emergano elementi nuovi. L'interrogazione parlamentare del febbraio 2026 mantiene il caso nell'attenzione istituzionale, ma non sostituisce quel requisito e non costituisce una riapertura del procedimento.</p>
 
-      <p>La sua figura rappresenta il punto di maggiore densità investigativa del caso. È legato al contesto del convento. Negli anni successivi viene condannato per violenze sessuali commesse nella stessa area geografica. Secondo il corpus pubblico, nel 1995 avrebbe confessato l’omicidio a padre Lino, salvo poi ritrattare davanti alle autorità.</p>
-
-      <p>A questo si aggiunge un elemento materiale: un rullino fotografico trovato nelle sue tasche e sviluppato molti anni dopo, contenente immagini del contesto in cui il caso si colloca.</p>
-
-      <p>Questo blocco ha una forza evidente.</p>
-
-      <p>Eppure non si trasforma in una soluzione.</p>
-
-      <p>Perché manca il passaggio decisivo: la trasformazione di questi elementi in una catena probatoria stabile.</p>
-
-      <p>Il caso, quindi, non è senza direzione.</p>
-
-      <p>Ha una direzione.</p>
-
-      <p>Ma non riesce a consolidarla.</p>
-
-      <p>Dal punto di vista strutturale, il caso Cristina Golinucci può essere definito con precisione.</p>
-
-      <p>È un caso in cui:</p>
-
-      <p>l’evento iniziale è certo, la destinazione è nota, il luogo è definito, l’osservazione nel punto decisivo manca, le testimonianze emergono in ritardo, le indagini individuano un possibile asse, la prova non si concatena, il sistema giudiziario resta senza esito, la narrazione cresce più velocemente della verifica.</p>
-
-      <p>Non è un caso privo di elementi.</p>
-
-      <p>È un caso in cui gli elementi non si collegano.</p>
-
-      <p>Il punto centrale resta uno solo.</p>
-
-      <p>Cristina Golinucci scompare nel momento in cui avrebbe dovuto essere vista.</p>
-
-      <p>E non viene vista.</p>
-
-      <p>Da questa assenza iniziale deriva tutto il resto: la frammentazione testimoniale, la dispersione investigativa, la difficoltà probatoria, l’assenza di giudicato.</p>
-
-      <p>Il caso non si blocca alla fine.</p>
-
-      <p>Si blocca all’inizio.</p>
-
-      <p>Oggi, a più di trent’anni di distanza, il caso resta formalmente aperto o riapribile. La famiglia continua a chiedere verità. Nuovi elementi continuano a emergere. Ma la struttura del caso è ormai definita.</p>
-
-      <p>Perché ciò che manca non è solo una risposta.</p>
-
-      <p>È il passaggio che avrebbe dovuto generarla.</p>
-
-      <p>Non tutti i casi irrisolti sono uguali.</p>
-
-      <p>Alcuni restano aperti perché non sono stati indagati abbastanza. Alcuni perché mancano prove. Alcuni perché le piste si esauriscono.</p>
-
-      <p>Il caso Cristina Golinucci è diverso.</p>
-
-      <p>È un caso in cui il sistema ha prodotto elementi, ha riaperto, ha verificato, ha tentato più volte di ricostruire.</p>
-
-      <p>Ma non è mai riuscito a stabilizzare il punto in cui tutto si è interrotto.</p>
-
-      <p>Non è il mistero di ciò che è accaduto dopo.</p>
-
-      <p>È il mistero di ciò che non è stato visto quando stava accadendo.</p>
+      <p>Nella mia lettura, è questo il dato più resistente del caso: non l'assenza assoluta di elementi, ma la distanza tra elementi realmente esistenti e la prova necessaria per stabilire che cosa sia accaduto a Cristina e chi ne sia eventualmente responsabile. Conservare questa distanza evita sia di svuotare le piste investigative sia di trasformarle, per forza narrativa, in una soluzione che gli atti non hanno ancora prodotto.</p>
     </div>
   </div>
 
-  <div class="article-share">
-    <p><strong>Condividi l’articolo:</strong></p>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/cristina-golinucci/" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/cristina-golinucci/" target="_blank" rel="noopener noreferrer">X</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/cristina-golinucci/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <div class="article-share" aria-label="Condivisione articolo">
+    <p><strong>Condividi l'articolo:</strong></p>
+    <button type="button" class="native-share">Condividi</button>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fcristina-golinucci%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://wa.me/?text=Il%20caso%20Cristina%20Golinucci%20https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fcristina-golinucci%2F" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="https://t.me/share/url?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fcristina-golinucci%2F&amp;text=Il%20caso%20Cristina%20Golinucci" target="_blank" rel="noopener noreferrer">Telegram</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fcristina-golinucci%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="mailto:?subject=Il%20caso%20Cristina%20Golinucci&amp;body=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fcristina-golinucci%2F">E-mail</a>
+    <button type="button" class="copy-link">Copia link</button>
+    <span class="share-status" role="status" aria-live="polite"></span>
   </div>
 
   <div class="author-box">
-    <p><strong>Canali autore:</strong></p>
-    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+    <p><strong>Analisi:</strong> <a href="../../biografia/">Michele Bottino</a></p>
+    <p><strong>Metodo:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
+    <p><strong>Principio:</strong> separazione tra CERTO, RIPORTATO e LIMITE; le divergenze restano distinte e verificabili.</p>
+    <p><strong>Canali autore:</strong> <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a></p>
   </div>
 
   <div class="back-links">
