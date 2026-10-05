@@ -43,3 +43,11 @@
  .materials{grid-template-columns:1fr!important}.materials div{min-height:105px!important}
  .certificate{padding:28px 14px!important}.certificate h2{font-size:24px!important}.certificate h3{font-size:28px!important}
 }
+
+.continuebox{margin-top:26px;padding:18px 20px;background:#f2f7fb;border:1px solid #d7e3ec;border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:20px}.continuebox small{display:block;color:#8b6d37;font-weight:800;letter-spacing:1px;margin-bottom:5px}.continuebox strong{font:19px Georgia,serif}.quiznext{margin-top:18px}.quiz button.selected{border-color:#0873c9;box-shadow:0 0 0 1px #0873c9}
+@media screen and (max-width:760px){
+ .continuebox{display:block;padding:16px}.continuebox strong{display:block;font-size:17px}.continuebox .primary{width:100%;margin-top:14px}
+ .unit{display:grid!important;grid-template-columns:54px 1fr auto!important;grid-template-rows:auto auto!important;column-gap:10px!important;align-items:center!important}
+ .unit .num{grid-row:1/3!important}.unit h3{grid-column:2/4!important}.unit small{grid-column:2!important}.unit b{grid-column:3!important;grid-row:2!important;white-space:nowrap!important}
+ .lesson h2{font-size:27px!important}.quiz h2{font-size:29px!important}.quiz p{font-size:16px;line-height:1.5}.quiz button{font-size:15px;line-height:1.35;padding:14px}
+}
