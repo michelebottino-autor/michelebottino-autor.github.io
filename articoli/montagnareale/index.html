@@ -64,6 +64,7 @@
       "caso aperto"
     ],
     "inLanguage": "it-IT",
+    "dateModified": "2026-10-05T13:00:00+02:00",
     "isPartOf": {
       "@type": "CreativeWorkSeries",
       "@id": "https://michelebottino-autor.github.io/articoli/#series",
@@ -575,7 +576,21 @@
         width: 100%;
       }
     }
-  </style>
+      .article-share button {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+      padding: 5px 0;
+      border: 0;
+      border-bottom: 1px solid transparent;
+    }
+    .article-share button:hover { border-color: var(--accent); opacity: 0.85; }
+    .share-status { color: var(--text-soft); font-size: 0.92rem; }
+</style>
 </head>
 
 <body>
@@ -641,8 +656,7 @@
         </button>
         <ul class="submenu" id="submenu-scritti">
           <li><a href="../../articoli/" class="active">Articoli</a></li>
-          <li><a href="../../indagini/">Indagini</a></li>
-        </ul>
+</ul>
       </li>
 
       <li class="has-submenu">
@@ -691,8 +705,8 @@
       <div class="article-meta">
         <p><strong>Classificazione:</strong> Caso reale / Analisi documentaria</p>
         <p><strong>Stato del caso:</strong> Aperto, con sviluppo investigativo in corso</p>
-        <p><strong>Livello di certezza:</strong> Parziale e ancora instabile sul piano ricostruttivo</p>
-        <p><strong>Metodo applicato:</strong> Bottino System (MRN)</p>
+        <p><strong>Stato dell’evidenza:</strong> Accertamenti tecnici conclusi; ricostruzione della Procura definita sul piano investigativo, responsabilità non ancora accertata con sentenza definitiva</p>
+        <p><strong>Metodo applicato:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
       </div>
 
       <div class="article-stack">
@@ -701,11 +715,12 @@
         </div>
 
         <div class="article-update-box">
-          <p><strong>Aggiornamento:</strong> Il quadro non è più limitato a una fase puramente iniziale. Dopo il ritrovamento dei tre corpi, l’inchiesta si è concentrata su autopsie, rilievi balistici, celle telefoniche, un testimone e successivamente su un indagato al quale sono state sequestrate le armi. A metà febbraio 2026 sono emerse anche parziali ammissioni di presenza sul posto e di esplosione di colpi. Tuttavia questi elementi non hanno ancora prodotto una ricostruzione definitiva e consolidata della dinamica.</p>
+          <p><strong>Aggiornamento al 5 ottobre 2026:</strong> Il 5 giugno 2026 sono stati resi noti gli esiti degli accertamenti tecnici del RIS e delle consulenze medico-legali disposti dalla Procura di Patti. Agostino Segreto, unico sopravvissuto indicato dalle fonti investigative, risulta indagato per omicidio. Secondo la ricostruzione della Procura, Antonio Gatani avrebbe esploso il primo colpo, probabilmente per errore, uccidendo Giuseppe Pino e ferendo Devis Pino; quest'ultimo avrebbe reagito colpendo mortalmente Gatani. Segreto sarebbe intervenuto successivamente sparando contro Devis da distanza ravvicinata. Per la Procura questa dinamica escluderebbe la legittima difesa. Si tratta della ricostruzione investigativa maturata dagli accertamenti tecnici, non di una responsabilità accertata con sentenza definitiva.</p>
         </div>
 
         <div class="article-warning">
-          <p><strong>Nota metodologica:</strong> Questo articolo separa il dato iniziale certo, lo sviluppo investigativo successivo e le ipotesi di dinamica ancora non stabilizzate. Trattandosi di un caso in evoluzione, nuovi elementi potrebbero modificare il quadro.</p>
+          <p><strong>Come leggo questo aggiornamento:</strong> gli accertamenti tecnici hanno reso la ricostruzione investigativa molto più definita rispetto alle prime settimane, ma non hanno trasformato l’ipotesi della Procura in una responsabilità definitivamente accertata. La sequenza Gatani → Devis Pino → Segreto e l’esclusione della legittima difesa vanno quindi attribuite alla ricostruzione accusatoria.</p>
+          <p>Anche le dichiarazioni attribuite a Segreto richiedono un livello separato di lettura: secondo quanto riportato, alcune furono rese quando era ancora sentito come testimone e la loro utilizzabilità processuale è stata indicata come problematica. Per questo non le uso come scorciatoia per confermare la ricostruzione tecnica: dichiarazioni, reperti e conclusioni della Procura devono restare distinguibili fino alla loro eventuale valutazione giudiziaria.</p>
         </div>
       </div>
     </div>
@@ -721,28 +736,33 @@
 
       Questo passaggio è decisivo, perché il caso non si presenta come un evento già leggibile in modo lineare. Non emerge subito una struttura chiusa. Esiste invece un fatto grave e definito — tre uomini uccisi con colpi d’arma da fuoco — ma la connessione tra i segmenti dell’evento resta inizialmente instabile. È il tipico momento in cui l’indagine deve ancora distinguere tra fatto certo, elemento tecnico e ipotesi ricostruttiva.
 
-      Con il procedere degli accertamenti, però, il caso acquisisce una forma più articolata. L’inchiesta non resta ferma ai soli rilievi iniziali. Compare un testimone, emerge un indagato, vengono sequestrate armi e vengono svolti approfondimenti tecnici destinati a verificare la compatibilità tra colpi, posizione dei corpi e presenza dei soggetti nella zona. In seguito affiorano anche parziali ammissioni di presenza sul posto e di esplosione di colpi. Questo non equivale ancora a una verità definita, ma modifica il livello strutturale del caso: non siamo più davanti a un evento totalmente privo di direzione investigativa.
+      Con il procedere degli accertamenti il quadro cambia in modo sostanziale. Le verifiche balistiche e medico-legali consentono alla Procura di formulare una sequenza precisa: secondo questa ricostruzione Antonio Gatani avrebbe esploso il primo colpo, Giuseppe Pino sarebbe morto e Devis Pino sarebbe rimasto ferito; Devis avrebbe poi reagito contro Gatani e Agostino Segreto sarebbe intervenuto successivamente sparando a Devis. È questa la ricostruzione investigativa resa nota dopo gli accertamenti tecnici, non una sequenza che questo articolo assume come definitivamente provata.
 
-      Proprio qui si colloca il punto metodologico più importante. Il rischio, in una vicenda di questo tipo, è confondere l’emersione di una direzione con l’esistenza di una ricostruzione finale. Sono due cose diverse. Un conto è avere una traiettoria investigativa più precisa. Un altro è poter dire che dinamica, responsabilità e sequenza dell’evento siano ormai stabilite in modo definitivo. Nel caso di Montagnareale questo passaggio non è ancora compiuto.
+      Lo stesso criterio vale per le dichiarazioni attribuite a Segreto. La loro esistenza e il loro contenuto possono avere rilievo investigativo, ma devono essere distinti sia dagli accertamenti materiali sia dalla questione della loro utilizzabilità processuale. Mettere insieme questi livelli senza distinguerli produrrebbe una ricostruzione apparentemente più forte delle singole evidenze che la compongono.
 
-      Le informazioni disponibili permettono oggi di dire che il caso ha superato la pura fase iniziale, ma non ha ancora raggiunto una struttura chiusa. Il quadro resta aperto. Gli elementi tecnici e dichiarativi iniziano a restringere il campo, ma non hanno ancora prodotto una convergenza conclusiva tale da trasformare il caso in una verità definitivamente consolidata.
+      Nella mia lettura, il cambiamento rispetto alle prime settimane è quindi concreto ma circoscritto: oggi esiste una ricostruzione accusatoria molto più definita e un soggetto indagato per omicidio. Non esiste ancora, però, un accertamento giudiziario definitivo che consenta di trasformare quella ricostruzione nella conclusione dell’articolo.
 
-      È per questo che il caso di Montagnareale va letto con cautela. Non siamo davanti a un vuoto assoluto, ma nemmeno a una struttura già completata. Siamo in una zona intermedia: quella in cui il fatto è certo, l’indagine ha preso una direzione, ma la forma finale del caso non è ancora stabilizzata.
-
-      In termini strutturali, il triplice omicidio di Montagnareale si trova in un punto delicato. Il dato originario è solido. Lo sviluppo investigativo è concreto. La ricostruzione finale, invece, resta provvisoria. Ed è proprio questa distinzione che deve essere mantenuta, per evitare che la fase investigativa venga confusa troppo presto con una verità già definita.
+      Montagnareale è per questo un caso utile per osservare una fase precisa del lavoro investigativo: il passaggio dal fatto inizialmente oscuro a un’ipotesi strutturata sostenuta da accertamenti tecnici. Il passaggio successivo appartiene al procedimento giudiziario. Finché non avviene, la formulazione più corretta resta attribuire alla Procura la dinamica proposta e aggiornare l’analisi soltanto quando nuovi atti ne modificano effettivamente lo stato.
     </div>
   </div>
 
-  <div class="article-share">
-    <p><strong>Condividi:</strong></p>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/montagnareale/" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/montagnareale/" target="_blank" rel="noopener noreferrer">X</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/montagnareale/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <div class="article-share" aria-label="Condivisione articolo">
+    <p><strong>Condividi l'articolo:</strong></p>
+    <button type="button" class="native-share">Condividi</button>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fmontagnareale%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://wa.me/?text=Il%20caso%20di%20Montagnareale%20https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fmontagnareale%2F" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="https://t.me/share/url?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fmontagnareale%2F&amp;text=Il%20caso%20di%20Montagnareale" target="_blank" rel="noopener noreferrer">Telegram</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fmontagnareale%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="mailto:?subject=Il%20caso%20di%20Montagnareale&amp;body=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fmontagnareale%2F">E-mail</a>
+    <button type="button" class="copy-link">Copia link</button>
+    <span class="share-status" role="status" aria-live="polite"></span>
   </div>
 
   <div class="author-box">
-    <p><strong>Canali autore:</strong></p>
-    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+    <p><strong>Analisi:</strong> <a href="../../biografia/">Michele Bottino</a></p>
+    <p><strong>Metodo:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
+    <p><strong>Principio:</strong> separazione tra CERTO, RIPORTATO e LIMITE; le divergenze restano distinte e verificabili.</p>
+    <p><strong>Canali autore:</strong> <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a></p>
   </div>
 
   <div class="back-links">
