@@ -32,6 +32,8 @@
   <meta property="og:description" content="Analisi del caso Denise Pipitone tra scomparsa, piste concorrenti, verifiche per esclusione e persistente assenza di convergenza definitiva.">
   <meta property="og:url" content="https://michelebottino-autor.github.io/articoli/denise/">
   <meta property="og:image" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_DENISE_V1.png">
+  <meta property="og:image:secure_url" content="https://michelebottino-autor.github.io/images/articoli/MB_COVER_DENISE_V1.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:alt" content="Copertina dell'articolo sul caso Denise Pipitone">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -959,6 +961,47 @@ async function updateVisitCounter() {
     el.textContent = "—";
     console.error("Errore contatore visite:", error);
   }
+}
+
+const articleCanonicalUrl = "https://michelebottino-autor.github.io/articoli/denise/";
+const articleShareTitle = "Il caso Denise Pipitone | Michele Bottino";
+const nativeShareButton = document.querySelector(".native-share");
+const copyLinkButton = document.querySelector(".copy-link");
+const shareStatus = document.querySelector(".share-status");
+
+if (nativeShareButton) {
+  if (navigator.share) {
+    nativeShareButton.addEventListener("click", async () => {
+      try {
+        await navigator.share({ title: articleShareTitle, url: articleCanonicalUrl });
+        if (shareStatus) shareStatus.textContent = "Condivisione aperta.";
+      } catch (error) {
+        if (error.name !== "AbortError" && shareStatus) shareStatus.textContent = "Condivisione non disponibile.";
+      }
+    });
+  } else {
+    nativeShareButton.hidden = true;
+  }
+}
+
+if (copyLinkButton) {
+  copyLinkButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(articleCanonicalUrl);
+      if (shareStatus) shareStatus.textContent = "Link copiato.";
+    } catch (error) {
+      const textArea = document.createElement("textarea");
+      textArea.value = articleCanonicalUrl;
+      textArea.setAttribute("readonly", "");
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      const copied = document.execCommand("copy");
+      document.body.removeChild(textArea);
+      if (shareStatus) shareStatus.textContent = copied ? "Link copiato." : "Copia non riuscita.";
+    }
+  });
 }
 
 updateVisitCounter();
