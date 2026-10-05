@@ -581,7 +581,21 @@
         width: 100%;
       }
     }
-  </style>
+      .article-share button {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+      padding: 5px 0;
+      border: 0;
+      border-bottom: 1px solid transparent;
+    }
+    .article-share button:hover { border-color: var(--accent); opacity: 0.85; }
+    .share-status { color: var(--text-soft); font-size: 0.92rem; }
+</style>
 </head>
 
 <body>
@@ -647,8 +661,7 @@
         </button>
         <ul class="submenu" id="submenu-scritti">
           <li><a href="../../articoli/" class="active">Articoli</a></li>
-          <li><a href="../../indagini/">Indagini</a></li>
-        </ul>
+</ul>
       </li>
 
       <li class="has-submenu">
@@ -707,7 +720,7 @@
         </div>
 
         <div class="article-update-box">
-          <p><strong>Aggiornamento:</strong> Il caso non ha mai raggiunto una chiusura strutturale. Continuano a emergere ipotesi, attribuzioni e richieste di rilettura storica, compresa la rinnovata attenzione sulla pista Aaron Kosminski e la richiesta di un nuovo inquest avanzata nel 2025 da un discendente di una vittima. Tuttavia nessuna di queste iniziative ha prodotto un livello probatorio o istituzionale tale da trasformare il caso in una soluzione definitiva o in una verità giudiziaria.</p>
+          <p><strong>Aggiornamento al 5 ottobre 2026:</strong> Il caso resta privo di soluzione giudiziaria. La pista Aaron Kosminski, rilanciata attraverso analisi di DNA mitocondriale effettuate su un presunto scialle collegato a Catherine Eddowes, non consente di identificare definitivamente l'autore. Nel 2024 il <em>Journal of Forensic Sciences</em> ha pubblicato una formale <em>Expression of Concern</em> sull'articolo scientifico che sosteneva quei risultati: il periodico ha segnalato contestazioni sulle conclusioni dell'analisi mtDNA e l'impossibilità di riesaminare i dati grezzi originali, dichiarati non più disponibili dagli autori. Le successive rivendicazioni mediatiche non hanno quindi chiuso il caso.</p>
         </div>
 
         <div class="article-warning">
@@ -733,6 +746,8 @@
 
       Il dato più importante è questo: non esiste alcuna soluzione giudiziaria. Nessun processo conclusivo. Nessuna condanna. Nessuna identificazione certa dell’autore. Questo distingue radicalmente Jack lo Squartatore da molti altri casi storici. Qui non esiste una verità processuale.
 
+      Le analisi genetiche pubblicate nel 2019-2020 su un presunto scialle associato alla scena dell'omicidio di Catherine Eddowes hanno riportato Aaron Kosminski al centro dell'attenzione. Ma il valore identificativo di quella prova è contestato su più livelli: provenienza e catena di custodia dell'oggetto, natura del DNA mitocondriale, possibilità di contaminazione e interpretazione statistica. Nel 2024 lo stesso <em>Journal of Forensic Sciences</em> ha pubblicato una <em>Expression of Concern</em>: dopo le critiche ricevute, i dati grezzi dell'analisi non erano disponibili per una nuova verifica. Per il metodo adottato in questa analisi, quindi, il cosiddetto «DNA dello scialle» è una pista controversa, non l'identificazione di Jack lo Squartatore.
+
       Se si osserva il caso nel suo insieme, emerge una configurazione precisa. Il livello più solido è quello della serie omicidiaria. Il livello investigativo è frammentato. Il livello probatorio è limitato. Il livello giudiziario è assente. Il livello narrativo è espanso. Questo significa che il caso funziona su piani diversi che non coincidono tra loro.
 
       Jack lo Squartatore continua a essere studiato perché rappresenta un modello particolare. Non è un enigma senza elementi. È un sistema in cui gli elementi esistono, ma non convergono. La serie è chiara. Le indagini no. Le prove non bastano. La narrazione continua. Questa combinazione produce un effetto raro: il caso non si chiude mai davvero.
@@ -741,16 +756,23 @@
     </div>
   </div>
 
-  <div class="article-share">
-    <p><strong>Condividi l’articolo:</strong></p>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/" target="_blank" rel="noopener noreferrer">X</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <div class="article-share" aria-label="Condivisione articolo">
+    <p><strong>Condividi l'articolo:</strong></p>
+    <button type="button" class="native-share">Condividi</button>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fjack-lo-squartatore%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://wa.me/?text=Jack%20lo%20Squartatore%20https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fjack-lo-squartatore%2F" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="https://t.me/share/url?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fjack-lo-squartatore%2F&amp;text=Jack%20lo%20Squartatore" target="_blank" rel="noopener noreferrer">Telegram</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fjack-lo-squartatore%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="mailto:?subject=Jack%20lo%20Squartatore&amp;body=https%3A%2F%2Fmichelebottino-autor.github.io%2Farticoli%2Fjack-lo-squartatore%2F">E-mail</a>
+    <button type="button" class="copy-link">Copia link</button>
+    <span class="share-status" role="status" aria-live="polite"></span>
   </div>
 
   <div class="author-box">
-    <p><strong>Canali autore:</strong></p>
-    <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a>
+    <p><strong>Analisi:</strong> <a href="../../biografia/">Michele Bottino</a></p>
+    <p><strong>Metodo:</strong> Bottino Method · MRN v1.2 – Metodo delle Rotture Narrative</p>
+    <p><strong>Principio:</strong> separazione tra CERTO, RIPORTATO e LIMITE; le divergenze restano distinte e verificabili.</p>
+    <p><strong>Canali autore:</strong> <a href="https://www.facebook.com/michelebottinoautore" target="_blank" rel="noopener noreferrer">Pagina Facebook ufficiale</a></p>
   </div>
 
   <div class="back-links">
