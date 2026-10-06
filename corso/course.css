@@ -23,3 +23,6 @@
 @media(max-width:1100px){.lesson{grid-template-columns:280px minmax(0,1fr)}.lesson article{padding:46px 44px}.lesson article h2{font-size:38px}}
 @media(max-width:900px){.lesson{grid-template-columns:1fr}.lesson aside{display:none}.lesson article{max-width:none;padding:42px 38px}}
 @media(max-width:560px){.lesson article{padding:30px 22px}.lesson article h2{font-size:32px}.lesson article .subtitle{font-size:16px}.lesson article p{font-size:16px}.lesson article h3{font-size:23px}}
+
+/* v23 accessibility */
+.skiplink{position:absolute;left:-9999px;top:8px;background:#fff;color:#061c30;padding:12px 16px;z-index:1000}.skiplink:focus{left:8px}nav a{color:#fff;text-decoration:none;margin-left:20px}nav a:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #e1c58a;outline-offset:3px}.primary:disabled{opacity:.6;cursor:not-allowed}footer a{color:#52677a}
