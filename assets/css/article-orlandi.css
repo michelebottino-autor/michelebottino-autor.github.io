@@ -1,0 +1,35 @@
+/* Override specifico articolo — mantiene le differenze editoriali approvate. */
+.article-share a,
+    .article-share button,
+    .author-box a {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 5px 0;
+      border: 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+.article-share a:hover,
+    .article-share button:hover,
+    .author-box a:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+#share-status {
+      color: var(--text-soft);
+      font-size: 0.92rem;
+    }
+
+@media (max-width: 680px){
+.article-header {
+        padding-top: 24px;
+      }
+}
