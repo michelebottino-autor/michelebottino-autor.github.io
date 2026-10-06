@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">Bottino Method - Corso Base</title><desc id="d">Logo verde e oro con monogramma B, rosa dei venti e libro aperto.</desc>
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#d8bd78"/><stop offset=".48" stop-color="#8e6722"/><stop offset="1" stop-color="#d8bd78"/></linearGradient></defs>
+<rect width="1200" height="760" fill="#fff"/>
+<g transform="translate(600 265)" fill="none" stroke-linecap="round">
+<circle r="184" stroke="#0d3829" stroke-width="7"/><circle r="163" stroke="url(#g)" stroke-width="9"/>
+<path d="M0-224 14-158 0-122-14-158ZM224 0 158 14 122 0 158-14ZM0 224-14 158 0 122 14 158ZM-224 0-158-14-122 0-158 14Z" fill="url(#g)" stroke="none"/>
+<path d="M0-125 24-28 0 0-24-28ZM125 0 28 24 0 0 28-24ZM0 125-24 28 0 0 24 28ZM-125 0-28-24 0 0-28 24Z" fill="#0d3829" stroke="url(#g)" stroke-width="3"/>
+<text x="0" y="100" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="310" fill="#0d3829" stroke="url(#g)" stroke-width="4">B</text>
+</g>
+<g transform="translate(600 472)">
+<path d="M-305 0 Q-150-62 0 26 Q150-62 305 0 Q160-15 0 68 Q-160-15-305 0Z" fill="#0d3829" stroke="url(#g)" stroke-width="5"/>
+<path d="M-275-18 Q-135-70 0 4 Q135-70 275-18 Q145-35 0 40 Q-145-35-275-18Z" fill="#fff" stroke="url(#g)" stroke-width="5"/>
+<path d="M0 4V65" stroke="url(#g)" stroke-width="6"/>
+</g>
+<text x="600" y="625" text-anchor="middle" font-family="Georgia,serif" font-size="70" font-weight="700" letter-spacing="3"><tspan fill="#0d3829">BOTTINO </tspan><tspan fill="#9b722b">METHOD</tspan></text>
+<path d="M180 660H410M790 660H1020" stroke="url(#g)" stroke-width="4"/>
+<text x="600" y="680" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="14" fill="#0d3829">CORSO BASE</text>
+<text x="600" y="725" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" letter-spacing="8" fill="#0d3829">PENSARE MEGLIO. VERIFICARE DI PIÙ.</text>
+</svg>
