@@ -72,7 +72,6 @@
       class="menu-toggle"
       id="menu-toggle"
       type="button"
-      onclick="toggleMenu()"
       aria-label="Apri il menu di navigazione"
       aria-controls="menu"
       aria-expanded="false">
@@ -256,92 +255,7 @@
   
 </footer>
 
-<script>
-function setMenuExpandedState(isExpanded) {
-  const toggle = document.getElementById("menu-toggle");
-  if (toggle) {
-    toggle.setAttribute("aria-expanded", String(isExpanded));
-  }
-}
-
-function closeAllSubmenus(except = null) {
-  document.querySelectorAll(".has-submenu").forEach(item => {
-    if (item !== except) {
-      item.classList.remove("open");
-      const button = item.querySelector(".submenu-toggle");
-      if (button) {
-        button.setAttribute("aria-expanded", "false");
-      }
-    }
-  });
-}
-
-function closeMobileMenu() {
-  const menu = document.getElementById("menu");
-  if (menu) {
-    menu.classList.remove("active");
-  }
-  setMenuExpandedState(false);
-  closeAllSubmenus();
-}
-
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  if (!menu) return;
-
-  const isActive = menu.classList.toggle("active");
-  setMenuExpandedState(isActive);
-
-  if (!isActive) {
-    closeAllSubmenus();
-  }
-}
-
-document.querySelectorAll(".submenu-toggle").forEach(button => {
-  button.addEventListener("click", function () {
-    const parent = this.parentElement;
-    const willOpen = !parent.classList.contains("open");
-
-    if (window.innerWidth > 680) {
-      closeAllSubmenus(parent);
-    }
-
-    parent.classList.toggle("open");
-    this.setAttribute("aria-expanded", String(willOpen));
-  });
-
-  button.addEventListener("keydown", function (event) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      this.click();
-    }
-
-    if (event.key === "Escape") {
-      event.preventDefault();
-      closeAllSubmenus();
-      this.blur();
-    }
-  });
-});
-
-document.addEventListener("click", function (event) {
-  const nav = document.getElementById("site-nav");
-  if (!nav) return;
-
-  const clickedInsideNav = nav.contains(event.target);
-  if (!clickedInsideNav) {
-    closeMobileMenu();
-  }
-});
-
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    closeMobileMenu();
-  }
-});
 
 
-</script>
-
-</body>
+<script src="/assets/js/site-nav.js" defer></script>\n</body>
 </html>
