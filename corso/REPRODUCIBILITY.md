@@ -1,7 +1,7 @@
 ﻿# Bottino Method â€” Corso Base
 ## Manifest di riproducibilitÃ  didattica
 
-Versione corso: v23
+Versione corso: v27
 Data baseline: 2026-10-06
 Autore: Michele Bottino
 
@@ -50,8 +50,8 @@ La pipeline formale del manuale completo comprende acquisizione dellâ€™inpu
 ### Limiti attuali
 Il prototipo usa localStorage: i progressi non sono sincronizzati tra dispositivi.
 Google login non Ã¨ implementato.
-PDF didattici non ancora prodotti.
-Attestato definitivo e verifica pubblica del certificato non implementati.
+1 PDF didattico pubblicato; gli altri materiali editoriali risultano ancora in corso di pubblicazione.
+Attestato locale implementato e stampabile/salvabile in PDF; verifica pubblica del certificato non implementata.
 
 ### Test automatici
 reproducibility-test.js verifica struttura, gate, completamento e baseline.
