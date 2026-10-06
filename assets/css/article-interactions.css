@@ -1,0 +1,11 @@
+/* Interazioni articolo: componente condiviso, senza dipendenze grafiche esterne. */
+.article-reactions{margin:28px 0;padding:18px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(42,49,45,.98),rgba(36,43,39,.98));box-shadow:var(--shadow-soft)}
+.article-reactions__title{margin:0 0 12px;font-weight:700;color:var(--text-main)}
+.article-reactions__actions{display:flex;flex-wrap:wrap;gap:10px}
+.article-reaction{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--text-main);font:inherit;cursor:pointer}
+.article-reaction:hover,.article-reaction:focus-visible{border-color:var(--accent);outline:none}
+.article-reaction[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.article-reaction:disabled{cursor:not-allowed;opacity:.6}
+.article-reaction svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.article-reaction__count{min-width:1ch;font-variant-numeric:tabular-nums}
+.article-reactions__status{margin:12px 0 0;color:var(--text-muted,#d5d1c7);font-size:.92rem}
