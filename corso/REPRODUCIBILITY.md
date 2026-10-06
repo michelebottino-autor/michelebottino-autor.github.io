@@ -1,90 +1,83 @@
-﻿# Bottino Method â€” Corso Base
-## Manifest di riproducibilitÃ  didattica
+# Bottino Method — Corso Base
+## Manifest di riproducibilità didattica
 
-Versione corso: v33
-Data baseline: 2026-10-06
-Autore: Michele Bottino
-
-### Fonte metodologica
-Bottino Method â€” Manuale Completo v4.1 (2026).
+Versione frontend: v36
+Release didattica: 1.0
+Data baseline: 2026-10-07
+Autore ed emittente: Michele Bottino
+DOI corso: 10.5281/zenodo.23198223
 
 ### Percorso canonico
 Introduzione
-UnitÃ  1 â€” Prima di credere, verifica
+Unità 1 — Prima di credere, verifica
 Esempio interattivo non valutato
-UnitÃ  2 â€” Fatto, affermazione, fonte e interpretazione
-UnitÃ  3 â€” Quanto possiamo realmente affermare?
-Verifica 1 â€” 5 domande; superamento: almeno 4/5
-UnitÃ  4 â€” Una fonte non vale lâ€™altra
-UnitÃ  5 â€” Quando le fonti non concordano
-UnitÃ  6 â€” Il Bottino Method in pratica
-UnitÃ  7 â€” Intelligenza artificiale sotto controllo
-Verifica 2 â€” 5 domande; superamento: almeno 4/5
-UnitÃ  8 â€” Caso finale
-Completamento â€” 8/8
+Unità 2 — Fatto, affermazione, fonte e interpretazione
+Unità 3 — Quanto possiamo realmente affermare?
+Verifica 1 — 5 domande; superamento: almeno 4/5 (80%)
+Unità 4 — Una fonte non vale l'altra
+Unità 5 — Quando le fonti non concordano
+Unità 6 — Il Bottino Method in pratica
+Unità 7 — Intelligenza artificiale sotto controllo
+Verifica 2 — 5 domande; superamento: almeno 4/5 (80%)
+Unità 8 — Caso finale
+Prova applicativa finale — 5 domande; superamento: almeno 4/5 (80%)
+Completamento — 8/8 + entrambe le verifiche intermedie + prova finale superata
 
-### Stati persistenti del prototipo
-bm_done = numero di unitÃ  completate, 0..8
-bm_check1 = percentuale Verifica 1 superata
-bm_check2 = percentuale Verifica 2 superata`r`nbm_final = percentuale Prova applicativa finale superata (soglia 4/5 = 80%)
+### Stato persistente della Release 1.0
+bm_done = unità completate, 0..8
+bm_check1 = percentuale Verifica 1
+bm_check2 = percentuale Verifica 2
+bm_final = percentuale Prova applicativa finale
 bm_completed_at = timestamp ISO del completamento
+bm_certificate_name = nome inserito volontariamente per l'attestato locale
+
+I dati sopra sono conservati nel localStorage del browser. Non costituiscono uno stato server-side autorevole.
 
 ### Regole di progressione
-UnitÃ  4 bloccata finchÃ© Verifica 1 non Ã¨ superata.
-UnitÃ  8 bloccata finchÃ© Verifica 2 non Ã¨ superata.
-Una verifica non superata puÃ² essere ripetuta.
-Il pulsante Continua deve portare alla prima dipendenza non completata.
-L'avanzamento complessivo Ã¨ ponderato: 8 unitÃ  Ã— 10% = 80%; Verifica 1 = 10%; Verifica 2 = 10%. Il 100% Ã¨ quindi raggiungibile soltanto dopo entrambe le verifiche e tutte le unitÃ .
+Unità 4 bloccata finché Verifica 1 non è superata.
+Unità 8 bloccata finché Verifica 2 non è superata.
+La conclusione dell'Unità 8 è bloccata finché la prova applicativa finale non è superata.
+Le prove non superate possono essere ripetute.
+L'indicatore di avanzamento assegna 10% a ciascuna delle 8 unità e 10% a ciascuna delle due verifiche intermedie. La prova finale è un gate obbligatorio per completare l'Unità 8 e per rendere disponibile l'attestato.
+
+### Materiali ufficiali Release 1.0
+Il corpus pubblicato su Zenodo comprende:
+BM-CB-01 — Guida al Corso Base
+BM-CB-02 — Dispensa essenziale
+BM-CB-03 — Quaderno degli esempi
+BM-CB-04 — Scheda operativa
+Documento principale della Release 1.0
+
+La pagina del corso collega i cinque file del deposito Zenodo. Il DOI del corso è 10.5281/zenodo.23198223.
+
+### Attestato
+L'attestato della Release 1.0 è generato localmente nel browser. Riporta corso, Release 1.0, durata didattica di 190 minuti, valutazione, risultati sintetici, modalità di partecipazione, emittente, Italia, DOI, data di completamento e codice locale.
+L'identità non è verificata nella Release 1.0 attualmente erogata.
+Il codice locale non equivale a firma digitale, verifica pubblica o credenziale server-side.
+L'attestato non costituisce titolo di studio, abilitazione o certificazione professionale riconosciuta.
+
+### Backend di verifica
+Il Credential Registry è sviluppato e collaudato separatamente, ma non è ancora collegato alla Release 1.0 pubblica. Finché Identity Gateway, Course Gateway e verifica pubblica non sono effettivamente distribuiti e collaudati, il frontend non deve dichiarare identità o completamento verificati server-side.
 
 ### Distinzione metodologica
-La sequenza Acquisisci â†’ Classifica â†’ Verifica â†’ Confronta â†’ Concludi â†’ Traccia Ã¨ una semplificazione didattica del Corso Base.
-La pipeline formale del manuale completo comprende acquisizione dellâ€™input, classificazione delle informazioni, applicazione dei vincoli, esecuzione del processo, verifica delle unitÃ , produzione dellâ€™output, validazione e FREEZE.
+La sequenza Acquisisci → Classifica → Verifica → Confronta → Concludi → Traccia è una semplificazione didattica del Corso Base. Le formulazioni sintetiche del corso non sostituiscono la trattazione metodologica completa nelle pubblicazioni di riferimento.
 
-### Criteri minimi di riproducibilitÃ 
+### Criteri minimi di riproducibilità
 1. Stesso codice e stesso stato iniziale devono produrre la stessa progressione didattica.
 2. Le risposte corrette delle verifiche e le relative spiegazioni sono deterministiche.
-3. Il percorso deve essere testabile da stato vuoto fino a 8/8.
-4. Il reset del localStorage deve riportare il prototipo allo stato iniziale.
-5. La riproducibilitÃ  riguarda il comportamento del percorso, non lâ€™identitÃ  grafica o testuale dellâ€™interazione.
-
-### Limiti attuali
-Il prototipo usa localStorage: i progressi non sono sincronizzati tra dispositivi.
-Google login non Ã¨ implementato.
-1 PDF didattico pubblicato; dispensa, esempi e scheda operativa sono integrati nel percorso web e non vengono dichiarati come PDF separati.
-Attestato locale implementato e stampabile/salvabile in PDF; verifica pubblica del certificato non implementata.
+3. Il percorso deve essere testabile da stato vuoto fino al completamento 8/8.
+4. Il reset del localStorage deve riportare il frontend allo stato iniziale.
+5. L'attestato deve restare bloccato senza 8/8, entrambe le verifiche intermedie e prova finale superata.
+6. La riproducibilità del frontend non equivale alla verifica dell'identità del discente.
 
 ### Test automatici
-reproducibility-test.js verifica struttura, gate, completamento e baseline.
-e2e-state-test.js verifica la macchina degli stati: nuovo studente; blocco Verifica 1; esito insufficiente; superamento; blocco Verifica 2; esito insufficiente; superamento; accesso al Caso finale; persistenza del completamento dopo ricaricamento.
+reproducibility-test.js verifica struttura, gate, completamento, attestato, DOI, corpus documentale e baseline v36.
+e2e-state-test.js verifica la macchina degli stati dal nuovo studente al completamento persistente.
 
-Comandi di verifica:
+Comandi:
 node reproducibility-test.js
 node e2e-state-test.js
 
 Baseline attesa:
 REPRODUCIBILITY_TEST_OK
 E2E_STATE_TEST_OK
-
-
-## Aggiornamenti v30
-- Ripristino automatico della Verifica 1 e della Verifica 2 dopo ricaricamento quando il relativo gate è ancora da superare.
-- Esercizi attivi delle Unità 2–7 con etichetta visibile del campo di risposta e soluzione consultabile dopo la produzione autonoma.
-- Verifiche formali basate su scenari applicativi; soglia invariata: 4/5 (80%).
-
-
-## Revisione pedagogica e accessibilità v31
-- La pratica attiva precede la visualizzazione del confronto/feedback nelle Unità 2–7.
-- Le tre valutazioni usano scenari applicativi con distrattori plausibili e soglia 80%.
-- I campi di risposta dispongono di istruzione visibile e nome accessibile.
-- Riferimenti di controllo esterni consultati: W3C WAI (WCAG, labels/instructions) e What Works Clearinghouse/IES (retrieval practice). Questi riferimenti riguardano il design didattico e l'accessibilità, non costituiscono fonti del Bottino Method.
-
-
-## Attestato v32
-- Download diretto in PDF generato localmente nel browser, senza invio del nome a servizi esterni.
-- Codice attestato derivato localmente con SHA-256 da versione, nome, data ed esiti; non equivale a firma digitale o verifica pubblica dell'identità.
-- Scheda di trasparenza con emittente, forma di partecipazione, workload, risultati di apprendimento, valutazione e qualità interna.
-- Nessun livello EQF/ECTS o accreditamento pubblico dichiarato.
-
-
-## Identity Gateway v33 — contratto client
-Il frontend riconosce esclusivamente un record di identità restituito da un futuro gateway server-side: status=verified, provider, verified_at, subject_ref pseudonimo e assurance. Il corso non acquisisce né conserva immagini di documenti o dati biometrici. L'assenza di un record verificato mantiene l'attestato nella classe «identità non verificata». SPID/CIE OIDC ed EUDI Wallet saranno adattatori del gateway e non logica incorporata nel corso.
