@@ -135,3 +135,34 @@ repeating-radial-gradient(circle at 24% 38%,transparent 0 55px,rgba(215,169,78,.
  .home-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important}
  .home-btn{font-size:.67rem!important;padding:12px 10px!important}
 }
+
+/* v6.2 — hero fusa, senza riquadro fotografico */
+.home-hero{
+  background:
+    linear-gradient(90deg,#071511 0%,rgba(7,21,17,.97) 35%,rgba(7,21,17,.72) 51%,rgba(7,21,17,.08) 74%,rgba(7,21,17,.18) 100%),
+    url('../../images/michele-bottino-hero-editoriale.jpg') 72% 42%/cover no-repeat!important;
+}
+.home-hero:before{
+  background:
+    radial-gradient(circle at 58% 42%,rgba(201,170,112,.13),transparent 28rem),
+    linear-gradient(180deg,transparent 72%,#091511 100%)!important;
+}
+.home-hero-inner{grid-template-columns:minmax(430px,.92fr) minmax(430px,1.08fr)!important}
+.home-author-visual{background:none!important;min-height:650px!important;overflow:visible!important}
+.home-author-visual:after{display:none!important}
+.home-author-visual img{display:none!important}
+@media(max-width:900px){
+  .home-hero{
+    background:
+      linear-gradient(180deg,rgba(7,21,17,.04) 0%,rgba(7,21,17,.10) 37%,#071511 55%,#071511 100%),
+      url('../../images/michele-bottino-hero-editoriale.jpg') 62% top/auto 440px no-repeat!important;
+  }
+  .home-hero-inner{display:grid!important;grid-template-columns:1fr!important}
+  .home-author-visual{display:block!important;order:1!important;min-height:400px!important;height:400px!important}
+  .home-hero-copy{order:2!important;background:linear-gradient(180deg,rgba(7,21,17,.96),#071511)!important;margin-top:-26px!important;position:relative!important;z-index:4!important}
+}
+@media(max-width:520px){
+  .home-hero{background-size:auto 360px!important;background-position:60% top!important}
+  .home-author-visual{min-height:330px!important;height:330px!important}
+  .home-hero-copy{margin-top:-18px!important}
+}
