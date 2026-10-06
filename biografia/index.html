@@ -16,7 +16,7 @@
     script-src 'self' 'unsafe-inline';
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: https:;
-    connect-src 'self' https://api.counterapi.dev;
+    connect-src 'self';
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -357,11 +357,7 @@
       color: var(--accent);
     }
 
-    .visit-counter {
-      margin-top: 12px;
-      color: var(--accent);
-      font-size: 0.92rem;
-    }
+    
 
     @media (min-width: 681px) {
       .has-submenu {
@@ -731,7 +727,7 @@ async function getVisits() {
   const timeoutId = setTimeout(() => controller.abort(), 2500);
 
   try {
-    const res = await fetch("https://api.counterapi.dev/v1/michelebottino-autor.github.io/biografia/up", {
+    const res = await fetch("", {
       signal: controller.signal,
       cache: "no-store"
     });
