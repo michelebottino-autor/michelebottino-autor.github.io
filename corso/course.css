@@ -30,3 +30,9 @@
 .certificate-state{max-width:620px;margin:28px auto;padding:20px;border:1px solid #d8c69f;background:#f7f0df;border-radius:8px}.certificate-state b{font:700 20px Georgia,serif}.certificate-state p{margin:8px 0 0}.cert-kicker{letter-spacing:.22em;font-weight:700;color:#80662f}.cert-label,.cert-meta,.cert-date{color:#5e6870}.cert-meta{max-width:650px;margin:14px auto}.cert-date{font-weight:700}.certificate-controls{max-width:620px;margin:34px auto 10px;padding:20px;border-top:1px solid #d8c69f;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:end;text-align:left}.certificate-controls label{grid-column:1/-1;font-weight:700;font-size:13px}.certificate-controls input{min-width:0;padding:12px 14px;border:1px solid #b7a57d;border-radius:6px;font:16px Arial,sans-serif;background:#fff;color:#1b2835}.certificate-controls button{white-space:nowrap}
 @media(max-width:720px){.certificate-controls{grid-template-columns:1fr}.certificate-controls label{grid-column:auto}.certificate-controls button{width:100%}}
 @media print{body>*{display:none!important}#certificate{display:block!important;position:absolute;inset:0;margin:0!important;max-width:none!important;min-height:100vh;box-shadow:none!important;border:8px double #c5a66b!important;padding:60px!important}.certificate-controls,#certificateLocked,header,footer{display:none!important}#certificateReady{display:block!important}.certificate .legal{display:block!important}@page{size:A4 landscape;margin:12mm}}
+
+/* v26 - identità visiva Bottino Method */
+.course-logo{display:flex;align-items:center;flex:0 0 auto;text-decoration:none}
+.course-logo img{display:block;width:190px;height:auto;max-height:86px;object-fit:contain;background:#fff;border-radius:7px;padding:3px}
+@media(max-width:900px){.course-logo img{width:150px;max-height:72px}}
+@media(max-width:560px){.course-logo{width:100%;justify-content:center}.course-logo img{width:165px}}
