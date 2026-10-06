@@ -1,7 +1,7 @@
 ﻿# Bottino Method â€” Corso Base
 ## Manifest di riproducibilitÃ  didattica
 
-Versione corso: v31
+Versione corso: v32
 Data baseline: 2026-10-06
 Autore: Michele Bottino
 
@@ -77,3 +77,10 @@ E2E_STATE_TEST_OK
 - Le tre valutazioni usano scenari applicativi con distrattori plausibili e soglia 80%.
 - I campi di risposta dispongono di istruzione visibile e nome accessibile.
 - Riferimenti di controllo esterni consultati: W3C WAI (WCAG, labels/instructions) e What Works Clearinghouse/IES (retrieval practice). Questi riferimenti riguardano il design didattico e l'accessibilità, non costituiscono fonti del Bottino Method.
+
+
+## Attestato v32
+- Download diretto in PDF generato localmente nel browser, senza invio del nome a servizi esterni.
+- Codice attestato derivato localmente con SHA-256 da versione, nome, data ed esiti; non equivale a firma digitale o verifica pubblica dell'identità.
+- Scheda di trasparenza con emittente, forma di partecipazione, workload, risultati di apprendimento, valutazione e qualità interna.
+- Nessun livello EQF/ECTS o accreditamento pubblico dichiarato.
