@@ -12,7 +12,7 @@ assert(js.includes("bm_completed_at"),'Timestamp completamento assente');
 assert(js.includes("semplificazione didattica"),'Distinzione pipeline didattica assente');
 for(const id of ['units','pct','bar','lessonArticle','continueCourse','quiz','check1','check2'])
  assert(html.includes('id="'+id+'"'),'ID HTML mancante: '+id);
-assert(html.includes('course.js?v=23'),'Baseline cache diversa da v18');
+assert(html.includes('course.js?v=27'),'Baseline cache diversa da v27');
 assert(js.includes('const progressPct='),'Calcolo avanzamento ponderato assente');
 console.log('REPRODUCIBILITY_TEST_OK');
-console.log('units=8; checks=2; gates=2; weighted-progress=100%; baseline=v23');
+console.log('units=8; checks=2; gates=2; weighted-progress=100%; baseline=v27');
