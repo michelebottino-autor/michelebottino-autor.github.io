@@ -1,0 +1,14 @@
+/* Override specifico articolo — mantiene le differenze editoriali approvate. */
+.article-text p {
+      margin-bottom: 18px;
+    }
+
+.article-text p:last-child {
+      margin-bottom: 0;
+    }
+
+@media (max-width: 680px){
+.article-header {
+        padding-top: 24px;
+      }
+}
