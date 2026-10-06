@@ -142,28 +142,20 @@
 
 <header class="container">
   <nav class="nav" id="site-nav">
-    <a href="../../../"><img src="../../../images/logo.png" height="60" alt="Michele Bottino"></a>
-
-    <button id="menu-toggle" onclick="toggleMenu()">☰</button>
+<button class="menu-toggle" id="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Apri il menu di navigazione" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
 
     <ul class="nav-menu" id="menu">
       <li><a href="../../../">Home</a></li>
-
       <li class="has-submenu">
-        <button class="submenu-toggle">Autore</button>
-        <ul class="submenu">
-          <li><a href="../../../biografia/">Biografia</a></li>
-          <li><a href="../../../poetica/">Poetica</a></li>
-        </ul>
+        <button class="submenu-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-autore">Autore</button>
+        <ul class="submenu" id="submenu-autore"><li><a href="../../../biografia/">Biografia</a></li><li><a href="../../../poetica/">Poetica</a></li></ul>
       </li>
-
       <li class="has-submenu">
-        <button class="submenu-toggle active">Metodo</button>
-        <ul class="submenu">
-          <li><a href="../../../metodo/">Metodo</a></li>
-          <li><a href="../../" class="active">Strutture</a></li>
-        </ul>
+        <button class="submenu-toggle active" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-metodo">Metodo e ricerca</button>
+        <ul class="submenu" id="submenu-metodo"><li><a href="../../../metodo/">Metodo</a></li><li><a href="../../../corso/">Corso Base</a></li><li><a href="../../../ricerca/">Ricerca</a></li><li><a href="../../" class="active">Strutture irrisolte</a></li></ul>
       </li>
+      <li><a href="../../../media/">Media</a></li>
+      <li><a href="../../../contatti/">Contatti</a></li>
     </ul>
   </nav>
 </header>
