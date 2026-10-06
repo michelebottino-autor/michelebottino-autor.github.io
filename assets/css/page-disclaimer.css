@@ -1,0 +1,225 @@
+/* Pagina legale disclaimer — estratta senza variazioni grafiche. */
+* {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1f2623;
+      color: #e5d3a3;
+      margin: 0;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: #e5d3a3;
+    }
+
+    p, li {
+      max-width: 68ch;
+    }
+
+    a {
+      color: #c2a46d;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #8f7748;
+      padding-bottom: 14px;
+      gap: 20px;
+      position: relative;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav a {
+      color: #c2a46d;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #8f7748;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 4px 0;
+    }
+
+    .has-submenu {
+      position: relative;
+    }
+
+    .submenu-toggle {
+      background: transparent;
+      border: none;
+      color: #c2a46d;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .submenu {
+      list-style: none;
+      margin: 8px 0 0 0;
+      padding: 0;
+      display: none;
+    }
+
+    .submenu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 8px 0 8px 14px;
+      font-size: 0.92rem;
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    .has-submenu.open .submenu {
+      display: block;
+    }
+
+    main section {
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      padding-top: 10px;
+    }
+
+    .block {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 20px;
+    }
+
+    footer {
+      padding-bottom: 30px;
+      color: #8f7748;
+    }
+
+    footer a {
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: #c2a46d;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    @media (min-width: 681px) {
+      .has-submenu {
+        display: inline-block;
+      }
+
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: #2a312d;
+        border: 1px solid #8f7748;
+        padding: 8px 12px;
+        z-index: 50;
+      }
+
+      .submenu li a {
+        padding: 8px 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        align-items: stretch;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu > li > a,
+      .submenu-toggle {
+        display: block;
+        width: 100%;
+        border: 1px solid #8f7748;
+        padding: 10px;
+        background: #2a312d;
+        text-align: left;
+      }
+
+      .submenu {
+        margin-top: 0;
+        padding-top: 6px;
+      }
+
+      .submenu li a {
+        border: 1px solid #8f7748;
+        padding: 10px 10px 10px 18px;
+        background: #242a27;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  a:focus-visible,button:focus-visible{outline:3px solid #e5d3a3;outline-offset:3px}.skip-link{position:absolute;left:16px;top:-80px;z-index:1000;background:#e5d3a3;color:#1f2623;padding:10px 14px}.skip-link:focus{top:12px}
