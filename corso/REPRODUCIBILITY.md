@@ -1,7 +1,7 @@
 # Bottino Method — Corso Base
 ## Manifest di riproducibilità didattica
 
-Versione corso: v18
+Versione corso: v19
 Data baseline: 2026-10-06
 Autore: Michele Bottino
 
