@@ -12,7 +12,11 @@ assert(js.includes("bm_completed_at"),'Timestamp completamento assente');
 assert(js.includes("semplificazione didattica"),'Distinzione pipeline didattica assente');
 for(const id of ['units','pct','bar','lessonArticle','continueCourse','quiz','check1','check2'])
  assert(html.includes('id="'+id+'"'),'ID HTML mancante: '+id);
-assert(html.includes('course.js?v=33'),'Baseline cache diversa da v33');
+assert(html.includes('course.js?v=36'),'Baseline cache diversa da v33');
 assert(js.includes('const progressPct='),'Calcolo avanzamento ponderato assente');
+assert(js.includes('function certificateEligible(){return done>=8&&check1Passed()&&check2Passed()&&finalPassed()}'),'Gate attestato finale assente');
+assert(html.includes('10.5281/zenodo.23198223'),'DOI Release 1.0 assente');
+for(const f of ['BM-CB-01_Guida_al_Corso_Base.pdf','BM-CB-02_Dispensa_essenziale.pdf','BM-CB-03_Quaderno_degli_esempi.pdf','BM-CB-04_Scheda_operativa.pdf','Bottino_Method_Corso_Base_Release_1_0_FINALE_Zenodo_CORRETTO.pdf'])
+ assert(html.includes(encodeURIComponent(f)),'Materiale ufficiale assente: '+f);
 console.log('REPRODUCIBILITY_TEST_OK');
-console.log('units=8; checks=2; gates=2; weighted-progress=100%; baseline=v33');
+console.log('units=8; checks=2; gates=2; weighted-progress=100%; baseline=v36');
