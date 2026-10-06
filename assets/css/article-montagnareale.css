@@ -1,0 +1,52 @@
+/* Override specifico articolo — mantiene le differenze editoriali approvate. */
+.article-body {
+      padding-top: 18px;
+      padding-bottom: 14px;
+    }
+
+.article-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 34px 30px;
+    }
+
+.article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.13rem;
+      line-height: 1.9;
+      text-align: justify;
+      hyphens: auto;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+@media (max-width: 860px){
+.article-box {
+        padding: 28px 26px 24px;
+      }
+
+.article-text {
+        font-size: 1.06rem;
+      }
+}
+
+@media (max-width: 680px){
+.article-header {
+        padding-top: 24px;
+      }
+
+.article-box {
+        padding: 22px 18px 20px;
+      }
+
+.article-text {
+        font-size: 1rem;
+        line-height: 1.82;
+        text-align: left;
+        hyphens: none;
+      }
+}
