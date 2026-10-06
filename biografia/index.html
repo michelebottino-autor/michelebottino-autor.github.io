@@ -717,34 +717,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-async function getVisits() {
-  const el = document.getElementById("v-count");
-  if (!el) return;
 
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 2500);
-
-  try {
-    const res = await fetch("", {
-      signal: controller.signal,
-      cache: "no-store"
-    });
-
-    clearTimeout(timeoutId);
-
-    if (!res.ok) {
-      throw new Error("Counter API non disponibile");
-    }
-
-    const data = await res.json();
-    el.textContent = data.data ?? data.count ?? "—";
-  } catch {
-    clearTimeout(timeoutId);
-    el.textContent = "—";
-  }
-}
-
-getVisits();
 </script>
 
 </body>
