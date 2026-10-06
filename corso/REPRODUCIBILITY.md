@@ -1,7 +1,7 @@
 ﻿# Bottino Method â€” Corso Base
 ## Manifest di riproducibilitÃ  didattica
 
-Versione corso: v27
+Versione corso: v30
 Data baseline: 2026-10-06
 Autore: Michele Bottino
 
@@ -64,3 +64,9 @@ node e2e-state-test.js
 Baseline attesa:
 REPRODUCIBILITY_TEST_OK
 E2E_STATE_TEST_OK
+
+
+## Aggiornamenti v30
+- Ripristino automatico della Verifica 1 e della Verifica 2 dopo ricaricamento quando il relativo gate è ancora da superare.
+- Esercizi attivi delle Unità 2–7 con etichetta visibile del campo di risposta e soluzione consultabile dopo la produzione autonoma.
+- Verifiche formali basate su scenari applicativi; soglia invariata: 4/5 (80%).
