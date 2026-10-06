@@ -1,7 +1,7 @@
 ﻿# Bottino Method â€” Corso Base
 ## Manifest di riproducibilitÃ  didattica
 
-Versione corso: v30
+Versione corso: v31
 Data baseline: 2026-10-06
 Autore: Michele Bottino
 
@@ -50,7 +50,7 @@ La pipeline formale del manuale completo comprende acquisizione dellâ€™inpu
 ### Limiti attuali
 Il prototipo usa localStorage: i progressi non sono sincronizzati tra dispositivi.
 Google login non Ã¨ implementato.
-1 PDF didattico pubblicato; gli altri materiali editoriali risultano ancora in corso di pubblicazione.
+1 PDF didattico pubblicato; dispensa, esempi e scheda operativa sono integrati nel percorso web e non vengono dichiarati come PDF separati.
 Attestato locale implementato e stampabile/salvabile in PDF; verifica pubblica del certificato non implementata.
 
 ### Test automatici
@@ -70,3 +70,10 @@ E2E_STATE_TEST_OK
 - Ripristino automatico della Verifica 1 e della Verifica 2 dopo ricaricamento quando il relativo gate è ancora da superare.
 - Esercizi attivi delle Unità 2–7 con etichetta visibile del campo di risposta e soluzione consultabile dopo la produzione autonoma.
 - Verifiche formali basate su scenari applicativi; soglia invariata: 4/5 (80%).
+
+
+## Revisione pedagogica e accessibilità v31
+- La pratica attiva precede la visualizzazione del confronto/feedback nelle Unità 2–7.
+- Le tre valutazioni usano scenari applicativi con distrattori plausibili e soglia 80%.
+- I campi di risposta dispongono di istruzione visibile e nome accessibile.
+- Riferimenti di controllo esterni consultati: W3C WAI (WCAG, labels/instructions) e What Works Clearinghouse/IES (retrieval practice). Questi riferimenti riguardano il design didattico e l'accessibilità, non costituiscono fonti del Bottino Method.
