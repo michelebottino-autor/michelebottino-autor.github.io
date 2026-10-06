@@ -67,6 +67,8 @@ function finishCheck1(){const pct=Math.round(checkCorrect/check1Questions.length
 
 
 function certificateEligible(){return done>=8&&check1Passed()&&check2Passed()&&finalPassed()}
+function identityRecord(){try{return JSON.parse(localStorage.getItem('bm_identity')||'null')}catch{return null}}
+function verifiedIdentity(){const x=identityRecord();return !!(x&&x.status==='verified'&&x.provider&&x.verified_at&&x.subject_ref)}
 function formatCertificateDate(value){if(!value)return '';const d=new Date(value);return Number.isNaN(d.getTime())?'':new Intl.DateTimeFormat('it-IT',{day:'2-digit',month:'long',year:'numeric'}).format(d)}
 function pdfEscape(s){return String(s).replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)').replace(/[\u2018\u2019]/g,"'").replace(/[\u201C\u201D]/g,'"').replace(/\u2013|\u2014/g,'-').replace(/[^\x20-\xFF]/g,'?')}
 async function certificateIdentifier(name,completed){const raw=['BM-CB','v32',name,completed,localStorage.getItem('bm_check1')||'',localStorage.getItem('bm_check2')||'',localStorage.getItem('bm_final')||''].join('|');const data=new TextEncoder().encode(raw),hash=await crypto.subtle.digest('SHA-256',data);return 'BM-'+Array.from(new Uint8Array(hash)).slice(0,8).map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase()}
@@ -78,7 +80,7 @@ function renderCertificate(){
  const saved=(localStorage.getItem('bm_certificate_name')||'').trim();
  document.querySelector('#certificateName').textContent=saved||'NOME COGNOME';
  const input=document.querySelector('#studentName');if(input)input.value=saved;
- const completed=localStorage.getItem('bm_completed_at');document.querySelector('#certificateDate').textContent=completed?'Completato il '+formatCertificateDate(completed):'Corso completato';refreshCertificateCode();
+ const completed=localStorage.getItem('bm_completed_at');document.querySelector('#certificateDate').textContent=completed?'Completato il '+formatCertificateDate(completed):'Corso completato';const ident=identityRecord(),status=document.querySelector('#identityStatus');if(status){status.innerHTML=verifiedIdentity()?'<b>Identità:</b> verificata tramite '+escapeHtml(ident.provider)+' · '+escapeHtml(ident.assurance||'livello dichiarato dal provider'):'<b>Identità:</b> non verificata'}refreshCertificateCode();
 }
 document.addEventListener('click',async e=>{
  if(e.target&&e.target.id==='saveCertificateName'){const input=document.querySelector('#studentName'),name=(input.value||'').trim().replace(/\s+/g,' ');if(name.length<3){input.focus();return}localStorage.setItem('bm_certificate_name',name);renderCertificate()}
