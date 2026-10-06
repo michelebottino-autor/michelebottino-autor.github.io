@@ -40,3 +40,6 @@
 
 /* v28 — pratica attiva */
 .activePractice textarea{display:block;width:100%;min-height:120px;margin:16px 0;padding:14px;border:1px solid #b8c4ce;border-radius:6px;background:#fff;color:var(--ink);font:15px/1.55 Arial,sans-serif;resize:vertical}.activePractice textarea:focus{outline:3px solid #e1c58a;outline-offset:2px;border-color:var(--blue)}.activePractice details{margin-top:14px;padding:12px 14px;border-top:1px solid #e1d6bc}.activePractice summary{cursor:pointer;font-weight:700;color:#075f9e}.activePractice details p{margin-top:12px!important}
+
+/* v30 — etichette visibili per la pratica attiva */
+.practiceLabel{display:block;margin:16px 0;font-weight:700;color:#334b60}.practiceLabel>span{display:block;margin-bottom:7px;font-size:14px}.practiceLabel textarea{margin:0;font-weight:400}
