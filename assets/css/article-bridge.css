@@ -1,0 +1,117 @@
+/* Override specifico articolo — mantiene le differenze editoriali approvate. */
+.article-header {
+      padding-top: 12px;
+      padding-bottom: 14px;
+    }
+
+.article-heading-box,
+    .bridge-box,
+    .article-share,
+    .author-box {
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.96), rgba(36, 43, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+    }
+
+.article-heading-box {
+      padding: 28px 26px 24px;
+    }
+
+.article-meta,
+    .article-tags,
+    .article-warning,
+    .article-update-box {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(42, 49, 45, 0.98), rgba(36, 43, 39, 0.98));
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+.article-meta p,
+    .article-tags p,
+    .article-warning p,
+    .article-update-box p {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+.article-meta p:last-child,
+    .article-tags p:last-child,
+    .article-warning p:last-child,
+    .article-update-box p:last-child {
+      margin-bottom: 0;
+    }
+
+.section {
+      padding-top: 22px;
+    }
+
+.bridge-box {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+.bridge-box h2 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+    }
+
+.bridge-box p {
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+.bridge-box p:last-child {
+      margin-bottom: 0;
+    }
+
+.bridge-link {
+      display: inline-block;
+      width: fit-content;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+.article-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      line-height: 1.92;
+      text-align: justify;
+      hyphens: auto;
+      color: #eadbb4;
+      white-space: normal;
+    }
+
+.article-text p {
+      margin-bottom: 18px;
+    }
+
+.article-text p:last-child {
+      margin-bottom: 0;
+    }
+
+.article-share,
+    .author-box {
+      max-width: 920px;
+      margin: 22px auto 0;
+      padding: 16px 18px;
+    }
+
+@media (max-width: 860px){
+.article-share,
+      .author-box,
+      .back-links,
+      .bridge-box {
+        max-width: 100%;
+      }
+}
+
+@media (max-width: 680px){
+.article-header {
+        padding-top: 24px;
+      }
+}
