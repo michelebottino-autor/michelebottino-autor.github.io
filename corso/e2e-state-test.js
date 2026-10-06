@@ -2,7 +2,9 @@ const fs=require('fs'),vm=require('vm');
 const js=fs.readFileSync(__dirname+'/course.js','utf8');
 class Store{constructor(seed={}){this.d={...seed}}getItem(k){return Object.prototype.hasOwnProperty.call(this.d,k)?this.d[k]:null}setItem(k,v){this.d[k]=String(v)}}
 function state(seed){const s=new Store(seed),ctx={localStorage:s,console,Date};vm.createContext(ctx);
-const pre=js.slice(0,js.indexOf('render();openLesson(current);'));
+const boot=js.indexOf('function initializeCourse()');
+if(boot<0)throw new Error('initializeCourse marker missing');
+const pre=js.slice(0,boot);
 vm.runInContext(pre+';globalThis.__api={check1Passed,check2Passed,finalPassed,maxAllowed,progressPct};',ctx);
 return {s,api:ctx.__api,ctx}}
 const A=(x,m)=>{if(!x)throw new Error(m)};
