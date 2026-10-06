@@ -231,3 +231,31 @@ repeating-radial-gradient(circle at 24% 38%,transparent 0 55px,rgba(215,169,78,.
       url('../../images/michele-bottino-hero-editoriale.jpg') 48% 30%/cover no-repeat!important;
   }
 }
+
+
+/* v6.6 — composizione definitiva: soggetto PNG trasparente, nessun riquadro */
+.home-hero{position:relative;overflow:hidden;isolation:isolate;background:
+radial-gradient(circle at 76% 32%,rgba(197,151,71,.22),transparent 27rem),
+linear-gradient(105deg,#061612 0%,#0b211b 56%,#17170f 100%)!important}
+.home-hero-inner{position:relative!important;z-index:1!important}
+.home-author-visual.approved-hero-scene{background:transparent!important;overflow:visible!important}
+.home-author-visual.approved-hero-scene img{
+object-fit:contain!important;object-position:center bottom!important;
+background:transparent!important;border:0!important;border-radius:0!important;
+filter:none!important;box-shadow:none!important;
+-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%)!important;
+mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%)!important}
+.home-author-visual.approved-hero-scene:after{display:none!important}
+@media(min-width:901px){
+.home-hero-inner{grid-template-columns:minmax(430px,.92fr) minmax(520px,1.08fr)!important}
+.home-author-visual.approved-hero-scene{min-height:650px!important;align-self:end!important}
+.home-author-visual.approved-hero-scene img{height:650px!important;width:100%!important}
+}
+@media(max-width:900px){
+.home-author-visual.approved-hero-scene{height:420px!important;min-height:420px!important}
+.home-author-visual.approved-hero-scene img{height:440px!important;min-height:0!important;width:100%!important}
+}
+@media(max-width:520px){
+.home-author-visual.approved-hero-scene{height:350px!important;min-height:350px!important}
+.home-author-visual.approved-hero-scene img{height:370px!important;min-height:0!important;width:100%!important}
+}
