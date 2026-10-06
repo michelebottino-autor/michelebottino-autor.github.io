@@ -1,0 +1,86 @@
+/* Override specifico pagina. */
+body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1f2623;
+      color: #e5d3a3;
+      margin: 0;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+.actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+.btn {
+      padding: 10px 14px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+.secondary {
+      border: 1px solid #c2a46d;
+      color: #c2a46d;
+      background: transparent;
+    }
+
+.section-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #c2a46d;
+      text-decoration: none;
+      border-bottom: 1px solid #c2a46d;
+    }
+
+@media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        border: 1px solid #8f7748;
+        padding: 10px;
+        background: #2a312d;
+      }
+
+      .page.container {
+        padding-top: 24px;
+        padding-bottom: 18px;
+      }
+
+      .page h1 {
+        font-size: 2.2rem;
+      }
+
+      .page h2 {
+        font-size: 1.3rem;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+    }
