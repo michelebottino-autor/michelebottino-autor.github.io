@@ -16,7 +16,7 @@
     script-src 'self' 'unsafe-inline';
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: https:;
-    connect-src 'self' https://api.counterapi.dev;
+    connect-src 'self';
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -133,10 +133,7 @@
       color: var(--text-muted);
     }
 
-    .visit-counter {
-      margin-top: 10px;
-      color: var(--accent);
-    }
+    
   </style>
 </head>
 
@@ -199,9 +196,7 @@
 
 <footer class="container">
   <p>© 2026 Michele Bottino</p>
-  <div class="visit-counter">
-    Visite: <span id="visit-count">...</span>
-  </div>
+  
 </footer>
 
 <script>
@@ -216,14 +211,7 @@ document.querySelectorAll(".submenu-toggle").forEach(btn => {
   };
 });
 
-async function updateVisitCounter() {
-  const key = location.pathname.replace(/\//g,'-') || 'home';
-  const res = await fetch(`https://api.counterapi.dev/v1/site/${key}/up`);
-  const data = await res.json();
-  document.getElementById("visit-count").textContent = data.count;
-}
 
-updateVisitCounter();
 </script>
 
 </body>
