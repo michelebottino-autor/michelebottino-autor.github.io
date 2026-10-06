@@ -1,4 +1,4 @@
-[Reading 53 lines from start (total: 53 lines, 0 remaining)]
+[Reading 65 lines from start (total: 65 lines, 0 remaining)]
 
 # Bottino Method — Corso Base
 ## Manifest di riproducibilità didattica
@@ -53,3 +53,15 @@ Il prototipo usa localStorage: i progressi non sono sincronizzati tra dispositiv
 Google login non è implementato.
 PDF didattici non ancora prodotti.
 Attestato definitivo e verifica pubblica del certificato non implementati.
+
+### Test automatici
+reproducibility-test.js verifica struttura, gate, completamento e baseline.
+e2e-state-test.js verifica la macchina degli stati: nuovo studente; blocco Verifica 1; esito insufficiente; superamento; blocco Verifica 2; esito insufficiente; superamento; accesso al Caso finale; persistenza del completamento dopo ricaricamento.
+
+Comandi di verifica:
+node reproducibility-test.js
+node e2e-state-test.js
+
+Baseline attesa:
+REPRODUCIBILITY_TEST_OK
+E2E_STATE_TEST_OK
