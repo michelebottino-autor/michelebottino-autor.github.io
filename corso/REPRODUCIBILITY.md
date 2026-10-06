@@ -1,7 +1,7 @@
 ﻿# Bottino Method â€” Corso Base
 ## Manifest di riproducibilitÃ  didattica
 
-Versione corso: v32
+Versione corso: v33
 Data baseline: 2026-10-06
 Autore: Michele Bottino
 
@@ -84,3 +84,7 @@ E2E_STATE_TEST_OK
 - Codice attestato derivato localmente con SHA-256 da versione, nome, data ed esiti; non equivale a firma digitale o verifica pubblica dell'identità.
 - Scheda di trasparenza con emittente, forma di partecipazione, workload, risultati di apprendimento, valutazione e qualità interna.
 - Nessun livello EQF/ECTS o accreditamento pubblico dichiarato.
+
+
+## Identity Gateway v33 — contratto client
+Il frontend riconosce esclusivamente un record di identità restituito da un futuro gateway server-side: status=verified, provider, verified_at, subject_ref pseudonimo e assurance. Il corso non acquisisce né conserva immagini di documenti o dati biometrici. L'assenza di un record verificato mantiene l'attestato nella classe «identità non verificata». SPID/CIE OIDC ed EUDI Wallet saranno adattatori del gateway e non logica incorporata nel corso.
