@@ -42,15 +42,42 @@
 <a class="skip-link" href="#main-content">Salta al contenuto principale</a>
 
 <header class="container">
-  <nav class="nav">
-<ul class="nav-menu" id="menu">
+  <nav class="nav" id="site-nav">
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Apri il menu di navigazione" aria-controls="menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="menu">
       <li><a href="../">Home</a></li>
-      <li><a href="../biografia/">Autore</a></li>
-      <li><a href="../opere/">Opere</a></li>
-      <li><a href="../articoli/">Scritti</a></li>
-      <li><a href="../metodo/">Metodo</a></li>
-      <li><a href="../corso/">Corso Base</a></li>
-      <li><a href="../ricerca/">Ricerca</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" id="toggle-autore" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-autore">Autore</button>
+        <ul class="submenu" id="submenu-autore">
+          <li><a href="../biografia/">Biografia</a></li>
+          <li><a href="../poetica/">Poetica</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" id="toggle-opere" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-opere">Opere</button>
+        <ul class="submenu" id="submenu-opere">
+          <li><a href="../opere/">Romanzi e saggi</a></li>
+          <li><a href="../testi-musicali/">Testi musicali</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" id="toggle-scritti" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-scritti">Scritti</button>
+        <ul class="submenu" id="submenu-scritti">
+          <li><a href="../articoli/">Articoli</a></li>
+          <li><a href="../articoli/">Indagini</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" id="toggle-metodo" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-metodo">Metodo e ricerca</button>
+        <ul class="submenu" id="submenu-metodo">
+          <li><a href="../metodo/">Metodo</a></li>
+          <li><a href="../corso/">Corso Base</a></li>
+          <li><a href="../ricerca/">Ricerca</a></li>
+          <li><a href="../strutture-irrisolto/">Strutture irrisolte</a></li>
+        </ul>
+      </li>
       <li><a href="../media/">Media</a></li>
       <li><a href="../contatti/">Contatti</a></li>
     </ul>
@@ -149,5 +176,6 @@
 
 <footer class="container"><p>© 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.<br><a href="../privacy/">Privacy Policy</a> | <a href="../disclaimer/">Disclaimer</a> | <a href="../contatti/">Contatti</a></p></footer>
 
+<script src="/assets/js/site-nav.js" defer></script>
 </body>
 </html>
