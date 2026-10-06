@@ -259,3 +259,51 @@ mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%)!importan
 .home-author-visual.approved-hero-scene{height:350px!important;min-height:350px!important}
 .home-author-visual.approved-hero-scene img{height:370px!important;min-height:0!important;width:100%!important}
 }
+
+
+/* v6.7 — grafica homepage approvata, senza immagine autore */
+.home-hero{
+  min-height:650px!important;
+  background-image:
+    linear-gradient(90deg,rgba(4,19,15,.98) 0%,rgba(4,19,15,.90) 31%,rgba(4,19,15,.48) 48%,rgba(4,19,15,.05) 72%),
+    url("../../images/homepage-grafica-senza-autore.webp")!important;
+  background-size:cover!important;
+  background-position:center 47%!important;
+  background-repeat:no-repeat!important;
+}
+.home-hero:before{
+  background:linear-gradient(180deg,rgba(4,18,14,.10) 0%,transparent 70%,rgba(4,18,14,.72) 100%)!important;
+}
+.home-hero-inner{
+  display:block!important;
+  min-height:650px!important;
+}
+.home-hero-copy{
+  position:relative!important;
+  z-index:4!important;
+  width:min(52%,690px)!important;
+  padding:82px 44px 70px!important;
+}
+.home-author-visual.approved-hero-scene{display:none!important}
+@media(max-width:900px){
+  .home-hero{
+    min-height:650px!important;
+    background-size:auto 650px!important;
+    background-position:62% center!important;
+  }
+  .home-hero:after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(4,18,14,.22),rgba(4,18,14,.70) 48%,#071511 88%);
+    pointer-events:none;
+  }
+  .home-hero-inner{min-height:650px!important;display:flex!important;align-items:flex-end!important}
+  .home-hero-copy{
+    width:100%!important;max-width:none!important;padding:250px 24px 44px!important;
+    background:transparent!important;margin:0!important;
+  }
+}
+@media(max-width:520px){
+  .home-hero{min-height:610px!important;background-size:auto 610px!important;background-position:67% center!important}
+  .home-hero-inner{min-height:610px!important}
+  .home-hero-copy{padding:230px 20px 36px!important}
+}
