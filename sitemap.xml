@@ -116,4 +116,11 @@
     <loc>https://michelebottino-autor.github.io/disclaimer/</loc>
     <priority>0.4</priority>
   </url>
+
+  <url>
+    <loc>https://michelebottino-autor.github.io/corso/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
