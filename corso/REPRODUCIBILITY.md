@@ -1,9 +1,7 @@
-[Reading 65 lines from start (total: 65 lines, 0 remaining)]
-
 # Bottino Method — Corso Base
 ## Manifest di riproducibilità didattica
 
-Versione corso: v17
+Versione corso: v18
 Data baseline: 2026-10-06
 Autore: Michele Bottino
 
@@ -36,6 +34,7 @@ Unità 4 bloccata finché Verifica 1 non è superata.
 Unità 8 bloccata finché Verifica 2 non è superata.
 Una verifica non superata può essere ripetuta.
 Il pulsante Continua deve portare alla prima dipendenza non completata.
+L'avanzamento complessivo è ponderato: 8 unità × 10% = 80%; Verifica 1 = 10%; Verifica 2 = 10%. Il 100% è quindi raggiungibile soltanto dopo entrambe le verifiche e tutte le unità.
 
 ### Distinzione metodologica
 La sequenza Acquisisci → Classifica → Verifica → Confronta → Concludi → Traccia è una semplificazione didattica del Corso Base.
