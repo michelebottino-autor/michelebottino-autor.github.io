@@ -1,0 +1,328 @@
+/* Stili specifici opere — estratti senza variazioni grafiche. */
+* {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #1f2623;
+      --text: #e5d3a3;
+      --accent: #c2a46d;
+      --accent-strong: #e1c07e;
+      --card-bg: #2a312d;
+      --border: #8f7748;
+      --muted: #a9915f;
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 14px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1f2623;
+      color: #e5d3a3;
+      margin: 0;
+      line-height: 1.7;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+      color: #e5d3a3;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1.1em;
+      max-width: 68ch;
+    }
+
+    a {
+      color: #c2a46d;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #8f7748;
+      padding-bottom: 14px;
+      gap: 20px;
+      position: relative;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav a {
+      color: #c2a46d;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.82;
+    }
+
+    .nav a.active {
+      color: var(--accent-strong);
+      border-bottom-color: var(--accent-strong);
+    }
+
+    .has-submenu {
+      position: relative;
+    }
+
+    .submenu-toggle {
+      background: transparent;
+      border: none;
+      color: #c2a46d;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .submenu {
+      list-style: none;
+      margin: 8px 0 0 0;
+      padding: 0;
+      display: none;
+    }
+
+    .submenu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 8px 0 8px 14px;
+      font-size: 0.92rem;
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    .has-submenu.open .submenu {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #8f7748;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #c2a46d;
+      margin: 4px 0;
+    }
+
+    .breadcrumb {
+      padding-top: 18px;
+      padding-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .breadcrumb a:hover {
+      border-bottom-color: var(--muted);
+    }
+
+    .page.container {
+      padding-top: 30px;
+      padding-bottom: 24px;
+    }
+
+    .page h1 {
+      font-size: 2.8rem;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .page h2 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-top: 30px;
+      margin-bottom: 14px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      max-width: 62ch;
+    }
+
+    .intro-note {
+      margin-bottom: 14px;
+      color: #e5d3a3;
+    }
+
+    .intro-links {
+      margin-top: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #2a312d;
+      border: 1px solid #8f7748;
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .meta {
+      color: #c2a46d;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    .note {
+      color: #c2a46d;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 30px 0;
+      color: #8f7748;
+    }
+
+    footer a {
+      color: #c2a46d;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer a:visited {
+      color: #c2a46d;
+    }
+
+    
+
+    @media (min-width: 681px) {
+      .has-submenu {
+        display: inline-block;
+      }
+
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        z-index: 50;
+      }
+
+      .submenu li a {
+        padding: 8px 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        align-items: stretch;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu > li > a,
+      .submenu-toggle {
+        display: block;
+        width: 100%;
+        border: 1px solid #8f7748;
+        padding: 10px;
+        background: #2a312d;
+        border-radius: 8px;
+        text-align: left;
+      }
+
+      .submenu {
+        margin-top: 0;
+        padding-top: 6px;
+      }
+
+      .submenu li a {
+        border: 1px solid #8f7748;
+        padding: 10px 10px 10px 18px;
+        background: #242a27;
+        border-radius: 8px;
+      }
+
+      .page.container {
+        padding-top: 24px;
+        padding-bottom: 18px;
+      }
+
+      .page h1 {
+        font-size: 2.2rem;
+      }
+
+      .page h2 {
+        font-size: 1.3rem;
+      }
+    }
+  a:focus-visible,button:focus-visible{outline:3px solid #e5d3a3;outline-offset:3px}.skip-link{position:absolute;left:16px;top:-80px;z-index:1000;background:#e5d3a3;color:#1f2623;padding:10px 14px}.skip-link:focus{top:12px}
