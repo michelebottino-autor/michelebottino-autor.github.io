@@ -36,3 +36,7 @@
 .course-logo img{display:block;width:190px;height:auto;max-height:86px;object-fit:contain;background:#fff;border-radius:7px;padding:3px}
 @media(max-width:900px){.course-logo img{width:150px;max-height:72px}}
 @media(max-width:560px){.course-logo{width:100%;justify-content:center}.course-logo img{width:165px}}
+
+
+/* v28 — pratica attiva */
+.activePractice textarea{display:block;width:100%;min-height:120px;margin:16px 0;padding:14px;border:1px solid #b8c4ce;border-radius:6px;background:#fff;color:var(--ink);font:15px/1.55 Arial,sans-serif;resize:vertical}.activePractice textarea:focus{outline:3px solid #e1c58a;outline-offset:2px;border-color:var(--blue)}.activePractice details{margin-top:14px;padding:12px 14px;border-top:1px solid #e1d6bc}.activePractice summary{cursor:pointer;font-weight:700;color:#075f9e}.activePractice details p{margin-top:12px!important}
