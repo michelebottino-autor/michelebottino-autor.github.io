@@ -54,8 +54,8 @@
 <body><a class="skip-link" href="#main-content">Salta al contenuto principale</a>
 
 <header class="container">
-  <nav class="nav">
-<button class="menu-toggle" aria-label="Menu">
+  <nav class="nav" id="site-nav" aria-label="Navigazione principale">
+<button class="menu-toggle" id="menu-toggle" type="button" aria-label="Apri il menu di navigazione" aria-controls="menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
@@ -105,13 +105,13 @@ Questa pagina raccoglie i riferimenti e i canali ufficiali collegati al sito di 
     <input type="hidden" name="_template" value="table">
 
     <label for="nome">Nome</label>
-    <input type="text" id="nome" name="nome" required>
+    <input type="text" id="nome" name="nome" autocomplete="name" required>
 
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+    <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
 
     <label for="messaggio">Messaggio</label>
-    <textarea id="messaggio" name="messaggio" rows="6" required></textarea>
+    <textarea id="messaggio" name="messaggio" rows="6" autocomplete="off" required></textarea>
 
     <div>
       <input type="checkbox" id="presa-visione-privacy" name="presa_visione_privacy" value="si" required>
