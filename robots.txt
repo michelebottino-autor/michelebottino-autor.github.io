@@ -2,7 +2,6 @@ User-agent: *
 Allow: /
 
 # Evita indicizzazione di risorse non rilevanti
-Disallow: /images/
 Disallow: /css/
 Disallow: /js/
 
