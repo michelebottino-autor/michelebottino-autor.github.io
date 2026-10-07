@@ -701,3 +701,19 @@ a:focus-visible,button:focus-visible{outline:3px solid #e5d3a3;outline-offset:3p
 .home-actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important;margin-top:20px!important}
 .home-actions .home-btn{min-height:44px!important;padding:10px 14px!important;font-size:.78rem!important;white-space:nowrap!important}
 }
+
+/* v7.2 — definitive plain homepage hero */
+.home-hero{position:relative!important;min-height:0!important;background:#071711!important;background-image:none!important;background-size:auto!important;background-position:initial!important;background-repeat:no-repeat!important;overflow:hidden!important}
+.home-hero:before,.home-hero:after{content:none!important;display:none!important;background:none!important}
+.home-hero-inner{display:block!important;min-height:0!important}
+.home-hero-copy{position:relative!important;z-index:1!important;width:min(760px,72%)!important;max-width:760px!important;margin:0!important;padding:64px 44px 58px!important;background:transparent!important}
+.home-desk,.home-author-visual.approved-hero-scene{display:none!important}
+@media(max-width:680px){
+.home-hero-copy{width:100%!important;max-width:none!important;padding:34px 22px 36px!important}
+.home-hero-copy .eyebrow{margin:0 0 10px!important;font-size:.68rem!important;line-height:1.25!important;letter-spacing:.16em!important}
+.home-hero-copy h1{margin:0 0 16px!important;font-size:clamp(2.7rem,11vw,3.7rem)!important;line-height:.92!important}
+.home-claim{margin:0 0 16px!important;padding-left:13px!important;font-size:clamp(1.2rem,5.2vw,1.55rem)!important;line-height:1.23!important}
+.home-intro{margin:0!important;max-width:38rem!important;font-size:.92rem!important;line-height:1.5!important}
+.home-actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important;margin-top:20px!important}
+.home-actions .home-btn{min-height:44px!important;padding:10px 14px!important;font-size:.78rem!important;line-height:1.1!important;white-space:nowrap!important}
+}
