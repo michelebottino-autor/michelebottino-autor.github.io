@@ -9,6 +9,8 @@
   <meta name="author" content="Michele Bottino">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1f2623">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action https://formsubmit.co; frame-ancestors 'none'; upgrade-insecure-requests;">
   <link rel="canonical" href="https://michelebottino-autor.github.io/contatti/">
 
   <!-- Open Graph -->
@@ -103,6 +105,8 @@ Questa pagina raccoglie i riferimenti e i canali ufficiali collegati al sito di 
     <input type="hidden" name="_subject" value="Nuovo messaggio dal sito">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
+    <label class="visually-hidden" for="website">Lascia vuoto questo campo</label>
+    <input class="honeypot" type="text" id="website" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
     <label for="nome">Nome</label>
     <input type="text" id="nome" name="nome" autocomplete="name" required>
