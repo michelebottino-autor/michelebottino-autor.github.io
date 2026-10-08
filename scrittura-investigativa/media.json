@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "course_id": "scrittura-investigativa-documentale",
+  "description": "Registro media per le lezioni. Nessun video e' attualmente pubblicato.",
+  "lessons": {
+    "unita-1-lezione-1": {
+      "videos": []
+    }
+  },
+  "supported_video_sources": [
+    "mp4_hosted",
+    "youtube_nocookie",
+    "vimeo"
+  ],
+  "video_fields": [
+    "id",
+    "title",
+    "source",
+    "url",
+    "captions_url",
+    "transcript_url",
+    "duration_seconds",
+    "published"
+  ],
+  "privacy_note": "Non incorporare servizi terzi senza valutazione privacy e consenso quando richiesto."
+}
