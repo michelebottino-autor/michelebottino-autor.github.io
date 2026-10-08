@@ -123,9 +123,26 @@
         "url": "https://www.formazionepromethes.it/prodotto/corso-di-perfezionamento-in-giornalismo-investigativo-inchieste-e-comunicazione-a-confronto/"
       }
     ],
-    "candidate_self_paced_eur": 249,
-    "candidate_with_manual_feedback_eur": 449,
+    "candidate_self_paced_eur": 79,
+    "candidate_with_manual_feedback_eur": null,
     "public_price_approved": false,
-    "notes": "Prezzi ipotetici non offerte; il feedback umano richiede personale e sostenibilita'."
+    "notes": "Prezzo introduttivo ipotizzato sotto 100 EUR. Non pubblicare come prezzo di vendita fino ad approvazione, completamento contenuti e attivazione pagamenti."
+  },
+  "primary_materials_policy": {
+    "authentic_documents_required": true,
+    "synthetic_document_illustrations": false,
+    "source_record_fields": [
+      "institution",
+      "collection",
+      "shelfmark_or_catalog_id",
+      "document_title",
+      "date",
+      "source_url",
+      "license_or_reuse_terms",
+      "image_credit",
+      "date_accessed"
+    ],
+    "publication_rule": "Use scans only when permission or reuse terms are verified; otherwise link to institutional viewer.",
+    "lesson_goal": "Transcribe, contextualize, corroborate, and write from actual sources."
   }
 }
