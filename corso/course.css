@@ -70,3 +70,6 @@ header{gap:20px}header .course-logo{display:flex;align-items:center;justify-cont
  .facts b{border-right:0!important}
 }
 @media(min-width:721px){header .course-logo img{mix-blend-mode:multiply!important}}
+
+/* v39 — comunicazione promozione trasparente */
+.promo-banner{max-width:1180px;margin:25px auto 0;padding:26px 32px;background:#fff8e8;border:1px solid #ddc68d;border-left:5px solid #b48b36;border-radius:12px;color:#152b3e}.promo-banner h2{font:clamp(25px,3vw,36px)/1.2 Georgia,serif;margin:8px 0 14px}.promo-banner p{line-height:1.65}.promo-disclosure{background:#fff;padding:14px 16px;border-radius:8px;font-size:14px}.promo-link{font-weight:700;color:#075b92}@media(max-width:720px){.promo-banner{margin:16px 12px 0;padding:22px 18px}}
