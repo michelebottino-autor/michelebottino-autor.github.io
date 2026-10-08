@@ -49,5 +49,31 @@
         "reason": "identity_and_enrollment_backend_not_yet_published"
       }
     }
-  ]
+  ],
+  "payment_configuration": {
+    "methods": [
+      {
+        "id": "paypal",
+        "label": "PayPal e carte",
+        "enabled": false,
+        "status": "pending_merchant_configuration",
+        "checkout": "provider_hosted",
+        "accepted_funding": "PayPal account or eligible credit/debit/prepaid card",
+        "capture_card_details": false
+      },
+      {
+        "id": "bank_transfer",
+        "label": "Bonifico bancario",
+        "enabled": false,
+        "status": "pending_beneficiary_details",
+        "requires_manual_settlement_confirmation": true,
+        "access_granted_after": "confirmed_credit"
+      }
+    ],
+    "excluded_methods": [
+      "direct_postepay_top_up"
+    ],
+    "currency": "EUR",
+    "no_automatic_charges": true
+  }
 }
