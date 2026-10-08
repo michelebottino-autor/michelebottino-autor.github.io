@@ -746,3 +746,14 @@ a:focus-visible,button:focus-visible{outline:3px solid #e5d3a3;outline-offset:3p
 @media screen and (min-width:901px) {
   header #menu-toggle .menu-toggle-label {display:none!important}
 }
+
+
+/* Header mobile compatto: dimensioni leggibili senza spazio superfluo. */
+@media screen and (max-width:900px){
+  header.container {padding-top:8px!important;padding-bottom:8px!important;min-height:0!important}
+  header nav#site-nav {min-height:48px!important;margin:0!important;padding:0!important}
+  header #menu-toggle {width:76px!important;min-width:76px!important;max-width:76px!important;height:44px!important;min-height:44px!important;padding:5px 10px!important;gap:0!important}
+  header #menu-toggle span:not(.menu-toggle-label){width:21px!important;height:2px!important;margin:2px 0!important}
+  header #menu-toggle .menu-toggle-label {margin-top:4px!important;font-size:10px!important;line-height:1.1!important}
+  header #menu {margin-top:8px!important}
+}
