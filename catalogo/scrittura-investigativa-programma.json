@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "course_id": "scrittura-investigativa-documentale",
+  "title": "Scrittura Investigativa e Ricostruzione dei Fatti Reali",
+  "subtitle": "Dalla ricerca delle fonti alla pubblicazione di articoli, inchieste e libri documentati",
+  "status": "in_development",
+  "target": "Autori di opere basate su fatti reali, giornalisti, biografi, ricercatori indipendenti, documentaristi",
+  "excludes": "Corso di scrittura di romanzi di fantasia",
+  "core_principle": "Ogni affermazione rilevante deve avere una fonte o essere qualificata come ipotesi o interpretazione",
+  "units": [
+    {
+      "number": 1,
+      "title": "Origini e storia",
+      "objective": "Cronache, fonti giudiziarie, giornalismo d'inchiesta, non-fiction documentale",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 2,
+      "title": "La domanda investigativa",
+      "objective": "Delimitare fatti, ipotesi, ambito e possibili falsificazioni",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 3,
+      "title": "Ricerca delle fonti",
+      "objective": "Archivi, cataloghi, registri, testimonianze, ricerche multilingue",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 4,
+      "title": "Autenticità e provenienza",
+      "objective": "Segnature, originali, copie, datazione, catena di custodia",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 5,
+      "title": "Indagine digitale e OSINT",
+      "objective": "Archivi web, metadati, fonti aperte e verifiche indipendenti",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 6,
+      "title": "Cronologia e dossier",
+      "objective": "Timeline, registro evidenze, contraddizioni e lacune",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 7,
+      "title": "Dalla prova alla scrittura",
+      "objective": "Struttura di articoli, reportage e capitoli di saggistica",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 8,
+      "title": "IA sotto controllo",
+      "objective": "Trascrizione assistita, confronto, errori e audit delle conclusioni",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 9,
+      "title": "Etica e diritto",
+      "objective": "Privacy, diffamazione, diritto d'autore, tutela delle fonti",
+      "lessons_status": "to_develop"
+    },
+    {
+      "number": 10,
+      "title": "Laboratorio finale",
+      "objective": "Inchiesta documentale con dossier, testo finale e verifica delle affermazioni",
+      "lessons_status": "to_develop"
+    }
+  ],
+  "assessment": {
+    "intermediate_exercises": true,
+    "final_project": {
+      "deliverables": [
+        "Domanda investigativa",
+        "Registro delle fonti",
+        "Cronologia delle evidenze",
+        "Articolo o capitolo documentale",
+        "Matrice affermazione-fonte",
+        "Nota metodologica con limiti e lacune"
+      ],
+      "rubric": [
+        "Tracciabilità delle affermazioni",
+        "Indipendenza delle fonti",
+        "Distinzione fatti/ipotesi",
+        "Accuratezza narrativa",
+        "Correttezza etica e giuridica"
+      ]
+    },
+    "passing_threshold": null
+  },
+  "certificate": {
+    "type": "private_verifiable_certificate_planned",
+    "official_credits": false,
+    "issue_enabled": false
+  },
+  "duration_minutes": null,
+  "price": null,
+  "enrollment_enabled": false
+}
