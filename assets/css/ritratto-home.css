@@ -1,6 +1,8 @@
 /* Ritratto originale: nessun filtro, ritaglio o alterazione del volto. */
-.home-hero-inner{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr)!important;align-items:end!important;gap:clamp(12px,3vw,42px)!important}
-.home-hero-copy{width:100%!important;max-width:760px!important}
+.home-hero.has-author-portrait .home-hero-inner{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr)!important;align-items:end!important;gap:clamp(12px,3vw,42px)!important}
+.home-hero.has-author-portrait .home-hero-copy{width:100%!important;max-width:760px!important}
 .home-author-portrait{margin:0;align-self:end;display:flex;justify-content:center;align-items:flex-end;min-width:0}
 .home-author-portrait img{display:block;width:auto;max-width:100%;height:auto;max-height:560px;object-fit:contain;object-position:center bottom;filter:none!important;transform:none!important}
-@media(max-width:680px){.home-hero-inner{grid-template-columns:1fr!important;gap:0!important}.home-hero-copy{width:100%!important}.home-author-portrait img{max-height:390px;max-width:min(100%,390px)}}
+@media(max-width:680px){.home-hero.has-author-portrait .home-hero-inner{grid-template-columns:1fr!important;gap:0!important}.home-hero.has-author-portrait .home-hero-copy{width:100%!important}.home-author-portrait img{max-height:390px;max-width:min(100%,390px)}}
+
+.home-author-portrait[hidden]{display:none!important}
