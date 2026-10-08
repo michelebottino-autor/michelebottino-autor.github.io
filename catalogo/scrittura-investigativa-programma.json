@@ -97,5 +97,35 @@
   },
   "duration_minutes": null,
   "price": null,
-  "enrollment_enabled": false
+  "enrollment_enabled": false,
+  "level": "intermedio",
+  "delivery_model": "online asincrono con esercizi e progetto finale",
+  "workload_planning": {
+    "target_min_hours": 40,
+    "target_max_hours": 50,
+    "verified_hours": null,
+    "notes": "Stima progettuale, non ore certificate: verificare con produzione lezioni e prove pilota."
+  },
+  "pricing_research": {
+    "status": "under_evaluation",
+    "market_references": [
+      {
+        "provider": "Scuola Holden",
+        "course": "Giornalismo narrativo e inchieste internazionali",
+        "price_eur": 650,
+        "url": "https://scuolaholden.it/giornalismo-narrativo/"
+      },
+      {
+        "provider": "FormAzione Promethes",
+        "course": "Corso perfezionamento giornalismo investigativo",
+        "promotional_price_eur": 390,
+        "standard_price_eur": 900,
+        "url": "https://www.formazionepromethes.it/prodotto/corso-di-perfezionamento-in-giornalismo-investigativo-inchieste-e-comunicazione-a-confronto/"
+      }
+    ],
+    "candidate_self_paced_eur": 249,
+    "candidate_with_manual_feedback_eur": 449,
+    "public_price_approved": false,
+    "notes": "Prezzi ipotetici non offerte; il feedback umano richiede personale e sostenibilita'."
+  }
 }
