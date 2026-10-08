@@ -13,7 +13,12 @@
       "learning_goal": "Riconoscere la differenza fra denominazione mediatica e provenienza accertata della malattia.",
       "writing_exercise": "Scrivere titolo, sommario e apertura di un articolo che non suggerisca erroneamente che la malattia provenisse dalla Spagna.",
       "caution": "Non interpretare come prova scientifica contemporanea tutte le indicazioni mediche del 1918.",
-      "reuse": "Verificare condizioni specifiche dell'item prima di ospitare scansioni sul sito."
+      "reuse": "Verificare condizioni specifiche dell'item prima di ospitare scansioni sul sito.",
+      "rights_review_status": "link_only_unverified",
+      "embed_allowed": false,
+      "attribution_template": "Library of Congress / Chronicling America — The Morgan City Daily Review, 14 ottobre 1918, pagina 4 (1918). Fonte: https://chroniclingamerica.loc.gov/lccn/sn88064293/1918-10-14/ed-1/seq-4/",
+      "rights_statement_url": null,
+      "rights_verification_date": null
     },
     {
       "id": "D1918-02",
@@ -25,7 +30,12 @@
       "learning_goal": "Confrontare coperture diverse e distinguere notizia, previsione e consiglio.",
       "writing_exercise": "Preparare una scaletta di reportage con tre articoli datati e una nota sui limiti della selezione.",
       "caution": "Il repertorio è selettivo: non è un campione statistico rappresentativo.",
-      "reuse": "Link alle scansioni; valutare singolarmente il riutilizzo."
+      "reuse": "Link alle scansioni; valutare singolarmente il riutilizzo.",
+      "rights_review_status": "link_only_unverified",
+      "embed_allowed": false,
+      "attribution_template": "Library of Congress — Influenza Epidemic of 1918: Selected Articles (1918). Fonte: https://guides.loc.gov/chronicling-america-spanish-flu/selected-articles",
+      "rights_statement_url": null,
+      "rights_verification_date": null
     },
     {
       "id": "DBLY-01",
@@ -37,7 +47,12 @@
       "learning_goal": "Analizzare apertura narrativa, osservazione e rappresentazione delle persone coinvolte.",
       "writing_exercise": "Riscrivere un'apertura senza aggiungere dettagli non attestati, confrontando il resoconto originale.",
       "caution": "La guida è fonte secondaria; per le parole dell'autrice consultare la pubblicazione originale.",
-      "reuse": "Collegamento alla guida, non copia delle immagini."
+      "reuse": "Collegamento alla guida, non copia delle immagini.",
+      "rights_review_status": "link_only_unverified",
+      "embed_allowed": false,
+      "attribution_template": "Library of Congress — Nellie Bly, Behind Asylum Bars: ricostruzione e rimandi alle edizioni del 1887 (1887). Fonte: https://blogs.loc.gov/headlinesandheroes/2022/11/nellie-bly-blackwells-island/",
+      "rights_statement_url": null,
+      "rights_verification_date": null
     },
     {
       "id": "DTIT-01",
@@ -49,7 +64,12 @@
       "learning_goal": "Distinguere testimonianza, conclusione ufficiale e successiva narrazione pubblica.",
       "writing_exercise": "Scrivere un paragrafo narrativo che attribuisca correttamente una testimonianza a chi la rese.",
       "caution": "La guida descrive fonti primarie; non equivale alla trascrizione integrale delle udienze.",
-      "reuse": "Usare collegamenti; controllare i diritti di ogni immagine."
+      "reuse": "Usare collegamenti; controllare i diritti di ogni immagine.",
+      "rights_review_status": "link_only_unverified",
+      "embed_allowed": false,
+      "attribution_template": "National Archives and Records Administration — They Said It Couldn't Sink: documenti dell'indagine sul Titanic (1912). Fonte: https://www.archives.gov/publications/prologue/2012/spring/titanic.html",
+      "rights_statement_url": null,
+      "rights_verification_date": null
     },
     {
       "id": "DWELLS-01",
@@ -61,8 +81,44 @@
       "learning_goal": "Osservare come un'autrice struttura una denuncia documentale e rende leggibili i dati.",
       "writing_exercise": "Preparare un breve profilo dell'autrice distinguendo citazioni d'epoca e commento moderno.",
       "caution": "Lavorare con sensibilità rispetto alle vittime di violenza razzista.",
-      "reuse": "Link alle fonti originali, verifica dei diritti prima di incorporare immagini."
+      "reuse": "Link alle fonti originali, verifica dei diritti prima di incorporare immagini.",
+      "rights_review_status": "link_only_unverified",
+      "embed_allowed": false,
+      "attribution_template": "Library of Congress — Ida B. Wells: Topics in Chronicling America (1895). Fonte: https://guides.loc.gov/chronicling-america-ida-wells",
+      "rights_statement_url": null,
+      "rights_verification_date": null
     }
   ],
-  "editorial_note": "Ogni documento richiede un controllo puntuale della pagina originale e dei diritti prima di inserire scansioni direttamente sul sito."
+  "editorial_note": "Ogni documento richiede un controllo puntuale della pagina originale e dei diritti prima di inserire scansioni direttamente sul sito.",
+  "reuse_policy": {
+    "rule": "Attribution is not permission. Do not reproduce full text, scans, images, videos or logos unless legal reuse basis is documented.",
+    "default_display": "external_link_only",
+    "review_required_before_embedding": true,
+    "fields_required": [
+      "creator",
+      "title",
+      "publication_date",
+      "holding_institution",
+      "collection",
+      "shelfmark_or_catalog_id",
+      "canonical_source_url",
+      "access_date",
+      "rights_statement_url",
+      "license_name_or_legal_basis",
+      "attribution_text",
+      "reuse_review_status",
+      "reviewer",
+      "review_date"
+    ],
+    "allowed_status": [
+      "link_only_unverified",
+      "licensed_reuse",
+      "public_domain_verified",
+      "permission_granted",
+      "restricted"
+    ],
+    "privacy_check_required": true,
+    "commercial_use_check_required": true,
+    "notes": "For historical documents, copyright in the work and rights/terms for reproductions or databases may need separate review; do not presume all images in institutional collections are freely reusable."
+  }
 }
