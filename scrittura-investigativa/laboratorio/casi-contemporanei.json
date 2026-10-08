@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "title": "Laboratori su casi contemporanei: media e fatti documentabili",
+  "status": "framework_in_development",
+  "principle": "Non determinare colpevolezza o verità giudiziaria: insegnare a separare copertura mediatica, documenti, testimonianze, ipotesi e limiti conoscitivi.",
+  "criteria": [
+    "Caso ampiamente conosciuto con fonti primarie legalmente accessibili",
+    "Documenti pubblici verificabili, datati e con provenienza",
+    "Contenuti didattici aggiornabili e cronologia delle correzioni",
+    "Rispetto della presunzione di innocenza, privacy, persone vulnerabili e vittime",
+    "Nessun utilizzo di atti riservati, fughe di notizie o contenuti grafici non necessari"
+  ],
+  "status_categories": [
+    {
+      "code": "documented",
+      "label": "Documentato",
+      "definition": "Sostenuto da una fonte verificabile, nei limiti precisi di ciò che prova."
+    },
+    {
+      "code": "reported",
+      "label": "Riportato",
+      "definition": "Dichiarazione pubblicata o testimonianza; l'esistenza della dichiarazione non ne prova il contenuto."
+    },
+    {
+      "code": "disputed",
+      "label": "Controverso",
+      "definition": "Fonti o interpretazioni divergenti che richiedono confronto."
+    },
+    {
+      "code": "hypothesis",
+      "label": "Ipotesi",
+      "definition": "Possibile spiegazione, non presentabile come fatto."
+    },
+    {
+      "code": "unknown",
+      "label": "Non verificabile al momento",
+      "definition": "Informazione per cui mancano fonti accessibili e affidabili."
+    }
+  ],
+  "exercise_template": {
+    "step_1": "Seleziona un titolo giornalistico e registrane data, testata, URL e testo preciso.",
+    "step_2": "Estrai tre affermazioni verificabili senza trasformarle in conclusioni.",
+    "step_3": "Associa a ciascuna affermazione un documento primario o dichiara l'assenza di riscontro.",
+    "step_4": "Verifica se due fonti sono davvero indipendenti.",
+    "step_5": "Riscrivi il titolo e un paragrafo con formulazioni proporzionate alle prove.",
+    "step_6": "Aggiungi la data di aggiornamento e i limiti della ricerca."
+  },
+  "editorial_policy": {
+    "legal_status": "Distinguere indagini, accuse, rinvii a giudizio, sentenze non definitive e sentenze definitive.",
+    "safety": "Evitare dettagli privati, dati personali non necessari, speculazioni su persone e attribuzioni di responsabilità non accertate.",
+    "updates": "Congelare la versione delle fonti analizzate e annotare gli sviluppi successivi."
+  },
+  "cases": [],
+  "note": "Nessun caso specifico è stato pubblicato senza una previa verifica puntuale delle fonti."
+}
