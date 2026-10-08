@@ -1,9 +1,5 @@
 User-agent: *
 Allow: /
 
-# Evita indicizzazione di risorse non rilevanti
-Disallow: /css/
-Disallow: /js/
-
 # Sitemap
 Sitemap: https://michelebottino-autor.github.io/sitemap.xml
