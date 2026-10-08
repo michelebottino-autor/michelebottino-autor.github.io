@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "course_id": "scrittura-investigativa-documentale",
+  "editorial_rule": "Spiegare i termini tecnici in linguaggio comune e con esempi; evitare gergo non necessario.",
+  "terms": [
+    {
+      "term": "Fonte primaria",
+      "plain_language": "Una testimonianza o un documento direttamente legato al fatto studiato.",
+      "example": "Per sapere che cosa fu scritto in una lettera del 1887, consulti la lettera stessa.",
+      "practical_note": "Una fonte primaria non è automaticamente vera: va verificata."
+    },
+    {
+      "term": "Corroborazione",
+      "plain_language": "Controllare un'affermazione cercando riscontri da fonti indipendenti.",
+      "example": "Un vicino dice che c'è stato un blackout: controlli anche gli avvisi del gestore.",
+      "practical_note": "Due siti che copiano la stessa notizia non sono due prove indipendenti."
+    },
+    {
+      "term": "Provenienza",
+      "plain_language": "Sapere da dove arriva un documento e quali passaggi ha compiuto.",
+      "example": "Una fotografia senza autore né data è più difficile da verificare di una fotografia catalogata in archivio.",
+      "practical_note": "Annota sempre istituzione, identificativo e collegamento."
+    },
+    {
+      "term": "Ipotesi",
+      "plain_language": "Una spiegazione possibile, che deve ancora essere verificata.",
+      "example": "Trovi una porta aperta e pensi che qualcuno sia entrato: è un'ipotesi, non un fatto.",
+      "practical_note": "Scrivi 'potrebbe' finché non hai prove adeguate."
+    },
+    {
+      "term": "Fonte indipendente",
+      "plain_language": "Una fonte che non dipende dalla stessa origine informativa di un'altra.",
+      "example": "Due persone che hanno visto separatamente un evento possono offrire riscontri diversi.",
+      "practical_note": "Due articoli che ripetono lo stesso comunicato non sono indipendenti."
+    },
+    {
+      "term": "Cronologia",
+      "plain_language": "L'ordine temporale documentato degli eventi.",
+      "example": "Metti in ordine la data di una lettera, quella della risposta e quella di una decisione.",
+      "practical_note": "Se una data è incerta, dichiaralo."
+    },
+    {
+      "term": "OSINT",
+      "plain_language": "Ricerca e verifica di informazioni disponibili da fonti aperte e accessibili legalmente.",
+      "example": "Confronti un vecchio giornale digitalizzato con un catalogo pubblico.",
+      "practical_note": "Non significa violare account o accedere a dati riservati."
+    },
+    {
+      "term": "Catena di custodia",
+      "plain_language": "Traccia di chi ha conservato o gestito un documento e quando.",
+      "example": "Un foglio passa da un ufficio a un archivio e poi viene digitalizzato.",
+      "practical_note": "Le lacune nella storia del documento vanno dichiarate."
+    }
+  ]
+}
