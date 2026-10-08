@@ -87,12 +87,50 @@
         "Qualita' della revisione"
       ]
     },
-    "passing_threshold": null
+    "passing_threshold": 70,
+    "rubric_weights": {
+      "originalita_taglio_editoriale": 15,
+      "struttura_narrativa_chiarezza": 25,
+      "uso_interviste_documenti": 20,
+      "accuratezza_fattuale": 25,
+      "revisione_editoriale": 15
+    },
+    "pass_conditions": [
+      "Punteggio totale almeno 70/100",
+      "Nessuna invenzione deliberata di fatti, citazioni o documenti",
+      "Fonti essenziali rintracciabili e attribuite",
+      "Elaborato originale e rispetto delle regole di privacy"
+    ],
+    "review_model": "Valutazione umana documentata o revisione assistita con conferma umana prima dell'emissione",
+    "resubmission_policy": "Una revisione guidata dopo la prima valutazione insufficiente; ulteriori tentativi da definire prima delle iscrizioni."
   },
   "certificate": {
-    "type": "private_verifiable_certificate_planned",
+    "type": "private_completion_with_assessment",
     "official_credits": false,
-    "issue_enabled": false
+    "issue_enabled": false,
+    "release_policy": "Solo dopo completamento percorso, consegna elaborato finale, valutazione sufficiente e approvazione registrata.",
+    "certificate_fields": [
+      "nome del titolare con consenso",
+      "titolo esatto del corso",
+      "soggetto emittente",
+      "data di emissione",
+      "esito valutazione",
+      "codice univoco non prevedibile",
+      "URL o QR di verifica",
+      "indicazione esplicita di attestato privato"
+    ],
+    "delivery": "PDF individuale scaricabile da area autenticata; invio email facoltativo previo consenso",
+    "verification": "Registro server con codice univoco, stato valido/revocato, divulgazione minima di dati personali",
+    "revocation": "Revoca o rettifica tracciata, con motivo riservato e stato pubblico minimo",
+    "activation_gates": [
+      "Account studenti e identificazione minima",
+      "Caricamento elaborati protetto",
+      "Rubrica di valutazione e registro esiti",
+      "Generazione PDF individuale",
+      "Registro verifica e revoca",
+      "Informativa privacy e tempi di conservazione",
+      "Test end-to-end e controlli autorizzazioni"
+    ]
   },
   "duration_minutes": null,
   "price": null,
