@@ -25,8 +25,8 @@
       "duration_minutes": 190,
       "level": "Introduttivo",
       "status": "published",
-      "url": "./corso/",
-      "logo": "./corso/assets/bottino-method-logo.svg",
+      "url": "../corso/",
+      "logo": "../corso/assets/bottino-method-logo.svg",
       "certificate_note": "Attestato di completamento, non titolo professionale riconosciuto",
       "doi": "10.5281/zenodo.23198223",
       "pricing": {
