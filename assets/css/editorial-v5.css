@@ -829,3 +829,19 @@ a:focus-visible,button:focus-visible{outline:3px solid #e5d3a3;outline-offset:3p
   box-sizing:border-box;
  }
 }
+
+
+/* Navigazione desktop: una sola riga, senza voci isolate o a capo. */
+@media screen and (min-width:901px) {
+  body>header.container {max-width:1480px!important;width:100%!important;box-sizing:border-box!important;padding:12px clamp(14px,2.2vw,32px)!important}
+  header nav#site-nav {display:flex!important;width:100%!important;min-width:0!important;justify-content:center!important;align-items:center!important}
+  header #menu {display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;justify-content:space-between!important;align-items:center!important;gap:clamp(2px,.65vw,12px)!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important}
+  header #menu>li {flex:0 1 auto!important;min-width:0!important;white-space:nowrap!important}
+  header #menu>li>a,header #menu>li>.submenu-toggle {
+    display:inline-flex!important;white-space:nowrap!important;min-height:42px!important;
+    padding:7px clamp(3px,.6vw,10px)!important;font-size:clamp(10px,.78vw,13px)!important;
+    letter-spacing:.035em!important;line-height:1.2!important;
+  }
+  header #menu .submenu {white-space:normal!important}
+  header #menu .submenu a {white-space:normal!important}
+}
