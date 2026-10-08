@@ -6,66 +6,66 @@
   "status": "in_development",
   "target": "Autori di opere basate su fatti reali, giornalisti, biografi, ricercatori indipendenti, documentaristi",
   "excludes": "Corso di scrittura di romanzi di fantasia",
-  "core_principle": "Ogni affermazione rilevante deve avere una fonte o essere qualificata come ipotesi o interpretazione",
+  "core_principle": "Scrivere opere originali basate su fatti reali con tecniche narrative rigorose; la verifica delle fonti e' un requisito, non il fulcro ripetuto del corso.",
   "units": [
     {
       "number": 1,
-      "title": "Origini e storia",
-      "objective": "Cronache, fonti giudiziarie, giornalismo d'inchiesta, non-fiction documentale",
+      "title": "Il mestiere dell'autore investigativo",
+      "objective": "Forme della non-fiction: inchiesta, reportage, biografia, ricostruzione storica; scegliere il formato",
       "lessons_status": "to_develop"
     },
     {
       "number": 2,
-      "title": "La domanda investigativa",
-      "objective": "Delimitare fatti, ipotesi, ambito e possibili falsificazioni",
+      "title": "Trovare la storia e il punto di vista",
+      "objective": "Tema, domanda narrativa, pubblico, taglio originale e promessa al lettore",
       "lessons_status": "to_develop"
     },
     {
       "number": 3,
-      "title": "Ricerca delle fonti",
-      "objective": "Archivi, cataloghi, registri, testimonianze, ricerche multilingue",
+      "title": "Dalla notizia al progetto editoriale",
+      "objective": "Analizzare un caso noto, scegliere cosa raccontare e progettare un articolo o libro",
       "lessons_status": "to_develop"
     },
     {
       "number": 4,
-      "title": "Autenticità e provenienza",
-      "objective": "Segnature, originali, copie, datazione, catena di custodia",
+      "title": "Interviste e testimonianze",
+      "objective": "Preparare domande, ascoltare, citare correttamente e proteggere gli interlocutori",
       "lessons_status": "to_develop"
     },
     {
       "number": 5,
-      "title": "Indagine digitale e OSINT",
-      "objective": "Archivi web, metadati, fonti aperte e verifiche indipendenti",
+      "title": "Lavorare con documenti reali",
+      "objective": "Selezionare materiali autentici, leggere immagini e atti e usarli nel testo senza sovraccaricarlo",
       "lessons_status": "to_develop"
     },
     {
       "number": 6,
-      "title": "Cronologia e dossier",
-      "objective": "Timeline, registro evidenze, contraddizioni e lacune",
+      "title": "Personaggi, luoghi e cronologia",
+      "objective": "Costruire contesto, sequenze e scene documentate senza inventare dialoghi o pensieri",
       "lessons_status": "to_develop"
     },
     {
       "number": 7,
-      "title": "Dalla prova alla scrittura",
-      "objective": "Struttura di articoli, reportage e capitoli di saggistica",
+      "title": "Tecniche di scrittura investigativa",
+      "objective": "Attacco, struttura, passaggi, ritmo, chiarezza, spiegazioni e gestione delle citazioni",
       "lessons_status": "to_develop"
     },
     {
       "number": 8,
-      "title": "IA sotto controllo",
-      "objective": "Trascrizione assistita, confronto, errori e audit delle conclusioni",
+      "title": "Scrivere per il lettore non specialista",
+      "objective": "Rendere accessibili termini tecnici, dati complessi e vicende giudiziarie",
       "lessons_status": "to_develop"
     },
     {
       "number": 9,
-      "title": "Etica e diritto",
-      "objective": "Privacy, diffamazione, diritto d'autore, tutela delle fonti",
+      "title": "Revisione, responsabilità e pubblicazione",
+      "objective": "Fact-checking finale, editing, privacy, diritto di replica, note e apparato delle fonti",
       "lessons_status": "to_develop"
     },
     {
       "number": 10,
-      "title": "Laboratorio finale",
-      "objective": "Inchiesta documentale con dossier, testo finale e verifica delle affermazioni",
+      "title": "Officina dell'autore: opera finale",
+      "objective": "Scrivere, revisionare e presentare un'inchiesta o capitolo originale con dossier essenziale",
       "lessons_status": "to_develop"
     }
   ],
@@ -73,19 +73,18 @@
     "intermediate_exercises": true,
     "final_project": {
       "deliverables": [
-        "Domanda investigativa",
-        "Registro delle fonti",
-        "Cronologia delle evidenze",
-        "Articolo o capitolo documentale",
-        "Matrice affermazione-fonte",
-        "Nota metodologica con limiti e lacune"
+        "Proposta editoriale e taglio narrativo",
+        "Scaletta dell'opera",
+        "Testo documentale originale",
+        "Apparato essenziale delle fonti",
+        "Nota di revisione editoriale"
       ],
       "rubric": [
-        "Tracciabilità delle affermazioni",
-        "Indipendenza delle fonti",
-        "Distinzione fatti/ipotesi",
-        "Accuratezza narrativa",
-        "Correttezza etica e giuridica"
+        "Originalita' del taglio editoriale",
+        "Struttura narrativa e chiarezza",
+        "Uso corretto di interviste e documenti",
+        "Accuratezza fattuale",
+        "Qualita' della revisione"
       ]
     },
     "passing_threshold": null
@@ -144,5 +143,13 @@
     ],
     "publication_rule": "Use scans only when permission or reuse terms are verified; otherwise link to institutional viewer.",
     "lesson_goal": "Transcribe, contextualize, corroborate, and write from actual sources."
+  },
+  "positioning": {
+    "identity": "Corso intermedio di scrittura investigativa e non-fiction documentale",
+    "primary_outcome": "Progettare, scrivere, revisionare e preparare alla pubblicazione un articolo lungo, un'inchiesta o un capitolo di libro basato su fatti reali.",
+    "distinct_from_bottino_method": "Il Metodo Bottino riguarda soprattutto ricerca, verifica e affidabilità; questo corso insegna il mestiere della scrittura documentale, dalla scelta dell'angolo narrativo alla pubblicazione.",
+    "verification_role": "Competenza trasversale di supporto, non contenuto principale né duplicazione del primo corso.",
+    "entry_requirements": "Nessuna preparazione specialistica obbligatoria; spiegazioni semplici dei termini tecnici.",
+    "price_candidate_eur": 79
   }
 }
