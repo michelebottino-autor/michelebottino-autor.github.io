@@ -41,14 +41,10 @@
     });
 
     button.addEventListener("keydown", function (event) {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        this.click();
-      }
       if (event.key === "Escape") {
         event.preventDefault();
         closeAllSubmenus();
-        this.blur();
+        this.focus();
       }
     });
   });
@@ -59,5 +55,9 @@
 
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") closeMobileMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 680 && menu.classList.contains("active")) closeMobileMenu();
   });
 })();
