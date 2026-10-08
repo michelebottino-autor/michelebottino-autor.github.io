@@ -819,3 +819,13 @@ a:focus-visible,button:focus-visible{outline:3px solid #e5d3a3;outline-offset:3p
   .home-pillars strong {font-size:14px!important;line-height:1.2!important}
   .home-pillars small {font-size:12px!important;line-height:1.4!important;margin-top:4px!important}
 }
+
+@media screen and (max-width:900px){
+ header #menu-toggle span:not(.menu-toggle-label){display:none!important}
+ header #menu-toggle::before{
+  content:"";display:block;width:19px;height:14px;flex:none;
+  border-top:2px solid #e5c679;border-bottom:2px solid #e5c679;
+  background:linear-gradient(#e5c679,#e5c679) center/19px 2px no-repeat;
+  box-sizing:border-box;
+ }
+}
