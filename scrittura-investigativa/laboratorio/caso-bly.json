@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "bly-blackwells-1887",
+  "title": "Il caso Blackwell's Island (1887)",
+  "status": "didactic_case",
+  "source_policy": "Le schede sono guide di lettura, non riproduzioni diplomatiche dei documenti. Verificare ogni affermazione nell'originale.",
+  "sources": [
+    {
+      "id": "S1",
+      "type": "testimonianza_pubblicata",
+      "title": "Nellie Bly, Ten Days in a Mad-House",
+      "date": "1887",
+      "institution": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/ebooks/59899",
+      "what_it_supports": "Contenuto della narrazione pubblicata da Bly; non conferma autonomamente tutti gli eventi descritti.",
+      "independence_group": "bly_original"
+    },
+    {
+      "id": "S2",
+      "type": "scheda_istituzionale",
+      "title": "Library of Congress: Nellie Bly e Blackwell's Island",
+      "institution": "Library of Congress",
+      "url": "https://blogs.loc.gov/headlinesandheroes/2022/11/nellie-bly-blackwells-island/",
+      "what_it_supports": "Contesto storico, cronologia editoriale e ricezione della vicenda.",
+      "independence_group": "loc_secondary"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Nellie Bly pubblicò nel 1887 un'inchiesta sulle condizioni nel manicomio femminile di Blackwell's Island.",
+      "status": "supported_by_secondary_and_primary",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "student_task": "Identifica nell'opera e nella scheda LOC gli elementi che attestano la pubblicazione e annota i riferimenti esatti."
+    },
+    {
+      "id": "C2",
+      "statement": "Ogni episodio narrato da Bly corrisponde esattamente a ciò che accadde.",
+      "status": "not_established",
+      "source_ids": [
+        "S1"
+      ],
+      "student_task": "Spiega perché una testimonianza pubblicata non basta a verificare in modo indipendente ogni episodio."
+    },
+    {
+      "id": "C3",
+      "statement": "La pubblicazione provocò direttamente tutte le riforme successive.",
+      "status": "causal_claim_requires_further_evidence",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "student_task": "Individua quale documentazione amministrativa o cronologica servirebbe per sostenere una relazione causale."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Classifica le fonti",
+      "prompt": "Indica quali fonti sono primarie rispetto alla pubblicazione del 1887 e quali offrono una ricostruzione successiva."
+    },
+    {
+      "id": "T2",
+      "title": "Individua un punto controverso",
+      "prompt": "Scegli un episodio raccontato da Bly, annota il capitolo e specifica quale riscontro indipendente cercheresti."
+    },
+    {
+      "id": "T3",
+      "title": "Scrivi una ricostruzione controllabile",
+      "prompt": "Scrivi 120–180 parole distinguendo fatti documentati, testimonianze e questioni ancora aperte."
+    }
+  ],
+  "assessment_note": "Esercizio formativo locale; nessuna valutazione ufficiale o certificazione automatica."
+}
