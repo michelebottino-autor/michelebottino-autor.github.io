@@ -736,3 +736,13 @@ a:focus-visible,button:focus-visible{outline:3px solid #e5d3a3;outline-offset:3p
 @media screen and (min-width: 901px) {
   header #menu-toggle {display:none!important}
 }
+
+/* Pulsante mobile esplicito, senza alterare la navigazione desktop. */
+@media screen and (max-width:900px) {
+  header #menu-toggle {width:auto!important;min-width:82px!important;flex:0 0 auto!important;height:48px!important;padding:7px 12px!important;gap:0!important;border:1px solid rgba(213,182,107,.65)!important;border-radius:6px!important;background:rgba(0,0,0,.15)!important}
+  header #menu-toggle .menu-toggle-label {display:block!important;margin-top:2px!important;color:var(--mb-gold,#d5b66b)!important;font-family:inherit!important;font-size:10px!important;line-height:1!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+  header #menu-toggle[aria-expanded="true"] {background:rgba(213,182,107,.12)!important}
+}
+@media screen and (min-width:901px) {
+  header #menu-toggle .menu-toggle-label {display:none!important}
+}
