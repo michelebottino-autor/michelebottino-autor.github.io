@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "issuer": "Michele Bottino — piattaforma formativa privata",
+  "framework_reference": "Raccomandazione del Consiglio UE del 16 giugno 2022 sulle microcredenziali (riferimento progettuale, non accreditamento)",
+  "recognition": {
+    "type": "private_training",
+    "official_credits": false,
+    "cfu": false,
+    "ects": false,
+    "cfp": false,
+    "professional_qualification": false
+  },
+  "certificate_requirements": {
+    "authenticated_enrollment": true,
+    "verified_completion": true,
+    "assessment_passed": true,
+    "unique_certificate_id": true,
+    "public_verification_endpoint": true,
+    "revocation_supported": true,
+    "issue_timestamp": true,
+    "learning_outcomes": true,
+    "workload_minutes": true,
+    "assessment_method": true,
+    "issuer_identification": true,
+    "identity_assurance_level": "self_declared_unless_verified"
+  },
+  "internal_credits": {
+    "enabled": false,
+    "unit": "crediti didattici interni",
+    "conversion_to_official_credits": false,
+    "publication_requires_rules": true
+  },
+  "courses": {
+    "bottino-method-base": {
+      "planned_minutes": 190,
+      "assessment": "verifiche e prova finale; soglie da formalizzare",
+      "certificate_status": "not_enabled_pending_end_to_end_verification"
+    }
+  },
+  "privacy": {
+    "public_verification": "minimum data only; avoid publishing student identity without lawful basis",
+    "retention_policy": "to_be_defined"
+  }
+}
