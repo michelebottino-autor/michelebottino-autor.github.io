@@ -35,7 +35,7 @@
     button.addEventListener("click", function () {
       const parent = this.parentElement;
       const willOpen = !parent.classList.contains("open");
-      if (window.innerWidth > 680) closeAllSubmenus(parent);
+      if (window.innerWidth > 900) closeAllSubmenus(parent);
       parent.classList.toggle("open");
       this.setAttribute("aria-expanded", String(willOpen));
     });
@@ -58,6 +58,6 @@
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 680 && menu.classList.contains("active")) closeMobileMenu();
+    if (window.innerWidth > 900 && menu.classList.contains("active")) closeMobileMenu();
   });
 })();
