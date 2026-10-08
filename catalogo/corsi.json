@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "courses": [
+    {
+      "id": "bottino-method-base",
+      "slug": "corso",
+      "title": "Bottino Method — Corso Base",
+      "subtitle": "Analisi, verifica e controllo dell’informazione nell’era dell’intelligenza artificiale",
+      "description": "Otto unità didattiche per distinguere fatti e interpretazioni, verificare le fonti e controllare le risposte dell’intelligenza artificiale.",
+      "audience": ["Studenti", "Docenti e formatori", "Ricercatori", "Professionisti", "Comunicatori", "Utilizzatori di IA"],
+      "learning_outcomes": ["Distinguere fatti e interpretazioni", "Verificare provenienza e indipendenza delle fonti", "Controllare le risposte dell’IA", "Documentare conclusioni verificabili"],
+      "units": 8,
+      "duration_minutes": 190,
+      "level": "Introduttivo",
+      "status": "published",
+      "url": "./corso/",
+      "logo": "./corso/assets/bottino-method-logo.svg",
+      "certificate_note": "Attestato di completamento, non titolo professionale riconosciuto",
+      "doi": "10.5281/zenodo.23198223"
+    }
+  ]
+}
