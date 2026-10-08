@@ -48,6 +48,44 @@
         "enabled": false,
         "reason": "identity_and_enrollment_backend_not_yet_published"
       }
+    },
+    {
+      "id": "scrittura-investigativa-documentale",
+      "slug": "scrittura-investigativa",
+      "title": "Scrittura Investigativa e Ricostruzione dei Fatti Reali",
+      "subtitle": "Dalla ricerca delle fonti alla pubblicazione di articoli, inchieste e libri documentati",
+      "description": "Un percorso per autori di storie vere: ricostruzione documentale, verifica delle prove e scrittura di articoli, inchieste e libri basati sui fatti.",
+      "audience": [
+        "Autori di libri storici",
+        "Giornalisti",
+        "Biografi",
+        "Ricercatori indipendenti",
+        "Documentaristi",
+        "Autori di saggistica"
+      ],
+      "learning_outcomes": [
+        "Ricostruire fatti attraverso fonti verificabili",
+        "Distinguere prove, ipotesi e interpretazioni",
+        "Costruire dossier e cronologie",
+        "Scrivere testi documentali tracciabili"
+      ],
+      "units": 10,
+      "duration_minutes": null,
+      "level": "Intermedio",
+      "status": "in_development",
+      "url": "../scrittura-investigativa/",
+      "logo": null,
+      "certificate_note": "Attestato privato verificabile previsto, subordinato a valutazione finale e collaudo",
+      "pricing": {
+        "currency": "EUR",
+        "paid_price": null,
+        "payment_enabled": false
+      },
+      "enrollment": {
+        "enabled": false,
+        "reason": "course_content_and_assessment_in_development"
+      },
+      "syllabus": "./scrittura-investigativa-programma.json"
     }
   ],
   "payment_configuration": {
