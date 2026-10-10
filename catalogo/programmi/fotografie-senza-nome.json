@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "course_id": "fotografie-senza-nome",
+  "source_locale": "it",
+  "content_version": "0.1-draft",
+  "status": "editorial_draft",
+  "title": "Fotografie senza nome",
+  "objective": "Costruire un atlante di immagini anonime senza inventare identificazioni.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Il ritrovamento: preservare l'ordine e la provenienza",
+      "status": "pilot_draft"
+    },
+    {
+      "id": "u02",
+      "title": "Che cosa mostra davvero l'immagine?",
+      "status": "outline"
+    },
+    {
+      "id": "u03",
+      "title": "Datazione: intervalli, non certezze arbitrarie",
+      "status": "outline"
+    },
+    {
+      "id": "u04",
+      "title": "Indizi incrociati: luoghi, abiti, oggetti e fonti",
+      "status": "outline"
+    },
+    {
+      "id": "u05",
+      "title": "Nomi possibili e identità non confermate",
+      "status": "outline"
+    },
+    {
+      "id": "u06",
+      "title": "L'atlante finale: 12 schede e registro dei dubbi",
+      "status": "outline"
+    }
+  ],
+  "pilot_unit": {
+    "id": "u01",
+    "exercise": "Seleziona una fotografia di cui non conosci con certezza l'autore o il soggetto. Compila tre campi distinti: OSSERVATO (elementi direttamente visibili), RIFERITO (informazioni fornite da terzi con data e autore), IPOTIZZATO (deduzioni, con alternative). Non assegnare nomi o date esatte senza riscontro. Concludi con tre domande verificabili.",
+    "assessment": {
+      "status": "draft",
+      "criteria": [
+        "Distinzione fra dati e interpretazioni",
+        "Provenienza e limiti dichiarati",
+        "Risultato comprensibile e riproducibile"
+      ]
+    }
+  },
+  "publication_note": "Bozza originale interna. Non costituisce corso completo né iscrizione attiva. Le traduzioni non sono disponibili.",
+  "locales": {
+    "it": "draft",
+    "en": "planned",
+    "es": "planned",
+    "fr": "planned",
+    "de": "planned",
+    "pt": "planned"
+  }
+}
