@@ -136,7 +136,7 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -174,7 +174,7 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -212,7 +212,7 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -250,7 +250,7 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -288,7 +288,7 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -326,7 +326,7 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -359,7 +359,7 @@
       "url": "#interesse",
       "source_locale": "it",
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -372,7 +372,8 @@
       "pricing": {
         "payment_enabled": false
       },
-      "syllabus": "./programmi/fotografie-senza-nome.json"
+      "syllabus": "./programmi/fotografie-senza-nome.json",
+      "syllabus_status": "editorial_draft"
     },
     {
       "id": "cronologie-impossibili",
@@ -398,7 +399,7 @@
       "url": "#interesse",
       "source_locale": "it",
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -411,7 +412,8 @@
       "pricing": {
         "payment_enabled": false
       },
-      "syllabus": "./programmi/cronologie-impossibili.json"
+      "syllabus": "./programmi/cronologie-impossibili.json",
+      "syllabus_status": "editorial_draft"
     },
     {
       "id": "museo-in-una-stanza",
@@ -437,7 +439,7 @@
       "url": "#interesse",
       "source_locale": "it",
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -450,7 +452,8 @@
       "pricing": {
         "payment_enabled": false
       },
-      "syllabus": "./programmi/museo-in-una-stanza.json"
+      "syllabus": "./programmi/museo-in-una-stanza.json",
+      "syllabus_status": "editorial_draft"
     }
   ],
   "payment_configuration": {
