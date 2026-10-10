@@ -1,0 +1,7 @@
+header .logo a,header .brand-name{display:inline-block!important;font-family:Georgia,serif!important;font-size:clamp(1.13rem,1.7vw,1.48rem)!important;font-weight:700!important;letter-spacing:.025em!important;line-height:1.3!important;text-decoration:none!important;color:#28231d!important}
+header nav a:focus-visible,header nav button:focus-visible,.course-feature a:focus-visible{outline:3px solid #a6784b;outline-offset:3px}
+.course-feature{margin:42px auto;padding:32px clamp(22px,4vw,48px);background:#f4eee5;border:1px solid #ded2c1;border-radius:12px;box-sizing:border-box}
+.course-feature h2{font:700 clamp(1.6rem,3vw,2.25rem)/1.2 Georgia,serif;color:#28231d;margin:9px 0 14px}
+.course-feature p{max-width:780px;line-height:1.75;color:#423b34}
+.course-feature-link{display:inline-block;margin-top:10px;padding:11px 18px;background:#463a2e;color:#fff!important;border-radius:5px;text-decoration:none;font-weight:650}
+@media(max-width:700px){.course-feature{margin:28px auto;padding:24px 18px}}
