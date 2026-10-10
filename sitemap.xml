@@ -127,4 +127,7 @@
   <url><loc>https://michelebottino-autor.github.io/adc/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/adc/gioco/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/adc/carta/</loc></url>
+  <url><loc>https://michelebottino-autor.github.io/formazione/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/catalogo/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/corso/</loc><priority>0.8</priority></url>
 </urlset>
