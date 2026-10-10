@@ -334,6 +334,123 @@
         "pt": "planned"
       },
       "source_locale": "it"
+    },
+    {
+      "id": "fotografie-senza-nome",
+      "title": "Fotografie senza nome",
+      "category": "archivi",
+      "category_label": "Archivi e patrimonio",
+      "description": "Indagare fotografie anonime senza attribuire identità o date non dimostrate: indizi visivi, provenienza, contesto e schede di incertezza.",
+      "audience": [
+        "Custodi di album familiari",
+        "Ricercatori locali",
+        "Associazioni culturali"
+      ],
+      "units": 6,
+      "logo": "./loghi/fotografie-senza-nome.svg",
+      "outcome": "Atlante commentato di 12 fotografie con provenienza e gradi di certezza.",
+      "slug": "fotografie-senza-nome",
+      "learning_outcomes": [
+        "Atlante commentato di 12 fotografie con provenienza e gradi di certezza."
+      ],
+      "duration_minutes": null,
+      "level": "Laboratorio",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "source_locale": "it",
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "enrollment": {
+        "enabled": false
+      },
+      "pricing": {
+        "payment_enabled": false
+      },
+      "syllabus": "./programmi/fotografie-senza-nome.json"
+    },
+    {
+      "id": "cronologie-impossibili",
+      "title": "Cronologie impossibili",
+      "category": "scrittura",
+      "category_label": "Scrittura documentaria",
+      "description": "Raccontare una vicenda reale quando date, ricordi e documenti non concordano, costruendo una cronologia che mostri anche le alternative.",
+      "audience": [
+        "Autori di storie vere",
+        "Ricercatori indipendenti",
+        "Documentaristi"
+      ],
+      "units": 6,
+      "logo": "./loghi/cronologie-impossibili.svg",
+      "outcome": "Cronologia a più livelli e racconto breve con conflitti documentati.",
+      "slug": "cronologie-impossibili",
+      "learning_outcomes": [
+        "Cronologia a più livelli e racconto breve con conflitti documentati."
+      ],
+      "duration_minutes": null,
+      "level": "Laboratorio",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "source_locale": "it",
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "enrollment": {
+        "enabled": false
+      },
+      "pricing": {
+        "payment_enabled": false
+      },
+      "syllabus": "./programmi/cronologie-impossibili.json"
+    },
+    {
+      "id": "museo-in-una-stanza",
+      "title": "Il museo in una stanza",
+      "category": "territorio",
+      "category_label": "Luoghi e comunità",
+      "description": "Ideare una micro-mostra narrativa accessibile a partire da pochi oggetti, immagini e testimonianze di una comunità.",
+      "audience": [
+        "Biblioteche",
+        "Associazioni culturali",
+        "Scuole e comunità"
+      ],
+      "units": 6,
+      "logo": "./loghi/museo-in-una-stanza.svg",
+      "outcome": "Prototipo di micro-mostra con sei oggetti, didascalie e percorso visitatore.",
+      "slug": "museo-in-una-stanza",
+      "learning_outcomes": [
+        "Prototipo di micro-mostra con sei oggetti, didascalie e percorso visitatore."
+      ],
+      "duration_minutes": null,
+      "level": "Laboratorio",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "source_locale": "it",
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "enrollment": {
+        "enabled": false
+      },
+      "pricing": {
+        "payment_enabled": false
+      },
+      "syllabus": "./programmi/museo-in-una-stanza.json"
     }
   ],
   "payment_configuration": {
