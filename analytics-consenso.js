@@ -5,8 +5,10 @@ window.MB_ANALYTICS_ID = "G-5MVH0PN6E5";
   const id=window.MB_ANALYTICS_ID;
   if (!/^G-[A-Z0-9]{6,15}$/.test(id)) return;
   const key="mb_analytics_consent_v1";
-  const safeGet=()=>{try{return localStorage.getItem(key)}catch(e){return null}};
-  const safeSet=v=>{try{localStorage.setItem(key,v)}catch(e){}};
+  const dateKey="mb_analytics_consent_date_v1";
+  const maxAge=180*24*60*60*1000;
+  const safeGet=()=>{try{const value=localStorage.getItem(key);const date=Number(localStorage.getItem(dateKey));if(!date||!Number.isFinite(date)||date>Date.now()||Date.now()-date>maxAge){localStorage.removeItem(key);localStorage.removeItem(dateKey);return null}return value}catch(e){return null}};
+  const safeSet=v=>{try{if(v==="yes"||v==="no"){localStorage.setItem(key,v);localStorage.setItem(dateKey,String(Date.now()))}else{localStorage.removeItem(key);localStorage.removeItem(dateKey)}}catch(e){}};
   function activate(){
     if(window.__mbAnalyticsLoaded)return;
     window.__mbAnalyticsLoaded=true;
