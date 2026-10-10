@@ -90,15 +90,12 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/articoli/contessa-carini/</loc><priority>0.7</priority></url>
 
-<url>
-  <loc>https://michelebottino-autor.github.io/articoli/jack-lo-squartatore/</loc>
-  <priority>0.8</priority>
-</url>
-    <loc>https://michelebottino-autor.github.io/articoli/contessa-carini/</loc>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://michelebottino-autor.github.io/metodo/</loc></url>
+  <url><loc>https://michelebottino-autor.github.io/indagini/</loc></url>
+  <url><loc>https://michelebottino-autor.github.io/strutture-irrisolto/</loc></url>
 
   <!-- LEGALI -->
   <url>
@@ -127,6 +124,7 @@
   <url><loc>https://michelebottino-autor.github.io/scrittura-investigativa/unita-8/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/scrittura-investigativa/unita-9/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/scrittura-investigativa/unita-10/</loc></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/adc/gioco/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/adc/carta/</loc></url>
 </urlset>
