@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "course_id": "museo-in-una-stanza",
+  "source_locale": "it",
+  "content_version": "0.1-draft",
+  "status": "editorial_draft",
+  "title": "Il museo in una stanza",
+  "objective": "Progettare una piccola mostra narrativa senza confondere oggetti autentici e ricostruzioni.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "La domanda della mostra: una storia in sei oggetti",
+      "status": "pilot_draft"
+    },
+    {
+      "id": "u02",
+      "title": "Inventario e diritti di riproduzione",
+      "status": "outline"
+    },
+    {
+      "id": "u03",
+      "title": "Le didascalie: cosa sappiamo e cosa no",
+      "status": "outline"
+    },
+    {
+      "id": "u04",
+      "title": "Percorso, accessibilità e più voci",
+      "status": "outline"
+    },
+    {
+      "id": "u05",
+      "title": "Micro-mostra fisica e versione digitale leggera",
+      "status": "outline"
+    },
+    {
+      "id": "u06",
+      "title": "Prototipo finale e revisione con visitatori",
+      "status": "outline"
+    }
+  ],
+  "pilot_unit": {
+    "id": "u01",
+    "exercise": "Immagina una stanza con sei oggetti di una bottega di paese: registro, insegna, fotografia, ricevuta, attrezzo e testimonianza audio. Disegna l'ordine di visita e scrivi la didascalia di un oggetto (massimo 80 parole) distinguendo descrizione, provenienza e interpretazione. Segnala quali permessi servono prima di esporre materiale di terzi.",
+    "assessment": {
+      "status": "draft",
+      "criteria": [
+        "Distinzione fra dati e interpretazioni",
+        "Provenienza e limiti dichiarati",
+        "Risultato comprensibile e riproducibile"
+      ]
+    }
+  },
+  "publication_note": "Bozza originale interna. Non costituisce corso completo né iscrizione attiva. Le traduzioni non sono disponibili.",
+  "locales": {
+    "it": "draft",
+    "en": "planned",
+    "es": "planned",
+    "fr": "planned",
+    "de": "planned",
+    "pt": "planned"
+  }
+}
