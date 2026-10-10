@@ -15,5 +15,7 @@ Selettore visibile nel catalogo e in ogni corso. Preferenza locale per il dispos
 ## Qualità e rilascio
 Revisione terminologica umana, glossario condiviso, test per lingua, verifica RTL qualora aggiunta, link e metadati localizzati, `hreflang` solo per URL effettivamente pubblicati. Nessuna traduzione automatica non revisionata deve essere annunciata come disponibile.
 
-## Stato implementazione 2026-10-10
-Catalogo: selettore e stringhe UI in sei lingue; schede e corsi in italiano. Traduzioni dei contenuti: pianificate, non pubblicate. Non esiste ancora un sistema di account multilingue né una sincronizzazione dei progressi tra dispositivi.
+## Stato verificato 2026-10-10
+Catalogo: interfaccia e schede in italiano e inglese; le altre lingue sono pianificate e non selezionabili. Le descrizioni inglesi del catalogo non attestano la disponibilità di corsi completi in inglese. Bottino Method: otto unità in inglese sotto forma di sintesi/adattamenti con prove formative, stato `in_review`, non equivalente alla versione italiana e senza attestato. Non esiste un account multilingue né sincronizzazione dei progressi tra dispositivi. Le altre traduzioni dei corsi non sono pubblicate come complete.
+
+Per la checklist di revisione, gli stati e le condizioni di eventuale futura attestazione/riconoscimento, consultare `QUALITY_STANDARD.md`.
