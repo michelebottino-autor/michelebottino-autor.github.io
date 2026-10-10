@@ -454,6 +454,126 @@
       },
       "syllabus": "./programmi/museo-in-una-stanza.json",
       "syllabus_status": "editorial_draft"
+    },
+    {
+      "id": "lettere-oltre-la-grafia",
+      "slug": "lettere-oltre-la-grafia",
+      "title": "Lettere oltre la grafia",
+      "category": "archivi",
+      "description": "Trascrivere, tradurre e commentare lettere familiari difficili distinguendo testo, ipotesi ed errori dell'IA.",
+      "units": 6,
+      "modules": [
+        "Leggere prima di interpretare",
+        "Grafie e ambiguità",
+        "Trascrizione fedele",
+        "Traduzione annotata",
+        "Controllo umano dell'IA",
+        "Edizione commentata"
+      ],
+      "final_project": "Edizione annotata di una lettera",
+      "level": "Da definire",
+      "status": "coming_soon",
+      "duration_minutes": null,
+      "logo": "./loghi/lettere-oltre-la-grafia.svg",
+      "source_locale": "it",
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "audience": [
+        "Autori e ricercatori",
+        "Appassionati di storia e memoria"
+      ],
+      "enrollment": {
+        "enabled": false
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
+    },
+    {
+      "id": "albero-che-racconta",
+      "slug": "albero-che-racconta",
+      "title": "L’albero che racconta",
+      "category": "editoria",
+      "description": "Trasformare genealogie complesse in un libro leggibile, documentato e aggiornabile.",
+      "units": 6,
+      "modules": [
+        "Il lettore e la promessa narrativa",
+        "Il filo tra i rami",
+        "Contesto e personaggi",
+        "Fonti e apparati",
+        "Versioni e correzioni",
+        "Capitolo pilota"
+      ],
+      "final_project": "Indice e capitolo pilota documentato",
+      "level": "Da definire",
+      "status": "coming_soon",
+      "duration_minutes": null,
+      "logo": "./loghi/albero-che-racconta.svg",
+      "source_locale": "it",
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "audience": [
+        "Autori e ricercatori",
+        "Appassionati di storia e memoria"
+      ],
+      "enrollment": {
+        "enabled": false
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
+    },
+    {
+      "id": "voci-senza-registratore",
+      "slug": "voci-senza-registratore",
+      "title": "Voci senza registratore",
+      "category": "testimonianze",
+      "description": "Recuperare memorie orali frammentarie da appunti, lettere e testimonianze indirette senza attribuire parole mai registrate.",
+      "units": 6,
+      "modules": [
+        "Memoria diretta e indiretta",
+        "Attribuzioni e catene di racconto",
+        "Confrontare versioni",
+        "Etica delle persone viventi",
+        "Montaggio narrativo trasparente",
+        "Racconto con note"
+      ],
+      "final_project": "Racconto breve con mappa delle testimonianze",
+      "level": "Da definire",
+      "status": "coming_soon",
+      "duration_minutes": null,
+      "logo": "./loghi/voci-senza-registratore.svg",
+      "source_locale": "it",
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "audience": [
+        "Autori e ricercatori",
+        "Appassionati di storia e memoria"
+      ],
+      "enrollment": {
+        "enabled": false
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
     }
   ],
   "payment_configuration": {
