@@ -1,0 +1,119 @@
+{
+  "version": "0.2-en-adaptation",
+  "source_course": "Bottino Method — Corso Base, release 1.0",
+  "language": "en",
+  "status": "review_required",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Before you believe it, verify it",
+      "duration": "15 min",
+      "objective": "Distinguish what a source claims from what the available evidence actually verifies.",
+      "key_points": [
+        "A plausible statement is not necessarily a verified fact.",
+        "A source can accurately be quoted while the underlying claim remains unverified.",
+        "Generative AI can sound confident without independently establishing the truth."
+      ],
+      "exercise": "An online article states that a library opened in 1920. What can you establish after reading only that article?",
+      "suggested_answer": "You can establish that the article makes the claim. You cannot yet establish the opening date without corroboration."
+    },
+    {
+      "id": "u2",
+      "title": "Facts, claims, sources and interpretations",
+      "duration": "20 min",
+      "objective": "Separate four levels of information before reaching a conclusion.",
+      "key_points": [
+        "Fact: an element supported by verifiable evidence.",
+        "Claim: what a person, document or system states.",
+        "Source: the identifiable origin of a claim.",
+        "Interpretation: meaning assigned to the available evidence. Break compound statements into independently checkable Minimal Verification Units (MVUs)."
+      ],
+      "exercise": "Someone says, 'I was in Rome that day.' Identify the claim and the source. What additional evidence might support the event?",
+      "suggested_answer": "The sentence is a claim; the speaker is its source. Travel records or independent observations may help, but no single document necessarily settles the question."
+    },
+    {
+      "id": "u3",
+      "title": "How much can we actually assert?",
+      "duration": "25 min",
+      "objective": "Calibrate conclusions to the strength of the evidence.",
+      "key_points": [
+        "VERIFIED (CERTO): supported within the stated evidentiary context, not absolute truth.",
+        "REPORTED (RIPORTATO): a statement attributed to a specific source.",
+        "LIMIT (LIMITE): a point the evidence does not resolve.",
+        "Avoid overstating certainty, omitting limitations or merging categories."
+      ],
+      "exercise": "An archive website states that a register records a castle's construction in 1427. You have read the website, but not the register. What is verified?",
+      "suggested_answer": "It is verified that the website contains this statement. The register's content and the historical construction date require separate verification."
+    },
+    {
+      "id": "u4",
+      "title": "Not all sources carry equal weight",
+      "duration": "25 min",
+      "objective": "Evaluate provenance, independence, directness and the limits of each source.",
+      "key_points": [
+        "Identify who created each source, when, why and for whom.",
+        "Distinguish original records from summaries, quotations and reposts.",
+        "Two websites repeating one press release do not count as independent confirmation.",
+        "A source can be authentic but irrelevant to the specific claim."
+      ],
+      "exercise": "Three blogs repeat the same unsourced sentence. How many independent confirmations do you have?",
+      "suggested_answer": "None established. Repetition is not independence; trace the wording back to its origin."
+    },
+    {
+      "id": "u5",
+      "title": "When sources disagree",
+      "duration": "25 min",
+      "objective": "Document conflicts instead of hiding them behind a smooth narrative.",
+      "key_points": [
+        "Record each claim alongside its source and exact wording.",
+        "Check whether apparent conflicts involve different definitions or timeframes.",
+        "Preserve competing accounts when the evidence cannot decide between them.",
+        "Explain which facts remain supported and which questions stay open."
+      ],
+      "exercise": "A diary dates an event to 12 May, but a letter written on 14 May describes it as upcoming. How should you report the date?",
+      "suggested_answer": "Report the conflicting evidence with attribution and leave the precise date unresolved until further verification."
+    },
+    {
+      "id": "u6",
+      "title": "Applying the Bottino Method",
+      "duration": "30 min",
+      "objective": "Create an auditable evidence trail from question to conclusion.",
+      "key_points": [
+        "Define the question and divide it into verifiable claims or MVUs.",
+        "Record source, date accessed, quotation, evidence and classification.",
+        "Check provenance and independence before drafting.",
+        "Write a conclusion whose scope matches the documented evidence and limits."
+      ],
+      "exercise": "Build a four-column log for a historical claim: claim, source, status and next verification step.",
+      "suggested_answer": "Each claim needs a traceable source, a justified status and an explicit next step or documented limit."
+    },
+    {
+      "id": "u7",
+      "title": "Artificial intelligence under scrutiny",
+      "duration": "25 min",
+      "objective": "Use AI as an aid without treating generated answers as verified sources.",
+      "key_points": [
+        "Treat model output as a proposal requiring independent checks.",
+        "Verify references, document identifiers, quotations and dates at their actual source.",
+        "Do not infer a document's contents merely because a catalogue identifier exists.",
+        "Record how AI was used and where human verification was performed."
+      ],
+      "exercise": "An AI supplies an archival reference. The reference exists, but the record has not been inspected. What is established?",
+      "suggested_answer": "Only the existence of that reference in the catalogue. The claimed contents remain unverified."
+    },
+    {
+      "id": "u8",
+      "title": "Final case: a conflicting dossier",
+      "duration": "25 min",
+      "objective": "Produce a defensible conclusion from incomplete and contradictory records.",
+      "key_points": [
+        "A municipal resolution dated 6 April authorises work.",
+        "A newspaper dated 7 April states that work began 'yesterday'.",
+        "A later web summary gives 5 April as the start date, without a citation.",
+        "Separate authorisation from actual commencement and preserve the unresolved conflict."
+      ],
+      "exercise": "Write a short conclusion that does not exceed the evidence.",
+      "suggested_answer": "The resolution documents an authorisation dated 6 April. The newspaper and web summary give conflicting indications about when work actually began. The evidence described does not establish the start date."
+    }
+  ]
+}
