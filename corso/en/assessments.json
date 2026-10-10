@@ -1,0 +1,139 @@
+{
+  "language": "en",
+  "version": "0.1-pilot",
+  "status": "formative_pilot_not_equivalent_to_italian_release_1_0",
+  "pass_percent": 80,
+  "assessments": [
+    {
+      "id": "check-1",
+      "after": 3,
+      "title": "Intermediate check 1",
+      "items": [
+        {
+          "q": "Which statement best distinguishes a claim from a verified fact?",
+          "a": [
+            "A claim is true when it sounds precise.",
+            "A claim is what a source states; verification requires supporting evidence.",
+            "Any statement in an archive is automatically verified."
+          ],
+          "ok": 1,
+          "why": "Attribution alone does not verify the underlying event."
+        },
+        {
+          "q": "A catalogue lists a document that you have not opened. What can you confirm?",
+          "a": [
+            "The listed record exists in the catalogue.",
+            "Every statement made about the document is true.",
+            "The document proves the claim."
+          ],
+          "ok": 0,
+          "why": "Catalogue metadata and the content of the document are distinct."
+        },
+        {
+          "q": "What does LIMIT indicate in the Bottino Method?",
+          "a": [
+            "A statement that must be deleted.",
+            "A point that current evidence cannot establish.",
+            "A fact confirmed by two websites."
+          ],
+          "ok": 1,
+          "why": "Explicit limits prevent overstatement."
+        }
+      ]
+    },
+    {
+      "id": "check-2",
+      "after": 7,
+      "title": "Intermediate check 2",
+      "items": [
+        {
+          "q": "Three sites repeat the same press release. How many independent confirmations have been established?",
+          "a": [
+            "Three",
+            "One at most; independence has not been established",
+            "Two"
+          ],
+          "ok": 1,
+          "why": "Repetition of one source is not independent corroboration."
+        },
+        {
+          "q": "Two documents give incompatible dates. What should you do first?",
+          "a": [
+            "Choose the earlier date.",
+            "Hide the discrepancy.",
+            "Document both accounts and investigate provenance."
+          ],
+          "ok": 2,
+          "why": "Conflicts must remain visible until resolved."
+        },
+        {
+          "q": "AI supplies an archival reference that exists, but its document has not been examined. What is verified?",
+          "a": [
+            "The document proves the AI claim.",
+            "The catalogue reference exists.",
+            "The AI summary is accurate."
+          ],
+          "ok": 1,
+          "why": "A real reference does not verify a proposed interpretation."
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "after": 8,
+      "title": "Final assessment",
+      "items": [
+        {
+          "q": "A municipal resolution of 6 April authorises work. Which conclusion is directly supported?",
+          "a": [
+            "Work began on 6 April.",
+            "Work was authorised in the terms stated by the resolution on 6 April.",
+            "Work ended on 6 April."
+          ],
+          "ok": 1,
+          "why": "Authorisation is not the same as commencement."
+        },
+        {
+          "q": "A newspaper dated 7 April says work began yesterday; a later unsourced webpage says 5 April. What is the best treatment?",
+          "a": [
+            "Report the conflicting accounts and leave the start date unresolved.",
+            "Accept 5 April.",
+            "Accept 6 April without qualification."
+          ],
+          "ok": 0,
+          "why": "The sources conflict on the event date."
+        },
+        {
+          "q": "What makes a research dossier auditable?",
+          "a": [
+            "A polished conclusion without references.",
+            "Only an AI-generated summary.",
+            "Sources, provenance, classifications, checks, unresolved conflicts and limits."
+          ],
+          "ok": 2,
+          "why": "An audit must reconstruct the evidence and reasoning."
+        },
+        {
+          "q": "When can a source's statement be presented as verified fact?",
+          "a": [
+            "When repeated often.",
+            "When supported by sufficient verifiable evidence in context.",
+            "When an AI confidently confirms it."
+          ],
+          "ok": 1,
+          "why": "Confidence and repetition are not verification."
+        },
+        {
+          "q": "How should an unexamined archive record suggested by AI be classified?",
+          "a": [
+            "Its existence may be confirmed in the catalogue, but its contents remain unverified.",
+            "As definitive proof.",
+            "As automatically false."
+          ],
+          "ok": 0,
+          "why": "Distinguish catalogue metadata from document content."
+        }
+      ]
+    }
+  ]
+}
