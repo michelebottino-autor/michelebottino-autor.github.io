@@ -15,7 +15,7 @@
     script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: https:;
-    connect-src 'self' https://api.counterapi.dev https://www.google-analytics.com https://region1.google-analytics.com;
+    connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -485,7 +485,7 @@ async function updateVisitCounter() {
     console.warn("Contatore accessi:", error);
   } finally { clearTimeout(timer); }
 }
-updateVisitCounter();
+/* Contatore esterno disattivato in attesa della verifica privacy. */
 </script>
 <script>document.querySelectorAll('[data-books-gallery]').forEach(function(g){var t=g.querySelector('.books-track');g.querySelectorAll('[data-scroll]').forEach(function(b){b.addEventListener('click',function(){var tile=t.querySelector('.book-tile');var step=tile?tile.getBoundingClientRect().width+21:250;t.scrollBy({left:(b.dataset.scroll==='next'?1:-1)*step*2,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});});});</script><script>(function(){var b=document.getElementById('fb-load-feed'),c=document.getElementById('fb-feed');if(!b||!c)return;b.addEventListener('click',function(){if(c.querySelector('iframe')){c.hidden=!c.hidden;b.setAttribute('aria-expanded',String(!c.hidden));b.textContent=c.hidden?'Mostra i post pubblici della pagina':'Nascondi i post della pagina';return;}var f=document.createElement('iframe');f.title='Post pubblici della pagina Facebook Michele Bottino';f.src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmichelebottinoautor%2F&tabs=timeline&width=500&height=420&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false';f.loading='lazy';f.referrerPolicy='strict-origin-when-cross-origin';f.setAttribute('allow','encrypted-media; picture-in-picture; web-share');c.appendChild(f);c.hidden=false;b.setAttribute('aria-expanded','true');b.textContent='Nascondi i post della pagina';});})();</script><script defer src="analytics-consenso.js"></script>
 </body>
