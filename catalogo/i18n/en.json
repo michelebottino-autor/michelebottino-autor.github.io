@@ -1,0 +1,69 @@
+{
+  "categories": {
+    "analisi": "Analysis and verification",
+    "scrittura": "Documentary writing",
+    "biografia": "Biographies and memories",
+    "archivi": "Archives and heritage",
+    "testimonianze": "Oral history",
+    "territorio": "Places and communities",
+    "editoria": "Documentary publishing"
+  },
+  "courses": {
+    "bottino-method-base": {
+      "title": "Bottino Method — Foundation Course",
+      "description": "Eight learning units on distinguishing facts from interpretations, checking sources and critically evaluating AI responses."
+    },
+    "scrittura-investigativa-documentale": {
+      "title": "Investigative Writing and Reconstruction of Real Events",
+      "description": "A course for writers of true stories: documentary reconstruction, evidence assessment and writing fact-based articles, investigations and books."
+    },
+    "storie-che-mancano": {
+      "title": "The Missing Stories",
+      "description": "Turn photographs and incomplete records into the story of a forgotten life."
+    },
+    "archivio-vivo": {
+      "title": "When Archives Become Stories",
+      "description": "Organise letters, photographs and objects into an accessible narrative project."
+    },
+    "voci-da-salvare": {
+      "title": "Voices Worth Saving",
+      "description": "Interview, transcribe and present testimonies while respecting informed consent."
+    },
+    "atlante-delle-storie": {
+      "title": "Atlas of Stories",
+      "description": "Tell the story of a neighbourhood or town through maps, images and memories."
+    },
+    "scrivere-i-vuoti": {
+      "title": "Writing the Gaps",
+      "description": "Write true stories when sources are silent or contradictory, without inventing evidence."
+    },
+    "dossier-in-libro": {
+      "title": "From Dossier to Book",
+      "description": "Turn collected research materials into a readable publishing project with notes and supporting documentation."
+    },
+    "fotografie-senza-nome": {
+      "title": "Unnamed Photographs",
+      "description": "Investigate anonymous photographs without assigning unproven names or dates: visual clues, provenance, context and uncertainty records."
+    },
+    "cronologie-impossibili": {
+      "title": "Impossible Timelines",
+      "description": "Tell a true story when dates, recollections and documents disagree, building a timeline that also presents alternatives."
+    },
+    "museo-in-una-stanza": {
+      "title": "A Museum in One Room",
+      "description": "Design an accessible small-scale narrative exhibition using a few objects, images and community testimonies."
+    },
+    "lettere-oltre-la-grafia": {
+      "title": "Letters Beyond Handwriting",
+      "description": "Transcribe, translate and annotate difficult family letters while separating text, hypotheses and AI errors."
+    },
+    "albero-che-racconta": {
+      "title": "The Family Tree That Tells a Story",
+      "description": "Turn complex family trees into a readable, documented and updateable book."
+    },
+    "voci-senza-registratore": {
+      "title": "Voices Without a Recorder",
+      "description": "Recover fragmentary oral memories from notes, letters and indirect accounts without inventing unrecorded quotations."
+    }
+  }
+}
