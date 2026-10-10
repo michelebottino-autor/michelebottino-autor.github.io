@@ -47,7 +47,8 @@
       "enrollment": {
         "enabled": false,
         "reason": "identity_and_enrollment_backend_not_yet_published"
-      }
+      },
+      "category": "analisi"
     },
     {
       "id": "scrittura-investigativa-documentale",
@@ -85,7 +86,182 @@
         "enabled": false,
         "reason": "course_content_and_assessment_in_development"
       },
-      "syllabus": "./scrittura-investigativa-programma.json"
+      "syllabus": "./scrittura-investigativa-programma.json",
+      "category": "scrittura"
+    },
+    {
+      "id": "storie-che-mancano",
+      "slug": "storie-che-mancano",
+      "title": "Le storie che mancano",
+      "category": "biografia",
+      "category_label": "Memorie e biografie",
+      "description": "Dalle fotografie e dai documenti incompleti al racconto di una vita dimenticata.",
+      "audience": [
+        "Persone che custodiscono memorie familiari"
+      ],
+      "learning_outcomes": [],
+      "units": null,
+      "duration_minutes": null,
+      "level": "Da definire",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "logo": "./loghi/storie-che-mancano.svg",
+      "enrollment": {
+        "enabled": false
+      },
+      "interest": {
+        "type": "mailto",
+        "email": "",
+        "status": "not_enabled"
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
+    },
+    {
+      "id": "archivio-vivo",
+      "slug": "archivio-vivo",
+      "title": "L’archivio diventa racconto",
+      "category": "archivi",
+      "category_label": "Archivi e patrimonio",
+      "description": "Organizzare lettere, fotografie e oggetti per creare un progetto narrativo accessibile.",
+      "audience": [
+        "Custodi di archivi personali e associazioni"
+      ],
+      "learning_outcomes": [],
+      "units": null,
+      "duration_minutes": null,
+      "level": "Da definire",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "logo": "./loghi/archivio-vivo.svg",
+      "enrollment": {
+        "enabled": false
+      },
+      "interest": {
+        "type": "mailto",
+        "email": "",
+        "status": "not_enabled"
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
+    },
+    {
+      "id": "voci-da-salvare",
+      "slug": "voci-da-salvare",
+      "title": "Voci da salvare",
+      "category": "testimonianze",
+      "category_label": "Memoria orale",
+      "description": "Intervistare, trascrivere e raccontare testimonianze con attenzione al consenso.",
+      "audience": [
+        "Autori, familiari e operatori culturali"
+      ],
+      "learning_outcomes": [],
+      "units": null,
+      "duration_minutes": null,
+      "level": "Da definire",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "logo": "./loghi/voci-da-salvare.svg",
+      "enrollment": {
+        "enabled": false
+      },
+      "interest": {
+        "type": "mailto",
+        "email": "",
+        "status": "not_enabled"
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
+    },
+    {
+      "id": "atlante-delle-storie",
+      "slug": "atlante-delle-storie",
+      "title": "Atlante delle storie",
+      "category": "territorio",
+      "category_label": "Luoghi e comunità",
+      "description": "Raccontare un quartiere o un paese attraverso mappe, immagini e memorie.",
+      "audience": [
+        "Ricercatori locali e comunità"
+      ],
+      "learning_outcomes": [],
+      "units": null,
+      "duration_minutes": null,
+      "level": "Da definire",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "logo": "./loghi/atlante-delle-storie.svg",
+      "enrollment": {
+        "enabled": false
+      },
+      "interest": {
+        "type": "mailto",
+        "email": "",
+        "status": "not_enabled"
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
+    },
+    {
+      "id": "scrivere-i-vuoti",
+      "slug": "scrivere-i-vuoti",
+      "title": "Scrivere i vuoti",
+      "category": "scrittura",
+      "category_label": "Narrazione documentaria",
+      "description": "Costruire storie vere quando le fonti tacciono o si contraddicono, senza inventare prove.",
+      "audience": [
+        "Autori di saggistica e biografie"
+      ],
+      "learning_outcomes": [],
+      "units": null,
+      "duration_minutes": null,
+      "level": "Da definire",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "logo": "./loghi/scrivere-i-vuoti.svg",
+      "enrollment": {
+        "enabled": false
+      },
+      "interest": {
+        "type": "mailto",
+        "email": "",
+        "status": "not_enabled"
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
+    },
+    {
+      "id": "dossier-in-libro",
+      "slug": "dossier-in-libro",
+      "title": "Dal dossier al libro",
+      "category": "editoria",
+      "category_label": "Editoria documentaria",
+      "description": "Trasformare materiali raccolti in un progetto editoriale leggibile, con note e apparati.",
+      "audience": [
+        "Autori indipendenti e ricercatori"
+      ],
+      "learning_outcomes": [],
+      "units": null,
+      "duration_minutes": null,
+      "level": "Da definire",
+      "status": "coming_soon",
+      "url": "#interesse",
+      "logo": "./loghi/dossier-in-libro.svg",
+      "enrollment": {
+        "enabled": false
+      },
+      "interest": {
+        "type": "mailto",
+        "email": "",
+        "status": "not_enabled"
+      },
+      "pricing": {
+        "payment_enabled": false
+      }
     }
   ],
   "payment_configuration": {
@@ -113,5 +289,37 @@
     ],
     "currency": "EUR",
     "no_automatic_charges": true
-  }
+  },
+  "catalog_name": "Officina delle Storie | Percorsi di scrittura e memoria",
+  "catalog_version": "2.0",
+  "categories": [
+    {
+      "id": "analisi",
+      "label": "Analisi e verifica"
+    },
+    {
+      "id": "scrittura",
+      "label": "Scrittura documentaria"
+    },
+    {
+      "id": "biografia",
+      "label": "Biografie e memorie"
+    },
+    {
+      "id": "archivi",
+      "label": "Archivi e patrimonio"
+    },
+    {
+      "id": "testimonianze",
+      "label": "Memoria orale"
+    },
+    {
+      "id": "territorio",
+      "label": "Luoghi e comunità"
+    },
+    {
+      "id": "editoria",
+      "label": "Editoria documentaria"
+    }
+  ]
 }
