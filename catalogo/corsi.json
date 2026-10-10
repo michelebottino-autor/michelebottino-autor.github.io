@@ -51,13 +51,24 @@
       "category": "analisi",
       "locales": {
         "it": "available",
-        "en": "planned",
+        "en": "in_review",
         "es": "planned",
         "fr": "planned",
         "de": "planned",
         "pt": "planned"
       },
-      "source_locale": "it"
+      "source_locale": "it",
+      "translation_preview": {
+        "en": {
+          "url": "../corso/en/",
+          "kind": "study_adaptation",
+          "equivalent_to_source": false,
+          "certification_enabled": false,
+          "source_locale": "it",
+          "units": 8,
+          "review_required": true
+        }
+      }
     },
     {
       "id": "scrittura-investigativa-documentale",
