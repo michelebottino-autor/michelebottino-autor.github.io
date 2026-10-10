@@ -367,7 +367,7 @@ p{max-width:76ch}
     <a href="disclaimer/">Disclaimer</a>
 </p>
 <div class="visit-counter">
-    Aperture registrate dal contatore: <span id="visit-count" aria-live="polite">...</span>
+    Statistiche pubbliche delle visite temporaneamente non disponibili
 </div>
 </footer>
 <script>
@@ -454,38 +454,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-async function updateVisitCounter() {
-  const el = document.getElementById("visit-count");
-  if (!el) return;
-  // Evita di incrementare il contatore da anteprime, copie e domini non ufficiali.
-  const officialHost = "michelebottino-autor.github.io";
-  if (location.protocol !== "https:" || location.hostname.toLowerCase() !== officialHost) {
-    el.textContent = "disponibile online";
-    el.title = "Il contatore registra soltanto gli accessi al dominio ufficiale";
-    return;
-  }
-  const namespace = officialHost;
-  const normalizedPath = location.pathname.replace(/\/index\.html$/i, "/").replace(/^\/+|\/+$/g, "");
-  const key = (normalizedPath ? normalizedPath.replace(/\//g, "-") : "homepage").slice(0, 100);
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 10000);
-  try {
-    const endpoint = `https://api.counterapi.dev/v1/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}/up`;
-    const response = await fetch(endpoint, {method:"GET",cache:"no-store",signal:controller.signal});
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const payload = await response.json();
-    const raw = payload?.data?.up_count ?? payload?.data?.count ?? payload?.up_count ?? payload?.count;
-    const count = typeof raw === "number" ? raw : (typeof raw === "string" && /^\d+$/.test(raw) ? Number(raw) : NaN);
-    if (!Number.isSafeInteger(count) || count < 0) throw new Error("Risposta del servizio non valida");
-    el.textContent = new Intl.NumberFormat("it-IT").format(count);
-    el.title = "Richieste registrate da CounterAPI; non utenti unici né visite certificate";
-  } catch (error) {
-    el.textContent = "non disponibile";
-    el.title = "Conteggio temporaneamente non disponibile";
-    console.warn("Contatore accessi:", error);
-  } finally { clearTimeout(timer); }
-}
-/* Contatore esterno disattivato in attesa della verifica privacy. */
+
 </script>
 <script>document.querySelectorAll('[data-books-gallery]').forEach(function(g){var t=g.querySelector('.books-track');g.querySelectorAll('[data-scroll]').forEach(function(b){b.addEventListener('click',function(){var tile=t.querySelector('.book-tile');var step=tile?tile.getBoundingClientRect().width+21:250;t.scrollBy({left:(b.dataset.scroll==='next'?1:-1)*step*2,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});});});</script><script>(function(){var b=document.getElementById('fb-load-feed'),c=document.getElementById('fb-feed');if(!b||!c)return;b.addEventListener('click',function(){if(c.querySelector('iframe')){c.hidden=!c.hidden;b.setAttribute('aria-expanded',String(!c.hidden));b.textContent=c.hidden?'Mostra i post pubblici della pagina':'Nascondi i post della pagina';return;}var f=document.createElement('iframe');f.title='Post pubblici della pagina Facebook Michele Bottino';f.src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmichelebottinoautor%2F&tabs=timeline&width=500&height=420&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false';f.loading='lazy';f.referrerPolicy='strict-origin-when-cross-origin';f.setAttribute('allow','encrypted-media; picture-in-picture; web-share');c.appendChild(f);c.hidden=false;b.setAttribute('aria-expanded','true');b.textContent='Nascondi i post della pagina';});})();</script><script defer src="analytics-consenso.js"></script>
 </body>
