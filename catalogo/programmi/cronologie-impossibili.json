@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "course_id": "cronologie-impossibili",
+  "source_locale": "it",
+  "content_version": "0.1-draft",
+  "status": "editorial_draft",
+  "title": "Cronologie impossibili",
+  "objective": "Costruire un racconto documentario quando le fonti offrono sequenze temporali incompatibili.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Il problema temporale e le versioni concorrenti",
+      "status": "pilot_draft"
+    },
+    {
+      "id": "u02",
+      "title": "Cronologia dei documenti e cronologia dei fatti",
+      "status": "outline"
+    },
+    {
+      "id": "u03",
+      "title": "Memoria e testimonianza: date approssimative",
+      "status": "outline"
+    },
+    {
+      "id": "u04",
+      "title": "Conflitti: mostrare due sequenze senza fonderle",
+      "status": "outline"
+    },
+    {
+      "id": "u05",
+      "title": "Narrazione leggibile con incertezza dichiarata",
+      "status": "outline"
+    },
+    {
+      "id": "u06",
+      "title": "Dossier finale: due timeline e racconto annotato",
+      "status": "outline"
+    }
+  ],
+  "pilot_unit": {
+    "id": "u01",
+    "exercise": "Usa un caso fittizio: un diario colloca un incontro il 12 maggio; una lettera datata 14 maggio dice 'ci vedremo domani'; un ricordo registrato molti anni dopo parla di metà mese. Crea una tabella con evento, fonte, data riferita, affidabilità e conflitto. Proponi almeno due cronologie compatibili con le fonti, senza sceglierne una in assenza di prova.",
+    "assessment": {
+      "status": "draft",
+      "criteria": [
+        "Distinzione fra dati e interpretazioni",
+        "Provenienza e limiti dichiarati",
+        "Risultato comprensibile e riproducibile"
+      ]
+    }
+  },
+  "publication_note": "Bozza originale interna. Non costituisce corso completo né iscrizione attiva. Le traduzioni non sono disponibili.",
+  "locales": {
+    "it": "draft",
+    "en": "planned",
+    "es": "planned",
+    "fr": "planned",
+    "de": "planned",
+    "pt": "planned"
+  }
+}
