@@ -48,7 +48,16 @@
         "enabled": false,
         "reason": "identity_and_enrollment_backend_not_yet_published"
       },
-      "category": "analisi"
+      "category": "analisi",
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "source_locale": "it"
     },
     {
       "id": "scrittura-investigativa-documentale",
@@ -87,7 +96,16 @@
         "reason": "course_content_and_assessment_in_development"
       },
       "syllabus": "./scrittura-investigativa-programma.json",
-      "category": "scrittura"
+      "category": "scrittura",
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "source_locale": "it"
     },
     {
       "id": "storie-che-mancano",
@@ -116,7 +134,16 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "source_locale": "it"
     },
     {
       "id": "archivio-vivo",
@@ -145,7 +172,16 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "source_locale": "it"
     },
     {
       "id": "voci-da-salvare",
@@ -174,7 +210,16 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "source_locale": "it"
     },
     {
       "id": "atlante-delle-storie",
@@ -203,7 +248,16 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "source_locale": "it"
     },
     {
       "id": "scrivere-i-vuoti",
@@ -232,7 +286,16 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "source_locale": "it"
     },
     {
       "id": "dossier-in-libro",
@@ -261,7 +324,16 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "locales": {
+        "it": "available",
+        "en": "planned",
+        "es": "planned",
+        "fr": "planned",
+        "de": "planned",
+        "pt": "planned"
+      },
+      "source_locale": "it"
     }
   ],
   "payment_configuration": {
@@ -321,5 +393,19 @@
       "id": "editoria",
       "label": "Editoria documentaria"
     }
-  ]
+  ],
+  "i18n": {
+    "source_locale": "it",
+    "supported_locales": [
+      "it",
+      "en",
+      "es",
+      "fr",
+      "de",
+      "pt"
+    ],
+    "default_locale": "it",
+    "fallback_locale": "it",
+    "translation_policy": "Only reviewed and complete translations may be advertised as available; keep assessments and certificates aligned with course version."
+  }
 }
