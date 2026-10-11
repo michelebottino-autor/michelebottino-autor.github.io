@@ -101,3 +101,11 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - Inventario ANIMI consultato: https://www.lazio900.it/oggetti/13265-asili-e-altre-opere-sussidiate-san-giorgio-morgeto/ . Il fascicolo 32 «Asili infantili C», 1916–1932, include Calatabiano in un elenco di più comuni. Il fondo è ANIMI (Associazione nazionale per gli interessi del Mezzogiorno d'Italia). Da ricavare collocazione puntuale del fascicolo 32, non confonderla con quella di altri fascicoli.
 - Nel medesimo inventario la «Pratica costruzione dell'asilo» 1925–1928 riguarda esplicitamente Linguaglossa, NON Calatabiano. Non attribuirla al paese.
 - Esito editoriale: nessuna ulteriore pubblicazione sul sito in assenza di atti originali relativi alla costruzione; conservare la pista ANIMI nel registro di ricerca.
+
+
+### R-018 — ANIMI: verificata conservazione di progetti e accesso all'archivio
+- L'archivio storico ANIMI conserva, in generale, progetti di edifici, disegni, relazioni tecniche, contabilità, fotografie e corrispondenza; l'inventario è consultabile online: https://www.animi.it/archivio_storico.html
+- Il fascicolo 32 «Asili infantili C» (1916–1932) include esplicitamente Calatabiano nell'inventario Lazio '900: https://www.lazio900.it/oggetti/13265-asili-e-altre-opere-sussidiate-san-giorgio-morgeto/
+- Contatto archivio: segreteria@animi.it ; via di Porta Pinciana 6, Roma, tel. 06 47850239: https://www.animi.it/
+- Prossima verifica: chiedere scansioni o consultazione delle sole carte di Calatabiano del fascicolo 32, precisando se vi siano progetto, ubicazione, inaugurazione, finanziamento, collaudo o soltanto corrispondenza. Non risulta richiesta inviata.
+- Stato: ACCESSO E CONSISTENZA ARCHIVISTICA VERIFICATI, CONTENUTO SPECIFICO DELLE CARTE NON ANCORA LETTO. Non pubblicare un asilo costruito nel Ventennio senza evidenza.
