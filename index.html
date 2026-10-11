@@ -198,11 +198,23 @@ p{max-width:76ch}
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
      Non inserire script di tracciamento senza configurare il consenso. -->
 <link rel="stylesheet" href="site-uniform.css"/>
+<style id="mb-home-menu-fix">
+@media(max-width:760px){
+ #site-nav{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}
+ #site-nav>.logo{flex:1 1 auto!important;min-width:0}
+ #site-nav>.menu-toggle{display:block!important;flex:0 0 auto!important;min-height:44px}
+ #site-nav>.mb-mobile-menu-button{display:none!important}
+ #site-nav>#menu{width:100%!important;flex-basis:100%!important;grid-column:1/-1!important;margin:0!important}
+ #site-nav>#menu:not(.active):not(.open):not(.show){display:none!important}
+ #site-nav>#menu.active,#site-nav>#menu.open,#site-nav>#menu.show{display:flex!important;flex-direction:column!important}
+}
+</style>
 </head>
 <body>
 <nav aria-label="Informazioni e trasparenza del sito" class="site-transparency-links" style="padding:10px 16px;text-align:center;font:14px/1.6 system-ui,sans-serif;background:#f3eee5;color:#29251f"><a href="privacy/">Privacy</a> · <a href="cookie/">Cookie e statistiche</a> · <a href="contatti/">Contatti</a> · <a href="adc/carta/">Carta del Laboratorio ADC</a></nav><a class="skip-link" href="#contenuto">Vai al contenuto</a>
 <header class="container">
 <nav class="nav" id="site-nav">
+<!-- Il menu mobile della Home usa esclusivamente il toggle nativo. -->
 <div class="logo">
 <a href="./">Michele Bottino</a>
 </div>
