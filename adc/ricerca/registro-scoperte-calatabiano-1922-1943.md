@@ -30,3 +30,43 @@ Aggiornato: 11 ottobre 2026. Registro di lavoro: le notizie non verificate non s
 
 ## Criteri di utilizzo editoriale
 Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla commemorazione. Evitare attribuzioni di reparto, date e luoghi non corroborati. Pubblicare nel sito soltanto le acquisizioni con adeguato contesto, mantenendo qui le piste aperte.
+
+
+## Ricerca estesa 11 ottobre 2026 — edilizia e fonti internazionali
+
+### R-006 — Pasteria, atto ecclesiastico del 1942
+- Gazzetta Ufficiale, DPR 26 ottobre 1948 n. 1466, pubblicato 30 dicembre 1948: riconoscimento civile della parrocchia San Giuseppe a Pasteria; menziona decreto del vescovo di Acireale del 26 luglio 1942 e atti integrativi del 1946 e 1948.
+- Fonte: https://www.gazzettaufficiale.it/atto/vediMenuHTML?atto.codiceRedazionale=048U1466&atto.dataPubblicazioneGazzetta=1948-12-30&tipoSerie=serie_generale&tipoVigenza=originario
+- Stato: DOCUMENTO UFFICIALE VERIFICATO; non prova una nuova costruzione nel 1942. Ricercare fascicolo della curia di Acireale.
+
+### R-007 — Emeroteca Tucci: Giornale di Sicilia
+- Catalogate annate 1915–1940, 1941 incompleto consultabile, 1944–1945 incompleto consultabile.
+- Fonte: https://www.emerotecatucci.it/it/collezioni/periodici/giornale-di-sicilia/
+- Stato: CONSISTENZA CATALOGRAFICA; articoli su Calatabiano non ancora identificati o letti.
+
+### R-008 — Archivio storico La Sicilia
+- Archivio digitale dal 15 marzo 1945: utile per notizie retrospettive, non per articoli originali del Ventennio.
+- Fonte: https://www.lasicilia.it/news/archivio-storico/1097633/in-un-clic-70-anni-di-storia-nel-nuovo-archivio-digitale-de-la-sicilia-6-mln-di-articoli.html
+- Stato: STRUMENTO INDIVIDUATO; nessun articolo pertinente ancora acquisito.
+
+### R-009 — Archivio di Stato di Messina, Genio Civile
+- Fondo 1920–1965, inventari e serie su danni bellici, ricostruzioni e contabilità di edilizia pubblica. Riguarda prevalentemente Messina e provincia: Calatabiano è in provincia di Catania, quindi non attribuire a questo fondo pratiche calatabianesi senza verifica.
+- Fonti: https://asmessina.cultura.gov.it/patrimonio-archivistico/elenco-dei-fondi-e-strumenti-di-ricerca/genio-civile ; https://sias-archivi.cultura.gov.it/cgi-bin/pagina.pl?Chiave=450841&TipoPag=comparc
+- Stato: INVENTARIO INDIVIDUATO, NESSUNA UNITÀ SPECIFICA CALATABIANO.
+
+### R-010 — Archivio di Stato Palermo: strumenti e ricerche
+- Cataloghi digitali e servizio ricerche: https://saassipa.cultura.gov.it/patrimonio-archivistico/strumenti-di-ricerca/ ; https://saassipa.cultura.gov.it/servizi-al-pubblico/ricerche/
+- Stato: ACCESSO A STRUMENTI DESCRITTIVI, NON ANCORA A FASCICOLO EDILIZIO DEL PAESE.
+
+### R-011 — Fonti estere
+- Regno Unito: The National Archives, guida ai war diaries (serie WO 169 per teatro mediterraneo); https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-operations-second-world-war
+- Germania: Bundesarchiv consiglia carte RH 2-KART e ricerca per reparti anziché toponimi; https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/nach-themen/kriegsschauplatz-italien-im-zweiten-weltkrieg/
+- Francia: catalogo del Service historique de la Défense https://www.servicehistorique.sga.defense.gouv.fr/recherche-simple
+- Stati Uniti: microfilm e inventario digitale Allied Control Commission presso Archivio Centrale dello Stato https://acs.cultura.gov.it/guida-e-strumenti-di-ricerca/archivi-digitalizzati/
+- Stato: PERCORSI ARCHIVISTICI VERIFICATI, NON NUOVE PROVE DI EDIFICI REALIZZATI A CALATABIANO.
+
+### R-012 — Archivio di Stato Catania: riferimento prioritario
+- Inventario con pratiche di Calatabiano, compreso progetto ferroviario del 16 gennaio 1940 e fascicoli di razionamento 1942–1945: https://www.archiviodistatocatania.beniculturali.it/getFile.php?id=888
+- Stato: INVENTARIO, NON FASCICOLI ORIGINALI. Priorità a Genio Civile, Prefettura, opere pubbliche e registri comunali.
+
+**Conclusione provvisoria:** nessuna nuova costruzione a Calatabiano nel 1922–1943 risulta provata da un collaudo acquisito in questa sessione. Non trasferire queste piste alla pagina storica come opere realizzate.
