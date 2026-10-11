@@ -1,0 +1,31 @@
+# Evita commit accidentali di credenziali e file di lavoro.
+# ATTENZIONE: .gitignore non rende privati i file già tracciati o pubblicati.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+*credentials*.json
+*service-account*.json
+*.sqlite
+*.sqlite3
+*.db
+*.sql.bak
+*.bak
+*.backup
+*.orig
+*.swp
+*.swo
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+__pycache__/
+node_modules/
+.venv/
+venv/
