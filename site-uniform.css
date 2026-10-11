@@ -23,3 +23,15 @@ body>header nav.nav>ul.mb-mobile-menu-open:not(.submenu):not(.nav-menu)>li{width
 body>header nav.nav>ul.mb-mobile-menu-open:not(.submenu):not(.nav-menu) a{display:block;padding:10px 4px}
 .mb-preferences-control{bottom:calc(8px + env(safe-area-inset-bottom,0px))!important;right:8px!important;font-size:11px!important;max-width:140px!important;padding:4px 7px!important;opacity:.85}
 }
+
+/* Evita duplicazioni nei menu gia dotati di toggle nativo. */
+@media(max-width:760px){
+body>header nav.nav:has(>.menu-toggle){display:flex;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap}
+body>header nav.nav:has(>.menu-toggle)>.menu-toggle{display:block;flex:0 0 auto;min-width:44px;min-height:44px}
+body>header nav.nav:has(>.menu-toggle)>.nav-menu{width:100%;flex-basis:100%;margin:0}
+body>header nav.nav:has(>.menu-toggle)>.nav-menu:not(.open):not(.active):not(.show){display:none}
+body>header nav.nav:has(>.menu-toggle)>.nav-menu.open,
+body>header nav.nav:has(>.menu-toggle)>.nav-menu.active,
+body>header nav.nav:has(>.menu-toggle)>.nav-menu.show{display:flex}
+}
+.mb-preferences-control{position:static!important;display:inline-block;margin:14px 0 6px!important;max-width:none!important;opacity:1!important}
