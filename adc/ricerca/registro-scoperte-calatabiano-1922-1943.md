@@ -128,3 +128,17 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 ### R-021 — Prefettura Catania serie III, bilanci opere pie di Calatabiano
 - Inventario «Prefettura serie III» Archivio di Stato di Catania, https://archiviodistatocatania.beniculturali.it/getFile.php?id=1376, elenca unità «11/689 Castiglione ... Calatabiano Bilanci». Da accertare date e soggetti esatti delle carte.
 - Stato: PISTA ARCHIVISTICA CATALOGRAFICA, NON PROVA DI COSTRUZIONI.
+
+
+### R-022 — Identificazione sede moderna Regina Elena: Istituto Sacro Cuore, via Umberto 6
+- Gazzettinonline 21 marzo 2018 riferisce che l'Istituto Sacro Cuore di via Umberto, «nato nel 1914», ospitava la scuola materna «Regina Elena»: https://www.gazzettinonline.it/2018/03/21/calatabiano-istituzioni-e-cittadini-uniti-contro-la-chiusura-dellistituto-sacro-cuore_100746.html
+- Guida comunale di Calatabiano indica «Istituto Sacro Cuore, via Umberto 6», telefono 095 645322: https://diazilla.com/doc/777729/presentazione---comune-di-calatabiano
+- Elenco scuole paritarie conferma «Regina Elena», via Umberto 6, codice CT1A08100C: https://diazilla.com/doc/449956/elenco-scuole-paritarie-primarie
+- Insieme queste fonti stabiliscono la collocazione recente della scuola nel Sacro Cuore. Non stabiliscono che la sede fosse la stessa nel 1943 né l'anno di costruzione del fabbricato. «Nato nel 1914» si riferisce all'istituzione secondo la fonte giornalistica, non necessariamente all'edificio.
+- Aggiornata pagina pubblica, 11 ottobre 2026, commit ba6a628. Ricercare cronache del 1914, istituti religiosi e carte ECA per documentare continuità storica.
+
+### R-023 — Edifici scolastici di via Vittorio Veneto, cronologia ancora aperta
+- Sito ufficiale IC Macherione: primaria plesso Veneto via Vittorio Veneto 54; sede media via Vittorio Veneto 93–95: https://www.icmacherionecalatabiano.edu.it/indirizzo-di-studio/scuola-primaria/ ; https://www.icmacherionecalatabiano.edu.it/
+- Guida comunale storica (circa 2007) elenca già scuola elementare e media entrambe in via Vittorio Veneto: https://diazilla.com/doc/777729/presentazione---comune-di-calatabiano
+- Testimonianza orale utente: frequentò la scuola elementare in quella strada presumibilmente dall'anno scolastico 1978/79 o 1979/80. Testimonianza da trattare come memoria personale, non prova dell'anno di costruzione.
+- Stato: UBICAZIONI DOCUMENTATE; DATE DI EDIFICAZIONE NON ANCORA VERIFICATE. Attenzione a non confondere con istituti omonimi «Vittorio Veneto» in altri comuni.
