@@ -161,3 +161,10 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - Il resoconto delle fondazioni del 1914 costituisce testimonianza coeva di attività scolastiche e asilo PRIMA del fascismo; non prova che il fabbricato di via Umberto fosse costruito nel 1914.
 - TENSIONE CRONOLOGICA DA CONSERVARE: la ricostruzione FMA Sicilia pone avvio attività nell'ottobre 1915 e affidamento di due sezioni d'asilo nel 1927; non assimilare automaticamente inaugurazione 1914 e affidamento 1927. Non prova identità fra asilo del 1914 e «Regina Elena» del 1943.
 - Priorità: consultare altri numeri del Bollettino Salesiano 1914-1928 e gli elenchi generali 1927, 1932, 1942-1944 per precisare cronologia e denominazione.
+
+
+### R-026 — Camera dei deputati, 25 novembre 1965: Istituto Sacro Cuore tra le scuole elementari parificate
+- Fonte primaria ufficiale: Camera dei deputati, IV legislatura, Discussioni, seduta 25 novembre 1965, p. 19271, interrogazione Pezzino n. 14105 circa trattamento previdenziale e assicurativo degli insegnanti delle 51 scuole elementari parificate della provincia di Catania. https://legislature.camera.it/_dati/leg04/lavori/stenografici/sed0394/sed0394.pdf
+- Elenco nell'interrogazione: «a Calatabiano: 8) Istituto Sacro Cuore».
+- Attesta inclusione in un elenco parlamentare di scuole parificate nel 1965, NON prova violazioni previdenziali o loro accertamento, NON riguarda costruzione del fabbricato, NON chiarisce identità amministrativa dell'asilo Regina Elena nel 1943.
+- Riscontro con annuario FMA 1949 che menziona scuole elementari a sgravio. Priorità: verificare eventuale risposta ministeriale e annuari FMA 1950-1965.
