@@ -128,7 +128,6 @@ p{max-width:76ch}
 @media(max-width:600px){.book-tile{flex-basis:132px!important;max-width:132px!important}.book-tile .book-art{height:165px!important;min-height:165px!important;max-height:165px!important}main{padding-inline:14px}}
 </style><link rel="stylesheet" href="../site-uniform.css"/>
 <link rel="manifest" href="/manifest.webmanifest"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Michele Bottino"/><link rel="apple-touch-icon" href="/images/logo.png"/><style>
-/* Mobile-first contact form: prevent labels and inputs sharing one line. */
 .contact-form{display:flex;flex-direction:column;align-items:stretch;gap:10px;max-width:680px;width:100%;min-width:0}
 .contact-form>label{display:block;margin:8px 0 0;font-size:1rem;line-height:1.45}
 .contact-form>input:not([type="hidden"]),.contact-form>textarea{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;margin:0;padding:12px 14px;border:1px solid #a6a8a6;border-radius:8px;background:#fff;color:#242b2b;font:inherit;line-height:1.5}
@@ -176,18 +175,16 @@ Questa pagina raccoglie i riferimenti e i canali ufficiali collegati al sito di 
 <div class="block">
 <p>Il modulo utilizza il servizio esterno FormSubmit per inoltrare il messaggio. Non inserire informazioni riservate o dati particolari non necessari. Prima dell’invio consulta l’<a href="../privacy/">informativa privacy</a>.</p>
 <form class="contact-form" action="https://formsubmit.co/michelebottino.adc@gmail.com" method="POST">
-<!-- sicurezza -->
 <input name="_subject" type="hidden" value="Nuovo messaggio dal sito"/>
 <input name="_captcha" type="hidden" value="true"/>
 <input name="_template" type="hidden" value="table"/>
 <input type="hidden" name="_honey" value=""/>
 <label for="nome">Nome</label>
-<input id="nome" name="nome" required="" type="text"/>
+<input id="nome" name="nome" autocomplete="name" required="" type="text"/>
 <label for="email">Email</label>
-<input id="email" name="email" required="" type="email"/>
+<input id="email" name="email" autocomplete="email" inputmode="email" required="" type="email"/>
 <label for="messaggio">Messaggio</label>
 <textarea id="messaggio" name="messaggio" required="" rows="6"></textarea>
-<!-- GDPR FIX -->
 <div class="contact-consent">
 <input id="consenso-privacy" name="consenso" required="" type="checkbox"/>
 <label for="consenso-privacy">
