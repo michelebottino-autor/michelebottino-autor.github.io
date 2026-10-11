@@ -78,3 +78,18 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - La società e le prime infrastrutture risalgono all'Ottocento; il dato del 1930 prova l'esistenza di un servizio, NON la costruzione dell'acquedotto durante il fascismo.
 - La fonte riferisce inoltre manutenzioni e modifiche dei canali dopo i danni bellici del 1943: identificare gli atti tecnici e distinguere lavori anteguerra da riparazioni successive.
 - Stato: RISCONTRO DOCUMENTARIO INDIRETTO CON DATA PRECISA. Da acquisire ed esaminare il volume originale «Le sorgenti italiane – Elenco e descrizione», gli atti della società e le pratiche del Genio Civile di Catania.
+
+
+### R-014 — Calatabiano nel fascicolo «Asili infantili C», 1916–1932
+- Il catalogo Lazio '900 descrive il fascicolo 32 «Asili infantili C: Caccuri, Cagliari, Cagnano Varano, Cairano, Calasetta, Calatabiano, Calimera, ...», all'interno del complesso «Asili e altre opere sussidiate», con estremi cronologici 1916–1932.
+- Fonte: https://www.lazio900.it/oggetti/13265-asili-e-altre-opere-sussidiate-san-giorgio-morgeto/
+- Stato: SEGNATURA DESCRITTIVA DA APPROFONDIRE. Non sono stati consultati gli atti del fascicolo; non è dimostrata la costruzione di un asilo a Calatabiano. Richiedere ente conservatore, segnatura completa, inventario analitico e scansioni delle carte riguardanti Calatabiano.
+
+### R-015 — Piste scartate per omonimie e falsi positivi
+- Ricerca web «podestà, scuole, fognature, 1935»: risultati per Galatina (Puglia), NON Calatabiano. Non trasferire dati di altri comuni al dossier.
+- Ricerca web «registri deliberazioni podestà 1926–1949»: alcuni inventari restituiti riguardano altri comuni. Verificare sempre intestazione del fondo prima di attribuire una segnatura.
+- Stato: CONTROLLO QUALITÀ DELLA RICERCA.
+
+### R-016 — Archivio comunale: percorso amministrativo verificato
+- Il Servizio Protocollo del Comune di Calatabiano dichiara competenza su archivio corrente e di deposito e ricerca atti: https://www.comune.calatabiano.ct.it/it/unita_organizzative/servizio-protocollo
+- Stato: ACCESSO AMMINISTRATIVO, NON DISPONIBILITÀ DIGITALE CONFERMATA DEI REGISTRI 1922–1943. Chiedere espressamente se i registri podestarili storici sono presso il Comune, un archivio storico separato o altro ente.
