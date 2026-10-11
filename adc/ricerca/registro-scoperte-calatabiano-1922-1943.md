@@ -70,3 +70,11 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - Stato: INVENTARIO, NON FASCICOLI ORIGINALI. Priorità a Genio Civile, Prefettura, opere pubbliche e registri comunali.
 
 **Conclusione provvisoria:** nessuna nuova costruzione a Calatabiano nel 1922–1943 risulta provata da un collaudo acquisito in questa sessione. Non trasferire queste piste alla pagina storica come opere realizzate.
+
+
+### R-013 — Acque Bufardo e Torrerossa: approvvigionamento documentato nel 1930
+- Fonte: Angelo Russo, storia della società Acque Bufardo e Torrerossa, testo consultabile https://diazilla.com/doc/580472/untitled---acque-bufardo-e-torrerossa
+- Il volume riporta il censimento nazionale delle sorgenti di fine anni Venti / inizio Trenta: al 27 settembre 1930 la sorgente Bufardo aveva portata misurata di 143 l/s e Torrerossa di 231 l/s. Il Bufardo era impiegato anche per l'approvvigionamento idrico di Calatabiano e Fiumefreddo.
+- La società e le prime infrastrutture risalgono all'Ottocento; il dato del 1930 prova l'esistenza di un servizio, NON la costruzione dell'acquedotto durante il fascismo.
+- La fonte riferisce inoltre manutenzioni e modifiche dei canali dopo i danni bellici del 1943: identificare gli atti tecnici e distinguere lavori anteguerra da riparazioni successive.
+- Stato: RISCONTRO DOCUMENTARIO INDIRETTO CON DATA PRECISA. Da acquisire ed esaminare il volume originale «Le sorgenti italiane – Elenco e descrizione», gli atti della società e le pratiche del Genio Civile di Catania.
