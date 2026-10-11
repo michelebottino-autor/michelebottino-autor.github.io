@@ -109,3 +109,11 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - Contatto archivio: segreteria@animi.it ; via di Porta Pinciana 6, Roma, tel. 06 47850239: https://www.animi.it/
 - Prossima verifica: chiedere scansioni o consultazione delle sole carte di Calatabiano del fascicolo 32, precisando se vi siano progetto, ubicazione, inaugurazione, finanziamento, collaudo o soltanto corrispondenza. Non risulta richiesta inviata.
 - Stato: ACCESSO E CONSISTENZA ARCHIVISTICA VERIFICATI, CONTENUTO SPECIFICO DELLE CARTE NON ANCORA LETTO. Non pubblicare un asilo costruito nel Ventennio senza evidenza.
+
+
+### R-019 — Asilo infantile «Regina Elena» documentato a Calatabiano nel 1943
+- Archivio di Stato di Catania, inventario Prefettura, unità 736, fascicoli 3.10.3 / 3.10.23, pag. PDF 303 circa (pagina numerata 302): «Delibere dell'Ente Comunale di Assistenza del Comune di Calatabiano» e «sussidi all'asilo infantile "Regina Elena" nel 1943».
+- Fonte: https://www.archiviodistatocatania.beniculturali.it/getFile.php?id=888
+- Il riferimento documenta il nome dell'istituzione e un sussidio riferito al 1943; NON prova che l'edificio fosse stato costruito nel 1943, né ne indica indirizzo o data di fondazione.
+- Verifica successiva autonoma: cercare «asilo Regina Elena» + Calatabiano in stampa storica, ANIMI e inventari; non assumere che il fascicolo ANIMI «Asili infantili C» riguardi lo stesso ente senza lettura delle carte.
+- Stato: FATTO STORICO DOCUMENTATO A LIVELLO DI INVENTARIO; breve notizia pubblicata sul sito 11 ottobre 2026.
