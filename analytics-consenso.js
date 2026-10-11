@@ -32,10 +32,30 @@ window.MB_ANALYTICS_ID = "G-5MVH0PN6E5";
   function preferenceControl(){
     const b=document.createElement('button');b.type='button';b.textContent='Preferenze statistiche';
     b.setAttribute('aria-label','Modifica il consenso alle statistiche');
-    b.style.cssText='position:fixed;bottom:8px;right:8px;z-index:9998;background:#fffaf1;color:#29251f;border:1px solid #aa9275;border-radius:6px;padding:5px 9px;font:12px system-ui,sans-serif;cursor:pointer';
+    b.style.cssText='position:fixed;bottom:8px;right:8px;z-index:9998;background:#fffaf1;color:#29251f;border:1px solid #aa9275;border-radius:6px;padding:5px 9px;font:12px system-ui,sans-serif;cursor:pointer';b.className='mb-preferences-control';
     b.addEventListener('click',()=>{if(window.__mbAnalyticsLoaded){safeSet('');window['ga-disable-'+id]=true;location.reload();return;}safeSet('');const d=document.getElementById('mb-consent');if(d)d.remove();banner();});
     document.body.appendChild(b);
   }
-  function init(){preferenceControl();banner()}
+  function mobileNavigation(){
+    const nav=document.querySelector('body > header nav.nav');
+    const list=nav&&nav.querySelector(':scope > ul');
+    if(!nav||!list||nav.querySelector('.mb-mobile-menu-button'))return;
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='mb-mobile-menu-button';
+    btn.textContent='Menu';
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Apri il menu di navigazione');
+    list.id=list.id||'mb-site-menu';
+    btn.setAttribute('aria-controls',list.id);
+    nav.insertBefore(btn,list);
+    btn.addEventListener('click',()=>{
+      const open=btn.getAttribute('aria-expanded')!=='true';
+      btn.setAttribute('aria-expanded',String(open));
+      btn.setAttribute('aria-label',open?'Chiudi il menu di navigazione':'Apri il menu di navigazione');
+      list.classList.toggle('mb-mobile-menu-open',open);
+    });
+  }
+  function init(){mobileNavigation();preferenceControl();banner()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
