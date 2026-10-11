@@ -204,10 +204,13 @@ p{max-width:76ch}
  #site-nav>.logo{flex:1 1 auto!important;min-width:0}
  #site-nav>.menu-toggle{display:block!important;flex:0 0 auto!important;min-height:44px}
  #site-nav>.mb-mobile-menu-button{display:none!important}
+ #site-nav>.mb-mobile-menu-button+ul{grid-column:1/-1}
  #site-nav>#menu{width:100%!important;flex-basis:100%!important;grid-column:1/-1!important;margin:0!important}
  #site-nav>#menu:not(.active):not(.open):not(.show){display:none!important}
  #site-nav>#menu.active,#site-nav>#menu.open,#site-nav>#menu.show{display:flex!important;flex-direction:column!important}
 }
+#mb-site-menu:not(.mb-mobile-menu-open){display:none!important}
+.mb-preferences-control{position:static!important;inset:auto!important;display:inline-block!important;max-width:none!important;margin:12px 0!important}
 </style>
 </head>
 <body>
