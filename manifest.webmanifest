@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "Michele Bottino — Sito ufficiale",
+  "short_name": "Michele Bottino",
+  "description": "Opere, ricerca e metodo di Michele Bottino.",
+  "lang": "it",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8f6f1",
+  "theme_color": "#25302e",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/mb-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
