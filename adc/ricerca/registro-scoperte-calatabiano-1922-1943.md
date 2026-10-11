@@ -117,3 +117,14 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - Il riferimento documenta il nome dell'istituzione e un sussidio riferito al 1943; NON prova che l'edificio fosse stato costruito nel 1943, né ne indica indirizzo o data di fondazione.
 - Verifica successiva autonoma: cercare «asilo Regina Elena» + Calatabiano in stampa storica, ANIMI e inventari; non assumere che il fascicolo ANIMI «Asili infantili C» riguardi lo stesso ente senza lettura delle carte.
 - Stato: FATTO STORICO DOCUMENTATO A LIVELLO DI INVENTARIO; breve notizia pubblicata sul sito 11 ottobre 2026.
+
+
+### R-020 — Scuola paritaria «Regina Elena» in via Umberto 6: possibile continuità con l'asilo del 1943
+- Elenco online «Scuole paritarie operanti nella provincia di Catania» riporta per Calatabiano: «REGINA ELENA», via Umberto 6, codice CT1A08100C. Fonte: https://diazilla.com/doc/449956/elenco-scuole-paritarie-primarie
+- Documento non datato in modo affidabile nella copia reperita; non dimostra che l'indirizzo fosse quello dell'asilo infantile documentato nel 1943, né che l'edificio risalga al Ventennio. Non attribuire identità storica sulla sola omonimia.
+- L'elenco appare riferito a scuole paritarie di epoca successiva, utile come pista topografica.
+- Stato: INDIZIO TOPONOMASTICO / ISTITUZIONALE, DA VERIFICARE. Nessuna integrazione nella pagina pubblica.
+
+### R-021 — Prefettura Catania serie III, bilanci opere pie di Calatabiano
+- Inventario «Prefettura serie III» Archivio di Stato di Catania, https://archiviodistatocatania.beniculturali.it/getFile.php?id=1376, elenca unità «11/689 Castiglione ... Calatabiano Bilanci». Da accertare date e soggetti esatti delle carte.
+- Stato: PISTA ARCHIVISTICA CATALOGRAFICA, NON PROVA DI COSTRUZIONI.
