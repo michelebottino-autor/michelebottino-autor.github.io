@@ -153,3 +153,11 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - Studio storico Gaetano Zito, «Educazione della donna in Sicilia tra Otto e Novecento. Le Figlie di Maria Ausiliatrice e Luigi Sturzo», tabella fondazioni: Calatabiano aperta 1914. https://www.salesian.online/wp-content/uploads/2019/05/2-Zito-Educazione-della-donna-in-Sicilia-tra-Otto-e-Novecento.-Le-Figlie-di-Maria-Ausiliatrice-e-Luigi-Sturzo.pdf
 - Chiese di Sicilia, notizia 5 novembre 2013: prevista sosta presso Sacro Cuore e inaugurazione medaglione commemorativo della presenza FMA. https://www.chiesedisicilia.org/2013/11/05/acireale-don-bosco-tra-i-giovani/
 - Stato: STORIA ISTITUZIONALE DOCUMENTATA; anno costruzione fabbricato, eventuali ampliamenti 1922–1943 e identità della sede asilo Regina Elena nel 1943 non accertati. Sintesi pubblicata nella pagina storica, commit 4a993db.
+
+
+### R-025 — Bollettino Salesiano gennaio 1915: asilo infantile inaugurato nel 1914
+- Fonte primaria coeva: «L'Istituto delle Figlie di Maria Ausiliatrice nel 1914», Bollettino Salesiano, gennaio 1915, p. 9 (pagina PDF 12), https://donbosco.press/wp-content/bs_archive/1915.01_Bollettino%20Salesiano_SDB_anno%20039_no.01_IT_web.pdf
+- Testo: «A Calatabiano, provincia di Catania, dove furono chiamate per i Catechismi domenicali e per l'Oratorio Festivo, inaugurarono pure un corso di Scuole elementari, una Scuola di lavoro e un Asilo infantile».
+- Il resoconto delle fondazioni del 1914 costituisce testimonianza coeva di attività scolastiche e asilo PRIMA del fascismo; non prova che il fabbricato di via Umberto fosse costruito nel 1914.
+- TENSIONE CRONOLOGICA DA CONSERVARE: la ricostruzione FMA Sicilia pone avvio attività nell'ottobre 1915 e affidamento di due sezioni d'asilo nel 1927; non assimilare automaticamente inaugurazione 1914 e affidamento 1927. Non prova identità fra asilo del 1914 e «Regina Elena» del 1943.
+- Priorità: consultare altri numeri del Bollettino Salesiano 1914-1928 e gli elenchi generali 1927, 1932, 1942-1944 per precisare cronologia e denominazione.
