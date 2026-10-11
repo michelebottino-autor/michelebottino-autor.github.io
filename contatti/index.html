@@ -127,7 +127,19 @@ p{max-width:76ch}
 .book-tile .book-art.cover-unavailable img{display:none!important}
 @media(max-width:600px){.book-tile{flex-basis:132px!important;max-width:132px!important}.book-tile .book-art{height:165px!important;min-height:165px!important;max-height:165px!important}main{padding-inline:14px}}
 </style><link rel="stylesheet" href="../site-uniform.css"/>
-<link rel="manifest" href="/manifest.webmanifest"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Michele Bottino"/><link rel="apple-touch-icon" href="/images/logo.png"/></head>
+<link rel="manifest" href="/manifest.webmanifest"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Michele Bottino"/><link rel="apple-touch-icon" href="/images/logo.png"/><style>
+/* Mobile-first contact form: prevent labels and inputs sharing one line. */
+.contact-form{display:flex;flex-direction:column;align-items:stretch;gap:10px;max-width:680px;width:100%;min-width:0}
+.contact-form>label{display:block;margin:8px 0 0;font-size:1rem;line-height:1.45}
+.contact-form>input:not([type="hidden"]),.contact-form>textarea{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;margin:0;padding:12px 14px;border:1px solid #a6a8a6;border-radius:8px;background:#fff;color:#242b2b;font:inherit;line-height:1.5}
+.contact-form>textarea{min-height:160px;resize:vertical}
+.contact-form .contact-consent{display:grid;grid-template-columns:24px minmax(0,1fr);align-items:start;column-gap:12px;margin:12px 0 4px}
+.contact-form .contact-consent input[type="checkbox"]{width:20px;height:20px;margin:5px 0 0;accent-color:#253431}
+.contact-form .contact-consent label{display:block;min-width:0;margin:0;line-height:1.55}
+.contact-form>button[type="submit"]{align-self:flex-start;max-width:100%;white-space:normal}
+.contact-form input:focus-visible,.contact-form textarea:focus-visible{outline:3px solid #d49b41;outline-offset:2px}
+@media(max-width:480px){.contact-form{gap:8px}.contact-form>input:not([type="hidden"]),.contact-form>textarea{font-size:16px}.contact-form>button[type="submit"]{width:100%}}
+</style></head>
 <body>
 <nav aria-label="Informazioni e trasparenza del sito" class="site-transparency-links" style="padding:10px 16px;text-align:center;font:14px/1.6 system-ui,sans-serif;background:#f3eee5;color:#29251f"><a href="../privacy/">Privacy</a> · <a href="../cookie/">Cookie e statistiche</a> · <a href="../contatti/">Contatti</a> · <a href="../adc/carta/">Carta del Laboratorio ADC</a></nav><a class="skip-link" href="#contenuto">Vai al contenuto</a>
 <header class="container">
@@ -163,7 +175,7 @@ Questa pagina raccoglie i riferimenti e i canali ufficiali collegati al sito di 
 <h2>Contatto diretto</h2>
 <div class="block">
 <p>Il modulo utilizza il servizio esterno FormSubmit per inoltrare il messaggio. Non inserire informazioni riservate o dati particolari non necessari. Prima dell’invio consulta l’<a href="../privacy/">informativa privacy</a>.</p>
-<form action="https://formsubmit.co/michelebottino.adc@gmail.com" method="POST">
+<form class="contact-form" action="https://formsubmit.co/michelebottino.adc@gmail.com" method="POST">
 <!-- sicurezza -->
 <input name="_subject" type="hidden" value="Nuovo messaggio dal sito"/>
 <input name="_captcha" type="hidden" value="true"/>
@@ -176,7 +188,7 @@ Questa pagina raccoglie i riferimenti e i canali ufficiali collegati al sito di 
 <label for="messaggio">Messaggio</label>
 <textarea id="messaggio" name="messaggio" required="" rows="6"></textarea>
 <!-- GDPR FIX -->
-<div>
+<div class="contact-consent">
 <input id="consenso-privacy" name="consenso" required="" type="checkbox"/>
 <label for="consenso-privacy">
         Ho letto l’<a href="../privacy/" target="_blank" rel="noopener noreferrer">informativa privacy</a> e sono informato che il messaggio viene inoltrato tramite FormSubmit.
