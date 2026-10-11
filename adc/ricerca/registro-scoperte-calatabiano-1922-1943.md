@@ -93,3 +93,11 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 ### R-016 — Archivio comunale: percorso amministrativo verificato
 - Il Servizio Protocollo del Comune di Calatabiano dichiara competenza su archivio corrente e di deposito e ricerca atti: https://www.comune.calatabiano.ct.it/it/unita_organizzative/servizio-protocollo
 - Stato: ACCESSO AMMINISTRATIVO, NON DISPONIBILITÀ DIGITALE CONFERMATA DEI REGISTRI 1922–1943. Chiedere espressamente se i registri podestarili storici sono presso il Comune, un archivio storico separato o altro ente.
+
+
+### R-017 — Verifica incrociata sito e inventario ANIMI (11 ottobre 2026)
+- Controllata pagina pubblica `adc/calatabiano-1922-1943/index.html`: già presenti sede del Fascio in affitto, progetto ferroviario 1940 e sezione Pasteria 1942. Nessun duplicato esatto nei collegamenti HTML.
+- Fonte primaria di verifica Pasteria: https://www.gazzettaufficiale.it/atto/vediMenuHTML?atto.codiceRedazionale=048U1466&atto.dataPubblicazioneGazzetta=1948-12-30&tipoSerie=serie_generale&tipoVigenza=originario ; il decreto 1948 riconosce quello vescovile 26 luglio 1942, non data la costruzione della chiesa.
+- Inventario ANIMI consultato: https://www.lazio900.it/oggetti/13265-asili-e-altre-opere-sussidiate-san-giorgio-morgeto/ . Il fascicolo 32 «Asili infantili C», 1916–1932, include Calatabiano in un elenco di più comuni. Il fondo è ANIMI (Associazione nazionale per gli interessi del Mezzogiorno d'Italia). Da ricavare collocazione puntuale del fascicolo 32, non confonderla con quella di altri fascicoli.
+- Nel medesimo inventario la «Pratica costruzione dell'asilo» 1925–1928 riguarda esplicitamente Linguaglossa, NON Calatabiano. Non attribuirla al paese.
+- Esito editoriale: nessuna ulteriore pubblicazione sul sito in assenza di atti originali relativi alla costruzione; conservare la pista ANIMI nel registro di ricerca.
