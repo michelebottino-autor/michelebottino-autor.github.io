@@ -168,3 +168,9 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - Elenco nell'interrogazione: «a Calatabiano: 8) Istituto Sacro Cuore».
 - Attesta inclusione in un elenco parlamentare di scuole parificate nel 1965, NON prova violazioni previdenziali o loro accertamento, NON riguarda costruzione del fabbricato, NON chiarisce identità amministrativa dell'asilo Regina Elena nel 1943.
 - Riscontro con annuario FMA 1949 che menziona scuole elementari a sgravio. Priorità: verificare eventuale risposta ministeriale e annuari FMA 1950-1965.
+
+
+### R-027 — Elenco generale FMA 1942: scuole elementari parificate a Calatabiano
+- Fonte primaria: Figlie di Maria Ausiliatrice, Elenco generale 1942 (Antico Continente), voce «CALATABIANO — Istituto Sacro Cuore», p. stampata 121 (verificare paginazione PDF). https://centrostudifma.pfse-auxilium.org/it/pdf/csfma/istituto-fma-elenco-generale-1942-antico-continente.pdf?GENEREDOCUMENTO_ID=24
+- Anno istituto 1914; attività: «Scuola materna — Scuole elementari parificate — Scuola di lavoro — Oratorio festivo — Catechismi parrocchiali — A.G.F.A.C.»; direttrice sr Ponzo Giuseppina.
+- Fonte coeva alla guerra: certifica attività educative nel 1942; non fornisce nome Regina Elena alla materna, indirizzo civico o cronologia edilizia. Incrociare con ECA Prefettura 1943 e con elenchi 1938, 1949. La denominazione «scuole elementari parificate» anticipa attestazione parlamentare del 1965.
