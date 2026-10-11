@@ -5,3 +5,8 @@ header nav a:focus-visible,header nav button:focus-visible,.course-feature a:foc
 .course-feature p{max-width:780px;line-height:1.75;color:#423b34}
 .course-feature-link{display:inline-block;margin-top:10px;padding:11px 18px;background:#463a2e;color:#fff!important;border-radius:5px;text-decoration:none;font-weight:650}
 @media(max-width:700px){.course-feature{margin:28px auto;padding:24px 18px}}
+/* Mobile responsive layout */
+html,body{max-width:100%;overflow-x:clip}
+main pre{max-width:100%;overflow-x:auto;white-space:pre}
+main img,main iframe,main video{max-width:100%}
+@media(max-width:760px){body>header nav.nav{flex-direction:column;align-items:stretch}body>header nav.nav>ul:not(.submenu):not(.nav-menu){width:100%;display:flex;flex-wrap:wrap;gap:4px 14px}body>header nav.nav>ul:not(.submenu):not(.nav-menu)>li{width:auto}body>main,body>main.container{width:100%;min-width:0;padding-inline:16px}main .architecture{min-width:0;max-width:100%;overflow-x:auto}main h1{font-size:clamp(2.2rem,10vw,3.4rem)}}
