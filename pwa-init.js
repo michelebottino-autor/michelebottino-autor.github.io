@@ -1,0 +1,2 @@
+/* Installazione PWA condivisa: indipendente dal consenso analytics. */
+(function(){'use strict';if(!document.querySelector('link[rel="manifest"]')){const l=document.createElement('link');l.rel='manifest';l.href='/manifest.webmanifest';document.head.appendChild(l)}if('serviceWorker' in navigator&&location.protocol==='https:'){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})},{once:true})}})();
