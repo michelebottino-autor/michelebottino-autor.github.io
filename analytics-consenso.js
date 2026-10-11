@@ -56,6 +56,16 @@ window.MB_ANALYTICS_ID = "G-5MVH0PN6E5";
       list.classList.toggle('mb-mobile-menu-open',open);
     });
   }
-  function init(){mobileNavigation();preferenceControl();banner()}
+  function setupPwa(){
+    if(!document.querySelector('link[rel="manifest"]')){
+      const link=document.createElement('link');
+      link.rel='manifest';link.href='/manifest.webmanifest';
+      document.head.appendChild(link);
+    }
+    if('serviceWorker' in navigator && location.protocol==='https:'){
+      window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}),{once:true});
+    }
+  }
+  function init(){setupPwa();mobileNavigation();preferenceControl();banner()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
