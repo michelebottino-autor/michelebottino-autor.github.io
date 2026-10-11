@@ -174,3 +174,14 @@ Distinguere fonte primaria, fonte secondaria, ricordo tardivo e notizia sulla co
 - Fonte primaria: Figlie di Maria Ausiliatrice, Elenco generale 1942 (Antico Continente), voce «CALATABIANO — Istituto Sacro Cuore», p. stampata 121 (verificare paginazione PDF). https://centrostudifma.pfse-auxilium.org/it/pdf/csfma/istituto-fma-elenco-generale-1942-antico-continente.pdf?GENEREDOCUMENTO_ID=24
 - Anno istituto 1914; attività: «Scuola materna — Scuole elementari parificate — Scuola di lavoro — Oratorio festivo — Catechismi parrocchiali — A.G.F.A.C.»; direttrice sr Ponzo Giuseppina.
 - Fonte coeva alla guerra: certifica attività educative nel 1942; non fornisce nome Regina Elena alla materna, indirizzo civico o cronologia edilizia. Incrociare con ECA Prefettura 1943 e con elenchi 1938, 1949. La denominazione «scuole elementari parificate» anticipa attestazione parlamentare del 1965.
+
+
+### R-028 — Elenco FMA 1943: Istituto Sacro Cuore e direttrice sr Leonardi Francesca
+- Fonte primaria coeva: Figlie di Maria Ausiliatrice, Elenco generale 1943 (Antico Continente), p. stampata 123, https://centrostudifma.pfse-auxilium.org/it/pdf/csfma/istituto-fma-elenco-generale-1943-antico-continente.pdf?GENEREDOCUMENTO_ID=24
+- Voce «CALATABIANO — Istituto Sacro Cuore — 1914»: «Scuola materna — Scuole elementari parificate — Scuola di lavoro — Oratorio festivo — Catechismi parrocchiali — A.G.F.A.C.»; direttrice sr Leonardi Francesca. Annuario 1942: direttrice sr Ponzo Giuseppina.
+- Fonte primaria 1943 NON specifica nome «Regina Elena» per la materna, né via/civico, né datazione fabbricato.
+
+### R-029 — Piano comunale emergenza 2022: identificazione amministrativa edificio via Umberto I 6
+- Comune di Calatabiano, Piano di emergenza comunale 2022, Relazione generale, p. 8, tabella 2 «Esposti», ID 13: «Istituto Salesiano Sacro Cuore», via Umberto I 6, «Edifici rilevanti»; ID 7-8: scuola secondaria e scuola primaria/infanzia in via Vittorio Veneto, elencate separatamente. https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/1063/allegati/documenti/pec-a-relazione-generale.pdf
+- La tabella elenca beni esposti e aggiorna il piano 2012; NON documenta data di edificazione, titolo di proprietà o uso storico nel 1943.
+- Utilità: identificazione certa dell'immobile e separazione dalle scuole di via Vittorio Veneto.
