@@ -1,7 +1,12 @@
 User-agent: *
 Allow: /
 
-# Evita indicizzazione di risorse non rilevanti
+# Esclude dai crawler i file tecnici e di lavoro. Non è un controllo di accesso.
+Disallow: /supabase/
+Disallow: /adc/REGISTRO_REVISIONE_EDITORIALE.md
+Disallow: /catalogo/LOCALIZATION.md
+Disallow: /catalogo/QUALITY_STANDARD.md
+Disallow: /corso/REPRODUCIBILITY.md
+Disallow: /corso/en/EQUIVALENCE_AUDIT.md
 
-# Sitemap
 Sitemap: https://michelebottino-autor.github.io/sitemap.xml
