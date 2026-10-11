@@ -163,7 +163,7 @@ p{max-width:76ch}
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
      Non inserire script di tracciamento senza configurare il consenso. -->
 <link rel="stylesheet" href="../../site-uniform.css"/>
-</head>
+<link rel="manifest" href="/manifest.webmanifest"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Michele Bottino"/><link rel="apple-touch-icon" href="/images/logo.png"/></head>
 <body><a class="skip-link" href="#contenuto">Vai al contenuto</a>
 <header class="container">
 <nav class="nav">
@@ -329,5 +329,5 @@ async function updateVisitCounter() {
 updateVisitCounter();
 </script>
 <script defer src="../../analytics-consenso.js"></script>
-</body>
+<script defer src="/pwa-init.js"></script></body>
 </html>
