@@ -11,16 +11,22 @@
   "theme_color": "#25302e",
   "icons": [
     {
-      "src": "/images/logo.png",
-      "sizes": "any",
+      "src": "/icons/mb-192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/icons/mb-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/icons/mb-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
