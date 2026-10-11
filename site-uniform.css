@@ -35,3 +35,16 @@ body>header nav.nav:has(>.menu-toggle)>.nav-menu.active,
 body>header nav.nav:has(>.menu-toggle)>.nav-menu.show{display:flex}
 }
 .mb-preferences-control{position:static!important;display:inline-block;margin:14px 0 6px!important;max-width:none!important;opacity:1!important}
+
+/* Correzione definitiva: un solo toggle visibile nella navigazione mobile. */
+@media(max-width:760px){
+ body>header nav.nav:has(>.menu-toggle)>.mb-mobile-menu-button{display:none!important}
+ body>header nav.nav:has(>.menu-toggle)>.nav-menu:not(.open):not(.active):not(.show){display:none!important}
+ body>header nav.nav:has(>.menu-toggle)>.nav-menu.open,
+ body>header nav.nav:has(>.menu-toggle)>.nav-menu.active,
+ body>header nav.nav:has(>.menu-toggle)>.nav-menu.show{display:flex!important}
+ body>header nav.nav:has(>.menu-toggle){display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}
+ body>header nav.nav:has(>.menu-toggle)>.logo{flex:1 1 auto}
+ body>header nav.nav:has(>.menu-toggle)>.menu-toggle{flex:0 0 auto}
+ .mb-preferences-control{position:static!important;inset:auto!important;transform:none!important}
+}
