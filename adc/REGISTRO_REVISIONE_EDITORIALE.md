@@ -32,3 +32,6 @@ Documento di lavoro nel repository; non è un nuovo dossier storico. Base: file 
 
 ## Principio operativo
 Prima di pubblicare: cercare la notizia nelle 14 pagine; identificare la fonte primaria o secondaria; indicare il livello di consultazione; aggiungere solo informazione nuova; non trasformare ipotesi in fatti. Ogni revisione deve essere tracciata con commit.
+
+## Correzione tecnica completata
+- 11 ottobre 2026: sitemap.xml integrata con 11 pagine ADC esistenti che mancavano dall'elenco. Le altre 3 erano già presenti. Commit `644635e05e33520e0bd970292c1747134c800d7c`. Il file XML aggiornato non certifica da solo la corretta distribuzione su GitHub Pages né l'indicizzazione.
