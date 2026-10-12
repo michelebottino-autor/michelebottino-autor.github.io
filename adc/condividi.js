@@ -12,26 +12,29 @@ function ready(){
   var description=document.querySelector('meta[name="description"]');
   var desc=description?description.content:"";
   var author="Michele Bottino";
+  var authorPage="https://www.facebook.com/michelebottinoautor";
   var credit="Articolo di "+author+" — Archivio Documentale Calatabiano";
+  var authorCredit=credit+"\nPagina Facebook dell’autore: "+authorPage;
   var enc=encodeURIComponent, u=enc(url), t=enc(title);
   var shareText=title+" — "+credit;
   var box=document.createElement("section");box.className="adc-share";box.setAttribute("data-adc-share","");
   box.setAttribute("aria-label","Condividi questo articolo");
   var heading=document.createElement("h2");heading.textContent="Condividi questo articolo";box.appendChild(heading);
   var note=document.createElement("p");note.textContent="Articolo di Michele Bottino · Archivio Documentale Calatabiano. Condividilo con chi è interessato alla storia del territorio.";box.appendChild(note);
+  var authorLink=document.createElement("p");var authorAnchor=document.createElement("a");authorAnchor.href=authorPage;authorAnchor.target="_blank";authorAnchor.rel="noopener noreferrer";authorAnchor.textContent="Pagina Facebook ufficiale: Michele Bottino Author";authorLink.appendChild(authorAnchor);box.appendChild(authorLink);
   var links=document.createElement("div");links.className="adc-share-actions";
   function anchor(label,href){var a=document.createElement("a");a.textContent=label;a.href=href;a.target="_blank";a.rel="noopener noreferrer";links.appendChild(a)}
   if(typeof navigator.share==="function"){
     var native=document.createElement("button");native.type="button";native.textContent="Condividi…";
-    native.addEventListener("click",function(){navigator.share({title:title,text:credit,url:url}).catch(function(){})});links.appendChild(native);
+    native.addEventListener("click",function(){navigator.share({title:title,text:authorCredit,url:url}).catch(function(){})});links.appendChild(native);
   }
   anchor("Facebook","https://www.facebook.com/sharer/sharer.php?u="+u);
-  anchor("WhatsApp","https://api.whatsapp.com/send?text="+enc(shareText+"\n"+url));
-  anchor("Telegram","https://t.me/share/url?url="+u+"&text="+enc(shareText));
+  anchor("WhatsApp","https://api.whatsapp.com/send?text="+enc(shareText+"\n"+authorPage+"\n"+url));
+  anchor("Telegram","https://t.me/share/url?url="+u+"&text="+enc(shareText+" — "+authorPage));
   anchor("LinkedIn","https://www.linkedin.com/sharing/share-offsite/?url="+u);
-  anchor("X","https://twitter.com/intent/tweet?url="+u+"&text="+enc(title+" — "+author));
+  anchor("X","https://twitter.com/intent/tweet?url="+u+"&text="+enc(title+" — "+author+" "+authorPage));
   anchor("Email / Gmail","mailto:?subject="+t+"&body="+enc(shareText+"\n"+url));
-  var attribution=document.createElement("button");attribution.type="button";attribution.textContent="Copia testo con autore";attribution.addEventListener("click",function(){var message=shareText+"\n"+url;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(message).then(function(){attribution.textContent="Testo copiato";setTimeout(function(){attribution.textContent="Copia testo con autore"},2400)},function(){window.prompt("Copia il testo:",message)})}else window.prompt("Copia il testo:",message)});links.appendChild(attribution);
+  var attribution=document.createElement("button");attribution.type="button";attribution.textContent="Copia testo con autore";attribution.addEventListener("click",function(){var message=shareText+"\n"+authorPage+"\n"+url;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(message).then(function(){attribution.textContent="Testo copiato";setTimeout(function(){attribution.textContent="Copia testo con autore"},2400)},function(){window.prompt("Copia il testo:",message)})}else window.prompt("Copia il testo:",message)});links.appendChild(attribution);
   var copy=document.createElement("button");copy.type="button";copy.textContent="Copia link";
   copy.addEventListener("click",function(){
     function success(){copy.textContent="Link copiato";setTimeout(function(){copy.textContent="Copia link"},2400)}
