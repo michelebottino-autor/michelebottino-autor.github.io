@@ -77,3 +77,9 @@ Eseguite dal computer autorizzato Michele tramite richieste HTTP verso `https://
 ### Limiti della certificazione
 
 **Verifica HTTP e navigazione: superata per il perimetro sopra definito.** Non equivale a certificazione integrale: non sono stati controllati tutti i collegamenti esterni, gli ancoraggi interni, il caricamento JavaScript, la resa grafica su mobile e desktop, l'accessibilità assistiva, la correttezza paleografica di ogni citazione o i diritti di tutte le immagini. Restano inoltre formulazioni di carattere operativo in alcuni dossier, da eliminare prima di dichiarare l'archivio interamente bonificato. Lo stato della certificazione generale rimane **NON COMPLETATO**.
+
+## Intervento tipografico comune — 12 ottobre 2026
+
+Riletti l'inventario delle 23 pagine, le linee guida editoriali e i risultati dell'audit già documentati: non si avvia una nuova ricognizione da zero. È stato introdotto `adc/tipografia.css` e collegato a tutte le 18 pagine editoriali, senza alterare i testi storici. Migliorati ritmo verticale, leggibilità di paragrafi ed elenchi, gerarchia dei titoli, link accessibili, citazioni, immagini e didascalie; sono previste regole per gli schermi stretti. Le cinque pagine funzionali (carta, cerca, contribuisci, invia, gioco) restano fuori da questa prima uniformazione per evitare interferenze con le interazioni.
+
+**Stato:** modifiche registrate su GitHub; il collaudo visuale mobile e la rilettura linguistica completa di tutte le 23 pagine rimangono attività distinte, non certificate da questo intervento. Non confondere l'uniformazione CSS con la verifica storico-documentaria. Conservare la separazione fra sito pubblico e dossier della seconda edizione riservata.
