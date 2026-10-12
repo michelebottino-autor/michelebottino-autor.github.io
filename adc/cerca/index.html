@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cerca nell'Archivio Documentale Calatabiano | ADC</title>
+<meta name="description" content="Ricerca interna nelle pagine, nei percorsi storici e nei dossier dell'Archivio Documentale Calatabiano.">
+<link rel="canonical" href="https://michelebottino-autor.github.io/adc/cerca/">
+<link rel="stylesheet" href="../../site-uniform.css">
+<style>
+:root{color-scheme:light}body{background:#f8f6f1;color:#25302e;font:16px/1.65 system-ui,sans-serif;margin:0}header,main,footer{max-width:960px;margin:auto;padding:20px clamp(16px,4vw,40px)}header{border-bottom:1px solid #ddd7cc}a{color:#765337}h1,h2{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(2rem,5vw,3rem)}label{display:block;font-weight:700;margin-bottom:8px}.search-row{display:flex;gap:10px;flex-wrap:wrap}.search-row input{flex:1 1 250px;min-width:0;border:1px solid #8d8a81;border-radius:7px;padding:13px;font:inherit}.search-row button{border:0;border-radius:7px;background:#345d54;color:white;font:inherit;font-weight:700;padding:12px 22px;cursor:pointer}.search-row button:focus-visible,.search-row input:focus-visible,a:focus-visible{outline:3px solid #b68c4e;outline-offset:3px}.result{background:#fff;border:1px solid #e1ddd4;border-radius:10px;padding:17px 20px;margin:14px 0}.result h2{font-size:1.3rem;margin:0 0 7px}.result p{margin:0;color:#4b5550;overflow-wrap:anywhere}mark{background:#ffecad;color:#252b25}.meta{color:#58635d;font-size:.95rem}#status{min-height:1.5em}footer{border-top:1px solid #ddd7cc;margin-top:35px}nav a{margin-right:16px}
+</style>
+</head>
+<body>
+<header><nav aria-label="Navigazione principale"><a href="../../">Michele Bottino</a><a href="../">Archivio ADC</a><a href="../fonti/">Fonti e documenti</a><a href="../percorsi.html">Percorsi storici</a></nav></header>
+<main id="contenuto">
+<p class="meta"><a href="../">ADC</a> › Ricerca interna</p>
+<h1>Cerca nell'Archivio Documentale Calatabiano</h1>
+<p>Trova parole, nomi, luoghi e argomenti nelle pagine pubblicate dell'ADC. La ricerca riguarda il testo delle pagine, non il contenuto integrale di PDF e immagini.</p>
+<form id="search-form" role="search">
+<label for="query">Parole da cercare</label>
+<div class="search-row"><input id="query" name="q" type="search" minlength="2" placeholder="Es. castello, Mirulla, Fragalà, 1818" autocomplete="off" required><button type="submit">Cerca</button></div>
+</form>
+<p id="status" role="status" aria-live="polite"></p>
+<div id="results" aria-label="Risultati della ricerca"></div>
+<noscript><p>Per utilizzare la ricerca interna è necessario abilitare JavaScript. Puoi comunque consultare <a href="../">l'indice ADC</a>.</p></noscript>
+</main>
+<footer><p>© 2026 Michele Bottino · <a href="../">Archivio Documentale Calatabiano</a> · <a href="../../privacy/">Privacy</a></p></footer>
+<script>
+"use strict";
+const paths=["../","../percorsi.html","../fonti/","../storia/","../processo-334/","../carta/","../programma/","../dossier-zucchero/","../dossier-1213-1537/","../acque-mulini-confini/","../dossier-rationes/","../calatabiano-1922-1943/","../ponte-alcantara-medievale/","../opere-pubbliche-1860-1866/","../terremoto-1818/","../contribuisci/","../gioco/"];
+const form=document.getElementById("search-form"),input=document.getElementById("query"),status=document.getElementById("status"),results=document.getElementById("results");
+const normalize=s=>s.toLocaleLowerCase("it").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+let cache=null;
+async function loadIndex(){
+ if(cache)return cache;
+ const responses=await Promise.allSettled(paths.map(async path=>{
+   const url=new URL(path,location.href),response=await fetch(url.href);
+   if(!response.ok)throw Error(String(response.status));
+   const doc=new DOMParser().parseFromString(await response.text(),"text/html");
+   const area=doc.querySelector("main")||doc.querySelector("article")||doc.body;
+   const copy=area.cloneNode(true);
+   copy.querySelectorAll("script,style,nav,footer,form,button").forEach(node=>node.remove());
+   const text=(copy.textContent||"").replace(/\s+/g," ").trim();
+   const title=(doc.querySelector("h1")?.textContent||doc.title||path).trim();
+   return {url:url.href,title,text,normalized:normalize(title+" "+text)};
+ }));
+ const pages=responses.filter(x=>x.status==="fulfilled").map(x=>x.value);
+ cache={pages,failed:responses.length-pages.length};
+ return cache;
+}
+function excerpt(text,words){
+ const norm=normalize(text);
+ let index=norm.length;
+ for(const word of words){const found=norm.indexOf(word);if(found>=0&&found<index)index=found;}
+ if(index===norm.length)index=0;
+ const from=Math.max(0,index-85),to=Math.min(text.length,index+185);
+ return (from?"…":"")+text.slice(from,to)+(to<text.length?"…":"");
+}
+function highlight(element,text,words){
+ const normalized=normalize(text);let matches=[];
+ for(const word of words){let pos=0;while((pos=normalized.indexOf(word,pos))!==-1){matches.push([pos,pos+word.length]);pos+=word.length;}}
+ matches.sort((a,b)=>a[0]-b[0]);let cursor=0;
+ for(const [start,end] of matches){if(start<cursor)continue;element.append(document.createTextNode(text.slice(cursor,start)));const mark=document.createElement("mark");mark.textContent=text.slice(start,end);element.append(mark);cursor=end;}
+ element.append(document.createTextNode(text.slice(cursor)));
+}
+async function search(){
+ const query=input.value.trim();results.replaceChildren();
+ if(query.length<2){status.textContent="Inserisci almeno due caratteri.";return;}
+ const words=[...new Set(normalize(query).split(/\s+/).filter(x=>x.length>1))];
+ if(!words.length){status.textContent="Inserisci una parola da cercare.";return;}
+ const url=new URL(location.href);url.searchParams.set("q",query);history.replaceState(null,"",url);
+ status.textContent="Ricerca nelle pagine ADC in corso…";
+ try{
+  const {pages,failed}=await loadIndex();
+  const matches=pages.map(page=>{const title=normalize(page.title);const score=words.reduce((n,w)=>n+(title.includes(w)?10:0)+(page.normalized.includes(w)?1:0),0);return {...page,score};}).filter(p=>words.every(w=>p.normalized.includes(w))).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,"it"));
+  status.textContent=matches.length+" "+(matches.length===1?"risultato":"risultati")+" in "+pages.length+" pagine consultate."+(failed?" "+failed+" pagine non raggiungibili.":"");
+  for(const page of matches){const article=document.createElement("article");article.className="result";const h=document.createElement("h2"),link=document.createElement("a");link.href=page.url;link.textContent=page.title;h.append(link);const p=document.createElement("p");highlight(p,excerpt(page.text,words),words);article.append(h,p);results.append(article);}
+ }catch(e){status.textContent="Impossibile completare la ricerca. Riprova più tardi.";}
+}
+form.addEventListener("submit",event=>{event.preventDefault();search();});
+const initial=new URLSearchParams(location.search).get("q");if(initial){input.value=initial;search();}
+</script>
+</body></html>
