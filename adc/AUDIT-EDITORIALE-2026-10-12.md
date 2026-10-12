@@ -56,3 +56,11 @@ Ricognizione dei 23 file HTML presenti sotto `adc/` nel ramo principale, mediant
 ## Criterio di completamento
 
 La bonifica sarà **completa** soltanto dopo rilettura integrale delle 23 pagine, verifica delle fonti e delle didascalie, controllo di tutti i link e test visuale del sito pubblicato. La sola ricerca di espressioni tecniche non basta a certificarla.
+
+## Rilettura integrale dei dossier principali e delle pagine di sintesi — secondo passaggio
+
+Sono stati recuperati integralmente dal repository e letti per struttura, contenuti e passaggi di lavorazione i sei file: `acque-mulini-confini/index.html`, `dossier-1213-1537/index.html`, `dossier-rationes/index.html`, `dossier-zucchero/index.html`, `fonti/index.html`, `storia/index.html` (complessivamente circa 90.000 caratteri HTML). Sono stati applicati interventi editoriali mirati a tutti e sei, preservando i rimandi bibliografici.
+
+**Esito della certificazione:** NON certificato come bonifica completa. L'esame ha evidenziato ancora linguaggio operativo nei dossier su acque e decime e nella pagina Fonti, inclusi riferimenti a OCR, collazioni e note di verifica. Inoltre non sono stati eseguiti test visivi completi di tutti i 23 URL, né una verifica automatica di tutti i link e delle risorse remote. Non confondere questa rilettura editoriale con un controllo paleografico degli originali o una verifica indipendente di ogni asserzione storica.
+
+**Azioni prioritarie residue:** riscrivere i passaggi operativi restanti nei tre file sopra indicati; esaminare integralmente le altre 17 pagine ADC; verificare la navigazione e le immagini sul sito effettivamente pubblicato; controllare tutte le fonti citate e i link. Solo allora rilasciare un verbale di certificazione conclusiva.
