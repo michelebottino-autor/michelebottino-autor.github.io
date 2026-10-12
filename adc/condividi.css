@@ -1,1 +1,26 @@
-.adc-share{clear:both;margin:3rem 0 1.5rem;padding:1.35rem 1.5rem;border:1px solid #d9d2c5;border-radius:12px;background:#f4f0e8;color:#29332e;font-family:system-ui,-apple-system,sans-serif;line-height:1.55}.adc-share h2{font:600 1.35rem/1.35 Georgia,serif;margin:0 0 .45rem;color:#29332e}.adc-share p{font-size:.96rem;margin:0 0 1rem}.adc-share-actions{display:flex;flex-wrap:wrap;gap:.6rem}.adc-share-actions a,.adc-share-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.55rem .85rem;border:1px solid #b7a893;border-radius:7px;background:#fff;color:#493722;font:600 .91rem/1.2 system-ui,-apple-system,sans-serif;text-decoration:none;cursor:pointer}.adc-share-actions a:hover,.adc-share-actions button:hover{background:#e6dccd}.adc-share-actions a:focus-visible,.adc-share-actions button:focus-visible{outline:3px solid #826038;outline-offset:2px}@media(max-width:480px){.adc-share{padding:1rem}.adc-share-actions a,.adc-share-actions button{flex:1 1 125px}}
+/* Condivisione ADC: pannello editoriale e azioni riconoscibili, mobile-first. */
+.adc-share{clear:both;position:relative;margin:clamp(2.5rem,6vw,4rem) 0 1.5rem;padding:clamp(20px,4vw,34px);border:1px solid #d9e0d8;border-radius:20px;background:linear-gradient(145deg,#fffdf8 0%,#edf3ee 100%);color:#25302e;font:16px/1.6 system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 12px 32px rgba(23,60,54,.07);overflow:hidden}
+.adc-share:before{content:"";display:block;position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#173c36,#4c8874,#b79b69)}
+.adc-share h2{font:700 clamp(1.5rem,3vw,2rem)/1.25 Georgia,serif;color:#173c36;margin:0 0 10px;letter-spacing:-.02em}
+.adc-share p{font-size:.98rem;line-height:1.65;margin:0 0 13px;max-width:65ch;color:#46564e}
+.adc-share .adc-share-author{font-size:.9rem;margin:0 0 22px}
+.adc-share a{color:#215e4e}
+.adc-share-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.adc-share-actions a,.adc-share-actions button{box-sizing:border-box;display:flex;align-items:center;justify-content:flex-start;gap:10px;min-width:0;min-height:54px;padding:12px 13px;border:1px solid #dce5dd;border-radius:11px;background:#fff;color:#253b32;font:650 .9rem/1.3 system-ui,-apple-system,sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 2px 5px rgba(23,60,54,.035);transition:background .15s,border-color .15s,transform .15s}
+.adc-share-actions a:hover,.adc-share-actions button:hover{background:#f5faf6;border-color:#7ca38f;transform:translateY(-1px)}
+.adc-share-actions a:focus-visible,.adc-share-actions button:focus-visible{outline:3px solid #b79b69;outline-offset:2px}
+.adc-share-actions .adc-share-primary{background:#173c36;color:white;border-color:#173c36}
+.adc-share-actions .adc-share-primary:hover{background:#285b4e;color:white}
+.adc-share-actions .adc-share-copy{background:#f3f6f2}
+.adc-share-icon{flex:0 0 35px;width:35px;height:35px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#eaf2ed;color:#21624f}
+.adc-share-icon svg{width:19px;height:19px;display:block;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.adc-share-actions .adc-share-primary .adc-share-icon{background:rgba(255,255,255,.16);color:white}
+.adc-share-actions [data-network="facebook"] .adc-share-icon{background:#e8f0ff;color:#1769cc}
+.adc-share-actions [data-network="whatsapp"] .adc-share-icon{background:#e1f8e9;color:#128c4b}
+.adc-share-actions [data-network="telegram"] .adc-share-icon{background:#e4f5ff;color:#168ac1}
+.adc-share-actions [data-network="linkedin"] .adc-share-icon{background:#e5f1fb;color:#096a9e}
+.adc-share-actions [data-network="email"] .adc-share-icon{background:#fff1dc;color:#a36b18}
+.adc-share-actions [data-network="x"] .adc-share-icon{background:#eef0f3;color:#202d38}
+@media(max-width:760px){.adc-share-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.adc-share{padding:20px 15px;border-radius:15px}.adc-share-actions{gap:8px}.adc-share-actions a,.adc-share-actions button{min-height:53px;padding:9px 8px;font-size:.84rem;gap:7px}.adc-share-icon{width:31px;height:31px;flex-basis:31px}}
+@media(prefers-reduced-motion:reduce){.adc-share-actions a,.adc-share-actions button{transition:none}.adc-share-actions a:hover,.adc-share-actions button:hover{transform:none}}
