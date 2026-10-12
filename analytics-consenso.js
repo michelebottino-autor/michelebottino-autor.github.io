@@ -20,6 +20,43 @@ window.MB_ANALYTICS_ID = "G-5MVH0PN6E5";
     s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(id);
     document.head.appendChild(s);
   }
+  /* Eventi aggregati di usabilità: nessun testo libero, URL completo o identificativo personale. */
+  function trackUsage(eventName,detail){
+    if(safeGet()!=='yes'||!window.__mbAnalyticsLoaded||typeof window.gtag!=='function')return;
+    const allowed=['adc_search','adc_navigation','adc_widget','site_navigation'];
+    if(!allowed.includes(eventName))return;
+    window.gtag('event',eventName,{section:detail.section||'site',action_type:detail.action||'open',destination:detail.destination||'other'});
+  }
+  function category(path){
+    if(path.startsWith('/adc/widget/'))return 'adc_widget';
+    if(path.startsWith('/adc/incorpora/'))return 'adc_embed';
+    if(path.startsWith('/adc/cerca/'))return 'adc_search';
+    if(path.startsWith('/adc/custode/'))return 'adc_custode';
+    if(path.startsWith('/adc/inventario/'))return 'adc_inventory';
+    if(path.startsWith('/adc/'))return 'adc_other';
+    if(path.startsWith('/articoli/'))return 'articles';
+    if(path.startsWith('/opere/'))return 'books';
+    return 'author_site';
+  }
+  function usageTracking(){
+    document.addEventListener('click',e=>{
+      const a=e.target.closest('a[href]');
+      if(!a)return;
+      let dest;try{dest=new URL(a.href,location.href)}catch(err){return}
+      if(!['http:','https:'].includes(dest.protocol))return;
+      const internal=dest.origin===location.origin;
+      const target=internal?category(dest.pathname):'external';
+      trackUsage(category(location.pathname).startsWith('adc_')?'adc_navigation':'site_navigation',{section:category(location.pathname),action:'link',destination:target});
+    },{passive:true});
+    document.addEventListener('submit',e=>{
+      const form=e.target;
+      if(!form||form.tagName!=='FORM')return;
+      const section=category(location.pathname);
+      if(section==='adc_search'||section==='adc_custode'||section==='adc_widget'){
+        trackUsage('adc_search',{section,action:'submit',destination:'search_results'});
+      }
+    });
+  }
   function banner(){
     if(safeGet()==='yes'){activate();return}
     if(safeGet()==='no')return;
@@ -66,6 +103,6 @@ window.MB_ANALYTICS_ID = "G-5MVH0PN6E5";
       window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}),{once:true});
     }
   }
-  function init(){setupPwa();mobileNavigation();preferenceControl();banner()}
+  function init(){setupPwa();mobileNavigation();usageTracking();preferenceControl();banner()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
