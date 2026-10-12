@@ -1,0 +1,7 @@
+/* Lettori presenti: indicatore discreto, mostrato solo con un dato reale. */
+.mb-presence[hidden]{display:none!important}
+.mb-presence{display:flex;align-items:center;gap:9px;max-width:max-content;margin:2rem 0 1rem;padding:10px 15px;border:1px solid #cddfd2;border-radius:999px;background:#f1f7f1;color:#214b3c;font:500 .88rem/1.4 system-ui,-apple-system,sans-serif}
+.mb-presence-icon{color:#27805b;font-size:.75rem}
+.mb-presence-label{font-weight:600}
+.mb-presence-count{font-variant-numeric:tabular-nums;min-width:1ch;font-weight:750}
+@media(max-width:440px){.mb-presence{max-width:100%;border-radius:13px;padding:9px 12px;font-size:.81rem}}
