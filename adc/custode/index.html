@@ -37,4 +37,4 @@ if(chosen.length){const related=[...new Set(chosen.flatMap(m=>norm(m.title).matc
 if(!chosen.length&&!records.length){const p=document.createElement("p");p.textContent="Non posso confermare questa informazione. Prova con termini diversi oppure consulta l'indice generale.";answer.append(p);}
 }catch(e){status.textContent="Non è stato possibile consultare le pagine. Riprova più tardi.";}}
 document.getElementById("askform").addEventListener("submit",e=>{e.preventDefault();ask();});document.querySelectorAll("[data-q]").forEach(b=>b.addEventListener("click",()=>{field.value=b.dataset.q;ask();}));const initial=new URLSearchParams(location.search).get("q");if(initial){field.value=initial;ask();}
-</script></body></html>
+</script><script defer src="/analytics-consenso.js"></script></body></html>
