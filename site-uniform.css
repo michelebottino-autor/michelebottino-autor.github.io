@@ -48,3 +48,17 @@ body>header nav.nav:has(>.menu-toggle)>.nav-menu.show{display:flex}
  body>header nav.nav:has(>.menu-toggle)>.menu-toggle{flex:0 0 auto}
  .mb-preferences-control{position:static!important;inset:auto!important;transform:none!important}
 }
+
+/* Uniformazione dell'esperienza di navigazione: tutte le sezioni del sito d'autore. */
+:root{--site-accent:#b79b69;--site-focus:#e7d4aa}
+a,button,input,select,textarea{touch-action:manipulation}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--site-focus);outline-offset:3px}
+button,[role="button"],input[type="submit"],input[type="button"]{min-height:44px}
+nav a,header a{display:inline-flex;align-items:center;min-height:40px}
+img{max-width:100%;height:auto}
+main{min-width:0}
+main p,main li{overflow-wrap:break-word}
+main :is(h1,h2,h3){text-wrap:balance}
+main :is(pre,table){max-width:100%;overflow-x:auto}
+@media(max-width:680px){main{min-width:0}nav{max-width:100%}main :is(input,textarea,select){max-width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
