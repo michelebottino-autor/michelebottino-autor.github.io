@@ -41,12 +41,12 @@ def lines_for(text, draw, typeface, max_width):
     return rows
 
 for slug,(title,subtitle) in ITEMS.items():
-    im=Image.new("RGB",(1200,630),"#172d33")
+    im=Image.new("RGB",(1200,630),"#f4ead6")
     d=ImageDraw.Draw(im)
-    gold="#e0bc7f";cream="#f6eedc"
+    gold="#985e40";cream="#243b3b"
     # Side panels are decorative only and may be cropped.
-    d.rectangle((315,26,885,604),outline="#c9a46b",width=3)
-    d.line((350,148,850,148),fill="#c9a46b",width=2)
+    d.rectangle((315,26,885,604),outline="#b78e69",width=3)
+    d.line((350,148,850,148),fill="#b78e69",width=2)
     d.line((350,501,850,501),fill="#c9a46b",width=2)
     d.text((600,70),"ARCHIVIO DOCUMENTALE",font=font(22),fill=gold,anchor="mm")
     d.text((600,105),"CALATABIANO",font=font(22),fill=gold,anchor="mm")
@@ -65,5 +65,5 @@ for slug,(title,subtitle) in ITEMS.items():
         d.text((600,435+i*29),row,font=subtitle_font,fill=gold,anchor="mm")
     d.text((600,543),"MICHELE BOTTINO",font=font(22),fill=gold,anchor="mm")
     d.text((600,571),"STORIA E FONTI",font=font(17),fill=gold,anchor="mm")
-    im.save(OUT/(slug+"-v2.png"),optimize=True)
+    im.save(OUT/(slug+"-v3.png"),optimize=True)
     print(slug)
