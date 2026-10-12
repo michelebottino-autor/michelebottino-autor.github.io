@@ -36,3 +36,7 @@ Aggiornate il 12 ottobre 2026. Questo documento è **interno al repository** e n
 ## Ambito di applicazione
 
 Tutte le nuove pagine ADC e le revisioni delle pagine già online. Per pagine specialistiche come un laboratorio di collazione, i dettagli tecnici possono restare **solo se** il pubblico previsto è chiaramente quello dei ricercatori e la navigazione distingue tale laboratorio dagli articoli divulgativi.
+
+## Divieto di note tecniche nelle pagine pubbliche
+
+Le pagine pubbliche, incluso il Custode dell'Archivio, non devono mostrare note di sviluppo, versioni provvisorie, stato dei lavori software, configurazioni API, spiegazioni del backend o avvertenze sui dossier interni. Le informazioni tecniche e i registri di modifica appartengono esclusivamente alla documentazione non presentata come contenuto editoriale. Conservare soltanto le informazioni necessarie alla trasparenza editoriale, alla privacy, ai diritti e alla corretta interpretazione delle fonti. Prima di ogni aggiornamento controllare i testi effettivamente visibili al lettore.
