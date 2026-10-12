@@ -40,3 +40,13 @@ Tutte le nuove pagine ADC e le revisioni delle pagine già online. Per pagine sp
 ## Divieto di note tecniche nelle pagine pubbliche
 
 Le pagine pubbliche, incluso il Custode dell'Archivio, non devono mostrare note di sviluppo, versioni provvisorie, stato dei lavori software, configurazioni API, spiegazioni del backend o avvertenze sui dossier interni. Le informazioni tecniche e i registri di modifica appartengono esclusivamente alla documentazione non presentata come contenuto editoriale. Conservare soltanto le informazioni necessarie alla trasparenza editoriale, alla privacy, ai diritti e alla corretta interpretazione delle fonti. Prima di ogni aggiornamento controllare i testi effettivamente visibili al lettore.
+
+## Missione archivistica e rapporti istituzionali
+
+L'ADC non compete con studiosi, autori, archivi o istituti culturali: valorizza le loro opere con attribuzione puntuale, verifica le catene di citazione e ricompone in percorsi leggibili testimonianze disperse. Il contributo distintivo è l'accesso coordinato e tracciabile alla storia documentata di Calatabiano, non la rivendicazione di esclusività sulle fonti o sulla ricerca.
+
+Ogni affermazione sostanziale deve poter essere collegata a una fonte identificabile e classificata internamente: (A) documento originale o riproduzione primaria esaminata; (B) edizione critica o trascrizione verificata; (C) studio secondario con rimando documentario; (D) tradizione, interpretazione o ipotesi. Questa scala descrive la natura del riscontro, non attribuisce automaticamente verità a una fonte. Registrare sempre autore, titolo, data, pagina/carta, istituto conservatore quando noto, collegamento, eventuali discrepanze e stato della verifica. Non confondere la fonte primaria con la sua edizione o con una citazione indiretta.
+
+Le pagine pubbliche presentano prima il risultato storico comprensibile e poi un apparato delle fonti consultabile, con incertezze espresse senza note operative. Correzioni documentate sono accolte con tracciabilità e attribuzione; evitare affermazioni di completezza definitiva.
+
+L'accesso gratuito al sito è un'offerta culturale di Michele Bottino e della famiglia Bottino, non trasferimento automatico di diritti d'autore, proprietà dei documenti o titolarità dell'archivio. Eventuali patrocini, collaborazioni e uso dello stemma del Comune richiedono un atto o un'autorizzazione scritta che definisca oggetto, durata, modalità d'uso, responsabilità e autonomia editoriale. Non esporre stemmi, loghi o dichiarazioni di riconoscimento istituzionale prima dell'autorizzazione. Mantenere neutralità rispetto alle amministrazioni e non presentare l'ADC come archivio ufficiale del Comune.
