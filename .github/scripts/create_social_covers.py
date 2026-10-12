@@ -27,18 +27,43 @@ def font(size, bold=False):
     for candidate in candidates:
         if Path(candidate).exists(): return ImageFont.truetype(candidate,size)
     return ImageFont.load_default()
+# Facebook mobile may display a centered square crop of a landscape OG image.
+# All essential information is kept inside the central 600 px safe zone.
+def lines_for(text, draw, typeface, max_width):
+    words=text.split()
+    rows=[]; current=""
+    for word in words:
+        candidate=(current+" "+word).strip()
+        if current and draw.textbbox((0,0),candidate,font=typeface)[2]>max_width:
+            rows.append(current);current=word
+        else: current=candidate
+    if current: rows.append(current)
+    return rows
+
 for slug,(title,subtitle) in ITEMS.items():
     im=Image.new("RGB",(1200,630),"#172d33")
     d=ImageDraw.Draw(im)
-    d.rectangle((38,38,1162,592),outline="#c9a46b",width=4)
-    d.line((78,150,1122,150),fill="#c9a46b",width=3)
-    d.line((78,505,1122,505),fill="#c9a46b",width=3)
-    d.text((600,100),"ARCHIVIO DOCUMENTALE CALATABIANO",font=font(25),fill="#e0bc7f",anchor="mm")
-    title_font=font(64,True)
-    while d.textbbox((0,0),title,font=title_font)[2]>1030 and title_font.size>36:
+    gold="#e0bc7f";cream="#f6eedc"
+    # Side panels are decorative only and may be cropped.
+    d.rectangle((315,26,885,604),outline="#c9a46b",width=3)
+    d.line((350,148,850,148),fill="#c9a46b",width=2)
+    d.line((350,501,850,501),fill="#c9a46b",width=2)
+    d.text((600,70),"ARCHIVIO DOCUMENTALE",font=font(22),fill=gold,anchor="mm")
+    d.text((600,105),"CALATABIANO",font=font(22),fill=gold,anchor="mm")
+    title_font=font(48,True)
+    rows=lines_for(title,d,title_font,495)
+    while (len(rows)>4 or any(d.textbbox((0,0),row,font=title_font)[2]>495 for row in rows)) and title_font.size>28:
         title_font=font(title_font.size-2,True)
-    d.text((600,285),title,font=title_font,fill="#f6eedc",anchor="mm")
-    d.text((600,442),subtitle,font=font(32),fill="#e0bc7f",anchor="mm")
-    d.text((600,549),"MICHELE BOTTINO  |  STORIA E FONTI",font=font(23),fill="#e0bc7f",anchor="mm")
-    im.save(OUT/(slug+".png"),optimize=True)
+        rows=lines_for(title,d,title_font,495)
+    step=title_font.size+14
+    top=295-(len(rows)-1)*step/2
+    for i,row in enumerate(rows):
+        d.text((600,int(top+i*step)),row,font=title_font,fill=cream,anchor="mm")
+    subtitle_font=font(23)
+    sublines=lines_for(subtitle,d,subtitle_font,485)
+    for i,row in enumerate(sublines[:2]):
+        d.text((600,435+i*29),row,font=subtitle_font,fill=gold,anchor="mm")
+    d.text((600,543),"MICHELE BOTTINO",font=font(22),fill=gold,anchor="mm")
+    d.text((600,571),"STORIA E FONTI",font=font(17),fill=gold,anchor="mm")
+    im.save(OUT/(slug+"-v2.png"),optimize=True)
     print(slug)
