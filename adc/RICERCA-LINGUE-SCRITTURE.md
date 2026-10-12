@@ -53,3 +53,20 @@ Introduzione metodologica; cronologia interattiva con livelli di prova; laborato
 - Quali testimoni originali, copie e traduzioni esistono per ogni atto?
 - Quale relazione è documentabile fra toponimi dei diplomi di Maniace e il territorio moderno?
 - Quali materiali permettono di ricostruire il parlato locale, oltre alla lingua formale degli scriventi?
+
+## Prima schedatura linguistica da fonte materialmente visionata (12 ottobre 2026)
+
+**Testimone consultato:** Salvatore Cusa, *I diplomi greci ed arabi di Sicilia*, I/1 (1868), riproduzione della Bayerische Staatsbibliothek, immagini locali BSB 471–475, 481–483, 484–488. È una **edizione a stampa ottocentesca**, non un originale pergamenaceo. La schedatura riguarda parole e strutture visibili nell'edizione, non la paleografia della mano medievale.
+
+| Identificativo | Edizione e pagina | Forma nell'edizione / caratteristica | Osservazione controllabile | Limite interpretativo |
+|---|---|---|---|---|
+| LING-CUSA-01 | p. 440, scansione 472, atto XXVIII | «τὸν ποταμὸν τὸν ἁλμυρόν» | riferimento greco a un fiume qualificato *halmyrós* | non identificare automaticamente il corso d'acqua con l'Alcantara; controllare contesto e toponomastica |
+| LING-CUSA-02 | pp. 439–443, scansioni 471–475 | numerazione editoriale «XXVIII»; testo greco in caratteri tipografici | l'atto inizia nella parte bassa della p. 439 e termina nella parte alta della 443 | «XXVIII» è numero editoriale, non numero di pergamena archivistica |
+| LING-CUSA-03 | pp. 449–451, scansioni 481–483 | numerazione editoriale «XXXI»; testo greco e sottoscrizioni | un atto occupa l'intervallo e termina con elenco di sottoscrittori | la tipografia non consente di studiare le grafie originali delle firme |
+| LING-CUSA-04 | pp. 452–456, scansioni 484–488 | numerazione editoriale «XXXII», con «XXXIII» nella seconda parte di p. 456 | atto con descrizione dei confini; cesura visibile a p. 456 | le grafie dei toponimi richiedono controllo lettera per lettera |
+
+**Esempio di lettura annotata:** «τὸν ποταμὸν τὸν ἁλμυρόν» è una sequenza greca con articolo e accusativo, traducibile cautamente come «il fiume salato/salmastro» o, se il contesto lo dimostra, come riferimento denominativo a un fiume *Almyros*. La resa italiana non è prova di identificazione geografica. La grafia riportata segue la lettura della pagina a stampa; non è una trascrizione diplomatica dell'originale.
+
+**Conseguenza per la futura sezione pubblica:** usare un'immagine di Cusa per spiegare la **lingua greca dei documenti** e le **convenzioni tipografiche dell'edizione**; per mostrare *come scriveva materialmente uno scriba medievale*, acquisire una fotografia del testimone manoscritto e documentarne datazione e provenienza. Per l'arabo e il latino individuare analogamente un esempio localizzato e datato, anziché illustrare la storia locale con campioni regionali spacciati per locali.
+
+**Stato:** prima scheda linguistica su riproduzione di edizione pubblicata. Non è stata completata una collazione diplomatica né ricostruito il parlato di Calatabiano.
