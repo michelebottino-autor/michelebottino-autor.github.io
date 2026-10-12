@@ -20,3 +20,19 @@ main th,main td,article th,article td{line-height:1.55;overflow-wrap:anywhere}
 main hr,article hr{border:0;border-top:1px solid var(--adc-rule);margin:2rem 0}
 @media(max-width:640px){main p,main li,article p,article li{line-height:1.72}main h2,article h2{margin-block-start:1.8rem}main blockquote,article blockquote{padding:.65rem .85rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Identità ADC: verde archivio, pergamena e lettura accessibile. */
+:root{--adc-green:#173c36;--adc-gold:#b79b69;--adc-paper:#f8f6f1;--adc-text:#25302e}
+body{font-size:clamp(16px,1.1vw,18px);-webkit-font-smoothing:antialiased}
+main,article{max-width:100%}
+main p,main li,article p,article li{max-width:76ch}
+main h1,main h2,main h3,article h1,article h2,article h3{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.015em}
+main a,article a{color:#286354;text-decoration-thickness:1px}
+main a:hover,article a:hover{color:#173c36}
+main input,main select,main textarea,main button{font:inherit;max-width:100%}
+main input[type="search"],main input[type="text"],main select,main textarea{min-height:44px}
+main button,main a.btn{min-height:44px}
+main img,article img{max-width:100%;height:auto}
+main table,article table{display:block;max-width:100%;overflow-x:auto}
+main blockquote,article blockquote{border-left-color:#b79b69}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
