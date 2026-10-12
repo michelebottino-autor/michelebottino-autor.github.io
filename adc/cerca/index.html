@@ -30,7 +30,7 @@
 <footer><p>© 2026 Michele Bottino · <a href="../">Archivio Documentale Calatabiano</a> · <a href="../../privacy/">Privacy</a></p></footer>
 <script>
 "use strict";
-const paths=["../","../percorsi.html","../fonti/","../storia/","../processo-334/","../carta/","../programma/","../dossier-zucchero/","../dossier-1213-1537/","../acque-mulini-confini/","../dossier-rationes/","../calatabiano-1922-1943/","../ponte-alcantara-medievale/","../opere-pubbliche-1860-1866/","../terremoto-1818/","../contribuisci/","../gioco/"];
+const paths=["../","../percorsi.html","../fonti/","../storia/","../processo-334/","../carta/","../programma/","../dossier-zucchero/","../dossier-1213-1537/","../acque-mulini-confini/","../dossier-rationes/","../calatabiano-1922-1943/","../ponte-alcantara-medievale/","../opere-pubbliche-1860-1866/","../terremoto-1818/","../contribuisci/","../gioco/","../atlante/","../atlante/collazione/","../scritture/","../calatabiano-1922-1943/ricostruzione-1943.html"];
 const form=document.getElementById("search-form"),input=document.getElementById("query"),status=document.getElementById("status"),results=document.getElementById("results"),documentary=document.getElementById("documentary");
 const normalize=s=>s.toLocaleLowerCase("it").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 let cache=null;
@@ -47,7 +47,8 @@ async function loadIndex(){
    const title=(doc.querySelector("h1")?.textContent||doc.title||path).trim();
    return {url:url.href,title,text,normalized:normalize(title+" "+text)};
  }));
- const pages=responses.filter(x=>x.status==="fulfilled").map(x=>x.value);
+ const seen=new Set();
+ const pages=responses.filter(x=>x.status==="fulfilled").map(x=>x.value).filter(page=>{const key=new URL(page.url).pathname.replace(/index\.html$/,"").replace(/\/$/,"");if(seen.has(key))return false;seen.add(key);return true;});
  cache={pages,failed:responses.length-pages.length};
  return cache;
 }
