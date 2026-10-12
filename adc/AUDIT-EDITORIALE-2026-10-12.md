@@ -64,3 +64,16 @@ Sono stati recuperati integralmente dal repository e letti per struttura, conten
 **Esito della certificazione:** NON certificato come bonifica completa. L'esame ha evidenziato ancora linguaggio operativo nei dossier su acque e decime e nella pagina Fonti, inclusi riferimenti a OCR, collazioni e note di verifica. Inoltre non sono stati eseguiti test visivi completi di tutti i 23 URL, né una verifica automatica di tutti i link e delle risorse remote. Non confondere questa rilettura editoriale con un controllo paleografico degli originali o una verifica indipendente di ogni asserzione storica.
 
 **Azioni prioritarie residue:** riscrivere i passaggi operativi restanti nei tre file sopra indicati; esaminare integralmente le altre 17 pagine ADC; verificare la navigazione e le immagini sul sito effettivamente pubblicato; controllare tutte le fonti citate e i link. Solo allora rilasciare un verbale di certificazione conclusiva.
+
+## Verifiche dirette sul sito pubblicato — 12 ottobre 2026
+
+Eseguite dal computer autorizzato Michele tramite richieste HTTP verso `https://michelebottino-autor.github.io/adc/`:
+
+- **23/23 URL HTML ADC** restituiscono HTTP 200.
+- **34/34 URL interni distinti** estratti dagli attributi `href` delle 23 pagine restituiscono HTTP 200. Sono stati ignorati i frammenti `#...` e i collegamenti `mailto:`/`tel:`; non è una verifica dei singoli anchor di destinazione.
+- **3/3 risorse esterne campione** rispondono HTTP 200: immagine IIIF BSB Cusa p. 440 (image/jpeg), fotografia Wikimedia della lapide quadrilingue (image/jpeg), scheda BSB del volume (text/html).
+- Sono state ulteriormente eliminate note di lavoro e checklist visibili nei dossier Acque, Rationes, nella sezione Fonti e nella Storia generale.
+
+### Limiti della certificazione
+
+**Verifica HTTP e navigazione: superata per il perimetro sopra definito.** Non equivale a certificazione integrale: non sono stati controllati tutti i collegamenti esterni, gli ancoraggi interni, il caricamento JavaScript, la resa grafica su mobile e desktop, l'accessibilità assistiva, la correttezza paleografica di ogni citazione o i diritti di tutte le immagini. Restano inoltre formulazioni di carattere operativo in alcuni dossier, da eliminare prima di dichiarare l'archivio interamente bonificato. Lo stato della certificazione generale rimane **NON COMPLETATO**.
