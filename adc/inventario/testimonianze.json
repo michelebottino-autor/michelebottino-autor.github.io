@@ -193,6 +193,17 @@
       "livello": "C",
       "tema": "Terremoto del 1818",
       "pagina": "../terremoto-1818/"
+    },
+    {
+      "id": "ADC-0018",
+      "data": "24 ottobre 1502",
+      "titolo": "Commissione di una croce dipinta a Salvo d'Antonio",
+      "tipo": "Commissione artistica attestata da un riferimento a un atto notarile",
+      "provenienza": "Gioacchino Di Marzo, Di Antonello da Messina e dei suoi congiunti, Palermo, 1903, p. 92, nota 3; notaio Niccolò Ismiridi, protocollo 1502–1503, indizione VI, f. 88; precisazione 88v nello studio pubblicato su The Antiquaries Journal, 2020.",
+      "limiti": "Il protocollo notarile originale non è stato consultato direttamente. Il prezzo pattuito di cinque onze non dimostra la provenienza del denaro né il pagamento effettivo. L'identificazione e la collocazione dell'opera sono discusse nella bibliografia specialistica.",
+      "livello": "C",
+      "tema": "Arte e committenza religiosa",
+      "pagina": "../crocifisso-1502/"
     }
   ]
 }
