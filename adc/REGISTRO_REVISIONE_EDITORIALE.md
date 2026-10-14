@@ -66,3 +66,9 @@ Ricerca mirata su portali istituzionali e fonti scientifiche, con confronto prel
 4. **Salvo d'Antonio, croce del 1502:** tesi di Giuseppe Fazio reperibile nel repository dell'Università di Padova: https://www.research.unipd.it/retrieve/e14fb26f-b7d5-3de1-e053-1705fe0ac030/fazio_giuseppe_tesi.pdf . Il testo tratta la commissione del 24 ottobre 1502 e l'attribuzione stilistica; è fonte scientifica secondaria aggiuntiva, non il protocollo notarile originale. Controllare dati bibliografici e pagine prima di citarla nel dossier; assente nella pagina ADC esaminata.
 
 **Esito editoriale:** non aggiungere schede Inventario o affermazioni storiche finché le nuove piste non siano collazionate con le fonti già note. Ricerca web e controllo del repository sono attività distinte dalla consultazione degli originali.
+
+## Esito collazione web mirata — 14 ottobre 2026
+
+- Consultato il testo PDF della tesi di Giuseppe Fazio (Università di Padova): menziona esplicitamente la croce della chiesa madre di Calatabiano commissionata a Salvo d'Antonio il 24 ottobre 1502, scheda di catalogo IV.38, e ne discute l'interpretazione stilistica. Inserito riferimento bibliografico nel dossier `adc/crocifisso-1502/index.html`, senza mutare attribuzioni, dati notarili o livello probatorio. Commit `1ab4add7cc779e1617a68c9ccda930eca0c3e8f5`.
+- Consultati gli avvisi della Regione Siciliana sulla concessione del Castello medievale: avviso 18 giugno 2026 e proroga 29 luglio 2026, termine 9 ottobre 2026. Nessun atto di affidamento successivo identificato nei risultati istituzionali esaminati alla data della ricognizione. Non scrivere che la concessione è stata assegnata.
+- Non creare ulteriori record nell'Inventario in assenza di una nuova testimonianza documentaria distinta. Verifica in browser e delle fonti primarie ancora aperta.
