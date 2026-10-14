@@ -110,3 +110,10 @@ Ricerca mirata su portali istituzionali e fonti scientifiche, con confronto prel
 5. Non dichiarare certificata la corrispondenza integrale sito/fonti fino alla lettura di tutte le pagine interessate.
 
 **Materiali di confronto:** `BILANCIO_CRITICO_E_PIANO_RIPRESA_CALATABIANO_2026-10-12.md`; `Calatabiano Sacra — Piano di ricerca, revisione documentaria e produzione della seconda edizione`; `adc/LINEE-GUIDA-EDITORIALI.md`. Le verifiche sui file pubblici eseguite in questa sessione hanno incluso `adc/index.html`, `adc/acque-mulini-confini/index.html` e `adc/dossier-zucchero/index.html`, oltre al registro stesso.
+
+
+### Verifica mirata AUD-20261014-01 — riscontro delle fonti online (14 ottobre 2026)
+- **Aracne 69, arenga 028**: confermati data giugno 1201, luogo Palermo, destinatari arcivescovo Berardo e Chiesa di Messina, regesto sulla cessione del castello, riferimento MGH DD F II.1 n. 33 p. 67 e incipit `Etsi divine maiestatis intuitu`. URL: https://www.detail-lod.it/documents/ara69.arenga_028 . Il testo latino pubblicato in questa scheda è l'**arenga**, non l'intera dispositio; il regesto non è una trascrizione diplomatica.
+- **Spinella, tesi dottorale, p. 73, nota 223**: la nota descrive espressamente il diploma come concessione del `castrum` di Calatabiano, citando MGH n. 33 pp. 67–70; nota 224 segnala ADM perg. 1034 per il 1282. PDF: https://www.iris.unict.it/retrieve/9652da58-4762-45e9-8290-66def0caed02/BMRSpinella_TesiDottorato.pdf . La formulazione `terra` attribuita alla nota 93 nel bilancio precedente deve essere verificata nel suo contesto, non usata per sostenere una contraddizione generalizzata con Spinella.
+- **MGH**: identificato il volume digitale DD F II.1: https://www.dmgh.de/resolving/diplomataD_F_II_91 . L'accesso al testo integrale tramite il browser di ricerca ha restituito errore; **non effettuata la collazione delle pp. 67–70**.
+- **Stato**: metadati del 1201 riconfermati; un precedente rilievo di divergenza terminologica richiede contestualizzazione; contenuto giuridico del dispositivo e confronto con 1213/1282 **ancora aperti**. Nessuna correzione assertiva alle pagine pubbliche.
