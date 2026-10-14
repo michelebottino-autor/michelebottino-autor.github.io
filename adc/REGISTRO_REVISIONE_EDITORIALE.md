@@ -125,3 +125,23 @@ Ricerca mirata su portali istituzionali e fonti scientifiche, con confronto prel
 - La cifra di **15.000 tarì** e la vendita attribuita ad **Armaleo Monaldeschi** sono informazioni **storiografiche**, non verifiche diplomatiche dell'atto. Non promuoverle a dato di prima mano; controllare il documento o l'edizione e la relativa catena di citazioni.
 - La verifica delle pagine non risolve la compatibilità dei titoli del 1201 e 1213. È necessario controllare l'oggetto e la natura giuridica di ciascuna concessione/alienazione, non assumere un trasferimento lineare fra le due Chiese.
 - **Stato:** controllo di coerenza delle due pagine **chiuso**; verifica storica dell'atto del 1213 **aperta**. Non sono state modificate pagine pubbliche né l'inventario.
+
+
+## Audit tecnico del sito — 14 ottobre 2026 (prima passata)
+**Fonte di verità:** repository GitHub corrente, non `michelebottino_site_integrato.zip` (copia storica).
+
+- `index.html`: lingua `it`, descrizione SEO e manifest presenti; non è ancora un collaudo completo di HTML, prestazioni, accessibilità o dati strutturati.
+- `sitemap.xml`: 69 URL `loc` esaminati, nessun duplicato testuale; contiene le principali pagine ADC incluse `economia-storica`, `atlante`, `inventario`. **Da verificare** che ogni URL risponda HTTP 200 e abbia canonical coerente; il conteggio non dimostra copertura integrale del repository.
+- `robots.txt`: permette scansione pubblica e segnala la sitemap; include `Disallow` per alcuni file di lavoro. **Attenzione:** robots.txt non è una misura di riservatezza; file interni in un repository pubblico rimangono accessibili. Non pubblicare dati sensibili o materiali non autorizzati.
+- `404.html`: assente all'inizio del controllo, **creato** con contenuto italiano, navigazione verso sezioni principali, `noindex,follow`, collegamenti accessibili. Commit `ae54233f94dc8853dae1a11b32c1229c2c956b6e`.
+- `adc/index.html`, `adc/economia-storica/index.html`: canonical presente. Necessari ulteriori controlli sistematici su collegamenti interni, immagini, alt, header, responsive, script e validazione HTML.
+- **Limitazioni:** nessun test HTTP live completo o scansione automatizzata di tutte le pagine eseguito in questa passata; non dichiarare il sito «certificato». Nessuna modifica ai dati storici o alla pipeline V12.
+
+### Coda tecnica di correzione
+1. Esportare l'albero completo del repository corrente e costruire un elenco di URL e risorse locali.
+2. Controllare tutti i collegamenti interni e le risorse `src`, distinguendo ancore, percorsi assoluti e relativi.
+3. Confrontare sitemap, canonical e `robots` con gli URL realmente pubblicati.
+4. Validare markup HTML, accessibilità tastiera, etichette, immagini e contrasto su mobile e desktop.
+5. Testare funzionamento di ricerca ADC, moduli, manifest, CSS/JS e percorsi multilingue.
+6. Esaminare eventuali file interni pubblicamente accessibili e le politiche di gestione delle informazioni.
+7. Applicare correzioni puntuali con test e commit tracciati; nessuna riscrittura massiva senza necessità.
