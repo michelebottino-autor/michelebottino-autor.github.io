@@ -83,3 +83,30 @@ Ricerca mirata su portali istituzionali e fonti scientifiche, con confronto prel
 - L'immagine del repertorio CRICD non è riprodotta sul sito: condizioni di riutilizzo della singola riproduzione digitale non accertate in modo conclusivo.
 
 **Esito:** nessuna discrepanza tale da giustificare modifiche ai dati storici o ai livelli documentari. Restano aperte verifica HTTP/browser, verifica puntuale delle fonti originali e disciplina di riuso dell'immagine.
+
+
+## Audit di consolidamento — 14 ottobre 2026
+
+**Ambito:** confronto fra il bilancio critico del 12 ottobre, il piano della seconda edizione, il registro editoriale corrente e le pagine ADC consultate dal repository. Non è un'autopsia delle pergamene né un audit completo di tutte le pagine del sito. Le registrazioni seguenti non costituiscono nuovi documenti storici e non incrementano l'inventario delle testimonianze.
+
+| ID controllo | Affermazione / nodo | Testimonianza già individuata | Livello di prova attuale | Pagina o sezione da confrontare | Esito e prossima azione |
+| --- | --- | --- | --- | --- | --- |
+| AUD-20261014-01 | Titolo giuridico su castello/terra di Calatabiano nel 1201 | MGH DD F II.1, n. 33, pp. 67–70; regesto Aracne 69; Spinella, nota 93 | Edizione identificata; dispositio non collazionata; divergenza «castello»/«terra» | adc/index.html; adc/dossier-1213-1537/ | **Aperto**. Leggere testo integrale MGH; non equiparare le formulazioni dei regesti. |
+| AUD-20261014-02 | Diritti catanesi del 1213 | Rinvio presente nel dossier; atto integrale non collazionato nel bilancio | Citazione indiretta | adc/dossier-1213-1537/; adc/index.html | **Aperto**. Identificare e leggere l'atto; distinguere soggetto, bene e titolo. |
+| AUD-20261014-03 | Restituzione e diritti nel 1282 | ADM perg. 1034; Spinella, pp. 72–74; Starrabba 1888, pp. 109–126 | Passi letti in tesi, originale non letto | adc/dossier-1213-1537/; adc/storia/ | **Parziale**. Collazionare Starrabba e pergamena; distinguere castello da giardino e sentenze del 1267. |
+| AUD-20261014-04 | Passaggi feudali Cruïlles–Gaetani–Mirulla | Repertorio dei processi d'investitura 184 (b. 1484) e 334 (b. 1485) | Repertorio, non integrale collazione delle carte | adc/processo-334/; adc/dossier-zucchero/ | **Parziale**. Controllare singoli atti e date; non confondere estremi cronologici dei processi con data di vendita. |
+| AUD-20261014-05 | Diritti su acque, mulini e Gullia | Tabulario di Fragalà/Maniace, perg. 7, 11, 24, 25, 28, 63; Cusa e Silvestri | Regesti ed edizioni; autopsia non completata | adc/acque-mulini-confini/ | **Parziale**. Collazione visiva; evitare identificazione automatica Gullia=Calatabiano e Panagia=Alcantara. |
+| AUD-20261014-06 | Produzione e commercio dello zucchero | Morreale 2020, ASP TRP Scritture pendenti vol. 13; Stracuzzi, ASM Notarile vol. 15 ff. 330–332 (1537) | Fonti secondarie con segnature | adc/dossier-zucchero/; adc/economia-storica/ | **Parziale**. Consultare atti; non convertire 16.000 caselle in ettari né quantificare produzione senza riscontro. |
+| AUD-20261014-07 | Rotazione riso–frumento–canapa dal 1683 | Sergio Caia con rinvio a Silvana Cassar; sintesi universitaria | Testimonianza storiografica indiretta; data non verificata in Cassar | adc/economia-storica/ | **Aperto**. Controllare opera originale e localizzazione; non presentare 1683 come data primaria certa. |
+| AUD-20261014-08 | Agrumi, vite, olivo e attività tessili nell'Ottocento | Sintesi storico-divulgativa comunale | Fonte locale secondaria, senza superfici | adc/economia-storica/ | **Aperto**. Verificare catasti di Giarre e censimenti ISTAT comunali. |
+| AUD-20261014-09 | Postilla 1239, epigrafe, formule latine e pratiche cultuali | Asserzioni nel master di Calatabiano Sacra; nessuna segnatura originale dimostrata nel piano | Non verificato | Libro, eventuali pagine religiose ADC | **Critico**. Non presentare come citazioni documentarie finché non siano identificate e lette le fonti. |
+| AUD-20261014-10 | V12 e V33 come fonti utilizzabili | Bilancio critico 12 ottobre: V12 377 record da validare; V33 controllo testuale parziale | Strumenti di lavoro, non fonti primarie | Pipeline interna, non pagine divulgative | **Aperto**. Conservare registri; eseguire controllo visivo, non promuovere output automatici a prove. |
+
+### Decisioni operative
+1. **Sospendere nuovi dossier e nuove asserzioni storiche pubbliche** fino al controllo delle fonti corrispondenti; preservare il contenuto attuale, annotando internamente le riserve.
+2. Non creare nuovi identificativi ADC di testimonianza per riferimenti già censiti. Gli ID `AUD-` identificano esclusivamente controlli editoriali.
+3. Aprire la collazione dalla sequenza **1201 → 1213 → 1282**; a seguire investiture, pergamene, zucchero e colture.
+4. Per ogni verifica chiusa annotare: citazione letterale, archivio/fondo/segnatura, immagine o edizione effettivamente letta, pagina o carta, stato, URL pubblico coinvolto e correzione eventuale.
+5. Non dichiarare certificata la corrispondenza integrale sito/fonti fino alla lettura di tutte le pagine interessate.
+
+**Materiali di confronto:** `BILANCIO_CRITICO_E_PIANO_RIPRESA_CALATABIANO_2026-10-12.md`; `Calatabiano Sacra — Piano di ricerca, revisione documentaria e produzione della seconda edizione`; `adc/LINEE-GUIDA-EDITORIALI.md`. Le verifiche sui file pubblici eseguite in questa sessione hanno incluso `adc/index.html`, `adc/acque-mulini-confini/index.html` e `adc/dossier-zucchero/index.html`, oltre al registro stesso.
