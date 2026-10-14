@@ -72,3 +72,14 @@ Ricerca mirata su portali istituzionali e fonti scientifiche, con confronto prel
 - Consultato il testo PDF della tesi di Giuseppe Fazio (Università di Padova): menziona esplicitamente la croce della chiesa madre di Calatabiano commissionata a Salvo d'Antonio il 24 ottobre 1502, scheda di catalogo IV.38, e ne discute l'interpretazione stilistica. Inserito riferimento bibliografico nel dossier `adc/crocifisso-1502/index.html`, senza mutare attribuzioni, dati notarili o livello probatorio. Commit `1ab4add7cc779e1617a68c9ccda930eca0c3e8f5`.
 - Consultati gli avvisi della Regione Siciliana sulla concessione del Castello medievale: avviso 18 giugno 2026 e proroga 29 luglio 2026, termine 9 ottobre 2026. Nessun atto di affidamento successivo identificato nei risultati istituzionali esaminati alla data della ricognizione. Non scrivere che la concessione è stata assegnata.
 - Non creare ulteriori record nell'Inventario in assenza di una nuova testimonianza documentaria distinta. Verifica in browser e delle fonti primarie ancora aperta.
+
+
+## Verifica incrociata Atlante–Inventario–cartografia — 14 ottobre 2026
+
+- Confermata nel repository la scheda `adc/atlante/mortillaro-113/index.html`, con attribuzione della mappa n. 113 al repertorio CRICD e distinzione tra fonte catalografica e originale non esaminato.
+- Inventario `adc/inventario/testimonianze.json`: 18 record, identificativi ADC-0001–ADC-0018. La mappa Mortillaro non è stata aggiunta come diciannovesima testimonianza in assenza di una nuova scheda documentaria controllata.
+- Verificati i collegamenti della scheda Mortillaro all'Atlante e all'Inventario; restano distinti i dossier medievali su acque, mulini e ponte, senza dedurre identità geografiche dalle carte ottocentesche.
+- La sitemap comprende il percorso della mappa n. 113. Tentata l'apertura pubblica della pagina e della sitemap il 14 ottobre 2026: il servizio di consultazione non ha restituito le risorse. Non è quindi certificata la risposta HTTP del sito pubblico.
+- L'immagine del repertorio CRICD non è riprodotta sul sito: condizioni di riutilizzo della singola riproduzione digitale non accertate in modo conclusivo.
+
+**Esito:** nessuna discrepanza tale da giustificare modifiche ai dati storici o ai livelli documentari. Restano aperte verifica HTTP/browser, verifica puntuale delle fonti originali e disciplina di riuso dell'immagine.
