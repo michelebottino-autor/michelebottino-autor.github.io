@@ -49,3 +49,9 @@ Prima di pubblicare: cercare la notizia nelle 14 pagine; identificare la fonte p
 **Questioni non certificate e mantenute aperte:** distribuzione GitHub Pages e test in browser/mobile; verifica HTTP di link esterni e PDF; accessibilità; corrispondenza delle citazioni con originali o riproduzioni; attribuzione delle classificazioni B; inventario n. 47 (opere pubbliche 1860–1866) senza esame dei fascicoli; dossier 1922–1943 con fonti eterogenee da separare; revisione complessiva delle pagine dell'autore e dei metadati SEO.
 
 **Regola per la riapertura:** non duplicare i dossier; aprire un nuovo intervento solo con un riferimento controllabile, una discrepanza tecnica riproducibile o una fonte nuova. Evitare la dicitura «audit generale completato» finché i controlli sopra elencati non siano stati effettuati.
+
+## Controllo sitemap–repository — 14 ottobre 2026
+
+Controllo statico concluso su `sitemap.xml` (67 URL univoci). I percorsi sono stati normalizzati come file GitHub (`/` → `index.html`, directory con slash finale → `index.html`, file `.html` invariati). La ricerca dei file ha confermato 37 percorsi; i restanti 30 sono stati controllati direttamente tramite lettura del file nel repository. **Risultato: 67/67 percorsi presenti, 0 mancanti, 0 URL duplicati.**
+
+Questo esito non certifica la risposta HTTP di GitHub Pages, l'indicizzazione nei motori di ricerca, l'assenza di errori JavaScript, la resa mobile, la validità dei collegamenti esterni o l'accuratezza storico-documentaria. Non sono state apportate modifiche ai contenuti del sito durante questo controllo.
