@@ -38,19 +38,51 @@
 }
 @media(max-width:370px){.brand{font-size:.96rem}.brand span{font-size:.53rem}.menu-toggle{padding:8px 10px}.hero h1{font-size:2.03rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Second editorial pass: denser rhythm and more distinct document listings. */
+@media(min-width:761px){.hero-inner{padding-top:65px;padding-bottom:68px}.section{padding-top:52px;padding-bottom:52px}}
+.section h2{letter-spacing:-.02em}
+#documenti .grid{grid-template-columns:1fr;gap:0;margin-top:24px;background:#fff;border:1px solid #d7dfd7;border-radius:10px;overflow:hidden}
+#documenti .card{display:grid;grid-template-columns:150px 1fr;column-gap:24px;align-items:baseline;min-height:0;border:0;border-bottom:1px solid #e2e6df;border-radius:0;box-shadow:none;padding:20px 24px}
+#documenti .card:last-child{border-bottom:0}
+#documenti .card small{grid-row:span 2;letter-spacing:.08em}
+#documenti .card h3{margin:0 0 5px}
+#documenti .card p{margin:0}
+@media(max-width:760px){
+ .hero-inner{padding-top:36px;padding-bottom:38px}
+ .hero h1{font-size:clamp(1.94rem,7.7vw,2.65rem);line-height:1.15;margin:11px 0 13px}
+ .hero p{font-size:.96rem;line-height:1.56}
+ .section{padding-top:30px;padding-bottom:34px}
+ .section h2{font-size:clamp(1.5rem,6vw,1.95rem);line-height:1.2}
+ .section .intro{font-size:.96rem;line-height:1.6}
+ .grid{gap:10px}
+ #sezioni .card{padding:17px 18px}
+ #sezioni .card small{font-size:.74rem}
+ #sezioni .card h3{font-size:1.16rem}
+ #sezioni .card p{font-size:.9rem;line-height:1.5}
+ #documenti .grid{gap:0;margin-top:17px}
+ #documenti .card{display:block;padding:16px 18px}
+ #documenti .card small{font-size:.72rem}
+ #documenti .card h3{font-size:1.18rem;margin:6px 0}
+ #documenti .card p{font-size:.91rem;line-height:1.5}
+ .photo-placeholder{min-height:155px}
+ .feature-text{padding:18px}
+ .feature-text h3{font-size:1.32rem}
+ .feature-text p{font-size:.94rem;line-height:1.55}
+}
 </style></head><body>
 <a href="#contenuto" class="skip">Vai al contenuto</a>
 <div class="notice">ANTEPRIMA GRAFICA · Pagina di prova separata dall'Archivio ufficiale · Nessuna modifica alle pagine esistenti</div>
 <header class="top"><div class="wrap topinner"><a class="brand" href="#inizio">Archivio Documentale Calatabiano<span>Ricerca storica · Fonti · Territorio</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="prototype-nav" aria-label="Apri il menu di navigazione"><span class="menu-bars" aria-hidden="true">☰</span><span class="menu-label">Menu</span></button><nav class="nav" id="prototype-nav" aria-label="Navigazione del modello"><a href="#inizio">Inizio</a><a href="#sezioni">Sezioni</a><a href="#documenti">Documenti</a><a href="#territorio">Territorio</a><a href="#metodo">Metodo</a><a href="#contatti">Contatti</a></nav></div></header>
-<main id="contenuto"><section class="hero" id="inizio"><div class="wrap hero-inner"><div class="kicker">Michele Bottino · Archivio indipendente</div><h1>La storia di Calatabiano, attraverso le fonti.</h1><p>Documenti, luoghi e testimonianze messi in relazione con metodo critico. Un modello grafico unico per rendere accessibile e consultabile l'Archivio Documentale Calatabiano.</p><div class="actions"><a class="btn" href="#sezioni">Esplora le sezioni</a><a class="btn alt" href="#territorio">Fotografie del territorio</a></div></div></section>
-<section class="section wrap" id="sezioni"><div class="kicker" style="color:#967345">Un archivio, una struttura</div><h2>Esplora la ricerca</h2><p class="intro">Le stesse componenti saranno utilizzate in ogni pagina: navigazione, titoli, contenuti, schede, fonti e piè di pagina.</p><div class="grid">
-<article class="card"><small>01 · Repertorio</small><h3>Fonti e documenti</h3><p>Riferimenti archivistici, attestazioni e verifiche documentarie.</p><a href="#documenti">Visualizza l'esempio →</a></article>
+<main id="contenuto"><section class="hero" id="inizio"><div class="wrap hero-inner"><div class="kicker">Michele Bottino · Archivio indipendente</div><h1>La storia di Calatabiano, attraverso le fonti.</h1><p>Documenti, luoghi e testimonianze messi in relazione con metodo critico. Un archivio indipendente dedicato alla storia del territorio, alla lettura critica delle fonti e alla memoria documentaria.</p><div class="actions"><a class="btn" href="#sezioni">Esplora le sezioni</a><a class="btn alt" href="#territorio">Fotografie del territorio</a></div></div></section>
+<section class="section wrap" id="sezioni"><div class="kicker" style="color:#967345">Percorsi di consultazione</div><h2>Esplora la ricerca</h2><p class="intro">Accedi ai documenti, esplora i luoghi e approfondisci la storia di Calatabiano attraverso percorsi tematici.</p><div class="grid">
+<article class="card"><small>01 · Repertorio</small><h3>Fonti e documenti</h3><p>Riferimenti archivistici, attestazioni e verifiche documentarie.</p><a href="#documenti">Approfondisci →</a></article>
 <article class="card"><small>02 · Territorio</small><h3>Atlante storico</h3><p>Castello, chiese, paesaggio e luoghi identificati attraverso le fonti.</p><a href="#territorio">Visualizza l'esempio →</a></article>
 <article class="card"><small>03 · Percorsi</small><h3>Storia di Calatabiano</h3><p>Approfondimenti storici organizzati per periodi e temi.</p><a href="#metodo">Visualizza l'esempio →</a></article></div></section>
-<section class="dark" id="documenti"><div class="section wrap"><div class="kicker" style="color:#967345">Documenti in evidenza</div><h2>La ricerca, prima della decorazione</h2><p class="intro">Le schede documentarie mantengono sempre titoli leggibili, descrizioni e collegamenti. Nessuna fotografia viene utilizzata per simulare un documento.</p><div class="grid"><article class="card"><small>Documento</small><h3>Diploma del 1201</h3><p>Attribuzione a Federico II. I dettagli documentari rimarranno quelli verificati nel dossier.</p></article><article class="card"><small>Dossier</small><h3>Calatabiano medievale</h3><p>Un esempio di scheda con testo, fonti e collegamenti ordinati.</p></article><article class="card"><small>Repertorio</small><h3>Fonti archivistiche</h3><p>Le informazioni storiche non vengono alterate durante il restyling.</p></article></div></div></section>
-<section class="section wrap" id="territorio"><div class="kicker" style="color:#967345">Fotografie autentiche</div><h2>Calatabiano, senza immagini estranee</h2><p class="intro">Qui verrà collocata una fotografia originale e verificata del Castello di Calatabiano o di un panorama locale, priva di persone visibili e con attribuzione corretta.</p><div class="feature"><div class="photo-placeholder"><span>SPAZIO RISERVATO ALLA FOTOGRAFIA VERIFICATA<br>Castello o panorama reale di Calatabiano<br>Nessuna immagine generica</span></div><div class="feature-text"><div class="kicker" style="color:#967345">Regola fotografica</div><h3>Solo luoghi realmente identificati</h3><p>Castello, chiese, centro storico e paesaggi fotografati a Calatabiano. Ogni immagine sarà controllata per località, licenza, assenza di persone e resa su smartphone.</p></div></div></section>
-<section class="dark" id="metodo"><div class="section wrap"><div class="kicker" style="color:#967345">Metodo editoriale</div><h2>Una struttura comune, contenuti distinti</h2><p class="intro">Questo è un prototipo di presentazione: non sostituisce le pagine storiche, non pubblica nuove affermazioni documentarie e non modifica il sito ufficiale.</p></div></section></main>
-<footer class="footer" id="contatti"><div class="wrap"><span>Archivio Documentale Calatabiano · Modello grafico di prova</span><span><a href="/adc/">Torna al sito ADC attuale</a> · <a href="/contatti/">Contatti</a></span></div></footer>
+<section class="dark" id="documenti"><div class="section wrap"><div class="kicker" style="color:#967345">Documenti in evidenza</div><h2>Documenti e approfondimenti</h2><p class="intro">Le attestazioni storiche vengono presentate distinguendo le fonti, le interpretazioni e gli aspetti ancora oggetto di verifica.</p><div class="grid"><article class="card"><small>Documento</small><h3>Diploma del 1201</h3><p>Una testimonianza da leggere nel contesto della documentazione medievale, con attenzione all'attribuzione a Federico II.</p></article><article class="card"><small>Dossier</small><h3>Calatabiano medievale</h3><p>Percorsi tra testimonianze, luoghi e vicende del territorio medievale.</p></article><article class="card"><small>Repertorio</small><h3>Fonti archivistiche</h3><p>Un repertorio per orientarsi tra documenti, citazioni e riferimenti bibliografici.</p></article></div></div></section>
+<section class="section wrap" id="territorio"><div class="kicker" style="color:#967345">Paesaggio e patrimonio</div><h2>I luoghi della memoria</h2><p class="intro">Il castello, le chiese, il centro storico e il paesaggio raccontano la storia del territorio insieme ai documenti.</p><div class="feature"><div class="photo-placeholder"><span>Fotografia storica e territoriale<br>in preparazione</span></div><div class="feature-text"><div class="kicker" style="color:#967345">Patrimonio locale</div><h3>Castello, chiese e paesaggi</h3><p>Una raccolta visiva dedicata ai luoghi riconoscibili di Calatabiano, accompagnata da indicazioni sulla provenienza delle immagini.</p></div></div></section>
+<section class="dark" id="metodo"><div class="section wrap"><div class="kicker" style="color:#967345">Metodo editoriale</div><h2>Ricerca e verifica delle fonti</h2><p class="intro">La ricerca documentaria distingue le testimonianze direttamente verificabili dalle ricostruzioni e dalle ipotesi interpretative. Il lettore può approfondire il metodo editoriale dell'Archivio.</p></div></section></main>
+<footer class="footer" id="contatti"><div class="wrap"><span>Archivio Documentale Calatabiano · Michele Bottino</span><span><a href="/adc/">Torna al sito ADC attuale</a> · <a href="/contatti/">Contatti</a></span></div></footer>
 <script>
 (function(){
  const button=document.querySelector('.menu-toggle'),nav=document.getElementById('prototype-nav');
