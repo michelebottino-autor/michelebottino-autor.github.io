@@ -13,3 +13,15 @@ main h1,main h2,main h3{font-family:Georgia,"Times New Roman",serif;color:#17443
 main a{color:#11604d;text-underline-offset:3px}main img{max-width:100%;height:auto}main :is(table,pre){display:block;max-width:100%;overflow-x:auto}main table{border-collapse:collapse}main th,main td{border-bottom:1px solid var(--adc-border);padding:10px;text-align:left}
 :where(a,button,input,select,textarea):focus-visible{outline:3px solid #d4a254;outline-offset:3px}
 @media(max-width:680px){.adc-shell-inner{display:block;padding:12px 14px}.adc-shell-brand{display:block;margin-bottom:9px}.adc-shell-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.adc-shell-nav a{text-align:center;padding:10px 4px;border:1px solid #ffffff2a;font-size:.78rem}.adc-shell-footer-inner{display:block}.adc-shell-footer-inner>*{display:block;margin-bottom:9px}}
+
+/* Neutralize conflicting legacy page-wide rules on prototype pages. */
+body:has(>.adc-shell){margin:0;max-width:none;padding:0;font-size:16px;line-height:1.65;background:var(--adc-paper)}
+body>.adc-shell{max-width:none;width:100%;margin:0;padding:0;border-bottom:4px solid var(--adc-gold);background:#103e33}
+body>.adc-shell .adc-shell-inner{max-width:1160px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+body>.adc-shell .adc-shell-nav{display:flex;gap:5px;flex-wrap:wrap;margin:0}
+body>.adc-shell .adc-shell-nav a{color:#fff}
+body>.adc-shell-footer{max-width:none;width:100%;margin-top:50px;padding:0;border-top:0;background:#103e33;color:#fff}
+body>.adc-shell-footer .adc-shell-footer-inner{max-width:1160px;margin:auto;padding:24px 20px}
+body>.adc-shell-breadcrumb{max-width:1160px;margin:auto;padding:13px 20px}
+body>main#contenuto{max-width:1160px;margin:0 auto;padding:20px clamp(16px,3vw,32px)}
+@media(max-width:680px){body>.adc-shell .adc-shell-inner{display:block;padding:12px 14px}body>.adc-shell .adc-shell-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}}
