@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-migrazione-sei-dossier",
+  "version": "2026-10-15-famiglie-33",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -146,9 +146,17 @@
         "mirulla",
         "zucchero",
         "trappeti",
-        "economia"
+        "economia",
+        "cruylles",
+        "crilos",
+        "marullo",
+        "morreale",
+        "signoria",
+        "famiglie",
+        "baroni",
+        "genealogia"
       ],
-      "description": "Dossier sulla produzione dello zucchero fra Quattrocento e Seicento."
+      "description": "Dossier documentario su Cruïlles, Mirulla e attività zuccheriera; i rapporti genealogici e le varianti dei nomi richiedono verifica nelle fonti."
     },
     {
       "title": "Terra, acqua e lavoro",
@@ -394,6 +402,23 @@
         "significato"
       ],
       "description": "Percorso iniziale verso la storia del territorio; l'etimologia del nome richiede una verifica specifica delle fonti, non ancora conclusa."
+    },
+    {
+      "title": "Famiglie signorili di Calatabiano: ricerca da approfondire",
+      "url": "/adc-prototipo/zucchero.html",
+      "tags": [
+        "famiglie",
+        "signori",
+        "baroni",
+        "feudatari",
+        "cruylles",
+        "cruilles",
+        "mirulla",
+        "marullo",
+        "genealogia",
+        "successioni"
+      ],
+      "description": "Punto di partenza per studiare famiglie, titoli e successioni. Non costituisce ancora una genealogia completa verificata."
     }
   ]
 }
