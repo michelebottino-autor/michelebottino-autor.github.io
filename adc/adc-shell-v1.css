@@ -25,3 +25,19 @@ body>.adc-shell-footer .adc-shell-footer-inner{max-width:1160px;margin:auto;padd
 body>.adc-shell-breadcrumb{max-width:1160px;margin:auto;padding:13px 20px}
 body>main#contenuto{max-width:1160px;margin:0 auto;padding:20px clamp(16px,3vw,32px)}
 @media(max-width:680px){body>.adc-shell .adc-shell-inner{display:block;padding:12px 14px}body>.adc-shell .adc-shell-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}}
+
+/* Shared page shell: preserves page-specific article components while standardizing frame. */
+body.adc-unified{margin:0!important;max-width:none!important;padding:0!important;width:100%;background:#f7f5ef;color:#17382f}
+body.adc-unified>.adc-shell{display:block!important;position:relative!important;max-width:none!important;width:100%!important;margin:0!important;padding:0!important;background:#103e33!important;color:#fff!important;border-bottom:4px solid #bc965c!important;box-shadow:none!important}
+body.adc-unified>.adc-shell .adc-shell-inner{box-sizing:border-box;max-width:1160px;margin:auto;padding:14px 20px}
+body.adc-unified>.adc-shell .adc-shell-brand{color:#fff!important}
+body.adc-unified>.adc-shell .adc-shell-nav{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin:0;padding:0}
+body.adc-unified>.adc-shell .adc-shell-nav a{color:#fff!important;font-size:.88rem;text-decoration:none!important}
+body.adc-unified>.adc-shell-breadcrumb{max-width:1160px;margin:auto;padding:13px 20px;box-sizing:border-box}
+body.adc-unified>main,body.adc-unified>main#contenuto{box-sizing:border-box;max-width:1160px;width:100%;margin:0 auto;padding:20px clamp(16px,3vw,32px)}
+body.adc-unified>.adc-shell-footer{display:block!important;max-width:none!important;width:100%!important;margin:50px 0 0!important;padding:0!important;background:#103e33!important;color:#fff!important;border:0!important}
+body.adc-unified>.adc-shell-footer .adc-shell-footer-inner{max-width:1160px;margin:auto;padding:24px 20px}
+body.adc-unified>.adc-shell-footer a{color:#f4d5a3!important}
+body.adc-unified>header:not(.adc-shell),body.adc-unified>nav:not(.adc-shell-nav),body.adc-unified>footer:not(.adc-shell-footer){display:none!important}
+body.adc-unified>main img{max-width:100%;height:auto}
+@media(max-width:680px){body.adc-unified>.adc-shell .adc-shell-inner{display:block;padding:12px 14px}body.adc-unified>.adc-shell .adc-shell-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}body.adc-unified>.adc-shell .adc-shell-nav a{font-size:.78rem;padding:10px 4px;text-align:center;border:1px solid #ffffff2a}body.adc-unified>main{overflow-wrap:anywhere}}
