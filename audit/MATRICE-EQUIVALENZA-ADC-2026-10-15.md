@@ -147,3 +147,22 @@ Verifica del 2026-10-15 sul ramo `consolidamento/2026-10-15`. Questo è un contr
 ## Duplicazioni binarie
 
 Sono già note due coppie di copertine con blob Git identico (Oniro e Stige). Prima della rimozione verificare i riferimenti e mantenere compatibilità URL.
+
+## Seconda verifica — atlante e Processo 334
+
+Controllo statico su sei pagine: home originale/prototipo, atlante originale/prototipo, Processo 334 originale/prototipo.
+
+| Coppia | Rilevazione | Esito |
+| --- | --- | --- |
+| Home ADC | Originale: 1 form, 4 tag script; prototipo: 0 form, 2 tag script | Parità funzionale non dimostrata |
+| Atlante | Originale: 2 tag script; prototipo: 1 tag script. L'originale contiene collegamenti ai dettagli Mortillaro 113 e collazione | Due URL relativi errati corretti sul ramo di consolidamento |
+| Processo 334 | Originale: 3 tag script; prototipo: 2 tag script; riferimenti a navigazione e risorse differenti | Richiede controllo di contenuti, apparato documentario e funzioni |
+
+**Correzione effettuata in** `adc-prototipo/atlante.html`:
+
+- `mortillaro-113/` → `/adc/atlante/mortillaro-113/`;
+- `./collazione/` → `/adc/atlante/collazione/`.
+
+Commit: `ea620eaeece477efd29776934d159b40277b249d`.
+
+I conteggi dei tag script e form sono indizi di differenza, non prove di funzionalità mancanti: richiedono ispezione e test. Il controllo non è ancora esteso a tutte le 49 pagine HTML delle due aree.
