@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-percorsi-documentari-25",
+  "version": "2026-10-15-repertorio-31",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -305,6 +305,75 @@
         "opere"
       ],
       "description": "Itinerari storici fra testimonianze sulle origini, le chiese, il castello e le opere civili."
+    },
+    {
+      "title": "Archivio Documentale Calatabiano",
+      "url": "/adc/",
+      "tags": [
+        "archivio",
+        "introduzione",
+        "laboratorio",
+        "comunita"
+      ],
+      "description": "Presentazione dell'Archivio, dei dossier e delle attività di ricerca."
+    },
+    {
+      "title": "Cerca nell'Archivio",
+      "url": "/adc/cerca/",
+      "tags": [
+        "ricerca",
+        "cerca",
+        "consultazione",
+        "pagine"
+      ],
+      "description": "Ricerca nei percorsi storici e nei dossier dell'Archivio."
+    },
+    {
+      "title": "Contribuisci alla memoria di Calatabiano",
+      "url": "/adc/contribuisci/",
+      "tags": [
+        "contribuire",
+        "fotografie",
+        "documenti",
+        "testimonianze",
+        "segnalazioni"
+      ],
+      "description": "Informazioni per proporre fotografie, documenti e testimonianze."
+    },
+    {
+      "title": "Proponi un contributo",
+      "url": "/adc/contribuisci/invia/",
+      "tags": [
+        "inviare",
+        "proporre",
+        "contributo",
+        "attribuzione",
+        "segnalazione"
+      ],
+      "description": "Indicazioni per preparare una segnalazione documentale."
+    },
+    {
+      "title": "Le tracce di Calatabiano",
+      "url": "/adc/gioco/",
+      "tags": [
+        "gioco",
+        "indizi",
+        "ipotesi",
+        "documenti",
+        "imparare"
+      ],
+      "description": "Un percorso interattivo per distinguere documenti e ipotesi."
+    },
+    {
+      "title": "Il Custode dell'Archivio",
+      "url": "/adc/custode/",
+      "tags": [
+        "custode",
+        "guida",
+        "orientamento",
+        "consultazione"
+      ],
+      "description": "Guida alla consultazione dei contenuti pubblici dell'Archivio."
     }
   ]
 }
