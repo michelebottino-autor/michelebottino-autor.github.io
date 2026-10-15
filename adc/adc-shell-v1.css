@@ -1,0 +1,15 @@
+/* ADC — sistema unico, versione 1. Nessuna immagine non verificata. */
+:root{--adc-ink:#17382f;--adc-green:#123f34;--adc-gold:#bc965c;--adc-paper:#f7f5ef;--adc-border:#d8e0d7}
+html{scroll-behavior:smooth}body{margin:0;background:var(--adc-paper);color:var(--adc-ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+.adc-shell{background:#103e33;color:#fff;border-bottom:4px solid var(--adc-gold)}
+.adc-shell-inner{max-width:1160px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.adc-shell-brand{font:700 1.12rem Georgia,serif;color:#fff;text-decoration:none}.adc-shell-brand span{color:#dfbd82}
+.adc-shell-nav{display:flex;gap:5px;flex-wrap:wrap}.adc-shell-nav a{display:inline-block;color:#fff;text-decoration:none;padding:9px 11px;border-radius:5px;font-size:.88rem}.adc-shell-nav a:hover,.adc-shell-nav a:focus-visible{background:#ffffff23}
+.adc-shell-skip{position:absolute;left:-9999px;top:0;background:#fff;color:#123f34;padding:12px;z-index:999}.adc-shell-skip:focus{left:8px}
+.adc-shell-breadcrumb{max-width:1160px;margin:0 auto;padding:13px 20px;color:#3e6258;font-size:.86rem}.adc-shell-breadcrumb a{color:#165d4c}
+.adc-shell-footer{margin-top:50px;background:#103e33;color:#fff}.adc-shell-footer-inner{max-width:1160px;margin:auto;padding:24px 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.88rem}.adc-shell-footer a{color:#f4d5a3}
+body>main,body>.container main,main#contenuto{box-sizing:border-box;max-width:1160px;margin:0 auto;padding:20px clamp(16px,3vw,32px)}
+main h1,main h2,main h3{font-family:Georgia,"Times New Roman",serif;color:#174437;line-height:1.22}main h1{font-size:clamp(2rem,4vw,3.1rem)}main h2{font-size:clamp(1.45rem,2.6vw,2.1rem);margin-top:1.6em}
+main a{color:#11604d;text-underline-offset:3px}main img{max-width:100%;height:auto}main :is(table,pre){display:block;max-width:100%;overflow-x:auto}main table{border-collapse:collapse}main th,main td{border-bottom:1px solid var(--adc-border);padding:10px;text-align:left}
+:where(a,button,input,select,textarea):focus-visible{outline:3px solid #d4a254;outline-offset:3px}
+@media(max-width:680px){.adc-shell-inner{display:block;padding:12px 14px}.adc-shell-brand{display:block;margin-bottom:9px}.adc-shell-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.adc-shell-nav a{text-align:center;padding:10px 4px;border:1px solid #ffffff2a;font-size:.78rem}.adc-shell-footer-inner{display:block}.adc-shell-footer-inner>*{display:block;margin-bottom:9px}}
