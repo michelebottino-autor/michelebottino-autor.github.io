@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-correzione-nomi-33",
+  "version": "2026-10-15-migrazione-nove-dossier",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -79,7 +79,7 @@
     },
     {
       "title": "Diario di lettura del processo 334",
-      "url": "/adc/processo-334/",
+      "url": "/adc-prototipo/processo-334.html",
       "tags": [
         "processo",
         "334",
@@ -161,7 +161,7 @@
     },
     {
       "title": "Terra, acqua e lavoro",
-      "url": "/adc/economia-storica/",
+      "url": "/adc-prototipo/economia-storica.html",
       "tags": [
         "economia",
         "lavoro",
@@ -198,7 +198,7 @@
     },
     {
       "title": "Lapicidi ed epigrafi medievali",
-      "url": "/adc/lapicidi-epigrafi/",
+      "url": "/adc-prototipo/lapicidi-epigrafi.html",
       "tags": [
         "lapicidi",
         "epigrafi",
