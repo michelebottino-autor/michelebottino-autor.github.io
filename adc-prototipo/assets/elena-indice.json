@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-migrazione-ponte-terremoto",
+  "version": "2026-10-15-migrazione-quattro-dossier",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -67,7 +67,7 @@
     },
     {
       "title": "Chiese medievali e Rationes Decimarum",
-      "url": "/adc/dossier-rationes/",
+      "url": "/adc-prototipo/rationes-decimarum.html",
       "tags": [
         "chiese",
         "rationes",
@@ -115,7 +115,7 @@
     },
     {
       "title": "Il Crocifisso del 1502",
-      "url": "/adc/crocifisso-1502/",
+      "url": "/adc-prototipo/crocifisso-1502.html",
       "tags": [
         "crocifisso",
         "1502",
