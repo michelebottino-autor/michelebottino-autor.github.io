@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-repertorio-31",
+  "version": "2026-10-15-toponomastica-32",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -56,9 +56,14 @@
         "storia",
         "origini",
         "castello",
-        "calatabiano"
+        "calatabiano",
+        "nome",
+        "toponimo",
+        "toponomastica",
+        "etimologia",
+        "denominazione"
       ],
-      "description": "Percorso divulgativo con rimandi a fonti e questioni aperte."
+      "description": "Percorso storico introduttivo. Per l'origine del nome Calatabiano occorre verificare le attestazioni e le ipotesi nelle fonti."
     },
     {
       "title": "Chiese medievali e Rationes Decimarum",
@@ -374,6 +379,21 @@
         "consultazione"
       ],
       "description": "Guida alla consultazione dei contenuti pubblici dell'Archivio."
+    },
+    {
+      "title": "Origine del nome Calatabiano: questione aperta",
+      "url": "/adc/storia/",
+      "tags": [
+        "nome",
+        "calatabiano",
+        "etimologia",
+        "toponimo",
+        "toponomastica",
+        "origine",
+        "denominazione",
+        "significato"
+      ],
+      "description": "Percorso iniziale verso la storia del territorio; l'etimologia del nome richiede una verifica specifica delle fonti, non ancora conclusa."
     }
   ]
 }
