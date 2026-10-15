@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-migrazione-quattro-dossier",
+  "version": "2026-10-15-migrazione-sei-dossier",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -128,7 +128,7 @@
     },
     {
       "title": "Calatabiano nel 1213 e nel 1537",
-      "url": "/adc/dossier-1213-1537/",
+      "url": "/adc-prototipo/calatabiano-1213-1537.html",
       "tags": [
         "1213",
         "1537",
@@ -140,7 +140,7 @@
     },
     {
       "title": "Cruïlles, Mirulla e zucchero",
-      "url": "/adc/dossier-zucchero/",
+      "url": "/adc-prototipo/zucchero.html",
       "tags": [
         "cruilles",
         "mirulla",
