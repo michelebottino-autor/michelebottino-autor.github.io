@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-toponomastica-32",
+  "version": "2026-10-15-migrazione-ponte-terremoto",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -28,7 +28,7 @@
     },
     {
       "title": "Il ponte sull'Alcantara nelle fonti medievali",
-      "url": "/adc/ponte-alcantara-medievale/",
+      "url": "/adc-prototipo/ponte-alcantara.html",
       "tags": [
         "ponte",
         "alcantara",
@@ -237,7 +237,7 @@
     },
     {
       "title": "Il terremoto del 1818",
-      "url": "/adc/terremoto-1818/",
+      "url": "/adc-prototipo/terremoto-1818.html",
       "tags": [
         "1818",
         "terremoto",
