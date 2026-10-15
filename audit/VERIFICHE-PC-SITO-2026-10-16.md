@@ -40,3 +40,7 @@ La pipeline V12 chiama `AGGIORNA_SITO_LIVE_V13.ps1` (snapshot locale di `/ricerc
 5. Nessuna modifica alla configurazione delle attività pianificate o ai file attivi finché non siano dimostrati i benefici della nuova versione.
 
 **Conclusione:** sono stati eseguiti test reali e risolti problemi nel validatore; il monitoraggio principale risulta operativo. L'intero sito e tutti i sottosistemi di Elena non possono ancora dirsi collaudati esaustivamente.
+
+## Collaudo supplementare dei link interni
+
+Il controllo read-only `audit/powershell/Controllo-Link-ADC-Isolato.ps1` è stato eseguito sul PC Michele dopo il test HEAD precedente. **72 pagine HTML recuperate senza errori**, **126 collegamenti interni distinti** ricavati dagli attributi HTML `href` e `src`, **126 risposte HTTP HEAD 200 e 0 non-200** (runtime 37,12 secondi). Output locale `Documents/Sito_Autore_Audit_20261015/Controllo_Link_Interni.csv`. Questo non comprende collegamenti generati a runtime da JavaScript né collaudi interattivi, ma supera il controllo della sola sitemap.
