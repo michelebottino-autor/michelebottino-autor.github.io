@@ -18,3 +18,15 @@ html{scroll-behavior:smooth}body{margin:0;background:var(--adc-paper);color:var(
 .adc-unified-footer a{color:#e7c58d}
 @media(max-width:760px){.adc-unified-header-inner{display:block;padding:17px 0}.adc-unified-nav{margin-top:12px}.adc-unified-nav a{padding:9px 8px;font-size:.8rem}.adc-unified-page{padding:20px 12px 42px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Leggibilità di repertori e dossier */
+.adc-unified-page{min-width:0}.adc-unified-page section{min-width:0}.adc-unified-page p,.adc-unified-page li{max-width:78ch}
+.adc-unified-page .editorial-breadcrumb{font-size:.86rem;margin:0 0 26px;color:#5c665e}
+.adc-unified-page .editorial-breadcrumb a{color:#145540}
+.adc-unified-page .intro-note,.adc-unified-page .eyebrow{color:#8b6838;font-weight:750;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+.adc-unified-page .note,.adc-unified-page blockquote{background:#f4f0e7;border-left:4px solid var(--adc-gold);padding:16px 20px;margin:20px 0}
+.adc-unified-page table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}
+.adc-unified-page th,.adc-unified-page td{padding:10px 12px;border-bottom:1px solid #dcded5;text-align:left}
+.adc-unified-page pre{max-width:100%;overflow-x:auto}.adc-unified-page figure{max-width:100%;margin:22px 0}
+.adc-unified-page figcaption{font-size:.85rem;color:#5c665e}
+.adc-unified-page a:focus-visible,.adc-unified-nav a:focus-visible{outline:3px solid var(--adc-gold);outline-offset:3px}
+@media(max-width:760px){.adc-unified-page article{padding:20px 17px}.adc-unified-page h1{overflow-wrap:anywhere}}
