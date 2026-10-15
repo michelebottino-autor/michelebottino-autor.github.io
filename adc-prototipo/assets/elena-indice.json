@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-prototipo-1",
+  "version": "2026-10-15-catalogo-ampliato",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -84,7 +84,7 @@
       "description": "Diario di lettura e verifica delle fonti."
     },
     {
-      "title": "Mediateca (prototipo)",
+      "title": "Mediateca",
       "url": "/adc-prototipo/mediateca.html",
       "tags": [
         "video",
@@ -94,6 +94,164 @@
         "mediateca"
       ],
       "description": "Catalogo audiovisivo in preparazione, con prime schede video."
+    },
+    {
+      "title": "Calatabiano fra il 1922 e il 1943",
+      "url": "/adc/calatabiano-1922-1943/",
+      "tags": [
+        "novecento",
+        "1922",
+        "1943",
+        "guerra",
+        "ferrovia",
+        "infrastrutture"
+      ],
+      "description": "Documenti relativi alla ferrovia, alle infrastrutture e agli eventi bellici."
+    },
+    {
+      "title": "Il Crocifisso del 1502",
+      "url": "/adc/crocifisso-1502/",
+      "tags": [
+        "crocifisso",
+        "1502",
+        "salvo",
+        "antonio",
+        "arte",
+        "chiese"
+      ],
+      "description": "La commissione del Crocifisso dipinto da Salvo d’Antonio, con riferimenti alle fonti."
+    },
+    {
+      "title": "Calatabiano nel 1213 e nel 1537",
+      "url": "/adc/dossier-1213-1537/",
+      "tags": [
+        "1213",
+        "1537",
+        "castello",
+        "zucchero",
+        "commercio"
+      ],
+      "description": "Dossier su due testimonianze documentarie, con verifiche e limiti."
+    },
+    {
+      "title": "Cruïlles, Mirulla e zucchero",
+      "url": "/adc/dossier-zucchero/",
+      "tags": [
+        "cruilles",
+        "mirulla",
+        "zucchero",
+        "trappeti",
+        "economia"
+      ],
+      "description": "Dossier sulla produzione dello zucchero fra Quattrocento e Seicento."
+    },
+    {
+      "title": "Terra, acqua e lavoro",
+      "url": "/adc/economia-storica/",
+      "tags": [
+        "economia",
+        "lavoro",
+        "zucchero",
+        "trappeti",
+        "acqua",
+        "terra"
+      ],
+      "description": "Percorso sull'economia storica attraverso le fonti dell'Archivio."
+    },
+    {
+      "title": "Infrastrutture e immagini del Novecento",
+      "url": "/adc/infrastrutture-novecento/",
+      "tags": [
+        "novecento",
+        "cartoline",
+        "bufardo",
+        "torrerossa",
+        "irrigazione"
+      ],
+      "description": "Cartoline storiche e documenti sulle opere irrigue."
+    },
+    {
+      "title": "Inventario delle testimonianze",
+      "url": "/adc/inventario/",
+      "tags": [
+        "inventario",
+        "testimonianze",
+        "documenti",
+        "segnature",
+        "fonti"
+      ],
+      "description": "Elenco delle testimonianze, con provenienza, date e rinvii ai dossier."
+    },
+    {
+      "title": "Lapicidi ed epigrafi medievali",
+      "url": "/adc/lapicidi-epigrafi/",
+      "tags": [
+        "lapicidi",
+        "epigrafi",
+        "iscrizioni",
+        "pietre",
+        "scalpellini"
+      ],
+      "description": "Guida alla lettura di iscrizioni e marchi di scalpellini."
+    },
+    {
+      "title": "Opere pubbliche 1860–1866",
+      "url": "/adc/opere-pubbliche-1860-1866/",
+      "tags": [
+        "1860",
+        "1866",
+        "opere",
+        "prefettura",
+        "acireale"
+      ],
+      "description": "Scheda sulle pratiche relative alle opere pubbliche del territorio."
+    },
+    {
+      "title": "Programma di ricerca",
+      "url": "/adc/programma/",
+      "tags": [
+        "programma",
+        "ricerca",
+        "priorita",
+        "verifiche"
+      ],
+      "description": "Priorità, fonti e verifiche del programma pubblico di ricerca."
+    },
+    {
+      "title": "Lingue e scritture della Sicilia medievale",
+      "url": "/adc/scritture/",
+      "tags": [
+        "scritture",
+        "lingue",
+        "greco",
+        "arabo",
+        "latino",
+        "siciliano"
+      ],
+      "description": "Percorso sulle testimonianze scritte e sulle lingue della Sicilia medievale."
+    },
+    {
+      "title": "Il terremoto del 1818",
+      "url": "/adc/terremoto-1818/",
+      "tags": [
+        "1818",
+        "terremoto",
+        "intendenza",
+        "danni",
+        "abitazioni"
+      ],
+      "description": "Dossier sulle carte dell'Intendenza relative ai danni del terremoto."
+    },
+    {
+      "title": "Carta del Laboratorio",
+      "url": "/adc/carta/",
+      "tags": [
+        "laboratorio",
+        "carta",
+        "regolamento",
+        "archivio"
+      ],
+      "description": "Carta istitutiva e regolamento del Laboratorio."
     }
   ]
 }
