@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-catalogo-ampliato",
+  "version": "2026-10-15-percorsi-documentari-25",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -252,6 +252,59 @@
         "archivio"
       ],
       "description": "Carta istitutiva e regolamento del Laboratorio."
+    },
+    {
+      "title": "Diplomi greci: acqua, mulini e confini",
+      "url": "/adc/atlante/collazione/",
+      "tags": [
+        "diplomi",
+        "greci",
+        "cusa",
+        "mulini",
+        "monasteri",
+        "confini",
+        "acqua"
+      ],
+      "description": "Lettura dei diplomi greci medievali e delle attestazioni su acque, mulini e confini."
+    },
+    {
+      "title": "La mappa 113 della raccolta Mortillaro",
+      "url": "/adc/atlante/mortillaro-113/",
+      "tags": [
+        "mortillaro",
+        "113",
+        "catasto",
+        "mappa",
+        "musumeci",
+        "cartografia",
+        "borbonico"
+      ],
+      "description": "Carta ottocentesca di Calatabiano e confronto cartografico."
+    },
+    {
+      "title": "Ricostruzione cartografica del 1943",
+      "url": "/adc/calatabiano-1922-1943/ricostruzione-1943.html",
+      "tags": [
+        "1943",
+        "guerra",
+        "ricostruzione",
+        "cartografia",
+        "mappa"
+      ],
+      "description": "Ricostruzione cartografica relativa a Calatabiano nel 1943."
+    },
+    {
+      "title": "Percorsi storici di Calatabiano",
+      "url": "/adc/percorsi.html",
+      "tags": [
+        "percorsi",
+        "origini",
+        "chiese",
+        "castello",
+        "quattrocento",
+        "opere"
+      ],
+      "description": "Itinerari storici fra testimonianze sulle origini, le chiese, il castello e le opere civili."
     }
   ]
 }
