@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-famiglie-33",
+  "version": "2026-10-15-questioni-famiglie-33",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -419,6 +419,22 @@
         "successioni"
       ],
       "description": "Punto di partenza per studiare famiglie, titoli e successioni. Non costituisce ancora una genealogia completa verificata."
+    },
+    {
+      "title": "Famiglie e poteri signorili: ricerca aperta",
+      "url": "/adc-prototipo/calatabiano-1213-1537.html",
+      "tags": [
+        "famiglie",
+        "signori",
+        "feudatari",
+        "signoria",
+        "genealogia",
+        "cruilles",
+        "mirulla",
+        "marullo",
+        "casate"
+      ],
+      "description": "Percorso iniziale sulle attestazioni delle famiglie e dei poteri signorili; genealogie e successioni richiedono verifiche specifiche."
     }
   ]
 }
