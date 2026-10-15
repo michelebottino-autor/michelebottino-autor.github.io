@@ -24,3 +24,33 @@ Registro editoriale interno. Le segnalazioni sono esempi emersi durante il colla
 **Destinatario previsto:** IA principale sul sistema centrale, quando il collegamento autorizzato sarà operativo.
 
 **Trasmissione automatica:** non attiva. **Pubblicazione automatica:** non consentita.
+
+## Q-002 — Famiglia Cruïlles
+
+**Domanda guida:** chi erano i Cruïlles attestati nella documentazione relativa a Calatabiano?
+
+**Punto di accesso:** /adc-prototipo/zucchero.html.
+
+**Da verificare:** grafie e identità delle persone nominate, provenienza delle attestazioni, cronologia, titoli e diritti documentati, rapporti con la produzione dello zucchero. Non ricostruire genealogie senza prove nominative.
+
+**Stato:** approfondimento da svolgere; nessuna nuova conclusione approvata.
+
+## Q-003 — Mirulla, Marullo e varianti del nome
+
+**Domanda guida:** quali persone o famiglie sono attestate nelle fonti con le grafie Mirulla, Marullo o altre varianti?
+
+**Punto di accesso:** /adc-prototipo/zucchero.html.
+
+**Da verificare:** grafia esatta nei documenti originali, eventuale identità o distinzione dei nuclei familiari, successioni, proprietà, rapporti signorili e cronologia. Le grafie non vanno equiparate senza verifica.
+
+**Stato:** approfondimento da svolgere; nessuna nuova conclusione approvata.
+
+## Q-004 — Famiglie e poteri signorili nel territorio
+
+**Domanda guida:** quali famiglie esercitarono poteri o diritti su Calatabiano e in quali periodi?
+
+**Punti di accesso:** /adc-prototipo/storia.html, /adc-prototipo/calatabiano-1213-1537.html e /adc-prototipo/zucchero.html.
+
+**Da verificare:** successione cronologica, natura giuridica dei diritti, investiture, compravendite, giurisdizioni, attestazioni originali e lacune. Distinguere proprietari, feudatari, amministratori e famiglie semplicemente menzionate.
+
+**Stato:** approfondimento da svolgere; nessuna nuova conclusione approvata.
