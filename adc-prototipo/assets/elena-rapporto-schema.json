@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "description": "Formato previsto per rapporti tematici aggregati e verificati, da inviare al servizio di analisi principale solo dopo autorizzazione.",
+  "report_id": "example-2026-10-15-001",
+  "period": {
+    "from": "2026-10-01",
+    "to": "2026-10-15"
+  },
+  "topic": "origini di Calatabiano",
+  "question_count": 0,
+  "question_examples_anonymized": [],
+  "indexed_sources": [
+    {
+      "url": "/adc/storia/",
+      "status": "da_verificare"
+    }
+  ],
+  "unanswered_questions": [],
+  "documentary_gaps": [],
+  "proposed_research_actions": [],
+  "editorial_status": "bozza_da_valutare",
+  "privacy": {
+    "raw_user_questions_included": false,
+    "personal_data_included": false,
+    "collection_enabled": false,
+    "retention_policy": "da_definire"
+  },
+  "delivery": {
+    "enabled": false,
+    "recipient": "servizio_ia_principale_da_configurare",
+    "approval_required": true
+  }
+}
