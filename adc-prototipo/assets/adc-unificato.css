@@ -1,0 +1,20 @@
+/* ADC · modello grafico unitario · versione di prova */
+:root{--adc-green:#123c31;--adc-gold:#c5a16a;--adc-paper:#f5f2eb;--adc-ink:#253d34}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}body{margin:0;background:var(--adc-paper);color:var(--adc-ink);font:16px/1.72 system-ui,-apple-system,Segoe UI,Arial,sans-serif;overflow-wrap:break-word}
+.adc-unified-header{background:var(--adc-green);color:#fff;border-bottom:3px solid var(--adc-gold);padding:0 22px}
+.adc-unified-header-inner{max-width:1160px;margin:auto;min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.adc-unified-brand{font:700 1.25rem/1.25 Georgia,serif;color:#fff!important;text-decoration:none}
+.adc-unified-brand small{display:block;color:#e7c58d;font:600 .72rem system-ui;letter-spacing:.1em;text-transform:uppercase;margin-top:5px}
+.adc-unified-nav{display:flex;flex-wrap:wrap;gap:4px}.adc-unified-nav a{color:#fff!important;text-decoration:none;font:.88rem system-ui;padding:10px 12px;border-radius:5px}
+.adc-unified-nav a:hover,.adc-unified-nav a:focus-visible{background:#ffffff22}
+.adc-unified-page{max-width:1050px;margin:0 auto;padding:38px 22px 66px}
+.adc-unified-page article{background:#fff;border:1px solid #dcded5;border-radius:10px;padding:clamp(22px,4vw,48px);max-width:none}
+.adc-unified-page h1,.adc-unified-page h2,.adc-unified-page h3{font-family:Georgia,serif;color:var(--adc-green);line-height:1.2}
+.adc-unified-page h1{font-size:clamp(2rem,4.5vw,3.3rem)}.adc-unified-page h2{font-size:clamp(1.55rem,3vw,2.25rem)}
+.adc-unified-page a{color:#145540}.adc-unified-page img{max-width:100%;height:auto}
+.adc-unified-footer{background:var(--adc-green);color:#f1eee6;padding:26px 22px;font-size:.88rem}
+.adc-unified-footer-inner{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.adc-unified-footer a{color:#e7c58d}
+@media(max-width:760px){.adc-unified-header-inner{display:block;padding:17px 0}.adc-unified-nav{margin-top:12px}.adc-unified-nav a{padding:9px 8px;font-size:.8rem}.adc-unified-page{padding:20px 12px 42px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
