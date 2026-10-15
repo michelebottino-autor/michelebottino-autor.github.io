@@ -13,7 +13,7 @@ $ErrorActionPreference = 'Stop'
 $report = [IO.File]::ReadAllText($ReportPath, [Text.Encoding]::UTF8)
 $context = [IO.File]::ReadAllText($ContextPath, [Text.Encoding]::UTF8)
 $originals = @([regex]::Matches($context, '(?m)^URL:[ \t]*(https://[^\s\r\n]+)') | ForEach-Object { $_.Groups[1].Value })
-$pageHeaders = @([regex]::Matches($report, '(?m)^## Pagina[ \t]+(\d+)[ \t]*\r?$'))
+$pageHeaders = @([regex]::Matches($report, '(?m)^## Pagina[ \t]+(\d+)(?:[ \t]*-[ \t]*errore)?[ \t]*\r?$'))
 $issues = New-Object 'System.Collections.Generic.List[object]'
 function Add-Issue([int]$page, [int]$proposal, [string]$type, [string]$detail) {
   $issues.Add([pscustomobject]@{pagina=$page; proposta=$proposal; tipo=$type; dettaglio=$detail}) | Out-Null
@@ -23,6 +23,8 @@ if ($pageHeaders.Count -eq 0) { Add-Issue 0 0 'missing_page_sections' 'Rapporto 
 for ($i=0; $i -lt $pageHeaders.Count; $i++) {
   $h = $pageHeaders[$i]
   $page = [int]$h.Groups[1].Value
+  if ($page -ne ($i+1)) { Add-Issue $page 0 'non_sequential_or_duplicate_page' 'Numerazione non consecutiva' }
+  if ($h.Value -match '(?i)-[ \t]*errore') { Add-Issue $page 0 'page_generation_error' 'La generazione della pagina segnala un errore' }
   $start = $h.Index + $h.Length
   $end = if ($i+1 -lt $pageHeaders.Count) { $pageHeaders[$i+1].Index } else { $report.Length }
   $section = $report.Substring($start, $end-$start)
