@@ -1,0 +1,21 @@
+/* Layout secondario ADC 2026: conserva il DOM, i moduli e i dati. */
+:root{--adc-deep:#102f2a;--adc-gold:#c49a54;--adc-cream:#f6f3ed}
+body{background:var(--adc-cream)!important}
+body>header{background:linear-gradient(135deg,#102f2a,#1a4840)!important;color:#fff!important;max-width:none!important;padding:24px max(20px,calc((100vw - 1100px)/2)) 30px!important;border-bottom:4px solid var(--adc-gold)!important}
+body>header h1,body>header h2,body>header p,body>header small{color:#fff!important}
+body>header h1{font-size:clamp(2rem,4.5vw,3.6rem);max-width:1000px;line-height:1.12}
+body>header nav a{color:#f9e4bc!important}
+body>header .intro,body>header .lead{max-width:74ch}
+body>main{max-width:1100px!important;margin:22px auto!important;padding:clamp(18px,3.5vw,38px)!important;background:#fffefa;border:1px solid #dfe3da;border-radius:18px;box-shadow:0 14px 42px rgba(18,48,40,.055)}
+body>main h2{border-bottom:1px solid #e3e6df;padding-bottom:.4em}
+body>main a:not(.btn):hover{text-decoration-thickness:2px}
+body>footer{max-width:1100px!important}
+body>main .grid,body>main .cards{gap:18px}
+body>main .card,body>main .item,body>main .chapter{background:#fff;border:1px solid #dfe3da;box-shadow:0 8px 25px rgba(16,47,42,.05)}
+body>main .tag{background:#e9f0eb;color:#174c42}
+body>main th{background:#e8f0ea;color:#153c33}
+body>main table{display:block;overflow-x:auto;max-width:100%}
+body>main form[role=search]{padding:18px;background:#edf3ee;border:1px solid #d8e5dc;border-radius:14px}
+body>main input,body>main select{background:#fff}
+@media(max-width:680px){body>header{padding:20px 18px 28px!important}body>main{margin:12px!important;padding:18px!important;border-radius:12px}body>header nav{gap:8px}body>header nav a{padding:8px}}
+@media print{body>header{background:#fff!important;color:#000!important}body>header h1,body>header p{color:#000!important}body>main{box-shadow:none;border:0}}
