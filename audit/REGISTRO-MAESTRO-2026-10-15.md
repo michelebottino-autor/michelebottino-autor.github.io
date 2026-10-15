@@ -69,3 +69,12 @@ Confrontati i 311 file tracciati del ramo `main` alla baseline. Risultano **due 
 - L'approfondimento Gullia–Beviere/Archivio Nelson è già trattato nell'ADC; verificare il fascicolo originale e i lavori già registrati prima di aprire nuova ricerca.
 
 **Decisione:** congelare editorialmente le proposte grezze, preservare i rapporti, non modificare `main` né i task. Priorità: confrontare le 14 variazioni con il contenuto GitHub e applicare controlli di citazione/provenienza prima di ogni integrazione. La mera lettura degli script non certifica il successo delle esecuzioni future.
+
+## Aggiornamento verificato 16 ottobre — continuazione ChatGPT via PC
+
+- Eseguiti collaudi reali su PC Michele, con report e script in `audit/VERIFICHE-PC-SITO-2026-10-16.md` e `audit/powershell/`. Report grezzo Elena respinto: 16 rilievi tecnici, 4 URL errati (contati anche come 4 host alterati); controlli sintetici positivo/negativo superati.
+- Test HTTP live: 72 pagine disponibili e 126 link interni HTML con risposta 200, nessuna anomalia di disponibilità nel campione ispezionato; non equivale a test end-to-end di JS, interfacce e servizi.
+- Sitemap di sviluppo portata a 72 URL, integrando 3 pagine ADC esistenti. Ramo `main` preservato.
+- Audit `Calatabiano_Audit_V12` chiuso sul piano **tecnico**: script e pianificazione letti, ultima esecuzione 16 ottobre 00:31 risultata corretta, 381 record di triage, 355 ancora da verificare e 26 possibili già noti; nessun giudizio storico da inferire.
+- Collaudo Ollama `qwen3:8b` documentato in `audit/COLLAUDO-QUALITA-ELENA-2026-10-16.md`: rimossa solo nel candidato isolato la fonte autoreferenziale; ancora un suggerimento ripetitivo nel dossier acque e mulini. **Non integrare automaticamente**. Candidato `audit/powershell/Analizza-ADC-Qualita-COLLAUDO.ps1` e copia locale in cartella audit.
+- Decisione persistente: nessuna pubblicazione su `main`, nessuna modifica ai task attivi, nessun adattamento di fonti storiche senza verifiche primarie; usare il registro degli interventi per evitare duplicazioni.
