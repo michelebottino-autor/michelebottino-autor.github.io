@@ -1,0 +1,99 @@
+{
+  "version": "2026-10-15-prototipo-1",
+  "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
+  "entries": [
+    {
+      "title": "Fonti e documenti",
+      "url": "/adc/fonti/",
+      "tags": [
+        "fonti",
+        "documenti",
+        "bibliografia",
+        "ricerca"
+      ],
+      "description": "Repertorio delle fonti e degli studi, con criteri di verifica."
+    },
+    {
+      "title": "Acque, mulini e confini monastici",
+      "url": "/adc/acque-mulini-confini/",
+      "tags": [
+        "acqua",
+        "acque",
+        "mulini",
+        "monasteri",
+        "confini",
+        "alcantara"
+      ],
+      "description": "Dossier sui diritti d'acqua, i mulini e i confini nelle fonti medievali."
+    },
+    {
+      "title": "Il ponte sull'Alcantara nelle fonti medievali",
+      "url": "/adc/ponte-alcantara-medievale/",
+      "tags": [
+        "ponte",
+        "alcantara",
+        "idrisi",
+        "viabilità"
+      ],
+      "description": "Testimonianze medievali relative al ponte e ai collegamenti."
+    },
+    {
+      "title": "Atlante storico-documentario",
+      "url": "/adc/atlante/",
+      "tags": [
+        "atlante",
+        "mappa",
+        "mappe",
+        "territorio",
+        "paesaggio"
+      ],
+      "description": "Luoghi, eventi e attestazioni con distinzioni metodologiche."
+    },
+    {
+      "title": "Storia di Calatabiano",
+      "url": "/adc/storia/",
+      "tags": [
+        "storia",
+        "origini",
+        "castello",
+        "calatabiano"
+      ],
+      "description": "Percorso divulgativo con rimandi a fonti e questioni aperte."
+    },
+    {
+      "title": "Chiese medievali e Rationes Decimarum",
+      "url": "/adc/dossier-rationes/",
+      "tags": [
+        "chiese",
+        "rationes",
+        "decimarum",
+        "1308",
+        "1310"
+      ],
+      "description": "Dossier sulle attestazioni ecclesiastiche e i loro limiti."
+    },
+    {
+      "title": "Diario di lettura del processo 334",
+      "url": "/adc/processo-334/",
+      "tags": [
+        "processo",
+        "334",
+        "paleografia",
+        "ricerca"
+      ],
+      "description": "Diario di lettura e verifica delle fonti."
+    },
+    {
+      "title": "Mediateca (prototipo)",
+      "url": "/adc-prototipo/mediateca.html",
+      "tags": [
+        "video",
+        "calata",
+        "san filippo",
+        "tradizioni",
+        "mediateca"
+      ],
+      "description": "Catalogo audiovisivo in preparazione, con prime schede video."
+    }
+  ]
+}
