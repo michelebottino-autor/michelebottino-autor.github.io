@@ -49,3 +49,12 @@ Data di apertura: 2026-10-15. Stato: audit in corso. Ramo di lavoro: `consolidam
 - Link relativi e risorse esterne nei dossier migrati.
 - Parità funzionale per carta, ricerca, inventario, moduli e widget.
 - Provenienza e riutilizzo del PDF `processo_334.pdf`; trascrizione ancora da verificare.
+
+## Prima verifica di duplicazione esatta (Git blob SHA)
+
+Confrontati i 311 file tracciati del ramo `main` alla baseline. Risultano **due coppie di file byte-identici**, entrambe immagini di copertina:
+
+- `images/opere/michele-bottino_oniro_copertina.jpg` = `images/opere/oniro_copertina.jpg`
+- `images/opere/michele-bottino_stige_copertina.jpg` = `images/opere/stige_copertina.jpg`
+
+**Decisione:** non cancellare ancora. Verificare prima i riferimenti HTML/CSS/JS, i metadati e gli eventuali URL indicizzati. Il confronto SHA non identifica duplicazioni semantiche o versioni quasi uguali.
