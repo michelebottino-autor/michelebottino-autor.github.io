@@ -4,10 +4,44 @@
 <style>
 :root{--green:#123c31;--green2:#1c5343;--gold:#c5a16a;--paper:#f5f2eb;--ink:#253d34}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}.wrap{max-width:1160px;margin:auto;padding-left:22px;padding-right:22px}.notice{background:#e7dfcf;padding:9px 22px;text-align:center;color:#493e2c;font-size:.85rem}.top{background:var(--green);color:#fff;border-bottom:3px solid var(--gold)}.topinner{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-top:18px;padding-bottom:18px}.brand{font:700 1.35rem/1.2 Georgia,serif;text-decoration:none}.brand span{display:block;color:#e7c58d;font:600 .78rem system-ui;letter-spacing:.12em;text-transform:uppercase;margin-top:5px}.nav{display:flex;gap:6px;flex-wrap:wrap}.nav a{padding:9px 12px;text-decoration:none;font-size:.88rem;border-radius:5px}.nav a:hover,.nav a:focus-visible{background:#ffffff24}.hero{background:linear-gradient(125deg,#143e32 0%,#225446 65%,#304e3e 100%);color:#fff;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;opacity:.13;background:repeating-linear-gradient(120deg,transparent 0 52px,#fff 53px,transparent 54px)}.hero-inner{position:relative;padding-top:86px;padding-bottom:86px;max-width:1160px}.kicker{color:#e4c58f;letter-spacing:.17em;font-size:.76rem;font-weight:800;text-transform:uppercase}.hero h1{font:700 clamp(2.8rem,6.2vw,5.1rem)/1.07 Georgia,serif;max-width:780px;margin:17px 0 22px}.hero p{max-width:680px;font-size:1.12rem;color:#f0f4ed}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{display:inline-block;padding:12px 19px;background:var(--gold);color:#1b2f27;border-radius:5px;text-decoration:none;font-weight:750}.btn.alt{background:transparent;color:#fff;border:1px solid #d6c29d}.section{padding-top:64px;padding-bottom:64px}.section h2{font:700 clamp(1.9rem,3vw,2.7rem)/1.18 Georgia,serif;color:var(--green);margin:10px 0}.section>p,.section .intro{max-width:740px;color:#5c665e}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:27px}.card{background:#fff;border:1px solid #dcded5;border-radius:9px;padding:26px;min-height:195px;box-shadow:0 5px 20px #1b35270a}.card small{color:#8b6838;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.card h3{font:700 1.38rem Georgia,serif;margin:12px 0;color:var(--green)}.card p{font-size:.93rem;color:#5c665e}.card a{color:#145540;font-weight:700}.dark{background:#e8ece6}.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:0;background:#fff;border:1px solid #d8dfd7;border-radius:10px;overflow:hidden;margin-top:24px}.photo-placeholder{min-height:280px;background:linear-gradient(145deg,#284f41,#68816a);display:grid;place-items:center;color:#fff;text-align:center;padding:28px}.photo-placeholder span{max-width:320px;font-size:.94rem}.feature-text{padding:32px}.feature-text h3{font:700 1.8rem Georgia,serif;color:var(--green)}.footer{background:var(--green);color:#f1eee6;padding:28px 0;font-size:.88rem}.footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer a{color:#e7c58d}.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#000;padding:10px;z-index:10}.skip:focus{left:10px}a:focus-visible{outline:3px solid #d4a254;outline-offset:3px}
 @media(max-width:760px){.topinner{display:block}.brand{display:block;margin-bottom:18px}.nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.nav a{text-align:center;border:1px solid #ffffff33;padding:10px 3px;font-size:.8rem}.hero-inner{padding-top:58px;padding-bottom:62px}.hero h1{font-size:clamp(2.5rem,10vw,4rem)}.section{padding-top:42px;padding-bottom:42px}.grid{grid-template-columns:1fr}.card{min-height:0}.feature{grid-template-columns:1fr}.photo-placeholder{min-height:210px}.feature-text{padding:24px}}
+
+/* Mobile-first refinement — isolated prototype, no changes to ADC pages */
+.menu-toggle{display:none;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:9px 15px;border:1px solid #d6c29d;border-radius:6px;background:transparent;color:#fff;font:700 .92rem system-ui;cursor:pointer}
+.menu-bars{font-size:1.3rem;line-height:1}.nav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.card{min-width:0}.card p{overflow-wrap:break-word}
+@media(max-width:760px){
+ .wrap{padding-left:18px;padding-right:18px}
+ .notice{font-size:.75rem;line-height:1.4;padding:8px 14px}
+ .topinner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-top:12px;padding-bottom:12px}
+ .brand{font-size:1.06rem;margin:0;max-width:calc(100% - 108px)}
+ .brand span{font-size:.58rem;letter-spacing:.06em;margin-top:4px}
+ .menu-toggle{display:inline-flex;flex-shrink:0}
+ .nav{display:none;width:100%;grid-template-columns:1fr 1fr;gap:7px;padding-top:12px;border-top:1px solid #ffffff30}
+ .nav.is-open{display:grid}
+ .nav a{font-size:.92rem;padding:11px 7px;min-height:46px}
+ .hero-inner{padding-top:46px;padding-bottom:52px}
+ .kicker{font-size:.69rem;letter-spacing:.11em}
+ .hero h1{font-size:clamp(2.1rem,8.5vw,3.2rem);line-height:1.12;letter-spacing:-.025em;margin:14px 0 16px;overflow-wrap:normal}
+ .hero p{font-size:1rem;line-height:1.6}
+ .actions{gap:10px;margin-top:23px}
+ .actions .btn{width:100%;padding:12px 14px}
+ .section{padding-top:38px;padding-bottom:42px}
+ .section h2{font-size:clamp(1.65rem,6.5vw,2.15rem)}
+ .grid{gap:12px;margin-top:20px}
+ .card{padding:21px;min-height:0}
+ .card h3{font-size:1.26rem;margin:8px 0}
+ .card p{margin:8px 0}
+ .feature-text{padding:22px}
+ .feature-text h3{font-size:1.5rem}
+ .footer .wrap{display:grid;gap:10px}
+}
+@media(max-width:370px){.brand{font-size:.96rem}.brand span{font-size:.53rem}.menu-toggle{padding:8px 10px}.hero h1{font-size:2.03rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head><body>
 <a href="#contenuto" class="skip">Vai al contenuto</a>
 <div class="notice">ANTEPRIMA GRAFICA · Pagina di prova separata dall'Archivio ufficiale · Nessuna modifica alle pagine esistenti</div>
-<header class="top"><div class="wrap topinner"><a class="brand" href="#inizio">Archivio Documentale Calatabiano<span>Ricerca storica · Fonti · Territorio</span></a><nav class="nav" aria-label="Navigazione del modello"><a href="#inizio">Inizio</a><a href="#sezioni">Sezioni</a><a href="#documenti">Documenti</a><a href="#territorio">Territorio</a><a href="#metodo">Metodo</a><a href="#contatti">Contatti</a></nav></div></header>
+<header class="top"><div class="wrap topinner"><a class="brand" href="#inizio">Archivio Documentale Calatabiano<span>Ricerca storica · Fonti · Territorio</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="prototype-nav" aria-label="Apri il menu di navigazione"><span class="menu-bars" aria-hidden="true">☰</span><span class="menu-label">Menu</span></button><nav class="nav" id="prototype-nav" aria-label="Navigazione del modello"><a href="#inizio">Inizio</a><a href="#sezioni">Sezioni</a><a href="#documenti">Documenti</a><a href="#territorio">Territorio</a><a href="#metodo">Metodo</a><a href="#contatti">Contatti</a></nav></div></header>
 <main id="contenuto"><section class="hero" id="inizio"><div class="wrap hero-inner"><div class="kicker">Michele Bottino · Archivio indipendente</div><h1>La storia di Calatabiano, attraverso le fonti.</h1><p>Documenti, luoghi e testimonianze messi in relazione con metodo critico. Un modello grafico unico per rendere accessibile e consultabile l'Archivio Documentale Calatabiano.</p><div class="actions"><a class="btn" href="#sezioni">Esplora le sezioni</a><a class="btn alt" href="#territorio">Fotografie del territorio</a></div></div></section>
 <section class="section wrap" id="sezioni"><div class="kicker" style="color:#967345">Un archivio, una struttura</div><h2>Esplora la ricerca</h2><p class="intro">Le stesse componenti saranno utilizzate in ogni pagina: navigazione, titoli, contenuti, schede, fonti e piè di pagina.</p><div class="grid">
 <article class="card"><small>01 · Repertorio</small><h3>Fonti e documenti</h3><p>Riferimenti archivistici, attestazioni e verifiche documentarie.</p><a href="#documenti">Visualizza l'esempio →</a></article>
@@ -17,4 +51,14 @@
 <section class="section wrap" id="territorio"><div class="kicker" style="color:#967345">Fotografie autentiche</div><h2>Calatabiano, senza immagini estranee</h2><p class="intro">Qui verrà collocata una fotografia originale e verificata del Castello di Calatabiano o di un panorama locale, priva di persone visibili e con attribuzione corretta.</p><div class="feature"><div class="photo-placeholder"><span>SPAZIO RISERVATO ALLA FOTOGRAFIA VERIFICATA<br>Castello o panorama reale di Calatabiano<br>Nessuna immagine generica</span></div><div class="feature-text"><div class="kicker" style="color:#967345">Regola fotografica</div><h3>Solo luoghi realmente identificati</h3><p>Castello, chiese, centro storico e paesaggi fotografati a Calatabiano. Ogni immagine sarà controllata per località, licenza, assenza di persone e resa su smartphone.</p></div></div></section>
 <section class="dark" id="metodo"><div class="section wrap"><div class="kicker" style="color:#967345">Metodo editoriale</div><h2>Una struttura comune, contenuti distinti</h2><p class="intro">Questo è un prototipo di presentazione: non sostituisce le pagine storiche, non pubblica nuove affermazioni documentarie e non modifica il sito ufficiale.</p></div></section></main>
 <footer class="footer" id="contatti"><div class="wrap"><span>Archivio Documentale Calatabiano · Modello grafico di prova</span><span><a href="/adc/">Torna al sito ADC attuale</a> · <a href="/contatti/">Contatti</a></span></div></footer>
-</body></html>
+<script>
+(function(){
+ const button=document.querySelector('.menu-toggle'),nav=document.getElementById('prototype-nav');
+ if(!button||!nav)return;
+ function close(){button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Apri il menu di navigazione');nav.classList.remove('is-open');}
+ button.addEventListener('click',function(){const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Chiudi il menu di navigazione':'Apri il menu di navigazione');nav.classList.toggle('is-open',open);});
+ nav.addEventListener('click',function(e){if(e.target.closest('a'))close();});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+ window.matchMedia('(min-width: 761px)').addEventListener('change',close);
+})();
+</script></body></html>
