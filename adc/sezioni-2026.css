@@ -19,3 +19,27 @@ body>main form[role=search]{padding:18px;background:#edf3ee;border:1px solid #d8
 body>main input,body>main select{background:#fff}
 @media(max-width:680px){body>header{padding:20px 18px 28px!important}body>main{margin:12px!important;padding:18px!important;border-radius:12px}body>header nav{gap:8px}body>header nav a{padding:8px}}
 @media print{body>header{background:#fff!important;color:#000!important}body>header h1,body>header p{color:#000!important}body>main{box-shadow:none;border:0}}
+
+/* Uniformazione dell'intera pagina, non soltanto della testata. */
+body{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;color:#20332e!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;line-height:1.72}
+body>nav:first-of-type,body>header nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+body>nav:first-of-type{max-width:1100px;margin:0 auto;padding:12px 20px}
+body>main,body>header,body>footer{box-sizing:border-box}
+body>main h1,body>main h2,body>main h3,body>header h1{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+body>main h1{font-size:clamp(2.1rem,4vw,3.45rem);line-height:1.15;color:#123d35}
+body>main h2{font-size:clamp(1.45rem,2.5vw,2.05rem);line-height:1.25;color:#16443a;margin-top:1.7em}
+body>main h3{color:#245349}
+body>main p,body>main li{max-width:80ch}
+body>main a{color:#175f51;text-underline-offset:3px}
+body>main a:focus-visible,body>header a:focus-visible,body>main button:focus-visible{outline:3px solid #b88c46;outline-offset:3px}
+body>main :is(.chapter,.card,.item,.panel,.box,article){border-radius:13px;padding:clamp(14px,2.4vw,24px)}
+body>main :is(.grid,.cards){align-items:stretch}
+body>main :is(input,select,textarea,button){max-width:100%;font:inherit;border-radius:8px}
+body>main :is(input,select,textarea){border:1px solid #9daea5;padding:10px 12px}
+body>main :is(button,[type=submit]){background:#16483d;color:#fff;border:1px solid #16483d;padding:10px 16px;cursor:pointer}
+body>main :is(blockquote,.note,.notice){border-left:4px solid #c49a54;background:#f5f3ed;padding:14px 18px;border-radius:0 10px 10px 0}
+body>main img{max-width:100%;height:auto;border-radius:9px}
+body>main :is(pre,code){overflow-wrap:anywhere}
+body>main pre{overflow-x:auto;max-width:100%;padding:14px;background:#edf1ed;border-radius:9px}
+body>footer{border-top:1px solid #dce5dd;padding:26px 20px!important;color:#52615a}
+@media(max-width:680px){body>main :is(.grid,.cards){grid-template-columns:1fr!important}body>main :is(.chapter,.card,.item,.panel,.box,article){padding:15px}body>main h2{margin-top:1.3em}body>main table{font-size:.9rem}}
