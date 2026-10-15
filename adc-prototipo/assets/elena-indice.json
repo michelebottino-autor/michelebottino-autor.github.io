@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-questioni-famiglie-33",
+  "version": "2026-10-15-correzione-nomi-33",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -139,7 +139,7 @@
       "description": "Dossier su due testimonianze documentarie, con verifiche e limiti."
     },
     {
-      "title": "Cruïlles, Mirulla e zucchero",
+      "title": "Cruillas e lo zucchero a Calatabiano",
       "url": "/adc-prototipo/zucchero.html",
       "tags": [
         "cruilles",
@@ -148,15 +148,16 @@
         "trappeti",
         "economia",
         "cruylles",
-        "crilos",
         "marullo",
         "morreale",
         "signoria",
         "famiglie",
         "baroni",
-        "genealogia"
+        "genealogia",
+        "cruillas",
+        "calatabiano"
       ],
-      "description": "Dossier documentario su Cruïlles, Mirulla e attività zuccheriera; i rapporti genealogici e le varianti dei nomi richiedono verifica nelle fonti."
+      "description": "Dossier sulle attività zuccheriere a Calatabiano e sui personaggi citati nelle fonti. Le grafie dei cognomi e i rapporti familiari vanno verificati nei documenti originali."
     },
     {
       "title": "Terra, acqua e lavoro",
@@ -416,9 +417,10 @@
         "mirulla",
         "marullo",
         "genealogia",
-        "successioni"
+        "successioni",
+        "cruillas"
       ],
-      "description": "Punto di partenza per studiare famiglie, titoli e successioni. Non costituisce ancora una genealogia completa verificata."
+      "description": "Percorso iniziale sulle famiglie e sui titoli attestati a Calatabiano; non è una genealogia completa né una conferma di identità fra cognomi simili."
     },
     {
       "title": "Famiglie e poteri signorili: ricerca aperta",
