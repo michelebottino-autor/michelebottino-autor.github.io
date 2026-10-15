@@ -191,22 +191,19 @@ p{max-width:76ch}
 .adc2026-hero-note{max-width:240px}
 @media(max-width:650px){.adc2026-hero{background:linear-gradient(90deg,rgba(7,36,33,.94),rgba(7,36,33,.74)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Sicily%2C_Calatabiano_%E2%80%93_towards_Castello_di_Calatabiano_2024.jpg?width=1600") 55% center/cover no-repeat!important}.adc2026-hero-note{position:static!important;display:block;max-width:100%;margin-top:14px;padding:8px 0!important;background:transparent!important}}
 </style><style id="adc2026-editorial-cards">
-/* Immagini editoriali separate dal testo; contrasto stabile su tutte le schede. */
-.adc2026-docgrid>a{position:relative;overflow:hidden;isolation:isolate;background:#173b34!important;min-height:228px}
-.adc2026-docgrid>a::before{content:"";position:absolute;inset:0;z-index:-2;background-position:center;background-size:cover;opacity:.45;transition:transform .25s ease}
-.adc2026-docgrid>a::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,33,29,.91),rgba(8,33,29,.56))}
-.adc2026-docgrid>a:nth-child(1)::before{background-image:url('/images/adc-social/atlante-v3.png')}
-.adc2026-docgrid>a:nth-child(2)::before{background-image:url('/images/adc-social/dossier-1213-1537-v3.png')}
-.adc2026-docgrid>a:nth-child(3)::before{background-image:url('/images/adc-social/storia-v3.png')}
-.adc2026-docgrid>a:nth-child(4)::before{background-image:url('/images/adc-social/dossier-zucchero-v3.png')}
-.adc2026-docgrid>a:hover::before{transform:scale(1.035)}
+/* Le immagini adc-social contengono titoli incorporati: non usarle dietro al testo. */
+.adc2026-docgrid>a{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(145deg,#244b40,#102e29)!important;min-height:220px;color:#fff!important}
+.adc2026-docgrid>a:nth-child(2){background:linear-gradient(145deg,#36584b,#17382f)!important}
+.adc2026-docgrid>a:nth-child(3){background:linear-gradient(145deg,#274b4d,#153337)!important}
+.adc2026-docgrid>a:nth-child(4){background:linear-gradient(145deg,#5b4b32,#263d33)!important}
+.adc2026-docgrid>a::before,.adc2026-docgrid>a::after{content:none!important;display:none!important;background-image:none!important}
 .adc2026-docgrid>a small,.adc2026-docgrid>a strong,.adc2026-docgrid>a span,.adc2026-docgrid>a em{position:relative;z-index:1}
 .adc2026-docgrid>a strong{font-size:1.2rem;line-height:1.25}
 .adc2026-docgrid>a span{line-height:1.5}
-.adc2026-feature{position:relative;overflow:hidden;isolation:isolate;background-color:#173b34!important}
-.adc2026-feature::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(6,27,25,.9),rgba(6,27,25,.12) 80%)}
-.adc2026-atlas{background-image:url('/images/adc-social/atlante-v3.png')!important}
-.adc2026-dossiers{background-image:url('/images/adc-social/dossier-1213-1537-v3.png')!important}
+.adc2026-feature{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(135deg,#25483c,#112d2a)!important;color:#fff!important}
+.adc2026-dossiers{background:linear-gradient(135deg,#4b4839,#193832)!important}
+.adc2026-feature::before,.adc2026-feature::after{content:none!important;display:none!important}
+.adc2026-atlas,.adc2026-dossiers{background-image:none!important}
 .adc2026-feature>span,.adc2026-feature h2,.adc2026-feature p,.adc2026-feature b{position:relative;z-index:1}
 .adc2026-feature h2{font-size:clamp(1.65rem,2.6vw,2.4rem)!important}
 @media(max-width:650px){.adc2026-docgrid>a{min-height:205px}.adc2026-feature{min-height:265px}}
