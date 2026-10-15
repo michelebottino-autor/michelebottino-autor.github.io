@@ -22,3 +22,11 @@ Stato: progetto di lavoro, NON pubblicato. Ramo: design/adc-struttura-unica-foto
 
 ## Metodo
 Inventario di tutte le pagine e dei componenti; catalogo fotografico con verifica delle licenze; prototipo completo homepage + una pagina documentaria + una pagina strumentale; test a 360/390/768/1440 px; estensione alle restanti pagine; verifica dei link e delle fonti; approvazione e solo dopo pubblicazione.
+
+## Vincolo fotografico aggiuntivo — approvato
+- Escludere immagini nelle quali compaiono persone o figure umane, anche sullo sfondo, nelle miniature e nei ritagli effettivamente pubblicati.
+- Preferire esclusivamente fotografie reali di panorami di Calatabiano, Castello di Calatabiano, chiese e monumenti realmente identificati, centro storico, territorio e paesaggio locale.
+- Non sostituire il Castello di Calatabiano con castelli di altre località, né utilizzare immagini sintetiche o illustrazioni come se fossero fotografie.
+- Verificare visivamente ciascuna immagine alla risoluzione di pubblicazione: soggetto, localizzazione, eventuali persone, scritte sovrapposte e qualità del ritaglio; in caso di dubbio escluderla.
+- Conservare metadati, attribuzione, URL originale e licenza. Non assumere che tutte le fotografie presenti in una categoria Commons abbiano la medesima licenza.
+- Nessuna fotografia entra nel sito pubblico prima della verifica e del collaudo della pagina campione.
