@@ -132,6 +132,9 @@
   <url><loc>https://michelebottino-autor.github.io/corso/</loc><priority>0.8</priority></url>
 
   <!-- DOSSIER E PAGINE DEL LABORATORIO ADC -->
+  <url><loc>https://michelebottino-autor.github.io/adc/calatabiano-1922-1943/</loc><priority>0.6</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/lapicidi-epigrafi/</loc><priority>0.6</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/custode/</loc><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/acque-mulini-confini/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/adc/contribuisci/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/adc/dossier-1213-1537/</loc></url>
