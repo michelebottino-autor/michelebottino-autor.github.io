@@ -1,0 +1,24 @@
+# Progetto sperimentale: non distribuire prima di approvazione, test e informativa aggiornata.
+name = "adc-elena-generativa"
+main = "worker.js"
+compatibility_date = "2026-10-16"
+
+[vars]
+OPENAI_MODEL = "gpt-4.1-mini"
+
+[secrets]
+required = ["OPENAI_API_KEY"]
+
+[[ratelimits]]
+name = "CLIENT_LIMIT"
+namespace_id = "900110001"
+[ratelimits.simple]
+limit = 3
+period = 60
+
+[[ratelimits]]
+name = "GLOBAL_LIMIT"
+namespace_id = "900110002"
+[ratelimits.simple]
+limit = 12
+period = 60
