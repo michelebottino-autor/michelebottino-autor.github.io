@@ -1,0 +1,43 @@
+/* Adattamento multipiattaforma 2026: iOS, iPadOS, Android, Windows, macOS, Linux. */
+:root{--mobile-hit:44px}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:0}
+main,article,section,aside,.container,.page,.adc-unified-page{min-width:0}
+:is(main,article) :is(img,picture,video,canvas){max-width:100%;height:auto}
+:is(main,article) iframe{max-width:100%}
+:is(main,article) iframe[src*="youtube"],:is(main,article) .video-frame{height:auto;aspect-ratio:16/9}
+:is(main,article) :is(pre,code){overflow-wrap:anywhere}
+:is(main,article) pre{overflow-x:auto;white-space:pre-wrap}
+:is(main,article) :is(p,li,a,figcaption){overflow-wrap:break-word}
+:is(main,article) :is(h1,h2,h3){overflow-wrap:break-word}
+:is(main,article) :is(input,select,textarea,button){max-width:100%}
+input[type="search"],input[type="email"],input[type="text"],input[type="tel"],textarea,select{font-size:max(16px,1em)}
+button,input[type="submit"],a.btn,.button{touch-action:manipulation}
+:focus-visible{outline-offset:3px}
+@media(max-width:760px){
+  html{scroll-padding-top:14px}
+  body{font-size:clamp(16px,3.8vw,18px)}
+  :is(main,article) :is(table){max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  :is(main,article) :is(.grid,.grid-3,.cards){grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+  :is(main,article) :is(form,fieldset){max-width:100%}
+  :is(main,article) form :is(input,textarea,select){min-width:0}
+  .site-transparency-links{overflow-wrap:anywhere}
+  .adc-project-links a,.adc-unified-nav a{min-height:var(--mobile-hit)}
+}
+@media(max-width:430px){
+  :is(main,article) :is(.grid,.grid-3,.cards){grid-template-columns:minmax(0,1fr)}
+  main h1{font-size:clamp(2rem,9vw,3rem)}
+}
+@media(max-height:440px) and (orientation:landscape){
+  .elena-presenza-panel{max-height:75dvh;overflow:auto}
+}
+@supports(padding:env(safe-area-inset-left)){
+  .adc-project-nav,.adc-unified-header{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+  .elena-presenza{bottom:max(12px,env(safe-area-inset-bottom));right:max(12px,env(safe-area-inset-right))}
+  @media(display-mode:standalone){
+    body>header:first-child{padding-top:max(14px,env(safe-area-inset-top))}
+    body>footer:last-child{padding-bottom:max(22px,env(safe-area-inset-bottom))}
+  }
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{scroll-behavior:auto!important}}
+@media(prefers-contrast:more){a:focus-visible,button:focus-visible{outline:3px solid currentColor}}

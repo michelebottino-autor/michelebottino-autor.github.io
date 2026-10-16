@@ -78,3 +78,59 @@ main .category-pill{border-radius:999px;letter-spacing:.015em}
 main .card a:focus-visible,main .book-tile a:focus-visible{outline:3px solid var(--mb-brass);outline-offset:4px}
 @media(max-width:600px){main .card,main .book-tile{max-width:100%;min-width:0}main .card-link,main .section-link{min-height:44px;align-items:center}}
 @media(prefers-reduced-motion:reduce){main .card,main .book-tile{transition:none}main .card:hover,main .book-tile:hover{transform:none}}
+
+/* Identità 2026: intestazione coerente per il sito autore e l'ADC.
+   L'ADC continua a usare le proprie regole specialistiche per i dossier. */
+body>header:not(.adc-unified-header) {
+  background:#173c36!important;
+  border-bottom:3px solid #c5a16a!important;
+  color:#fff!important;
+}
+body>header:not(.adc-unified-header) .logo a,
+body>header:not(.adc-unified-header) .logo a:visited{
+  color:#fff!important;
+  text-decoration:none!important;
+}
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > a,
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > button {
+  color:#fff!important;
+}
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > a:hover,
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > a[aria-current="page"],
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > button:hover{
+  color:#f4d49c!important;
+}
+body>header:not(.adc-unified-header) nav.nav .submenu{
+  background:#fffdf9;
+  color:#25302e;
+}
+body>header:not(.adc-unified-header) nav.nav .submenu a{color:#25302e!important}
+body>header:not(.adc-unified-header) .menu-toggle{
+  background:transparent!important;
+  border:2px solid #e7c58d!important;
+  border-radius:8px;
+  min-width:46px;
+  min-height:46px;
+}
+body>header:not(.adc-unified-header) .menu-toggle span{background:#fff!important}
+body>header:not(.adc-unified-header) .menu-toggle:focus-visible{
+  outline:3px solid #fff!important;
+  outline-offset:2px;
+}
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > a:focus-visible,
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > button:focus-visible{
+  outline:3px solid #f4d49c;
+  outline-offset:2px;
+}
+@media(max-width:760px){
+  body>header:not(.adc-unified-header) nav.nav > .nav-menu{
+    padding:12px 0 0;
+    border-top:1px solid rgba(255,255,255,.28);
+  }
+  body>header:not(.adc-unified-header) nav.nav > .nav-menu > li{
+    min-width:0;
+  }
+  body>header:not(.adc-unified-header) nav.nav .submenu a{
+    color:#25302e!important;
+  }
+}

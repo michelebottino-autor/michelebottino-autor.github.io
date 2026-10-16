@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="it"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173c36"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Michele Bottino">
+<link rel="apple-touch-icon" href="/icons/mb-192.png"><link rel="manifest" href="/manifest.webmanifest">
+<link rel="canonical" href="https://michelebottino-autor.github.io/installa/">
+<meta name="description" content="Come installare il sito ufficiale di Michele Bottino su iPhone, iPad, Android e computer.">
+<title>Installa il sito · Michele Bottino</title>
+<link rel="stylesheet" href="/mobile-platform.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f8f6f1;color:#25302e;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+header,main,footer{max-width:900px;margin:auto;padding:24px clamp(18px,4vw,42px)}header,footer{border-bottom:1px solid #ded8cd}
+nav{display:flex;gap:14px;flex-wrap:wrap}a{color:#145540}
+h1,h2{font-family:Georgia,serif;color:#173c36}h1{font-size:clamp(2rem,5vw,3.2rem)}h2{font-size:1.5rem;margin-top:0}
+.card{background:#fff;border:1px solid #dcded5;border-radius:12px;padding:clamp(18px,4vw,28px);margin:20px 0}
+.card li+li{margin-top:.6rem}.notice{background:#f0e9dc;border-left:4px solid #b79b69;padding:16px}
+button{min-height:48px;padding:13px 20px;border:0;border-radius:8px;background:#173c36;color:#fff;font:700 1rem system-ui}
+[hidden]{display:none!important}footer{font-size:.9rem}
+</style></head><body>
+<header><nav aria-label="Navigazione"><a href="/">Sito ufficiale</a><a href="/opere/">Opere</a><a href="/adc/">Archivio Documentale Calatabiano</a></nav></header>
+<main><h1>Installa il sito sul tuo dispositivo</h1>
+<p>Puoi aggiungere il sito ufficiale di Michele Bottino alla schermata Home o al menu delle applicazioni. L'accesso resta gratuito e non richiede un account.</p>
+<p id="already-installed" role="status" class="notice" hidden>Stai già utilizzando il sito nella modalità app.</p>
+<section class="card"><h2>Android: Chrome e Samsung Internet</h2>
+<p>Apri il menu del browser e scegli «Installa app», «Installa» oppure «Aggiungi a schermata Home», se disponibile.</p>
+<button id="pwa-install-button" type="button" hidden>Installa il sito</button>
+<p id="install-result" role="status" aria-live="polite"></p></section>
+<section class="card"><h2>iPhone e iPad</h2>
+<ol><li>Apri questa pagina in Safari.</li><li>Tocca <strong>Condividi</strong> e scegli <strong>Aggiungi alla schermata Home</strong>.</li><li>Se presente, attiva <strong>Apri come app web</strong>, quindi scegli <strong>Aggiungi</strong>.</li></ol>
+<p>L'installazione su iOS non può essere avviata automaticamente dalla pagina.</p></section>
+<section class="card"><h2>Computer Windows, macOS e altri sistemi</h2>
+<p>Su Chrome o Edge cerca l'eventuale comando «Installa» nel menu o nella barra degli indirizzi. Su macOS con Safari è disponibile «Aggiungi al Dock», nei sistemi supportati. Gli altri browser permettono comunque la normale consultazione del sito.</p></section>
+<p class="notice"><strong>Consultazione offline limitata:</strong> alcune pagine essenziali restano accessibili dopo il primo caricamento. I dossier completi e le ricerche richiedono una connessione quando non sono stati salvati.</p>
+<p><a href="/">← Torna al sito</a></p></main>
+<footer>© 2026 Michele Bottino · <a href="/privacy/">Privacy</a> · <a href="/cookie/">Cookie</a></footer>
+<script src="/pwa-init.js" defer></script><script src="./install.js" defer></script>
+</body></html>

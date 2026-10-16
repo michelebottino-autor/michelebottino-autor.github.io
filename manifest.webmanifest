@@ -2,13 +2,19 @@
   "id": "/",
   "name": "Michele Bottino — Sito ufficiale",
   "short_name": "Michele Bottino",
-  "description": "Opere, ricerca e metodo di Michele Bottino.",
+  "description": "Opere, ricerca e Archivio Documentale Calatabiano.",
   "lang": "it",
+  "dir": "ltr",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f8f6f1",
   "theme_color": "#25302e",
+  "prefer_related_applications": false,
+  "categories": [
+    "books",
+    "education"
+  ],
   "icons": [
     {
       "src": "/icons/mb-192.png",
@@ -27,6 +33,23 @@
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Archivio Documentale Calatabiano",
+      "short_name": "Archivio ADC",
+      "url": "/adc/"
+    },
+    {
+      "name": "Opere",
+      "short_name": "Opere",
+      "url": "/opere/"
+    },
+    {
+      "name": "Installazione",
+      "short_name": "Installa",
+      "url": "/installa/"
     }
   ]
 }
