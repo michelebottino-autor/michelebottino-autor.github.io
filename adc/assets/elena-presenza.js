@@ -1,2 +1,55 @@
-/* Elena: assistenza contestuale locale. Nessun tracciamento o invio di navigazione. */
-(()=>{'use strict';if(document.querySelector('[data-elena-assistente]'))return;const root=document.createElement('aside');root.dataset.elenaAssistente='';root.className='elena-presenza';root.innerHTML='<button class="elena-presenza-toggle" type="button" aria-expanded="false" aria-controls="elena-presenza-panel">Elena · Posso aiutarti?</button><section id="elena-presenza-panel" class="elena-presenza-panel" hidden aria-label="Assistenza di Elena"><div class="elena-presenza-heading"><strong>Elena, archivista di Calatabiano</strong><button type="button" class="elena-presenza-close" aria-label="Chiudi Elena">×</button></div><p class="elena-presenza-message"></p><form class="elena-presenza-form"><label for="elena-presenza-query">Che cosa stai cercando?</label><input id="elena-presenza-query" type="search" maxlength="160" autocomplete="off" placeholder="Un luogo, una data, un documento" required><button type="submit">Cerca</button></form><p class="elena-presenza-result" aria-live="polite"></p><a href="/adc/elena/">Esplora con Elena</a><p class="elena-presenza-privacy">La ricerca rimane nel tuo browser: non registriamo i tuoi percorsi di navigazione.</p></section>';document.body.append(root);const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result');const sections=[['fonti','Se stai cercando una testimonianza, possiamo partire dalle fonti e dai documenti.'],['acque','Qui trovi materiali su acqua, mulini e confini. Posso aiutarti a individuare un dossier.'],['atlante','Stai consultando l’atlante: puoi cercare luoghi, mappe e documenti.'],['storia','Qui puoi approfondire la storia e distinguere attestazioni e ipotesi.'],['mediateca','Qui trovi testimonianze audiovisive e percorsi di memoria.']];const key=location.pathname.split('/').filter(Boolean).pop().replace('.html','');msg.textContent=(sections.find(x=>x[0]===key)||[])[1]||'Posso aiutarti a orientarti nei documenti dell’Archivio.';function setOpen(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)input.focus();else toggle.focus()}toggle.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)setOpen(false)});form.addEventListener('submit',e=>{e.preventDefault();const q=input.value.trim();if(!q)return;let url='/adc/elena/';try{sessionStorage.setItem('adc-elena-handoff',JSON.stringify({q,at:Date.now()}));}catch(err){url+='#q='+encodeURIComponent(q);}result.replaceChildren();const a=document.createElement('a');a.href=url;a.textContent='Apri la risposta documentaria per «'+q+'»';result.append(a)});})();
+/* Elena: assistenza contestuale documentaria. Nessuna domanda viene inserita negli URL o salvata. */
+(function(){
+ 'use strict';
+ if(document.querySelector('[data-elena-assistente]'))return;
+ const root=document.createElement('aside');root.dataset.elenaAssistente='';root.className='elena-presenza';
+ root.innerHTML=`<button class="elena-presenza-toggle" type="button" aria-expanded="false" aria-controls="elena-presenza-panel">Elena · Posso aiutarti?</button><section id="elena-presenza-panel" class="elena-presenza-panel" hidden aria-label="Assistenza di Elena"><div class="elena-presenza-heading"><strong>Elena, archivista di Calatabiano</strong><button type="button" class="elena-presenza-close" aria-label="Chiudi Elena">×</button></div><p class="elena-presenza-message"></p><form class="elena-presenza-form"><label for="elena-presenza-query">Che cosa stai cercando?</label><input id="elena-presenza-query" type="search" maxlength="160" autocomplete="off" placeholder="Un luogo, una data, un documento" required><button type="submit">Chiedi a Elena</button></form><div class="elena-presenza-result" aria-live="polite"></div><a href="/adc/elena/">Apri la pagina completa di Elena</a><p class="elena-presenza-privacy">Le risposte provengono dalle schede pubbliche dell'ADC. La domanda è elaborata nel browser e non viene inserita nell'indirizzo della pagina.</p></section>`;
+ document.body.append(root);
+ const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result'),send=form.querySelector('button');
+ const sections=[['fonti','Qui puoi cercare testimonianze e riferimenti bibliografici.'],['acque','Qui trovi materiali su acqua, mulini e confini.'],['atlante','Puoi cercare luoghi, mappe e documenti.'],['storia','Ti aiuto a distinguere attestazioni storiche e ipotesi.'],['mediateca','Qui trovi testimonianze audiovisive.']];
+ const name=(location.pathname.split('/').filter(Boolean).pop()||'').replace('.html','');
+ msg.textContent=(sections.find(x=>x[0]===name)||[])[1]||'Posso aiutarti a orientarti nell’Archivio.';
+ const make=(tag,text,cls)=>{const el=document.createElement(tag);el.textContent=text||'';if(cls)el.className=cls;return el;};
+ let loader=null,resources=null,busy=false,lastTopic=null;
+ function loadEngine(){
+   if(window.ElenaADCDialogo)return Promise.resolve(window.ElenaADCDialogo);
+   if(!loader)loader=new Promise((resolve,reject)=>{
+     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js';script.async=true;
+     script.onload=()=>window.ElenaADCDialogo?resolve(window.ElenaADCDialogo):reject(Error('Motore documentario non disponibile'));
+     script.onerror=()=>reject(Error('Impossibile caricare il motore documentario'));
+     document.head.append(script);
+   }).catch(err=>{loader=null;throw err});
+   return loader;
+ }
+ function loadResources(){
+   if(!resources)resources=Promise.all([
+     fetch('/adc/assets/elena-risposte.json',{cache:'no-store'}),
+     fetch('/adc/assets/elena-indice.json',{cache:'no-store'})
+   ]).then(async responses=>{
+     if(responses.some(r=>!r.ok))throw Error('Indice delle risposte non disponibile');
+     return Promise.all(responses.map(r=>r.json()));
+   }).catch(err=>{resources=null;throw err});
+   return resources;
+ }
+ function setOpen(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)input.focus();else toggle.focus();}
+ toggle.addEventListener('click',()=>setOpen(panel.hidden));
+ close.addEventListener('click',()=>setOpen(false));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)setOpen(false)});
+ form.addEventListener('submit',async e=>{
+   e.preventDefault();const q=input.value.trim();if(!q||busy)return;
+   busy=true;send.disabled=true;result.replaceChildren(make('p','Consulto le schede pubbliche dell’Archivio…'));
+   try{
+     const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
+     const reply=engine.reply(q,data[0],data[1],lastTopic);
+     if(reply.topic)lastTopic=reply.topic;
+     result.replaceChildren(make('p',reply.text));
+     if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
+     for(const source of (reply.links||[]).slice(0,3)){
+       if(!/^\/adc\/(?!\/)[a-z0-9/_\-.]*$/i.test(source.url))continue;
+       const p=make('p'),link=make('a',source.title);link.href=source.url;p.append(link);result.append(p);
+     }
+     input.value='';
+   }catch(_){result.replaceChildren(make('p','La consultazione non è disponibile in questo momento. Puoi aprire la pagina completa di Elena.'));}
+   finally{busy=false;send.disabled=false;}
+ });
+})();

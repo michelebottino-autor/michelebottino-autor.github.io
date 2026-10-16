@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-16-risposte-documentarie-v1",
+  "version": "2026-10-16-risposte-documentarie-v2",
   "source_policy": "Esclusivamente notizie già pubblicate nell'Archivio Documentale Calatabiano. Nessuna consultazione del PC o generazione IA.",
   "facts": [
     {
@@ -154,6 +154,43 @@
         {
           "title": "Fonti e documenti",
           "url": "/adc/fonti/"
+        }
+      ]
+    },
+    {
+      "id": "ponte",
+      "title": "Il ponte sull'Alcantara nelle fonti",
+      "triggers": [
+        "ponte",
+        "alcantara",
+        "al-idrisi",
+        "idrisi"
+      ],
+      "answer": "Nel XII secolo al-Idrīsī descrive un ponte su un fiume nella regione di Taormina. Il collegamento preciso con il ponte sull'Alcantara presso Calatabiano è proposto dalla nota di un'edizione moderna, non è un'identificazione esplicita del passo medievale.",
+      "limitation": "La presenza di un ponte nella descrizione e la sua identificazione topografica sono testimonianze di livello diverso. La datazione romana del manufatto richiede ulteriori verifiche archeologiche.",
+      "sources": [
+        {
+          "title": "Il ponte sull'Alcantara nelle fonti medievali",
+          "url": "/adc/ponte-alcantara-medievale/"
+        }
+      ]
+    },
+    {
+      "id": "zucchero",
+      "title": "La produzione di zucchero a Calatabiano",
+      "triggers": [
+        "zucchero",
+        "trappeto",
+        "cruylles",
+        "cruillas",
+        "mirulla"
+      ],
+      "answer": "Secondo lo studio di Antonino Morreale del 2020, a Calatabiano esisteva un trappeto con tre mulini, gestito da membri della famiglia Mirulla in rapporto al barone Giovanni Cruylles. Lo studio riferisce anche un corrispettivo di 250 onze annue.",
+      "limitation": "Si tratta di dati riportati dalla storiografia con rinvii archivistici. L'atto originale sulla gestione del trappeto non è stato ancora collazionato direttamente nell'ADC; formule contrattuali e rapporti familiari richiedono conferma.",
+      "sources": [
+        {
+          "title": "Dossier 02 · Cruïlles, Mirulla e zucchero",
+          "url": "/adc/dossier-zucchero/"
         }
       ]
     }
