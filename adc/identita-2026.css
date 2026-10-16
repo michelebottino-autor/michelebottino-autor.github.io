@@ -1,0 +1,41 @@
+/* ADC — nuova identità grafica ufficiale, contenuti storico-documentari invariati. */
+:root{--adc-green:#123c31;--adc-gold:#c5a16a;--adc-paper:#f5f2eb;--adc-ink:#253d34}
+body{background:var(--adc-paper);color:var(--adc-ink);overflow-wrap:break-word}
+body>header:not(.adc-unified-header){max-width:none;background:var(--adc-green);color:#fff;border-bottom:3px solid var(--adc-gold)}
+body>header:not(.adc-unified-header) a,body>header:not(.adc-unified-header) .nav-menu a{color:#fff}
+body>header:not(.adc-unified-header) h1,body>header:not(.adc-unified-header) h2,body>header:not(.adc-unified-header) p{color:#fff}
+body>header:not(.adc-unified-header) .logo a{font:700 1.32rem Georgia,serif;color:#e7c58d}
+body>header:not(.adc-unified-header) .menu-toggle span{background:#fff}
+body>header:not(.adc-unified-header) nav{max-width:1160px;margin-inline:auto}
+.adc-project-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding:16px max(20px,calc((100vw - 1160px)/2));background:#18493c;color:#fff;border-bottom:3px solid var(--adc-gold)}
+.adc-project-brand{color:#fff!important;font:700 clamp(1.14rem,2vw,1.4rem) Georgia,serif;text-decoration:none!important}
+.adc-project-brand small{display:block;color:#e7c58d;font:600 .7rem system-ui;letter-spacing:.07em;text-transform:uppercase;margin-top:5px}
+.adc-project-links{display:flex;flex-wrap:wrap;gap:5px}
+.adc-project-links a{color:#fff!important;padding:9px 11px;border-radius:5px;text-decoration:none!important;font:600 .88rem system-ui}
+.adc-project-links a:hover,.adc-project-links a:focus-visible,.adc-project-links a[aria-current=page]{background:#ffffff2b}
+.adc-project-links a:focus-visible,.adc-project-brand:focus-visible{outline:3px solid var(--adc-gold);outline-offset:2px}
+body>main,body>main.page,main.container{max-width:1160px;margin-inline:auto}
+main h1,main h2,main h3,main h4{font-family:Georgia,'Times New Roman',serif;color:var(--adc-green);text-wrap:balance}
+main a{color:#145540}
+main .card,main .adc-gateway-card,main .adc-path-grid>a,main .adc-feature{background:#fff;border:1px solid #dcded5;border-radius:10px;box-shadow:0 5px 20px #1b35270a}
+main .note,main blockquote{background:#f4f0e7;border-left:4px solid var(--adc-gold)}
+main img,main iframe{max-width:100%}
+main a:focus-visible,main button:focus-visible,main input:focus-visible{outline:3px solid var(--adc-gold);outline-offset:3px}
+.adc-gateway{background:transparent!important;border:0!important;box-shadow:none!important}
+.adc-gateway-head{background:linear-gradient(125deg,#143e32,#225446 65%,#304e3e);padding:clamp(28px,5vw,62px);border-radius:12px;color:#fff}
+.adc-gateway-head h1,.adc-gateway-head p{color:#fff!important}
+.adc-gateway-head .adc-gateway-eyebrow{color:#e7c58d!important}
+.adc-gateway-grid{gap:18px}
+.adc-gateway-card:hover{box-shadow:0 9px 28px #1b35271b;transform:translateY(-2px)}
+.adc-welcome{background:linear-gradient(135deg,#143e32,#225446)!important;color:#fff!important;border-radius:12px;padding:clamp(26px,5vw,54px)}
+.adc-welcome h2,.adc-welcome h3,.adc-welcome p,.adc-welcome label{color:#fff!important}
+.adc-welcome .adc-welcome-identity p{color:#e7c58d!important}
+.adc-welcome .adc-hero-links a{color:#fff!important}
+.adc-welcome .adc-hero-search button{background:var(--adc-gold);color:#1b2f27;border:0;border-radius:6px}
+.adc-welcome .adc-hero-search input{background:#fff;color:#253d34;border-radius:6px}
+body>footer:not(.adc-unified-footer){background:var(--adc-green)!important;color:#f1eee6!important;border-top:3px solid var(--adc-gold)!important;max-width:none!important;padding:24px clamp(20px,5vw,60px)}
+body>footer:not(.adc-unified-footer) a{color:#e7c58d!important}
+body>footer:not(.adc-unified-footer) p{color:#f1eee6!important}
+@media(max-width:850px){.adc-project-nav{justify-content:center;text-align:center}.adc-project-links{justify-content:center}.adc-gateway-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}}
+@media(max-width:600px){.adc-project-nav{padding:15px 12px}.adc-project-links a{font-size:.82rem;padding:8px}.adc-gateway-head{padding:24px 19px}.adc-welcome{padding:24px 18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.adc-gateway-card{transition:none;transform:none!important}}

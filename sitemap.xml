@@ -166,4 +166,6 @@
     <priority>0.8</priority>
   </url>
 
+  <url><loc>https://michelebottino-autor.github.io/adc/elena/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/mediateca/</loc><priority>0.7</priority></url>
 </urlset>

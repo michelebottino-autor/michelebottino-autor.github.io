@@ -1,4 +1,4 @@
-/* ADC · modello grafico unitario · versione di prova */
+/* ADC · identità grafica unitaria · versione pubblicata */
 :root{--adc-green:#123c31;--adc-gold:#c5a16a;--adc-paper:#f5f2eb;--adc-ink:#253d34}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}body{margin:0;background:var(--adc-paper);color:var(--adc-ink);font:16px/1.72 system-ui,-apple-system,Segoe UI,Arial,sans-serif;overflow-wrap:break-word}
