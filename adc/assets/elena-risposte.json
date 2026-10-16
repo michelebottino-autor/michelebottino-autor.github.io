@@ -1,0 +1,309 @@
+{
+  "version": "2026-10-16-1",
+  "scope": "Schede editoriali tratte da pagine ADC già pubblicate, non da pergamene non collazionate.",
+  "entries": [
+    {
+      "id": "1213",
+      "years": [
+        "1213"
+      ],
+      "keywords": [
+        "castello",
+        "costanza",
+        "enrico",
+        "arnaldo",
+        "armaleo",
+        "monaldeschi",
+        "15000",
+        "tari",
+        "compravendita",
+        "vendita",
+        "chiesa di catania"
+      ],
+      "distinctive": [
+        "1213",
+        "arnaldo",
+        "armaleo",
+        "costanza"
+      ],
+      "message": "Nel marzo 1213 Costanza d'Aragona e il figlio Enrico confermarono il castello di Calatabiano alla Chiesa di Catania. Il privilegio, noto attraverso una raccolta a stampa, ricorda un pagamento di 15.000 tarì al conte chiamato Arnaldo o a un suo procuratore. L'identificazione con Armaleo Monaldeschi appartiene agli studi successivi.",
+      "evidence": "La raccolta di Christian Hillen (2007, documento 4, pp. 47–49) riproduce il privilegio; non è stato collazionato il manoscritto originale e non si tratta del contratto autonomo di compravendita.",
+      "sources": [
+        {
+          "title": "Dossier 03 · Il privilegio del 1213",
+          "url": "/adc/dossier-1213-1537/"
+        },
+        {
+          "title": "Storia di Calatabiano",
+          "url": "/adc/storia/"
+        }
+      ],
+      "suggestions": [
+        "E nel 1282?",
+        "È stato verificato l'originale?"
+      ]
+    },
+    {
+      "id": "1201",
+      "years": [
+        "1201"
+      ],
+      "keywords": [
+        "federico",
+        "messina",
+        "diploma",
+        "castello",
+        "starrabba",
+        "pergamena",
+        "547"
+      ],
+      "distinctive": [
+        "1201",
+        "starrabba",
+        "547"
+      ],
+      "message": "Per il 1201, il repertorio ADC segnala un diploma di Federico II relativo al castello di Calatabiano, identificato nella bibliografia con la pergamena 547 dell'Archivio Ducal Medinaceli e con il documento XLIII dell'edizione Starrabba.",
+      "evidence": "La pagina delle Fonti registra la segnatura bibliografica, ma non presenta una collazione del facsimile originale; il riferimento XLIII non deve essere scambiato con l'atto di restituzione del 1282.",
+      "sources": [
+        {
+          "title": "Fonti e documenti · 1201",
+          "url": "/adc/fonti/"
+        }
+      ],
+      "suggestions": [
+        "E nel 1213?",
+        "È stato verificato l'originale?"
+      ]
+    },
+    {
+      "id": "1267",
+      "years": [
+        "1267"
+      ],
+      "keywords": [
+        "controversia",
+        "contesa",
+        "possesso",
+        "castello",
+        "mellusi",
+        "pergamena",
+        "1019"
+      ],
+      "distinctive": [
+        "1267",
+        "mellusi",
+        "1019"
+      ],
+      "message": "Per il 1267, la sezione Fonti dell'ADC segnala una controversia riguardante il possesso del castello di Calatabiano, attraverso lo studio di Mellusi e il riferimento alla pergamena Medinaceli 1019, collegata all'edizione Starrabba LXXVI.",
+      "evidence": "È un riferimento documentario registrato nella bibliografia. La pergamena originale non risulta ancora collazionata nel dossier pubblicato.",
+      "sources": [
+        {
+          "title": "Fonti e documenti · 1267",
+          "url": "/adc/fonti/"
+        }
+      ],
+      "suggestions": [
+        "E nel 1282?",
+        "Che cosa sappiamo del documento originale?"
+      ]
+    },
+    {
+      "id": "1282",
+      "years": [
+        "1282"
+      ],
+      "keywords": [
+        "restituzione",
+        "vespri",
+        "messina",
+        "castello",
+        "1034",
+        "pergamena",
+        "arcivescovo"
+      ],
+      "distinctive": [
+        "1282",
+        "1034",
+        "restituzione",
+        "vespri"
+      ],
+      "message": "Per il 1282, l'ADC registra un riferimento a uno scriptum restitutionis riguardante il castello di Calatabiano, segnalato negli studi sull'Archivio Ducal Medinaceli con la pergamena 1034.",
+      "evidence": "L'atto originale e la sua immagine non sono ancora stati collazionati. La sola presenza di altre pergamene di restituzione datate 1282 non dimostra che tutte trattino il castello.",
+      "sources": [
+        {
+          "title": "Fonti e documenti · 1282",
+          "url": "/adc/fonti/"
+        },
+        {
+          "title": "Storia di Calatabiano",
+          "url": "/adc/storia/"
+        }
+      ],
+      "suggestions": [
+        "È stato verificato l'originale?",
+        "E nel 1213?"
+      ]
+    },
+    {
+      "id": "crocifisso",
+      "years": [
+        "1502"
+      ],
+      "keywords": [
+        "crocifisso",
+        "salvo",
+        "antonio",
+        "matteo",
+        "villa",
+        "san filippo",
+        "dipinto",
+        "croce",
+        "onze",
+        "ismiridi"
+      ],
+      "distinctive": [
+        "crocifisso",
+        "1502",
+        "salvo"
+      ],
+      "message": "Secondo le fonti illustrate dall'ADC, il 24 ottobre 1502 l'arciprete Matteo di Villa commissionò a Salvo d'Antonio una croce lignea dipinta destinata alla chiesa di San Filippo Siriaco di Calatabiano, per cinque onze.",
+      "evidence": "La ricostruzione deriva dalla consultazione del volume di Di Marzo del 1903 e da studi successivi, con rinvio a un atto notarile. Il rogito manoscritto originale non risulta letto direttamente.",
+      "sources": [
+        {
+          "title": "Il Crocifisso del 1502",
+          "url": "/adc/crocifisso-1502/"
+        }
+      ],
+      "suggestions": [
+        "Qual è la fonte originale?",
+        "Che cosa sappiamo delle chiese?"
+      ]
+    },
+    {
+      "id": "processo334",
+      "years": [],
+      "keywords": [
+        "processo",
+        "investitura",
+        "334",
+        "184",
+        "paleografia",
+        "trascrizione"
+      ],
+      "distinctive": [
+        "334",
+        "investitura",
+        "processo"
+      ],
+      "message": "Il diario ADC del Processo 334 documenta una riproduzione PDF di 20 pagine e il confronto con alcune copie fotografiche precedenti. La ricerca paleografica è ancora aperta: non esiste una trascrizione diplomatica integrale verificata pubblicata nel dossier.",
+      "evidence": "Le vecchie sigle di lavoro «P184_C...» furono associate a immagini poi ricondotte al Processo 334. Il diario non le considera una segnatura autentica del Processo 184.",
+      "sources": [
+        {
+          "title": "Diario di lettura del Processo 334",
+          "url": "/adc/processo-334/"
+        }
+      ],
+      "suggestions": [
+        "È stata verificata la trascrizione?",
+        "Che cosa sappiamo sul castello nel 1213?"
+      ]
+    },
+    {
+      "id": "ponte",
+      "years": [],
+      "keywords": [
+        "ponte",
+        "alcantara",
+        "idrisi",
+        "idris",
+        "taormina",
+        "romano",
+        "viabilita"
+      ],
+      "distinctive": [
+        "ponte",
+        "idrisi"
+      ],
+      "message": "Nel XII secolo al-Idrīsī descrisse un ponte su un fiume della regione di Taormina. L'identificazione precisa con il ponte sull'Alcantara presso Calatabiano deriva dalla nota di un'edizione moderna: non è una localizzazione esplicitata con quel nome nel passo medievale.",
+      "evidence": "Il testo e la nota editoriale vanno distinti. L'attribuzione del ponte all'età romana richiede riscontri archeologici indipendenti.",
+      "sources": [
+        {
+          "title": "Il ponte sull'Alcantara nelle fonti",
+          "url": "/adc/ponte-alcantara-medievale/"
+        }
+      ],
+      "suggestions": [
+        "Come sappiamo che è il ponte giusto?",
+        "Che cosa sappiamo sui mulini?"
+      ]
+    },
+    {
+      "id": "zucchero",
+      "years": [],
+      "keywords": [
+        "cruylles",
+        "cruilles",
+        "cruillas",
+        "mirulla",
+        "marullo",
+        "zucchero",
+        "trappeto",
+        "tre mulini",
+        "mulini",
+        "onze",
+        "barone"
+      ],
+      "distinctive": [
+        "zucchero",
+        "trappeto",
+        "mirulla",
+        "cruylles",
+        "cruillas"
+      ],
+      "message": "Nel dossier sullo zucchero l'ADC riporta uno studio di Antonino Morreale (2020): il trappeto di Calatabiano aveva tre mulini e la gestione sarebbe stata affidata da Giovanni Cruylles a Tommaso Mirulla e al fratello Antonino, con un corrispettivo di 250 onze annue.",
+      "evidence": "Si tratta della ricostruzione pubblicata da Morreale. L'atto citato dallo studioso non è stato ancora collazionato direttamente, quindi clausole e rapporti familiari richiedono prudenza.",
+      "sources": [
+        {
+          "title": "Dossier 02 · Cruïlles, Mirulla e lo zucchero",
+          "url": "/adc/dossier-zucchero/"
+        }
+      ],
+      "suggestions": [
+        "Quali fonti sostengono questa notizia?",
+        "Che cosa sappiamo sul castello?"
+      ]
+    },
+    {
+      "id": "nome",
+      "years": [],
+      "keywords": [
+        "nome",
+        "origine",
+        "origini",
+        "etimologia",
+        "toponimo",
+        "toponomastica",
+        "deriva",
+        "chiamava",
+        "significato"
+      ],
+      "distinctive": [
+        "etimologia",
+        "toponimo",
+        "toponomastica"
+      ],
+      "message": "L'origine del nome Calatabiano rimane una questione di ricerca. Non è stata ancora stabilita una spiegazione etimologica univoca attraverso la collazione delle attestazioni più antiche e delle diverse interpretazioni linguistiche.",
+      "evidence": "La pagina Storia presenta il tema come aperto. Non sarebbe corretto trasformare in certezza una singola ipotesi linguistica.",
+      "sources": [
+        {
+          "title": "Storia · Origine del nome",
+          "url": "/adc/storia/"
+        }
+      ],
+      "suggestions": [
+        "Quali fonti sono disponibili?",
+        "Che cosa sappiamo del castello nel 1213?"
+      ]
+    }
+  ]
+}
