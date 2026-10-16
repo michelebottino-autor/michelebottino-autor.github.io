@@ -39,3 +39,6 @@ body>footer:not(.adc-unified-footer) p{color:#f1eee6!important}
 @media(max-width:850px){.adc-project-nav{justify-content:center;text-align:center}.adc-project-links{justify-content:center}.adc-gateway-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}}
 @media(max-width:600px){.adc-project-nav{padding:15px 12px}.adc-project-links a{font-size:.82rem;padding:8px}.adc-gateway-head{padding:24px 19px}.adc-welcome{padding:24px 18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.adc-gateway-card{transition:none;transform:none!important}}
+
+/* Accessibilità: maggiore contrasto quando richiesto dalle preferenze di sistema. */
+@media(prefers-contrast:more){.adc-project-nav{background:#10382d}.adc-project-links a:focus-visible{outline-width:4px}}
