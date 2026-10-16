@@ -42,3 +42,157 @@ body>footer:not(.adc-unified-footer) p{color:#f1eee6!important}
 
 /* Accessibilità: maggiore contrasto quando richiesto dalle preferenze di sistema. */
 @media(prefers-contrast:more){.adc-project-nav{background:#10382d}.adc-project-links a:focus-visible{outline-width:4px}}
+
+
+/* ADC 2026 · correzioni responsive e contrasto dopo verifica Android */
+body>header:not(.adc-unified-header) .logo a,
+body>header:not(.adc-unified-header) .logo a:visited {
+  color:#fff!important;
+  text-decoration:none!important;
+  text-shadow:none;
+}
+body>header:not(.adc-unified-header) .menu-toggle {
+  display:none;
+  background:transparent!important;
+  border:2px solid #e7c58d!important;
+  color:#fff!important;
+  border-radius:8px;
+  min-width:46px;
+  min-height:46px;
+  padding:8px 9px;
+}
+body>header:not(.adc-unified-header) .menu-toggle span {
+  display:block;
+  background:#fff!important;
+  width:23px;
+  height:2px;
+  margin:4px 0;
+  border-radius:2px;
+}
+body>header:not(.adc-unified-header) .menu-toggle:focus-visible {
+  outline:3px solid #fff!important;
+  outline-offset:3px;
+}
+.adc-project-brand {
+  display:block!important;
+  flex:0 1 auto;
+  max-width:100%;
+  white-space:normal;
+  line-height:1.24;
+}
+.adc-project-brand small {
+  display:block!important;
+  line-height:1.45;
+  max-width:100%;
+}
+.adc-project-nav,.adc-project-links {box-sizing:border-box}
+.adc-project-links a {box-sizing:border-box;line-height:1.35}
+.site-transparency-links a {
+  display:inline!important;
+  min-height:0!important;
+  padding:0!important;
+  line-height:inherit!important;
+}
+@media(max-width:760px) {
+  body>header.container:not(.adc-unified-header) {
+    padding:12px 16px!important;
+  }
+  body>header:not(.adc-unified-header) .menu-toggle {
+    display:inline-flex!important;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  body>header:not(.adc-unified-header) nav.nav {
+    width:100%;
+    max-width:100%;
+    min-height:46px;
+    gap:10px!important;
+  }
+  body>header:not(.adc-unified-header) .logo a {
+    font-size:1.16rem!important;
+    line-height:1.3!important;
+  }
+  .site-transparency-links {
+    padding:8px 12px!important;
+    font-size:12px!important;
+    line-height:1.45!important;
+  }
+  .site-transparency-links a {white-space:nowrap}
+}
+@media(max-width:600px) {
+  .adc-project-nav {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
+    gap:12px;
+    padding:15px 16px 14px;
+    width:100%;
+  }
+  .adc-project-brand {
+    width:100%;
+    flex:none;
+    font-size:1.31rem;
+    text-align:center;
+  }
+  .adc-project-brand small {
+    margin-top:6px;
+    font-size:.68rem;
+    letter-spacing:.06em;
+    text-align:center;
+  }
+  .adc-project-links {
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
+    justify-items:stretch;
+    align-items:stretch;
+  }
+  .adc-project-links a {
+    display:flex!important;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-width:0;
+    min-height:44px;
+    padding:9px 4px;
+    font-size:.82rem;
+    line-height:1.22;
+    white-space:normal;
+  }
+  .adc-unified-header .adc-unified-header-inner {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+    padding:16px 0;
+  }
+  .adc-unified-header .adc-unified-brand {
+    display:block;
+    text-align:center;
+    line-height:1.3;
+  }
+  .adc-unified-header .adc-unified-nav {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    width:100%;
+    gap:6px;
+    margin:0;
+  }
+  .adc-unified-header .adc-unified-nav a {
+    display:flex;
+    min-height:44px;
+    padding:8px 3px;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.25;
+    font-size:.81rem;
+  }
+}
+@media(min-width:601px) and (max-width:850px) {
+  .adc-project-brand {text-align:center}
+  .adc-project-brand small {text-align:center}
+}
