@@ -4,7 +4,7 @@
   'use strict';
   const api=make();
   if(typeof module === 'object' && module.exports) module.exports=api;
-  if(typeof document !== 'undefined') api.mount();
+  if(typeof document !== 'undefined') { global.ElenaADCDialogo=api; api.mount(); }
 })(typeof globalThis === 'undefined' ? this : globalThis, function () {
   'use strict';
   const normalize=s=>String(s||'').toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
@@ -31,7 +31,7 @@
       for(const trigger of f.triggers||[]){
         const t=normalize(trigger);
         if(!t||!nq.includes(t))continue;
-        points+=/^\d{4}$/.test(t)?16:t.length>=7?6:3;
+        points+=/^\d{3,4}$/.test(t)?16:t.length>=7?6:3;
       }
       return {f,points};
     }).sort((a,b)=>b.points-a.points);
