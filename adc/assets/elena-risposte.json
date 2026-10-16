@@ -1,0 +1,161 @@
+{
+  "version": "2026-10-16-risposte-documentarie-v1",
+  "source_policy": "Esclusivamente notizie già pubblicate nell'Archivio Documentale Calatabiano. Nessuna consultazione del PC o generazione IA.",
+  "facts": [
+    {
+      "id": "1213",
+      "title": "Il castello nel marzo 1213",
+      "triggers": [
+        "1213",
+        "costanza",
+        "enrico",
+        "arnaldo",
+        "15000",
+        "15.000",
+        "tarì"
+      ],
+      "answer": "Nel marzo 1213 Costanza d'Aragona e il figlio Enrico confermarono il castello di Calatabiano alla Chiesa di Catania. Il privilegio ricorda un pagamento di 15.000 tarì al conte chiamato Arnaldo, oppure al suo procuratore.",
+      "limitation": "Abbiamo il testo in un'edizione a stampa (Hillen, 2007, n. 4, pp. 47–49), non il contratto originale di compravendita. Il nome «Armaleo Monaldeschi» appartiene a ricostruzioni storiografiche e non è la forma riportata nel privilegio.",
+      "sources": [
+        {
+          "title": "Dossier 03: Calatabiano nel 1213 e nel 1537",
+          "url": "/adc/dossier-1213-1537/"
+        },
+        {
+          "title": "Repertorio delle fonti",
+          "url": "/adc/fonti/"
+        }
+      ]
+    },
+    {
+      "id": "1201",
+      "title": "Il diploma del 1201",
+      "triggers": [
+        "1201",
+        "federico"
+      ],
+      "answer": "Per il 1201 il repertorio ADC segnala un diploma relativo al castello di Calatabiano e alla Chiesa di Messina, collegato nella bibliografia a Federico II.",
+      "limitation": "Il repertorio indica ADM, pergamena 547, e Starrabba, documento XLIII. Questa identificazione bibliografica non equivale alla collazione della pergamena originale.",
+      "sources": [
+        {
+          "title": "Repertorio delle fonti",
+          "url": "/adc/fonti/"
+        }
+      ]
+    },
+    {
+      "id": "1267",
+      "title": "La controversia del 1267",
+      "triggers": [
+        "1267",
+        "controversia",
+        "contesa"
+      ],
+      "answer": "Per il 1267 gli studi richiamati dall'ADC segnalano una controversia relativa al possesso del castello di Calatabiano.",
+      "limitation": "Il riferimento documentario pubblicato è ADM, pergamena 1019, e Starrabba LXXVI. La pergamena originale non è stata ancora collazionata.",
+      "sources": [
+        {
+          "title": "Repertorio delle fonti",
+          "url": "/adc/fonti/"
+        }
+      ]
+    },
+    {
+      "id": "1282",
+      "title": "La restituzione nel 1282",
+      "triggers": [
+        "1282",
+        "restituzione",
+        "vespri"
+      ],
+      "answer": "Per il 1282 il repertorio ADC richiama uno scriptum restitutionis relativo al castello di Calatabiano, noto attraverso studi sull'Archivio Ducal Medinaceli.",
+      "limitation": "L'identificazione riportata è ADM, pergamena 1034. Non disponiamo sul sito di una lettura certificata del facsimile; altri atti di restituzione dello stesso anno non vanno automaticamente attribuiti al castello.",
+      "sources": [
+        {
+          "title": "Repertorio delle fonti",
+          "url": "/adc/fonti/"
+        }
+      ]
+    },
+    {
+      "id": "1502",
+      "title": "Il Crocifisso del 1502",
+      "triggers": [
+        "1502",
+        "crocifisso",
+        "croce",
+        "salvo d'antonio",
+        "salvo antonio"
+      ],
+      "answer": "Il dossier ADC riferisce che il 24 ottobre 1502 l'arciprete Matteo di Villa commissionò a Salvo d'Antonio una croce lignea dipinta destinata alla chiesa di San Filippo Siriaco di Calatabiano.",
+      "limitation": "La collocazione originaria, quella successiva e l'esistenza di copie vanno distinte. Per l'attribuzione e i dettagli documentari occorre consultare il dossier e i suoi rinvii.",
+      "sources": [
+        {
+          "title": "Una croce per cinque onze: Calatabiano, 1502",
+          "url": "/adc/crocifisso-1502/"
+        }
+      ]
+    },
+    {
+      "id": "1537",
+      "title": "Il commercio dello zucchero nel 1537",
+      "triggers": [
+        "1537",
+        "pietro faraone",
+        "francesco mirulla",
+        "arbitrio",
+        "gabella"
+      ],
+      "answer": "Una nota di Rosaria Stracuzzi segnala un atto del 25 maggio 1537 nel quale Francesco Mirulla concesse a Pietro Faraone l'arbitrio degli zuccheri per Calatabiano.",
+      "limitation": "La notizia è un riferimento storiografico con rinvio al Notarile dell'Archivio di Stato di Messina, volume 15, fogli 330–332. L'atto manoscritto non è stato consultato direttamente.",
+      "sources": [
+        {
+          "title": "Dossier 03: il 1213 e il 1537",
+          "url": "/adc/dossier-1213-1537/"
+        }
+      ]
+    },
+    {
+      "id": "processo334",
+      "title": "Il Processo 334",
+      "triggers": [
+        "334",
+        "processo",
+        "investitura"
+      ],
+      "answer": "L'ADC conserva in archivio di studio un PDF di 20 pagine associato al Processo d'investitura 334, confrontato con alcune fotografie precedenti.",
+      "limitation": "La trascrizione diplomatica integrale non è completata. Le vecchie sigle di lavoro P184_C... non dimostrano che le immagini appartengano al Processo 184.",
+      "sources": [
+        {
+          "title": "Diario di lettura del Processo 334",
+          "url": "/adc/processo-334/"
+        }
+      ]
+    },
+    {
+      "id": "nome",
+      "title": "Le origini del nome Calatabiano",
+      "triggers": [
+        "etimologia",
+        "toponimo",
+        "toponomastica",
+        "significato del nome",
+        "origine del nome",
+        "perche si chiama",
+        "perché si chiama"
+      ],
+      "answer": "L'origine esatta del nome Calatabiano rimane una questione aperta. Per affrontarla bisogna confrontare le forme medievali effettivamente attestate e le diverse interpretazioni linguistiche.",
+      "limitation": "Le etimologie tramandate non sono una prova sufficiente senza riscontro dei testi originali. Elena non attribuisce una derivazione definitiva al toponimo.",
+      "sources": [
+        {
+          "title": "Storia di Calatabiano",
+          "url": "/adc/storia/"
+        },
+        {
+          "title": "Fonti e documenti",
+          "url": "/adc/fonti/"
+        }
+      ]
+    }
+  ]
+}
