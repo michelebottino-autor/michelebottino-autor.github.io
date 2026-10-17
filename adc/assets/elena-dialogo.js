@@ -41,7 +41,8 @@
     if(previousId&&(follow||sourceFollow)&&!hasYear)return facts.find(f=>f.id===previousId)||null;
     return null;
   }
-  function reply(q,db,index,previousId) {
+  function reply(q,db,index,previousId,memory) {
+    if(!memory || memory.origin!=='memoria_documentaria.sqlite' || !Array.isArray(memory.rules) || memory.rules.length!==5) return {kind:'empty',topic:null,title:'Memoria non disponibile',text:'Elena non può rispondere senza consultare la memoria documentaria condivisa.',links:[]};
     const facts=Array.isArray(db?.facts)?db.facts:[];
     const entries=Array.isArray(index?.entries)?index.entries:[];
     const fact=detectFact(q,facts,previousId);
@@ -59,11 +60,12 @@
   function mount() {
     const form=document.getElementById('elena-form'),input=document.getElementById('elena-query'),output=document.getElementById('elena-results');
     if(!form||!input||!output)return;
-    let database={facts:[]},index={entries:[]},lastTopic=null,turns=0;
+    let database={facts:[]},index={entries:[]},memory=null,lastTopic=null,turns=0;
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
-    const ready=Promise.allSettled([load('/adc/assets/elena-risposte.json'),load('/adc/assets/elena-indice.json')]).then(results=>{
+    const ready=Promise.allSettled([load('/adc/assets/elena-risposte.json'),load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-memoria-pubblica.json')]).then(results=>{
       if(results[0].status==='fulfilled')database=results[0].value;
       if(results[1].status==='fulfilled')index=results[1].value;
+      if(results[2].status==='fulfilled')memory=results[2].value;
     });
     const el=(tag,cls,txt)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=txt;return x;};
     function appendQuestion(q){
@@ -87,9 +89,10 @@
     function run(query){
       const q=String(query||'').trim().slice(0,160);
       if(!q)return;
-      ready.then(()=>{
+      ready.then(async()=>{
+        memory=await load('/adc/assets/elena-memoria-pubblica.json').catch(()=>null);
         if(!turns)output.replaceChildren();
-        const r=reply(q,database,index,lastTopic);
+        const r=reply(q,database,index,lastTopic,memory);
         if(r.topic)lastTopic=r.topic;
         appendQuestion(q);const current=appendAnswer(r);turns++;
         while(output.children.length>16){output.removeChild(output.firstElementChild);output.removeChild(output.firstElementChild);}
@@ -112,3 +115,5 @@
   }
   return {normalize,tokenize,indexMatches,detectFact,reply,mount,safeUrl};
 });
+
+[executed on device: Michele (fec8ae6b-5aff-495d-af31-cf909c43049c)]
