@@ -115,5 +115,3 @@
   }
   return {normalize,tokenize,indexMatches,detectFact,reply,mount,safeUrl};
 });
-
-[executed on device: Michele (fec8ae6b-5aff-495d-af31-cf909c43049c)]
