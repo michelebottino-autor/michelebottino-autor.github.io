@@ -42,7 +42,7 @@
     return null;
   }
   function reply(q,db,index,previousId,memory) {
-    if(!memory || memory.origin!=='memoria_documentaria.sqlite' || !Array.isArray(memory.rules) || memory.rules.length!==5) return {kind:'empty',topic:null,title:'Memoria non disponibile',text:'Elena non può rispondere senza consultare la memoria documentaria condivisa.',links:[]};
+    if(!memory || memory.schema!==1 || !Array.isArray(memory.topics) || memory.topics.length<2) return {kind:'empty',topic:null,title:'Memoria non disponibile',text:'Elena non può rispondere senza consultare la memoria documentaria condivisa.',links:[]};
     const facts=Array.isArray(db?.facts)?db.facts:[];
     const entries=Array.isArray(index?.entries)?index.entries:[];
     const fact=detectFact(q,facts,previousId);
