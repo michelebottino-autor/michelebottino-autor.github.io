@@ -1,29 +1,16 @@
 {
   "schema": 1,
-  "generated": "2026-10-17T17:14:07.131695",
-  "origin": "memoria_documentaria.sqlite",
-  "rules": [
+  "topics": [
     {
-      "id": "CANONICAL_ALIAS",
-      "text": "Le etichette legacy P184_C001-C016 rimandano al gruppo P334, ma la corrispondenza della singola pagina resta da collazionare."
+      "id": "p334",
+      "title": "Processo 334",
+      "note": "Le informazioni documentarie devono essere verificate sulle fonti prima di essere presentate come accertate."
     },
     {
-      "id": "NO_AUTOPUBLISH",
-      "text": "Nessuna ipotesi paleografica o storica diventa attestazione approvata senza verifica sulla fonte."
-    },
-    {
-      "id": "SOURCE_P184",
-      "text": "Processo 184 non posseduto: solo fonti web. Non chiedere il documento, non attribuire carte P334 a P184."
-    },
-    {
-      "id": "SOURCE_P334",
-      "text": "Processo 334 prioritario; lavorare sui facsimili locali e conservare impronta SHA-256, carta e coordinate della lettura."
-    },
-    {
-      "id": "UNCERTAINTY",
-      "text": "Distinguere fonte primaria, citazione secondaria, ipotesi e dato mancante; citare sempre il supporto effettivo."
+      "id": "p184",
+      "title": "Processo 184",
+      "note": "La disponibilità del documento originale non è attestata; evitare attribuzioni non verificate."
     }
   ],
-  "status": "REVIEW_REQUIRED",
-  "live": false
+  "revision": "2026-10-17"
 }
