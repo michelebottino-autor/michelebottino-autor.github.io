@@ -60,3 +60,10 @@
 Non inserire nomi, firme identificabili o manoscritti privati nel repository pubblico senza consenso specifico. Il modulo può essere stampato o copiato, ma non invia nulla al sito. Nessuna valutazione umana è stata ancora ricevuta.
 
 **Scansione ufficiale (JPEG IIIF):** https://tile.loc.gov/image-services/iiif/service:ndnp:lu:batch_lu_ivysaur_ver01:data:sn88064293:0029587501A:1918101401:0367/full/2000,/0/default.jpg
+
+## Fonti contestuali verificate nella nuova revisione
+
+- 10 ottobre 1918, p. 1: https://www.loc.gov/resource/sn88064293/1918-10-10/ed-1/?sp=1
+- 11 ottobre 1918, p. 1: https://www.loc.gov/resource/sn88064293/1918-10-11/ed-1/?sp=1
+
+Le nuove fonti appartengono alla medesima testata del 14 ottobre e non costituiscono verifica amministrativa indipendente degli aiuti prestati.

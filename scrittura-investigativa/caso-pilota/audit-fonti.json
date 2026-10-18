@@ -88,10 +88,10 @@
     }
   ],
   "blocked": [
-    "Manca un documento indipendente che confermi quantità, durata e beneficiari degli aiuti dichiarati.",
-    "Le identità anagrafiche dei quattro nominativi richiedono riscontri ulteriori rispetto alla grafia stampata.",
-    "Manca una seconda collazione e valutazione da parte di un revisore umano indipendente.",
-    "I testi sanitari del 1918 sono documentazione storica, non consigli medici attuali."
+    "Mancano rendiconti, verbali o registri indipendenti che dimostrino quantità, beneficiari ed esiti degli aiuti dichiarati.",
+    "I nomi pubblicati e le identità individuali richiedono eventuale controllo indipendente prima di affermazioni biografiche.",
+    "La revisione umana esterna del testo e il test didattico con partecipanti reali non sono ancora stati effettuati.",
+    "Le pagine degli altri quattro numeri sono state vagliate solo attraverso il testo ALTO, non collazionate integralmente su scansione."
   ],
   "last_attempt": {
     "date": "2026-10-18",
@@ -116,5 +116,35 @@
     "scope": "full page view and high-resolution crops of the two relevant news reports",
     "verified_by": "source review assisted by AI; not independent human peer review"
   },
-  "last_attempt_note": "Accessi diretti loc.gov precedentemente bloccati HTTP 403; problema superato tramite accesso pubblico al JP2 e servizio IIIF ufficiale."
+  "last_attempt_note": "Accessi diretti loc.gov precedentemente bloccati HTTP 403; problema superato tramite accesso pubblico al JP2 e servizio IIIF ufficiale.",
+  "related_editions": {
+    "method": "Six neighboring issues, four ALTO transcriptions per issue, source images for the reports of October 10 and 11.",
+    "dates": [
+      "1918-10-10",
+      "1918-10-11",
+      "1918-10-12",
+      "1918-10-15",
+      "1918-10-16",
+      "1918-10-17"
+    ],
+    "alto_files_screened": 24,
+    "main_related_sources": [
+      {
+        "id": "loc_1918_10_10",
+        "date": "1918-10-10",
+        "page": 1,
+        "article": "No Panic Here e appelli relativi all’assistenza",
+        "visual_scope": "facsimile_overview_examined"
+      },
+      {
+        "id": "loc_1918_10_11",
+        "date": "1918-10-11",
+        "page": 1,
+        "article": "Local Red Cross Committee Appointed to Extend Aid to Influenza Victims",
+        "visual_scope": "facsimile_relevant_article_crop_examined"
+      }
+    ],
+    "independence_warning": "All reports are from the same newspaper. Separate issue != independent corroboration."
+  },
+  "readiness": "documentary_course_pilot_editorial_ready_external_validation_pending"
 }

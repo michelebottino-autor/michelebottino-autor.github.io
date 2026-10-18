@@ -2,7 +2,7 @@
   "rubric_version": "2026-pilota-editoriale",
   "evaluator": "Revisione redazionale assistita da IA; non è un esame ufficiale né sostituisce un docente",
   "submission": "La pagina dei soccorsi, modello didattico",
-  "word_count": 1091,
+  "word_count": 1261,
   "word_target": "900–1.500",
   "criterion": [
     {
@@ -51,7 +51,7 @@
     "Produrre un registro prima/dopo delle modifiche e richiedere revisione umana."
   ],
   "score": 65,
-  "score_status": "historical_provisional_AI_baseline_before_facsimile_review",
+  "score_status": "historical_only_do_not_assign_as_current_grade",
   "last_audit": "2026-10-18: P4 corrected to future intention; OCR consistency only.",
-  "score_context": "65/100 attribuito prima della collazione visiva. Conservato per tracciabilità; NON ricalcolato né convertito in superamento automatico."
+  "score_context": "Il 65/100 è soltanto una valutazione assistita da IA della versione precedente alla collazione e all’ampliamento cronologico. Non è il punteggio della versione attuale; serve una nuova revisione umana."
 }

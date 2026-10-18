@@ -55,6 +55,22 @@
       "not_supported": "Non verifica quanto accadde a Morgan City"
     },
     {
+      "id": "P7",
+      "source_id": "loc_1918_10_10",
+      "type": "same_newspaper_facsimile",
+      "location_hint": "10 October 1918, page 1, No Panic Here and nursing calls",
+      "what_is_supported": "Nella testata compaiono notizie sulle misure locali e sul reclutamento di assistenza.",
+      "not_supported": "Numero preciso dei soccorsi effettuati; documenti amministrativi indipendenti."
+    },
+    {
+      "id": "P8",
+      "source_id": "loc_1918_10_11",
+      "type": "same_newspaper_facsimile",
+      "location_hint": "11 October 1918, page 1, Local Red Cross Committee Appointed",
+      "what_is_supported": "La testata descrive un comitato guidato da M. P. Palmer e riferisce cinque volontarie e assistenza programmata.",
+      "not_supported": "Rendiconti indipendenti e risultati verificati sul campo."
+    },
+    {
       "id": "Q1",
       "source_id": null,
       "type": "open_question",
@@ -90,5 +106,6 @@
     "width": 5024,
     "height": 7688,
     "iiif_image": "https://tile.loc.gov/image-services/iiif/service:ndnp:lu:batch_lu_ivysaur_ver01:data:sn88064293:0029587501A:1918101401:0367/full/2000,/0/default.jpg"
-  }
+  },
+  "related_issue_classification": "same_primary_publisher_not_independently_corroborating_results"
 }

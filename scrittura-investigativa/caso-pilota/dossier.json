@@ -43,6 +43,38 @@
       "title": "Chronicling America — Rights and Access",
       "url": "https://www.loc.gov/collections/chronicling-america/about-this-collection/rights-and-access/",
       "institution": "Library of Congress"
+    },
+    {
+      "id": "loc_1918_10_10",
+      "type": "primary_same_newspaper",
+      "title": "The Morgan City daily review — 10 ottobre 1918, pagina 1",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-10/ed-1/?sp=1",
+      "institution": "Library of Congress / Chronicling America",
+      "publication_date": "1918-10-10",
+      "page": 1,
+      "image_file": "0352.jp2",
+      "image_service": "https://tile.loc.gov/image-services/iiif/service:ndnp:lu:batch_lu_ivysaur_ver01:data:sn88064293:0029587501A:1918101001:0352/info.json",
+      "ocr_alto_sha256": "c3977afa5f8ae493b4bc417f6e27ecbbb83dbf3186ce809e73b0d83991b319dd",
+      "inspected_image_sha256": "b8fd5a1a2fc11d1d98623ac046bcf12cca598f2023d43c97c0c921fb5eaa9ae6",
+      "visual_checked": true,
+      "visual_scope": "facsimile_overview_examined",
+      "note": "Fonte storica della medesima testata del 14 ottobre. Utile per cronologia di ciò che fu annunciato; NON testimonianza indipendente su aiuti erogati."
+    },
+    {
+      "id": "loc_1918_10_11",
+      "type": "primary_same_newspaper",
+      "title": "The Morgan City daily review — 11 ottobre 1918, pagina 1",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-11/ed-1/?sp=1",
+      "institution": "Library of Congress / Chronicling America",
+      "publication_date": "1918-10-11",
+      "page": 1,
+      "image_file": "0356.jp2",
+      "image_service": "https://tile.loc.gov/image-services/iiif/service:ndnp:lu:batch_lu_ivysaur_ver01:data:sn88064293:0029587501A:1918101101:0356/info.json",
+      "ocr_alto_sha256": "edc325df1dface396bf32d1e45d824e4b2f54fa2f9a6d909b4712e510778d281",
+      "inspected_image_sha256": "8e799995d355475e55e790e1976417b77a1664fa70a2ce7a8219de8abe4435ba",
+      "visual_checked": true,
+      "visual_scope": "facsimile_relevant_article_crop_examined",
+      "note": "Fonte storica della medesima testata del 14 ottobre. Utile per cronologia di ciò che fu annunciato; NON testimonianza indipendente su aiuti erogati."
     }
   ],
   "claims": [
@@ -87,6 +119,20 @@
       "source_id": "loc_blog",
       "status": "secondary_context",
       "limitation": "Non prova gli interventi locali."
+    },
+    {
+      "id": "P7",
+      "claim": "Il 10 ottobre il quotidiano segnalava il reclutamento di volontari per l’assistenza e le misure locali contro l’epidemia.",
+      "source_id": "loc_1918_10_10",
+      "status": "facsimile_relevant_columns_examined",
+      "limitation": "Notizie e appelli pubblicati dalla medesima testata; non esistono ancora registri indipendenti dei volontari."
+    },
+    {
+      "id": "P8",
+      "claim": "L’11 ottobre il quotidiano annunciava un comitato della Croce Rossa guidato da M. P. Palmer e riferiva cinque volontarie disponibili.",
+      "source_id": "loc_1918_10_11",
+      "status": "facsimile_relevant_columns_examined",
+      "limitation": "Il giornale riferisce assegnazioni e richieste di assistenza; non ne quantifica gli esiti con documenti indipendenti."
     },
     {
       "id": "Q1",
@@ -162,6 +208,18 @@
         "text": "Una pagina di giornale non racconta tutto ciò che accadde in una città. Racconta ciò che una redazione decise di rendere pubblico in un determinato momento. La quarta pagina del The Morgan City Daily Review del 14 ottobre 1918 conserva notizie su iniziative di assistenza durante l’epidemia influenzale. Si può partire da questa traccia per costruire un articolo, purché non si facciano coincidere gli annunci di allora con risultati oggi accertati.",
         "claim_ids": [
           "P1"
+        ]
+      },
+      {
+        "text": "Per comprendere il documento del 14 ottobre bisogna tornare indietro di alcuni giorni. Nell’edizione del 10 ottobre il quotidiano dedicava spazio all’epidemia a Morgan City, riferiva misure locali di prevenzione e segnalava che la Croce Rossa cercava persone disponibili all’assistenza. Il contesto non è dunque un episodio isolato comparso all’improvviso sulla quarta pagina: il giornale stava seguendo una difficoltà già resa pubblica. La notizia del 10 ottobre resta però una testimonianza del medesimo giornale, non la prova indipendente del numero dei volontari effettivamente impiegati.",
+        "claim_ids": [
+          "P7"
+        ]
+      },
+      {
+        "text": "L’11 ottobre il giornale descriveva la formazione di un comitato locale della Croce Rossa, sotto la presidenza di M. P. Palmer, e annunciava la disponibilità di cinque volontarie. Il testo riferiva anche situazioni familiari per le quali veniva organizzata assistenza. Questo è un passaggio documentario utile per mostrare una sequenza editoriale: dalla richiesta di aiuto all’organizzazione pubblicamente annunciata. I dettagli sono stati riletti sulla scansione del giornale; resta invece da dimostrare con documenti di provenienza diversa quali interventi siano effettivamente stati completati e con quali risultati.",
+        "claim_ids": [
+          "P8"
         ]
       },
       {
@@ -253,10 +311,11 @@
       }
     ],
     "expanded_revision": "2026-10-18",
-    "word_count": 1091,
+    "word_count": 1261,
     "word_target": "900-1500",
     "model_status": "elaborato completo per estensione, non ancora validato come ricerca storica",
-    "editorial_evaluation_ref": "./valutazione-redazionale.json"
+    "editorial_evaluation_ref": "./valutazione-redazionale.json",
+    "new_evidence_note": "Sono state integrate le edizioni del 10 e dell’11 ottobre 1918, della stessa testata. La collazione visiva delle due notizie principali del 14 ottobre rimane confermata."
   },
   "review_gates": [
     "Confronto visivo delle due notizie principali con la scansione della pagina 4: completato il 18 ottobre 2026; resta necessaria una seconda revisione indipendente.",
@@ -265,7 +324,7 @@
     "Mantenere separate grafie pubblicate e identità anagrafiche, finché non vi siano altri documenti.",
     "Raccogliere la valutazione di un revisore umano prima di promuovere l’elaborato a modello definitivo."
   ],
-  "disclaimer": "Bozza documentaria su un facsimile storico autentico, recuperato e confrontato visivamente per le due notizie principali. Gli esiti degli aiuti e le identità individuali richiedono riscontri indipendenti. Non è una ricerca storica esaustiva né una prova valutata da un docente.",
+  "disclaimer": "Bozza didattica basata su facsimili storici: la fonte principale del 14 ottobre e gli articoli contestuali del 10 e dell’11 sono stati confrontati visivamente. Si tratta sempre dello stesso quotidiano; i risultati dei soccorsi non sono confermati da registri indipendenti né da revisione umana.",
   "source_audit_ref": "./audit-fonti.json",
   "evidence_review": {
     "date": "2026-10-18",
@@ -279,6 +338,31 @@
     "historical_outcomes_independently_verified": false,
     "human_reviewer": false,
     "detail_file": "./verifica-puntuale.json",
-    "original_source_sha256": "0563c329bb820489e4df3c36b30b9669881a63c509aaa4b82e1400ee763c0981"
+    "original_source_sha256": "0563c329bb820489e4df3c36b30b9669881a63c509aaa4b82e1400ee763c0981",
+    "related_issues_visual_reviewed": [
+      {
+        "date": "1918-10-10",
+        "page": 1,
+        "scope": "front page overview and local relief notices"
+      },
+      {
+        "date": "1918-10-11",
+        "page": 1,
+        "scope": "relevant Red Cross local committee article crop"
+      }
+    ],
+    "six_issue_sweep": {
+      "dates": [
+        "1918-10-10",
+        "1918-10-11",
+        "1918-10-12",
+        "1918-10-15",
+        "1918-10-16",
+        "1918-10-17"
+      ],
+      "pages_with_alto_examined": 24,
+      "full_facsimile_collation_of_all_pages": false,
+      "independent_sources_found": false
+    }
   }
 }

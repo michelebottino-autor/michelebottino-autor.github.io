@@ -4,8 +4,8 @@ const root=path.resolve(__dirname,'../..');
 const d=JSON.parse(fs.readFileSync(path.join(__dirname,'dossier.json'),'utf8'));
 const html=fs.readFileSync(path.join(__dirname,'index.html'),'utf8');
 assert.equal(d.stages.length,10);
-assert.equal(d.claims.length,8);
-assert.equal(d.sources.length,3);
+assert.equal(d.claims.length,10);
+assert.equal(d.sources.length,5);
 assert.equal(d.sources[0].visual_checked,true,'The source page and the two reports must have a recorded visual check');
 assert.equal(d.evidence_review.human_reviewer,false,'Human evaluation not yet completed');
 assert.ok(d.article.paragraphs.length>=8);
@@ -34,7 +34,7 @@ async function run(){
  try{
  await page.goto(url+'/scrittura-investigativa/caso-pilota/',{waitUntil:'networkidle0'});
  assert.equal(await page.$$eval('.pilot-step',a=>a.length),10);
- assert.equal(await page.evaluate(()=>document.querySelectorAll('.pilot-panel[aria-labelledby=matrix] tbody tr').length),8);
+ assert.equal(await page.evaluate(()=>document.querySelectorAll('.pilot-panel[aria-labelledby=matrix] tbody tr').length),10);
  assert.equal(await page.evaluate(()=>document.querySelectorAll('.pilot-article p').length),d.article.paragraphs.length);
  assert.ok(await page.$eval('a[href="#claim-P3"]',a=>Boolean(a.href)));
  assert.ok(await page.$eval('a[href*="chroniclingamerica.loc.gov"]',a=>Boolean(a.href)));
@@ -42,7 +42,7 @@ async function run(){
  assert.ok(await page.$eval('#valutazione-redazionale',x=>x.textContent.includes('65/100')));
  assert.ok(await page.$eval('#fascicolo-revisore a[href="./revisione/"]',x=>x.href.includes('/revisione/')));
  await page.goto(url+'/scrittura-investigativa/caso-pilota/revisione/',{waitUntil:'networkidle0'});
- assert.equal(await page.evaluate(()=>document.querySelectorAll('table tbody tr').length),14);
+ assert.equal(await page.evaluate(()=>document.querySelectorAll('table tbody tr').length),16);
  assert.ok(await page.$eval('main',x=>x.textContent.includes('nessuna revisione umana esterna')));
  await page.goto(url+'/scrittura-investigativa/caso-pilota/',{waitUntil:'networkidle0'});
  await page.goto(url+'/scrittura-investigativa/',{waitUntil:'networkidle0'});

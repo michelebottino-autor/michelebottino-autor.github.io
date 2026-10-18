@@ -38,3 +38,7 @@ Il precedente punteggio redazionale assistito da IA (65/100) resta uno storico p
 - valutazione-redazionale.json: 322f7af9f5994c33bdbf20d7084593175c0c0432347e073bc75ffc119436424d
 
 Le impronte dei documenti di lavoro attestano solo questa versione locale e non sostituiscono il controllo della fonte originaria.
+
+## Integrazione cronologica 10–11 ottobre
+
+Lettura delle edizioni del 10 e 11 ottobre 1918, pagina 1, con controllo delle riproduzioni dei rispettivi articoli sulla risposta locale all’influenza. Dieci affermazioni e questioni tracciate (P1–P8, Q1–Q2). Vedere RICOGNIZIONE_EDIZIONI_1918.md. La stessa testata non vale come prova indipendente degli esiti degli interventi.
