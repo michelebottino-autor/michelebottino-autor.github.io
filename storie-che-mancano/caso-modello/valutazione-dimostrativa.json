@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "course": "storie-che-mancano",
+  "case_id": "R-01",
+  "title": "Valutazione editoriale dimostrativa — Il quaderno di Nina",
+  "date": "2026-10-18",
+  "scope": "Valutazione interna assistita da IA del testo dimostrativo completo, non di un elaborato di uno studente. Le cinque fonti sono simulate; non è una verifica di fatti storici esterni.",
+  "word_count": 641,
+  "expected_word_range": [
+    550,
+    850
+  ],
+  "rubric_total": 100,
+  "threshold_plan": 70,
+  "score": 77,
+  "criteria": [
+    {
+      "id": "prove",
+      "maximum": 30,
+      "score": 22,
+      "rationale": "Sette schede e riferimenti di paragrafo impediscono alcune attribuzioni arbitrarie; tuttavia tutte le fonti sono simulate e non permettono di misurare la capacità di reperire o autenticare documenti reali."
+    },
+    {
+      "id": "struttura",
+      "maximum": 25,
+      "score": 22,
+      "rationale": "Il ritratto costruisce una domanda, sviluppa quattro nuclei documentari e chiude senza artifici; alcune cautele si ripetono nell'ultima metà."
+    },
+    {
+      "id": "voce",
+      "maximum": 15,
+      "score": 11,
+      "rationale": "La voce autoriale è chiara e rispettosa; la testimonianza F4 è volutamente inventata e non consente di valutare trattamento di un vero ricordo orale."
+    },
+    {
+      "id": "etica",
+      "maximum": 20,
+      "score": 17,
+      "rationale": "Sono espliciti la natura simulata dei documenti e il divieto di attribuzioni indebite; manca nel portfolio una checklist distinta, firmabile, sulle condizioni di pubblicazione di fonti reali."
+    },
+    {
+      "id": "revisione",
+      "maximum": 10,
+      "score": 5,
+      "rationale": "La versione finale è leggibile, ma nella prima versione del modello non era presente un registro completo di bozze precedenti e correzioni motivate."
+    }
+  ],
+  "blocking_conditions": [
+    "Assenza di documenti autentici per il caso R-01; non si può verificare la correttezza storica di affermazioni inventate per la didattica.",
+    "Mancanza di giudizio indipendente di un revisore umano.",
+    "Nessuna prova di apprendimento da parte di partecipanti reali.",
+    "Nessuna attestazione emessa o autorizzata."
+  ],
+  "decision": "Esempio utilizzabile in versione pilota per studiare la tecnica; NON approvazione ufficiale del corso, NON superamento di prova da parte di uno studente.",
+  "revision_priorities": [
+    "Mantenere la natura simulata visibile in ogni contesto.",
+    "Aggiungere un esercizio con cataloghi storici autentici per evitare di confondere simulazione con archivistica.",
+    "Esplicitare un registro di modifiche controllabili e migliorie narrative."
+  ],
+  "human_review_status": "not_performed",
+  "measured_learning_effectiveness": false,
+  "privacy_data_collected": false
+}

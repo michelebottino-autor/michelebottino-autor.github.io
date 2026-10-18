@@ -52,3 +52,16 @@ Un secondo step potrà verificare la comprensibilità con lettori reali, valutar
 - Programma: https://michelebottino-autor.github.io/storie-che-mancano/
 - Caso dimostrativo: https://michelebottino-autor.github.io/storie-che-mancano/caso-modello/
 - Catalogo: https://michelebottino-autor.github.io/catalogo/
+
+## Aggiornamento editoriale del 18 ottobre 2026
+
+- Laboratorio autentico LOC-01: esercizio con quattro record della Library of Congress su Mary Church Terrell (fotografia, diario, corrispondenza, guida istituzionale); otto schede distinguono dati del catalogo e questioni non accertate.
+- Limite delle fonti: metadati e descrizioni istituzionali controllati; non è stata eseguita una collazione integrale di tutte le pagine manoscritte con le scansioni. Il materiale è un esercizio di lettura dei cataloghi, non una biografia storica completa.
+- Rubrica esemplificativa R-01: 77/100 come revisione redazionale assistita da IA del modello di 641 parole. Non è un esame né una validazione umana. Le fonti del caso R-01 sono ancora tutte inventate.
+- Tre proposte di riscrittura sono registrate come proposte, non come modifiche già effettuate.
+- Stato invariato: in_development nel catalogo e in_review per la lingua italiana. Nessuna iscrizione o attestazione attiva, nessuno studente reale collaudato.
+
+Fonti LOC: https://www.loc.gov/item/97500102/ ; https://www.loc.gov/item/mss425490004/ ; https://www.loc.gov/item/mss425490031/ ; https://www.loc.gov/collections/mary-church-terrell-papers/about-this-collection/
+
+Laboratorio: https://michelebottino-autor.github.io/storie-che-mancano/laboratorio-autentico/
+Valutazione: https://michelebottino-autor.github.io/storie-che-mancano/caso-modello/valutazione/

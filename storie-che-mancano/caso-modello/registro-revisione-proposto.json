@@ -1,0 +1,34 @@
+{
+  "type": "revisione_editoriale_proposta_sul_modello_R01",
+  "status": "proposte_di_riscrittura_non_attribuite_a_una_precedente_versione",
+  "date": "2026-10-18",
+  "case": "Il quaderno di Nina",
+  "instructions": "Individua il passaggio originale nel dossier e confrontalo con la riscrittura proposta. Non si tratta di un registro retrospettivo di bozze effettivamente prodotte o di correzioni umane.",
+  "proposals": [
+    {
+      "part": "Apertura",
+      "source_id": "F1",
+      "original_excerpt": "La scrittura non è accompagnata da un anno.",
+      "suggested_rewrite": "Nessun anno accompagna la nota: l'identificazione di Nina e la data della fotografia rimangono questioni distinte.",
+      "reason": "Esplicita la differenza fra data e identità senza reiterare la stessa incertezza nei paragrafi successivi.",
+      "implementation": "proposta_non_applicata"
+    },
+    {
+      "part": "Elenco di biblioteca",
+      "source_id": "F5",
+      "original_excerpt": "Il documento aggiunge un'ipotesi di ricerca, non una scena da raccontare come certa.",
+      "suggested_rewrite": "L'elenco non autorizza ancora un'interpretazione della sua vita; suggerisce, semmai, di cercare registri con ulteriori elementi identificativi.",
+      "reason": "Trasforma una cautela astratta in un passo concreto di ricerca che un principiante può applicare.",
+      "implementation": "proposta_non_applicata"
+    },
+    {
+      "part": "Chiusura",
+      "source_id": "Q2",
+      "original_excerpt": "Questo testo mostra soltanto una scelta editoriale: il coraggio di fermarsi là dove la fonte tace.",
+      "suggested_rewrite": "Il ritratto può finire qui: con domande scritte accanto alle tracce, anziché risposte non dimostrate.",
+      "reason": "Riduce una formulazione retorica e chiude sul metodo osservabile.",
+      "implementation": "proposta_non_applicata"
+    }
+  ],
+  "note": "La qualità delle revisioni va misurata su una successiva versione effettivamente riscritta, con confronto dei file, non su questa lista di proposte."
+}

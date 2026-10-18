@@ -453,5 +453,24 @@
         "a": "La versione pilota non rilascia attestati. Il completamento locale degli esercizi non dimostra identità o competenze: un'eventuale valutazione richiederebbe revisione umana."
       }
     }
-  ]
+  ],
+  "authentic_lab": {
+    "id": "LOC-01",
+    "status": "catalog_records_verified_full_manuscript_collation_pending",
+    "subject": "Mary Church Terrell",
+    "path": "./laboratorio-autentico/",
+    "references": 4,
+    "claims_and_open_questions": 8,
+    "source_register": "./laboratorio-autentico/fonti-verificate.json",
+    "rights_mode": "links_only"
+  },
+  "model_assessment": {
+    "case_id": "R-01",
+    "score_illustrative": 77,
+    "max": 100,
+    "judgment_type": "internal_AI_assisted_editorial_example",
+    "human_review_completed": false,
+    "certification": false,
+    "path": "./caso-modello/valutazione/"
+  }
 }

@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "course": "storie-che-mancano",
+  "title": "Una fotografia, un diario, una lettera: Mary Church Terrell",
+  "subject": "Mary Church Terrell",
+  "activity_kind": "esercizio_documentario_reale",
+  "source_institution": "Library of Congress",
+  "last_review": "2026-10-18",
+  "scope": "Verifica bibliografica dei record istituzionali e confronto ragionato dei limiti. Non sono stati collazionati integralmente i manoscritti con le scansioni né viene attribuita una ricostruzione originale della vita privata.",
+  "records": [
+    {
+      "id": "M1",
+      "genre": "Fotografia",
+      "title": "[Mary Church Terrell, three-quarter length portrait, seated, facing front]",
+      "url": "https://www.loc.gov/item/97500102/",
+      "date_statement": "fra il 1880 e il 1900; copia stampata successivamente",
+      "creator_statement": "Fotografo non identificato nel record consultato",
+      "verified": "La scheda presenta un ritratto seduto, frontale, ed esprime la data come intervallo. Il titolo è redatto dai catalogatori.",
+      "not_proved": "Un giorno esatto della ripresa, chi fosse presente, lo stato d'animo o il momento della vita in cui Mary posò.",
+      "rights": "La scheda della LOC segnala «No known restrictions on publication»; la licenza dell'intera collezione non si trasferisce automaticamente ad altri documenti."
+    },
+    {
+      "id": "M2",
+      "genre": "Diario manoscritto",
+      "title": "Mary Church Terrell Papers: Diaries, 1888-1951; 1905",
+      "url": "https://www.loc.gov/item/mss425490004/",
+      "date_statement": "1905",
+      "creator_statement": "Mary Church Terrell (collezione e titolazione archivistica)",
+      "verified": "La LOC cataloga un'unità diaristica relativa al 1905, digitalizzata e accompagnata da trascrizioni in varie pagine.",
+      "not_proved": "Che tutte le pagine siano state studiate qui o che il contenuto del diario descriva l'episodio della fotografia.",
+      "rights": "La LOC dichiara di dominio pubblico i manoscritti scritti dalla stessa Terrell, ma invita a valutare separatamente documenti di terzi."
+    },
+    {
+      "id": "M3",
+      "genre": "Corrispondenza d'archivio",
+      "title": "Mary Church Terrell Papers: Correspondence, 1886-1954; 1906",
+      "url": "https://www.loc.gov/item/mss425490031/",
+      "date_statement": "1906",
+      "creator_statement": "Fascicolo di corrispondenza nel fondo Mary Church Terrell",
+      "verified": "La LOC conserva una raccolta di corrispondenza per l'anno 1906; la descrizione dell'unità non dimostra che tutti i testi siano stati scritti da Terrell.",
+      "not_proved": "Autore, destinatario, giorno e contenuto preciso di una singola lettera senza controllo della relativa carta.",
+      "rights": "Gli scritti di mittenti diversi da Terrell richiedono valutazione propria prima di qualsiasi riproduzione."
+    },
+    {
+      "id": "M4",
+      "genre": "Guida alla collezione",
+      "title": "Mary Church Terrell Papers — About this Collection",
+      "url": "https://www.loc.gov/collections/mary-church-terrell-papers/about-this-collection/",
+      "date_statement": "guida archivistica senza data certa indicata nella consultazione",
+      "creator_statement": "Library of Congress",
+      "verified": "La guida identifica Terrell come educatrice, conferenziera, suffragista e attivista per i diritti civili (1863–1954), con un corpus di diari, lettere e scritti.",
+      "not_proved": "Ogni particolare della vita e un nesso tra una fotografia e un documento successivo; la guida è contesto, non fonte personale coeva.",
+      "rights": "Il testo descrittivo istituzionale va citato e parafrasato con attenzione; non si riproducono pagine o immagini senza controllo delle condizioni."
+    }
+  ],
+  "claims": [
+    {
+      "id": "A1",
+      "statement": "La descrizione del ritratto colloca la sua realizzazione entro un intervallo 1880–1900.",
+      "supported_by": [
+        "M1"
+      ],
+      "status": "attestato_dal_catalogo"
+    },
+    {
+      "id": "A2",
+      "statement": "La stampa fotografica catalogata può essere successiva allo scatto.",
+      "supported_by": [
+        "M1"
+      ],
+      "status": "attestato_dal_catalogo"
+    },
+    {
+      "id": "A3",
+      "statement": "La LOC conserva un'unità di diari collocata nell'anno 1905.",
+      "supported_by": [
+        "M2"
+      ],
+      "status": "attestato_dal_catalogo"
+    },
+    {
+      "id": "A4",
+      "statement": "Il fondo include un volume di corrispondenza del 1906.",
+      "supported_by": [
+        "M3"
+      ],
+      "status": "attestato_dal_catalogo"
+    },
+    {
+      "id": "A5",
+      "statement": "La guida istituzionale presenta Mary Church Terrell come educatrice, suffragista e attivista.",
+      "supported_by": [
+        "M4"
+      ],
+      "status": "riportato_dalla_guida"
+    },
+    {
+      "id": "Q1",
+      "statement": "La foto fu scattata nel 1890 esatto?",
+      "supported_by": [
+        "M1"
+      ],
+      "status": "non_accertato"
+    },
+    {
+      "id": "Q2",
+      "statement": "Il diario parla della fotografia o ne identifica la data?",
+      "supported_by": [
+        "M1",
+        "M2"
+      ],
+      "status": "non_verificato"
+    },
+    {
+      "id": "Q3",
+      "statement": "Una lettera del 1906 è sicuramente autografa di Terrell?",
+      "supported_by": [
+        "M3"
+      ],
+      "status": "non_accertato"
+    }
+  ],
+  "didactic_tasks": [
+    "Produci una descrizione della fotografia di 80–120 parole, citando M1 e dichiarando l'intervallo cronologico, senza descrivere stati d'animo o scene non attestati.",
+    "Confronta che cosa prova il record del diario M2 e che cosa rimane da accertare su una singola pagina. Scrivi tre domande per una futura collazione.",
+    "Confronta M2 e M3: spiega in 120 parole perché un diario e una cartella di corrispondenza non hanno automaticamente lo stesso autore e non consentono di inventare un dialogo.",
+    "Rivedi una frase abusiva: «Nel 1890 Mary fu fotografata felice, poco prima di scrivere il diario». Produci una frase corretta con almeno due qualificazioni.",
+    "Redigi una mini-nota archivistica di 120–160 parole su ciò che puoi ricostruire con M1–M4, indicando due limiti e le condizioni di riutilizzo delle immagini."
+  ],
+  "editorial_solution": {
+    "improper": "Nel 1890 Mary fu fotografata felice, poco prima di scrivere il diario.",
+    "better": "La Library of Congress cataloga un ritratto di Mary Church Terrell datato in modo approssimativo fra il 1880 e il 1900 (M1). Nello stesso archivio è conservata una raccolta di diari del 1905 (M2). Le due schede non documentano l'umore della persona ritratta, né stabiliscono un collegamento diretto fra lo scatto e il diario.",
+    "reason": "Distingue intervallo di datazione e anno del fascicolo, rimuove emozione dedotta dal ritratto e nesso cronologico inventato."
+  },
+  "review_controls": [
+    "Ogni affermazione è collegata a un record istituzionale preciso.",
+    "Intervallo di datazione e data di stampa sono distinti.",
+    "Una raccolta di lettere non è attribuita per intero a un unico mittente.",
+    "Le trascrizioni e le immagini non lette integralmente sono marcate come ancora da verificare.",
+    "Si citano documenti e diritti senza inserire immagini di terzi nel sito."
+  ],
+  "reproduction": "Solo collegamenti verso la Library of Congress; nessuna fotografia o pagina manoscritta ripubblicata in questa versione."
+}
