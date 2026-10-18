@@ -1,0 +1,17 @@
+name: Controllo editoriale pubblico
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  editorial-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verifica delle note interne nelle pagine pubbliche
+        run: |
+          node .github/scripts/verify-public-editorial.js --self-test
+          node .github/scripts/verify-public-editorial.js

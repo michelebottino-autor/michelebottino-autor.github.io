@@ -42,7 +42,7 @@ function portfolio(course){
    parts.push(t.trim()||'[Elaborato non ancora redatto]','');
  });
  parts.push('## Rubrica per il revisore','Originalità: 15/100 · Struttura e chiarezza: 25/100 · Interviste e documenti: 20/100 · Accuratezza: 25/100 · Revisione: 15/100.',
- 'Per attribuire un esito è necessaria una revisione umana documentata. Nessun punteggio viene generato automaticamente.');
+ 'Usa la rubrica per rileggere il tuo elaborato e riconoscere gli aspetti da migliorare.');
  return parts.join('\n');
 }
 function renderHub(course){
