@@ -24,16 +24,46 @@
   function detectFact(q,facts,previousId) {
     const nq=normalize(q);
     // Non confondere le sigle «Processo 184» e «Processo 334».
-    if(/\b(?:processo|p)\s*184\b/.test(nq) && !/\b334\b/.test(nq))return null;
+    if(/\b(?:processo|investitura|fascicolo|p)\b.{0,40}\b184\b/.test(nq))return null;
     const hasYear=/\b(?:1[0123456789]\d\d|20\d\d)\b/.test(nq);
     const asksName=/(etimolog|toponim|origine del nome|significato del nome|perche si chiama|da dove deriva il nome|da dove viene il nome|da cosa deriva il nome)/.test(nq)||(!hasYear&&/\bnome calatabiano\b/.test(nq));
     if(asksName){const x=facts.find(f=>f.id==='nome');if(x)return x;}
+    // La sola presenza di un anno non prova che la domanda riguardi il dossier di quell'anno.
+    // Per esempio «quanti abitanti nel 1531?» non riguarda l'arciprete attestato nel 1531.
+    const anchors={
+      '1213':/\b(castello|costanza|enrico|arnaldo|privilegio|pagamento|vendita|conferma)\b/,
+      '1201':/\b(federico|diploma|privilegio)\b/,
+      '1267':/\b(controversia|contesa|lite|conflitto)\b/,
+      '1282':/\b(restituzione|vespri|diritti)\b/,
+      '1502':/\b(crocifisso|croce|salvo|antonio)\b/,
+      '1537':/\b(zucchero|zuccheri|faraone|mirulla|gabella|arbitrio|contratto)\b/,
+      'notaio1348':/\b(notaio|notai|notarile|iacobello|teocarito|regesto|salvo)\b/,
+      'notaio1356':/\b(notaio|notai|notarile|cunistabili|nomina|protonotaro|marrone)\b/,
+      'arciprete1531':/\b(arciprete|prelato|prete|sacerdote|renaldo|calvo|beneficio|martino|buxo|affitto)\b/,
+      'chiese1594':/\b(chiesa|chiese|sacramentale|sacramentali|relatio|relationes|concilio|mellusi|517a)\b/,
+      'gravina':/\b(gravina|cruillas|palagonia|fidecommissaria|assento|baronia|bardella|inventario|feudi|feudale|giurisdizione)\b/
+    };
+    const generic=new Set(['accadde','successe','succede','avvenne','avviene','accaduto','successo','eventi','evento',
+      'episodio','avvenimenti','avvenimento','fatti','fatto','anno','periodo','epoca','tempo','notizia','notizie','era']);
+    const words=tokenize(q).filter(w=>!/^\d{3,4}$/.test(w));
+    const genericYearQuery=words.every(w=>generic.has(w));
+    const asksDocumentSource=/\b(originale|fonti|fonte|manoscritto|facsimile|documentazione|documento|carta|pergamena|citazione|bibliografia)\b/.test(nq);
+    // In caso di domande che chiedono dati estranei ai nostri fatti registrati,
+    // non attribuire mai automaticamente un'altra notizia dello stesso anno.
+    const unsupportedDetail=/\b(sindaco|abitanti|popolazione|abitazioni|famiglie|proprietari|genealogia|genealogie|costrui|costruirono|nascita|fotografie|fotografia)\b/.test(nq)
+      || /\bchi (?:abitava|abito|viveva|vivevano|costrui|costruirono)\b/.test(nq);
+    if(unsupportedDetail)return null;
     const ranked=facts.filter(f=>f.id!=='nome').map(f=>{
       let points=0;
       for(const trigger of f.triggers||[]){
         const t=normalize(trigger);
-        if(!t||!nq.includes(t))continue;
-        points+=/^\d{3,4}$/.test(t)?16:t.length>=7?6:3;
+        if(!t)continue;
+        const isYear=/^\d{3,4}$/.test(t);
+        if(isYear&&!new RegExp('\\b'+t+'\\b').test(nq))continue;
+        if(!isYear&&!nq.includes(t))continue;
+        if(f.id==='processo334'&&(t!=='334'||!/\b(?:processo|investitura|fascicolo|p)\b.{0,40}\b334\b/.test(nq)))continue;
+        if(isYear&&anchors[f.id]&&!anchors[f.id].test(nq)&&!genericYearQuery&&!asksDocumentSource)continue;
+        points+=isYear?16:t.length>=7?6:3;
       }
       return {f,points};
     }).sort((a,b)=>b.points-a.points);
@@ -45,7 +75,7 @@
   }
   function reply(q,db,index,previousId,memory) {
     if(!memory || memory.schema!==1 || !Array.isArray(memory.topics) || memory.topics.length<2) return {kind:'empty',topic:null,title:'Memoria non disponibile',text:'Elena non può rispondere senza consultare la memoria documentaria condivisa.',links:[]};
-    if(/\b(?:processo|p)\s*184\b/.test(normalize(q))&&!/\b334\b/.test(normalize(q)))return {kind:'empty',topic:null,title:'Processo 184: attribuzione non verificata',text:'Le vecchie sigle di lavoro P184 non identificano con certezza un Processo 184. Non posso attribuire loro il materiale del Processo 334.',links:[{title:'Criteri di verifica e fonti',url:'/adc/fonti/'}]};
+    if(/\b(?:processo|investitura|fascicolo|p)\b.{0,40}\b184\b/.test(normalize(q)))return {kind:'empty',topic:null,title:'Processo 184: attribuzione non verificata',text:'Le vecchie sigle di lavoro P184 non identificano con certezza un Processo 184. Non posso attribuire loro il materiale del Processo 334. Se la domanda confronta i due fascicoli, serve una verifica documentaria separata.',links:[{title:'Criteri di verifica e fonti',url:'/adc/fonti/'}]};
     const facts=Array.isArray(db?.facts)?db.facts:[];
     const entries=Array.isArray(index?.entries)?index.entries:[];
     const fact=detectFact(q,facts,previousId);
