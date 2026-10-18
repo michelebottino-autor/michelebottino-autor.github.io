@@ -144,22 +144,31 @@
       "title": "Le storie che mancano",
       "category": "biografia",
       "category_label": "Memorie e biografie",
-      "description": "Dalle fotografie e dai documenti incompleti al racconto di una vita dimenticata.",
+      "description": "Da fotografie, lettere e memorie frammentarie a un ritratto documentario breve. Dieci unità introduttive con esercizi, taccuino e caso integralmente simulato. Versione pilota.",
       "audience": [
-        "Persone che custodiscono memorie familiari"
+        "Persone che custodiscono memorie familiari",
+        "Lettori e aspiranti autori alle prime esperienze",
+        "Chi desidera raccontare una vita attraverso tracce incomplete"
       ],
-      "learning_outcomes": [],
-      "units": null,
+      "learning_outcomes": [
+        "Selezionare una domanda biografica sostenibile sulla base delle tracce disponibili.",
+        "Descrivere fotografie, lettere, oggetti e testimonianze senza confondere osservazione e interpretazione.",
+        "Costruire una cronologia che distingua date certe, probabili e ignote.",
+        "Redigere un ritratto narrativo originale che segnali i limiti documentari.",
+        "Applicare cautele minime su consenso, privacy, attribuzione, diritti e pubblicazione.",
+        "Revisionare un testo di 550–850 parole con registro di fonti e modifiche."
+      ],
+      "units": 10,
       "duration_minutes": null,
-      "level": "Da definire",
-      "status": "coming_soon",
-      "url": "#interesse",
+      "level": "Introduttivo",
+      "status": "in_development",
+      "url": "../storie-che-mancano/",
       "logo": "./loghi/storie-che-mancano.svg",
       "enrollment": {
         "enabled": false
       },
       "interest": {
-        "type": "mailto",
+        "type": "none",
         "email": "",
         "status": "not_enabled"
       },
@@ -167,14 +176,30 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "planned",
+        "it": "in_review",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
         "de": "planned",
         "pt": "planned"
       },
-      "source_locale": "it"
+      "source_locale": "it",
+      "level_details": {
+        "category": "introduttivo",
+        "framework": "classificazione didattica interna, non EQF né titolo professionale",
+        "mandatory_previous_courses": [],
+        "prior_certificate_required": false,
+        "focus": "ritratto biografico breve con tracce incomplete",
+        "final_output": "550–850 parole con cronologia e fonti"
+      },
+      "pilot": {
+        "status": "editorial_preview_available",
+        "certificates_issued": false,
+        "assessment_human_only": true,
+        "student_trials_completed": 0,
+        "human_review_completed": false,
+        "source_case_simulated": true
+      }
     },
     {
       "id": "archivio-vivo",
