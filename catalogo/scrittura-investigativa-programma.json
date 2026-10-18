@@ -287,5 +287,24 @@
   "educational_stage": "editorial_pilot_available",
   "course_identity": "Scrittura di articoli, inchieste, biografie e capitoli di non-fiction basati su fatti documentabili. La verifica delle fonti è competenza trasversale, non replica del corso Bottino Method.",
   "pilot_notice": "Dieci lezioni e taccuino disponibili; non sono attivi account, caricamento elaborati, valutazione umana, iscrizioni o certificazioni.",
-  "release_date": null
+  "release_date": null,
+  "level_details": {
+    "classification": "intermedio",
+    "framework": "classificazione didattica interna, non certificazione professionale né qualifica EQF",
+    "mandatory_prerequisites": [],
+    "recommended_competences": [
+      "Leggere e sintetizzare testi in italiano",
+      "Scrivere testi brevi",
+      "Avere familiarità con fonti e interpretazioni"
+    ],
+    "optional_preparation": "Bottino Method — Corso Base, facoltativo",
+    "final_output": "Articolo o capitolo originale di 900–1500 parole con fonti, scaletta e revisione",
+    "advanced_scope_excluded": "Non si richiede la gestione professionale di inchieste multilivello o di responsabilità editoriali complesse"
+  },
+  "participant_pilot": {
+    "status": "invitation_open_pilot_not_started",
+    "confirmed_people": 0,
+    "formal_assessment_active": false,
+    "url": "../scrittura-investigativa/sperimentazione/"
+  }
 }

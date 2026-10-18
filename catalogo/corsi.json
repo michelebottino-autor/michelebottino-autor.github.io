@@ -116,7 +116,27 @@
         "de": "planned",
         "pt": "planned"
       },
-      "source_locale": "it"
+      "source_locale": "it",
+      "level_details": {
+        "classification": "intermedio",
+        "status": "classificazione_didattica_interna",
+        "mandatory_previous_course": false,
+        "required_certificates": [],
+        "recommended_skills": [
+          "Leggere e sintetizzare testi in italiano",
+          "Redigere testi brevi",
+          "Riconoscere la differenza fra documento, fatto e interpretazione"
+        ],
+        "target": "Opera documentaria originale di 900–1500 parole con fonti e revisione",
+        "professional_license": false
+      },
+      "pilot_recruitment": {
+        "status": "invitation_only",
+        "participants_confirmed": 0,
+        "participants_tested": 0,
+        "applications_backend": false,
+        "url": "../scrittura-investigativa/sperimentazione/"
+      }
     },
     {
       "id": "storie-che-mancano",
