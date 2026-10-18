@@ -434,7 +434,7 @@
         "Atlante commentato di 12 fotografie con provenienza e gradi di certezza."
       ],
       "duration_minutes": null,
-      "level": "Laboratorio",
+      "level": "Da definire",
       "status": "coming_soon",
       "url": "#interesse",
       "source_locale": "it",
@@ -453,7 +453,8 @@
         "payment_enabled": false
       },
       "syllabus": "./programmi/fotografie-senza-nome.json",
-      "syllabus_status": "editorial_draft"
+      "syllabus_status": "editorial_draft",
+      "format": "Laboratorio"
     },
     {
       "id": "cronologie-impossibili",
@@ -474,7 +475,7 @@
         "Cronologia a più livelli e racconto breve con conflitti documentati."
       ],
       "duration_minutes": null,
-      "level": "Laboratorio",
+      "level": "Da definire",
       "status": "coming_soon",
       "url": "#interesse",
       "source_locale": "it",
@@ -493,7 +494,8 @@
         "payment_enabled": false
       },
       "syllabus": "./programmi/cronologie-impossibili.json",
-      "syllabus_status": "editorial_draft"
+      "syllabus_status": "editorial_draft",
+      "format": "Laboratorio"
     },
     {
       "id": "museo-in-una-stanza",
@@ -514,7 +516,7 @@
         "Prototipo di micro-mostra con sei oggetti, didascalie e percorso visitatore."
       ],
       "duration_minutes": null,
-      "level": "Laboratorio",
+      "level": "Da definire",
       "status": "coming_soon",
       "url": "#interesse",
       "source_locale": "it",
@@ -533,7 +535,8 @@
         "payment_enabled": false
       },
       "syllabus": "./programmi/museo-in-una-stanza.json",
-      "syllabus_status": "editorial_draft"
+      "syllabus_status": "editorial_draft",
+      "format": "Laboratorio"
     },
     {
       "id": "lettere-oltre-la-grafia",
@@ -557,7 +560,7 @@
       "logo": "./loghi/lettere-oltre-la-grafia.svg",
       "source_locale": "it",
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -573,7 +576,8 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "url": "#interesse"
     },
     {
       "id": "albero-che-racconta",
@@ -597,7 +601,7 @@
       "logo": "./loghi/albero-che-racconta.svg",
       "source_locale": "it",
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -613,7 +617,8 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "url": "#interesse"
     },
     {
       "id": "voci-senza-registratore",
@@ -637,7 +642,7 @@
       "logo": "./loghi/voci-senza-registratore.svg",
       "source_locale": "it",
       "locales": {
-        "it": "available",
+        "it": "planned",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -653,7 +658,8 @@
       },
       "pricing": {
         "payment_enabled": false
-      }
+      },
+      "url": "#interesse"
     }
   ],
   "payment_configuration": {
@@ -682,7 +688,7 @@
     "currency": "EUR",
     "no_automatic_charges": true
   },
-  "catalog_name": "Officina delle Storie | Percorsi di scrittura e memoria",
+  "catalog_name": "Officina delle Storie | Scuola di scrittura e ricerca",
   "catalog_version": "2.0",
   "categories": [
     {
