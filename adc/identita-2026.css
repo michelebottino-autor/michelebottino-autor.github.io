@@ -196,3 +196,117 @@ body>header:not(.adc-unified-header) .menu-toggle:focus-visible {
   .adc-project-brand {text-align:center}
   .adc-project-brand small {text-align:center}
 }
+
+/* Impaginazione editoriale condivisa — 18 ottobre 2026.
+   Migliora leggibilità e coerenza senza sovrascrivere le identità delle singole sezioni. */
+:root {
+  --ref-ink: #25352f;
+  --ref-ink-soft: #52605a;
+  --ref-accent: #795a37;
+  --ref-paper: #faf8f3;
+  --ref-surface: #fffefa;
+  --ref-rule: #e4ddd0;
+  --ref-focus: #a67531;
+}
+html { scroll-padding-top: 1.75rem; text-rendering: optimizeLegibility; }
+body { font-kerning: normal; -webkit-font-smoothing: antialiased; }
+:where(main, article, .container) :where(h1,h2,h3) {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+:where(main, article) p { text-wrap: pretty; }
+:where(main, article) :is(h1,h2,h3) { line-height: 1.25; }
+:where(main, article) :is(ol,ul) li + li { margin-block-start: .28em; }
+:where(main, article) a:not(.btn):not(.button):not(.card-link) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+:where(main, article) a:hover { text-decoration-thickness: 2px; }
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible {
+  outline: 3px solid var(--ref-focus);
+  outline-offset: 4px;
+}
+::selection { background: #ded2ba; color: #20322e; }
+:where(main, article) :where(blockquote) {
+  border-inline-start: 3px solid #a78b65;
+  padding: .6rem 1.25rem;
+  margin-inline: 0;
+  background: #f5f1e8;
+}
+:where(main, article) :where(table) {
+  max-width: 100%;
+  border-collapse: collapse;
+}
+:where(main, article) :where(th,td) { overflow-wrap: anywhere; }
+:where(main, article) :where(img) { max-width: 100%; }
+:where(main, article) :where(.card,.panel,.box,.case,.unitlist a) {
+  border-color: var(--ref-rule);
+  box-shadow: 0 12px 32px rgba(37,49,42,.055);
+}
+:where(main) :where(.note,.status,.notice) {
+  border-radius: 0 12px 12px 0;
+  overflow-wrap: anywhere;
+}
+:where(main) :where(.meta,.small,.muted) { line-height: 1.65; }
+:where(main) :is(button,.btn,.button,button[type="submit"]) {
+  min-height: 44px;
+  font-family: inherit;
+  font-size: inherit;
+}
+:where(main) :is(input,textarea,select) { max-width: 100%; }
+:where(main) :where(.editorial-breadcrumb) { letter-spacing: .01em; }
+/* Le sezioni archivistiche condividono una gerarchia, pur conservando il tema storico. */
+body:has(.adc-project-nav) :where(main) > h1 {
+  letter-spacing: -.03em;
+  max-width: 24ch;
+}
+body:has(.adc-project-nav) :where(main) > p:first-of-type {
+  max-width: 77ch;
+}
+body:has(.adc-project-nav) :where(main) > article,
+body:has(.adc-project-nav) :where(main) > section {
+  scroll-margin-top: 2rem;
+}
+body:has(.adc-project-nav) :where(main) > :is(section,article) > h2:first-child {
+  margin-top: 0;
+}
+body:has(.adc-project-nav) .adc-project-nav a:focus-visible {
+  outline-offset: -2px;
+}
+body:has(.adc-project-nav) :where(main) a {
+  transition: color .18s ease;
+}
+/* Le istruzioni specialistiche per condividere il motore restano opzionali. */
+.embed-instructions {
+  margin: 1.2rem 0;
+  padding: .75rem 1rem;
+  border: 1px solid var(--ref-rule);
+  border-radius: 12px;
+  background: #fffdf9;
+}
+.embed-instructions summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--ref-accent);
+  padding: .3rem 0;
+}
+.embed-instructions[open] summary { margin-bottom: 1rem; }
+@media (min-width: 900px) {
+  body:has(.adc-project-nav) :where(main) > h1 { font-size: clamp(2.35rem, 4.4vw, 3.75rem); }
+}
+@media (max-width: 650px) {
+  :where(main,article) :is(h1,h2,h3) { overflow-wrap: break-word; }
+  :where(main,article) :is(p,li) { hyphens: auto; }
+  :where(main,article) table { font-size: .93em; }
+  :where(main) :where(.note,.status,.notice) { padding: 14px 16px; }
+  .embed-instructions { padding: .55rem .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media print {
+  body { background: #fff !important; color: #111 !important; }
+  :where(main,article) a { color: #111; }
+  :where(main,article) :is(.card,.panel,.box) { box-shadow: none; }
+}
