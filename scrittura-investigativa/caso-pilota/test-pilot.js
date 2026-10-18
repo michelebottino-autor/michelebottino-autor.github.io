@@ -6,7 +6,8 @@ const html=fs.readFileSync(path.join(__dirname,'index.html'),'utf8');
 assert.equal(d.stages.length,10);
 assert.equal(d.claims.length,8);
 assert.equal(d.sources.length,3);
-assert.equal(d.sources[0].visual_checked,false,'Do not claim visual verification');
+assert.equal(d.sources[0].visual_checked,true,'The source page and the two reports must have a recorded visual check');
+assert.equal(d.evidence_review.human_reviewer,false,'Human evaluation not yet completed');
 assert.ok(d.article.paragraphs.length>=8);
 assert.ok(d.article.paragraphs.flatMap(p=>p.claim_ids).every(id=>d.claims.some(c=>c.id===id)));
 assert.ok(d.article.paragraphs.reduce((n,p)=>n+p.text.split(/\s+/).length,0)>500);
@@ -37,6 +38,7 @@ async function run(){
  assert.equal(await page.evaluate(()=>document.querySelectorAll('.pilot-article p').length),d.article.paragraphs.length);
  assert.ok(await page.$eval('a[href="#claim-P3"]',a=>Boolean(a.href)));
  assert.ok(await page.$eval('a[href*="chroniclingamerica.loc.gov"]',a=>Boolean(a.href)));
+ assert.ok(await page.$eval('a[href*="tile.loc.gov/image-services/iiif/"]',a=>Boolean(a.href)));
  assert.ok(await page.$eval('#valutazione-redazionale',x=>x.textContent.includes('65/100')));
  assert.ok(await page.$eval('#fascicolo-revisore a[href="./revisione/"]',x=>x.href.includes('/revisione/')));
  await page.goto(url+'/scrittura-investigativa/caso-pilota/revisione/',{waitUntil:'networkidle0'});

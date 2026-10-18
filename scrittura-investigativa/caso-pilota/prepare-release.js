@@ -16,5 +16,5 @@ if(!xml.includes(loc)){
  fs.writeFileSync(xmlPath,xml,'utf8');
 }
 const p=JSON.parse(fs.readFileSync(path.join(__dirname,'dossier.json'),'utf8'));
-if(p.sources[0].visual_checked!==false)throw Error('Misleading verification status');
+if(p.sources[0].visual_checked!==true)throw Error('Visual verification evidence missing');
 console.log('PILOT_RELEASE_PREP_OK pages_cache_refreshed='+count+' sitemap='+xml.includes(loc));

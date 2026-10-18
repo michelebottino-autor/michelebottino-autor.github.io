@@ -2,49 +2,49 @@
   "schema_version": 1,
   "review_date": "2026-10-18",
   "review_type": "bibliographic_and_indexed_ocr_consistency",
-  "facsimile_review": false,
+  "facsimile_review": true,
   "independent_primary_corrob": false,
   "human_review": false,
   "items": [
     {
       "id": "P1",
       "source_id": "loc_1918",
-      "type": "bibliographic_record",
+      "type": "bibliographic_and_facsimile",
       "location_hint": "The Morgan City daily review, 14 October 1918, Image 4",
-      "what_is_supported": "Giornale, data e numero della pagina identificati",
-      "not_supported": "La lettura del facsimile originale non è stata compiuta"
+      "what_is_supported": "Testata, data, numero della pagina e colonne delle notizie visualizzati sulla scansione originale.",
+      "not_supported": "Veridicità indipendente dei fatti dichiarati."
     },
     {
       "id": "P2",
       "source_id": "loc_1918",
-      "type": "ocr_news_report",
+      "type": "facsimile_collated_local_report",
       "location_hint": "MORE NURSES NEEDED",
-      "what_is_supported": "La notizia riferisce ricerca di ulteriori volontarie per assistenza",
-      "not_supported": "Non certifica numero totale di pazienti o grafie dei nomi"
+      "what_is_supported": "La pagina stampa una richiesta di volontarie attribuita alla commissione e registra quattro nuovi nominativi.",
+      "not_supported": "Numero complessivo degli assistiti e servizi svolti da ciascuna persona."
     },
     {
       "id": "P3",
       "source_id": "loc_1918",
-      "type": "ocr_news_report",
+      "type": "facsimile_collated_local_report",
       "location_hint": "SHIPYARD WORKERS ORGANIZE FOR RELIEF",
-      "what_is_supported": "Un fondo dei lavoratori dei cantieri e le forme di aiuto sono descritti dalla testata",
-      "not_supported": "Importi, beneficiari e risultati non riscontrati indipendentemente"
+      "what_is_supported": "Fondo dei lavoratori del cantiere; prestazioni già riferite da funzionari, ma senza rendiconto.",
+      "not_supported": "Beneficiari, importi e assistenza effettivamente accertata indipendentemente."
     },
     {
       "id": "P4",
       "source_id": "loc_1918",
-      "type": "ocr_future_intent",
+      "type": "facsimile_collated_future_intent",
       "location_hint": "expect to work in conjunction",
-      "what_is_supported": "I responsabili prevedevano di coordinarsi con la Croce Rossa",
-      "not_supported": "Nessuna prova che tale coordinamento fu effettivamente attuato"
+      "what_is_supported": "La formula expect to work in conjunction indica una collaborazione prevista, non già documentata.",
+      "not_supported": "Coordinamento realmente attuato."
     },
     {
       "id": "P5",
       "source_id": "loc_1918",
-      "type": "ocr_historical_health",
+      "type": "public_health_heading_visually_verified",
       "location_hint": "UNCLE SAMS ADVICE ON FLU",
-      "what_is_supported": "Presente informazione sanitaria attribuita a un servizio pubblico degli USA nel 1918",
-      "not_supported": "Non è una raccomandazione sanitaria valida per oggi"
+      "what_is_supported": "Rubrica UNCLE SAM’S ADVICE ON FLU e attribuzione al servizio sanitario degli USA del 1918.",
+      "not_supported": "Rilettura parola per parola dell’intero articolo o validità attuale del contenuto."
     },
     {
       "id": "P6",
@@ -65,10 +65,10 @@
     {
       "id": "Q2",
       "source_id": null,
-      "type": "open_question",
+      "type": "identity_open",
       "location_hint": null,
-      "what_is_supported": "Letture OCR mostrano incertezze grafiche",
-      "not_supported": "Servono immagini originali per titoli e nomi precisi"
+      "what_is_supported": "Nominativi presenti e leggibili nella scansione del giornale.",
+      "not_supported": "Identità confermate da documenti anagrafici indipendenti."
     }
   ],
   "sources": [
@@ -81,5 +81,14 @@
       "url": "https://blogs.loc.gov/headlinesandheroes/2020/04/researching-epidemics-in-chronicling-america-newspapers/"
     }
   ],
-  "publication_rule": "Parafrasare con attribuzione. Non affermare esiti, dialoghi, nomi corretti o collazione visiva non verificati."
+  "publication_rule": "Attribuire gli eventi al quotidiano; collazione visiva completata per le due notizie. Non affermare risultati non verificati indipendentemente.",
+  "visual_source_review_scope": "Full-page overview of official page 4; high-resolution inspection of the two local relief reports; headline of public-health feature.",
+  "digital_original": {
+    "filename": "0367.jp2",
+    "url": "https://tile.loc.gov/storage-services/service/ndnp/lu/batch_lu_ivysaur_ver01/data/sn88064293/0029587501A/1918101401/0367.jp2",
+    "sha256": "0563c329bb820489e4df3c36b30b9669881a63c509aaa4b82e1400ee763c0981",
+    "width": 5024,
+    "height": 7688,
+    "iiif_image": "https://tile.loc.gov/image-services/iiif/service:ndnp:lu:batch_lu_ivysaur_ver01:data:sn88064293:0029587501A:1918101401:0367/full/2000,/0/default.jpg"
+  }
 }

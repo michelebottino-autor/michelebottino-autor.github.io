@@ -11,7 +11,7 @@
 - Data: __________
 - Versione del testo consultato: __________
 - La revisione è stata eseguita personalmente? ☐ Sì ☐ No
-- Il revisore ha potuto consultare il facsimile originale? ☐ Sì ☐ No
+- Il revisore ha controllato personalmente il facsimile originale, oltre alla collazione già documentata? ☐ Sì ☐ No
 - Ha consultato una fonte indipendente sui risultati dei soccorsi? ☐ Sì ☐ No
 - Riferimenti puntuali alle fonti effettivamente controllate: __________
 
@@ -29,7 +29,7 @@
 
 ## Controlli prioritari per questo testo
 - [ ] Identificativo, testata, data e immagine 4 correttamente attribuiti.
-- [ ] Titolo e contenuto della richiesta di volontarie verificati sul facsimile, non soltanto sul testo OCR.
+- [ ] Titolo e contenuto della richiesta di volontarie verificati personalmente dal revisore sul facsimile digitale (già collazionato nella revisione tecnica).
 - [ ] Fondo di assistenza dei cantieri: distinguere contributi annunciati, prestazioni riferite e prestazioni dimostrate.
 - [ ] Croce Rossa: la fonte indica una collaborazione **prevista**, non un'operazione materialmente confermata.
 - [ ] Nessun nome proprio o virgolettato riprodotto senza controllo sull'immagine originale.
@@ -51,10 +51,12 @@
 
 ## Materiali da consultare
 - Articolo e schede: https://michelebottino-autor.github.io/scrittura-investigativa/caso-pilota/
-- OCR della pagina del 1918: https://chroniclingamerica.loc.gov/lccn/sn88064293/1918-10-14/ed-1/seq-4/
+- Facsimile e OCR della pagina del 1918: https://chroniclingamerica.loc.gov/lccn/sn88064293/1918-10-14/ed-1/seq-4/
 - Registro puntuale dei riscontri: ../verifica-puntuale.json
 - Audit delle fonti: ../audit-fonti.json
 - Rubrica redazionale precedente: ../valutazione-redazionale.json
 
 ## Privacy e uso
 Non inserire nomi, firme identificabili o manoscritti privati nel repository pubblico senza consenso specifico. Il modulo può essere stampato o copiato, ma non invia nulla al sito. Nessuna valutazione umana è stata ancora ricevuta.
+
+**Scansione ufficiale (JPEG IIIF):** https://tile.loc.gov/image-services/iiif/service:ndnp:lu:batch_lu_ivysaur_ver01:data:sn88064293:0029587501A:1918101401:0367/full/2000,/0/default.jpg

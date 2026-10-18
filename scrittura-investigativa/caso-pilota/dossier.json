@@ -3,7 +3,7 @@
   "id": "morgan_1918_pilot",
   "title": "La pagina dei soccorsi",
   "subtitle": "Morgan City, ottobre 1918: un laboratorio su una fonte giornalistica autentica",
-  "source_integrity": "Identificazione bibliografica e coerenza di alcuni dati con l’OCR pubblico; facsimile non visionato integralmente. Non è una trascrizione critica.",
+  "source_integrity": "La scansione JPEG2000 originale della pagina 4 è stata acquisita e le due notizie sui soccorsi sono state confrontate visivamente con l’OCR. Gli interventi riferiti dal giornale non sono confermati da registri indipendenti.",
   "review_status": "pilot_not_accredited",
   "sources": [
     {
@@ -15,7 +15,20 @@
       "lccn": "sn88064293",
       "page": 4,
       "publication_date": "1918-10-14",
-      "visual_checked": false
+      "visual_checked": true,
+      "visual_review_scope": "Entire page viewed at reduced size, with original-resolution detailed images of the MORE NURSES NEEDED and SHIPYARD WORKERS ORGANIZE FOR RELIEF columns. The public-health heading was checked in the full-page view.",
+      "digitized_file": "0367.jp2",
+      "digital_jp2_sha256": "0563c329bb820489e4df3c36b30b9669881a63c509aaa4b82e1400ee763c0981",
+      "source_image_dimensions_px": {
+        "width": 5024,
+        "height": 7688
+      },
+      "iiif_info": "https://tile.loc.gov/image-services/iiif/service:ndnp:lu:batch_lu_ivysaur_ver01:data:sn88064293:0029587501A:1918101401:0367/info.json",
+      "iiif_image": "https://tile.loc.gov/image-services/iiif/service:ndnp:lu:batch_lu_ivysaur_ver01:data:sn88064293:0029587501A:1918101401:0367/full/2000,/0/default.jpg",
+      "jp2_url": "https://tile.loc.gov/storage-services/service/ndnp/lu/batch_lu_ivysaur_ver01/data/sn88064293/0029587501A/1918101401/0367.jp2",
+      "visual_review_date": "2026-10-18",
+      "corroborated_independently": false,
+      "preservation_note": "JPEG2000 downloaded to protected project QA folder on author PC; not republished on the website."
     },
     {
       "id": "loc_blog",
@@ -37,36 +50,36 @@
       "id": "P1",
       "claim": "Il quotidiano e la pagina sono identificati per luogo, data e numero.",
       "source_id": "loc_1918",
-      "status": "catalog_record",
-      "limitation": "Verifica visiva non completata."
+      "status": "facsimile_seen",
+      "limitation": "Pagina e colonne principali controllate visivamente; la scansione non prova da sola la veridicità di tutte le dichiarazioni."
     },
     {
       "id": "P2",
-      "claim": "La pagina riferisce la ricerca di ulteriori volontarie.",
+      "claim": "L’articolo MORE NURSES NEEDED descrive una richiesta di altre volontarie; il comitato riferisce di quattro nuovi nominativi.",
       "source_id": "loc_1918",
-      "status": "ocr_partial",
-      "limitation": "Non dimostra il numero totale di persone assistite."
+      "status": "facsimile_visually_collated",
+      "limitation": "È verificato che il giornale pubblicò la dichiarazione; non il numero complessivo di assistiti o i turni effettivamente svolti."
     },
     {
       "id": "P3",
-      "claim": "La pagina annuncia un fondo di assistenza dei lavoratori dei cantieri.",
+      "claim": "L’articolo SHIPYARD WORKERS ORGANIZE FOR RELIEF descrive il fondo e riferisce, attribuendolo a funzionari, che alcuni aiuti erano già stati prestati.",
       "source_id": "loc_1918",
-      "status": "ocr_partial",
-      "limitation": "Non prova autonomamente importi e risultati."
+      "status": "facsimile_visually_collated",
+      "limitation": "La fonte non fornisce rendiconti né verifica indipendente dei casi e dei risultati dichiarati."
     },
     {
       "id": "P4",
       "claim": "Il giornale riferisce che i responsabili del fondo prevedevano di collaborare con il comitato locale della Croce Rossa.",
       "source_id": "loc_1918",
-      "status": "ocr_partial",
-      "limitation": "Era un'intenzione annunciata. Mancano prove indipendenti sull'attuazione e sui singoli interventi."
+      "status": "facsimile_visually_collated",
+      "limitation": "L’immagine conferma la forma di intenzione futura (expect to work); non comprova che il coordinamento con la Croce Rossa sia avvenuto."
     },
     {
       "id": "P5",
       "claim": "È presente un testo divulgativo statunitense sull’influenza.",
       "source_id": "loc_1918",
-      "status": "ocr_partial",
-      "limitation": "Fonte storica, non informazione sanitaria attuale."
+      "status": "headline_visually_checked",
+      "limitation": "Controllata visivamente l’intestazione e l’attribuzione al servizio sanitario USA; non collazionata parola per parola l’intera sezione. Non è guida medica attuale."
     },
     {
       "id": "P6",
@@ -84,10 +97,10 @@
     },
     {
       "id": "Q2",
-      "claim": "Qual è la grafia precisa dei nomi nel testo OCR?",
+      "claim": "Quali identità e grafie anagrafiche corrispondono ai quattro nominativi stampati nel giornale?",
       "source_id": null,
       "status": "open",
-      "limitation": "Serve la scansione."
+      "limitation": "La grafia stampata è leggibile sulla scansione, ma non esiste ancora una seconda fonte per confermare le identità delle persone."
     }
   ],
   "stages": [
@@ -164,7 +177,7 @@
         ]
       },
       {
-        "text": "Lo stesso resoconto attribuisce importanza pubblica al servizio delle volontarie. Il testo indicizzato comprende nominativi, ma la grafia di alcuni appare incerta nel riconoscimento ottico. Una versione editoriale prudente rinuncia quindi a riprodurli finché non sarà disponibile una verifica della scansione. Non si tratta di sacrificare la precisione narrativa, ma di distinguere un dato verificato da un dato semplicemente leggibile in una trascrizione automatica.",
+        "text": "Lo stesso resoconto attribuisce un riconoscimento pubblico al servizio delle volontarie. La scansione consente di confermare che il giornale elencava quattro ulteriori nominativi, presentati come persone pronte a contribuire all’assistenza. Non possediamo tuttavia una seconda fonte sulle loro identità o sugli interventi effettivamente svolti. È quindi possibile riportare il numero annunciato, ma non inventare biografie, turni di lavoro o risultati individuali a partire da quell’elenco.",
         "claim_ids": [
           "P2",
           "Q2"
@@ -224,7 +237,7 @@
         ]
       },
       {
-        "text": "Anche la materialità della fonte impone una cautela. Il caso utilizza il record bibliografico e il testo digitalizzato indicizzato; la scansione non è stata verificata integralmente durante questa revisione, poiché la pagina originale non è risultata accessibile per il controllo visivo. Per questo non proponiamo citazioni letterali certificate né attestiamo grafie e impaginazione. L’accesso alla fonte primaria resta indicato per il controllo successivo.",
+        "text": "La materialità della fonte ha imposto una verifica aggiuntiva. Il file originale JPEG2000 della quarta pagina è stato acquisito dal servizio ufficiale e abbiamo confrontato visivamente, con ingrandimenti, i due articoli sull’assistenza. Le intestazioni e i passaggi cruciali confermano il nucleo del racconto, pur mostrando diversi errori nel testo OCR automatico. Questa collazione dimostra che cosa il quotidiano stampò, ma non certifica le identità delle persone nominate, né quanto fu effettivamente distribuito. Conserviamo quindi il collegamento all’immagine ufficiale e distinguiamo osservazione diretta della stampa e ricostruzione storica indipendente.",
         "claim_ids": [
           "P1",
           "Q2"
@@ -240,26 +253,32 @@
       }
     ],
     "expanded_revision": "2026-10-18",
-    "word_count": 1065,
+    "word_count": 1091,
     "word_target": "900-1500",
     "model_status": "elaborato completo per estensione, non ancora validato come ricerca storica",
     "editorial_evaluation_ref": "./valutazione-redazionale.json"
   },
   "review_gates": [
-    "Riaprire e controllare integralmente il facsimile della pagina 4.",
-    "Confermare titoli delle notizie, grafie e collocazioni tipografiche.",
-    "Confrontare rendiconti o fonti indipendenti prima di valutare risultati effettivi.",
-    "Documentare l’eventuale riuso delle immagini secondo le condizioni applicabili.",
-    "Registrare la revisione umana del testo prima di considerarlo un modello definitivo."
+    "Confronto visivo delle due notizie principali con la scansione della pagina 4: completato il 18 ottobre 2026; resta necessaria una seconda revisione indipendente.",
+    "Rintracciare altri numeri del quotidiano o documenti contabili del fondo che confermino gli interventi descritti.",
+    "Distinguere in ogni frase intenzioni, dichiarazioni attribuite ai funzionari e aiuti provati indipendentemente.",
+    "Mantenere separate grafie pubblicate e identità anagrafiche, finché non vi siano altri documenti.",
+    "Raccogliere la valutazione di un revisore umano prima di promuovere l’elaborato a modello definitivo."
   ],
-  "disclaimer": "Bozza didattica costruita su una fonte primaria storica identificata e su testi indicizzati. La verifica integrale del facsimile resta da completare. Non è una ricostruzione esaustiva, né una prova finale valutata.",
+  "disclaimer": "Bozza documentaria su un facsimile storico autentico, recuperato e confrontato visivamente per le due notizie principali. Gli esiti degli aiuti e le identità individuali richiedono riscontri indipendenti. Non è una ricerca storica esaustiva né una prova valutata da un docente.",
   "source_audit_ref": "./audit-fonti.json",
   "evidence_review": {
     "date": "2026-10-18",
-    "method": "comparison_with_indexed_ocr_not_original_image",
-    "facsimile_viewed": false,
-    "independent_primary_corrob": false,
+    "method": "visual_collation_of_official_JP2_and_IIIF_JPEG_plus_indexed_OCR",
+    "facsimile_viewed": true,
+    "full_page_overview_viewed": true,
+    "targeted_articles_visually_collated": [
+      "MORE NURSES NEEDED",
+      "SHIPYARD WORKERS ORGANIZE FOR RELIEF"
+    ],
+    "historical_outcomes_independently_verified": false,
     "human_reviewer": false,
-    "detail_file": "./verifica-puntuale.json"
+    "detail_file": "./verifica-puntuale.json",
+    "original_source_sha256": "0563c329bb820489e4df3c36b30b9669881a63c509aaa4b82e1400ee763c0981"
   }
 }
