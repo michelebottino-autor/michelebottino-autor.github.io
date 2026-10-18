@@ -16,3 +16,12 @@
 **Ogni pubblicazione:** revisionare la pagina visibile da smartphone, verificare menu e link, eseguire `node .github/scripts/verify-public-editorial.js` prima del commit e verificare il sito pubblico dopo la distribuzione. Se il controllo fallisce, non pubblicare.
 
 **Limiti:** un documento di regole e un validatore NON modificano i pesi neurali e non garantiscono l'obbedienza assoluta di un modello. L'osservanza è verificata dal controllo sulla fonte destinata alla pubblicazione e dalla revisione del rilascio.
+
+## Criteri di lingua pubblica (integrazione del controllo editoriale)
+
+- Preferire nomi e verbi concreti. Scrivere **che cosa** si può leggere, imparare o verificare e **dove** trovare la fonte.
+- Eliminare frasi generiche e ripetitive come «in un ecosistema articolato», «in tal senso», «si configura come» se non aggiungono informazioni.
+- Evitare avvisi sugli strumenti interni, cicli di sviluppo, collaudi e modelli linguistici. Le istruzioni d'uso necessarie per il visitatore restano ammesse.
+- Conservare gli identificativi delle fonti, la terminologia storica pertinente, i testi originali, le informazioni su diritti e privacy e le cautele su fatti non dimostrati. Non correggere l'autore di una citazione come fosse prosa redazionale.
+- Controllare le pagine anche su telefono: tabelle, paragrafi, navigazione e didascalie devono essere leggibili.
+- Dopo qualsiasi rigenerazione, ripetere sia il validatore dei contenuti pubblici sia la prova nel browser. Un risultato automatico non sostituisce la lettura editoriale.

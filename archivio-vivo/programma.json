@@ -443,8 +443,8 @@
         "Revisioni tracciate"
       ],
       "elena": {
-        "question": "L’hash SHA-256 basta a certificare una fonte?",
-        "answer": "No. L’impronta serve a confrontare l’integrità dei file, non dimostra la veridicità del documento o il suo valore probatorio."
+        "question": "Se un file non è stato modificato, possiamo credere a tutto ciò che contiene?",
+        "answer": "No. Sapere che un file non è cambiato non dimostra che il documento sia autentico o che le sue informazioni siano esatte."
       }
     },
     {
@@ -467,7 +467,7 @@
         {
           "id": "AV-U10-L3",
           "title": "Collaudo e presentazione",
-          "text": "Prima di consegnare, controlla conteggio parole, numerazione, rispondenza fra matrice e testo, privacy e collegamenti. Esporta il portfolio e conserva una versione identificabile. La rubrica può guidare l’autovalutazione; una valutazione ufficiale richiederà revisione umana e un sistema adeguato. Un caso inventato dimostra il metodo, non la competenza storica su fonti autentiche."
+          "text": "Prima di consegnare, controlla conteggio parole, numerazione, rispondenza fra matrice e testo, privacy e collegamenti. Esporta il portfolio e conserva una versione identificabile. La rubrica aiuta a rileggere il testo e a controllare che ogni affermazione abbia un riferimento preciso. Un caso inventato dimostra il metodo, non la competenza storica su fonti autentiche."
         }
       ],
       "example": "A-01 termina distinguendo una riapertura pubblicamente annunciata da un’attività registrata successivamente; nessuna fonte fittizia autorizza ad attribuire affollamento, motivazioni private o risultati sociali.",
