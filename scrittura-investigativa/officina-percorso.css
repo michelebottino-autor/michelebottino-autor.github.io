@@ -1,0 +1,46 @@
+/* Officina dell'autore: componenti di lettura e scrittura accessibili */
+.studio-panel{max-width:1100px;margin:32px auto;padding:clamp(20px,4vw,44px);border:1px solid #ddd8ce;border-radius:18px;background:#fff;box-shadow:0 10px 30px #1f302b0a;color:#25302e}
+.studio-panel h2,.studio-panel h3{color:#25302e;line-height:1.25}
+.studio-panel h2{font:700 clamp(1.65rem,3vw,2.45rem)/1.2 Georgia,serif;margin:8px 0 20px}
+.studio-panel h3{font:700 1.3rem/1.28 Georgia,serif;margin:18px 0 8px}
+.studio-panel p,.studio-panel li{line-height:1.75;max-width:80ch}
+.studio-kicker{font-size:.77rem;letter-spacing:.11em;text-transform:uppercase;color:#7b5e41;font-weight:800}
+.studio-lead{font-size:1.17rem;font-weight:600;color:#465d53}
+.studio-concept{padding:10px 0;border-bottom:1px solid #e9e5de}
+.studio-model{background:#f5f1e9;border-left:4px solid #9a7852;padding:18px 22px;margin:20px 0}
+.studio-source{margin-top:18px;padding:14px 18px;background:#edf4f5;border-radius:8px}
+.studio-source a{color:#175a74;overflow-wrap:anywhere}
+.studio-panel ol,.studio-panel ul{padding-left:1.6rem}
+.studio-panel li{margin:7px 0}
+.studio-deliverable{font-weight:700;border-bottom:1px solid #ddd8ce;padding:0 0 18px}
+.studio-editor{background:#f8f9f7;padding:22px;border:1px solid #dce4dc;border-radius:13px}
+.studio-label{display:block;font-weight:750;margin:12px 0 8px}
+.studio-editor textarea{width:100%;max-width:100%;box-sizing:border-box;border:1px solid #9aa9a1;border-radius:9px;min-height:230px;padding:15px;background:#fff;color:#21302b;font:1rem/1.65 system-ui,sans-serif;resize:vertical}
+.studio-editor textarea:focus-visible,.studio-panel button:focus-visible,.studio-panel select:focus-visible,.studio-unit:focus-visible,.studio-jump:focus-visible{outline:3px solid #b38b48;outline-offset:3px}
+.studio-checklist{margin:22px 0;border:1px solid #d3d9d3;border-radius:10px;padding:16px 18px}
+.studio-checklist legend{font-weight:700;padding:0 8px}
+.studio-check{display:block;margin:12px 0;line-height:1.5;cursor:pointer}
+.studio-check input{width:19px;height:19px;vertical-align:middle;accent-color:#286f5b;margin-right:8px}
+.studio-actions{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.studio-actions button{font:700 .95rem/1.4 system-ui,sans-serif;min-height:44px;border-radius:8px;padding:11px 15px;border:1px solid #2d5f50;cursor:pointer}
+.studio-actions .studio-primary{background:#245545;color:#fff}
+.studio-actions .studio-secondary{background:#fff;color:#245545}
+.studio-actions button:disabled{opacity:.5;cursor:not-allowed}
+.studio-caption{font-size:.92rem;color:#536961}
+.studio-status{color:#265945;font-weight:600}
+.studio-note{font-size:.93rem;color:#465f59}
+.studio-next{display:flex;gap:18px;flex-wrap:wrap;padding-top:22px;margin-top:25px;border-top:1px solid #e7e2d7}
+.studio-next a,.studio-jump{font-weight:700;color:#165a4e;text-underline-offset:3px}
+.studio-jump{display:inline-block;margin:6px 0 24px}
+.studio-meter{width:100%;height:10px;background:#e1e8e1;border-radius:12px;overflow:hidden}
+.studio-meter span{display:block;height:100%;background:#37725e}
+.studio-units{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0}
+.studio-unit{display:flex;gap:14px;align-items:flex-start;min-height:82px;border:1px solid #e0e4dd;padding:16px;border-radius:10px;text-decoration:none!important;background:#fafaf8;color:#1f3e33}
+.studio-unit:hover{border-color:#608e7b;background:#eff6f1}
+.studio-unit-number{font:bold 1.25rem Georgia,serif;color:#7b5b3e;min-width:30px}
+.studio-unit strong,.studio-unit small{display:block;line-height:1.4}
+.studio-unit small{font-size:.85rem;font-weight:400;color:#52625c;margin-top:4px}
+.studio-panel select{width:100%;max-width:760px;padding:11px;border:1px solid #a3aaa4;border-radius:8px;background:white;color:#25302e;font:inherit}
+.studio-answer{border-left:3px solid #71867d;padding:8px 19px;margin:20px 0;background:#fafbf9}
+@media(max-width:650px){.studio-units{grid-template-columns:1fr}.studio-panel{padding:18px}.studio-editor{padding:16px}.studio-actions button{width:100%}}
+@media print{.studio-actions,.studio-editor textarea,.studio-jump{display:none}.studio-panel{box-shadow:none;border:0}}

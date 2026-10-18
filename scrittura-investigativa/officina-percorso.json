@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "edition": "2026-pilota-editoriale",
+  "status": "didactic_materials_available_no_enrollment",
+  "scope": "Corso di scrittura documentaria originale. La verifica delle fonti è una condizione di lavoro, non il contenuto principale.",
+  "source_policy": "I riferimenti esterni puntano a risorse istituzionali: guide e repertori non sostituiscono la consultazione dei documenti primari. I casi fittizi S-01 sono esercitazioni esplicitamente simulate.",
+  "certificate": "Nessun attestato valutato o verifica dell'identità disponibile nella versione pubblica; la valutazione dell'opera richiede un revisore umano.",
+  "rubric": {
+    "originalita": 15,
+    "struttura": 25,
+    "fonti": 20,
+    "accuratezza": 25,
+    "revisione": 15,
+    "threshold": 70
+  },
+  "units": [
+    {
+      "number": 1,
+      "title": "Il mestiere dell’autore investigativo",
+      "subtitle": "Scegliere la forma prima di scegliere l’effetto",
+      "outcome": "Distinguere articolo, reportage, biografia e ricostruzione storica e formulare una promessa editoriale sostenibile.",
+      "lesson": [
+        [
+          "Una forma, un patto",
+          "Un articolo risponde a una questione delimitata e guida il lettore verso i fatti decisivi. Il reportage rende leggibile un percorso di osservazione dichiarandone il punto di vista. La biografia dispone le tracce di una vita senza trasformare le lacune in pensieri attribuiti. Il capitolo storico compone un quadro documentato senza simulare scene non testimoniate."
+        ],
+        [
+          "La domanda è narrativa",
+          "Una buona domanda non è soltanto verificabile: contiene una tensione comprensibile. Che cosa appariva chiaro all’inizio? Quale documento introduce un dubbio? Che cosa cambia per il lettore quando si scopre un limite? La tensione deriva dalla sequenza della conoscenza, non dall’invenzione di un colpevole."
+        ],
+        [
+          "La promessa misurata",
+          "Evita titoli come «la verità definitiva» quando disponi di documenti parziali. Preferisci una promessa concreta: raccontare come una decisione fu annunciata, discussa o descritta nelle fonti disponibili. Specifica pubblico, formato, ampiezza e natura dell’apparato documentale."
+        ]
+      ],
+      "model": "Schema di apertura (modello didattico, non notizia): «Un documento annuncia una modifica. Una comunicazione successiva ne propone il rinvio. Per capire che cosa fu previsto, e che cosa non possiamo ancora sapere, occorre leggere entrambe le carte». L’interesse è nella domanda, non in una conclusione inventata.",
+      "assignment": "Proposta editoriale",
+      "instructions": "Scegli un argomento reale e circoscritto oppure il fascicolo S-01 dichiarato simulato. Scrivi una proposta destinata a un direttore editoriale.",
+      "steps": [
+        "Indica genere, destinatario, domanda principale e ragione di interesse per il lettore.",
+        "Proponi un titolo informativo, un titolo narrativo e scarta un titolo sensazionalistico motivando la scelta.",
+        "Redigi una proposta che dichiari materiali disponibili, assenze e limite dell’indagine."
+      ],
+      "deliverable": "Titolo, genere, pubblico, domanda e proposta di 150–250 parole.",
+      "checks": [
+        "La promessa non anticipa una tesi non dimostrata.",
+        "Il pubblico è identificato.",
+        "I limiti delle fonti sono espressi."
+      ],
+      "source": {
+        "title": "Library of Congress — Nellie Bly e l’inchiesta del 1887 (guida secondaria)",
+        "url": "https://blogs.loc.gov/headlinesandheroes/2022/11/nellie-bly-blackwells-island/"
+      }
+    },
+    {
+      "number": 2,
+      "title": "Trovare la storia e il punto di vista",
+      "subtitle": "Tema, angolo narrativo e responsabilità del narratore",
+      "outcome": "Selezionare una domanda originale e decidere chi racconta, a chi e da quale posizione dichiarata.",
+      "lesson": [
+        [
+          "Dal tema al fuoco",
+          "«L’emigrazione» è un tema; «come una famiglia organizzò una partenza secondo le lettere conservate» è una storia delimitata. Il fuoco narrativo nasce da un cambiamento, da una domanda irrisolta o dal rapporto fra persone, luoghi e documenti. Un fuoco ristretto può produrre una scrittura più profonda di una panoramica generica."
+        ],
+        [
+          "La voce non è onnisciente",
+          "La prima persona può dichiarare la ricerca: «Ho consultato l’indice, ma non il fascicolo». La terza persona offre distanza, ma non autorizza ad attribuire emozioni, dialoghi e pensieri ai protagonisti senza testimonianze. Scegli il punto di vista in funzione delle prove e dei lettori, non per simulare vicinanza."
+        ],
+        [
+          "Originalità e correttezza",
+          "Un angolo originale può concentrarsi su una contraddizione fra testimonianze, sulla vita materiale ricavata da un inventario o su una decisione amministrativa riletta nel suo contesto. Non confondere originalità con rivelazione: il valore può consistere nel rendere intellegibili dati già pubblici."
+        ]
+      ],
+      "model": "Due angoli sul medesimo fascicolo scolastico simulato S-01: «che cosa prevedeva il provvedimento» è ricostruzione amministrativa; «come una modifica annunciata diventa incertezza per i destinatari» è ipotesi di reportage, ma richiederebbe vere testimonianze. In assenza di interviste, il secondo angolo non va presentato come esperienza vissuta.",
+      "assignment": "Scheda del punto di vista",
+      "instructions": "Trasforma il tema scelto nell’Unità 1 in due possibili storie e scegli quella sostenibile.",
+      "steps": [
+        "Formula due domande narrative alternative sullo stesso insieme di documenti.",
+        "Per ciascuna indica la scena iniziale possibile e ciò che manca per scriverla.",
+        "Scegli una voce narrativa e giustificala in rapporto al lettore e alle fonti."
+      ],
+      "deliverable": "Due angoli alternativi, scelta motivata e testo di apertura di 120–180 parole.",
+      "checks": [
+        "La voce narrativa non pretende conoscenze impossibili.",
+        "L’angolo è circoscritto e leggibile.",
+        "Le scene proposte rispettano le evidenze."
+      ],
+      "source": {
+        "title": "National Archives — guida ai documenti del Titanic (guida, non verbale integrale)",
+        "url": "https://www.archives.gov/publications/prologue/2012/spring/titanic.html"
+      }
+    },
+    {
+      "number": 3,
+      "title": "Dalla notizia al progetto editoriale",
+      "subtitle": "Scaletta, promessa di lettura e piano di lavoro",
+      "outcome": "Preparare una proposta pubblicabile: tesi di lettura, scaletta, pubblico, lunghezza e materiali necessari.",
+      "lesson": [
+        [
+          "Il progetto non è il dossier",
+          "Il dossier contiene materiali e verifiche; il progetto editoriale traduce quei materiali in un percorso per il lettore. Prima di iniziare separa ciò che vuoi raccontare, ciò che puoi attestare e ciò che devi ancora acquisire. La scaletta organizza significati, non semplicemente l’ordine in cui hai trovato i documenti."
+        ],
+        [
+          "La progressione",
+          "Un articolo breve può seguire apertura, domanda, contesto, elemento decisivo e conclusione misurata. Un capitolo può aprire con un documento, tornare al contesto, presentare prospettive concorrenti e chiudere mostrando quale problema resta aperto. Ogni sezione deve rispondere a una domanda del lettore."
+        ],
+        [
+          "Fattibilità editoriale",
+          "Prevedi numero di parole, giorni di ricerca, fonti essenziali, interviste necessarie e rischi: privacy, accesso limitato, diritti delle immagini, necessità di contraddittorio. Se la fonte indispensabile non è accessibile, ridisegna la domanda invece di riempire il vuoto."
+        ]
+      ],
+      "model": "Scaletta modello: 1) un passaggio di documento; 2) che cosa fu deciso; 3) chi lo comunicò; 4) perché le carte non coincidono; 5) ciò che resta documentariamente aperto. Per ogni blocco scrivi accanto «materiale disponibile» o «da acquisire».",
+      "assignment": "Pitch e scaletta",
+      "instructions": "Prepara il progetto per un articolo lungo oppure per il capitolo di un libro.",
+      "steps": [
+        "Scrivi il pitch in 120–180 parole con proposta, interesse pubblico e limiti.",
+        "Costruisci cinque sezioni con funzione narrativa e prova attesa.",
+        "Redigi un piano di lavoro: materiali accessibili, materiali mancanti, ostacoli e criteri di ridimensionamento."
+      ],
+      "deliverable": "Pitch, scaletta annotata e piano operativo sintetico.",
+      "checks": [
+        "Ogni sezione ha uno scopo narrativo.",
+        "Ogni svolta importante ha un possibile riscontro.",
+        "La lunghezza prevista è realistica."
+      ],
+      "source": {
+        "title": "Library of Congress — guida agli articoli originali del 1918",
+        "url": "https://guides.loc.gov/chronicling-america-spanish-flu/selected-articles"
+      }
+    },
+    {
+      "number": 4,
+      "title": "Interviste e testimonianze",
+      "subtitle": "Far parlare le persone senza scrivere al loro posto",
+      "outcome": "Progettare un’intervista, attribuire dichiarazioni e trasformare materiale testimoniale in racconto rigoroso.",
+      "lesson": [
+        [
+          "Prima dell’incontro",
+          "Definisci che cosa una persona può sapere per esperienza diretta. Prepara domande aperte, poi domande di precisazione: dove, quando, chi era presente, come è stato conservato il ricordo. Non usare formulazioni che suggeriscono colpe o risposte. Dichiara lo scopo dell’intervista e concorda le condizioni di attribuzione."
+        ],
+        [
+          "Una citazione è una responsabilità",
+          "Tra appunti, registrazione, trascrizione e citazione pubblicata possono comparire errori. Non costruire una frase unica montando parole distanti senza segnalarlo. Mantieni il contesto di domande e risposte. Se il materiale non è disponibile, scrivi «intervista da realizzare»: non inventare una voce per migliorare il racconto."
+        ],
+        [
+          "Trasformare la voce in scena",
+          "Una citazione efficace illumina un fatto, non serve soltanto a rendere vivace il paragrafo. Introduci chi parla, spiega quale posizione occupa nella vicenda, lascia emergere il dato e aggiungi il riscontro documentale quando pertinente. Privacy, consenso alla diffusione e diritto di replica sono decisioni distinte."
+        ]
+      ],
+      "model": "Formula sicura: «Secondo la testimonianza raccolta il [data], la persona riferisce di avere osservato [fatto preciso]. Il documento [identificativo], consultato separatamente, permette di controllare [parte specifica]». Non usare questo schema con un’intervista mai svolta.",
+      "assignment": "Protocollo d’intervista e montaggio",
+      "instructions": "Prepara un’intervista reale solo se puoi condurla in condizioni appropriate; altrimenti lavora sull’analisi di una testimonianza già pubblicata, senza simularne una.",
+      "steps": [
+        "Scrivi otto domande aperte e tre domande di precisazione, senza presupporre la risposta.",
+        "Costruisci una scheda di attribuzione: ruolo, data, consenso, origine dei ricordi, possibilità di controllo.",
+        "Redigi un paragrafo di 150 parole da testimonianza esistente, oppure una struttura con segnaposto espliciti."
+      ],
+      "deliverable": "Scaletta dell’intervista, scheda di attribuzione e paragrafo commentato.",
+      "checks": [
+        "Nessun virgolettato è inventato.",
+        "I ricordi non diventano automaticamente fatti generali.",
+        "La pubblicazione rispetta dati e persone."
+      ],
+      "source": {
+        "title": "National Archives — testimonianze e documenti sul Titanic (guida)",
+        "url": "https://www.archives.gov/publications/prologue/2012/spring/titanic.html"
+      }
+    },
+    {
+      "number": 5,
+      "title": "Lavorare con documenti reali",
+      "subtitle": "Dal documento alla pagina scritta",
+      "outcome": "Selezionare passaggi pertinenti, contestualizzarli e inserirli nel racconto senza trasformare il testo in un inventario.",
+      "lesson": [
+        [
+          "Il documento entra solo quando serve",
+          "Una scansione, una lettera o un articolo storico può occupare un intero dossier, ma nel testo finale conta il dettaglio necessario alla domanda. Registra segnatura o URL, data, natura del documento, autore quando verificato e limiti dell’accesso. Le schede bibliografiche istituzionali sono spesso guide: non vanno citate come se fossero l’originale."
+        ],
+        [
+          "Citare, parafrasare, spiegare",
+          "La citazione breve preserva una formulazione decisiva; la parafrasi restituisce il contenuto essenziale; la spiegazione chiarisce perché interessa al lettore. Distinguile graficamente o sintatticamente. Una parola isolata non è autorizzazione a inferire intenzioni, cause o responsabilità."
+        ],
+        [
+          "Montaggio documentale",
+          "Accosta un frammento alla domanda che aiuta a risolvere. Introduci luogo, cronologia e attori senza interrompere continuamente il ritmo. Le note e il registro fonti devono permettere al lettore di ritrovare l’originale; gli estratti di opere tutelate non possono essere riprodotti liberamente."
+        ]
+      ],
+      "model": "Schema: «Nel [tipo di documento] conservato da [istituzione], datato [data verificata], si legge [breve citazione controllata]. Per il nostro racconto conta [ragione di pertinenza]. Il testo non chiarisce [limite]». I campi tra parentesi vanno compilati dopo aver aperto la fonte.",
+      "assignment": "Micro-racconto documentato",
+      "instructions": "Apri una fonte autentica nella raccolta del laboratorio o una tua fonte accessibile. Non utilizzare un metadato provvisorio come citazione definitiva.",
+      "steps": [
+        "Compila una scheda con URL stabile, identificativo, data, autore, pagina e condizioni di riuso quando note.",
+        "Seleziona un singolo elemento pertinente e separa trascrizione, parafrasi e commento.",
+        "Scrivi 180–250 parole con nota documentaria e due informazioni che la fonte non consente di affermare."
+      ],
+      "deliverable": "Scheda della fonte e micro-racconto con nota.",
+      "checks": [
+        "La pagina originale è stata effettivamente consultata.",
+        "Ogni citazione è attribuita e controllata.",
+        "La nota non attribuisce contenuti assenti."
+      ],
+      "source": {
+        "title": "Library of Congress — selezione di giornali storici digitalizzati (guida)",
+        "url": "https://guides.loc.gov/chronicling-america-spanish-flu/selected-articles"
+      }
+    },
+    {
+      "number": 6,
+      "title": "Personaggi, luoghi e cronologia",
+      "subtitle": "Costruire una scena senza aggiungere fatti",
+      "outcome": "Comporre caratteri, ambienti e sequenze temporali documentate senza dialoghi o stati d’animo inventati.",
+      "lesson": [
+        [
+          "Il personaggio documentario",
+          "Una persona reale non è il personaggio di un romanzo. Puoi mostrare decisioni, dichiarazioni, azioni registrate e posizioni nel contesto, ma non narrarne i pensieri privati se nessuna testimonianza li documenta. Una descrizione incisiva nasce da ciò che ha fatto e dalle tracce lasciate."
+        ],
+        [
+          "Il luogo è una fonte di vincoli",
+          "Topografia, funzioni degli edifici, confini e trasformazioni aiutano il lettore a orientarsi. Non usare una fotografia moderna per descrivere automaticamente l’aspetto di un luogo cento anni prima. Quando una scena non è ricostruibile, scegli una descrizione esplicativa anziché un dialogo ricreato."
+        ],
+        [
+          "Tre tempi differenti",
+          "Data del documento, data dell’evento narrato e data in cui una notizia divenne pubblica possono divergere. La narrazione può iniziare dalla fine, ma deve segnalare i salti temporali. Il lettore non deve scambiare una decisione annunciata per un evento avvenuto."
+        ]
+      ],
+      "model": "Una frase prudente può essere più forte: «Il verbale fu redatto in ottobre e descrive una decisione riferita a settembre». Una frase inaffidabile trasformerebbe il contenuto in scena e aggiungerebbe reazioni dei presenti senza documenti.",
+      "assignment": "Sequenza e ritratto",
+      "instructions": "Produci una cronologia narrativa per il tuo argomento o per un caso storico che hai verificato.",
+      "steps": [
+        "Crea cinque eventi in tabella, indicando per ciascuno data e prova disponibile.",
+        "Scrivi un ritratto di 120 parole di un protagonista usando soltanto informazioni attribuibili.",
+        "Componi un passaggio di raccordo fra due momenti e segnala eventuali salti temporali."
+      ],
+      "deliverable": "Cronologia documentata, ritratto controllato e raccordo narrativo.",
+      "checks": [
+        "Ogni scena distingue documentato e non noto.",
+        "Le date non sono state fuse impropriamente.",
+        "Non sono inventati dialoghi o pensieri."
+      ],
+      "source": {
+        "title": "Library of Congress — ricostruzione e documenti su Nellie Bly",
+        "url": "https://blogs.loc.gov/headlinesandheroes/2022/11/nellie-bly-blackwells-island/"
+      }
+    },
+    {
+      "number": 7,
+      "title": "Tecniche di scrittura investigativa",
+      "subtitle": "Apertura, struttura, ritmo e transizioni",
+      "outcome": "Scrivere un articolo leggibile e rigoroso con incipit, svolta, raccordi e chiusura.",
+      "lesson": [
+        [
+          "L’incipit ha una funzione",
+          "Può presentare una domanda, un documento o un contrasto. Non deve travestire un’ipotesi da rivelazione. Un buon attacco accende una curiosità precisa e anticipa la posta in gioco senza trasformarla in condanna o certezza."
+        ],
+        [
+          "Il ritmo delle prove",
+          "Alterna narrazione, contesto e documento. Tre citazioni consecutive possono rallentare; tre paragrafi solo interpretativi possono allontanare la prova. Ogni passaggio deve spiegare perché il lettore deve conoscere il dettaglio successivo. Usa sottotitoli per rendere visibile il percorso."
+        ],
+        [
+          "Le transizioni",
+          "«Intanto», «tuttavia» e «perciò» stabiliscono legami logici diversi. Un documento posteriore non è automaticamente la confutazione di uno precedente. Quando il rapporto non è dimostrato, usa formule neutre: «un’altra fonte riferisce» oppure «non è possibile stabilire se i due dati coincidano»."
+        ]
+      ],
+      "model": "Due incipit didattici: «Il documento annunciava un cambiamento» informa ma non orienta. «L’annuncio e la data non raccontano la stessa storia: fra i due resta un passaggio che le carte non chiariscono» formula una domanda, purché la discrepanza sia stata accertata.",
+      "assignment": "Riscrittura di una pagina",
+      "instructions": "Lavora sul testo preparato nelle unità precedenti, senza introdurre nuovi fatti.",
+      "steps": [
+        "Scrivi due aperture di 80–100 parole: una documentaria e una narrativa.",
+        "Organizza quattro paragrafi con funzione esplicita, mantenendo il collegamento alle fonti.",
+        "Taglia il 15–20% delle parole superflue e annota le scelte editoriali."
+      ],
+      "deliverable": "Due incipit, corpo revisionato e nota sull’editing.",
+      "checks": [
+        "La struttura è chiara al primo ascolto/lettura.",
+        "Le transizioni non inventano causalità.",
+        "La riduzione preserva tutte le cautele necessarie."
+      ],
+      "source": {
+        "title": "Library of Congress — come l’inchiesta di Nellie Bly è stata raccontata",
+        "url": "https://blogs.loc.gov/headlinesandheroes/2022/11/nellie-bly-blackwells-island/"
+      }
+    },
+    {
+      "number": 8,
+      "title": "Scrivere per il lettore non specialista",
+      "subtitle": "Lessico chiaro, dati complessi e apparati discreti",
+      "outcome": "Rendere comprensibile una vicenda tecnica senza cancellarne precisione e incertezze.",
+      "lesson": [
+        [
+          "Spiegare senza impoverire",
+          "Introduci i termini specialistici quando servono, definendoli con una frase d’uso. Una segnatura archivistica identifica un documento, non il suo contenuto. Un atto che «dispone» non è lo stesso di un articolo che «riporta». La chiarezza conserva questa differenza con parole comprensibili."
+        ],
+        [
+          "Dare forma ai numeri",
+          "Ogni dato richiede unità di misura, periodo, denominatore e fonte. Non usare una percentuale da sola se il lettore non può sapere su quale insieme è calcolata. Tabelle e cronologie possono alleggerire il corpo narrativo, purché accompagnate da un commento che spieghi ciò che realmente mostrano."
+        ],
+        [
+          "Apparato delle fonti",
+          "Note brevi, rimandi stabili e un glossario limitato rendono il testo consultabile. Non sommergere il lettore con codici non spiegati. Se la fonte è raggiungibile solo tramite una guida istituzionale, dichiara questo limite invece di simularne l’esame."
+        ]
+      ],
+      "model": "Versione opaca: «Dall’atto risulta la decorrenza ex tunc della disposizione». Versione accessibile: «Il documento indica che gli effetti della decisione sono riferiti a una data precedente». Usa la seconda solo dopo aver verificato che il documento significhi davvero questo.",
+      "assignment": "Editing per chiarezza",
+      "instructions": "Riscrivi una pagina rivolta a chi non ha competenze archivistiche o giuridiche.",
+      "steps": [
+        "Individua cinque termini tecnici e definiscili in modo corretto e breve.",
+        "Trasforma un paragrafo complesso in due paragrafi leggibili senza cambiare il significato.",
+        "Aggiungi una nota alla fonte e una didascalia o un riquadro di contesto."
+      ],
+      "deliverable": "Pagina revisionata, microglossario e nota di fonte.",
+      "checks": [
+        "Il lettore può capire chi fa che cosa.",
+        "Nessuna semplificazione inverte un rapporto fra eventi.",
+        "I riferimenti sono recuperabili."
+      ],
+      "source": {
+        "title": "National Archives — esempio di divulgazione da fonti storiche sul Titanic",
+        "url": "https://www.archives.gov/publications/prologue/2012/spring/titanic.html"
+      }
+    },
+    {
+      "number": 9,
+      "title": "Revisione, responsabilità e pubblicazione",
+      "subtitle": "Dall’editing alla versione approvabile",
+      "outcome": "Controllare affermazioni, titoli, immagini, privacy e opportunità di replica prima di pubblicare.",
+      "lesson": [
+        [
+          "Tre revisioni distinte",
+          "La revisione strutturale chiede se la storia mantiene la promessa. La revisione fattuale verifica ogni affermazione e attribuzione. La revisione di stile elimina ripetizioni e ambiguità. Non sostituire il controllo dei fatti con una lettura piacevole, né rendere illegibile la storia in nome della documentazione."
+        ],
+        [
+          "Responsabilità verso le persone",
+          "Una ricostruzione può coinvolgere persone vive o facilmente identificabili. Verifica se i dettagli personali sono necessari, se la versione contraria è rappresentata correttamente e se l'interessato deve poter replicare prima della pubblicazione. La disponibilità online non rende ogni dato appropriato da ripubblicare."
+        ],
+        [
+          "Pubblicare è una decisione",
+          "Controlla diritto di citazione, licenze, immagini, materiali di terzi e necessità di autorizzazione. Prepara un registro delle modifiche e separa ciò che è pronto da ciò che resta da verificare. Se un elemento decisivo non è dimostrabile, modifica il testo o rinvia la pubblicazione."
+        ]
+      ],
+      "model": "Scheda revisione: «Affermazione: X; fonte: Y; punto preciso consultato: Z; rischio: interpretazione; azione: attribuire alla fonte, non presentare come fatto». Ripeti per titolo, sommario, testo, didascalie e nota finale.",
+      "assignment": "Doppia revisione editoriale",
+      "instructions": "Agisci come un editor di un testo scritto nelle unità precedenti.",
+      "steps": [
+        "Marca cinque frasi in cui il rapporto con le fonti potrebbe essere interpretato male.",
+        "Proponi tre modifiche strutturali e cinque interventi di chiarezza.",
+        "Compila una lista di pre-pubblicazione: attribuzioni, privacy, replica, immagini, titoli, diritti, link e dati."
+      ],
+      "deliverable": "Testo prima/dopo, registro delle modifiche e checklist di pubblicabilità.",
+      "checks": [
+        "Sono individuati rischi e responsabilità.",
+        "La revisione non nasconde limiti.",
+        "La disponibilità della fonte non è scambiata per permesso di riuso."
+      ],
+      "source": {
+        "title": "Library of Congress — collezioni storiche e attribuzione delle fonti",
+        "url": "https://guides.loc.gov/chronicling-america-spanish-flu/selected-articles"
+      }
+    },
+    {
+      "number": 10,
+      "title": "Officina dell’autore: opera finale",
+      "subtitle": "Dalla proposta al testo documentato originale",
+      "outcome": "Consegnare un elaborato coerente, leggibile, verificabile e accompagnato dalle scelte editoriali.",
+      "lesson": [
+        [
+          "Il portfolio è un’opera, non un test",
+          "Un testo documentario originale richiede un progetto, una scaletta, almeno un corpo narrativo compiuto, la tracciabilità delle affermazioni importanti e una revisione esplicita. Un quiz riconosce concetti, ma non misura da solo la capacità di scrivere. Questo laboratorio rende possibile preparare e scaricare un portfolio, non attribuisce un voto professionale automatico."
+        ],
+        [
+          "Ordine dei documenti",
+          "Prepara titolo e sinossi; domanda, pubblico e taglio; scaletta; testo principale; elenco delle fonti consultate con collegamenti puntuali; nota sulle lacune; registro di editing. Le interviste assenti non vanno ricreate. Il caso S-01 è utilizzabile soltanto come esercizio di simulazione dichiarata, non come articolo su fatti reali."
+        ],
+        [
+          "Rubrica di revisione",
+          "L’esame dell’opera richiede una valutazione umana motivata: originalità del taglio 15 punti; struttura e chiarezza 25; uso di fonti e interviste 20; accuratezza fattuale 25; revisione 15. Il punteggio minimo progettato è 70/100, ma nessun attestato valutato viene emesso automaticamente nella versione attuale."
+        ]
+      ],
+      "model": "Frontespizio tipo: «Titolo; forma: inchiesta/articolo/capitolo; autore; data; versione; fonti realmente consultate; stato: elaborato didattico; eventuali limiti». Allegare la lista dei riscontri e una nota sulle verifiche impossibili, senza trasformarle in supposizioni.",
+      "assignment": "Portfolio conclusivo",
+      "instructions": "Riunisci gli elaborati progressivi e scrivi il testo originale finale. L’autovalutazione è formativa, non sostituisce la correzione umana.",
+      "steps": [
+        "Redigi un testo completo (obiettivo indicativo 900–1.500 parole) o un capitolo concordemente delimitato, fondato sui materiali realmente consultati.",
+        "Allega pitch, scaletta, schede delle fonti e nota sulle lacune, usando i testi delle unità come materiali preparatori.",
+        "Applica la rubrica 15/25/20/25/15, annota cinque revisioni e indica le condizioni ancora necessarie per la pubblicazione."
+      ],
+      "deliverable": "Opera documentaria originale con apparato minimo e relazione di editing.",
+      "checks": [
+        "Nessun fatto, citazione o documento è inventato.",
+        "Le fonti centrali sono rintracciabili.",
+        "Il testo espone i limiti e rispetta la privacy.",
+        "Il portfolio è pronto per una revisione umana, non per attestazione automatica."
+      ],
+      "source": {
+        "title": "Library of Congress — guida e rimandi agli scritti di Nellie Bly",
+        "url": "https://blogs.loc.gov/headlinesandheroes/2022/11/nellie-bly-blackwells-island/"
+      }
+    }
+  ]
+}

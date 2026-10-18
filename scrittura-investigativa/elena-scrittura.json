@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "course_id": "scrittura-investigativa-documentale",
+  "source_kind": "editorial_study_notes",
+  "revision": "2026-10-18",
+  "notice": "Elena utilizza schede controllate; non è collegata al Cervello generativo né valuta gli elaborati.",
+  "topics": [
+    {
+      "unit": 1,
+      "question": "Come scelgo il formato della mia inchiesta?",
+      "answer": "Definisci la domanda documentabile e il pubblico, poi scegli il formato più adatto: articolo, reportage, biografia o ricostruzione. Evita titoli che promettono prove non disponibili.",
+      "exercise": "Scrivi un'idea editoriale in 130 parole e identifica due limiti delle fonti.",
+      "limitation": "Il caso S-01 è immaginario e serve solo per esercitarsi."
+    },
+    {
+      "unit": 2,
+      "question": "Come distinguo il tema dal punto di vista?",
+      "answer": "Il tema è l'argomento generale; il taglio narrativo è la domanda specifica che guida il racconto. Un taglio non autorizza a nascondere prove discordanti.",
+      "exercise": "Formula quattro domande su S-01, scegline una e scrivi un attacco di 100 parole.",
+      "limitation": "Non creare testimonianze o scene per rendere più interessante il racconto."
+    },
+    {
+      "unit": 3,
+      "question": "Come progetto la struttura di un articolo?",
+      "answer": "Organizza i materiali in apertura, contesto, evidenze, divergenze e conclusione. Collega ogni sezione alle fonti e registra i passaggi che non puoi dimostrare.",
+      "exercise": "Prepara sei blocchi narrativi, indicando per ciascuno il documento utile e la lacuna aperta.",
+      "limitation": "Un documento non è una prova di tutto ciò che accade nel periodo considerato."
+    },
+    {
+      "unit": 4,
+      "question": "Come preparo un'intervista affidabile?",
+      "answer": "Usa domande aperte e neutrali, informa l'interlocutore sulle finalità e separa ciò che ha osservato da ciò che ha sentito raccontare. Controlla, quando possibile, le dichiarazioni con fonti indipendenti.",
+      "exercise": "Scrivi otto domande non suggestive e indica quali risposte richiederebbero riscontri.",
+      "limitation": "Non attribuire parole a persone che non hai intervistato."
+    },
+    {
+      "unit": 5,
+      "question": "Come inserisco gli atti nel testo?",
+      "answer": "Descrivi natura, autore, data e portata del documento. Distingui la data in cui è stato prodotto da quella in cui una misura avrebbe dovuto iniziare a valere.",
+      "exercise": "Scrivi un paragrafo che distingua provvedimento S-001 e comunicazione S-003.",
+      "limitation": "Non presentare come eseguita una misura soltanto perché un atto ne indica la decorrenza."
+    },
+    {
+      "unit": 6,
+      "question": "Come costruisco una cronologia documentaria?",
+      "answer": "Separa date dei documenti, eventi riferiti e decorrenze. Mantieni visibili le lacune e non inventare scene o relazioni di causa non provate.",
+      "exercise": "Compila una cronologia a tre colonne per il fascicolo didattico S-01.",
+      "limitation": "Un orario successivo non conferma da solo l'effettiva esecuzione delle corse."
+    },
+    {
+      "unit": 7,
+      "question": "Come scrivo un attacco coinvolgente ma corretto?",
+      "answer": "Scegli una domanda chiara, un elemento documentato o un contrasto tra fonti. Il ritmo deriva dall'ordine narrativo e dalla precisione, non dall'aggiunta di dettagli immaginati.",
+      "exercise": "Proponi tre incipit brevi e revisiona quello che promette più delle prove.",
+      "limitation": "La tensione narrativa non trasforma un'ipotesi in fatto."
+    },
+    {
+      "unit": 8,
+      "question": "Come spiego un dossier al lettore comune?",
+      "answer": "Definisci i termini necessari e sciogli le sigle. Spiega perché una notizia che ripete una comunicazione non costituisce una conferma indipendente.",
+      "exercise": "Scrivi un glossario di cinque termini e un paragrafo divulgativo su S-003 e S-004.",
+      "limitation": "Non semplificare eliminando le incertezze fondamentali."
+    },
+    {
+      "unit": 9,
+      "question": "Come revisiono il testo prima di pubblicarlo?",
+      "answer": "Controlla ciascuna affermazione rispetto alla fonte precisa, poi revisiona chiarezza, attribuzioni, dati personali e riferimenti. Per contenuti potenzialmente lesivi occorrono verifiche rafforzate.",
+      "exercise": "Controlla dieci affermazioni della tua bozza e registra le correzioni.",
+      "limitation": "Una citazione reale può essere collocata in un contesto scorretto."
+    },
+    {
+      "unit": 10,
+      "question": "Che cosa devo consegnare come lavoro finale?",
+      "answer": "Prepara un articolo originale con titolo, scaletta, narrazione, schede delle fonti e registro di revisione. L'esercizio è di autovalutazione, non una certificazione.",
+      "exercise": "Scrivi 900–1.200 parole su un caso simulato dichiarato come tale oppure su fonti autentiche che puoi utilizzare legittimamente.",
+      "limitation": "La guida di Elena non attribuisce voti ufficiali e non rilascia attestati."
+    }
+  ]
+}

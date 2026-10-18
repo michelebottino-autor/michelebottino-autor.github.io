@@ -10,63 +10,153 @@
   "units": [
     {
       "number": 1,
-      "title": "Il mestiere dell'autore investigativo",
-      "objective": "Forme della non-fiction: inchiesta, reportage, biografia, ricostruzione storica; scegliere il formato",
-      "lessons_status": "to_develop"
+      "title": "Il mestiere dell’autore investigativo",
+      "objective": "Distinguere articolo, reportage, biografia e ricostruzione storica e formulare una promessa editoriale sostenibile.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Il mestiere dell'autore investigativo",
+      "original_programme_objective": "Forme della non-fiction: inchiesta, reportage, biografia, ricostruzione storica; scegliere il formato",
+      "writing_workshop": {
+        "title": "Dal metodo alla promessa di racconto",
+        "output": "Una proposta editoriale con titolo, pubblico, domanda, forma scelta e due limiti delle fonti.",
+        "url": "../scrittura-investigativa/unita-1/#workshop-u1"
+      },
+      "writing_deliverable": "Proposta editoriale",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 2,
       "title": "Trovare la storia e il punto di vista",
-      "objective": "Tema, domanda narrativa, pubblico, taglio originale e promessa al lettore",
-      "lessons_status": "to_develop"
+      "objective": "Selezionare una domanda originale e decidere chi racconta, a chi e da quale posizione dichiarata.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Trovare la storia e il punto di vista",
+      "original_programme_objective": "Tema, domanda narrativa, pubblico, taglio originale e promessa al lettore",
+      "writing_workshop": {
+        "title": "Trovare il punto di vista senza alterare i fatti",
+        "output": "Domanda narrativa, angolo scelto, motivazione e primo paragrafo.",
+        "url": "../scrittura-investigativa/unita-2/#workshop-u2"
+      },
+      "writing_deliverable": "Scheda del punto di vista",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 3,
       "title": "Dalla notizia al progetto editoriale",
-      "objective": "Analizzare un caso noto, scegliere cosa raccontare e progettare un articolo o libro",
-      "lessons_status": "to_develop"
+      "objective": "Preparare una proposta pubblicabile: tesi di lettura, scaletta, pubblico, lunghezza e materiali necessari.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Dalla notizia al progetto editoriale",
+      "original_programme_objective": "Analizzare un caso noto, scegliere cosa raccontare e progettare un articolo o libro",
+      "writing_workshop": {
+        "title": "Dall'idea alla scaletta pubblicabile",
+        "output": "Una scaletta annotata di sei blocchi, con fonti e lacune.",
+        "url": "../scrittura-investigativa/unita-3/#workshop-u3"
+      },
+      "writing_deliverable": "Pitch e scaletta",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 4,
       "title": "Interviste e testimonianze",
-      "objective": "Preparare domande, ascoltare, citare correttamente e proteggere gli interlocutori",
-      "lessons_status": "to_develop"
+      "objective": "Progettare un’intervista, attribuire dichiarazioni e trasformare materiale testimoniale in racconto rigoroso.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Interviste e testimonianze",
+      "original_programme_objective": "Preparare domande, ascoltare, citare correttamente e proteggere gli interlocutori",
+      "writing_workshop": {
+        "title": "Preparare interviste etiche e utili al racconto",
+        "output": "Una scaletta d'intervista e un piano di verifica delle dichiarazioni.",
+        "url": "../scrittura-investigativa/unita-4/#workshop-u4"
+      },
+      "writing_deliverable": "Protocollo d’intervista e montaggio",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 5,
       "title": "Lavorare con documenti reali",
-      "objective": "Selezionare materiali autentici, leggere immagini e atti e usarli nel testo senza sovraccaricarlo",
-      "lessons_status": "to_develop"
+      "objective": "Selezionare passaggi pertinenti, contestualizzarli e inserirli nel racconto senza trasformare il testo in un inventario.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Lavorare con documenti reali",
+      "original_programme_objective": "Selezionare materiali autentici, leggere immagini e atti e usarli nel testo senza sovraccaricarlo",
+      "writing_workshop": {
+        "title": "Far entrare le fonti nel testo",
+        "output": "Due schede documento e un passaggio narrativo corredato da rinvii.",
+        "url": "../scrittura-investigativa/unita-5/#workshop-u5"
+      },
+      "writing_deliverable": "Micro-racconto documentato",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 6,
       "title": "Personaggi, luoghi e cronologia",
-      "objective": "Costruire contesto, sequenze e scene documentate senza inventare dialoghi o pensieri",
-      "lessons_status": "to_develop"
+      "objective": "Comporre caratteri, ambienti e sequenze temporali documentate senza dialoghi o stati d’animo inventati.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Personaggi, luoghi e cronologia",
+      "original_programme_objective": "Costruire contesto, sequenze e scene documentate senza inventare dialoghi o pensieri",
+      "writing_workshop": {
+        "title": "Raccontare il tempo e i luoghi senza scene inventate",
+        "output": "Cronologia a tre colonne e due paragrafi editorialmente rivisti.",
+        "url": "../scrittura-investigativa/unita-6/#workshop-u6"
+      },
+      "writing_deliverable": "Sequenza e ritratto",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 7,
       "title": "Tecniche di scrittura investigativa",
-      "objective": "Attacco, struttura, passaggi, ritmo, chiarezza, spiegazioni e gestione delle citazioni",
-      "lessons_status": "to_develop"
+      "objective": "Scrivere un articolo leggibile e rigoroso con incipit, svolta, raccordi e chiusura.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Tecniche di scrittura investigativa",
+      "original_programme_objective": "Attacco, struttura, passaggi, ritmo, chiarezza, spiegazioni e gestione delle citazioni",
+      "writing_workshop": {
+        "title": "L'attacco, i passaggi e il ritmo del testo",
+        "output": "Tre aperture alternative e una versione definitiva con breve nota di scelta.",
+        "url": "../scrittura-investigativa/unita-7/#workshop-u7"
+      },
+      "writing_deliverable": "Riscrittura di una pagina",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 8,
       "title": "Scrivere per il lettore non specialista",
-      "objective": "Rendere accessibili termini tecnici, dati complessi e vicende giudiziarie",
-      "lessons_status": "to_develop"
+      "objective": "Rendere comprensibile una vicenda tecnica senza cancellarne precisione e incertezze.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Scrivere per il lettore non specialista",
+      "original_programme_objective": "Rendere accessibili termini tecnici, dati complessi e vicende giudiziarie",
+      "writing_workshop": {
+        "title": "Rendere leggibile un dossier complesso",
+        "output": "Mini-glossario di cinque termini e un paragrafo divulgativo rivisto.",
+        "url": "../scrittura-investigativa/unita-8/#workshop-u8"
+      },
+      "writing_deliverable": "Editing per chiarezza",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 9,
       "title": "Revisione, responsabilità e pubblicazione",
-      "objective": "Fact-checking finale, editing, privacy, diritto di replica, note e apparato delle fonti",
-      "lessons_status": "to_develop"
+      "objective": "Controllare affermazioni, titoli, immagini, privacy e opportunità di replica prima di pubblicare.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Revisione, responsabilità e pubblicazione",
+      "original_programme_objective": "Fact-checking finale, editing, privacy, diritto di replica, note e apparato delle fonti",
+      "writing_workshop": {
+        "title": "Editing, tutela delle persone e apparato delle fonti",
+        "output": "Testo corretto e registro di revisione con almeno dieci controlli.",
+        "url": "../scrittura-investigativa/unita-9/#workshop-u9"
+      },
+      "writing_deliverable": "Doppia revisione editoriale",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     },
     {
       "number": 10,
-      "title": "Officina dell'autore: opera finale",
-      "objective": "Scrivere, revisionare e presentare un'inchiesta o capitolo originale con dossier essenziale",
-      "lessons_status": "to_develop"
+      "title": "Officina dell’autore: opera finale",
+      "objective": "Consegnare un elaborato coerente, leggibile, verificabile e accompagnato dalle scelte editoriali.",
+      "lessons_status": "editorial_pilot_available",
+      "original_programme_title": "Officina dell'autore: opera finale",
+      "original_programme_objective": "Scrivere, revisionare e presentare un'inchiesta o capitolo originale con dossier essenziale",
+      "writing_workshop": {
+        "title": "Officina finale: dall'idea alla pubblicazione",
+        "output": "Articolo originale con schede delle fonti, indice ragionato e nota di revisione editoriale.",
+        "url": "../scrittura-investigativa/unita-10/#workshop-u10"
+      },
+      "writing_deliverable": "Portfolio conclusivo",
+      "assessment_policy": "Bozza e autovalutazione locali; nessuna valutazione o attestato automatici."
     }
   ],
   "assessment": {
@@ -189,5 +279,13 @@
     "verification_role": "Competenza trasversale di supporto, non contenuto principale né duplicazione del primo corso.",
     "entry_requirements": "Nessuna preparazione specialistica obbligatoria; spiegazioni semplici dei termini tecnici.",
     "price_candidate_eur": 79
-  }
+  },
+  "content_revision": "2026-10-18",
+  "editorial_progress": "Ten published units enriched with writing workshops; formal human evaluation and enrolment remain disabled.",
+  "practical_units_available": 10,
+  "workshop_material_kind": "case_S-01_is_fictional_learning_simulation",
+  "educational_stage": "editorial_pilot_available",
+  "course_identity": "Scrittura di articoli, inchieste, biografie e capitoli di non-fiction basati su fatti documentabili. La verifica delle fonti è competenza trasversale, non replica del corso Bottino Method.",
+  "pilot_notice": "Dieci lezioni e taccuino disponibili; non sono attivi account, caricamento elaborati, valutazione umana, iscrizioni o certificazioni.",
+  "release_date": null
 }
