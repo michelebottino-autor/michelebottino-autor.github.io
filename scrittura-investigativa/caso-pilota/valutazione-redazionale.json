@@ -1,0 +1,55 @@
+{
+  "rubric_version": "2026-pilota-editoriale",
+  "evaluator": "Revisione redazionale assistita da IA; non è un esame ufficiale né sostituisce un docente",
+  "submission": "La pagina dei soccorsi, modello didattico",
+  "word_count": 1062,
+  "word_target": "900–1.500",
+  "criterion": [
+    {
+      "name": "Originalità del taglio",
+      "maximum": 15,
+      "score": 12,
+      "evidence": "Approccio circoscritto a un singolo giornale e al modo in cui racconta l'assistenza; utile, ma sviluppo ancora più analitico che investigativo."
+    },
+    {
+      "name": "Struttura e chiarezza",
+      "maximum": 25,
+      "score": 20,
+      "evidence": "Apertura, due notizie principali, contesto, limiti, prospettive e chiusura sono riconoscibili; alcune riflessioni sui limiti si ripetono."
+    },
+    {
+      "name": "Uso di interviste e documenti",
+      "maximum": 20,
+      "score": 12,
+      "evidence": "Pagina giornalistica primaria individuata e guida secondaria riconosciuta; nessuna intervista inventata. Manca confronto con altri documenti primari e immagine originale."
+    },
+    {
+      "name": "Accuratezza fattuale",
+      "maximum": 25,
+      "score": 12,
+      "evidence": "Attribuzioni prudenti, ma le affermazioni tratte da OCR non hanno ancora controllo visivo puntuale; gli effetti degli aiuti non sono indipendentemente dimostrati."
+    },
+    {
+      "name": "Revisione editoriale",
+      "maximum": 15,
+      "score": 9,
+      "evidence": "Registro delle lacune presente; manca verifica esterna della trascrizione e revisione indipendente dell'elaborato."
+    }
+  ],
+  "passing_threshold": 70,
+  "outcome": "non_conforme_per_validazione_finale",
+  "human_review_completed": false,
+  "accredit_or_issue_certificate": false,
+  "blocking_conditions": [
+    "Facsimile originale non controllato integralmente.",
+    "Assenti fonti indipendenti sui risultati degli interventi.",
+    "Nessuna valutazione umana effettivamente svolta."
+  ],
+  "revision_tasks": [
+    "Acquisire e leggere visivamente la pagina 4, correggere le trascrizioni se necessario.",
+    "Reperire almeno un'altra fonte primaria indipendente utile alla domanda editoriale.",
+    "Tagliare ripetizioni riflessive e rafforzare il ritmo narrativo con prove.",
+    "Produrre un registro prima/dopo delle modifiche e richiedere revisione umana."
+  ],
+  "score": 65
+}

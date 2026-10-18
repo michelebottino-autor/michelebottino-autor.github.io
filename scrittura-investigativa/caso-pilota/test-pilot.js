@@ -33,10 +33,11 @@ async function run(){
  try{
  await page.goto(url+'/scrittura-investigativa/caso-pilota/',{waitUntil:'networkidle0'});
  assert.equal(await page.$$eval('.pilot-step',a=>a.length),10);
- assert.equal(await page.$$eval('tbody tr',a=>a.length),8);
- assert.equal(await page.$$eval('.pilot-article p',a=>a.length),10);
+ assert.equal(await page.evaluate(()=>document.querySelectorAll('.pilot-panel[aria-labelledby=matrix] tbody tr').length),8);
+ assert.equal(await page.evaluate(()=>document.querySelectorAll('.pilot-article p').length),d.article.paragraphs.length);
  assert.ok(await page.$eval('a[href="#claim-P3"]',a=>Boolean(a.href)));
  assert.ok(await page.$eval('a[href*="chroniclingamerica.loc.gov"]',a=>Boolean(a.href)));
+ assert.ok(await page.$eval('#valutazione-redazionale',x=>x.textContent.includes('65/100')));
  await page.goto(url+'/scrittura-investigativa/',{waitUntil:'networkidle0'});
  assert.equal(await page.$$eval('a[href="./caso-pilota/"]',a=>a.length)>=1,true);
  await page.goto(url+'/scrittura-investigativa/unita-1/',{waitUntil:'networkidle0'});

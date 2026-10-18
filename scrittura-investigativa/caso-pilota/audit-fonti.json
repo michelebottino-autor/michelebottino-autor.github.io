@@ -1,0 +1,94 @@
+{
+  "revision": "2026-10-18",
+  "scope": "Audit fonti per il corso Scrittura Investigativa; livelli di verifica non equivalenti",
+  "checked": [
+    {
+      "id": "loc_1918",
+      "institution": "Library of Congress / Chronicling America",
+      "kind": "pagina di giornale primaria",
+      "reference": "The Morgan City Daily Review, 14 ottobre 1918, immagine 4",
+      "status": "record_and_ocr_confirmed_facsimile_pending",
+      "assertions": [
+        "La pagina e il giornale sono identificabili con data e indicazione Image 4.",
+        "Il testo indicizzato reca le sezioni sulle volontarie, il fondo dei cantieri e l'informazione sanitaria.",
+        "I passaggi puntuali non sono ancora stati confrontati integralmente con la scansione."
+      ],
+      "publish_use": "attribuzione prudente e parafrasi; nessuna citazione letterale OCR certificata"
+    },
+    {
+      "id": "loc_blog",
+      "institution": "Library of Congress",
+      "kind": "articolo secondario",
+      "reference": "Researching Epidemics in Chronicling America Newspapers (aprile 2020)",
+      "status": "institutional_page_indexed_confirmed",
+      "assertions": [
+        "La guida descrive la distribuzione di un testo pubblico sull'influenza in più giornali nel 1918.",
+        "Non verifica direttamente i risultati dei soccorsi a Morgan City."
+      ],
+      "publish_use": "soltanto contesto"
+    },
+    {
+      "id": "loc_bly",
+      "institution": "Library of Congress",
+      "kind": "guida storica secondaria",
+      "reference": "Behind Asylum Bars: Nellie Bly Reporting from Blackwell’s Island, 8 novembre 2022",
+      "status": "institutional_page_indexed_confirmed",
+      "assertions": [
+        "Riferimento esistente, non equivalente alla consultazione integrale del testo del 1887."
+      ],
+      "publish_use": "lettura per le unità di voce e punto di vista"
+    },
+    {
+      "id": "nara_titanic",
+      "institution": "National Archives (NARA)",
+      "kind": "articolo storico istituzionale",
+      "reference": "They Said It Couldn’t Sink, Prologue, 2012",
+      "status": "institutional_page_accessible_confirmed",
+      "assertions": [
+        "Articolo attribuito ad Alison Gavin e Christopher Zarr.",
+        "Rinvia a deposizioni e documenti d'archivio; non ne sostituisce gli originali."
+      ],
+      "publish_use": "materiale di contesto per testimonianze e attribuzioni"
+    },
+    {
+      "id": "loc_flu_guide",
+      "institution": "Library of Congress",
+      "kind": "guida alla raccolta",
+      "reference": "Influenza Epidemic of 1918 — Search Strategies & Selected Articles",
+      "status": "institutional_guide_indexed_confirmed",
+      "assertions": [
+        "Lista di articoli d'epoca; è un repertorio, non un singolo documento primario."
+      ],
+      "publish_use": "repertorio per selezione delle fonti"
+    },
+    {
+      "id": "loc_wells",
+      "institution": "Library of Congress",
+      "kind": "guida alla raccolta",
+      "reference": "Ida B. Wells: Topics in Chronicling America",
+      "status": "institutional_guide_indexed_confirmed",
+      "assertions": [
+        "Guida con collegamenti a giornali storici; testi originali da aprire a parte."
+      ],
+      "publish_use": "lettura di contesto"
+    },
+    {
+      "id": "loc_rights",
+      "institution": "Library of Congress",
+      "kind": "dichiarazione diritti",
+      "reference": "Chronicling America — Rights and Access",
+      "status": "policy_confirmed_general",
+      "assertions": [
+        "I giornali USA di oltre 95 anni sono di pubblico dominio negli Stati Uniti secondo la guida.",
+        "Resta responsabilità dell'utilizzatore controllare contesto e eventuali altri diritti."
+      ],
+      "publish_use": "nessuna scansione incorporata"
+    }
+  ],
+  "blocked": [
+    "Accertamento visivo della pagina originale del 14 ottobre 1918: accesso diretto negato e facsimile non acquisito.",
+    "Verifica fotografica delle grafie, dei titoli delle colonne e della trascrizione originale.",
+    "Controllo indipendente dei risultati degli interventi annunciati dal giornale.",
+    "Revisione umana esterna dell'accuratezza dell'elaborato modello."
+  ]
+}

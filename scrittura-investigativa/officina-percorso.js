@@ -126,6 +126,9 @@ function renderUnit(course,u){
    const art=E('article','studio-concept');art.append(heading(3,title),para(text));sec.append(art);
  });
  const ex=E('aside','studio-model');ex.append(heading(3,'Esempio di lavoro'),para(u.model));sec.append(ex);
+const revision=E('section','studio-revision');
+revision.append(heading(3,'Revisione commentata · dal difetto al testo'),para('Formulazione da evitare: '+u.editorial_revision.pitfall,'studio-erroneous'),para('Riscrittura documentata: '+u.editorial_revision.rewrite,'studio-better'),para(u.editorial_revision.comment),heading(3,'Esercizio di riscrittura applicata'),para(u.editorial_revision.workshop),para('Criterio editoriale: '+u.editorial_revision.assessment,'studio-note'));
+sec.append(revision);
  const pilot=E('p','studio-source');
 const pilotA=E('a','','Vedi questa competenza applicata al caso pilota documentario →');
 pilotA.href='../caso-pilota/';pilot.append(pilotA);sec.append(pilot);

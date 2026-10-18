@@ -152,6 +152,12 @@
         ]
       },
       {
+        "text": "Il valore della pagina non è soltanto quello di registrare un fatto: è anche quello di mostrare come un giornale locale costruiva la propria agenda. Nello stesso testo indicizzato compaiono notizie personali, annunci commerciali, avvisi e informazioni di interesse cittadino. La compresenza di questi generi colloca le notizie sull’assistenza fra le esigenze quotidiane dei lettori. È una possibile chiave interpretativa, non una misura dell’interesse reale del pubblico. Senza uno studio delle altre edizioni, non sappiamo se questa impaginazione fosse eccezionale o abituale. Anche l’ordine delle colonne deve essere verificato nell’immagine prima di diventare una descrizione materiale della pagina.",
+        "claim_ids": [
+          "P1"
+        ]
+      },
+      {
         "text": "Il testo digitalizzato della pagina riferisce una richiesta di nuove volontarie per l’assistenza. Secondo la notizia, le persone già impegnate non bastavano a coprire tutti i bisogni segnalati. Il giornale descrive anche la necessità di spostare alcune volontarie tra casi differenti. Il punto narrativo non è l’invenzione di una corsia d’ospedale o di un dialogo: è la difficoltà organizzativa riferita dal quotidiano. Non sappiamo dalla sola pagina quante famiglie rimasero senza aiuto.",
         "claim_ids": [
           "P2"
@@ -159,6 +165,13 @@
       },
       {
         "text": "Lo stesso resoconto attribuisce importanza pubblica al servizio delle volontarie. Il testo indicizzato comprende nominativi, ma la grafia di alcuni appare incerta nel riconoscimento ottico. Una versione editoriale prudente rinuncia quindi a riprodurli finché non sarà disponibile una verifica della scansione. Non si tratta di sacrificare la precisione narrativa, ma di distinguere un dato verificato da un dato semplicemente leggibile in una trascrizione automatica.",
+        "claim_ids": [
+          "P2",
+          "Q2"
+        ]
+      },
+      {
+        "text": "Un esercizio di narrazione consiste nel rendere leggibile proprio questa incertezza. Per un lettore contemporaneo sarebbe suggestivo incontrare una volontaria, seguirla in una casa e ascoltarne la preoccupazione. Nessuno di questi dettagli è ricostruibile dal materiale qui controllato. L’autore può invece descrivere il problema pubblico che emerge dalla notizia: il giornale segnala che la disponibilità di persone non rispondeva alle richieste di assistenza. Si tratta già di una tensione narrativa. La si può organizzare attraverso una domanda — come si cercava di aumentare il numero dei volontari? — senza trasformare un’informazione pubblicata in una scena di finzione.",
         "claim_ids": [
           "P2",
           "Q2"
@@ -184,6 +197,13 @@
         ]
       },
       {
+        "text": "C’è poi un problema di voce. La notizia sul fondo contiene informazioni che il quotidiano attribuisce ai responsabili dell’iniziativa. Non conosciamo i criteri con cui la redazione controllò quelle dichiarazioni. Nel nostro racconto, quindi, la forma dei verbi conta: «il giornale riferiva», «i promotori annunciavano», «secondo quanto pubblicato» sono formule più fedeli di «fu garantito» o «venne distribuito». Questa scelta non è semplice prudenza burocratica. È un modo per far capire al lettore che una fonte ha una prospettiva, una data e un rapporto limitato con gli eventi che narra. La precisione dell’attribuzione diventa parte del ritmo del testo.",
+        "claim_ids": [
+          "P3",
+          "P4"
+        ]
+      },
+      {
         "text": "La pagina conserva anche indicazioni sanitarie attribuite al servizio pubblico statunitense. Quel materiale appartiene al dibattito e alle conoscenze del 1918, e non costituisce un consiglio sanitario attuale. Una ricognizione moderna della Library of Congress segnala che testi simili circolarono su diversi giornali americani. La guida istituzionale fornisce un contesto di pubblicazione; non verifica autonomamente la distribuzione degli aiuti nella città di Morgan City.",
         "claim_ids": [
           "P5",
@@ -193,6 +213,13 @@
       {
         "text": "Quali documenti servirebbero per proseguire? Altri numeri della stessa testata, eventuali registri del comitato locale, rendiconti del fondo e corrispondenze relative ai volontari. Ognuno risponderebbe a una domanda differente: quando fu attivato un intervento, chi ne beneficiò, quali aiuti furono concretamente erogati. Fino al loro esame, le domande rimangono aperte. Non è consentito trasformare la plausibilità delle ipotesi in fatti di cronaca.",
         "claim_ids": [
+          "Q1"
+        ]
+      },
+      {
+        "text": "La ricerca avrebbe anche bisogno di una domanda di confronto: quelle iniziative riguardavano soltanto un nucleo di lavoratori o si inserivano in un'organizzazione più ampia? Il materiale attualmente disponibile non risponde. La stessa pagina nomina una struttura di assistenza locale, ma nominarla non basta a dimostrare le modalità di ogni collaborazione. Il passo successivo non è cercare soltanto nuove notizie che confermino la prima impressione; è cercare anche dati che possano modificare l’interpretazione. Un registro di spese, una comunicazione successiva o un resoconto discordante potrebbero imporre di riscrivere l’articolo. Questo è il motivo per cui l’opera finale deve conservare una lista di domande aperte.",
+        "claim_ids": [
+          "P4",
           "Q1"
         ]
       },
@@ -211,7 +238,12 @@
           "P3"
         ]
       }
-    ]
+    ],
+    "expanded_revision": "2026-10-18",
+    "word_count": 1062,
+    "word_target": "900-1500",
+    "model_status": "elaborato completo per estensione, non ancora validato come ricerca storica",
+    "editorial_evaluation_ref": "./valutazione-redazionale.json"
   },
   "review_gates": [
     "Riaprire e controllare integralmente il facsimile della pagina 4.",
@@ -220,5 +252,6 @@
     "Documentare l’eventuale riuso delle immagini secondo le condizioni applicabili.",
     "Registrare la revisione umana del testo prima di considerarlo un modello definitivo."
   ],
-  "disclaimer": "Bozza didattica costruita su una fonte primaria storica identificata e su testi indicizzati. La verifica integrale del facsimile resta da completare. Non è una ricostruzione esaustiva, né una prova finale valutata."
+  "disclaimer": "Bozza didattica costruita su una fonte primaria storica identificata e su testi indicizzati. La verifica integrale del facsimile resta da completare. Non è una ricostruzione esaustiva, né una prova finale valutata.",
+  "source_audit_ref": "./audit-fonti.json"
 }

@@ -1,0 +1,87 @@
+{
+  "revision": "2026-10-18",
+  "purpose": "Rendere coerenti obiettivi, metadati, laboratori di scrittura e casi di esercitazione nelle dieci unità. Gli esercizi metodologici precedenti restano solo come approfondimenti facoltativi.",
+  "source_method": "Le fonti esterne sono citate come letture istituzionali, non automaticamente come fonti primarie integralmente esaminate.",
+  "units": [
+    {
+      "unit": 1,
+      "pitfall": "La verità nascosta dietro la crisi: tutto è già chiaro.",
+      "rewrite": "Una pagina di giornale del 1918 riferisce richieste di assistenza e l'avvio di un fondo di soccorso. Questo articolo ricostruisce ciò che la testata raccontava e distingue quanto ancora non è possibile accertare.",
+      "comment": "Il titolo non deve attribuire intenti o risultati. Nella proposta editoriale indicare pubblico, formato, domanda e materiali che si potranno davvero esaminare.",
+      "workshop": "Scrivi tre titoli per il caso pilota: neutro, narrativo, fuorviante. Scarta il terzo motivando con due limiti del giornale.",
+      "assessment": "Valutare promessa, genere, destinatario e fattibilità; non quantità di documenti catalogati."
+    },
+    {
+      "unit": 2,
+      "pitfall": "I volontari erano disperati e tutta la città li abbandonò.",
+      "rewrite": "Il giornale riportava che il gruppo di persone impegnate nell'assistenza non era sufficiente per tutte le richieste ricevute. Non conosciamo, tramite questa pagina, il punto di vista dei destinatari.",
+      "comment": "Il narratore documentario non può sostituire con sentimenti inventati ciò che manca nei documenti. Cambiare angolo narrativo modifica la selezione, non i fatti.",
+      "workshop": "Confronta due proposte: risposta della comunità e intervento dei cantieri. Scegline una dopo aver scritto che cosa resta ignoto.",
+      "assessment": "Valutare la coerenza tra voce, domanda e fonti; penalizzare prospettive attribuite senza testimoni."
+    },
+    {
+      "unit": 3,
+      "pitfall": "La struttura è l'elenco completo delle fonti disponibili.",
+      "rewrite": "Struttura: apertura con il documento; domanda su come furono presentati i soccorsi; notizie sui volontari; fondo dei cantieri; limiti documentari; chiusura con le piste di approfondimento.",
+      "comment": "Un dossier è un archivio di materiali; un articolo è una progressione argomentativa. Ogni sezione deve rispondere a una domanda del lettore.",
+      "workshop": "Trasforma tre schede di fonte in cinque sezioni: per ciascuna annota funzione narrativa, passaggio e documento necessario.",
+      "assessment": "Valutare tensione narrativa sostenibile, sequenza, lunghezza e impegno delle prove, non solo matrice."
+    },
+    {
+      "unit": 4,
+      "pitfall": "Una volontaria raccontò: «Non avevamo più forze».",
+      "rewrite": "Il quotidiano riportava la richiesta di ulteriore aiuto, ma questa esercitazione non comprende interviste svolte oggi e non autorizza l'inserimento di nuovi dialoghi.",
+      "comment": "Le parole in prima persona richiedono materiale realmente raccolto o una citazione verificata. L'assenza di un'intervista può diventare una nota sulle prospettive non documentate.",
+      "workshop": "Prepara otto domande per un possibile studioso del contesto, distinguendo domande di fatto, di interpretazione e di conferma. Non inventare risposte.",
+      "assessment": "Valutare preparazione, neutralità, attribuzione, consenso e corretta omissione delle interviste inesistenti."
+    },
+    {
+      "unit": 5,
+      "pitfall": "Le due notizie del medesimo quotidiano sono due conferme indipendenti.",
+      "rewrite": "Una pagina del giornale presenta due iniziative distinte. Esse mostrano che cosa la testata pubblicò, ma la loro compresenza non costituisce un riscontro indipendente dell'effettiva distribuzione degli aiuti.",
+      "comment": "Separare fonte primaria consultata, metadati, OCR e guida secondaria. Le verifiche mancanti devono comparire nelle note.",
+      "workshop": "Per un paragrafo del caso pilota registra identificativo della pagina, titolo della notizia, punto OCR, inferenza e controllo visivo ancora necessario.",
+      "assessment": "Valutare pertinenza documentaria e integrazione del documento nel racconto, non accumulo di link."
+    },
+    {
+      "unit": 6,
+      "pitfall": "Il 14 ottobre il gruppo consegnò cibo a ogni famiglia e festeggiò in piazza.",
+      "rewrite": "Nell'edizione del 14 ottobre 1918 il giornale riferì l'organizzazione di aiuti. La data della pubblicazione non dimostra né la consegna in quella giornata né la durata dell'iniziativa.",
+      "comment": "Un articolo d'epoca può riferire eventi precedenti o annunci futuri. Evitare scene ricostruite e reazioni non riportate.",
+      "workshop": "Prepara una cronologia con data della fonte, evento descritto e livello di certezza. Trasforma l'elenco in due paragrafi narrativi.",
+      "assessment": "Valutare orientamento temporale, costruzione dei luoghi e assenza di dettagli inventati."
+    },
+    {
+      "unit": 7,
+      "pitfall": "Quando la città sembrava perduta, un manipolo di eroi entrò in scena.",
+      "rewrite": "Su una pagina del quotidiano locale comparvero due richieste di solidarietà: nuove volontarie e un fondo di assistenza. Quanto di quell'aiuto raggiunse le famiglie richiede altri documenti.",
+      "comment": "L'incipit sviluppa una domanda invece di fabbricare una scena. I raccordi devono esprimere relazioni effettivamente sostenibili.",
+      "workshop": "Confronta un'apertura documentaria e una narrativa, annotando per ciascuna luogo, domanda, promessa e una frase da tagliare.",
+      "assessment": "Valutare incipit, architettura, ritmo, transizioni e controllo delle inferenze."
+    },
+    {
+      "unit": 8,
+      "pitfall": "L'OCR e la segnatura provano l'esistenza del fatto descritto.",
+      "rewrite": "La scheda permette di rintracciare il giornale; il riconoscimento automatico ne propone una trascrizione, che può contenere errori. Nessuno dei due strumenti prova da solo che un evento annunciato sia avvenuto.",
+      "comment": "Definire i termini quando compaiono e sostituire formule astratte con esempi del caso. Non scambiare semplificazione per omissione dell'incertezza.",
+      "workshop": "Riscrivi per un lettore comune una nota di fonte, un passaggio sul fondo e una cautela sull'OCR, senza perdere il riferimento originale.",
+      "assessment": "Valutare comprensibilità, fedeltà semantica, spiegazione dei dati e rimandi."
+    },
+    {
+      "unit": 9,
+      "pitfall": "La fonte è online: possiamo riprodurre qualunque scansione e fare nomi incerti.",
+      "rewrite": "Il collegamento pubblico consente la consultazione della fonte. Prima di riprodurre immagini o nomi occorre verificare condizioni di utilizzo, lettura corretta del facsimile e necessità editoriale.",
+      "comment": "Controllo delle affermazioni, editing strutturale, privacy e diritti sono revisioni diverse. Preparare una tabella prima/dopo con motivazione.",
+      "workshop": "Esegui tre passate sulla bozza: struttura, riscontri, lingua. Registra almeno cinque interventi con la ragione editoriale.",
+      "assessment": "Valutare adeguatezza dei tagli, diritti, attribuzioni e tracciabilità delle revisioni."
+    },
+    {
+      "unit": 10,
+      "pitfall": "Il quiz ha dato 80%: il testo è pubblicabile e merita un attestato.",
+      "rewrite": "Un quiz verifica riconoscimento di procedure. Un'opera richiede un revisore che legga struttura, originalità, fonti, accuratezza e revisioni; il laboratorio online non assegna una valutazione ufficiale.",
+      "comment": "Il portfolio deve contenere testo completo, fonti effettivamente consultate, nota sulle lacune e scelte di editing. Un esempio di 664 parole resta un modello parziale se la consegna ne richiede 900–1.500.",
+      "workshop": "Consegna 900–1.500 parole più pitch, fonti e registro di cinque correzioni. La rubrica è una guida; l'esito resta subordinato a valutazione umana.",
+      "assessment": "Applicare rubrica 15/25/20/25/15 con giudizio argomentato, condizioni bloccanti e possibilità di revisione."
+    }
+  ]
+}

@@ -14,7 +14,7 @@ for(let i=1;i<=10;i++){
  const u=course.units[i-1],f=path.join(__dirname,'unita-'+i,'index.html'),html=fs.readFileSync(f,'utf8');
  assert.equal(u.number,i);assert.equal(program.units[i-1].title,u.title);
  assert.ok(u.lesson.length>=3&&u.steps.length>=3&&u.checks.length>=3);
- assert.match(html,/officina-percorso\.js\?v=2/);assert.match(html,/officina-percorso\.css\?v=2/);
+ assert.match(html,/officina-percorso\.js\?v=3/);assert.match(html,/officina-percorso\.css\?v=3/);
  assert.ok(html.includes(u.title),'Title of unit '+i+' must be synchronized');
 }
 const puppeteer=(()=>{
@@ -52,6 +52,7 @@ const run=async()=>{
  for(let i=1;i<=10;i++){
    await page.goto(url+'/scrittura-investigativa/unita-'+i+'/',{waitUntil:'networkidle0'});
    await page.waitForSelector('#taccuino textarea');
+   assert.equal(await page.evaluate(()=>document.querySelectorAll('.studio-revision').length),1);
    const title=await page.$eval('#taccuino h2',x=>x.textContent);
    assert.equal(title,course.units[i-1].title);
    assert.ok((await page.$$eval('#taccuino .studio-check input',x=>x.length))>=3);
