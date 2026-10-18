@@ -3,7 +3,7 @@
   "id": "morgan_1918_pilot",
   "title": "La pagina dei soccorsi",
   "subtitle": "Morgan City, ottobre 1918: un laboratorio su una fonte giornalistica autentica",
-  "source_integrity": "Pagina individuata e testo OCR consultato parzialmente; scansione non verificata visivamente. Nessuna citazione letterale certificata.",
+  "source_integrity": "Identificazione bibliografica e coerenza di alcuni dati con l’OCR pubblico; facsimile non visionato integralmente. Non è una trascrizione critica.",
   "review_status": "pilot_not_accredited",
   "sources": [
     {
@@ -56,10 +56,10 @@
     },
     {
       "id": "P4",
-      "claim": "Viene menzionato un coordinamento con la Croce Rossa.",
+      "claim": "Il giornale riferisce che i responsabili del fondo prevedevano di collaborare con il comitato locale della Croce Rossa.",
       "source_id": "loc_1918",
       "status": "ocr_partial",
-      "limitation": "Mancano i registri degli interventi."
+      "limitation": "Era un'intenzione annunciata. Mancano prove indipendenti sull'attuazione e sui singoli interventi."
     },
     {
       "id": "P5",
@@ -184,7 +184,7 @@
         ]
       },
       {
-        "text": "Nel racconto del fondo compare anche un possibile coordinamento con il comitato locale della Croce Rossa. Il collegamento è importante per il lettore, perché mostra quali organizzazioni la notizia poneva in relazione. Ma è una relazione riportata dal giornale: mancano qui registri operativi, corrispondenze e rendiconti che permettano di stabilire come ogni intervento si svolse. Un testo documentario deve fermarsi nel punto esatto in cui terminano i riscontri.",
+        "text": "Nel racconto del fondo si legge che i promotori prevedevano un coordinamento con il comitato locale della Croce Rossa. Il collegamento è importante per il lettore, perché mostra quali organizzazioni la notizia poneva in relazione. Ma è una relazione riportata dal giornale: mancano qui registri operativi, corrispondenze e rendiconti che permettano di stabilire come ogni intervento si svolse. Un testo documentario deve fermarsi nel punto esatto in cui terminano i riscontri.",
         "claim_ids": [
           "P4"
         ]
@@ -240,7 +240,7 @@
       }
     ],
     "expanded_revision": "2026-10-18",
-    "word_count": 1062,
+    "word_count": 1065,
     "word_target": "900-1500",
     "model_status": "elaborato completo per estensione, non ancora validato come ricerca storica",
     "editorial_evaluation_ref": "./valutazione-redazionale.json"
@@ -253,5 +253,13 @@
     "Registrare la revisione umana del testo prima di considerarlo un modello definitivo."
   ],
   "disclaimer": "Bozza didattica costruita su una fonte primaria storica identificata e su testi indicizzati. La verifica integrale del facsimile resta da completare. Non è una ricostruzione esaustiva, né una prova finale valutata.",
-  "source_audit_ref": "./audit-fonti.json"
+  "source_audit_ref": "./audit-fonti.json",
+  "evidence_review": {
+    "date": "2026-10-18",
+    "method": "comparison_with_indexed_ocr_not_original_image",
+    "facsimile_viewed": false,
+    "independent_primary_corrob": false,
+    "human_reviewer": false,
+    "detail_file": "./verifica-puntuale.json"
+  }
 }

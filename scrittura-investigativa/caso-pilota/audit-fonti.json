@@ -7,11 +7,13 @@
       "institution": "Library of Congress / Chronicling America",
       "kind": "pagina di giornale primaria",
       "reference": "The Morgan City Daily Review, 14 ottobre 1918, immagine 4",
-      "status": "record_and_ocr_confirmed_facsimile_pending",
+      "status": "ocr_titles_and_core_claims_checked_facsimile_not_seen",
       "assertions": [
-        "La pagina e il giornale sono identificabili con data e indicazione Image 4.",
-        "Il testo indicizzato reca le sezioni sulle volontarie, il fondo dei cantieri e l'informazione sanitaria.",
-        "I passaggi puntuali non sono ancora stati confrontati integralmente con la scansione."
+        "La testata del 14 ottobre 1918, Image 4, è identificata dai riferimenti della Library of Congress.",
+        "L'OCR mostra le intestazioni MORE NURSES NEEDED, SHIPYARD WORKERS ORGANIZE FOR RELIEF e UNCLE SAM'S ADVICE ON FLU.",
+        "Il coordinamento con la Croce Rossa è formulato dai promotori come intenzione futura; non come attività dimostrata.",
+        "Il giornale riferisce assistenza prestata secondo funzionari; non offre un elenco verificato di beneficiari.",
+        "La risorsa originale non è stata ottenuta dai portali ufficiali (risposta HTTP 403)."
       ],
       "publish_use": "attribuzione prudente e parafrasi; nessuna citazione letterale OCR certificata"
     },
@@ -86,9 +88,19 @@
     }
   ],
   "blocked": [
-    "Accertamento visivo della pagina originale del 14 ottobre 1918: accesso diretto negato e facsimile non acquisito.",
-    "Verifica fotografica delle grafie, dei titoli delle colonne e della trascrizione originale.",
-    "Controllo indipendente dei risultati degli interventi annunciati dal giornale.",
-    "Revisione umana esterna dell'accuratezza dell'elaborato modello."
-  ]
+    "Facsimile non acquisito: richieste al portale Library of Congress e Chronicling America bloccate (HTTP 403).",
+    "Grafie, impaginazione, titoli e contenuti OCR non collazionati direttamente con la scansione.",
+    "Mancanza di riscontri indipendenti sull'effettiva distribuzione degli aiuti.",
+    "Nessun revisore umano esterno ha esaminato l'elaborato."
+  ],
+  "last_attempt": {
+    "date": "2026-10-18",
+    "methods": [
+      "official LOC page via HTTP",
+      "official LOC item and resource via browser",
+      "original PDF link"
+    ],
+    "outcome": "HTTP_403",
+    "facsimile_read": false
+  }
 }

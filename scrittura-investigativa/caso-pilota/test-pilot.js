@@ -38,6 +38,11 @@ async function run(){
  assert.ok(await page.$eval('a[href="#claim-P3"]',a=>Boolean(a.href)));
  assert.ok(await page.$eval('a[href*="chroniclingamerica.loc.gov"]',a=>Boolean(a.href)));
  assert.ok(await page.$eval('#valutazione-redazionale',x=>x.textContent.includes('65/100')));
+ assert.ok(await page.$eval('#fascicolo-revisore a[href="./revisione/"]',x=>x.href.includes('/revisione/')));
+ await page.goto(url+'/scrittura-investigativa/caso-pilota/revisione/',{waitUntil:'networkidle0'});
+ assert.equal(await page.evaluate(()=>document.querySelectorAll('table tbody tr').length),14);
+ assert.ok(await page.$eval('main',x=>x.textContent.includes('nessuna revisione umana esterna')));
+ await page.goto(url+'/scrittura-investigativa/caso-pilota/',{waitUntil:'networkidle0'});
  await page.goto(url+'/scrittura-investigativa/',{waitUntil:'networkidle0'});
  assert.equal(await page.$$eval('a[href="./caso-pilota/"]',a=>a.length)>=1,true);
  await page.goto(url+'/scrittura-investigativa/unita-1/',{waitUntil:'networkidle0'});

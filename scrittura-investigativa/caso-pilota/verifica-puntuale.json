@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-18",
+  "review_type": "bibliographic_and_indexed_ocr_consistency",
+  "facsimile_review": false,
+  "independent_primary_corrob": false,
+  "human_review": false,
+  "items": [
+    {
+      "id": "P1",
+      "source_id": "loc_1918",
+      "type": "bibliographic_record",
+      "location_hint": "The Morgan City daily review, 14 October 1918, Image 4",
+      "what_is_supported": "Giornale, data e numero della pagina identificati",
+      "not_supported": "La lettura del facsimile originale non è stata compiuta"
+    },
+    {
+      "id": "P2",
+      "source_id": "loc_1918",
+      "type": "ocr_news_report",
+      "location_hint": "MORE NURSES NEEDED",
+      "what_is_supported": "La notizia riferisce ricerca di ulteriori volontarie per assistenza",
+      "not_supported": "Non certifica numero totale di pazienti o grafie dei nomi"
+    },
+    {
+      "id": "P3",
+      "source_id": "loc_1918",
+      "type": "ocr_news_report",
+      "location_hint": "SHIPYARD WORKERS ORGANIZE FOR RELIEF",
+      "what_is_supported": "Un fondo dei lavoratori dei cantieri e le forme di aiuto sono descritti dalla testata",
+      "not_supported": "Importi, beneficiari e risultati non riscontrati indipendentemente"
+    },
+    {
+      "id": "P4",
+      "source_id": "loc_1918",
+      "type": "ocr_future_intent",
+      "location_hint": "expect to work in conjunction",
+      "what_is_supported": "I responsabili prevedevano di coordinarsi con la Croce Rossa",
+      "not_supported": "Nessuna prova che tale coordinamento fu effettivamente attuato"
+    },
+    {
+      "id": "P5",
+      "source_id": "loc_1918",
+      "type": "ocr_historical_health",
+      "location_hint": "UNCLE SAMS ADVICE ON FLU",
+      "what_is_supported": "Presente informazione sanitaria attribuita a un servizio pubblico degli USA nel 1918",
+      "not_supported": "Non è una raccomandazione sanitaria valida per oggi"
+    },
+    {
+      "id": "P6",
+      "source_id": "loc_blog",
+      "type": "secondary_guide",
+      "location_hint": "Researching Epidemics in Chronicling America Newspapers",
+      "what_is_supported": "LOC segnala diffusione di materiale divulgativo simile in diversi giornali nel 1918",
+      "not_supported": "Non verifica quanto accadde a Morgan City"
+    },
+    {
+      "id": "Q1",
+      "source_id": null,
+      "type": "open_question",
+      "location_hint": null,
+      "what_is_supported": "Nessuna conferma indipendente degli esiti degli aiuti",
+      "not_supported": "Servono rendiconti, registri o altre fonti dirette"
+    },
+    {
+      "id": "Q2",
+      "source_id": null,
+      "type": "open_question",
+      "location_hint": null,
+      "what_is_supported": "Letture OCR mostrano incertezze grafiche",
+      "not_supported": "Servono immagini originali per titoli e nomi precisi"
+    }
+  ],
+  "sources": [
+    {
+      "id": "loc_1918",
+      "url": "https://chroniclingamerica.loc.gov/lccn/sn88064293/1918-10-14/ed-1/seq-4/"
+    },
+    {
+      "id": "loc_blog",
+      "url": "https://blogs.loc.gov/headlinesandheroes/2020/04/researching-epidemics-in-chronicling-america-newspapers/"
+    }
+  ],
+  "publication_rule": "Parafrasare con attribuzione. Non affermare esiti, dialoghi, nomi corretti o collazione visiva non verificati."
+}
