@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "id": "LOC-1918-CURATION",
+  "title": "Tre edizioni, un percorso archivistico",
+  "publication": "The Morgan City Daily Review (Morgan City, Louisiana)",
+  "publisher_collection": "Chronicling America / Library of Congress",
+  "contributing_institution": "Louisiana State University",
+  "purpose": "Esercizio di curatela narrativa su un corpus di tre numeri dello stesso giornale, non su tre fonti istituzionali indipendenti.",
+  "type": "authentic_historical_source_metadata_and_prior_verified_facsimiles",
+  "rights": "Link only. No full-page scan republished. Check LOC rights and contributor notices before reuse.",
+  "materials": [
+    {
+      "id": "MC-10",
+      "date": "1918-10-10",
+      "page": 1,
+      "title": "Notizie sulle misure locali e sul reclutamento di volontari",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-10/ed-1/?sp=1",
+      "status": "pagina consultata e notizie locali esaminate visivamente in precedente verifica del progetto",
+      "use": "Primo pannello del percorso: avvio pubblico delle richieste di assistenza",
+      "not_demonstrated": "Numero totale di interventi effettivamente svolti"
+    },
+    {
+      "id": "MC-11",
+      "date": "1918-10-11",
+      "page": 1,
+      "title": "Annuncio del comitato locale della Croce Rossa",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-11/ed-1/?sp=1",
+      "status": "brano della pagina consultato visivamente in precedente verifica",
+      "use": "Secondo pannello: organizzazione riferita dal giornale",
+      "not_demonstrated": "Esiti amministrativi indipendenti del comitato"
+    },
+    {
+      "id": "MC-14",
+      "date": "1918-10-14",
+      "page": 4,
+      "title": "More Nurses Needed / Shipyard Workers Organize for Relief",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-14/ed-1/?sp=4",
+      "status": "file JPEG2000 acquisito e due notizie sui soccorsi collazionate visivamente in precedente verifica",
+      "use": "Terzo pannello: nuove richieste, fondo e collaborazione prevista",
+      "not_demonstrated": "Collaborazione realmente svolta o numero di beneficiari attestati indipendentemente"
+    }
+  ],
+  "curatorial_questions": [
+    "Quale funzione svolge ogni numero del giornale nella cronologia proposta?",
+    "Come citare data, pagina, intestazione, istituzione digitalizzatrice e provenienza?",
+    "Perché tre edizioni della stessa testata non sono tre riscontri indipendenti degli aiuti?",
+    "Quali frasi devono attribuire il contenuto al quotidiano anziché presentarlo come fatto già verificato?",
+    "Quali documenti di altro produttore servirebbero per verificare interventi e risultati?"
+  ],
+  "panel_proposal": [
+    {
+      "title": "La richiesta",
+      "source": "MC-10",
+      "label": "Il giornale riferiva misure e ricerca di volontari",
+      "limitation": "Le attività annunciate non sono rendicontate indipendentemente."
+    },
+    {
+      "title": "Il comitato",
+      "source": "MC-11",
+      "label": "La redazione descrive la formazione di un comitato e disponibilità dichiarate",
+      "limitation": "Una notizia non sostituisce gli atti interni dell’organizzazione."
+    },
+    {
+      "title": "Le nuove necessità",
+      "source": "MC-14",
+      "label": "Le notizie sulla richiesta di infermiere e sul fondo degli addetti ai cantieri sono stampate nella stessa pagina",
+      "limitation": "La collaborazione con la Croce Rossa è una previsione, e l’assistenza prestata è riferita da funzionari."
+    },
+    {
+      "title": "Ciò che manca",
+      "source": null,
+      "label": "Dati amministrativi e prove di esecuzione ancora da recuperare",
+      "limitation": "L’assenza di registri non prova che l’iniziativa sia fallita, né che sia riuscita."
+    }
+  ],
+  "review_points": [
+    "I tre numeri sono esplicitamente qualificati come stessa testata.",
+    "Ogni pannello conserva il link a giorno, pagina e risorsa originale.",
+    "I pannelli distinguono notizia, intenzione e azione accertata.",
+    "Non si presentano consigli medici del 1918 come raccomandazioni attuali.",
+    "Non si riproducono immagini senza verifica dei diritti."
+  ],
+  "limitations": [
+    "La collazione precedente non equivale a una nuova revisione indipendente.",
+    "La ricognizione non ha acquisito registri di altre istituzioni che confermino numero ed esiti degli aiuti.",
+    "L’esercizio qui costruito è una proposta di sequenza curatoriale, non il resoconto di una mostra già realizzata."
+  ],
+  "reused_project": "https://michelebottino-autor.github.io/scrittura-investigativa/caso-pilota/",
+  "student_product": "Storyboard a quattro pannelli con inventario delle tre unità giornalistiche, sette didascalie o note e una sezione di limiti."
+}

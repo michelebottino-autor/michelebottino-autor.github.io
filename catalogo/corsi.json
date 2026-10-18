@@ -207,22 +207,32 @@
       "title": "L’archivio diventa racconto",
       "category": "archivi",
       "category_label": "Archivi e patrimonio",
-      "description": "Organizzare lettere, fotografie e oggetti per creare un progetto narrativo accessibile.",
+      "description": "Dal fondo al racconto pubblico: dieci unità su inventario, provenienza, cronologia, citazioni e progettazione di un percorso accessibile. Anteprima didattica.",
       "audience": [
-        "Custodi di archivi personali e associazioni"
+        "Custodi di archivi personali, biblioteche e associazioni",
+        "Autori interessati al racconto del patrimonio documentale",
+        "Partecipanti con capacità iniziali di lettura e scrittura"
       ],
-      "learning_outcomes": [],
-      "units": null,
+      "learning_outcomes": [
+        "Definire la domanda editoriale e il pubblico di un archivio narrativo.",
+        "Inventariare sei o più unità mantenendo fondo, serie, unità, data e custode.",
+        "Collegare cronologie, persone e luoghi con grado di certezza esplicito.",
+        "Costruire una matrice di affermazioni con citazioni controllabili.",
+        "Scrivere un racconto d’archivio di 900–1.300 parole senza inventare esiti.",
+        "Progettare un percorso accessibile con didascalie, note e registro fonti.",
+        "Applicare privacy, diritti, controllo delle versioni e revisione."
+      ],
+      "units": 10,
       "duration_minutes": null,
-      "level": "Da definire",
-      "status": "coming_soon",
-      "url": "#interesse",
+      "level": "Intermedio",
+      "status": "in_development",
+      "url": "../archivio-vivo/",
       "logo": "./loghi/archivio-vivo.svg",
       "enrollment": {
         "enabled": false
       },
       "interest": {
-        "type": "mailto",
+        "type": "none",
         "email": "",
         "status": "not_enabled"
       },
@@ -230,14 +240,28 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "planned",
+        "it": "in_review",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
         "de": "planned",
         "pt": "planned"
       },
-      "source_locale": "it"
+      "source_locale": "it",
+      "level_details": {
+        "classification": "intermedio, scala didattica interna non EQF",
+        "mandatory_prior_courses": [],
+        "recommended": "Lettura, sintesi e scrittura iniziali",
+        "final_project": "racconto di 900–1.300 parole con sei unità, matrice, cronologia, didascalie e revisione"
+      },
+      "pilot": {
+        "status": "editorial_preview_available",
+        "human_review": false,
+        "student_trials_completed": 0,
+        "real_archive_demo": "three official LOC pages from same newspaper",
+        "simulated_case": "A-01",
+        "certification": false
+      }
     },
     {
       "id": "voci-da-salvare",
