@@ -1,6 +1,6 @@
 {
-  "version": "2026-10-16-risposte-documentarie-v2",
-  "source_policy": "Esclusivamente notizie già pubblicate nell'Archivio Documentale Calatabiano. Nessuna consultazione del PC o generazione IA.",
+  "version": "2026-10-18-cinque-risposte-secondarie-citate",
+  "source_policy": "Risposte editoriali statiche basate su dossier ADC pubblicati. Per 1348, 1356, 1531 e 1594 citare regesti e studi; per Gravina Cruillas citare solo l’inventario. Nessuna collazione originale rivendicata, nessuna generazione IA.",
   "facts": [
     {
       "id": "1213",
@@ -191,6 +191,103 @@
         {
           "title": "Dossier 02 · Cruïlles, Mirulla e zucchero",
           "url": "/adc/dossier-zucchero/"
+        }
+      ]
+    },
+    {
+      "id": "notaio1348",
+      "title": "Nicolò Iacobello e Calatabiano nel 1348",
+      "triggers": [
+        "1348",
+        "iacobello",
+        "teocarito"
+      ],
+      "answer": "Nel regesto n. 49 pubblicato da Carmen Salvo, Nicolò Iacobello è qualificato come notaio di «Taormina, Calatabiano e Mascali». La data dell’atto è riportata nell’edizione come 1347, ma corretta secondo lo stile cronologico al 1º febbraio 1348.",
+      "limitation": "La qualifica compare in un regesto pubblicato, non in una pergamena originale collazionata dall’ADC. Non prova che il testamento sia stato redatto a Calatabiano, che Iacobello vi abitasse o che esercitasse stabilmente un ufficio notarile locale.",
+      "sources": [
+        {
+          "title": "Notai a Calatabiano nel Medioevo — regesto di Carmen Salvo, n. 49, p. 107",
+          "url": "/adc/notai-medievali/"
+        }
+      ]
+    },
+    {
+      "id": "notaio1356",
+      "title": "Nicolò di Cunistabili e la nomina del 1356",
+      "triggers": [
+        "1356",
+        "cunistabili"
+      ],
+      "answer": "Il repertorio di Antonino Marrone registra il 13 ottobre 1356 la nomina di Nicolò di Cunistabili, proveniente da Taormina, a notaio «di Calatabiano e suo territorio». L’atto è indicato come emanato a Catania.",
+      "limitation": "L’informazione proviene dal repertorio edito, con rinvio ad Archivio di Stato di Palermo, Protonotaro del Regno, registro 5, c. 30v. L’originale non è stato collazionato; residenza, durata dell’incarico e atti effettivamente rogati non sono accertati.",
+      "sources": [
+        {
+          "title": "Notai medievali — repertorio di Antonino Marrone, voce 13 ottobre 1356",
+          "url": "/adc/notai-medievali/"
+        }
+      ]
+    },
+    {
+      "id": "arciprete1531",
+      "title": "Paolo de Renaldo, arciprete di Calatabiano nel 1531",
+      "triggers": [
+        "1531",
+        "paolo de renaldo",
+        "de renaldo",
+        "francesco calvo senior"
+      ],
+      "answer": "Secondo la tesi di Giovan Giuseppe Mellusi, in un atto del 22 settembre 1531 Paolo de Renaldo è qualificato arciprete della terra di Calatabiano. L’atto riguarda l’affitto di un beneficio di San Martino situato a Taormina, non a Calatabiano.",
+      "limitation": "Il dato è tratto dalla tesi di Mellusi (p. 73 del PDF), che cita AS Messina, Notarile di Messina, notaio Francesco Calvo senior, vol. 45, ff. 38r–v. La collocazione del volume è confermata dall’inventario; non sono state ancora lette le due carte originali.",
+      "sources": [
+        {
+          "title": "Calatabiano nel Cinquecento — Paolo de Renaldo e le fonti notarili",
+          "url": "/adc/chiese-cinquecento/"
+        }
+      ]
+    },
+    {
+      "id": "chiese1594",
+      "title": "Due chiese sacramentali a Calatabiano nel 1594",
+      "triggers": [
+        "1594",
+        "due chiese sacramentali",
+        "chiese sacramentali",
+        "relatio 1594",
+        "relationes dioecesium 517a",
+        "517a",
+        "aav 517a"
+      ],
+      "answer": "Giovan Giuseppe Mellusi, illustrando la relazione ecclesiastica del 1594, indica per Calatabiano due chiese sacramentali, ossia chiese nelle quali sacerdoti incaricati amministravano sacramenti in nome dell’arciprete o parroco. Lo studio non ne riporta le intitolazioni.",
+      "limitation": "La notizia è un’interpretazione pubblicata da Mellusi (p. 39 dell’edizione, p. 47 del PDF, nota 163), non una trascrizione ADC del manoscritto. L’originale è citato come Archivio Apostolico Vaticano, Congregazione del Concilio, Relationes dioecesium 517A, Messina, ff. 19r–54v; il foglio preciso resta da identificare. Le due chiese non vanno identificate automaticamente con Santa Maria e San Giorgio.",
+      "sources": [
+        {
+          "title": "Calatabiano nel Cinquecento — le due chiese sacramentali nella Relatio del 1594",
+          "url": "/adc/chiese-cinquecento/"
+        }
+      ]
+    },
+    {
+      "id": "gravina",
+      "title": "Inventario Gravina Cruillas e baronia di Calatabiano",
+      "triggers": [
+        "gravina cruillas",
+        "fidecommissaria di palagonia",
+        "fidecommissaria del principe",
+        "assento della baronia",
+        "1423",
+        "1518",
+        "1511",
+        "1573",
+        "1698",
+        "bardella",
+        "inventario gravina cruillas"
+      ],
+      "answer": "L’inventario dell’Archivio di Stato di Palermo, fondo Gravina Cruillas – Fidecommissaria del principe di Palagonia, descrive tre unità sull’assento della baronia e terra di Calatabiano: voce 33 (1423–1518), voce 34 (1511–1573) e voce 35 (1573–1698). Altre voci riguardano giurisdizione, affitti e il feudo di Bardella.",
+      "limitation": "Sono dati di uno strumento di corredo archivistico, non la lettura integrale dei registri. I numeri 33–35 sono voci dell’inventario, non attestazioni di tre proprietà o persone. Non si possono ricavare nomi dei proprietari, successioni feudali o atti specifici senza consultare le carte. La filza 1049 conservata nell’archivio ospedaliero di Palermo appartiene a un complesso distinto.",
+      "sources": [
+        {
+          "title": "Guida alle fonti Gravina Cruillas — inventario 81 dell’Archivio di Stato di Palermo",
+          "url": "/adc/archivio-gravina-cruillas/"
         }
       ]
     }

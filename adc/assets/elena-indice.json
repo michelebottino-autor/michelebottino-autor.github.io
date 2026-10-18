@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-15-migrazione-nove-dossier",
+  "version": "2026-10-18-tre-dossier-raggiungibili",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -437,6 +437,59 @@
         "casate"
       ],
       "description": "Percorso iniziale sulle attestazioni delle famiglie e dei poteri signorili; genealogie e successioni richiedono verifiche specifiche."
+    },
+    {
+      "title": "Notai medievali di Calatabiano (1348 e 1356)",
+      "url": "/adc/notai-medievali/",
+      "tags": [
+        "notai",
+        "notarile",
+        "trecento",
+        "1348",
+        "1356",
+        "iacobello",
+        "cunistabili",
+        "salvo",
+        "marrone",
+        "protonotaro"
+      ],
+      "description": "Regesto e repertorio: due notizie documentarie, originali ancora da collazionare."
+    },
+    {
+      "title": "Paolo de Renaldo e le chiese sacramentali nel Cinquecento",
+      "url": "/adc/chiese-cinquecento/",
+      "tags": [
+        "1531",
+        "1594",
+        "renaldo",
+        "arciprete",
+        "mellusi",
+        "chiese sacramentali",
+        "relatio",
+        "517a",
+        "calvo",
+        "taormina"
+      ],
+      "description": "Studio di Mellusi: arciprete qualificato nel 1531 e due chiese sacramentali nel 1594; manoscritti non collazionati."
+    },
+    {
+      "title": "Baronia di Calatabiano: registri Gravina Cruillas",
+      "url": "/adc/archivio-gravina-cruillas/",
+      "tags": [
+        "gravina",
+        "cruillas",
+        "fidecommissaria",
+        "palagonia",
+        "baronia",
+        "1423",
+        "1518",
+        "1511",
+        "1573",
+        "1698",
+        "bardella",
+        "inventario"
+      ],
+      "description": "Guida alle voci 33–35 e ad altre unità dell’inventario 81 di Palermo; contenuto dei volumi non ancora letto."
     }
   ]
 }

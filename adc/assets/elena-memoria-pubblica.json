@@ -10,7 +10,22 @@
       "id": "p184",
       "title": "Processo 184",
       "note": "La disponibilità del documento originale non è attestata; evitare attribuzioni non verificate."
+    },
+    {
+      "id": "notai1348_1356",
+      "title": "Notai medievali (1348 e 1356)",
+      "note": "Regesto di Carmen Salvo e repertorio di Antonino Marrone; non attribuire residenze, luogo di rogazione o durata senza originale."
+    },
+    {
+      "id": "chiese1531_1594",
+      "title": "Arciprete e chiese nel Cinquecento",
+      "note": "Mellusi documenta in letteratura Paolo de Renaldo arciprete nel 1531 e due chiese sacramentali nel 1594; beneficio San Martino a Taormina, nomi delle chiese sconosciuti."
+    },
+    {
+      "id": "gravina_inventario",
+      "title": "Inventario Gravina Cruillas",
+      "note": "Metadati delle voci archivistiche, non prova primaria di singoli eventi, persone o trasferimenti patrimoniali."
     }
   ],
-  "revision": "2026-10-17"
+  "revision": "2026-10-18"
 }

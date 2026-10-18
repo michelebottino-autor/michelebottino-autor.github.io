@@ -23,6 +23,8 @@
   }
   function detectFact(q,facts,previousId) {
     const nq=normalize(q);
+    // Non confondere le sigle «Processo 184» e «Processo 334».
+    if(/\b(?:processo|p)\s*184\b/.test(nq) && !/\b334\b/.test(nq))return null;
     const hasYear=/\b(?:1[0123456789]\d\d|20\d\d)\b/.test(nq);
     const asksName=/(etimolog|toponim|origine del nome|significato del nome|perche si chiama|da dove deriva il nome|da dove viene il nome|da cosa deriva il nome)/.test(nq)||(!hasYear&&/\bnome calatabiano\b/.test(nq));
     if(asksName){const x=facts.find(f=>f.id==='nome');if(x)return x;}
@@ -43,13 +45,14 @@
   }
   function reply(q,db,index,previousId,memory) {
     if(!memory || memory.schema!==1 || !Array.isArray(memory.topics) || memory.topics.length<2) return {kind:'empty',topic:null,title:'Memoria non disponibile',text:'Elena non può rispondere senza consultare la memoria documentaria condivisa.',links:[]};
+    if(/\b(?:processo|p)\s*184\b/.test(normalize(q))&&!/\b334\b/.test(normalize(q)))return {kind:'empty',topic:null,title:'Processo 184: attribuzione non verificata',text:'Le vecchie sigle di lavoro P184 non identificano con certezza un Processo 184. Non posso attribuire loro il materiale del Processo 334.',links:[{title:'Criteri di verifica e fonti',url:'/adc/fonti/'}]};
     const facts=Array.isArray(db?.facts)?db.facts:[];
     const entries=Array.isArray(index?.entries)?index.entries:[];
     const fact=detectFact(q,facts,previousId);
     if(fact) {
       const isSource=/(?:^| )(?:quali? fonti|le fonti|la fonte|da quale fonte|bibliografia|dove posso leggere)/.test(normalize(q));
       const isOriginal=/(originale|pergamena|facsimile)/.test(normalize(q));
-      const opening=isOriginal?'Sul documento originale, la situazione è questa:':isSource?'Queste sono le fonti pubbliche disponibili per approfondire:':fact.answer;
+      const opening=isOriginal?'La scheda ADC indica la fonte e chiarisce se il documento originale è stato collazionato; il testo manoscritto non viene riprodotto qui.':isSource?'La pagina collegata riporta gli studi e i riferimenti d’archivio consultabili:':fact.answer;
       return {kind:'documentary',topic:fact.id,title:fact.title,text:opening,limitation:fact.limitation,links:(fact.sources||[]).filter(s=>safeUrl(s.url)).map(s=>({title:s.title,url:s.url}))};
     }
     const matches=indexMatches(q,entries);
