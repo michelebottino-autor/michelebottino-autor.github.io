@@ -1,0 +1,38 @@
+/* Elena · guida allo studio delle otto unità */
+#elena-corso {
+  max-width: 1120px; margin: 36px auto; padding: clamp(20px, 3.5vw, 34px);
+  border: 1px solid #c9d8cc; border-radius: 16px; background: #f1f6f1; color: #213f33;
+}
+#elena-corso .eyebrow { color: #436c54; }
+#elena-corso h2 { margin: 6px 0 12px; font-family: Georgia, serif; }
+#elena-corso p { max-width: 75ch; }
+#elena-corso .elena-corso-controls { display: flex; align-items: end; gap: 12px; flex-wrap: wrap; margin: 16px 0 12px; }
+#elena-corso .elena-corso-controls label { display: block; font-weight: 700; margin-bottom: 6px; }
+#elena-corso .elena-corso-selector { min-width: 240px; flex: 1 1 350px; }
+#elena-corso select {
+  display: block; width: 100%; min-height: 46px; padding: 9px 12px;
+  border: 1px solid #83988b; border-radius: 9px; background: #fff; color: #203b30; font: inherit;
+}
+#elena-corso button {
+  min-height: 46px; padding: 10px 19px; border: 1px solid #274d39; border-radius: 9px;
+  background: #274d39; color: #fff; font: inherit; font-weight: 700;
+}
+#elena-corso button:disabled { opacity: .6; cursor: not-allowed; }
+#elena-corso :is(button,select):focus-visible { outline: 3px solid #a47840; outline-offset: 3px; }
+#elena-corso-stato { color: #4e6156; font-size: .93rem; }
+#elena-corso-risposta {
+  padding: 18px 22px; margin-top: 14px; border: 1px solid #d5e2d7;
+  border-radius: 12px; background: #fff; box-shadow: 0 8px 24px rgba(30,65,45,.06);
+}
+#elena-corso-risposta[hidden] { display: none; }
+#elena-corso-risposta h3 { margin: 0 0 10px; font-family: Georgia, serif; }
+#elena-corso-risposta p { line-height: 1.66; }
+#elena-corso-risposta strong { color: #284937; }
+#elena-corso-risposta a { color: #38604b; text-underline-offset: 3px; }
+#elena-corso .elena-corso-trasparenza { font-size: .88rem; color: #526559; margin: 18px 0 0; }
+@media(max-width:620px) {
+  #elena-corso .elena-corso-controls { display: block; }
+  #elena-corso .elena-corso-selector { min-width: 0; }
+  #elena-corso button { width: 100%; margin-top: 12px; }
+  #elena-corso-risposta { padding: 16px; }
+}

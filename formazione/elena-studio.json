@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "revision": "2026-10-18",
+  "curation": "Schede didattiche tratte dalle otto unità del Bottino Method – Corso Base, Release 1.0. Risposte editoriali controllate; nessuna consultazione generativa del Cervello locale.",
+  "courses": [
+    {
+      "id": "bottino-method-base",
+      "title": "Bottino Method — Corso Base",
+      "source": {
+        "page": "/corso/#dashboard",
+        "material": "/corso/#materials",
+        "doi": "10.5281/zenodo.23198223"
+      },
+      "topics": [
+        {
+          "unit": 1,
+          "question": "Quando una notizia può essere considerata verificata?",
+          "answer": "Una frase pubblicata non diventa automaticamente un fatto accertato. Individua quale fonte la sostiene, controlla che cosa dice davvero e segnala ciò che non hai potuto esaminare.",
+          "exercise": "Scegli un'affermazione e separa ciò che è stato detto dalla prova effettivamente disponibile.",
+          "limitation": "Non attribuire a un documento un contenuto che conosci soltanto attraverso il racconto di altri."
+        },
+        {
+          "unit": 2,
+          "question": "Qual è la differenza fra fatto, affermazione, fonte e interpretazione?",
+          "answer": "Un'affermazione è ciò che qualcuno sostiene; una fonte è il materiale su cui l'affermazione si basa. Il fatto è ciò che si cerca di ricostruire, mentre l'interpretazione spiega un possibile significato. Tieni distinti questi piani.",
+          "exercise": "Scrivi quattro righe: evento, affermazione, fonte disponibile e interpretazione proposta.",
+          "limitation": "Un'interpretazione non deve essere presentata come testo esplicito della fonte."
+        },
+        {
+          "unit": 3,
+          "question": "Come si dichiara ciò che ancora non sappiamo?",
+          "answer": "Formula una conclusione proporzionata alle prove: riporta i dati controllati, indica le lacune e non sostituire un'informazione mancante con una supposizione plausibile.",
+          "exercise": "Riformula un'affermazione troppo categorica usando «la fonte riferisce», «non risulta» oppure «rimane da verificare».",
+          "limitation": "L'assenza di una prova consultata non equivale alla prova del contrario."
+        },
+        {
+          "unit": 4,
+          "question": "Come si valuta l'attendibilità di una fonte?",
+          "answer": "Controlla autore o istituzione, data, provenienza, accesso all'originale e scopo del documento. Distingui una fonte indipendente da un testo che ripete informazioni già pubblicate altrove.",
+          "exercise": "Confronta una riproduzione originale, un regesto e un riassunto online della stessa notizia.",
+          "limitation": "Una fonte istituzionale può confermare l'esistenza di un documento senza provarne ogni interpretazione."
+        },
+        {
+          "unit": 5,
+          "question": "Che fare quando due fonti si contraddicono?",
+          "answer": "Registra le due versioni separatamente, confronta date, contesti e dipendenza reciproca. Indica le spiegazioni possibili senza scegliere una soluzione arbitraria.",
+          "exercise": "Costruisci una tabella con le due versioni e i documenti necessari a risolvere il contrasto.",
+          "limitation": "Il numero di fonti concordanti non sostituisce la verifica della loro indipendenza."
+        },
+        {
+          "unit": 6,
+          "question": "Quali sono i passaggi pratici del metodo?",
+          "answer": "Definisci la domanda di ricerca, raccogli materiali identificabili, controlla provenienza e attendibilità, confronta le affermazioni e scrivi conclusioni che rimandino alle fonti.",
+          "exercise": "Prepara una scheda con domanda, fonti, osservazioni, dubbi e conclusione provvisoria.",
+          "limitation": "Non promuovere una conclusione provvisoria a fatto acquisito senza nuove verifiche."
+        },
+        {
+          "unit": 7,
+          "question": "Come controllare una risposta dell'intelligenza artificiale?",
+          "answer": "Isola ogni affermazione verificabile, chiedi il riferimento esatto, apri la fonte quando disponibile e controlla che la citazione sostenga davvero quella frase. Una citazione autentica può essere usata fuori contesto.",
+          "exercise": "Confronta una risposta automatica con il passaggio preciso del documento cui rimanda.",
+          "limitation": "Elena offre qui schede redazionali controllate, non l'accesso automatico al modello o al database privato."
+        },
+        {
+          "unit": 8,
+          "question": "Che cosa serve per concludere il Corso Base?",
+          "answer": "Riprendi l'applicazione finale del metodo e verifica di saper motivare ogni passaggio. Il percorso online richiede il completamento delle otto unità, due verifiche intermedie e una prova applicativa finale.",
+          "exercise": "Riesamina un caso documentario, esplicitando che cosa è accertato, che cosa è riferito e che cosa resta aperto.",
+          "limitation": "Il PDF generato sul dispositivo attesta solo il completamento locale; non prova un'identità verificata o una valutazione da parte di un ente accreditato."
+        }
+      ]
+    }
+  ]
+}
