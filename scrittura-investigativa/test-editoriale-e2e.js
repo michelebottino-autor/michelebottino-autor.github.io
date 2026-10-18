@@ -14,7 +14,7 @@ for(let i=1;i<=10;i++){
  const u=course.units[i-1],f=path.join(__dirname,'unita-'+i,'index.html'),html=fs.readFileSync(f,'utf8');
  assert.equal(u.number,i);assert.equal(program.units[i-1].title,u.title);
  assert.ok(u.lesson.length>=3&&u.steps.length>=3&&u.checks.length>=3);
- assert.match(html,/officina-percorso\.js\?v=1/);assert.match(html,/officina-percorso\.css\?v=1/);
+ assert.match(html,/officina-percorso\.js\?v=2/);assert.match(html,/officina-percorso\.css\?v=2/);
  assert.ok(html.includes(u.title),'Title of unit '+i+' must be synchronized');
 }
 const puppeteer=(()=>{

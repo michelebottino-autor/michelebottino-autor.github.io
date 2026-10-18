@@ -172,4 +172,9 @@
   <url><loc>https://michelebottino-autor.github.io/adc/notai-medievali/</loc><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/chiese-cinquecento/</loc><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/archivio-gravina-cruillas/</loc><priority>0.7</priority></url>
+  <url>
+    <loc>https://michelebottino-autor.github.io/scrittura-investigativa/caso-pilota/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>

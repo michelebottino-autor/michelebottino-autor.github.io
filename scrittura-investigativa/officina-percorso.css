@@ -44,3 +44,4 @@
 .studio-answer{border-left:3px solid #71867d;padding:8px 19px;margin:20px 0;background:#fafbf9}
 @media(max-width:650px){.studio-units{grid-template-columns:1fr}.studio-panel{padding:18px}.studio-editor{padding:16px}.studio-actions button{width:100%}}
 @media print{.studio-actions,.studio-editor textarea,.studio-jump{display:none}.studio-panel{box-shadow:none;border:0}}
+.studio-legacy{border:1px solid #d7dbd4;border-radius:11px;background:#f9faf7;padding:18px;margin:25px 0 45px}.studio-legacy summary{font-weight:750;color:#345b4e;cursor:pointer;padding:7px 0}.studio-legacy[open] summary{border-bottom:1px solid #d7dbd4;margin-bottom:14px}.studio-legacy:focus-within{outline-offset:4px}

@@ -50,7 +50,11 @@ function renderHub(course){
  sec.id='officina-studio';
  sec.append(heading(2,'Officina dell’autore · il percorso di scrittura'),
    para('Dieci unità progressive: dalla proposta editoriale a un testo documentato completo. La verifica delle fonti resta una condizione del lavoro; il risultato è una scrittura originale, chiara e sostenibile.'));
- const completed=course.units.filter(u=>ready(u.number)).length;
+ const pilot=E('p','studio-source');
+const pilotA=E('a','','Consulta il caso pilota su una pagina di giornale autentica →');
+pilotA.href='./caso-pilota/';
+pilot.append(pilotA);sec.append(pilot); // case-pilot-link-v1
+const completed=course.units.filter(u=>ready(u.number)).length;
  const meter=E('div','studio-meter');
  meter.setAttribute('role','progressbar');
  meter.setAttribute('aria-label','Elaborati segnati come pronti per revisione');
@@ -104,14 +108,28 @@ function renderElena(course,anchor){
   anchor.insertAdjacentElement('afterend',p);
  });
 }
+function archiveLegacyUnit(){
+  const h=main.querySelector('h1');
+  if(!h||!h.nextSibling)return null;
+  const legacy=E('details','studio-legacy');
+  const summary=E('summary','','Fondamenti di verifica e caso S-01 simulato · materiali facoltativi');
+  legacy.append(summary,para('Questa è la versione precedente delle esercitazioni di verifica documentaria. Rimane disponibile come approfondimento, ma la lezione principale è l’Officina dell’autore. Il caso S-01 è interamente fittizio.','studio-note'));
+  while(h.nextSibling)legacy.append(h.nextSibling);
+  h.insertAdjacentElement('afterend',legacy);
+  return legacy;
+}
 function renderUnit(course,u){
+ const archived=archiveLegacyUnit();
  const sec=E('section','studio-panel studio-lesson');sec.id='taccuino';
  sec.append(para('PERCORSO DI SCRITTURA · UNITÀ '+u.number+'/10','studio-kicker'),heading(2,u.title),para(u.subtitle,'studio-lead'),para('Obiettivo: '+u.outcome));
  u.lesson.forEach(([title,text])=>{
    const art=E('article','studio-concept');art.append(heading(3,title),para(text));sec.append(art);
  });
  const ex=E('aside','studio-model');ex.append(heading(3,'Esempio di lavoro'),para(u.model));sec.append(ex);
- const source=E('p','studio-source','Riferimento di lettura: ');
+ const pilot=E('p','studio-source');
+const pilotA=E('a','','Vedi questa competenza applicata al caso pilota documentario →');
+pilotA.href='../caso-pilota/';pilot.append(pilotA);sec.append(pilot);
+const source=E('p','studio-source','Riferimento di lettura: ');
  const l=E('a','',u.source.title);l.href=u.source.url;l.rel='noopener noreferrer';l.target='_blank';
  source.append(l);sec.append(source);
  sec.append(heading(3,'Consegna · '+u.assignment),para(u.instructions));
@@ -141,7 +159,7 @@ function renderUnit(course,u){
  const info=para('Salvataggio esclusivamente locale. Un controllo di presenza del testo e la checklist non verificano qualità o veridicità; la valutazione richiede un revisore umano.','studio-note');
  form.append(info);sec.append(form);
  const workshop=main.querySelector('.writing-workshop');
- const intro=main.querySelector("h1");if(intro)(intro.nextElementSibling||intro).insertAdjacentElement("afterend",sec);else if(workshop) main.insertBefore(sec,workshop);else main.append(sec);
+ const intro=main.querySelector("h1");if(intro)intro.insertAdjacentElement("afterend",sec);else main.append(sec);
  const jump=E('a','studio-jump','Vai al taccuino dell’autore ↓');jump.href='#taccuino';
  const h=main.querySelector('h1');if(h)h.insertAdjacentElement('afterend',jump);
  function update(){

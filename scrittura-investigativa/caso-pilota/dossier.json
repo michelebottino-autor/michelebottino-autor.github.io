@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "id": "morgan_1918_pilot",
+  "title": "La pagina dei soccorsi",
+  "subtitle": "Morgan City, ottobre 1918: un laboratorio su una fonte giornalistica autentica",
+  "source_integrity": "Pagina individuata e testo OCR consultato parzialmente; scansione non verificata visivamente. Nessuna citazione letterale certificata.",
+  "review_status": "pilot_not_accredited",
+  "sources": [
+    {
+      "id": "loc_1918",
+      "type": "primary_page",
+      "title": "The Morgan City Daily Review, 14 ottobre 1918, pagina 4",
+      "url": "https://chroniclingamerica.loc.gov/lccn/sn88064293/1918-10-14/ed-1/seq-4/",
+      "institution": "Library of Congress / Chronicling America",
+      "lccn": "sn88064293",
+      "page": 4,
+      "publication_date": "1918-10-14",
+      "visual_checked": false
+    },
+    {
+      "id": "loc_blog",
+      "type": "secondary_commentary",
+      "title": "Researching Epidemics in Chronicling America Newspapers (2020)",
+      "url": "https://blogs.loc.gov/headlinesandheroes/2020/04/researching-epidemics-in-chronicling-america-newspapers/",
+      "institution": "Library of Congress"
+    },
+    {
+      "id": "rights",
+      "type": "rights_statement",
+      "title": "Chronicling America — Rights and Access",
+      "url": "https://www.loc.gov/collections/chronicling-america/about-this-collection/rights-and-access/",
+      "institution": "Library of Congress"
+    }
+  ],
+  "claims": [
+    {
+      "id": "P1",
+      "claim": "Il quotidiano e la pagina sono identificati per luogo, data e numero.",
+      "source_id": "loc_1918",
+      "status": "catalog_record",
+      "limitation": "Verifica visiva non completata."
+    },
+    {
+      "id": "P2",
+      "claim": "La pagina riferisce la ricerca di ulteriori volontarie.",
+      "source_id": "loc_1918",
+      "status": "ocr_partial",
+      "limitation": "Non dimostra il numero totale di persone assistite."
+    },
+    {
+      "id": "P3",
+      "claim": "La pagina annuncia un fondo di assistenza dei lavoratori dei cantieri.",
+      "source_id": "loc_1918",
+      "status": "ocr_partial",
+      "limitation": "Non prova autonomamente importi e risultati."
+    },
+    {
+      "id": "P4",
+      "claim": "Viene menzionato un coordinamento con la Croce Rossa.",
+      "source_id": "loc_1918",
+      "status": "ocr_partial",
+      "limitation": "Mancano i registri degli interventi."
+    },
+    {
+      "id": "P5",
+      "claim": "È presente un testo divulgativo statunitense sull’influenza.",
+      "source_id": "loc_1918",
+      "status": "ocr_partial",
+      "limitation": "Fonte storica, non informazione sanitaria attuale."
+    },
+    {
+      "id": "P6",
+      "claim": "La guida LOC documenta la diffusione di materiali informativi simili.",
+      "source_id": "loc_blog",
+      "status": "secondary_context",
+      "limitation": "Non prova gli interventi locali."
+    },
+    {
+      "id": "Q1",
+      "claim": "Quali aiuti furono effettivamente erogati e a chi?",
+      "source_id": null,
+      "status": "open",
+      "limitation": "Servono fonti indipendenti."
+    },
+    {
+      "id": "Q2",
+      "claim": "Qual è la grafia precisa dei nomi nel testo OCR?",
+      "source_id": null,
+      "status": "open",
+      "limitation": "Serve la scansione."
+    }
+  ],
+  "stages": [
+    {
+      "unit": 1,
+      "title": "Promessa editoriale",
+      "output": "Un articolo sulla rappresentazione dei soccorsi in una pagina del 1918; non il bilancio generale della città."
+    },
+    {
+      "unit": 2,
+      "title": "Angolo narrativo",
+      "output": "Due iniziative raccontate nello stesso giornale: richiesta di volontari e fondo dei lavoratori. Non presupporre un collegamento operativo non documentato."
+    },
+    {
+      "unit": 3,
+      "title": "Progetto editoriale",
+      "output": "Scaletta: pagina e data; difficoltà nel reclutamento; fondo; contesto; limiti; prospettive di ricerca."
+    },
+    {
+      "unit": 4,
+      "title": "Interviste",
+      "output": "Nessuna intervista condotta dall’autore. Le dichiarazioni riportate nel giornale sono notizie pubblicate, non colloqui indipendenti."
+    },
+    {
+      "unit": 5,
+      "title": "Documenti reali",
+      "output": "Una fonte primaria giornalistica identificata; una guida secondaria contestuale. Le due notizie della stessa pagina non costituiscono due fonti indipendenti."
+    },
+    {
+      "unit": 6,
+      "title": "Personaggi e cronologia",
+      "output": "Morgan City, ottobre 1918. Nomi OCR incerti esclusi; non inventare scene, dialoghi o date degli eventi non esplicitate."
+    },
+    {
+      "unit": 7,
+      "title": "Tecniche narrative",
+      "output": "Apertura su documento, data e domanda; passaggio fra iniziative; chiusura misurata, senza risolvere un mistero inventato."
+    },
+    {
+      "unit": 8,
+      "title": "Lettore non specialista",
+      "output": "Spiegare indicizzazione OCR, fonte primaria, fondo di soccorso e prova indipendente senza tecnicismi gratuiti."
+    },
+    {
+      "unit": 9,
+      "title": "Revisione editoriale",
+      "output": "Tagliare affermazioni non sostenute; distinguere notizia da risultato; controllare grafie, diritti e attribuzioni."
+    },
+    {
+      "unit": 10,
+      "title": "Opera finale",
+      "output": "Articolo originale con rinvii a fonti, nota sui limiti, registro degli accertamenti mancanti. Nessun voto generato in automatico."
+    }
+  ],
+  "article": {
+    "title": "La pagina dei soccorsi",
+    "paragraphs": [
+      {
+        "text": "Una pagina di giornale non racconta tutto ciò che accadde in una città. Racconta ciò che una redazione decise di rendere pubblico in un determinato momento. La quarta pagina del The Morgan City Daily Review del 14 ottobre 1918 conserva notizie su iniziative di assistenza durante l’epidemia influenzale. Si può partire da questa traccia per costruire un articolo, purché non si facciano coincidere gli annunci di allora con risultati oggi accertati.",
+        "claim_ids": [
+          "P1"
+        ]
+      },
+      {
+        "text": "Il testo digitalizzato della pagina riferisce una richiesta di nuove volontarie per l’assistenza. Secondo la notizia, le persone già impegnate non bastavano a coprire tutti i bisogni segnalati. Il giornale descrive anche la necessità di spostare alcune volontarie tra casi differenti. Il punto narrativo non è l’invenzione di una corsia d’ospedale o di un dialogo: è la difficoltà organizzativa riferita dal quotidiano. Non sappiamo dalla sola pagina quante famiglie rimasero senza aiuto.",
+        "claim_ids": [
+          "P2"
+        ]
+      },
+      {
+        "text": "Lo stesso resoconto attribuisce importanza pubblica al servizio delle volontarie. Il testo indicizzato comprende nominativi, ma la grafia di alcuni appare incerta nel riconoscimento ottico. Una versione editoriale prudente rinuncia quindi a riprodurli finché non sarà disponibile una verifica della scansione. Non si tratta di sacrificare la precisione narrativa, ma di distinguere un dato verificato da un dato semplicemente leggibile in una trascrizione automatica.",
+        "claim_ids": [
+          "P2",
+          "Q2"
+        ]
+      },
+      {
+        "text": "Un’altra notizia della medesima pagina è dedicata ai lavoratori dei cantieri navali. Il giornale riferisce che venne organizzato un fondo di soccorso per dipendenti colpiti dalla malattia e per le loro famiglie. Nell’elenco degli aiuti possibili compaiono beni essenziali e assistenza infermieristica. Sono informazioni significative per descrivere le forme di risposta annunciate: non consentono però di calcolare la somma raccolta, il numero dei destinatari o l’efficacia dell’iniziativa.",
+        "claim_ids": [
+          "P3"
+        ]
+      },
+      {
+        "text": "Nel racconto del fondo compare anche un possibile coordinamento con il comitato locale della Croce Rossa. Il collegamento è importante per il lettore, perché mostra quali organizzazioni la notizia poneva in relazione. Ma è una relazione riportata dal giornale: mancano qui registri operativi, corrispondenze e rendiconti che permettano di stabilire come ogni intervento si svolse. Un testo documentario deve fermarsi nel punto esatto in cui terminano i riscontri.",
+        "claim_ids": [
+          "P4"
+        ]
+      },
+      {
+        "text": "Accostate, le due notizie aprono un possibile tema: l’assistenza come lavoro collettivo. Da una parte la richiesta di volontarie, dall’altra il fondo promosso dai lavoratori. Questa è una lettura editoriale delle notizie, non una conclusione statistica sulle condizioni sanitarie della città. Le notizie condividono inoltre un unico supporto giornalistico: non diventano fonti indipendenti solo perché occupano sezioni differenti della pagina.",
+        "claim_ids": [
+          "P2",
+          "P3"
+        ]
+      },
+      {
+        "text": "La pagina conserva anche indicazioni sanitarie attribuite al servizio pubblico statunitense. Quel materiale appartiene al dibattito e alle conoscenze del 1918, e non costituisce un consiglio sanitario attuale. Una ricognizione moderna della Library of Congress segnala che testi simili circolarono su diversi giornali americani. La guida istituzionale fornisce un contesto di pubblicazione; non verifica autonomamente la distribuzione degli aiuti nella città di Morgan City.",
+        "claim_ids": [
+          "P5",
+          "P6"
+        ]
+      },
+      {
+        "text": "Quali documenti servirebbero per proseguire? Altri numeri della stessa testata, eventuali registri del comitato locale, rendiconti del fondo e corrispondenze relative ai volontari. Ognuno risponderebbe a una domanda differente: quando fu attivato un intervento, chi ne beneficiò, quali aiuti furono concretamente erogati. Fino al loro esame, le domande rimangono aperte. Non è consentito trasformare la plausibilità delle ipotesi in fatti di cronaca.",
+        "claim_ids": [
+          "Q1"
+        ]
+      },
+      {
+        "text": "Anche la materialità della fonte impone una cautela. Il caso utilizza il record bibliografico e il testo digitalizzato indicizzato; la scansione non è stata verificata integralmente durante questa revisione, poiché la pagina originale non è risultata accessibile per il controllo visivo. Per questo non proponiamo citazioni letterali certificate né attestiamo grafie e impaginazione. L’accesso alla fonte primaria resta indicato per il controllo successivo.",
+        "claim_ids": [
+          "P1",
+          "Q2"
+        ]
+      },
+      {
+        "text": "Resta così un’opera circoscritta: un quotidiano locale, una data precisa, la richiesta di volontari e l’annuncio di un fondo, collocati nel contesto storico della stampa sull’epidemia. È abbastanza per una storia leggibile sulle iniziative che il giornale descriveva. Non basta per scrivere che la città risolse l’emergenza o che tutti gli aiuti promessi arrivarono a destinazione. La forza di una ricostruzione documentaria sta anche nella precisione di ciò che non pretende di sapere.",
+        "claim_ids": [
+          "P1",
+          "P2",
+          "P3"
+        ]
+      }
+    ]
+  },
+  "review_gates": [
+    "Riaprire e controllare integralmente il facsimile della pagina 4.",
+    "Confermare titoli delle notizie, grafie e collocazioni tipografiche.",
+    "Confrontare rendiconti o fonti indipendenti prima di valutare risultati effettivi.",
+    "Documentare l’eventuale riuso delle immagini secondo le condizioni applicabili.",
+    "Registrare la revisione umana del testo prima di considerarlo un modello definitivo."
+  ],
+  "disclaimer": "Bozza didattica costruita su una fonte primaria storica identificata e su testi indicizzati. La verifica integrale del facsimile resta da completare. Non è una ricostruzione esaustiva, né una prova finale valutata."
+}
