@@ -8,6 +8,7 @@
     link.href=href;
   };
   ensureLink('manifest','/manifest.webmanifest');
+  ensureLink('icon','/icons/mb-192.png');
   ensureLink('apple-touch-icon','/icons/mb-192.png');
   const css='/mobile-platform.css';
   if(!head.querySelector('link[href="'+css+'"]')){

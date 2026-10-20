@@ -1,5 +1,5 @@
 /* PWA 2026: contenuti aggiornati via rete, accesso offline essenziale. */
-const CACHE='mb-static-v3';
+const CACHE='mb-static-v4';
 const CORE=['/','/offline.html','/site-uniform.css','/mobile-platform.css','/pwa-init.js','/manifest.webmanifest','/installa/','/adc/','/icons/mb-192.png','/icons/mb-512.png'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));

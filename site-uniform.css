@@ -248,3 +248,33 @@ body:has(.adc-project-nav) :where(main) a {
   :where(main,article) a { color: #111; }
   :where(main,article) :is(.card,.panel,.box) { box-shadow: none; }
 }
+
+/* Marchio editoriale Michele Bottino, ottobre 2026.
+   Monogramma derivato dal logo approvato. Esclusi i loghi specialistici ADC. */
+body>header:not(.adc-unified-header) .logo a:not(:has(img)){
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-start;
+  gap:11px;
+  max-width:100%;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:500!important;
+  letter-spacing:.01em!important;
+  line-height:1.15!important;
+  white-space:nowrap;
+}
+body>header:not(.adc-unified-header) .logo a:not(:has(img))::before{
+  content:"";
+  display:block;
+  flex:0 0 52px;
+  width:52px;
+  height:52px;
+  border:1px solid rgba(201,170,112,.55);
+  border-radius:2px;
+  background:#faf9f6 url("/icons/mb-192.png") center/contain no-repeat;
+  box-sizing:border-box;
+}
+@media(max-width:430px){
+  body>header:not(.adc-unified-header) .logo a:not(:has(img)){gap:7px;font-size:1.08rem!important}
+  body>header:not(.adc-unified-header) .logo a:not(:has(img))::before{width:42px;height:42px;flex-basis:42px}
+}
