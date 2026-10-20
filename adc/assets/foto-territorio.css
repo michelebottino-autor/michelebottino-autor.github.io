@@ -14,3 +14,24 @@
 @media(max-width:600px){.adc-photo-feature{margin:20px auto;padding:6px;border-radius:10px}
  .adc-photo-feature img{max-height:290px}
  .adc-photo-feature figcaption{padding:10px 8px;font-size:.84rem;line-height:1.55}}
+
+
+/* Foto documentarie ADC, lotto 2: layout coerente con le schede esistenti */
+.adc-photo-context{display:block;margin:30px 0;padding:clamp(17px,3vw,28px);
+  border:1px solid #dcded5;background:#fffdf9;border-radius:13px}
+.adc-photo-context>h2{margin-top:0;color:#123c31}
+.adc-photo-caveat{max-width:80ch;color:#435649;font-size:.96rem}
+.adc-photo-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:20px 0}
+.adc-photo-gallery .adc-photo-tile{display:flex;flex-direction:column;min-width:0;
+  margin:0;background:#f8f6f1;border:1px solid #deded3;border-radius:10px;overflow:hidden}
+.adc-photo-gallery .adc-photo-tile img{display:block;width:100%;height:300px;object-fit:contain;background:#eceee7}
+.adc-photo-gallery .adc-photo-tile figcaption{padding:15px 17px;font:400 .88rem/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:#42554b}
+.adc-photo-gallery .adc-photo-tile figcaption strong{color:#123c31}
+.adc-photo-gallery .adc-photo-tile figcaption em{display:block;margin-top:7px;font-style:normal;color:#695d4d}
+.adc-photo-context :is(a):focus-visible{outline:3px solid #b5874e;outline-offset:3px}
+@media(max-width:660px){
+ .adc-photo-gallery{grid-template-columns:1fr;gap:15px}
+ .adc-photo-gallery .adc-photo-tile img{height:260px}
+ .adc-photo-context{padding:16px}
+ .adc-photo-context .adc-photo-feature{margin:18px 0}
+}
