@@ -310,3 +310,28 @@ body:has(.adc-project-nav) :where(main) a {
   :where(main,article) a { color: #111; }
   :where(main,article) :is(.card,.panel,.box) { box-shadow: none; }
 }
+
+/* ADC homepage · mobile header refinement 2026-10-21 */
+@media (max-width: 600px) {
+  /* Scoped to the ADC landing page; desktop and other archives stay unchanged. */
+  body:has(.adc-welcome) .adc-project-nav {
+    gap: 8px;
+    padding: 10px 14px 11px;
+  }
+  body:has(.adc-welcome) .adc-project-brand {
+    font-size: 1.19rem;
+    line-height: 1.2;
+  }
+  body:has(.adc-welcome) .adc-project-brand small {
+    margin-top: 3px;
+    line-height: 1.3;
+    letter-spacing: .035em;
+  }
+  body:has(.adc-welcome) .adc-project-links { gap: 4px 6px; }
+  body:has(.adc-welcome) .adc-project-links a {
+    min-height: 44px;
+    padding: 7px 4px;
+  }
+  /* Keep footer actions reachable above the fixed Elena control. */
+  body:has(.adc-welcome) footer { padding-bottom: 75px; }
+}
