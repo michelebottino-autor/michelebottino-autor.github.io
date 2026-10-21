@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "document_id": "ADC-PROCESSO-334",
+  "working_scan": "P334-C003",
+  "legacy_scan_label": "P184_C003_MASTER.bmp",
+  "source_sha256": "AB6E7045006304204DEF3AEB8548225805DF41010374D50AA70D43FEEB123D40",
+  "training_status": "no_verified_ground_truth_yet",
+  "items": [
+    {
+      "id": "P334-C003-B01",
+      "region_type": "line_group_crop",
+      "transcription_diplomatic": null,
+      "expansion": null,
+      "normalized_text": null,
+      "italian_translation": null,
+      "reading_status": "unverified",
+      "reviewer": null,
+      "source_type": "image_crop",
+      "use_for_training": false
+    },
+    {
+      "id": "P334-C003-B02",
+      "region_type": "line_group_crop",
+      "transcription_diplomatic": null,
+      "expansion": null,
+      "normalized_text": null,
+      "italian_translation": null,
+      "reading_status": "unverified",
+      "reviewer": null,
+      "source_type": "image_crop",
+      "use_for_training": false
+    },
+    {
+      "id": "P334-C003-B03",
+      "region_type": "line_group_crop",
+      "transcription_diplomatic": null,
+      "expansion": null,
+      "normalized_text": null,
+      "italian_translation": null,
+      "reading_status": "unverified",
+      "reviewer": null,
+      "source_type": "image_crop",
+      "use_for_training": false
+    },
+    {
+      "id": "P334-C003-B04",
+      "region_type": "line_group_crop",
+      "transcription_diplomatic": null,
+      "expansion": null,
+      "normalized_text": null,
+      "italian_translation": null,
+      "reading_status": "unverified",
+      "reviewer": null,
+      "source_type": "image_crop",
+      "use_for_training": false
+    },
+    {
+      "id": "P334-C003-B05",
+      "region_type": "line_group_crop",
+      "transcription_diplomatic": null,
+      "expansion": null,
+      "normalized_text": null,
+      "italian_translation": null,
+      "reading_status": "unverified",
+      "reviewer": null,
+      "source_type": "image_crop",
+      "use_for_training": false
+    }
+  ],
+  "rules": {
+    "allow_training_only_if": "reading_status == verified and reviewer != null",
+    "allow_public_claim_only_if": "source-linked and editorially-approved",
+    "do_not_conflate_aliases": true
+  }
+}
