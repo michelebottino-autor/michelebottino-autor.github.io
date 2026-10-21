@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-21",
+  "corpus": "External public medieval Latin comparator; not Processo 334",
+  "audit": {
+    "lines": 602,
+    "invalid_polygon": 0,
+    "empty_polygon_masks": 0,
+    "outside_image_polygons": 0,
+    "low_ink_ratio_regions_under_1_5_percent": 0,
+    "median_ink_fraction_in_mask": 0.3078542982915655,
+    "min_ink_fraction": 0.14560536533709847,
+    "max_ink_fraction": 0.4211969672527827
+  },
+  "interpretation": "Geometry and gross masked-ink presence verified; this does NOT prove that line masks exclude every adjacent glyph or that the transcript aligns paleographically. No model accuracy improvement established.",
+  "runs": [
+    {
+      "id": 39642137348,
+      "variant": "grayscale + normalized 96px",
+      "status_last_checked": "in_progress"
+    },
+    {
+      "id": 39643124762,
+      "variant": "PAGE polygon masked + normalized 96px",
+      "status_last_checked": "in_progress"
+    }
+  ],
+  "safety": {
+    "proceso334_training_excluded": true,
+    "cervello_ingestion": false,
+    "elena_ingestion": false
+  }
+}
