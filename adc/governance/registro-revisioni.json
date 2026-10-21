@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "rule": "Only independently identified human reviewers may authorize scientific approval",
+  "decisions": [
+    {
+      "record_id": "ADC-PIANOTTA-2020",
+      "status": "awaiting_independent_review",
+      "reviewer": null,
+      "review_date": null,
+      "decision": null,
+      "evidence": [],
+      "conflicts_of_interest": null
+    },
+    {
+      "record_id": "ADC-PIANOTTA-PAGINA",
+      "status": "awaiting_independent_review",
+      "reviewer": null,
+      "review_date": null,
+      "decision": null,
+      "evidence": [],
+      "conflicts_of_interest": null
+    }
+  ]
+}
