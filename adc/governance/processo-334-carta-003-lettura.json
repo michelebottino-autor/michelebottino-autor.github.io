@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-21",
+  "canonical_id": "ADC-P334-C003",
+  "legacy_scan_id": "P184_C003_MASTER.bmp",
+  "identification": "Working identification as Processo 334 per curator; archival foliation yet to verify",
+  "acquisition": {
+    "date": "2026-09-26T14:38:56+02:00",
+    "scanner": "Canon TS5000 series",
+    "dpi": 600,
+    "width": 5100,
+    "height": 7008,
+    "format": "BMP",
+    "size": 107222454,
+    "sha256": "AB6E7045006304204DEF3AEB8548225805DF41010374D50AA70D43FEEB123D40",
+    "hash_comparison": "MATCH against stored acquisition metadata"
+  },
+  "image_work": {
+    "full_preview": "P334_C003_preview.jpg (local derivative)",
+    "top_crop": "P334_C003_top_2500.jpg (local derivative)",
+    "source_master_preserved": true
+  },
+  "paleographic_observations": [
+    {
+      "scope": "upper portion",
+      "observation": "Dense connected documentary cursive with abbreviation marks, extended terminal strokes, and tightly spaced lines",
+      "confidence": "high"
+    },
+    {
+      "scope": "upper portion",
+      "observation": "Individual words require line-by-line decipherment using full resolution and parallel letterform exemplars",
+      "confidence": "high"
+    },
+    {
+      "scope": "whole image",
+      "observation": "Modern handwritten page annotation visible at lower right in preview; its relationship to archival foliation is not demonstrated",
+      "confidence": "medium"
+    }
+  ],
+  "transcription_status": "not_yet_verified",
+  "unverified_readings": [],
+  "next_actions": [
+    "Segment original-resolution scan into numbered line bands",
+    "Build letterform comparison table across neighboring folios",
+    "Record provisional readings with crop coordinates and alternatives",
+    "Only then attempt diplomatic transcription and Italian translation"
+  ],
+  "warning": "Do not replace legacy file names in immutable source records; use canonical P334 identifiers for working derivatives."
+}
