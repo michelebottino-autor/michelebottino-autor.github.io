@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "records": [
+    {
+      "id": "ADC-PIANOTTA-2020",
+      "title": "Bioarchaeological and Paleopathological Analysis of a Burial from the Late Roman Necropolis of Pianotta di Calatabiano (CT, Sicily)",
+      "creator": "Galassi, F. M.; Brancato, R.; Magro, M. T.; Varotto, E.",
+      "issued": "2020",
+      "type": "Text",
+      "source": "Studi Romani, pp. 31â€“37",
+      "identifier": "https://iris.unipa.it/handle/10447/621088",
+      "relation": "https://michelebottino-autor.github.io/adc/pianotta/",
+      "rights": "Rights not verified for republication of figures",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "id": "ADC-PIANOTTA-PAGINA",
+      "title": "Contrada Pianotta â€” scheda documentaria ADC",
+      "creator": "Archivio Documentale Calatabiano",
+      "issued": "2026",
+      "type": "Text",
+      "source": "Galassi et al. (2020), Studi Romani, pp. 31â€“37",
+      "identifier": "https://michelebottino-autor.github.io/adc/pianotta/",
+      "relation": "https://iris.unipa.it/handle/10447/621088",
+      "rights": "Â© Michele Bottino; rights on external sources remain with their holders",
+      "review_status": "awaiting_independent_review"
+    }
+  ]
+}
