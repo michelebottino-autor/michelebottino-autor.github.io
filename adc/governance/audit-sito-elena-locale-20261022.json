@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-22",
+  "scope": "Live website sitemap HTTP verification + static Elena source-link existence + local process health; not archival claim authentication",
+  "website": {
+    "tested_urls": 123,
+    "http_200": 123,
+    "http_errors": 0,
+    "base": "https://michelebottino-autor.github.io",
+    "local_audit": "Documents/ADC_RECONCILIATION_RUN/audit_sito_live_20261022.json"
+  },
+  "elena_static": {
+    "facts": 15,
+    "unique_source_routes": 10,
+    "source_routes_exist_in_repository": 10,
+    "originals_independently_collated": 0,
+    "qualification": "The underlying historical claims have NOT been individually audited against original manuscripts in this pass."
+  },
+  "local_backend": {
+    "process_python_elena_api_seen": true,
+    "port_8765_listening": true,
+    "ollama_port_11434_listening": true,
+    "sqlite_database_file_present": true,
+    "sqlite_bytes": 105050112,
+    "http_api_answer_tested": false,
+    "live_db_approved_claims_count_tested": false
+  },
+  "htr": {
+    "external_cer": 0.7589189189189189,
+    "external_wer": 0.9808558558558559,
+    "approved_processo334_gt": 0
+  },
+  "priorities": [
+    "Run read-only API smoke test with supported request schema and validate no unsourced claims",
+    "Check factual support of Elena's 15 answers claim by claim against dossier and stated original-source limits",
+    "Review evidence_review approval signatures, and index counts read-only",
+    "Human paleographic review of P334, then ground-truth selection"
+  ],
+  "safety": {
+    "original_scans_modified": false,
+    "public_answers_modified": false
+  }
+}
