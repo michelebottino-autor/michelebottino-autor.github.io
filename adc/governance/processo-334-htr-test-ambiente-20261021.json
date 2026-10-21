@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-21",
+  "dataset": "latin_comparison_v1",
+  "train_pairs": 448,
+  "test_pairs": 154,
+  "reference_characters": 4510,
+  "reference_words": 717,
+  "environment": {
+    "python": "3.14",
+    "kraken_installed": false,
+    "torch_installed": false,
+    "pip_kraken_install_dry_run": "ResolutionImpossible: available kraken 3.x requires torch <1.11, incompatible with Python 3.14 environment"
+  },
+  "evaluator": {
+    "implementation": "local evaluate_htr.py",
+    "self_test": "PASS",
+    "self_test_method": "ground-truth references copied to synthetic comparison directory",
+    "self_test_cer": 0,
+    "self_test_wer": 0,
+    "warning": "Self-test results are NOT model predictions, nor evidence of HTR accuracy"
+  },
+  "training": {
+    "status": "NOT_STARTED",
+    "model_checkpoint": null,
+    "real_test_cer": null,
+    "real_test_wer": null
+  },
+  "next_action": "Set up isolated compatible environment for maintained Kraken; train on 448 examples, produce genuine unseen predictions for 154 reserved examples; run evaluator and log model hash. Do not publish output to Elena without human paleographic validation."
+}
