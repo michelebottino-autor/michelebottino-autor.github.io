@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-21",
+  "workflow_run": 39633176562,
+  "status": "success",
+  "training_completed": true,
+  "environment": "GitHub Actions Ubuntu Python 3.12 Kraken 7.1.1",
+  "train_lines": 24,
+  "test_lines": 6,
+  "epochs": 1,
+  "val_accuracy_approx": 0.069,
+  "val_word_accuracy": 0,
+  "best_weights_name": "best_0.0687.safetensors",
+  "checkpoint_original_artifact_preserved": false,
+  "interpretation": "Smoke test validates full HTR pipeline only; performance insufficient for historical transcription; not a Processo 334 transcription",
+  "source_master_334_uploaded": false,
+  "fix": "Updated workflow to include safetensors in artifact at following execution",
+  "next_steps": [
+    "Verify follow-up workflow and checkpoint artifact",
+    "Run proper train/test experiment on full external dataset with page-disjoint split",
+    "Evaluate genuine predictions CER/WER",
+    "Validate on Processo 334 only after ground truth review"
+  ]
+}
