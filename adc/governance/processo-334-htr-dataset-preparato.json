@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-21",
+  "source": "https://zenodo.org/records/17911438",
+  "archive_sha256": "eba78f2ca9f5867df73540f4e03af3835f4e908a8aa45d1a6a3a2561baaa7ebc",
+  "storage": "Michele/Documents/ADC_HTR_CORPORA_20261021/latin_comparison_v1",
+  "purpose": "external Latin handwriting HTR comparison, distinct from Processo 334",
+  "matched_pages": 8,
+  "recognized_pagexml_lines": 602,
+  "coordinates_valid": 602,
+  "split": {
+    "train": {
+      "pages": 6,
+      "image_text_pairs": 448
+    },
+    "test": {
+      "pages": 2,
+      "image_text_pairs": 154
+    }
+  },
+  "verification": {
+    "zip_integrity": "PASS",
+    "pagexml_parsing": "PASS",
+    "coordinate_check": "PASS",
+    "generated_pair_file_count": "PASS",
+    "independent_paleographic_accuracy": "NOT_ESTABLISHED",
+    "model_training": "NOT_YET_EXECUTED"
+  },
+  "policy": "Never train on Processo 334 text until diplomatically verified. External corpus transcription is not a reading of Processo 334. Verify source licensing before redistributing images."
+}
