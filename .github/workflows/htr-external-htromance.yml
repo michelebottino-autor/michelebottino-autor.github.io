@@ -1,0 +1,53 @@
+name: HTR genuinely external HTRomance CER WER
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/htr-external-htromance.yml
+jobs:
+  external-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install evaluation tools
+        run: python -m pip install 'kraken==7.1.1' pillow requests
+      - name: Restore frozen three-way fine-tuned checkpoint
+        uses: actions/download-artifact@v4
+        with:
+          name: htr-ppocrv6-three-way-independent-test
+          run-id: 39647133626
+          github-token: ${{ github.token }}
+          path: external-artifacts
+      - name: Retrieve entirely different HTRomance manuscript
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/HTRomance-Project/medieval-latin.git external-corpus
+          cd external-corpus
+          git sparse-checkout set data/bnf-lat-10996
+          find data/bnf-lat-10996 -type f | head -30
+      - name: Extract ALTO line GT and corresponding images
+        run: python adc/governance/tools/htr-external-alto.py
+      - name: Evaluate without training or checkpoint selection
+        shell: bash
+        run: |
+          set -euo pipefail
+          MODEL="$(find external-artifacts -type f -name 'best_*.safetensors' | head -n1)"
+          test -n "$MODEL"
+          sha256sum "$MODEL" | tee external-test/model.sha256
+          kraken -I 'external-test/lines/*.png' -o '.pred.txt' ocr --no-segmentation -m "$MODEL"
+          python adc/governance/tools/htr-external-score.py
+      - name: Archive reproducible independent report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: htr-htromance-external-evaluation
+          path: |
+            external-test/*.json
+            external-test/*.sha256
+          if-no-files-found: warn
