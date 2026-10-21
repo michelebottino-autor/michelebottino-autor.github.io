@@ -1,0 +1,52 @@
+name: HTR pretrained PP-OCRv6 baseline
+on:
+  push:
+    paths:
+      - .github/workflows/htr-pretrained-baseline.yml
+      - adc/governance/tools/htr-public-full.py
+      - adc/governance/tools/htr-holdout-eval.py
+  workflow_dispatch:
+jobs:
+  pretrained-holdout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Kraken and download published pretrained model
+        run: |
+          python -m pip install 'kraken==7.1.1' pillow huggingface_hub
+          python - <<'PY'
+          from huggingface_hub import hf_hub_download
+          import os,hashlib
+          p=hf_hub_download(repo_id='small-models-for-glam/kraken-ppocrv6-small', filename='small.safetensors', local_dir='htr-pretrained')
+          print('MODEL_PATH',p, 'SIZE',os.path.getsize(p),'SHA256',hashlib.file_digest(open(p,'rb'),'sha256').hexdigest())
+          PY
+      - name: Prepare unchanged 448 and 154 line images
+        run: |
+          python adc/governance/tools/htr-public-full.py
+          wc -l htr-smoke/train.txt htr-smoke/test.txt
+      - name: Independent test on unseen pages
+        shell: bash
+        run: |
+          set -o pipefail
+          ketos test -f path -m htr-pretrained/small.safetensors -e htr-smoke/test.txt 2>&1 | tee htr-smoke/pretrained-test.log
+      - name: Predict and calculate edit-based CER and WER
+        shell: bash
+        run: |
+          set -o pipefail
+          kraken -I 'htr-smoke/test/*.png' -o '.pred.txt' ocr --no-segmentation -m htr-pretrained/small.safetensors
+          python adc/governance/tools/htr-holdout-eval.py
+      - name: Retain evaluation, examples, and model attribution
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: htr-pretrained-small-baseline-report
+          path: |
+            htr-smoke/pretrained-test.log
+            htr-smoke/holdout-metrics.json
+          if-no-files-found: warn
