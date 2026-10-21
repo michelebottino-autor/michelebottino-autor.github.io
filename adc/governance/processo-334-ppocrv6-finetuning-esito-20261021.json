@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-21",
+  "status": "both_runs_completed_success",
+  "public_latin_corpus_only": true,
+  "base": {
+    "run": 39644600809,
+    "cer": 0.329490022172949,
+    "wer": 0.8145048814504882
+  },
+  "finetune_nonindependent": {
+    "run": 39646832148,
+    "train": 448,
+    "selection_validation": 154,
+    "final_eval_same_154": true,
+    "cer": 0.21618625277161863,
+    "wer": 0.6443514644351465
+  },
+  "finetune_three_way": {
+    "run": 39647133626,
+    "train": 372,
+    "validation": 76,
+    "heldout": 154,
+    "cer": 0.24390243902439024,
+    "wer": 0.6889818688981869,
+    "character_edits": 1100,
+    "word_edits": 494
+  },
+  "limits": [
+    "154 held-out examples are untouched within the three-way workflow but already observed in earlier experiments",
+    "No direct verification on Processo 334",
+    "Paleographic transcription errors still frequent"
+  ],
+  "controls": {
+    "cervello_unchanged": true,
+    "elena_unchanged": true,
+    "originals_unchanged": true
+  }
+}
