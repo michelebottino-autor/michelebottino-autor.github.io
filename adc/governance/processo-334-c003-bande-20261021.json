@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-21",
+  "document": "Processo 334",
+  "scan_work_id": "P334-C003",
+  "historical_capture_label": "P184_C003_MASTER.bmp",
+  "sha256_master": "AB6E7045006304204DEF3AEB8548225805DF41010374D50AA70D43FEEB123D40",
+  "operation": "five overlapping crops extracted from unmodified 600-dpi master",
+  "bands": [
+    {
+      "id": "B01",
+      "vertical_fraction": [
+        0.03,
+        0.13
+      ]
+    },
+    {
+      "id": "B02",
+      "vertical_fraction": [
+        0.12,
+        0.22
+      ]
+    },
+    {
+      "id": "B03",
+      "vertical_fraction": [
+        0.21,
+        0.31
+      ]
+    },
+    {
+      "id": "B04",
+      "vertical_fraction": [
+        0.3,
+        0.4
+      ]
+    },
+    {
+      "id": "B05",
+      "vertical_fraction": [
+        0.39,
+        0.49
+      ]
+    }
+  ],
+  "visually_inspected": [
+    "B01",
+    "B02",
+    "B03"
+  ],
+  "observations": [
+    {
+      "id": "B01",
+      "finding": "Multiple continuous abbreviated cursive lines; several candidate endings cannot be distinguished at this stage",
+      "transcription": "[non stabilita]",
+      "confidence": "insufficient_for_diplomatic_transcription"
+    },
+    {
+      "id": "B02",
+      "finding": "The middle line contains recurring documentary letterforms and abbreviation strokes; no complete sentence verified",
+      "transcription": "[non stabilita]",
+      "confidence": "insufficient_for_diplomatic_transcription"
+    },
+    {
+      "id": "B03",
+      "finding": "Several clear word boundaries, but no phrase established through comparative letterform analysis",
+      "transcription": "[non stabilita]",
+      "confidence": "insufficient_for_diplomatic_transcription"
+    }
+  ],
+  "status": "segmentation_complete_partial_visual_review",
+  "notes": "Local derivative crops are not independent sources. Never attribute text or meaning without verifying against the same letter shapes in other lines/pages. B04 and B05 generated but not yet visually examined."
+}
