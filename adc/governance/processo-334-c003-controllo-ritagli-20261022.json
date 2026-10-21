@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-22",
+  "source": "Processo 334 C003 verified SHA256 ab6e7045006304204def3aeb8548225805df41010374d50aa70d43feeb123d40",
+  "source_dimensions": [
+    5100,
+    7008
+  ],
+  "candidate_line_images": 5,
+  "inspection": "Grayscale center-region horizontal projection with threshold 165; coarse quality screen only",
+  "observations": {
+    "all_five_have_ink_at_both_vertical_borders": true,
+    "all_five_active_y_intervals_cover_entire_height": true,
+    "automatic_single_line_isolation_confirmed": false
+  },
+  "interpretation": "Current strips cannot be certified as isolated lines. Top/bottom ink might arise from ascenders/descenders, bleed or touching adjacent lines; no identity established. Do not produce ground truth labels, fine-tune or evaluate CER/WER on these candidate windows.",
+  "local_records": [
+    "Documents/ADC_RECONCILIATION_RUN/P334_HTR_QUARANTENA/C003_GROUND_TRUTH_V1/ground_truth_manifest.json",
+    "Documents/ADC_RECONCILIATION_RUN/P334_HTR_QUARANTENA/C003_GROUND_TRUTH_V1/projection_quality_audit.json"
+  ],
+  "next": "Check baselines across original full page; generate polygon or baseline-segmented line crops; human certify text and boundaries; then ground truth.",
+  "approved_lines": 0,
+  "cervello_or_elena_ingestion": false,
+  "master_modified": false
+}
