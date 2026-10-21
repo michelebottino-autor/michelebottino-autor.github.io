@@ -1,0 +1,45 @@
+name: HTR external corpus audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/htr-external-audit.yml
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect independent HTRomance Latin manuscript
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git clone --depth=1 --filter=blob:none --sparse https://github.com/HTRomance-Project/medieval-latin.git external-htromance
+          cd external-htromance
+          git sparse-checkout set data/bnf-lat-10996
+          git rev-parse HEAD | tee ../external-source-commit.txt
+          find data/bnf-lat-10996 -maxdepth 3 -type f | head -n 60 | tee ../external-files-sample.txt
+          python - <<'PY'
+          import os,json,collections,glob,xml.etree.ElementTree as ET
+          paths=glob.glob('data/bnf-lat-10996/**/*',recursive=True)
+          files=[p for p in paths if os.path.isfile(p)]
+          print('TOTAL_FILES',len(files))
+          print('EXTENSIONS',dict(collections.Counter(os.path.splitext(p)[1].lower() for p in files)))
+          for p in files:
+            if p.endswith('.chocomufin.xml'):
+              print('XML_EXAMPLE',p)
+              root=ET.parse(p).getroot()
+              print('XML_ROOT',root.tag)
+              print('IMAGE_REF',root.attrib)
+              print('CHILD_TAGS',[ch.tag for ch in root[:3]])
+              print('LINES',len(root.findall('.//{*}TextLine')))
+              print('STRINGS',len(root.findall('.//{*}String')))
+              break
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: htromance-external-audit
+          path: |
+            external-source-commit.txt
+            external-files-sample.txt
