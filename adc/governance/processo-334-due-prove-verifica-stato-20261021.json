@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-21",
+  "external_test": {
+    "source": "HTRomance manuscript BnF lat. 10996",
+    "pages": [
+      "btv1b100389713_f2",
+      "btv1b100389713_f3",
+      "btv1b100389713_f4"
+    ],
+    "alto": "*.chocomufin.xml",
+    "run_id": 39664248292,
+    "state_at_review": "in_progress",
+    "method": "checkpoint from 39647133626 frozen, no tuning; compute CER and WER against independent ALTO line transcriptions",
+    "outcome_CER": null,
+    "outcome_WER": null
+  },
+  "proceso334": {
+    "working_unit": "C003",
+    "images": [
+      "C003_B01.jpg",
+      "C003_B02.jpg",
+      "C003_B03.jpg",
+      "C003_B04.jpg",
+      "C003_B05.jpg"
+    ],
+    "visual_inspection": "five working image crops inspected; cursive historical writing with uncertain abbreviations and overlapping lines",
+    "review_record": "C:\\Users\\Michele Bottino\\Documents\\ADC_RECONCILIATION_RUN\\P334_HTR_QUARANTENA\\revisione_diplomatica_C003_v1.json",
+    "verified_diplomatic_transcriptions": 0,
+    "reason": "Visual inspection alone does not provide reliable diplomatic reading; independent specialist verification and line-by-line source comparison needed",
+    "original_unmodified": true
+  },
+  "controls": {
+    "cervello_ingestion": false,
+    "elena_ingestion": false
+  }
+}
