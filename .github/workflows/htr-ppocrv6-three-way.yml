@@ -1,0 +1,58 @@
+name: HTR PP-OCRv6 three-way independent evaluation
+on:
+  push:
+    paths:
+      - .github/workflows/htr-ppocrv6-three-way.yml
+  workflow_dispatch:
+jobs:
+  finetune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Kraken and Hugging Face client
+        run: python -m pip install 'kraken==7.1.1' huggingface_hub pillow
+      - name: Download published pretrained weights
+        run: |
+          python - <<'PY'
+          from huggingface_hub import hf_hub_download
+          import os,hashlib
+          f=hf_hub_download(repo_id='small-models-for-glam/kraken-ppocrv6-small',filename='small.safetensors',local_dir='htr-pretrained')
+          with open(f,'rb') as stream: digest=hashlib.file_digest(stream,'sha256').hexdigest()
+          print('PRETRAINED_SHA256',digest,'BYTES',os.path.getsize(f))
+          assert digest=='3108259779f5abfed3908a1c9eafba64d17e4a2a169368c539ecfeff04c018f3'
+          PY
+      - name: Prepare image text reference data
+        run: |
+          python adc/governance/tools/htr-public-three-way.py
+          wc -l htr-smoke/train.txt htr-smoke/validation.txt htr-smoke/test.txt
+      - name: Fine tune from pretrained model on training pages only
+        shell: bash
+        run: |
+          set -o pipefail
+          ketos train -i htr-pretrained/small.safetensors --resize union -f path -q fixed -N 6 -B 4 -o htr-smoke/finetuned -t htr-smoke/train.txt -e htr-smoke/validation.txt 2>&1 | tee htr-smoke/finetune.log
+      - name: Evaluate held out pages and generate paired examples
+        shell: bash
+        run: |
+          set -o pipefail
+          MODEL="$(find htr-smoke/finetuned -name 'best_*.safetensors' -type f | head -n 1)"
+          test -n "$MODEL"
+          ketos test -f path -m "$MODEL" -e htr-smoke/test.txt 2>&1 | tee htr-smoke/holdout.log
+          kraken -I 'htr-smoke/test/*.png' -o '.pred.txt' ocr --no-segmentation -m "$MODEL"
+          python adc/governance/tools/htr-holdout-eval.py
+      - name: Retain weights metrics and examples
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: htr-ppocrv6-three-way-independent-test
+          path: |
+            htr-smoke/finetune.log
+            htr-smoke/holdout.log
+            htr-smoke/holdout-metrics.json
+            htr-smoke/finetuned/*.safetensors
+          if-no-files-found: warn
