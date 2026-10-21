@@ -1,0 +1,56 @@
+{
+  "audit_date": "2026-10-22",
+  "scope": "Partial evidence-based integrated project audit: source snapshot, website index, Elena facts, HTR validation, Processo 334 GT",
+  "site": {
+    "repository": "michelebottino-autor/michelebottino-autor.github.io",
+    "current_repository_sitemap_urls": 123,
+    "unique_urls": 123,
+    "adc_urls": 40,
+    "adc_census_records": 40,
+    "elena_static_facts": 15,
+    "sitemap_duplicates": 0,
+    "old_uploaded_archive_entries": 105,
+    "old_uploaded_sitemap_urls": 22,
+    "important": "Uploaded site ZIP and separate sitemap are older snapshots and MUST NOT be substituted for current GitHub state; URL counts do not establish HTTP validity or historical accuracy."
+  },
+  "htr": {
+    "finetune_three_way_run": 39647133626,
+    "cer": 0.24390243902439024,
+    "wer": 0.6889818688981869,
+    "external_run": 39665594951,
+    "external_cer": 0.7589189189189189,
+    "external_wer": 0.9808558558558559,
+    "external_lines": 109,
+    "interpretation": "Current HTR does not generalize reliably to new manuscripts"
+  },
+  "processo334": {
+    "master_sha256": "ab6e7045006304204def3aeb8548225805df41010374d50aa70d43feeb123d40",
+    "candidate_segments_v2": 16,
+    "approved_diplomatic_transcriptions": 0,
+    "approved_for_training": 0,
+    "ambiguous_legacy_path_label": "PROCESSO_184 is directory metadata, not evidence of a distinct manuscript"
+  },
+  "elena": {
+    "mode": "Static curated published facts; not a live generative historian",
+    "facts": 15,
+    "untested_claim": "Cannot assert all 15 facts reflect checked original sources without claim-by-claim inspection"
+  },
+  "cervello": {
+    "status": "Historically developed; fresh service uptime, index counts and citation integrity not checked in this audit"
+  },
+  "next_actions": [
+    "Perform current HTTP and internal-link checks against deployed website",
+    "Audit each of 15 Elena facts against source dossier and clearly label evidential grade",
+    "Use full master with polygon/baseline segmentation and human transcript review; do not train on guessed text",
+    "Freeze HTR external model snapshot; no further training until ground truth exists"
+  ],
+  "excluded_from_claims": [
+    "No completed full-document historical authentication",
+    "No reliable autonomous Processo 334 diplomatic transcription",
+    "No current local backend health verification in this pass"
+  ],
+  "preservation": {
+    "originals_unchanged": true,
+    "unverified_htr_excluded_from_elena_and_cervello": true
+  }
+}
