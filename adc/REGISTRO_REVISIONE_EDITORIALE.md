@@ -224,3 +224,26 @@ Test dei frammenti e delle etichette effettuati sul codice HTML del ramo: non so
 ### Limiti
 
 Il controllo statico non certifica l’esecuzione JavaScript su tutti i dispositivi, la disponibilità HTTP di siti terzi, il corretto funzionamento di ogni controllo assistivo o la verifica diplomatica delle fonti. Il rapporto registra l’esito delle verifiche effettuate, non una certificazione generale dell’Archivio.
+
+## Collaudo browser ADC — Ricerca mobile e Custode — 21 ottobre 2026
+
+**Base:** sito pubblico dopo PR 21, `main` a `32ad3245a2e82cf56770a97084d141b88bfa984e`. Le modifiche di questo intervento sono state testate nel browser su una copia temporanea del ramo `correzione-adc-mobile-custode-2026-10-21`, senza sovrascrivere i documenti dell'utente o `main`.
+
+### Difetti riscontrati in Chromium
+
+- **Ricerca ADC su schermi piccoli:** con viewport da 320 a 414 px, il box principale aveva una larghezza effettiva di `viewport + 32 px`, perché al `width:100%` si sommavano 16 px di padding per lato in `content-box`; il taglio orizzontale era mascherato dall'`overflow-x:clip`. A 390 px il margine destro misurato arrivava a 422 px. Applicata una sola regola responsiva `@media(max-width:767px){body > main{box-sizing:border-box}}`.
+- **Custode:** l'elenco dei testi consultati includeva 18 pagine; restavano esclusi 11 dossier già pubblicati e ricercabili. L'elenco sale a **29**, mantenendo distinte le risposte verificate di Elena e il catalogo delle 18 attestazioni in `testimonianze.json`.
+- **Pertinenza del Custode:** query ordinarie come «notai medievali» privilegiavano testimonianze su chiese o ponti che coincidevano soltanto per parole generiche. La correzione aggiunge varianti linguistiche (`medioevo`), esclude parole interrogative comuni (`sappiamo`, `dicono`, `possedeva`), attribuisce più peso al titolo della scheda e richiede almeno due riscontri quando una domanda include più termini significativi, per elencare attestazioni dell'Inventario. La procedura resta deterministica, non genera nuovi fatti.
+- **Messaggi della Ricerca e del Custode:** corretta la concordanza fra numero e nome («1 testimonianza», «2 testimonianze»).
+
+### Verifica prima della proposta
+
+- Browser: Chromium headless su Windows, con esecuzione completa degli script; il ramo proposto è stato servito in locale da una copia temporanea, preservando le risorse e i percorsi originali.
+- Ricerca: verificati **320, 360, 390, 414, 768 e 1366 px**. Dopo la correzione, `main` e i controlli del modulo rientrano in tutti i viewport, senza regressioni nel conteggio dei risultati per `gravina` (8 pagine).
+- Custode: **5/5** domande di controllo con collegamento al dossier specifico atteso: castello 1213, mulini medievali, notai medievali, Gravina-Cruillas e catasto Mortillaro. La prova sul 1213 restituisce ancora la voce pertinente dell'Inventario.
+- Nessun errore JavaScript osservato nelle prove dichiarate. La homepage ADC, l'Inventario, l'Atlante, Elena, il Custode e le Fonti erano già stati aperti su desktop/mobile nella fase diagnostica; l'Inventario caricava 18 schede e Elena rispondeva alla domanda sul 1213 con collegamenti documentari. Il test diagnostico non costituisce validazione scientifica dei testi.
+- Non toccati `adc/inventario/testimonianze.json`, scansioni, documenti originali, moduli certificati del motore Elena o gli altri dossier storico-documentari.
+
+### Limiti
+
+Questo è un collaudo mirato di layout e comportamento applicativo. Non certifica l'intera accessibilità WCAG, tutti i browser o tutti i possibili quesiti. I rapporti non promuovono fonti indirette a prove originali.
