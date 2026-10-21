@@ -1,0 +1,49 @@
+name: HTR external unseen manuscript benchmark
+on:
+  push:
+    paths:
+      - .github/workflows/htr-external-unseen.yml
+  workflow_dispatch:
+jobs:
+  external:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Kraken for inference
+        run: python -m pip install 'kraken==7.1.1' pillow
+      - name: Retrieve immutable prior selected checkpoint
+        uses: actions/download-artifact@v4
+        with:
+          name: htr-ppocrv6-three-way-independent-test
+          run-id: 39647133626
+          github-token: ${{ github.token }}
+          path: htr-checkpoint
+      - name: Prepare entirely new Latin manuscript pages with ALTO transcripts
+        run: python adc/governance/tools/htr-external-altobenchmark.py
+      - name: Evaluate checkpoint with no further training
+        shell: bash
+        run: |
+          set -o pipefail
+          MODEL="$(find htr-checkpoint -name 'best_*.safetensors' -type f | head -n 1)"
+          test -n "$MODEL"
+          echo "MODEL=$MODEL"
+          ketos test -f path -m "$MODEL" -e htr-external/test.txt 2>&1 | tee htr-external/kraken-external.log
+          kraken -I 'htr-external/*.png' -o '.pred.txt' ocr --no-segmentation -m "$MODEL"
+          python adc/governance/tools/htr-external-eval.py
+      - name: Archive new corpus provenance and measured metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: htr-external-unseen-report
+          path: |
+            htr-external/manifest.json
+            htr-external/kraken-external.log
+            htr-external/external-metrics.json
+          if-no-files-found: warn
