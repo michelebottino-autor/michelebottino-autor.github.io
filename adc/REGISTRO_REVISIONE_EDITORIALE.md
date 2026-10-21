@@ -168,3 +168,29 @@ Ricerca mirata su portali istituzionali e fonti scientifiche, con confronto prel
 - Il controllo dei link è lessicale e di presenza nel repository: non valida le ancore `#id`, l'esecuzione dei file JavaScript, le API esterne o il comportamento degli URL sul server.
 - Non sono stati eseguiti in questa sessione test in browser mobile/desktop, validazione HTML con parser standard, test WCAG, test dei moduli, verifica dei collegamenti esterni, né controllo diplomatico delle fonti.
 - Mantenere distinte le verifiche tecniche dall'audit scientifico; non dichiarare conclusa la revisione editoriale dell'intero corpus sulla base della sola scansione strutturale.
+
+## Coerenza tra homepage, sezioni d’autore e dossier ADC — 21 ottobre 2026
+
+### Fonti interne della revisione
+
+Confrontati direttamente sul ramo di revisione: `index.html`, `biografia/index.html`, `opere/index.html`, `poetica/index.html`, `metodo/index.html`, `ricerca/index.html`, `pubblicazioni-ricerca/index.html`, `adc/index.html`, `adc/storia/index.html`, `adc/fonti/index.html`, `adc/carta/index.html`, `adc/programma/index.html`, `adc/dossier-1213-1537/index.html`, `adc/dossier-zucchero/index.html`, `adc/dossier-rationes/index.html`, `adc/processo-334/index.html`, `adc/archivio-gravina-cruillas/index.html`, `formazione/index.html`, `catalogo/index.html`, `corso/index.html`.
+
+Sono state mantenute le distinzioni già previste dalla Carta: l'ADC è il progetto culturale indipendente; il Laboratorio ne è l'ambito di ricerca e divulgazione. Le sintesi in Storia e homepage ADC rimandano ai dossier senza doverne riprodurre integralmente le note: non sono state eliminate come falsi duplicati.
+
+### Incongruenze riprodotte e corrette nel ramo di proposta
+
+1. **Galleria delle opere nella homepage:** tutti gli 8 pulsanti «Scheda dell’opera» rimandavano genericamente a `opere/`, senza selezionare il titolo. Sostituiti con 8 URL `opere/#opera-...` specifici.
+2. **Galleria nella pagina Opere:** gli 8 collegamenti «Scheda dell’opera» puntavano alla stessa pagina corrente. Inseriti 8 attributi `id` distinti sulle rispettive schede bibliografiche già presenti; i pulsanti ora puntano all'ancora corretta. Non aggiunte né riscritte schede, titoli o ISBN.
+3. **Breadcrumb Ricerca:** `Home › Michele Bottino` indicava l'autore invece della sezione. Corretto in `Home › Ricerca`.
+4. **Breadcrumb Metodo:** `Home › Metodo – Michele Bottino` non seguiva la denominazione sintetica adottata per le altre sezioni. Corretto in `Home › Metodo`.
+5. **Collegamento contestuale in Storia ADC:** il link etichettato genericamente «Diario di ricerca», già diretto a `adc/processo-334/`, ora è etichettato «Diario del processo 334». Nessuna modifica al diario né alle attestazioni.
+
+### Risultato dei controlli
+
+- 8 corrispondenze tra galleria homepage, galleria catalogo e 8 `id` bibliografici: **PASS**, 0 destinazioni assenti.
+- 10 pagine direttamente coinvolte o usate come confronto: un solo `h1`, nessun `img` privo di `alt` e nessun `id` duplicato nel controllo statico.
+- `main` e i dossier originari rimangono invariati durante questa proposta. Nessuna modifica al corpus certificato di Elena, alle scansioni, alle fonti, ai file dei corsi o alle schede di ricerca.
+
+### Limiti di certificazione
+
+Test dei frammenti e delle etichette effettuati sul codice HTML del ramo: non sostituiscono una verifica in browser/mobile, il controllo HTTP della distribuzione, l'accessibilità completa o una collazione scientifica. Nessuna pubblicazione definitiva è implicita finché la proposta GitHub non viene integrata.
