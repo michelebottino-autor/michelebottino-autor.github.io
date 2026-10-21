@@ -4,6 +4,7 @@ on:
     paths:
       - .github/workflows/htr-latin-full.yml
       - adc/governance/tools/htr-public-full.py
+      - adc/governance/tools/htr-holdout-eval.py
   workflow_dispatch:
 jobs:
   train-evaluate:
@@ -36,6 +37,14 @@ jobs:
           MODEL="$(find htr-smoke/model -name 'best_*.safetensors' -type f | head -n 1)"
           test -n "$MODEL"
           ketos test -f path -m "$MODEL" -e htr-smoke/test.txt 2>&1 | tee htr-smoke/holdout.log
+      - name: Predict all 154 previously unseen line images
+        shell: bash
+        run: |
+          set -o pipefail
+          MODEL="$(find htr-smoke/model -name 'best_*.safetensors' -type f | head -n 1)"
+          test -n "$MODEL"
+          kraken -I 'htr-smoke/test/*.png' -o '.pred.txt' ocr --no-segmentation -m "$MODEL"
+          python adc/governance/tools/htr-holdout-eval.py
       - name: Verify saved model weights
         run: |
           ls -lah htr-smoke/model/
@@ -48,5 +57,6 @@ jobs:
           path: |
             htr-smoke/training.log
             htr-smoke/holdout.log
+            htr-smoke/holdout-metrics.json
             htr-smoke/model/*.safetensors
           if-no-files-found: warn
