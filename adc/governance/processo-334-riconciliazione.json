@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-21",
+  "canonical_document_id": "ADC-PROCESSO-334",
+  "document_title": "Processo d'investitura 334",
+  "editorial_decision": "User confirms the working corpus is Processo 334; historical P184/Processo 184 names are unreliable acquisition labels, not evidence of a second identified file",
+  "legacy_aliases": [
+    "P184",
+    "PROCESSO_184",
+    "Processo 184"
+  ],
+  "original_immutability": "Retain original scans and original capture metadata unchanged; normalize only derived indexes and labels with a logged mapping",
+  "proof_limits": "File naming does not in itself prove archival provenance; folio-by-folio comparison and archival inventory verification are pending",
+  "example_metadata": {
+    "legacy_file": "P184_C003_MASTER.json",
+    "legacy_document_field": "Processo 184",
+    "capture_date": "2026-09-26T14:38:56+02:00",
+    "dpi": 600,
+    "width": 5100,
+    "height": 7008,
+    "format": "BMP",
+    "sha256": "AB6E7045006304204DEF3AEB8548225805DF41010374D50AA70D43FEEB123D40",
+    "notes": "Capture metadata seen in recovered Google Drive export, not an independent image-authenticity certification"
+  },
+  "actions": [
+    {
+      "type": "public_page_correction",
+      "status": "done",
+      "commit": "7cf61f359e98cc83a2795521b40618311b8d6ae0"
+    },
+    {
+      "type": "preserve_old_labels_mapping",
+      "status": "registered"
+    },
+    {
+      "type": "rename_synced_dirs",
+      "status": "not_performed",
+      "reason": "Avoid damaging provenance and synchronization links before verified mapping"
+    },
+    {
+      "type": "full_diplomatic_transcription",
+      "status": "not_completed"
+    }
+  ]
+}
