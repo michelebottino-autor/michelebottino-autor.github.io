@@ -145,3 +145,26 @@ Ricerca mirata su portali istituzionali e fonti scientifiche, con confronto prel
 5. Testare funzionamento di ricerca ADC, moduli, manifest, CSS/JS e percorsi multilingue.
 6. Esaminare eventuali file interni pubblicamente accessibili e le politiche di gestione delle informazioni.
 7. Applicare correzioni puntuali con test e commit tracciati; nessuna riscrittura massiva senza necessità.
+
+## Revisione conservativa intersezionale — 21 ottobre 2026
+
+**Base del controllo:** albero GitHub `main` all'avvio della sessione, commit `319f044ee43c29878d70175c632b19d1c501bf1e`. Gli allegati ZIP di precedenti sessioni non sono stati ripubblicati. Le modifiche di questo ciclo sono preparate sul ramo `revisione-editoriale-2026-10-21`, in attesa di revisione e integrazione.
+
+### Verifiche statiche effettuate
+
+- Inventariati 579 elementi del repository, di cui 141 file HTML (incluso il file di verifica Google). Controllati gli attributi `href` e `src` dei 141 HTML rispetto ai percorsi presenti nell'albero GitHub: **nessun file locale mancante** nella normalizzazione dei link relativi e assoluti; non sono state controllate risposte HTTP dei server.
+- `sitemap.xml`: 122 URL `loc` distinti; nessun duplicato e nessun percorso assente dall'albero GitHub. Questo non prova che tutte le pagine del repository siano destinate a essere indicizzate.
+- Nelle pagine di contenuto esaminate non sono emersi duplicati letterali dell'attributo `id` o tag `img` senza attributo `alt` nella scansione lessicale. I file di protezione delle directory `images/` e il widget ADC compatto non sono articoli e non richiedono automaticamente un `h1`.
+- Confrontate quattro coppie tematiche tra `articoli/` e `strutture-irrisolto/`. Angela Celentano: forte duplicazione del testo; le altre tre coppie (Cristina Golinucci, Denise Pipitone, Jack lo Squartatore) contengono trattazioni autonome a livello del confronto lessicale eseguito.
+
+### Correzioni proposte in questo ciclo
+
+1. `strutture-irrisolto/angela-celentano/index.html`: sostituito il duplicato dell'articolo con una trattazione metodologica distinta, senza aggiungere nuove attestazioni storiche o investigative; rimosso un rimando a se stessa; raccordo all'articolo principale, canonical e JSON-LD coerenti con la nuova pagina, SEO, descrizione dell'immagine e stile del sottotitolo aggiornati. L'articolo originale resta immutato.
+2. `adc/acque-mulini-confini/index.html`: riscritta una frase di registro operativo in forma di limite della fonte consultata; nessun cambiamento di contenuto storico.
+
+### Esclusioni e limiti
+
+- Nessun dossier storico, fonte originale, registrazione dell'Inventario o risposta certificata di Elena è stato alterato.
+- Il controllo dei link è lessicale e di presenza nel repository: non valida le ancore `#id`, l'esecuzione dei file JavaScript, le API esterne o il comportamento degli URL sul server.
+- Non sono stati eseguiti in questa sessione test in browser mobile/desktop, validazione HTML con parser standard, test WCAG, test dei moduli, verifica dei collegamenti esterni, né controllo diplomatico delle fonti.
+- Mantenere distinte le verifiche tecniche dall'audit scientifico; non dichiarare conclusa la revisione editoriale dell'intero corpus sulla base della sola scansione strutturale.
