@@ -6,3 +6,11 @@ main{max-width:1190px;padding:34px clamp(18px,4vw,40px) 70px;margin:auto}.hero{b
 @media print{body{background:white}.topnav,.tools,.notebook,.footer,.guide,.pager{display:none!important}.panel,.hero{box-shadow:none;border:0;padding:8px 0}.lesson{break-inside:avoid}main{max-width:none}.unit-card{break-inside:avoid}}
 
 @media(max-width:730px){.two-col{grid-template-columns:minmax(0,1fr)}.two-col>.panel{min-width:0}.two-col .scroll-x{max-width:100%}}
+
+/* Coerenza visiva editoriale 2026: stessa palette ADC senza alterare i layout didattici. */
+:root{--paper:#f5f2eb;--green:#123c31;--accent:#a47b45}
+.topbar{border-bottom:3px solid #c5a16a}
+.topbar .brand{font-family:Georgia,'Times New Roman',serif}
+.topnav a{min-height:44px;display:inline-flex;align-items:center}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #c5a16a;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
