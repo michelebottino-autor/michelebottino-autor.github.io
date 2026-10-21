@@ -24,3 +24,8 @@
 @media(max-width:760px){.adc-share-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:420px){.adc-share{padding:20px 15px;border-radius:15px}.adc-share-actions{gap:8px}.adc-share-actions a,.adc-share-actions button{min-height:53px;padding:9px 8px;font-size:.84rem;gap:7px}.adc-share-icon{width:31px;height:31px;flex-basis:31px}}
 @media(prefers-reduced-motion:reduce){.adc-share-actions a,.adc-share-actions button{transition:none}.adc-share-actions a:hover,.adc-share-actions button:hover{transform:none}}
+
+@media(max-width:420px){
+ .adc-share-actions a,.adc-share-actions button{font-size:.81rem;line-height:1.3;overflow-wrap:anywhere}
+ .adc-share-actions .adc-share-icon{flex-basis:29px;width:29px;height:29px}
+}
