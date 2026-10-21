@@ -15,3 +15,7 @@ jobs:
         run: |
           node .github/scripts/verify-public-editorial.js --self-test
           node .github/scripts/verify-public-editorial.js
+      - name: Verifica censimento ADC e cataloghi
+        run: |
+          python3 adc/governance/verifica_censimento.py
+          python3 adc/governance/verifica_metadati.py
