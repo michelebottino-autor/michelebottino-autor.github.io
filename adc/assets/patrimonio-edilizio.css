@@ -110,3 +110,17 @@ body>footer a{color:#f6d7a5}
  html{scroll-behavior:auto}
  .cards article{transition:none}
 }
+
+
+/* ADC 2026: shared archive identity, scoped to the heritage dossier family. */
+:root{--adc-green:#123c31;--adc-gold:#c5a16a;--adc-paper:#f5f2eb;--adc-ink:#253d34}
+body{background:var(--adc-paper);color:var(--adc-ink)}
+header.adc-heritage-header{background:var(--adc-green);color:#fff;border-bottom:3px solid var(--adc-gold)}
+header.adc-heritage-header a{color:#fff}
+header.adc-heritage-header .brand{color:#fff;font:700 clamp(1.15rem,2vw,1.35rem)/1.3 Georgia,serif}
+header.adc-heritage-header nav a{border-radius:5px;padding:8px 9px;min-height:44px;display:inline-flex;align-items:center}
+header.adc-heritage-header nav a:hover,header.adc-heritage-header nav a:focus-visible{background:#ffffff22}
+main h1,main h2,main h3{color:var(--adc-green)}
+main a{color:#145540}
+a:focus-visible,button:focus-visible{outline:3px solid var(--adc-gold);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
