@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-21",
+  "audit_type": "comparison_with_external_published_edition",
+  "claim_id": "ELENA-notaio1348-1",
+  "fact_id": "notaio1348",
+  "edition": {
+    "author": "Carmen Salvo",
+    "title": "Regesti delle pergamene dell'Archivio Capitolare di Messina (1275–1628)",
+    "series": "Archivio Storico Messinese, volume 62",
+    "record": "regesto 49",
+    "page": "107",
+    "url": "https://www.societamessinesedistoriapatria.it/archivio/62/salvo_62.pdf"
+  },
+  "findings": [
+    {
+      "claim": "Data 1347 secondo lo stile cronologico corretta al 1 febbraio 1348",
+      "result": "confirmed_in_edition"
+    },
+    {
+      "claim": "Nome Nicolò Iacobello e qualifica Taormina, Calatabiano e Mascali",
+      "result": "confirmed_in_edition"
+    },
+    {
+      "claim": "Testamento di Margherita vedova di Nicolò Teocarito",
+      "result": "confirmed_in_edition"
+    },
+    {
+      "claim": "Antico segno della pergamena 56",
+      "result": "confirmed_in_edition"
+    },
+    {
+      "claim": "Luogo effettivo di stipula a Calatabiano",
+      "result": "not_established_by_edition"
+    }
+  ],
+  "edition_level_result": "confirmed",
+  "original_pergament_collation": "not_performed",
+  "independent_peer_review": "not_performed",
+  "correction_to_elena": "none_required",
+  "notes": "Verification relates to a published regesto, not a direct reading of the parchment."
+}
