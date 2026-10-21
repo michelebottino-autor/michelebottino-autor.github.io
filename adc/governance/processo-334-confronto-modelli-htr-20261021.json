@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-21",
+  "test": "Identical 154 lines on two withheld public medieval Latin manuscript pages",
+  "baseline": {
+    "run_id": 39636399711,
+    "epochs": 5,
+    "cer": 0.9915742793791574,
+    "wer": 1
+  },
+  "normalized": {
+    "run_id": 39642137348,
+    "epochs": 12,
+    "cer": 0.7722838137472284,
+    "wer": 1.0167364016736402
+  },
+  "polygon": {
+    "run_id": 39643124762,
+    "epochs": 8,
+    "cer": 0.9740576496674057,
+    "wer": 1
+  },
+  "new_pretrained": {
+    "run_id": 39644600809,
+    "model": "small-models-for-glam/kraken-ppocrv6-small",
+    "license": "Apache-2.0",
+    "status_last_observed": "in_progress",
+    "ground_truth_split": "unchanged",
+    "cer": null,
+    "wer": null
+  },
+  "interpretation": "Normalization helps character accuracy; polygon masking variant gives little change. Comparisons are not fully controlled because epoch counts differ. All variants are unusable for automatic documentary transcription. WER >100% is possible due to insertions.",
+  "guards": {
+    "proceso334_not_used_for_training": true,
+    "cervello_not_modified": true,
+    "elena_not_modified": true
+  }
+}
