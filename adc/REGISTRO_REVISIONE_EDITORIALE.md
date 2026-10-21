@@ -247,3 +247,15 @@ Il controllo statico non certifica l’esecuzione JavaScript su tutti i disposit
 ### Limiti
 
 Questo è un collaudo mirato di layout e comportamento applicativo. Non certifica l'intera accessibilità WCAG, tutti i browser o tutti i possibili quesiti. I rapporti non promuovono fonti indirette a prove originali.
+
+## Accessibilità da tastiera e struttura assistiva — 21 ottobre 2026
+
+**Perimetro:** 42 pagine HTML ADC censite. Sono stati considerati i 40 documenti editoriali; i due widget incorporabili rimangono separati perché non hanno lo stesso percorso di navigazione autonoma.
+
+**Audit iniziale:** Chromium headless, axe-core 4.14.0 (WCAG 2 A/AA, 2.1 A/AA e best practices), tabulazione fisica simulata e albero accessibile CDP su nove pagine rappresentative; sono stati riscontrati un controllo statistiche con etichetta visibile non inclusa nel nome accessibile, due gruppi dinamici del Custode senza ruolo compatibile con aria-label, due testi con contrasto insufficiente e assenza di skip link su 37 pagine editoriali. Nella homepage il salto era preceduto dai link della fascia trasparenza.
+
+**Interventi conservativi:** su tutte le 40 pagine il link «Vai al contenuto» è il primo controllo raggiungibile da tastiera e punta al relativo elemento main con id stabile e tabindex="-1"; aggiunto un foglio CSS strettamente limitato al nuovo collegamento per le 37 pagine che ne erano prive. Preservati i tre collegamenti già esistenti. Due ruoli ARIA del Custode corretti con role="region"; rimosso il nome ARIA ridondante dal pulsante globale «Preferenze statistiche», lasciando il nome visibile; corretti i contrasti sulla nota introduttiva ADC e nell'intestazione del Dossier 03.
+
+**Collaudo prima della PR:** dieci pagine rappresentative caricate da copia temporanea del ramo a 390×844 pixel. In tutte: primo Tab = «Vai al contenuto», Invio = focus nel main, Tab successivo = primo controllo interno; 0 violazioni automatiche axe-core nelle categorie analizzate, senza errori JS rilevati. Nessuna modifica ai fatti storici, alle schede dell'Inventario, ai testi certificati o al motore Elena.
+
+**Limiti:** test automatizzati, ispezione albero accessibile e navigazione da tastiera simulata; non equivalgono a un collaudo manuale con NVDA, VoiceOver, TalkBack o a certificazione di conformità WCAG dell'intero archivio. La verifica scientifica delle citazioni è un documento separato, non una sezione di questa revisione tecnica.
