@@ -19,10 +19,10 @@ for stem in files:
   polygon=line.find("./{*}Shape/{*}Polygon")
   xy=[]
   if polygon is not None:
-   for point in polygon.attrib.get("POINTS","").split():
-    if "," not in point: continue
-    try:xy.append(tuple(map(int,point.split(","))))
-    except ValueError:pass
+   tokens=polygon.attrib.get("POINTS","").replace(","," ").split()
+   if len(tokens)%2==0:
+    try:xy=list(zip(map(int,tokens[::2]),map(int,tokens[1::2])))
+    except ValueError:xy=[]
   if len(xy)<3:continue
   xs=[x for x,y in xy];ys=[y for x,y in xy]
   box=(max(0,min(xs)-5),max(0,min(ys)-5),min(image.width,max(xs)+6),min(image.height,max(ys)+6))
