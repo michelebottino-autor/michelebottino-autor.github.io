@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-21",
+  "holdout_run_completed": 39634431791,
+  "status": "completed_success",
+  "data": {
+    "train_lines": 448,
+    "holdout_lines": 154,
+    "holdout_pages": 2,
+    "reference_characters": 4510,
+    "character_errors": 4472,
+    "insertions": 0,
+    "deletions": 4356,
+    "substitutions": 116,
+    "character_accuracy_percent": 0.84,
+    "cer_percent": 99.16,
+    "word_accuracy_percent": 0,
+    "wer_percent": null
+  },
+  "examples_observed_as_aggregate": [
+    {
+      "reference": "SPACE",
+      "omissions": 563
+    },
+    {
+      "reference": "i",
+      "omissions": 446
+    },
+    {
+      "reference": "e",
+      "omissions": 408
+    },
+    {
+      "reference": "u",
+      "omissions": 321
+    },
+    {
+      "reference": "a",
+      "omissions": 307
+    }
+  ],
+  "notes": "Kraken output is a real independent holdout run, but Word Accuracy=0% does not uniquely determine WER. No invented line-level readings. New GitHub workflow run 39636399711 extracts predictions and calculates genuine edit-based WER and line-by-line examples.",
+  "checkpoint": "best_0.0084.safetensors",
+  "new_run": 39636399711,
+  "application_processo_334": "BLOCKED pending reliable model and scientific validation"
+}
