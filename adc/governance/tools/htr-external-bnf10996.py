@@ -20,6 +20,7 @@ for stem in files:
   xy=[]
   if polygon is not None:
    for point in polygon.attrib.get("POINTS","").split():
+    if "," not in point: continue
     try:xy.append(tuple(map(int,point.split(","))))
     except ValueError:pass
   if len(xy)<3:continue
