@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-21",
+  "system": "Michele",
+  "environment": "isolated Python 3.13.16, Kraken 7.1.1, PyTorch 2.14.0+cpu",
+  "module": "regex._regex",
+  "module_path": "Documents/ADC_HTR_CORPORA_20261021/.venv-kraken/Lib/site-packages/regex/_regex.cp313-win_amd64.pyd",
+  "signature_status": "NotSigned",
+  "windows_code_integrity": {
+    "operational_log": true,
+    "events": [
+      3033,
+      3077
+    ],
+    "observed_at": "2026-10-21 18:11:56-18:11:57 local",
+    "policy_id": "0283ac0f-fff1-49ae-ada1-8a933130cad6",
+    "diagnosis": "Enterprise signing level requirements not met; load blocked"
+  },
+  "imports": {
+    "numpy": "OK",
+    "torch": "OK",
+    "kraken": "OK",
+    "regex": "FAIL",
+    "torchmetrics": "FAIL due to regex",
+    "lightning": "FAIL due to regex"
+  },
+  "training": {
+    "started": false,
+    "checkpoint": null,
+    "cer": null,
+    "wer": null
+  },
+  "safety": {
+    "policy_disabled": false,
+    "bypass_attempted": false
+  },
+  "next_step": "Authorized administrator reviews code integrity policy and approved signed packages, or uses separately managed compliant HTR training environment."
+}
