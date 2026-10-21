@@ -1,0 +1,76 @@
+name: HTR external unseen manuscript evaluation
+on:
+  push:
+    paths:
+      - .github/workflows/htr-external-evaluation.yml
+      - adc/governance/tools/htr-external-alto-prep.py
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install 'kraken==7.1.1' pillow
+      - name: Download previously trained frozen checkpoint
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          mkdir -p htr-frozen
+          gh run download 39647133626 --repo "${{ github.repository }}" -n htr-ppocrv6-three-way-independent-test -D htr-frozen
+          MODEL="$(find htr-frozen -name 'best_*.safetensors' -type f | head -n 1)"
+          test -n "$MODEL"
+          echo "MODEL=$MODEL" >> "$GITHUB_ENV"
+          sha256sum "$MODEL" | tee checkpoint-sha256.txt
+      - name: Acquire wholly different BnF manuscript and prepare ALTO lines
+        shell: bash
+        run: |
+          git clone --depth=1 --filter=blob:none --sparse https://github.com/HTRomance-Project/medieval-latin.git external-htromance
+          (cd external-htromance && git sparse-checkout set data/bnf-lat-10996 && git rev-parse HEAD) | tee external-source-commit.txt
+          python adc/governance/tools/htr-external-alto-prep.py
+          wc -l external-test/test.txt
+      - name: Run frozen model on unseen source and measure CER WER
+        shell: bash
+        run: |
+          set -o pipefail
+          ketos test -f path -m "$MODEL" -e external-test/test.txt 2>&1 | tee external-test/ketos-external.log
+          kraken -I 'external-test/*.png' -o '.pred.txt' ocr --no-segmentation -m "$MODEL"
+          mkdir -p htr-smoke
+          cp external-test/*.gt.txt htr-smoke/ 2>/dev/null || true
+          python - <<'PY'
+          import pathlib,json
+          from rapidfuzz.distance.Levenshtein import distance
+          base=pathlib.Path("external-test")
+          examples=[]; chars=words=ce=we=0
+          files=sorted(base.glob("*.gt.txt"))
+          for f in files:
+              pred=pathlib.Path(str(f).replace(".gt.txt",".pred.txt"))
+              if not pred.exists():continue
+              ref=f.read_text(encoding="utf8").strip()
+              hyp=pred.read_text(encoding="utf8").strip()
+              chars+=len(ref);words+=len(ref.split())
+              ce+=distance(ref,hyp);we+=distance(ref.split(),hyp.split())
+              if len(examples)<8:examples.append({"id":f.stem,"reference":ref,"predicted":hyp})
+          out={"lines":len(files),"characters":chars,"words":words,"character_edits":ce,"word_edits":we,"CER":ce/chars if chars else None,"WER":we/words if words else None,"examples":examples,"source":"HTRomance BnF lat 10996; never used in training or checkpoint selection"}
+          (base/"external-metrics.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf8")
+          print("INDEPENDENT_EXTERNAL_METRICS",json.dumps(out,ensure_ascii=False),flush=True)
+          assert len(files)>=60 and chars>1000
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: htr-genuinely-new-manuscript-cer-wer
+          path: |
+            external-test/ketos-external.log
+            external-test/external-metrics.json
+            external-source-commit.txt
+            checkpoint-sha256.txt
+          if-no-files-found: warn
