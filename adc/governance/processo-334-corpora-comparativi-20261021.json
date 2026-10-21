@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-21",
+  "purpose": "Comparative paleographic acquisition for canonical Processo 334; external manuscript is NOT a transcription of the ADC document",
+  "source": {
+    "title": "HTR Winter School 2025 - Late Medieval Latin",
+    "doi": "10.5281/zenodo.17911438",
+    "url": "https://zenodo.org/records/17911438",
+    "sample": "Prague National Library I D 10 late fifteenth-century",
+    "download": "https://zenodo.org/records/17911438/files/19_-_Praha%2C_NKP%2C_sign__I_D_10_-_Winter_School.zip?download=1",
+    "license_note": "Repository describes Creative Commons 4 for transcriptions and images; verify item-level rights and attribution before redistributing. Explicit warning on source page notes digitization not copyright-free.",
+    "quality_note": "Use only checked Ground Truth, not Done/unchecked files; do not assume script or language matches the Calatabiano scan."
+  },
+  "local": {
+    "folder": "Documents/ADC_HTR_CORPORA_20261021",
+    "filename": "winter_school_2025_medieval_latin_ID10.zip",
+    "bytes": 2803482,
+    "zip_integrity": "PASS",
+    "sha256": "eba78f2ca9f5867df73540f4e03af3835f4e908a8aa45d1a6a3a2561baaa7ebc",
+    "xml_files_in_zip": 20,
+    "image_files_in_zip": 16,
+    "entries_total": 58
+  },
+  "policy": {
+    "status": "external_reference_unreviewed_for_p334",
+    "eligible_for_direct_p334_ground_truth": false,
+    "model_training_started": false,
+    "original_master_334_unchanged": true
+  },
+  "other_sources": [
+    {
+      "name": "CREMMA Medii Aevi",
+      "url": "https://zenodo.org/records/7510411"
+    },
+    {
+      "name": "DEEDS Latin cartularies",
+      "url": "https://github.com/DEEDS-Project/htr-dataset"
+    },
+    {
+      "name": "HTRomance Medieval Italian",
+      "url": "https://github.com/HTRomance-Project/medieval-italian"
+    }
+  ]
+}
