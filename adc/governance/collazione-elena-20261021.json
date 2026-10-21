@@ -1,0 +1,209 @@
+{
+  "date": "2026-10-21",
+  "scope": "15 static Elena answers versus 10 cited ADC editorial pages; original archival documents not reread",
+  "method": "Manual comparison of reported dates, entities, identifiers and epistemic disclaimers with page text; internal crosscheck only",
+  "reviewed_facts": 15,
+  "reviewed_claims": 18,
+  "issue_count_confirmed": 0,
+  "disposition": "No change to live answers absent a documented factual contradiction; next phase compare original images / published editions with page references",
+  "claims": [
+    {
+      "claim_id": "ELENA-1213-1",
+      "fact_id": "1213",
+      "claim": "Conferma del castello nel 1213",
+      "reference_hint": "March 1213; Costanza/Enrico",
+      "editorial_page": "/adc/dossier-1213-1537/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-1213-2",
+      "fact_id": "1213",
+      "claim": "Somma di 15.000 tarì e Arnaldo",
+      "reference_hint": "Privilegio secondo edizione Hillen",
+      "editorial_page": "/adc/dossier-1213-1537/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-1201-1",
+      "fact_id": "1201",
+      "claim": "Diploma del 1201 e chiesa di Messina",
+      "reference_hint": "Edizione MGH e ADM perg. 547",
+      "editorial_page": "/adc/fonti/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-1267-1",
+      "fact_id": "1267",
+      "claim": "Controversia del 1267",
+      "reference_hint": "ADM perg. 1019; Starrabba LXXVI",
+      "editorial_page": "/adc/fonti/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-1282-1",
+      "fact_id": "1282",
+      "claim": "Scriptum restitutionis del 1282",
+      "reference_hint": "ADM perg. 1034",
+      "editorial_page": "/adc/fonti/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-1502-1",
+      "fact_id": "1502",
+      "claim": "Committenza 24 ottobre 1502",
+      "reference_hint": "Matteo di Villa; Salvo d'Antonio; San Filippo Siriaco",
+      "editorial_page": "/adc/crocifisso-1502/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-1537-1",
+      "fact_id": "1537",
+      "claim": "Atto segnalato 25 maggio 1537",
+      "reference_hint": "Francesco Mirulla; Pietro Faraone; ASM Notarile 15 ff. 330–332",
+      "editorial_page": "/adc/dossier-1213-1537/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-processo334-1",
+      "fact_id": "processo334",
+      "claim": "PDF di studio 20 pagine",
+      "reference_hint": "Studio preliminare; trascrizione diplomatica incompleta",
+      "editorial_page": "/adc/processo-334/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-nome-1",
+      "fact_id": "nome",
+      "claim": "Origine del toponimo non accertata",
+      "reference_hint": "Limite epistemico, nessuna etimologia imposta",
+      "editorial_page": "/adc/storia/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-ponte-1",
+      "fact_id": "ponte",
+      "claim": "Ponte descritto da al-Idrisi",
+      "reference_hint": "Passo del XII secolo",
+      "editorial_page": "/adc/ponte-alcantara-medievale/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-ponte-2",
+      "fact_id": "ponte",
+      "claim": "Identificazione Alcantara in nota moderna",
+      "reference_hint": "Il testo medievale non identifica esplicitamente il manufatto",
+      "editorial_page": "/adc/ponte-alcantara-medievale/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-zucchero-1",
+      "fact_id": "zucchero",
+      "claim": "Tre mulini del trappeto",
+      "reference_hint": "Morreale 2020 p. 16",
+      "editorial_page": "/adc/dossier-zucchero/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-zucchero-2",
+      "fact_id": "zucchero",
+      "claim": "Corrispettivo di 250 onze annue",
+      "reference_hint": "Notizia storiografica non collazione atto",
+      "editorial_page": "/adc/dossier-zucchero/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-notaio1348-1",
+      "fact_id": "notaio1348",
+      "claim": "Qualifica di Nicolò Iacobello",
+      "reference_hint": "Regesto Salvo n. 49; cronologia 1347/1348",
+      "editorial_page": "/adc/notai-medievali/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-notaio1356-1",
+      "fact_id": "notaio1356",
+      "claim": "Nomina Nicolò di Cunistabili",
+      "reference_hint": "Marrone 1356; ASP Protonotaro 5 c.30v",
+      "editorial_page": "/adc/notai-medievali/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-arciprete1531-1",
+      "fact_id": "arciprete1531",
+      "claim": "Paolo de Renaldo arciprete",
+      "reference_hint": "Mellusi p.73 PDF; atto affitto Taormina",
+      "editorial_page": "/adc/chiese-cinquecento/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-chiese1594-1",
+      "fact_id": "chiese1594",
+      "claim": "Due chiese sacramentali",
+      "reference_hint": "Mellusi p.47 PDF; manoscritto 517A non collazionato",
+      "editorial_page": "/adc/chiese-cinquecento/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    },
+    {
+      "claim_id": "ELENA-gravina-1",
+      "fact_id": "gravina",
+      "claim": "Voci inventariali 33–35",
+      "reference_hint": "1423–1518; 1511–1573; 1573–1698",
+      "editorial_page": "/adc/archivio-gravina-cruillas/",
+      "editorial_crosscheck": "matched_in_ADC_editorial_page",
+      "original_source_status": "not_collated_in_this_audit",
+      "independent_review": "not_performed",
+      "correction": "none_justified_from_current_comparison"
+    }
+  ]
+}
