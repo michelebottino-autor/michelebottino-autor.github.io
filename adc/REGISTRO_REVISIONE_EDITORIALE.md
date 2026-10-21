@@ -194,3 +194,33 @@ Sono state mantenute le distinzioni già previste dalla Carta: l'ADC è il proge
 ### Limiti di certificazione
 
 Test dei frammenti e delle etichette effettuati sul codice HTML del ramo: non sostituiscono una verifica in browser/mobile, il controllo HTTP della distribuzione, l'accessibilità completa o una collazione scientifica. Nessuna pubblicazione definitiva è implicita finché la proposta GitHub non viene integrata.
+
+## Revisione dedicata all’ADC — 21 ottobre 2026
+
+**Base del controllo:** `main` a SHA `4c357de6f57adff7dcd21c197c3066af47abb6a6`. La revisione è stata eseguita sulla copia di lavoro temporanea del repository corrente e preparata nel ramo `revisione-adc-editoriale-2026-10-21`.
+
+### Inventario della revisione
+
+- **42 pagine HTML ADC** lette nella ricognizione statica; controllati collegamenti locali e frammenti, titoli principali, identificatori, attributi `alt`, canonical e paragrafi lunghi. Non sono state individuate duplicazioni letterali di paragrafi di almeno 150 caratteri fra pagine differenti.
+- **17 rinvii dell’Atlante** all’Inventario, inizialmente non presenti nell’HTML statico, sono **validi**: l’Inventario li genera in JavaScript da `adc/inventario/testimonianze.json`, che contiene 18 schede con identificatori univoci. Non rimuovere questi frammenti.
+- **39 delle 42 pagine ADC** compaiono nella sitemap; le tre eccezioni sono il modulo di invio e due widget incorporabili, non pagine editoriali.
+- Nessuna anomalia strutturale confermata tale da giustificare una riscrittura massiva dei dossier o dell’Inventario. Le questioni di collazione delle fonti storiche restano distinte dalla correzione editoriale.
+
+### Difetti dimostrati e interventi
+
+1. `adc/cerca/index.html`: la ricerca interna interrogava 23 pagine, escludendo 11 dossier e percorsi storico-documentari già pubblicati. Aggiunti i 11 percorsi esistenti, per un totale di **34 pagine interrogate**. Restano distinti i 18 record dell’Inventario caricati da JSON. Le pagine di ricerca, invio, assistenza e incorporamento non sono equiparate a dossier storici.
+2. `adc/index.html`: corretta la parola corrotta «eredit?», ripristinato il testo «eredità» e sistemati due collegamenti il cui indicatore grafico era stato sostituito erroneamente da «?». Aggiornata la data di revisione della pagina.
+3. `adc/fonti/index.html`: corretti due collegamenti alla sezione patrimonio edilizio, con frecce e separatore leggibile; aggiornata la data editoriale.
+4. `adc/atlante/index.html`: corretta la forma «Regesti ed edizioni», eliminato il carattere anomalo nel collegamento all’atlante edilizio e allineata un’etichetta dell’indice al titolo effettivo della sezione.
+5. `adc/archivio-gravina-cruillas/index.html`: formulato in modo impersonale il limite della consultazione inventariale, senza promuovere i registri ad originali letti; corretto un collegamento e aggiornata la data della revisione.
+
+### Collaudi sul ramo proposto
+
+- Elenco della ricerca: **34 percorsi univoci, 34 file presenti**, 11 nuove inclusioni; array JavaScript conservato nella struttura originale.
+- Inventario: 18 identificatori univoci, di cui tutti i 17 richiesti dall’Atlante.
+- Nelle cinque pagine corrette: un solo `h1`, nessun `id` duplicato e nessun `img` senza `alt` nel controllo statico.
+- Nessuna modifica alle carte storiche, alle schede `testimonianze.json`, alle fonti primarie, alla ricerca archivistica privata, alle attestazioni certificate o al codice del motore di Elena.
+
+### Limiti
+
+Il controllo statico non certifica l’esecuzione JavaScript su tutti i dispositivi, la disponibilità HTTP di siti terzi, il corretto funzionamento di ogni controllo assistivo o la verifica diplomatica delle fonti. Il rapporto registra l’esito delle verifiche effettuate, non una certificazione generale dell’Archivio.
