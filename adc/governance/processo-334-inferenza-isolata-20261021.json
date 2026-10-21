@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-21",
+  "document": "ADC-PROCESSO-334",
+  "scope": "experimental recognition on scan C003, local only",
+  "master_sha256": "AB6E7045006304204DEF3AEB8548225805DF41010374D50AA70D43FEEB123D40",
+  "local_quarantine": "Documents/ADC_RECONCILIATION_RUN/P334_HTR_QUARANTENA",
+  "prepared_regions": [
+    "C003_B01",
+    "C003_B02",
+    "C003_B03",
+    "C003_B04",
+    "C003_B05"
+  ],
+  "model_available_for_local_inference": false,
+  "training_runs": [
+    39634186846,
+    39634431791
+  ],
+  "latest_workflow_observation": "in_progress during check; training step; no completed checkpoint artifact",
+  "prediction_status": "not_executed",
+  "verified_transcription_status": "not_established",
+  "safety_rules": {
+    "never_publish_raw_htr_to_elena": true,
+    "keep_original_unmodified": true,
+    "review_each_transcription_against_image": true,
+    "no_unverified_claims_in_cervello": true
+  }
+}
