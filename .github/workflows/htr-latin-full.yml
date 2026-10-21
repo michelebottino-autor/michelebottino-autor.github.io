@@ -29,6 +29,13 @@ jobs:
         run: |
           set -o pipefail
           ketos train -f path -q fixed -N 5 -B 4 -o htr-smoke/model -t htr-smoke/train.txt -e htr-smoke/test.txt 2>&1 | tee htr-smoke/training.log
+      - name: Measure independent holdout character and word accuracy
+        shell: bash
+        run: |
+          set -o pipefail
+          MODEL="$(find htr-smoke/model -name 'best_*.safetensors' -type f | head -n 1)"
+          test -n "$MODEL"
+          ketos test -f path -m "$MODEL" -e htr-smoke/test.txt 2>&1 | tee htr-smoke/holdout.log
       - name: Verify saved model weights
         run: |
           ls -lah htr-smoke/model/
@@ -40,5 +47,6 @@ jobs:
           name: htr-latin-5epochs-checkpoint-and-log
           path: |
             htr-smoke/training.log
+            htr-smoke/holdout.log
             htr-smoke/model/*.safetensors
           if-no-files-found: warn
