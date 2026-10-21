@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - .github/workflows/htr-external-htromance.yml
+      - adc/governance/tools/htr-external-alto.py
+      - adc/governance/tools/htr-external-score.py
 jobs:
   external-test:
     runs-on: ubuntu-latest
