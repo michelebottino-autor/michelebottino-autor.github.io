@@ -19,3 +19,4 @@ jobs:
         run: |
           python3 adc/governance/verifica_censimento.py
           python3 adc/governance/verifica_metadati.py
+          python3 adc/governance/verifica_elena.py
