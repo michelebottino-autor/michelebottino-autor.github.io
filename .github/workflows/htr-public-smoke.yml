@@ -33,5 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: htr-public-smoke-log
-          path: htr-smoke/training.log
-          if-no-files-found: ignore
+          path: |
+            htr-smoke/training.log
+            htr-smoke/model/*.safetensors
+          if-no-files-found: warn
