@@ -76,6 +76,12 @@
   function reply(q,db,index,previousId,memory) {
     if(!memory || memory.schema!==1 || !Array.isArray(memory.topics) || memory.topics.length<2) return {kind:'empty',topic:null,title:'Memoria non disponibile',text:'Elena non può rispondere senza consultare la memoria documentaria condivisa.',links:[]};
     if(/\b(?:processo|investitura|fascicolo|p)\b.{0,40}\b184\b/.test(normalize(q)))return {kind:'empty',topic:null,title:'Processo 184: attribuzione non verificata',text:'Le vecchie sigle di lavoro P184 non identificano con certezza un Processo 184. Non posso attribuire loro il materiale del Processo 334. Se la domanda confronta i due fascicoli, serve una verifica documentaria separata.',links:[{title:'Criteri di verifica e fonti',url:'/adc/fonti/'}]};
+    // Consultazione bibliografica attribuita, distinta dai fatti ADC approvati.
+    if(/\b(pianotta|usk\s*81)\b/i.test(normalize(q)) && typeof globalThis.ElenaPianottaBibliografia==='function'){
+      const b=globalThis.ElenaPianottaBibliografia(q);
+      if(b.sources.length)return {kind:'index',topic:null,title:'Contrada Pianotta — bibliografia',text:b.answer+' '+b.disclaimer,links:[{title:'Scheda archeologica di Pianotta',url:'/adc/pianotta/'}]};
+      return {kind:'index',topic:null,title:'Contrada Pianotta — documenti',text:'Per questa domanda non risulta una citazione bibliografica puntuale nella scheda del 2020.',links:[{title:'Consulta la scheda di Pianotta',url:'/adc/pianotta/'}]};
+    }
     const facts=Array.isArray(db?.facts)?db.facts:[];
     const entries=Array.isArray(index?.entries)?index.entries:[];
     const fact=detectFact(q,facts,previousId);
