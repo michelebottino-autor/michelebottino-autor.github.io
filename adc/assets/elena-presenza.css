@@ -44,3 +44,15 @@
  .elena-presenza-toggle::before{font-size:11px}
  .elena-presenza-panel{right:0;max-height:min(68dvh,480px)}
 }
+
+/* Mobile reading mode: Elena remains tappable, never display:none. */
+@media(max-width:600px){
+ .elena-presenza-toggle{transition:opacity .18s ease,transform .18s ease}
+ .elena-presenza-reading .elena-presenza-toggle:not(:focus-visible){
+   opacity:.58;
+   transform:none;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .elena-presenza-toggle{transition:none!important}
+}
