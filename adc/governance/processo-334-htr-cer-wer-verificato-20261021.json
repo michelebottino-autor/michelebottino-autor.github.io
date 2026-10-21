@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-21",
+  "run_id": 39636399711,
+  "run_conclusion": "success_technical_only",
+  "dataset": "External medieval Latin training corpus; not Processo 334",
+  "training_lines": 448,
+  "holdout_lines": 154,
+  "holdout_pages": 2,
+  "reference_characters": 4510,
+  "reference_words": 717,
+  "character_edits": 4472,
+  "word_edits": 717,
+  "cer": 0.9915742793791574,
+  "wer": 1,
+  "word_accuracy": 0,
+  "model": "best_0.0849.safetensors",
+  "artifact_id": 12361867227,
+  "observed_examples": [
+    {
+      "ref": "predictum de morte sue coniugis",
+      "pred": "¬"
+    },
+    {
+      "ref": "turbatum medulitus amicabiliter",
+      "pred": "¬"
+    },
+    {
+      "ref": "consolatur eundem ·",
+      "pred": "¬"
+    },
+    {
+      "ref": "Nno domini Mo LVIo",
+      "pred": "¬"
+    },
+    {
+      "ref": "Andreas Rex Vn¬",
+      "pred": "¬"
+    }
+  ],
+  "finding": "Model outputs almost only ¬ on sampled unseen lines and omits the content. It is not fit for Processo 334 recognition.",
+  "controls": {
+    "elena_ingestion": false,
+    "cervello_ingestion": false,
+    "proceso334_inference": false,
+    "original_scans_unchanged": true
+  },
+  "next": "Inspect line crop normalization, transcription alphabet and HTR codec, then train revised model and measure on disjoint pages before use."
+}
