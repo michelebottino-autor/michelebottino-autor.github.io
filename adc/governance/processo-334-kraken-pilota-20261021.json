@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-21",
+  "task": "HTR training smoke test on external Latin corpus (not Processo 334)",
+  "environment": {
+    "python": "3.13.16",
+    "torch": "2.14.0+cpu",
+    "kraken": "7.1.1",
+    "virtual_environment": "Documents/ADC_HTR_CORPORA_20261021/.venv-kraken"
+  },
+  "test": {
+    "training_lines": 32,
+    "evaluation_lines": 8,
+    "epoch_limit": 1,
+    "invocation": "ketos train -f path -q fixed -N 1 -B 2",
+    "started_training": false,
+    "checkpoint_created": false,
+    "cer": null,
+    "wer": null
+  },
+  "blocker": {
+    "kind": "Windows application control",
+    "module": "regex._regex",
+    "error": "ImportError: DLL load failed while importing _regex: Un criterio di controllo dell'applicazione ha bloccato il file.",
+    "security_policy_bypass_attempted": false
+  },
+  "next": "Authorized review of application-control policy or execution on an approved supported HTR environment; do not claim model training or publish hypothetical transcriptions"
+}
