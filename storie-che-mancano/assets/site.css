@@ -14,3 +14,9 @@ main{max-width:1190px;padding:34px clamp(18px,4vw,40px) 70px;margin:auto}.hero{b
 .topnav a{min-height:44px;display:inline-flex;align-items:center}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #c5a16a;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Tablet: prevent wide tables or long text from inflating grid tracks. */
+.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+.two-col>.panel,.two-col>*{min-width:0}
+.two-col .scroll-x{max-width:100%;overflow-x:auto}
+@media(max-width:860px){.two-col{grid-template-columns:minmax(0,1fr)}}
