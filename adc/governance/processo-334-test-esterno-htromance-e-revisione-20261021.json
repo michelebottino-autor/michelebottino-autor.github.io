@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-21",
+  "external_test": {
+    "workflow_run": 39665594951,
+    "conclusion": "success",
+    "source": "HTRomance Medieval Latin, BnF lat 10996",
+    "lines": 109,
+    "characters": 5550,
+    "words": 888,
+    "cer": 0.7589189189189189,
+    "wer": 0.9808558558558559,
+    "fine_tuning_source": "Prague Latin ID10, disjoint manuscript",
+    "methodology_limitations": [
+      "ALTO String bounding rectangles joined per TextLine can include spacing and neighboring handwriting",
+      "Different editorial transcription norms may contribute to errors",
+      "External corpus checked with frozen model, not further trained"
+    ],
+    "assessment": "Weak manuscript transfer; no automatic trustworthy Processo 334 transcription"
+  },
+  "processo334_review": {
+    "sample_id": "C003_B01,C003_B02",
+    "status": "visual inspection of work crops, no approved diplomatic transcription",
+    "reason": "Letter joins, ambiguity and overlapping ink; no verified palaeographic transcription available",
+    "next_requirement": "Line-level diplomatic review against complete original scan, with explicit uncertainty and independent sign-off",
+    "approved_units": 0
+  },
+  "safety": {
+    "originals_modified": false,
+    "elena_ingested": false,
+    "cervello_ingested": false
+  }
+}
