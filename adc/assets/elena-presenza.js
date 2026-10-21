@@ -31,7 +31,25 @@
    }).catch(err=>{resources=null;throw err});
    return resources;
  }
- function setOpen(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)input.focus();else toggle.focus();}
+ function setOpen(open){if(open)root.classList.remove('elena-presenza-reading');panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)input.focus();else toggle.focus();}
+ // On small screens, a downward scroll reduces the visual prominence
+ // of Elena without removing its keyboard/touch access.
+ let prevY=window.scrollY, pending=false;
+ function refreshReadingState(){
+   pending=false;
+   if(!window.matchMedia('(max-width:600px)').matches||!panel.hidden){
+     root.classList.remove('elena-presenza-reading');
+     prevY=window.scrollY;return;
+   }
+   const nextY=window.scrollY, delta=nextY-prevY;
+   if(nextY<120 || delta < -8)root.classList.remove('elena-presenza-reading');
+   else if(delta>8)root.classList.add('elena-presenza-reading');
+   prevY=nextY;
+ }
+ window.addEventListener('scroll',()=>{
+   if(!pending){pending=true;window.requestAnimationFrame(refreshReadingState);}
+ },{passive:true});
+ toggle.addEventListener('focus',()=>root.classList.remove('elena-presenza-reading'));
  toggle.addEventListener('click',()=>setOpen(panel.hidden));
  close.addEventListener('click',()=>setOpen(false));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)setOpen(false)});
