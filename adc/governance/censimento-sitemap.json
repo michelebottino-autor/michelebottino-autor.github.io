@@ -431,6 +431,17 @@
       "source_documentation_status": "not_audited",
       "independent_review_status": "not_performed",
       "editorial_status": "discovered_in_sitemap"
+    },
+    {
+      "id": "ADC-WEB-040",
+      "identifier": "https://michelebottino-autor.github.io/adc/",
+      "relative_path": "/adc/",
+      "resource_kind": "web_page",
+      "title_candidate": "Archivio Documentale Calatabiano — pagina principale",
+      "metadata_origin": "sitemap.xml",
+      "source_documentation_status": "not_audited",
+      "independent_review_status": "not_performed",
+      "editorial_status": "discovered_in_sitemap"
     }
   ]
 }
