@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-21",
+  "public_corpus": "Zenodo Prague NKP I D 10 medieval Latin",
+  "test_run": 39644600809,
+  "status": "completed_success",
+  "model": "small-models-for-glam/kraken-ppocrv6-small",
+  "model_sha256": "3108259779f5abfed3908a1c9eafba64d17e4a2a169368c539ecfeff04c018f3",
+  "held_out_pages": 2,
+  "held_out_lines": 154,
+  "reference_characters": 4510,
+  "reference_words": 717,
+  "metrics": {
+    "cer_edit_distance": 0.329490022172949,
+    "wer_edit_distance": 0.8145048814504882,
+    "character_edits": 1486,
+    "word_edits": 584,
+    "kraken_report_character_accuracy_percent": 69.58,
+    "kraken_report_word_accuracy_percent": 19.67
+  },
+  "examples": [
+    {
+      "reference": "predictum de morte sue coniugis",
+      "prediction": "Pictu* de morte ſue cougis"
+    },
+    {
+      "reference": "turbatum medulitus amicabiliter",
+      "prediction": "turbatum medu litii anicambilr"
+    },
+    {
+      "reference": "consolatur eundem ·",
+      "prediction": "consolatur eud"
+    },
+    {
+      "reference": "Nno domini Mo LVIo",
+      "prediction": "Lino di mͦ. oͦ."
+    },
+    {
+      "reference": "Andreas Rex Vn¬",
+      "prediction": "Andreas (Rex vn"
+    }
+  ],
+  "pair_audit": {
+    "source_pages": 8,
+    "pairs_with_text": 602,
+    "valid_polygons": 602,
+    "txt_matches_pagexml_after_whitespace_normalization": 8,
+    "txt_xml_mismatches": 0,
+    "not_sign_occurrences": 144,
+    "quality_assessment": "File consistency and geometry checked; individual palaeographic correctness not externally verified"
+  },
+  "comparison": {
+    "scratch_5_epoch_cer": 0.9915742793791574,
+    "normalized_12_epoch_cer": 0.7722838137472284,
+    "polygon_8_epoch_cer": 0.9740576496674057
+  },
+  "limitations": [
+    "The held-out Latin source is NOT Processo 334",
+    "Accuracy remains inadequate for unattended historical transcription",
+    "Character/word accuracy reported by Kraken is not identical to our Levenshtein CER/WER calculation",
+    "Manuscript-level palaeographic review is pending"
+  ],
+  "controls": {
+    "elena_ingestion": false,
+    "cervello_ingestion": false,
+    "proceso334_originals_unchanged": true
+  }
+}
