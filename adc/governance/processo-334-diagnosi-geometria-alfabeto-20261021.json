@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-21",
+  "corpus": "Zenodo medieval Latin Prague I D 10",
+  "reference_test": {
+    "run_id": 39636399711,
+    "cer": 0.9915742793791574,
+    "wer": 1,
+    "model_predominant_output": "¬"
+  },
+  "geometry": {
+    "train_lines": 448,
+    "test_lines": 154,
+    "train_median_height_px": 52,
+    "test_median_height_px": 55,
+    "train_min_height_px": 41,
+    "test_min_height_px": 37,
+    "malformed_geometry_lines": 0
+  },
+  "charset": {
+    "train_unique_codepoints": 55,
+    "test_unique_codepoints": 50,
+    "replacement_character_count": 0,
+    "train_not_sign_172_count": 106,
+    "test_not_sign_172_count": 38,
+    "test_only_Z_90_count": 1,
+    "train_only_codepoints": [
+      45,
+      47,
+      72,
+      75,
+      71,
+      84
+    ],
+    "nonbreaking_space_train_count": 21,
+    "nonbreaking_space_test_count": 2
+  },
+  "intervention": {
+    "new_script": "adc/governance/tools/htr-public-normalized.py",
+    "new_workflow": ".github/workflows/htr-latin-normalized.yml",
+    "normalization": "grayscale + autocontrast + proportional 96px height + 12px left/right,6px top/bottom whitespace",
+    "training_epochs": 12,
+    "holdout_pages_unmodified": true,
+    "run_id": 39642137348,
+    "run_state_at_launch": "in_progress"
+  },
+  "interpretation": "The collapse to the ¬ token may involve training dynamics or transcription conventions. No causal conclusion without controlled ablation and glyph/GT review. Letter Z is unseen in train; do not interpret that as evidence of overall failure cause.",
+  "protections": {
+    "originals_unchanged": true,
+    "elena_ingestion": false,
+    "cervello_ingestion": false
+  }
+}
