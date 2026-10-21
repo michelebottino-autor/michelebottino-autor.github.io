@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-22",
+  "document": "Processo 334 C003",
+  "original_master_sha256": "ab6e7045006304204def3aeb8548225805df41010374d50aa70d43feeb123d40",
+  "new_local_folder": "Documents/ADC_RECONCILIATION_RUN/P334_HTR_QUARANTENA/C003_GROUND_TRUTH_V2",
+  "method": "Simple grayscale horizontal projection and inter-peak valleys; preliminary only",
+  "detected_peaks": 19,
+  "exported_candidate_windows": 16,
+  "visual_inspection": "First window shows main handwriting but touches neighboring strokes at lower edge; line boundaries cannot be certified automatically",
+  "approved_transcriptions": 0,
+  "can_train": false,
+  "can_evaluate_cer_wer": false,
+  "master_preserved": true,
+  "next": "Use line segmentation supporting ascenders/descenders and manual coordinates, then diplomatic verification",
+  "quality_caveat": "Projection peaks are not proven line count. Avoid calling these 16 approved line samples."
+}
