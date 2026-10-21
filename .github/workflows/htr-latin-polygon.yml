@@ -1,0 +1,62 @@
+name: HTR Latin PAGE XML polygon isolation
+on:
+  push:
+    paths:
+      - .github/workflows/htr-latin-polygon.yml
+      - adc/governance/tools/htr-public-polygon.py
+      - adc/governance/tools/htr-holdout-eval.py
+  workflow_dispatch:
+jobs:
+  train-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install HTR packages on Linux CPU
+        run: |
+          python -m pip install 'kraken==7.1.1' pillow
+          python -c 'import kraken, torch, lightning.pytorch; print("READY", torch.__version__)'
+      - name: Prepare full external Latin corpus
+        run: |
+          python adc/governance/tools/htr-public-polygon.py
+          wc -l htr-smoke/train.txt htr-smoke/test.txt
+      - name: Train on six pages and evaluate on two holdout pages
+        shell: bash
+        run: |
+          set -o pipefail
+          ketos train -f path -q fixed -N 8 -B 4 -o htr-smoke/model -t htr-smoke/train.txt -e htr-smoke/test.txt 2>&1 | tee htr-smoke/training.log
+      - name: Measure independent holdout character and word accuracy
+        shell: bash
+        run: |
+          set -o pipefail
+          MODEL="$(find htr-smoke/model -name 'best_*.safetensors' -type f | head -n 1)"
+          test -n "$MODEL"
+          ketos test -f path -m "$MODEL" -e htr-smoke/test.txt 2>&1 | tee htr-smoke/holdout.log
+      - name: Predict all 154 previously unseen line images
+        shell: bash
+        run: |
+          set -o pipefail
+          MODEL="$(find htr-smoke/model -name 'best_*.safetensors' -type f | head -n 1)"
+          test -n "$MODEL"
+          kraken -I 'htr-smoke/test/*.png' -o '.pred.txt' ocr --no-segmentation -m "$MODEL"
+          python adc/governance/tools/htr-holdout-eval.py
+      - name: Verify saved model weights
+        run: |
+          ls -lah htr-smoke/model/
+          test -n "$(find htr-smoke/model -name '*.safetensors' -type f -print -quit)"
+      - name: Retain full HTR model and log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: htr-latin-polygon-8epochs-evaluation
+          path: |
+            htr-smoke/training.log
+            htr-smoke/holdout.log
+            htr-smoke/holdout-metrics.json
+            htr-smoke/model/*.safetensors
+          if-no-files-found: warn
