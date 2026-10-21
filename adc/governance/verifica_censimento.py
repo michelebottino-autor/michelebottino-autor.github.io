@@ -3,7 +3,7 @@
 import json, pathlib, re, sys
 from xml.etree import ElementTree as ET
 
-root = pathlib.Path(__file__).resolve().parents[3]
+root = pathlib.Path(__file__).resolve().parents[2]
 sitemap = ET.parse(root / "sitemap.xml").getroot()
 namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 urls = [node.text.strip() for node in sitemap.findall(".//s:loc", namespace) if node.text and node.text.strip().startswith("https://michelebottino-autor.github.io/adc/")]
