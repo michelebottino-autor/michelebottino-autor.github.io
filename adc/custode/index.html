@@ -7,15 +7,17 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Michele Bottino">
 <link rel="stylesheet" href="/mobile-platform.css">
+<link rel="stylesheet" href="/adc/skip-navigation.css">
 </head>
-<body><header><nav aria-label="Navigazione"><a href="../">← Archivio Documentale Calatabiano</a> · <a href="../cerca/">Ricerca completa</a></nav></header>
+<body>
+<a class="adc-a11y-skip" href="#contenuto-principale">Vai al contenuto</a><header><nav aria-label="Navigazione"><a href="../">← Archivio Documentale Calatabiano</a> · <a href="../cerca/">Ricerca completa</a></nav></header>
 <nav id="adc-design-nav" class="adc-project-nav" aria-label="Sezioni dell’Archivio Documentale Calatabiano"><a class="adc-project-brand" href="/adc/">Archivio Documentale Calatabiano<small>Al servizio della comunità · A cura di Michele Bottino</small></a><div class="adc-project-links"><a href="/adc/">Archivio</a><a href="/adc/fonti/">Fonti</a><a href="/adc/atlante/">Atlante</a><a href="/adc/storia/">Storia</a><a href="/adc/mediateca/">Mediateca</a><a href="/adc/elena/">Elena</a></div></nav>
-<main><p class="eyebrow">Guida alla consultazione · ADC</p><h1>Il Custode dell'Archivio</h1>
+<main id="contenuto-principale" tabindex="-1"><p class="eyebrow">Guida alla consultazione · ADC</p><h1>Il Custode dell'Archivio</h1>
 <p class="hint">Fai una domanda sulla storia di Calatabiano, sulle fonti o sui documenti. Il Custode cerca testimonianze e pagine pertinenti, indicando la provenienza delle notizie e ciò che resta incerto.</p>
 <section class="panel" aria-labelledby="ask"><h2 id="ask">Che cosa desideri sapere?</h2>
 <div class="suggestions" aria-label="Domande suggerite"><button type="button" data-q="castello Calatabiano 1213">Il castello nel 1213</button><button type="button" data-q="chiese medievali Rationes">Le chiese medievali</button><button type="button" data-q="zucchero Mirulla">Lo zucchero e i Mirulla</button><button type="button" data-q="terremoto 1818">Il terremoto del 1818</button></div>
 <form id="askform" class="question" role="search"><label for="question" class="small" style="flex-basis:100%;font-weight:700">La tua domanda</label><input id="question" type="search" maxlength="350" minlength="2" required placeholder="Es. Che cosa sappiamo del castello nel 1213?"><button type="submit">Consulta l'archivio</button></form>
-<p id="status" role="status" aria-live="polite"></p><div id="evidence" aria-label="Testimonianze documentarie"></div><div id="answer"></div><div id="followup" class="suggestions" aria-label="Approfondisci la ricerca"></div></section>
+<p id="status" role="status" aria-live="polite"></p><div id="evidence" role="region" aria-label="Testimonianze documentarie"></div><div id="answer"></div><div id="followup" class="suggestions" role="region" aria-label="Approfondisci la ricerca"></div></section>
 <p class="small">Per domande che richiedono un esame specialistico delle fonti, puoi <a href="../../contatti/">contattare l'autore</a>.</p><p class="adc-share-entry" style="margin:24px 0;padding:16px 19px;border-radius:12px;border:1px solid #d7e3da;background:#eff5ef;color:#173c36"><strong>La storia di Calatabiano, anche sul tuo sito.</strong> <a href="../incorpora/" style="color:#205e4e;font-weight:700">Scopri come condividere la ricerca dell’Archivio</a>.</p></main><footer>© 2026 Michele Bottino · Archivio Documentale Calatabiano</footer>
 <script>
 "use strict";
