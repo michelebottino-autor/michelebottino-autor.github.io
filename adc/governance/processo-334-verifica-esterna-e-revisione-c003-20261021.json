@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-21",
+  "stage": "preparazione test esterno e revisione diplomatica",
+  "existing_result": {
+    "run_id": 39647133626,
+    "corpus": "Prague ID10 external Latin",
+    "train_lines": 372,
+    "validation_lines": 76,
+    "eval_lines": 154,
+    "cer": 0.24390243902439024,
+    "wer": 0.6889818688981869,
+    "independent_new_corpus": false
+  },
+  "external_candidate": {
+    "name": "HTRomance medieval-latin",
+    "url": "https://github.com/HTRomance-Project/medieval-latin",
+    "manuscript_example": "bnf-lat-10996",
+    "ground_truth": "PAGE XML; repository recommends *.chocomufin.xml",
+    "status": "source_reconnaissance_only_no_new_CER_or_WER_yet",
+    "conditions": [
+      "Download and confirm image/XML pairs and licence/attribution",
+      "Check complete non-overlap with Prague ID10 training/validation",
+      "Use fixed trained checkpoint without any tuning on external pages",
+      "Compute CER/WER and sample alignment; archive hashes"
+    ]
+  },
+  "processo334": {
+    "work_location": "Documents/ADC_RECONCILIATION_RUN/P334_HTR_QUARANTENA/revisione_diplomatica_C003_v1.json",
+    "images": [
+      "C003_B01.jpg",
+      "C003_B02.jpg",
+      "C003_B03.jpg",
+      "C003_B04.jpg",
+      "C003_B05.jpg"
+    ],
+    "diplomatic_transcriptions_verified": 0,
+    "editorial_policy": "Do not guess uncertain readings; preserve exact provenance, and do not expose any unverified HTR to Elena/Cervello",
+    "original_scans_modified": false
+  },
+  "limits": [
+    "No new external CER/WER measured",
+    "No historical text authenticated"
+  ],
+  "created_by": "research audit"
+}
