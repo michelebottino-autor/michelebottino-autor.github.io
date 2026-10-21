@@ -1,0 +1,54 @@
+name: HTR external BnF manuscript independent evaluation
+on:
+  push:
+    paths:
+      - .github/workflows/htr-external-bnf10996.yml
+      - adc/governance/tools/htr-external-bnf10996.py
+  workflow_dispatch:
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install stable HTR dependencies
+        run: python -m pip install 'kraken==7.1.1' pillow
+      - name: Get independently selected best model checkpoint
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 39647133626 -n htr-ppocrv6-three-way-independent-test -D htr-model
+          find htr-model -type f
+          find htr-model -name 'best_*.safetensors' -type f | head -n 1 | grep safetensors
+      - name: Download separate BnF manuscript with normalized ALTO ground truth
+        run: |
+          python adc/governance/tools/htr-external-bnf10996.py
+          wc -l htr-smoke/test.txt
+      - name: Zero-shot evaluation with frozen fine-tuned checkpoint
+        shell: bash
+        run: |
+          set -o pipefail
+          MODEL="$(find htr-model -name 'best_*.safetensors' -type f | head -n 1)"
+          test -n "$MODEL"
+          sha256sum "$MODEL" | tee htr-smoke/external-model-sha256.txt
+          ketos test -f path -m "$MODEL" -e htr-smoke/test.txt 2>&1 | tee htr-smoke/external-test.log
+          kraken -I 'htr-smoke/test/*.png' -o '.pred.txt' ocr --no-segmentation -m "$MODEL"
+          python adc/governance/tools/htr-holdout-eval.py
+      - name: Preserve complete reproducibility evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: htr-bnf10996-unseen-benchmark
+          path: |
+            htr-smoke/external-source-manifest.json
+            htr-smoke/external-model-sha256.txt
+            htr-smoke/external-test.log
+            htr-smoke/holdout-metrics.json
+          if-no-files-found: warn
