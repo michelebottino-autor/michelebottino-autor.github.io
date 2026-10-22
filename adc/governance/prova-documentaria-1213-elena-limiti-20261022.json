@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-22",
+  "case": "March 1213 Calatabiano privilege",
+  "source_type": "Printed edition of documentary text, NOT inspected original parchment",
+  "edition": "Christian Hillen, Die Urkunden des Königs Heinrichs (VII.), 2007, no. 4, pp. 47–49",
+  "local_basis": [
+    "Ricerca_Alcantara_Calatabiano/COLLAZIONE_CRITICA_1213_2026-10-16.md",
+    "Ricerca_Alcantara_Calatabiano/VERIFICA_DIPLOMA_1213_2026-10-11.md"
+  ],
+  "source_passage": "The printed text refers to a confirmation concerning Calatabiano castle and Costanza with her son Enrico.",
+  "original_verified": false,
+  "formal_approval_for_historical_publication": false,
+  "isolated_test": {
+    "run_location": "Documents/ADC_RECONCILIATION_RUN/prova_fonte_1213_elena_risultati.json",
+    "model": "elena_api_generativa_candidata.py",
+    "passed": 3,
+    "total": 3,
+    "conditions": [
+      "source-derived evidence returned verbatim",
+      "no evidence => abstention",
+      "unsupported conjecture not added"
+    ],
+    "important": "These 3 tests pass a controlled source-derived record directly into generate(); they do NOT exercise a new legitimately approved historic claim retrieved from the live database."
+  },
+  "production": {
+    "historical_claims_promoted": 0,
+    "local_sqlite_modified": false,
+    "active_elena_replaced": false
+  },
+  "next": "Obtain and collate primary source image; have accountable reviewer approve exact bounded excerpt, register signed transition, then run end-to-end retrieval on reviewed source."
+}
