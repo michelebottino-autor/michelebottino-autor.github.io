@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-22",
+  "test": "Isolated SQLite snapshot of live database; fixture rows not real historical sources",
+  "results": {
+    "valid_approved_retrieved": true,
+    "draft_excluded": true,
+    "unreviewed_approved_state_excluded_by_candidate_retrieve": true,
+    "unreviewed_exposed_by_public_view_alone": true
+  },
+  "schema": {
+    "ai_public_claims_view": "SELECT ... FROM evidence_claims WHERE state='APPROVED_FOR_PUBLICATION' AND source_kind!='UNVERIFIED'",
+    "candidate_api_additional_review_filter": "EXISTS evidence_reviews with APPROVED_FOR_PUBLICATION reviewer,rationale,reviewed_at conditions"
+  },
+  "database": {
+    "original_modified": false,
+    "local_fixture": "Documents/ADC_RECONCILIATION_RUN/elena_approval_fixture_ISOLATED.sqlite",
+    "source_last_modified": "2026-10-19T17:46:39 local",
+    "copies_only": true
+  },
+  "recommendations": [
+    "Update public view in a separately reviewed database migration to check approval review transitions, never run on live DB without backup and confirmation",
+    "Use fail-closed candidate retrieve in production after HTTP regression tests",
+    "Keep zero currently reviewed historic records as zero; never promote historical DRAFT to approved just to pass tests"
+  ]
+}
