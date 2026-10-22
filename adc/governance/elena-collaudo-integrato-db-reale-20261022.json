@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-22",
+  "audit": "Integrated real SQLite retrieval and candidate generate() read-only test",
+  "database": {
+    "mode": "read-only",
+    "ai_public_claims_type": "view",
+    "ai_public_claims_rows": 0,
+    "evidence_reviews_rows": 7,
+    "review_states": {
+      "DRAFT": 6,
+      "REVIEW_REQUIRED": 1
+    },
+    "approved_publication_revisions": 0
+  },
+  "test_cases": [
+    {
+      "question": "Calatabiano castello 1213",
+      "records": 0,
+      "status": "NO_APPROVED_EVIDENCE"
+    },
+    {
+      "question": "Processo 334",
+      "records": 0,
+      "status": "NO_APPROVED_EVIDENCE"
+    },
+    {
+      "question": "termineimpossibilexyzqv",
+      "records": 0,
+      "status": "NO_APPROVED_EVIDENCE"
+    }
+  ],
+  "interpretation": "Fail-closed behaviour confirmed on zero approved records, not a positive retrieval of an approved record. Additional tests require reviewed claims or an isolated fixture with real approval chain. Does not authenticate any historical claim.",
+  "candidate": "Documents/ADC_RECONCILIATION_RUN/elena_api_generativa_candidata.py",
+  "local_result": "Documents/ADC_RECONCILIATION_RUN/elena_db_integrated_report.json",
+  "production_unchanged": true,
+  "originals_unchanged": true,
+  "next": [
+    "Audit review-to-approval process in read-only mode",
+    "Test positive approved case in isolated transactional copy or fixture with evidence_reviews and SHA",
+    "After positive and negative regression, controlled deployment"
+  ]
+}
