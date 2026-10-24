@@ -1,4 +1,4 @@
-/* Elena: assistenza contestuale documentaria. Nessuna domanda viene inserita negli URL o salvata. */
+/* © 2026 Michele Bottino — Elena: assistenza contestuale documentaria. Nessuna domanda viene inserita negli URL o salvata. */
 (function(){
  'use strict';
  if(document.querySelector('[data-elena-assistente]'))return;
@@ -10,7 +10,7 @@
  const name=(location.pathname.split('/').filter(Boolean).pop()||'').replace('.html','');
  msg.textContent=(sections.find(x=>x[0]===name)||[])[1]||'Posso aiutarti a orientarti nell’Archivio.';
  const make=(tag,text,cls)=>{const el=document.createElement(tag);el.textContent=text||'';if(cls)el.className=cls;return el;};
- let loader=null,resources=null,busy=false,lastTopic=null;
+ let loader=null,resources=null,busy=false;
  function loadEngine(){
    if(window.ElenaADCDialogo)return Promise.resolve(window.ElenaADCDialogo);
    if(!loader)loader=new Promise((resolve,reject)=>{
@@ -23,11 +23,14 @@
  }
  function loadResources(){
    if(!resources)resources=Promise.all([
-     fetch('/adc/assets/elena-risposte.json',{cache:'no-store'}),
-     fetch('/adc/assets/elena-indice.json',{cache:'no-store'})
+     fetch('/adc/assets/elena-indice.json',{cache:'no-store'}),
+     fetch('/adc/assets/elena-risposte-approvate.json',{cache:'no-store'})
    ]).then(async responses=>{
      if(responses.some(r=>!r.ok))throw Error('Indice delle risposte non disponibile');
      return Promise.all(responses.map(r=>r.json()));
+   }).then(([index,approved])=>{
+     if(!Array.isArray(index?.entries)||!Array.isArray(approved?.answers))throw Error('Formato delle risorse documentarie non valido');
+     return {index,approved:approved.answers};
    }).catch(err=>{resources=null;throw err});
    return resources;
  }
@@ -58,8 +61,7 @@
    busy=true;send.disabled=true;result.replaceChildren(make('p','Consulto le schede pubbliche dell’Archivio…'));
    try{
      const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
-     const reply=engine.reply(q,data[0],data[1],lastTopic);
-     if(reply.topic)lastTopic=reply.topic;
+     const reply=engine.reply(q,data.index,data.approved);
      result.replaceChildren(make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
      for(const source of (reply.links||[]).slice(0,3)){
