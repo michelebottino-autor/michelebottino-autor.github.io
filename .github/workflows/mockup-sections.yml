@@ -1,0 +1,23 @@
+name: Mockup section checks
+on:
+  pull_request:
+    paths:
+      - 'assets/css/mockup-sezioni-2026.css'
+      - 'biografia/index.html'
+      - 'opere/index.html'
+      - 'adc/index.html'
+      - 'ricerca/index.html'
+      - 'contatti/index.html'
+      - '.github/scripts/test-mockup-sections.js'
+      - '.github/workflows/mockup-sections.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node .github/scripts/test-mockup-sections.js
