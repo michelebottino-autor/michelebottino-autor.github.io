@@ -48,7 +48,9 @@ const puppeteer=require(process.env.PUPPETEER_MODULE||'puppeteer');
   }
   await page.goto(host+'/archivio-vivo/unita-4/',{waitUntil:'networkidle0'});
   await page.type('#notebook-text','Inventario simulato A-01/D2: una lettera dimostra la richiesta, non l’esecuzione.');
-  await page.click('#check-4-0');await page.click('#save-draft');
+  await page.$eval('#check-4-0',el=>{if(!el.checked){el.checked=true;el.dispatchEvent(new Event('change',{bubbles:true}));}});
+   assert.equal(await page.$eval('#check-4-0',el=>el.checked),true,'Checkbox must be selected before saving');
+   await page.click('#save-draft');
   assert.ok((await page.$eval('#notebook-status',x=>x.textContent)).includes('Salvataggio locale'));
   await page.reload({waitUntil:'networkidle0'});
   assert.ok((await page.$eval('#notebook-text',x=>x.value)).includes('una lettera dimostra'));
