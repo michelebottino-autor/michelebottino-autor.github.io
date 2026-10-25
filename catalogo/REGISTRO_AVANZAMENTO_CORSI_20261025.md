@@ -16,7 +16,7 @@ Data del controllo: 25 ottobre 2026. Documento di coordinamento editoriale. Font
 | Dal dossier al libro | `coming_soon` | Scheda di catalogo | Definire workflow editoriale e materiali di prova |
 | Fotografie senza nome | `in_development` | Anteprima pubblica, 6 unità e 18 lezioni brevi; progetto non validato | Espandere esempi autentici, prove di comprensione, revisione editoriale |
 | Cronologie impossibili | `in_development` | Anteprima pubblica, 6 unità e 18 lezioni brevi; caso C-01 simulato | Ampliare prove guidate e introdurre verifica didattica indipendente |
-| Il museo in una stanza | `coming_soon` | Programma di 6 unità, una proposta di esercizio pilota | Sviluppare lezioni e laboratorio prima di aprire anteprima |
+| Il museo in una stanza | `in_development` | Anteprima con 6 unità e 18 lezioni; caso B-01 simulato | Aggiungere pannelli visuali e revisione accessibilità, test con utenti |
 | Lettere oltre la grafia | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma e requisiti dei facsimili |
 | L’albero che racconta | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma, privacy e fonti familiari |
 | Voci senza registratore | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma, consenso e metodo |
@@ -33,4 +33,4 @@ Data del controllo: 25 ottobre 2026. Documento di coordinamento editoriale. Font
 
 ## Priorità attiva
 
-**Il museo in una stanza** è il prossimo candidato: programma già presente con sei unità, ma mancano lezioni complete, rubriche operative, collaudo e revisione editoriale. La sequenza prevista è programma → materiali → laboratorio su oggetti fittizi → verifiche → anteprima chiaramente distinta da corso pubblicato.
+**Il museo in una stanza** è ora disponibile in anteprima didattica con sei unità e diciotto lezioni. Restano aperti la revisione editoriale indipendente, un laboratorio visuale con sei oggetti, i test con visitatori e la validazione dell'accessibilità. Il prossimo sviluppo deve privilegiare questi aspetti e preparare i sette percorsi ancora futuri.
