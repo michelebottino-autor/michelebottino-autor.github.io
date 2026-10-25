@@ -6,7 +6,7 @@ const catalog=JSON.parse(fs.readFileSync(path.join(root,'corsi.json'),'utf8'));
 const courses=catalog.courses;
 assert.equal(courses.length,14,'Il catalogo deve contenere 14 percorsi; riesaminare le regole se cambia');
 const tally={};for(const course of courses)tally[course.status]=(tally[course.status]||0)+1;
-assert.equal(tally.published,1);assert.equal(tally.in_development,7);assert.equal(tally.coming_soon,6);
+assert.equal(tally.published,1);assert.equal(tally.in_development,8);assert.equal(tally.coming_soon,5);
 const ids=new Set(),slugs=new Set();
 for(const c of courses){
  assert.ok(c.id&&!ids.has(c.id),'ID corso assente o duplicato: '+c.id);ids.add(c.id);
@@ -20,6 +20,7 @@ for(const c of courses){
  if(c.id==='cronologie-impossibili'){assert.equal(c.status,'in_development');assert.equal(c.url,'../cronologie-impossibili/');assert.equal(c.enrollment.enabled,false);assert.equal(c.pricing.payment_enabled,false);}
  if(c.id==='museo-in-una-stanza'){assert.equal(c.status,'in_development');assert.equal(c.url,'../museo-in-una-stanza/');assert.equal(c.enrollment.enabled,false);assert.equal(c.pricing.payment_enabled,false);}
  if(c.id==='lettere-oltre-la-grafia'){assert.equal(c.status,'in_development');assert.equal(c.url,'../lettere-oltre-la-grafia/');assert.equal(c.enrollment.enabled,false);assert.equal(c.pricing.payment_enabled,false);}
+ if(c.id==='albero-che-racconta'){assert.equal(c.status,'in_development');assert.equal(c.url,'../albero-che-racconta/');assert.equal(c.enrollment.enabled,false);assert.equal(c.pricing.payment_enabled,false);}
  if(c.syllabus){
   const file=path.resolve(root,c.syllabus);
   assert.ok(file.startsWith(root+path.sep),'Percorso syllabus esterno al catalogo: '+c.id);
