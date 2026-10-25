@@ -314,11 +314,11 @@
         "Ricercatori locali e comunità"
       ],
       "learning_outcomes": [],
-      "units": null,
+      "units": 6,
       "duration_minutes": null,
-      "level": "Da definire",
-      "status": "coming_soon",
-      "url": "#interesse",
+      "level": "Introduttivo",
+      "status": "in_development",
+      "url": "../atlante-delle-storie/",
       "logo": "./loghi/atlante-delle-storie.svg",
       "enrollment": {
         "enabled": false
@@ -332,14 +332,16 @@
         "payment_enabled": false
       },
       "locales": {
-        "it": "planned",
+        "it": "in_review",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
         "de": "planned",
         "pt": "planned"
       },
-      "source_locale": "it"
+      "source_locale": "it",
+      "syllabus": "./programmi/atlante-delle-storie.json",
+      "syllabus_status": "editorial_draft_public_preview"
     },
     {
       "id": "scrivere-i-vuoti",
