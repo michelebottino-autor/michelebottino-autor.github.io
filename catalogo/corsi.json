@@ -434,12 +434,12 @@
         "Atlante commentato di 12 fotografie con provenienza e gradi di certezza."
       ],
       "duration_minutes": null,
-      "level": "Da definire",
-      "status": "coming_soon",
-      "url": "#interesse",
+      "level": "Introduttivo",
+      "status": "in_development",
+      "url": "../fotografie-senza-nome/",
       "source_locale": "it",
       "locales": {
-        "it": "planned",
+        "it": "in_review",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -453,7 +453,7 @@
         "payment_enabled": false
       },
       "syllabus": "./programmi/fotografie-senza-nome.json",
-      "syllabus_status": "editorial_draft",
+      "syllabus_status": "editorial_draft_public_preview",
       "format": "Laboratorio"
     },
     {
