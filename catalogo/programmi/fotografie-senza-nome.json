@@ -62,5 +62,7 @@
   "editorial_lessons_draft": "./fotografie-senza-nome-lezioni-bozza.json",
   "editorial_lessons_status": "draft_not_published",
   "documented_photo_example": "./fotografie-esempio-terrell.json",
-  "documented_photo_example_status": "editorial_draft_not_published"
+  "documented_photo_example_status": "editorial_draft_not_published",
+  "public_preview": "../fotografie-senza-nome/",
+  "public_preview_status": "in_review_not_certified"
 }
