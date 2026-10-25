@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "course_id": "albero-che-racconta",
+  "status": "preview_in_review",
+  "case_id": "G-01",
+  "case_nature": "fully_fictional",
+  "source_note": "Persone P01–P04 e documenti D1–D3 sono fittizi; nessun legame genealogico reale è attestato.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Il lettore e la promessa narrativa",
+      "goal": "Definire destinatari, domanda e confini di una ricostruzione genealogica.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Una promessa documentabile",
+          "text": "Un libro genealogico non deve promettere di ricostruire ogni vita o ogni relazione. Definisci per chi scrivi e quale domanda puoi sostenere con registri, lettere e ricordi attribuiti. Nel caso G-01, famiglia e documenti sono interamente inventati."
+        },
+        {
+          "number": 2,
+          "title": "Non confondere identità e somiglianze",
+          "text": "Il ripetersi di un nome in due documenti non dimostra che riguardino la medesima persona. Annota sempre luogo, data, ruolo e identificatori aggiuntivi; se mancano, registra due candidati, non un unico antenato."
+        },
+        {
+          "number": 3,
+          "title": "Delimitare il nucleo narrativo",
+          "text": "Scegli una generazione iniziale, un intervallo di anni e il perimetro geografico dichiarato. La cronologia deve rimanere revisionabile quando arriva una nuova fonte; non colmare le lacune con dialoghi immaginari presentati come testimonianze."
+        }
+      ],
+      "exercise": "Nel dossier fittizio G-01 compaiono due individui chiamati Andrea Serra in annotazioni di anni diversi. Formula una domanda che NON presupponga che siano la stessa persona; crea una scheda con le informazioni ancora mancanti.",
+      "self_checks": [
+        "Attestazioni distinguibili dalle ipotesi",
+        "Identificativi di fonti e persone coerenti",
+        "Limiti, conflitti e omonimie espliciti",
+        "Privacy e diritti considerati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u02",
+      "title": "Il filo tra i rami",
+      "goal": "Costruire una mappa di relazioni provate, possibili e contraddette.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "I nodi e gli archi dell'albero",
+          "text": "Ogni persona è un nodo con identificativo proprio; ogni parentela è un collegamento sostenuto da una o più attestazioni. Non inserire come certa una relazione basata esclusivamente su tradizione orale non verificata."
+        },
+        {
+          "number": 2,
+          "title": "Due Andrea non sono uno",
+          "text": "Nel caso inventato G-01, il registro D1 cita Andrea Serra presso la bottega; la lettera D2 cita un Andrea Serra di altra località senza elementi identificativi comuni. Mantieni due nodi distinti fino a prova indipendente."
+        },
+        {
+          "number": 3,
+          "title": "L'albero come ipotesi modificabile",
+          "text": "Marca gli archi: attestato nella fonte, riferito da un testimone oppure ipotizzato. Conserva le alternative e la ragione delle rettifiche. Una visualizzazione semplice deve rendere visibili le incertezze anche senza colore."
+        }
+      ],
+      "exercise": "Prepara uno schema testuale di quattro persone inventate con codici P01–P04. Inserisci un solo legame dichiaratamente riferito da un ricordo, un legame documentato nel caso e una relazione non verificata. Spiega perché sono distinti.",
+      "self_checks": [
+        "Attestazioni distinguibili dalle ipotesi",
+        "Identificativi di fonti e persone coerenti",
+        "Limiti, conflitti e omonimie espliciti",
+        "Privacy e diritti considerati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u03",
+      "title": "Contesto e personaggi",
+      "goal": "Restituire il contesto sociale senza attribuire ruoli e motivazioni non provati.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Date nella storia di famiglia",
+          "text": "Distingui la data di registrazione di un atto da nascita, matrimonio, viaggio o altri eventi descritti. Se il documento è tardivo, indica quando fu redatto e a che cosa si riferisce."
+        },
+        {
+          "number": 2,
+          "title": "Professioni e luoghi",
+          "text": "Un'attività registrata a un indirizzo non prova che ogni omonimo vi lavorasse. Usa mappe e repertori come contesto, specificando che il contesto non identifica automaticamente il soggetto."
+        },
+        {
+          "number": 3,
+          "title": "Dare voce senza inventarla",
+          "text": "Trasforma in racconto il dato verificabile: un documento fu redatto, una persona vi è nominata, un trasferimento è riferito. Non assegnare emozioni, discorsi o intenzioni quando la fonte tace."
+        }
+      ],
+      "exercise": "Scrivi 160–220 parole per un capitolo fittizio G-01. Cita D1 e D2 senza dedurre che i due Andrea coincidano; aggiungi una breve nota sui limiti della ricostruzione.",
+      "self_checks": [
+        "Attestazioni distinguibili dalle ipotesi",
+        "Identificativi di fonti e persone coerenti",
+        "Limiti, conflitti e omonimie espliciti",
+        "Privacy e diritti considerati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u04",
+      "title": "Fonti e apparati",
+      "goal": "Costruire un apparato di fonti e citazioni replicabile.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Schedare la fonte",
+          "text": "Per ogni testimonianza inventariale registra identificativo, ente o custode, collocazione, eventuale pagina, data, natura della copia e descrizione. Un riferimento generico a «documenti di famiglia» non consente verifica."
+        },
+        {
+          "number": 2,
+          "title": "Matrice delle affermazioni",
+          "text": "Collega a ogni frase del capitolo un codice fonte, l'estratto rilevante e il grado di certezza. Un nome presente nella fonte è un'attestazione; l'identificazione di più occorrenze dello stesso nome è una conclusione aggiuntiva."
+        },
+        {
+          "number": 3,
+          "title": "Note critiche leggibili",
+          "text": "Le note devono segnalare contraddizioni, manoscritti non consultati, OCR non verificato e testimonianze riferite. Per fonti vere considera diritti, riservatezza e la necessità di non pubblicare dati su persone viventi."
+        }
+      ],
+      "exercise": "Costruisci una matrice di cinque affermazioni relative al caso G-01: aggiungi il riferimento a D1/D2, un livello di certezza e la verifica ancora necessaria. Marca almeno una frase come non pubblicabile quale fatto.",
+      "self_checks": [
+        "Attestazioni distinguibili dalle ipotesi",
+        "Identificativi di fonti e persone coerenti",
+        "Limiti, conflitti e omonimie espliciti",
+        "Privacy e diritti considerati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u05",
+      "title": "Versioni e correzioni",
+      "goal": "Gestire versioni, rettifiche, pubblicazione e privacy.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Una versione per ogni correzione",
+          "text": "Ogni modifica a un legame di parentela deve avere data, ragione e riferimento documentario. Conserva le vecchie versioni per spiegare al lettore perché la ricostruzione è cambiata."
+        },
+        {
+          "number": 2,
+          "title": "Distinguere i conflitti",
+          "text": "Se due registrazioni non concordano, riporta entrambe prima di scegliere. Una scelta preferita deve derivare da prove e criteri dichiarati, non dalla soluzione più semplice per il diagramma."
+        },
+        {
+          "number": 3,
+          "title": "Proteggere i viventi",
+          "text": "Non pubblicare date esatte, residenze o legami familiari sensibili di persone viventi senza adeguato fondamento e valutazione della riservatezza. L'esercizio utilizza soltanto identità immaginarie e non chiede dati personali reali."
+        }
+      ],
+      "exercise": "Simula un aggiornamento: una nuova nota D3 mette in dubbio il legame P01–P03. Compila un registro di revisione con versione precedente, nuova lettura, motivo, fonti disponibili e avvertenza al lettore.",
+      "self_checks": [
+        "Attestazioni distinguibili dalle ipotesi",
+        "Identificativi di fonti e persone coerenti",
+        "Limiti, conflitti e omonimie espliciti",
+        "Privacy e diritti considerati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u06",
+      "title": "Capitolo pilota",
+      "goal": "Progettare indice, primo capitolo e apparato critico di un libro genealogico.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Indice dal problema alla prova",
+          "text": "Apri il libro con obiettivo, delimitazione, guida alle fonti e criterio di identificazione. Nei capitoli separa gli individui verificati da quelli solo ipotizzati e riserva uno spazio alle relazioni irrisolte."
+        },
+        {
+          "number": 2,
+          "title": "Un capitolo pilota con note",
+          "text": "Redigi 350–500 parole sul caso G-01 includendo cronologia delle testimonianze, breve schema dei nodi, note D1–D3 e un paragrafo su ciò che ancora non può essere stabilito."
+        },
+        {
+          "number": 3,
+          "title": "Revisione e confronto con lettori",
+          "text": "Controlla coerenza di nomi, codici, date, note e diagrammi. Prepara tre domande per una futura prova di comprensibilità; non dichiarare test con lettori o revisioni indipendenti se non sono stati svolti."
+        }
+      ],
+      "exercise": "Consegna un indice di sei sezioni e il capitolo pilota G-01 con citazioni ai tre documenti fittizi, una matrice delle affermazioni e un registro dei dubbi. Non pubblicare dati di persone reali.",
+      "self_checks": [
+        "Attestazioni distinguibili dalle ipotesi",
+        "Identificativi di fonti e persone coerenti",
+        "Limiti, conflitti e omonimie espliciti",
+        "Privacy e diritti considerati"
+      ],
+      "status": "preview_in_review"
+    }
+  ],
+  "assessment": {
+    "human_review_completed": false,
+    "participant_trials_completed": 0
+  },
+  "copyright": "© 2026 Michele Bottino"
+}

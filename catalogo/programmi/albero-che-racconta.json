@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "course_id": "albero-che-racconta",
+  "source_locale": "it",
+  "status": "editorial_draft",
+  "title": "L’albero che racconta",
+  "objective": "Trasformare dati genealogici documentati in un libro leggibile senza inventare parentela o identità.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Il lettore e la promessa narrativa",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u02",
+      "title": "Il filo tra i rami",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u03",
+      "title": "Contesto e personaggi",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u04",
+      "title": "Fonti e apparati",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u05",
+      "title": "Versioni e correzioni",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u06",
+      "title": "Capitolo pilota",
+      "status": "preview_in_review"
+    }
+  ],
+  "public_preview": "../albero-che-racconta/",
+  "public_preview_status": "in_review_not_certified",
+  "locales": {
+    "it": "in_review",
+    "en": "planned",
+    "es": "planned",
+    "fr": "planned",
+    "de": "planned",
+    "pt": "planned"
+  },
+  "copyright": "© 2026 Michele Bottino"
+}
