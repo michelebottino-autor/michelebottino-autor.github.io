@@ -1,0 +1,21 @@
+/* Laboratorio fotografico interattivo: mobile-first, senza tracciamento. */
+.mb-photo-lab{max-width:1000px;margin:26px auto;padding:20px;background:#fffdf9;border:1px solid #d6d9dc;border-radius:15px;color:#183347}
+.mb-photo-lab h2{margin:0 0 8px}.mb-photo-lab p{max-width:76ch}
+.mb-photo-lab .mb-photo-layout{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:22px;align-items:start}
+.mb-photo-lab figure{margin:0}.mb-photo-lab img{display:block;width:100%;height:auto;border-radius:10px}
+.mb-photo-lab figcaption{font-size:.82rem;margin:9px 0;line-height:1.5}
+.mb-photo-lab .mb-photo-options{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.mb-photo-lab button{font:inherit;padding:9px 13px;min-height:44px;border:1px solid #627c8b;border-radius:8px;background:#fff;color:#16394f;cursor:pointer}
+.mb-photo-lab button:hover{background:#e7f0f4}
+.mb-photo-lab button:focus-visible{outline:3px solid #ad7527;outline-offset:3px}
+.mb-photo-lab button[aria-pressed=true]{background:#163f59;color:#fff}
+.mb-photo-lab .mb-photo-feedback{padding:13px 15px;background:#edf4f7;border-left:4px solid #477d91;border-radius:5px;margin:12px 0;min-height:75px}
+.mb-photo-lab fieldset{border:1px solid #cfdae0;border-radius:9px;padding:14px;margin:20px 0}
+.mb-photo-lab legend{font-weight:700;padding:0 5px}
+.mb-photo-lab label{display:block;padding:8px 0;line-height:1.5;cursor:pointer}
+.mb-photo-lab input[type=radio]{width:18px;height:18px;vertical-align:middle;margin-right:8px;accent-color:#176181}
+.mb-photo-lab .mb-photo-question-feedback{font-size:.94rem;margin-top:8px;min-height:24px}
+.mb-photo-lab .mb-photo-question-feedback[data-result=correct]{color:#225b3b}
+.mb-photo-lab .mb-photo-question-feedback[data-result=incorrect]{color:#753b1f}
+.mb-photo-lab .mb-photo-note{font-size:.87rem;color:#486273}
+@media(max-width:720px){.mb-photo-lab{padding:12px}.mb-photo-lab .mb-photo-layout{grid-template-columns:minmax(0,1fr)}}
