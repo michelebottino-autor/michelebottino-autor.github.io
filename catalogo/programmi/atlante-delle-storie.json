@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "course_id": "atlante-delle-storie",
+  "title": "Atlante delle storie",
+  "status": "editorial_draft",
+  "public_preview": "../atlante-delle-storie/",
+  "public_preview_status": "in_review_not_certified",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Domanda e confini del territorio",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u02",
+      "title": "Mappe e provenienza",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u03",
+      "title": "Fotografie e luoghi",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u04",
+      "title": "Memorie e trasformazioni",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u05",
+      "title": "Atlante accessibile e tutela",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u06",
+      "title": "Dossier e revisione",
+      "status": "preview_in_review"
+    }
+  ],
+  "source_locale": "it",
+  "copyright": "© 2026 Michele Bottino"
+}

@@ -11,7 +11,7 @@ Data del controllo: 25 ottobre 2026. Documento di coordinamento editoriale. Font
 | Le storie che mancano | `in_development` | 10 unità, laboratorio fotografico e cronologia; anteprima | Verifica didattica indipendente e test con partecipanti |
 | L’archivio diventa racconto | `in_development` | 10 unità, laboratorio documentario e caso simulato; anteprima | Verifica didattica indipendente e test con partecipanti |
 | Voci da salvare | `in_development` | Anteprima con 6 unità e 18 lezioni, caso O-01 simulato senza audio | Verifica specialistica dei modelli di consenso, revisione didattica e test con partecipanti |
-| Atlante delle storie | `coming_soon` | Scheda di catalogo | Definire fonti, territorio e modello di atlante |
+| Atlante delle storie | `in_development` | Anteprima con 6 unità, 18 lezioni e quartiere fittizio A-02 senza coordinate | Acquisire carte con diritti verificati e avviare revisione e prove con lettori |
 | Scrivere i vuoti | `coming_soon` | Scheda di catalogo | Definire confini tra narrativa e documentazione |
 | Dal dossier al libro | `coming_soon` | Scheda di catalogo | Definire workflow editoriale e materiali di prova |
 | Fotografie senza nome | `in_development` | Anteprima pubblica, 6 unità e 18 lezioni brevi; progetto non validato | Espandere esempi autentici, prove di comprensione, revisione editoriale |
