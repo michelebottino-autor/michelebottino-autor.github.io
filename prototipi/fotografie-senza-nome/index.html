@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Laboratorio sperimentale · Fotografie senza nome | Michele Bottino</title>
+<meta name="description" content="Prototipo didattico sulla descrizione, datazione e attribuzione delle fotografie. Non è un corso attivo.">
+<link rel="stylesheet" href="./lab.css"></head>
+<body><main id="contenuto">
+<a class="back" href="/catalogo/">Catalogo generale</a>
+<header><p class="eyebrow">PROTOTIPO EDITORIALE · ACCESSIBILE TRAMITE LINK DIRETTO · NON CERTIFICATIVO</p>
+<h1>Fotografie senza nome</h1><p class="lead">Laboratorio guidato: osserva una fotografia, confronta le informazioni catalografiche e scopri quali conclusioni non sono giustificate.</p>
+<p class="notice"><strong>Stato:</strong> questa è una dimostrazione tecnica autonoma, non un corso aperto. Nessuna iscrizione, valutazione umana o attestato. Le risposte restano nel browser e non vengono inviate al sito.</p></header>
+<section class="workspace" id="photo-workspace" aria-labelledby="photo-heading">
+<div><h2 id="photo-heading">1. Studia l'immagine e la sua provenienza</h2>
+<figure><img width="500" height="620" loading="eager" decoding="async" src="https://tile.loc.gov/storage-services/service/pnp/ppmsca/68700/68742r.jpg" alt="Ritratto storico catalogato dalla Library of Congress come Mary Church Terrell, seduta e rivolta verso l'obiettivo">
+<figcaption><strong>Fonte reale:</strong> Library of Congress, <a href="https://www.loc.gov/item/97500102/" target="_blank" rel="noopener noreferrer">record 97500102</a>; identificativo digitale LC-DIG-ppmsca-68742. Il catalogo riporta una ripresa fra il 1880 e il 1900 e una stampa successiva; fotografo non identificato. La persona raffigurata è identificata nel catalogo: questo <strong>non è un esempio di identità anonima</strong>, ma di datazione incerta.</figcaption></figure></div>
+<div><h2>2. Scegli che cosa stai leggendo</h2>
+<div role="group" aria-label="Livelli di lettura della fonte" class="switches">
+<button type="button" data-view="visible" aria-pressed="false">Visibile</button>
+<button type="button" data-view="catalog" aria-pressed="false">Catalogato</button>
+<button type="button" data-view="uncertain" aria-pressed="false">Non accertato</button></div>
+<p class="response" data-view-response role="status" aria-live="polite">Seleziona un livello per vedere l'interpretazione corretta.</p>
+<h2>3. Verifica le tue conclusioni</h2>
+<div id="tasks">
+<fieldset data-question="date"><legend>Quale datazione puoi scrivere nella scheda?</legend>
+<label><input type="radio" name="date" value="exact"> 1890, anno certo dello scatto</label>
+<label><input type="radio" name="date" value="interval"> Fra il 1880 e il 1900, secondo il catalogo LOC</label>
+<label><input type="radio" name="date" value="print"> Il giorno in cui la copia fu stampata</label>
+<button type="button" data-check="date">Controlla la risposta</button><p class="feedback" data-feedback="date" role="status" aria-live="polite"></p></fieldset>
+<fieldset data-question="author"><legend>Come registrare l'autore della fotografia?</legend>
+<label><input type="radio" name="author" value="named"> Mary Church Terrell è certamente la fotografa</label>
+<label><input type="radio" name="author" value="unknown"> Fotografo non identificato nel record esaminato</label>
+<label><input type="radio" name="author" value="guessed"> L'abbigliamento rivela chi scattò la foto</label>
+<button type="button" data-check="author">Controlla la risposta</button><p class="feedback" data-feedback="author" role="status" aria-live="polite"></p></fieldset>
+<fieldset data-question="caption"><legend>Quale didascalia evita una falsa certezza?</legend>
+<label><input type="radio" name="caption" value="unsupported"> «Mary Church Terrell sorridente nel 1890»</label>
+<label><input type="radio" name="caption" value="supported"> «Ritratto identificato dalla LOC come Mary Church Terrell, 1880–1900; stampa successiva»</label>
+<label><input type="radio" name="caption" value="fiction"> «Fotografia sicuramente scattata nel suo studio»</label>
+<button type="button" data-check="caption">Controlla la risposta</button><p class="feedback" data-feedback="caption" role="status" aria-live="polite"></p></fieldset>
+</div>
+<h2>4. Compila la tua micro-scheda</h2><label for="caption-draft">Scrivi una didascalia prudente con provenienza, identificazione e datazione</label>
+<textarea id="caption-draft" rows="4" placeholder="Didascalia di lavoro..."></textarea>
+<p class="subtle">Puoi esportare un file di testo, senza inviare nulla al server. Non inserire dati personali riservati.</p>
+<div class="actions"><button type="button" id="export-caption">Esporta scheda</button><button type="button" id="reset-lab">Ricomincia</button></div>
+<p id="lab-status" role="status" aria-live="polite"></p></div></section>
+<footer>© 2026 Michele Bottino · Materiale didattico originale · Fonte iconografica Library of Congress. Nessuna certificazione o iscrizione attiva.</footer></main>
+<script defer src="./lab.js"></script></body></html>
