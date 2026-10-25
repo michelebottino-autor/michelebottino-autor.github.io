@@ -1,0 +1,31 @@
+name: Restyling screenshot browser
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'assets/css/**'
+      - 'assets/js/**'
+      - '.github/scripts/test-restyling-browser.js'
+      - '.github/workflows/restyling-browser.yml'
+  workflow_dispatch:
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: Start site
+        run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/site-http.log 2>&1 &
+      - run: node .github/scripts/test-restyling-browser.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshot-restyling-desktop-mobile
+          path: restyling-screenshots/
+          if-no-files-found: warn
