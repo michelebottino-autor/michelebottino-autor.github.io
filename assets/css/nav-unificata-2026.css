@@ -8,3 +8,13 @@
 #site-nav .menu-toggle{display:none}
 @media(max-width:900px){#site-nav{display:flex;flex-wrap:wrap}#site-nav .menu-toggle{display:block;margin-left:auto}#site-nav .nav-menu{display:none!important;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;gap:3px}#site-nav .nav-menu.active{display:flex!important}#site-nav .nav-menu>li{width:100%}#site-nav .submenu{position:static;box-shadow:none;min-width:0}#site-nav .submenu-toggle{width:100%;text-align:left}#site-nav .has-submenu:not(.open)>.submenu{display:none!important}}
 @media(min-width:901px){#site-nav .nav-menu{display:flex!important}}
+
+/* Navigazione mobile: sottomenu visibili solo all'apertura esplicita;
+   superficie scorrevole per evitare menu tagliati su smartphone. */
+@media(max-width:900px){
+  #site-nav .nav-menu.active{max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain}
+  #site-nav .has-submenu:not(.open)>.submenu{display:none!important}
+  #site-nav .has-submenu.open>.submenu{display:block!important}
+  #site-nav .submenu-toggle{min-height:44px}
+  #site-nav .nav-menu a{display:block;min-height:42px}
+}
