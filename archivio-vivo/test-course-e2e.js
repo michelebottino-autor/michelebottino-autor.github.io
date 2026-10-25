@@ -68,7 +68,7 @@ const puppeteer=require(process.env.PUPPETEER_MODULE||'puppeteer');
   await page.waitForFunction(()=>[...document.querySelectorAll('.course')].some(x=>x.textContent.includes('L’archivio diventa racconto')||x.textContent.includes("L'archivio diventa racconto")),{timeout:11000});
   assert.ok(await page.$$eval('a[href="../archivio-vivo/"]',a=>a.length>0));
   r=await page.goto(host+'/formazione/',{waitUntil:'networkidle0'});assert.equal(r.status(),200);
-  assert.ok(await page.$eval('#archivio-vivo-pilota-20261018',x=>x.textContent.includes('intermedio')));
+  assert.ok(await page.$eval('#archivio-vivo-pilota-20261018',x=>x.textContent.toLowerCase().includes('intermedio')));
   assert.deepEqual(errors,[]);
   console.log('ARCHIVIO_VIVO_E2E_OK: 10 units, 30 lessons, 7 simulated docs, 13 claims, 1055 words, 3 archival sources, local draft persistence, catalog');
  }finally{await browser.close();}
