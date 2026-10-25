@@ -475,12 +475,12 @@
         "Cronologia a più livelli e racconto breve con conflitti documentati."
       ],
       "duration_minutes": null,
-      "level": "Da definire",
-      "status": "coming_soon",
-      "url": "#interesse",
+      "level": "Introduttivo",
+      "status": "in_development",
+      "url": "../cronologie-impossibili/",
       "source_locale": "it",
       "locales": {
-        "it": "planned",
+        "it": "in_review",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -494,7 +494,7 @@
         "payment_enabled": false
       },
       "syllabus": "./programmi/cronologie-impossibili.json",
-      "syllabus_status": "editorial_draft",
+      "syllabus_status": "editorial_draft_public_preview",
       "format": "Laboratorio"
     },
     {

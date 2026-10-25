@@ -58,5 +58,7 @@
     "fr": "planned",
     "de": "planned",
     "pt": "planned"
-  }
+  },
+  "public_preview": "../cronologie-impossibili/",
+  "public_preview_status": "in_review_not_certified"
 }
