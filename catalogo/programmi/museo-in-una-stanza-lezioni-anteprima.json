@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "course_id": "museo-in-una-stanza",
+  "status": "preview_in_review",
+  "case_id": "B-01",
+  "case_nature": "simulated",
+  "source_note": "Il registro, l'insegna, la fotografia, la ricevuta, l'attrezzo e la testimonianza audio sono oggetti immaginari per esercitazione, non originali conservati.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "La domanda della mostra: una storia in sei oggetti",
+      "goal": "Trasformare una domanda pubblica in un itinerario con sei oggetti distinguibili.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "La domanda guida",
+          "text": "Prima di scegliere gli oggetti definisci la domanda della mostra: come raccontare la vita quotidiana di una bottega senza inventarne clienti, proprietari o vicende? Una domanda pubblica circoscritta evita che il percorso diventi una collezione di curiosità senza nessi. Conserva il testo della domanda nella scheda progettuale; ogni oggetto dovrà contribuire a rispondere, oppure essere escluso."
+        },
+        {
+          "number": 2,
+          "title": "Sei oggetti, sei funzioni",
+          "text": "Il caso B-01 è una bottega interamente fittizia: un registro, un'insegna, una fotografia, una ricevuta, un attrezzo e una testimonianza audio immaginaria. Non costituiscono un fondo autentico né provano l'esistenza della bottega. Assegna a ciascuno un codice B01–B06 e descrivi perché lo useresti, evitando l'illusione che una scenografia creata per la lezione sia una testimonianza reale."
+        },
+        {
+          "number": 3,
+          "title": "Scegliere una sequenza",
+          "text": "Apri con la domanda della mostra, prosegui dall'insegna all'attrezzo, quindi confronta registro, ricevuta, fotografia e testimonianza. Puoi proporre un ordine diverso, ma spiegane il senso e distingui la cronologia degli oggetti da quella del racconto. La posizione in vetrina non equivale all'ordine archivistico di eventuali documenti originali."
+        }
+      ],
+      "exercise": "Immagina una stanza con sei oggetti di una bottega di paese: registro, insegna, fotografia, ricevuta, attrezzo e testimonianza audio. Disegna l'ordine di visita e scrivi la didascalia di un oggetto (massimo 80 parole) distinguendo descrizione, provenienza e interpretazione. Segnala quali permessi servono prima di esporre materiale di terzi.",
+      "self_checks": [
+        "Domanda guida esplicita",
+        "Sei oggetti distinti",
+        "Caso fittizio dichiarato",
+        "Ordine motivato"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u02",
+      "title": "Inventario e diritti di riproduzione",
+      "goal": "Produrre inventario, provenienza e registro dei permessi prima della riproduzione.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Inventario minimo",
+          "text": "Per ogni oggetto registra codice, denominazione, materiale o formato, dimensioni se note, descrizione, custode dichiarato e lacune. Nel caso B-01 le misure non sono state inventate: lascia il campo non rilevato. Un elenco narrativo non sostituisce un inventario; le riproduzioni devono mantenere un rimando all'unità descritta."
+        },
+        {
+          "number": 2,
+          "title": "Catena di custodia e copie",
+          "text": "Distingui l'oggetto conservato dalla sua fotografia digitale, dal ritaglio e dalla ricostruzione grafica. Registra autore, data di acquisizione, interventi sulle copie e collocazione delle versioni. Una fotografia ritagliata può essere utile nell'allestimento, ma non va presentata come riproduzione integrale dell'originale."
+        },
+        {
+          "number": 3,
+          "title": "Diritti, privacy e consenso",
+          "text": "Prima di pubblicare un documento autentico valuta proprietà del supporto, diritti d'autore, tutela di persone riconoscibili e consenso necessario per eventuali registrazioni. Il possesso materiale non equivale a libertà di pubblicazione. Se la verifica dei diritti manca, usa una descrizione testuale o un esempio dichiaratamente simulato invece di riprodurre l'oggetto."
+        }
+      ],
+      "exercise": "Compila sei schede inventariali del caso simulato B-01 con codice, descrizione, provenienza fittizia, diritti da verificare e stato della riproduzione. Segna almeno tre campi «non accertato».",
+      "self_checks": [
+        "Inventario completo",
+        "Originale e copia separati",
+        "Diritti controllati o sospesi",
+        "Privacy considerata"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u03",
+      "title": "Le didascalie: cosa sappiamo e cosa no",
+      "goal": "Scrivere didascalie distinguendo evidenza, interpretazione e incertezza.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Una didascalia in tre strati",
+          "text": "La prima frase descrive l'oggetto osservabile, la seconda indica provenienza e datazione documentate, la terza chiarisce una possibile interpretazione e i suoi limiti. Evita di attribuire un proprietario all'attrezzo dalla sua sola forma. Nel caso B-01 non esistono originali da collazionare: ogni descrizione è una simulazione didattica."
+        },
+        {
+          "number": 2,
+          "title": "Attribuzioni e domande aperte",
+          "text": "Una fotografia senza data può mostrare una stanza, ma non prova che fosse una bottega aperta al pubblico. L'insegna può rappresentare un nome commerciale senza dimostrare quando sia stata esposta. Scrivi «attribuzione da verificare» quando mancano archivio, inventario, ricevuta o testimonianza indipendente."
+        },
+        {
+          "number": 3,
+          "title": "Rivedere una frase impropria",
+          "text": "Frase inadeguata: «Questa ricevuta prova che tutti i clienti pagarono nel 1962». Frase prudente per B-01: «Nell'esempio simulato, la ricevuta documenterebbe una singola registrazione contabile; non attesta l'insieme delle transazioni». Non usare un oggetto singolo per generalizzare sull'intera comunità o su un periodo storico."
+        }
+      ],
+      "exercise": "Scrivi tre versioni della didascalia dell'oggetto B04 (ricevuta simulata): impropria, corretta e accessibile. Spiega in 100 parole perché non puoi generalizzare da una singola ricevuta.",
+      "self_checks": [
+        "Descrizione e interpretazione separate",
+        "Provenienza dichiarata",
+        "Incertezze visibili",
+        "Nessuna generalizzazione abusiva"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u04",
+      "title": "Percorso, accessibilità e più voci",
+      "goal": "Progettare accessibilità fisica e digitale e rappresentare più punti di vista.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Un percorso senza ostacoli",
+          "text": "Prevedi un ordine di visita comprensibile, testi leggibili a diverse altezze, spazio per la mobilità e alternative per chi non può avvicinarsi alle vetrine. Un piano reale richiede sopralluogo e verifica di norme locali. Le misure di accessibilità non si possono certificare sulla base del solo disegno della stanza immaginaria."
+        },
+        {
+          "number": 2,
+          "title": "Audio, testo e immagini",
+          "text": "Una testimonianza audio richiede trascrizione leggibile; una fotografia necessita di testo alternativo che descriva gli elementi pertinenti senza inventare emozioni. Evita di trasformare sottotitoli automatici non rivisti in trascrizioni certe. Nel caso B-01 la voce è fittizia: non attribuirla a un testimone reale né imitarne un'identità."
+        },
+        {
+          "number": 3,
+          "title": "Voci e prospettive",
+          "text": "Chiediti chi parla attraverso il registro e chi rimane escluso. Un documento di gestione può descrivere operazioni, non necessariamente le esperienze dei lavoratori o dei clienti. Una mostra responsabile rende visibili le assenze documentarie anziché creare interviste immaginarie presentate come vere."
+        }
+      ],
+      "exercise": "Progetta un percorso per sei stazioni, prevedendo testi alternativi, trascrizione dell'audio e due scelte che permettano una visita senza ostacoli. Dichiara quali condizioni richiedono misurazioni reali.",
+      "self_checks": [
+        "Percorso comprensibile",
+        "Alternativa al solo audio",
+        "Testo alternativo accurato",
+        "Verifiche sul luogo ancora aperte"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u05",
+      "title": "Micro-mostra fisica e versione digitale leggera",
+      "goal": "Preparare una micro-mostra fisica e una versione HTML accessibile e leggera.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Dal tavolo alla vetrina",
+          "text": "Seleziona una vetrina o sei stazioni simulate: per ognuna prepara didascalia, codice di inventario e indicazione dello stato della fonte. Le fotografie didattiche non devono sembrare originali non dichiarati. Controlla il rapporto fra illuminazione, leggibilità e conservazione; non spostare o manipolare documenti autentici senza procedure adeguate."
+        },
+        {
+          "number": 2,
+          "title": "Versione digitale essenziale",
+          "text": "Costruisci una pagina semplice che funziona anche su smartphone: titolo, domanda, sei schede e un percorso di ritorno. Evita elementi che richiedono connessione permanente o interazione esclusivamente con il mouse. L'alternativa testuale deve contenere le informazioni importanti anche quando le immagini non si caricano."
+        },
+        {
+          "number": 3,
+          "title": "Metadati e rimandi",
+          "text": "Ogni pannello conserva codice dell'oggetto, didascalia, provenienza, titolarità dei diritti e collegamento alla scheda. Un collegamento interrotto non deve rendere incomprensibile il pannello. Il visitatore deve poter distinguere la simulazione dall'archivio autentico."
+        }
+      ],
+      "exercise": "Crea una bozza HTML o cartacea di sei pannelli con codice, titolo, testo breve, fonte e limite documentario. Prova a leggerli senza le immagini e registra ciò che resta comprensibile.",
+      "self_checks": [
+        "Schede accessibili",
+        "Versione senza immagini leggibile",
+        "Rimandi all'inventario",
+        "Riproduzioni dichiarate"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u06",
+      "title": "Prototipo finale e revisione con visitatori",
+      "goal": "Produrre un prototipo di sei pannelli e una rubrica di revisione senza dichiarare test non svolti.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Dossier di consegna",
+          "text": "Riunisci domanda guida, inventario B01–B06, sei didascalie, percorso di visita, registro dei diritti e alternative accessibili. Segnala ogni dato fittizio nelle schede e nell'introduzione. La completezza documentale è una condizione preliminare alla verifica con visitatori, non una prova di efficacia."
+        },
+        {
+          "number": 2,
+          "title": "Rubrica di valutazione",
+          "text": "Valuta in bozza cinque criteri: tracciabilità delle fonti, accuratezza dei testi, chiarezza del percorso, accessibilità e disciplina dei diritti. Descrivi i criteri senza fingere che un revisore li abbia già applicati. Un punteggio autoattribuito non vale come attestazione di apprendimento o giudizio indipendente."
+        },
+        {
+          "number": 3,
+          "title": "Piano di prova con visitatori",
+          "text": "Progetta tre domande osservative: il visitatore riconosce quali oggetti sono simulati? Sa ritrovare la fonte? Comprende una didascalia senza spiegazioni orali? Raccogli feedback soltanto dopo consenso e informativa adeguata. Nel progetto non sono registrati test reali con visitatori: il piano non va confuso con risultati acquisiti."
+        }
+      ],
+      "exercise": "Consegna il dossier B-01 con inventario, sei didascalie, piano di visita, registro di diritti e tre domande per un futuro test con visitatori; dichiara esplicitamente che non hai svolto tale test.",
+      "self_checks": [
+        "Sei didascalie presenti",
+        "Rubrica trasparente",
+        "Prova utenti soltanto pianificata",
+        "Limiti editoriali espliciti"
+      ],
+      "status": "preview_in_review"
+    }
+  ],
+  "assessment": {
+    "human_review_completed": false,
+    "visitor_trials_completed": 0
+  },
+  "copyright": "© 2026 Michele Bottino"
+}
