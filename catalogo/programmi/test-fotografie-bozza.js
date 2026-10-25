@@ -1,0 +1,32 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const dir=__dirname;
+const program=JSON.parse(fs.readFileSync(path.join(dir,'fotografie-senza-nome.json'),'utf8'));
+const draft=JSON.parse(fs.readFileSync(path.join(dir,'fotografie-senza-nome-lezioni-bozza.json'),'utf8'));
+assert.equal(program.course_id,'fotografie-senza-nome');
+assert.equal(program.status,'editorial_draft');
+assert.equal(program.editorial_lessons_status,'draft_not_published');
+assert.equal(draft.course_id,program.course_id);
+assert.equal(draft.status,'editorial_draft');
+assert.equal(draft.units.length,6);
+const ids=new Set();
+for(const [i,unit] of draft.units.entries()){
+ assert.equal(unit.id,program.units[i].id,'Unità non allineata al programma');
+ assert.equal(unit.title,program.units[i].title,'Titolo non allineato al programma');
+ assert.ok(!ids.has(unit.id),'ID duplicato');ids.add(unit.id);
+ assert.equal(unit.publication_status,'editorial_draft');
+ assert.equal(unit.lessons.length,3,'Ogni unità richiede tre lezioni');
+ assert.ok(unit.lessons.every(x=>x.text.length>=125 && x.title.length>=8),'Lezione incompleta');
+ assert.ok(unit.exercise.length>=90,'Esercizio insufficiente');
+ assert.equal(unit.self_checks.length,4,'Quattro autocontrolli richiesti');
+}
+assert.equal(draft.assessment.human_review_completed,false);
+assert.equal(draft.assessment.participant_trials_completed,0);
+const catalog=JSON.parse(fs.readFileSync(path.join(dir,'..','corsi.json'),'utf8'));
+const course=catalog.courses.find(x=>x.id===program.course_id);
+assert.ok(course);
+assert.equal(course.status,'coming_soon');
+assert.equal(course.enrollment.enabled,false);
+assert.equal(course.pricing.payment_enabled,false);
+assert.ok(course.url.startsWith('#'));
+console.log('FOTOGRAFIE_DRAFT_OK: 6 unità, 18 lezioni, 6 esercizi, 24 autocontrolli; corso non pubblicato');

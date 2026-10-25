@@ -58,5 +58,7 @@
     "fr": "planned",
     "de": "planned",
     "pt": "planned"
-  }
+  },
+  "editorial_lessons_draft": "./fotografie-senza-nome-lezioni-bozza.json",
+  "editorial_lessons_status": "draft_not_published"
 }

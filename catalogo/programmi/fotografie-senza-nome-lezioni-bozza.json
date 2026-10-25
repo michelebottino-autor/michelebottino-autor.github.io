@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "course_id": "fotografie-senza-nome",
+  "version": "0.2-editorial-draft",
+  "status": "editorial_draft",
+  "scope": "Materiale di sviluppo, non lezioni certificate né corso aperto",
+  "source_locale": "it",
+  "author": "Michele Bottino",
+  "copyright": "© 2026 Michele Bottino",
+  "method": "Separa osservato, riferito e ipotizzato. Conserva riferimenti e limiti delle conclusioni.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Il ritrovamento: preservare l'ordine e la provenienza",
+      "goal": "Documentare il contesto materiale e custodiale di una fotografia prima di interpretarne il contenuto.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Contesto di rinvenimento",
+          "text": "Registra chi custodiva l’immagine, dove si trovava e quali oggetti o documenti erano vicini. La collocazione è un dato riferito finché non è riscontrata; non equivale a data o luogo dello scatto."
+        },
+        {
+          "number": 2,
+          "title": "Descrizione fisica",
+          "text": "Annota formato, supporto, bordi, annotazioni, eventuali numeri sul verso e condizioni di conservazione senza intervenire sull’originale. Distingui ciò che è leggibile da ciò che è dubbio."
+        },
+        {
+          "number": 3,
+          "title": "Catena documentaria",
+          "text": "Assegna un identificativo stabile, registra ogni passaggio di copia o digitalizzazione e conserva l’immagine originale separata dalle elaborazioni. Un’impronta digitale prova la stabilità del file, non l’autenticità storica della scena."
+        }
+      ],
+      "exercise": "Realizza la scheda di una fotografia di provenienza incerta con codice, custode dichiarato, descrizione del recto e del verso e tre domande di ricerca. Se usi un esempio fittizio, dichiaralo.",
+      "self_checks": [
+        "Identificativo e provenienza distinti",
+        "Dati osservati separati da testimonianze",
+        "Interventi digitali annotati",
+        "Domande ancora aperte registrate"
+      ],
+      "publication_status": "editorial_draft"
+    },
+    {
+      "id": "u02",
+      "title": "Che cosa mostra davvero l'immagine?",
+      "goal": "Produrre una descrizione neutra prima di elaborare ipotesi.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Primo livello: elementi visibili",
+          "text": "Descrivi numero di figure, disposizione spaziale, oggetti e testo effettivamente leggibile. Evita termini che presuppongono professioni, parentele o circostanze non documentate."
+        },
+        {
+          "number": 2,
+          "title": "Secondo livello: elementi riferiti",
+          "text": "Trascrivi separatamente le informazioni di chi consegna la fotografia e registra nome, data e circostanza della dichiarazione, con le necessarie cautele di privacy."
+        },
+        {
+          "number": 3,
+          "title": "Terzo livello: interpretazioni",
+          "text": "Formula più di una lettura plausibile degli indizi. Una uniforme può suggerire un contesto ma non prova da sola incarico, grado o identità."
+        }
+      ],
+      "exercise": "Scrivi tre brevi paragrafi, rispettivamente OSSERVATO, RIFERITO e IPOTIZZATO, sulla stessa immagine. Evidenzia due termini che rischiano di trasformare un'ipotesi in fatto.",
+      "self_checks": [
+        "Osservazioni verificabili nell’immagine",
+        "Informazioni orali attribuite",
+        "Almeno due ipotesi alternative",
+        "Linguaggio privo di identità inventate"
+      ],
+      "publication_status": "editorial_draft"
+    },
+    {
+      "id": "u03",
+      "title": "Datazione: intervalli, non certezze arbitrarie",
+      "goal": "Definire limiti temporali motivati e conservarne le incertezze.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Data dello scatto e data della stampa",
+          "text": "Una fotografia può essere stata ristampata molti anni dopo l’esposizione. Segnala separatamente data dello scatto, della stampa e dell’acquisizione archivistica."
+        },
+        {
+          "number": 2,
+          "title": "Indizi e terminus",
+          "text": "Confronta iscrizioni, timbri, tecniche e contesto con riferimenti datati. Distingui limite anteriore e posteriore e non assumere che la data annotata sul verso coincida necessariamente con lo scatto."
+        },
+        {
+          "number": 3,
+          "title": "Intervalli e conflitti",
+          "text": "Quando gli indizi divergono, registra l’intervallo più prudente e presenta le ipotesi concorrenti con i rispettivi fondamenti. Evita anni puntuali non dimostrati."
+        }
+      ],
+      "exercise": "Su un esempio dichiaratamente simulato, confronta un timbro '1954', una ristampa dichiarata del 1971 e un ricordo 'inizio anni Cinquanta'. Proponi un intervallo motivato senza confondere le tre date.",
+      "self_checks": [
+        "Scatto e stampa distinti",
+        "Fonti di datazione identificate",
+        "Intervallo motivato",
+        "Conflitti documentati"
+      ],
+      "publication_status": "editorial_draft"
+    },
+    {
+      "id": "u04",
+      "title": "Indizi incrociati: luoghi, abiti, oggetti e fonti",
+      "goal": "Confrontare indizi fotografici con attestazioni indipendenti.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Dalla somiglianza al riscontro",
+          "text": "Un edificio o un abito apparentemente simile non basta a individuare luogo o periodo. Registra le caratteristiche confrontate e le differenze."
+        },
+        {
+          "number": 2,
+          "title": "Indipendenza delle attestazioni",
+          "text": "Tre siti che copiano la stessa didascalia costituiscono una sola catena informativa. Cerca inventari, mappe o fotografie indipendenti e descrivi origine e data di ciascuna fonte."
+        },
+        {
+          "number": 3,
+          "title": "Matrice di confronto",
+          "text": "Per ogni affermazione registra indizio, fonte, grado di corrispondenza, possibile spiegazione alternativa e verifica ancora necessaria."
+        }
+      ],
+      "exercise": "Costruisci una matrice con tre possibili indizi di luogo. Includi almeno una fonte indipendente oppure segnala esplicitamente che non è disponibile.",
+      "self_checks": [
+        "Somiglianze e differenze riportate",
+        "Dipendenze fra fonti segnalate",
+        "Ipotesi alternativa conservata",
+        "Conclusione limitata ai riscontri"
+      ],
+      "publication_status": "editorial_draft"
+    },
+    {
+      "id": "u05",
+      "title": "Nomi possibili e identità non confermate",
+      "goal": "Gestire ipotesi di identificazione senza attribuzioni improprie.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Identificazione non è riconoscibilità",
+          "text": "Somiglianza del volto, didascalia tardiva e racconto familiare sono indizi di natura diversa: nessuno garantisce da solo l’identità."
+        },
+        {
+          "number": 2,
+          "title": "Scheda delle attribuzioni",
+          "text": "Registra per ciascun nome proposto chi lo ha suggerito, quando, con quale conoscenza diretta e quali documenti supportano o contraddicono l’attribuzione."
+        },
+        {
+          "number": 3,
+          "title": "Persone e diritti",
+          "text": "Evita di rendere pubblici dati personali, dettagli intimi o attribuzioni non verificate. Se coinvolgi persone viventi, valuta consenso, necessità e modalità di pubblicazione."
+        }
+      ],
+      "exercise": "Per una figura anonima inventa due attribuzioni dichiaratamente ipotetiche, poi scrivi una didascalia pubblicabile che non assegni alcun nome come accertato.",
+      "self_checks": [
+        "Nessun nome presentato senza prova",
+        "Origine delle attribuzioni tracciata",
+        "Didascalia prudente",
+        "Privacy e diritti considerati"
+      ],
+      "publication_status": "editorial_draft"
+    },
+    {
+      "id": "u06",
+      "title": "L'atlante finale: 12 schede e registro dei dubbi",
+      "goal": "Organizzare un atlante consultabile che renda distinguibili prove, ipotesi e lacune.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Architettura dell’atlante",
+          "text": "Prepara dodici schede con codice, descrizione, provenienza, datazione proposta, fonti e stato delle identificazioni. Se disponi di meno foto, realizza un prototipo parziale senza dichiararlo completo."
+        },
+        {
+          "number": 2,
+          "title": "Registro dei dubbi e versioni",
+          "text": "Assegna un codice a ogni questione irrisolta e registra aggiornamenti, revisioni e fonti sopraggiunte. Mantieni visibile anche ciò che è stato scartato e perché."
+        },
+        {
+          "number": 3,
+          "title": "Revisione e pubblicazione",
+          "text": "Controlla leggibilità, didascalie, diritti sulle immagini e protezione delle persone. Una revisione esterna richiede un revisore effettivo: la checklist personale non ne è un sostituto."
+        }
+      ],
+      "exercise": "Prepara un modello di dodici schede, compilane almeno una con un esempio simulato dichiarato e aggiungi un registro di cinque dubbi con possibili verifiche future.",
+      "self_checks": [
+        "Schema di dodici schede predisposto",
+        "Ogni affermazione collegata a una fonte",
+        "Dubbi e versioni registrati",
+        "Permessi e privacy valutati"
+      ],
+      "publication_status": "editorial_draft"
+    }
+  ],
+  "assessment": {
+    "type": "autovalutazione editoriale non certificativa",
+    "criteria": [
+      "Separazione osservato/riferito/ipotizzato",
+      "Provenienza e citazioni rintracciabili",
+      "Incertezze esplicite",
+      "Rispetto di privacy e diritti",
+      "Chiarezza e riproducibilità"
+    ],
+    "human_review_completed": false,
+    "participant_trials_completed": 0
+  },
+  "limitations": [
+    "Nessun attestato o iscrizione attiva",
+    "Nessun facsimile reale incorporato",
+    "Esempi simulati dichiarati",
+    "Richiede revisione editoriale indipendente e collaudo browser prima della pubblicazione"
+  ]
+}
