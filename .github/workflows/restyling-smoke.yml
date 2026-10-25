@@ -7,6 +7,7 @@ on:
       - 'assets/js/**'
       - '.github/scripts/test-restyling-navigation.js'
       - '.github/workflows/restyling-smoke.yml'
+      - '.github/scripts/test-restyling-browser.js'
   workflow_dispatch:
 jobs:
   smoke:
@@ -19,3 +20,14 @@ jobs:
         with:
           node-version: '22'
       - run: node .github/scripts/test-restyling-navigation.js
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: Start site
+        run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/site-http.log 2>&1 &
+      - run: node .github/scripts/test-restyling-browser.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshot-restyling-home
+          path: restyling-screenshots/
+          if-no-files-found: warn
