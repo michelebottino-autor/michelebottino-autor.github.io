@@ -16,7 +16,7 @@ for(const p of pages){
  if((x.match(/id="menu"/g)||[]).length!==1)failures.push(p+': menu generale non univoco');
  if(!x.includes('src="/assets/js/site-nav.js"'))failures.push(p+': JS navigazione mancante');
  if(/<button\b(?=[^>]*class="menu-toggle")[^>]*onclick\s*=/.test(x))failures.push(p+': gestore inline duplicato sul menu');
- for(const url of ['/formazione/','/adc/','/opere/','/contatti/'])if(!x.includes('href="'+url+'"'))failures.push(p+': collegamento mancante '+url);
+ for(const url of ['/formazione/','/adc/','/opere/','/contatti/'])if(!x.includes('href="'+url+'"') && !(p==='index.html' && x.includes('href="'+url.slice(1)+'"')))failures.push(p+': collegamento mancante '+url);
 }
 console.log('Pagine controllate: '+pages.length);
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
