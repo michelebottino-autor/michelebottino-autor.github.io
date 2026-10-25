@@ -71,3 +71,20 @@ body:has(#site-nav) .hero.container .cta .btn{width:auto!important;min-height:44
     visibility:visible!important;mix-blend-mode:normal!important;
   }
 }
+
+/* Priorita editoriale sui dispositivi piccoli: ritratto vicino al titolo. */
+@media(max-width:760px){
+  body:has(#site-nav) .hero.container .hero-flex{display:grid!important;grid-template-columns:1fr!important}
+  body:has(#site-nav) .hero.container .hero-text{display:contents!important}
+  body:has(#site-nav) .hero.container .hero-text>.editorial-eyebrow{grid-row:1;padding:28px 24px 0!important;margin:0!important}
+  body:has(#site-nav) .hero.container .hero-text>h1{grid-row:2;padding:0 24px!important;margin:8px 0 0!important}
+  body:has(#site-nav) .hero.container .hero-text>h2{grid-row:3;padding:0 24px!important;margin:10px 0 20px!important}
+  body:has(#site-nav) .hero.container .hero-image{grid-row:4;min-height:320px!important}
+  body:has(#site-nav) .hero.container .hero-image img{height:320px!important;max-height:320px!important}
+  body:has(#site-nav) .hero.container .hero-text>p:not(.editorial-eyebrow),
+  body:has(#site-nav) .hero.container .hero-text>.adc-logo-home,
+  body:has(#site-nav) .hero.container .hero-text>.cta,
+  body:has(#site-nav) .hero.container .hero-text>.identity-block{padding-left:24px!important;padding-right:24px!important}
+  body:has(#site-nav) .hero.container .hero-text>.identity-block{padding-bottom:24px!important}
+  #mb-consent{max-height:min(42dvh,320px)!important;overflow-y:auto!important;bottom:8px!important;padding:12px!important}
+}
