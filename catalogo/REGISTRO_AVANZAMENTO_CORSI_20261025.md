@@ -10,16 +10,16 @@ Data del controllo: 25 ottobre 2026. Documento di coordinamento editoriale. Font
 | Scrittura Investigativa e Ricostruzione dei Fatti Reali | `in_development` | 10 unità, laboratori e taccuino; anteprima in sviluppo | Revisione editoriale indipendente e test con partecipanti |
 | Le storie che mancano | `in_development` | 10 unità, laboratorio fotografico e cronologia; anteprima | Verifica didattica indipendente e test con partecipanti |
 | L’archivio diventa racconto | `in_development` | 10 unità, laboratorio documentario e caso simulato; anteprima | Verifica didattica indipendente e test con partecipanti |
-| Voci da salvare | `coming_soon` | Scheda di catalogo | Programma e requisiti su consenso e registrazioni |
-| Atlante delle storie | `coming_soon` | Scheda di catalogo | Definire fonti, territorio e modello di atlante |
+| Voci da salvare | `in_development` | Anteprima con 6 unità e 18 lezioni, caso O-01 simulato senza audio | Verifica specialistica dei modelli di consenso, revisione didattica e test con partecipanti |
+| Atlante delle storie | `in_development` | Anteprima con 6 unità, 18 lezioni e quartiere fittizio A-02 senza coordinate | Acquisire carte con diritti verificati e avviare revisione e prove con lettori |
 | Scrivere i vuoti | `coming_soon` | Scheda di catalogo | Definire confini tra narrativa e documentazione |
 | Dal dossier al libro | `coming_soon` | Scheda di catalogo | Definire workflow editoriale e materiali di prova |
 | Fotografie senza nome | `in_development` | Anteprima pubblica, 6 unità e 18 lezioni brevi; progetto non validato | Espandere esempi autentici, prove di comprensione, revisione editoriale |
 | Cronologie impossibili | `in_development` | Anteprima pubblica, 6 unità e 18 lezioni brevi; caso C-01 simulato | Ampliare prove guidate e introdurre verifica didattica indipendente |
 | Il museo in una stanza | `in_development` | Anteprima con 6 unità, 18 lezioni e 6 pannelli illustrati originali; caso B-01 simulato | Verificare accessibilità con persone, revisione didattica e test con utenti |
-| Lettere oltre la grafia | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma e requisiti dei facsimili |
-| L’albero che racconta | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma, privacy e fonti familiari |
-| Voci senza registratore | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma, consenso e metodo |
+| Lettere oltre la grafia | `in_development` | Anteprima con 6 unità, 18 lezioni ed esempio testuale L-01 interamente inventato | Reperire un facsimile con diritti verificati, revisione diplomatica indipendente e prove con lettori |
+| L’albero che racconta | `in_development` | Anteprima con 6 unità e 18 lezioni, caso genealogico G-01 simulato | Reperire fonti dimostrative riutilizzabili, verifica editoriale e prove con lettori |
+| Voci senza registratore | `in_development` | Anteprima con 6 unità, 18 lezioni e caso fittizio V-01 su ricordi indiretti | Integrare fonti dimostrative liberamente riutilizzabili, revisione e prove con lettori |
 
 ## Regole da applicare prima di una nuova pubblicazione
 

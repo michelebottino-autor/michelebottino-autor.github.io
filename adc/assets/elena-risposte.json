@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18-cinque-risposte-secondarie-citate",
+  "version": "2026-10-25-aggiunta-E024-con-riserva",
   "source_policy": "Risposte editoriali statiche basate su dossier ADC pubblicati. Per 1348, 1356, 1531 e 1594 citare regesti e studi; per Gravina Cruillas citare solo l’inventario. Nessuna collazione originale rivendicata, nessuna generazione IA.",
   "facts": [
     {
@@ -39,6 +39,27 @@
       "sources": [
         {
           "title": "Repertorio delle fonti",
+          "url": "/adc/fonti/"
+        }
+      ]
+    },
+    {
+      "id": "1308-1310",
+      "title": "Santa Maria e San Giorgio nelle decime del 1308–1310",
+      "triggers": [
+        "1308",
+        "1309",
+        "1310",
+        "rationes decimarum",
+        "santa maria san giorgio",
+        "presbiter michael",
+        "presbiter thomasius"
+      ],
+      "answer": "La scheda E-024 del Registro delle evidenze ADC riporta tre voci delle Rationes decimarum per Calatabiano: n. 525, un cappellano di Calatabiano; n. 670, il presbitero Michele associato a Santa Maria e San Giorgio del castello; n. 897, il presbitero Tommaso associato a Santa Maria di Calatabiano.",
+      "limitation": "Queste letture provengono dal registro interno ADC, consolidato con riserva; Elena non ha collazionato direttamente le pagine dell'edizione Sella del 1944 né le carte originali vaticane. La menzione delle chiese non prova ubicazione precisa o continuità con edifici attuali. San Pietro non è attestata dalle tre voci citate.",
+      "sources": [
+        {
+          "title": "Repertorio delle fonti ADC",
           "url": "/adc/fonti/"
         }
       ]

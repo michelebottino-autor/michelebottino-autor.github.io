@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "course_id": "atlante-delle-storie",
+  "status": "preview_in_review",
+  "case_id": "A-02",
+  "case_kind": "entirely_fictional_no_coordinates",
+  "source_note": "Il quartiere A-02 e le sei schede S01–S06 sono inventati; nessuna coordinata o fonte storica è attestata.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Domanda e confini del territorio",
+      "goal": "Definire area e domanda",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Formulare una domanda",
+          "text": "Definisci quale cambiamento di un luogo vuoi studiare, senza assumere una risposta non dimostrata."
+        },
+        {
+          "number": 2,
+          "title": "Limiti della rappresentazione",
+          "text": "Una carta seleziona informazioni, ha una scala e una data: non descrive ogni relazione sociale."
+        },
+        {
+          "number": 3,
+          "title": "Confini e cronologia",
+          "text": "Dichiara periodo e perimetro. Senza una fonte verificata non tracciare confini storici precisi."
+        }
+      ],
+      "exercise": "Individua sei luoghi completamente fittizi in un quartiere inventato A-02 e formula una domanda di ricerca.",
+      "self_checks": [
+        "Simulazione esplicita",
+        "Fonti e affermazioni separate",
+        "Incertezze riconoscibili",
+        "Diritti e privacy valutati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u02",
+      "title": "Mappe e provenienza",
+      "goal": "Verificare provenienze cartografiche",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Tipi di carte",
+          "text": "Distingui carta amministrativa, catastale, foto aerea e schizzo di memoria."
+        },
+        {
+          "number": 2,
+          "title": "Coordinate incerte",
+          "text": "Le localizzazioni non verificabili rimangono descrittive: non generare coordinate plausibili ma inesistenti."
+        },
+        {
+          "number": 3,
+          "title": "Riuso delle fonti",
+          "text": "Verifica autore, data, scala, diritti e licenza prima di mostrare cartografia autentica."
+        }
+      ],
+      "exercise": "Confronta tre carte ipotetiche: per ciascuna indica data, scala, provenienza e diritti da verificare.",
+      "self_checks": [
+        "Simulazione esplicita",
+        "Fonti e affermazioni separate",
+        "Incertezze riconoscibili",
+        "Diritti e privacy valutati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u03",
+      "title": "Fotografie e luoghi",
+      "goal": "Collegare immagini a siti senza false attribuzioni",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Cosa osserviamo",
+          "text": "L'immagine mostra elementi visivi, ma il nome del luogo richiede un riscontro indipendente."
+        },
+        {
+          "number": 2,
+          "title": "Data dello scatto",
+          "text": "Separa data della fotografia da quella di stampa o digitalizzazione."
+        },
+        {
+          "number": 3,
+          "title": "Identificazione prudente",
+          "text": "Confronta elementi distinguibili e indica quando la collocazione è soltanto proposta."
+        }
+      ],
+      "exercise": "Descrivi una fotografia simulata di una piazza, separando osservazione, attribuzione e prova necessaria.",
+      "self_checks": [
+        "Simulazione esplicita",
+        "Fonti e affermazioni separate",
+        "Incertezze riconoscibili",
+        "Diritti e privacy valutati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u04",
+      "title": "Memorie e trasformazioni",
+      "goal": "Confrontare memorie spaziali discordanti",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Ricordi attribuiti",
+          "text": "Una localizzazione narrata va riferita alla persona o alla fonte che la dichiara."
+        },
+        {
+          "number": 2,
+          "title": "Versioni discordanti",
+          "text": "Quando due memorie situano diversamente un edificio, conserva entrambe senza sceglierne una arbitrariamente."
+        },
+        {
+          "number": 3,
+          "title": "Fasi storiche",
+          "text": "Distingui costruzione, prima menzione documentaria e testimonianza tardiva."
+        }
+      ],
+      "exercise": "Confronta due testimonianze simulate con localizzazioni incompatibili e costruisci una matrice delle versioni.",
+      "self_checks": [
+        "Simulazione esplicita",
+        "Fonti e affermazioni separate",
+        "Incertezze riconoscibili",
+        "Diritti e privacy valutati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u05",
+      "title": "Atlante accessibile e tutela",
+      "goal": "Presentare luoghi in modo accessibile e rispettoso",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Schede e metadati",
+          "text": "Registra per ogni luogo un codice, descrizione, fonte, periodo, precisione e limite."
+        },
+        {
+          "number": 2,
+          "title": "Alternativa testuale",
+          "text": "Ogni mappa deve avere elenco leggibile e percorso comprensibile anche senza immagini o colori."
+        },
+        {
+          "number": 3,
+          "title": "Riservatezza",
+          "text": "Ometti residenze e dettagli identificativi di persone viventi quando non necessari."
+        }
+      ],
+      "exercise": "Progetta sei schede S01–S06 con testi alternativi e livelli espliciti di incertezza.",
+      "self_checks": [
+        "Simulazione esplicita",
+        "Fonti e affermazioni separate",
+        "Incertezze riconoscibili",
+        "Diritti e privacy valutati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u06",
+      "title": "Dossier e revisione",
+      "goal": "Allestire un atlante pilota controllabile",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Inventario",
+          "text": "Organizza schede S01–S06 con provenance, categorie di certezza e verifiche mancanti."
+        },
+        {
+          "number": 2,
+          "title": "Percorso narrativo",
+          "text": "Descrivi l'itinerario senza distanze o tempi di tragitto reali per luoghi inventati."
+        },
+        {
+          "number": 3,
+          "title": "Correzioni e utenti",
+          "text": "Pianifica verifiche dei diritti, accessibilità e comprensibilità senza attribuirti test non eseguiti."
+        }
+      ],
+      "exercise": "Prepara un atlante simulato con inventario, schede, legenda di certezza e narrazione critica.",
+      "self_checks": [
+        "Simulazione esplicita",
+        "Fonti e affermazioni separate",
+        "Incertezze riconoscibili",
+        "Diritti e privacy valutati"
+      ],
+      "status": "preview_in_review"
+    }
+  ],
+  "assessment": {
+    "human_review_completed": false,
+    "participant_trials_completed": 0
+  },
+  "copyright": "© 2026 Michele Bottino"
+}

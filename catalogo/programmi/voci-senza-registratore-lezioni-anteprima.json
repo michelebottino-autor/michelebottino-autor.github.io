@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "course_id": "voci-senza-registratore",
+  "status": "preview_in_review",
+  "case_id": "V-01",
+  "case_kind": "entirely_fictional",
+  "source_note": "Nota N1, ricordo R1 e lettera E1 sono interamente inventati. Nessuna registrazione né testimonianza di una persona reale.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Memoria diretta e indiretta",
+      "goal": "Separare testimonianze dirette, ricordi riferiti e annotazioni senza supporto audio.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Da voce a traccia",
+          "text": "Una frase annotata sul taccuino non è automaticamente una registrazione. Registra chi ha ascoltato, quando ha scritto, e se le parole sono ricostruite o citate da un testo verificabile."
+        },
+        {
+          "number": 2,
+          "title": "La memoria di secondo grado",
+          "text": "Nel caso simulato V-01 una persona fittizia riferisce ciò che un'altra avrebbe detto anni prima. Non attribuire la frase al presunto primo parlante come testimonianza diretta."
+        },
+        {
+          "number": 3,
+          "title": "Descrivere il silenzio della fonte",
+          "text": "Se non esistono audio, trascrizione firmata o registrazione originale, scrivi che si conserva solo una nota; non introdurre virgolette che simulino un parlato riprodotto."
+        }
+      ],
+      "exercise": "Compila una scheda del caso inventato V-01: nota N1, ricordo R1, testo epistolare E1. Distingui la forma materiale dalla provenienza e indica ciò che non è verificabile.",
+      "self_checks": [
+        "La natura della traccia è dichiarata",
+        "Il parlante non è inventato",
+        "Le date sono separate",
+        "Le lacune rimangono visibili"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u02",
+      "title": "Attribuzioni e catene di racconto",
+      "goal": "Mappare la catena di trasmissione e attribuire correttamente le affermazioni.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Chi ha detto che cosa",
+          "text": "Rappresenta il percorso persona ipotetica → testimone successivo → appunto del ricercatore. Ogni anello aggiunge rischi di selezione o fraintendimento."
+        },
+        {
+          "number": 2,
+          "title": "La fonte della fonte",
+          "text": "Una lettera che riferisce un discorso è prova del contenuto scritto nella lettera, non necessariamente dell'esattezza del discorso ricordato. Riporta l'identificativo E1 e la sua data simulata."
+        },
+        {
+          "number": 3,
+          "title": "Virgolette sotto controllo",
+          "text": "Usa virgolette soltanto quando riproduci fedelmente parole presenti in un documento. Per ricordi parafrasati usa formule come «secondo il racconto riportato»."
+        }
+      ],
+      "exercise": "Disegna la catena ipotetica di V-01 con tre passaggi; scrivi una frase corretta e una da respingere perché attribuisce impropriamente parole dirette.",
+      "self_checks": [
+        "Ogni passaggio è attribuito",
+        "Il ricordo non è citato come audio",
+        "Le virgolette sono verificabili",
+        "La catena informativa è leggibile"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u03",
+      "title": "Confrontare versioni",
+      "goal": "Confrontare narrazioni discordanti e riconoscere possibili contaminazioni.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Tabella delle versioni",
+          "text": "Fai una riga per ogni traccia: data di formazione, chi parla, chi trascrive, evento menzionato, grado di vicinanza e limiti. Non fondere versioni incompatibili."
+        },
+        {
+          "number": 2,
+          "title": "Contraddizioni non cancellate",
+          "text": "Se N1 parla di una partenza mattutina e R1 la colloca alla sera, riporta entrambe le versioni nel caso V-01 senza attribuire un'ora definitiva all'evento."
+        },
+        {
+          "number": 3,
+          "title": "Indipendenza del ricordo",
+          "text": "Due resoconti non sono indipendenti se il secondo autore ha ascoltato il primo. Distingui numero di documenti dal numero effettivo di catene informative."
+        }
+      ],
+      "exercise": "Prepara una matrice V-01 delle tre tracce fittizie con almeno una contraddizione e una dipendenza fra fonti, indicando quali dati restano aperti.",
+      "self_checks": [
+        "Le versioni non sono fuse",
+        "I conflitti sono registrati",
+        "Le dipendenze sono indicate",
+        "L'esito non è forzato"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u04",
+      "title": "Etica delle persone viventi",
+      "goal": "Proteggere persone viventi, riservatezza e correttezza del consenso.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Interviste e autorizzazioni",
+          "text": "Per materiale reale verifica finalità della raccolta, consensi pertinenti, diffusione online e trattamento delle informazioni personali. Una disponibilità a parlare non è automaticamente consenso alla pubblicazione."
+        },
+        {
+          "number": 2,
+          "title": "Identificazioni vulnerabili",
+          "text": "Ometti dettagli non necessari che possono rendere riconoscibili terzi viventi. Non attribuire a individui reali ricordi inventati o contenuti narrativi non dimostrati."
+        },
+        {
+          "number": 3,
+          "title": "Correggere senza occultare",
+          "text": "Se un testimone rettifica una nota, mantieni traccia della versione precedente in archivio protetto e aggiorna il testo destinato al pubblico con una spiegazione proporzionata."
+        }
+      ],
+      "exercise": "Redigi una checklist per l'uso di un appunto reale: consenso, dati di terzi, conservazione, limiti di riproduzione, possibilità di correzione. Non raccogliere dati reali nell'esercizio.",
+      "self_checks": [
+        "I terzi viventi sono tutelati",
+        "La pubblicazione richiede verifica",
+        "I dati superflui sono evitati",
+        "Le rettifiche sono gestite"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u05",
+      "title": "Montaggio narrativo trasparente",
+      "goal": "Creare un racconto leggibile senza falsificare o teatralizzare il ricordo.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Incipit con attribuzione",
+          "text": "Avvia la storia dal documento: «Un appunto simulato annota una partenza». Evita «ricordava perfettamente» se non ne conosci l'origine o la fedeltà."
+        },
+        {
+          "number": 2,
+          "title": "Raccordi e sequenza",
+          "text": "Organizza le tracce in ordine documentario, non in una successione emotiva inventata. Un raccordo editoriale va riconoscibile come tale, non trasformato in dialogo non registrato."
+        },
+        {
+          "number": 3,
+          "title": "L'incertezza come informazione",
+          "text": "Inserisci in modo comprensibile dubbi su orari, nomi e provenienze. Le note mantengono tracciabilità, mentre il testo principale conserva leggibilità."
+        }
+      ],
+      "exercise": "Scrivi 180–250 parole sul caso fittizio V-01, con tre riferimenti a N1, R1 ed E1, nessun discorso diretto inventato e una nota di incertezza.",
+      "self_checks": [
+        "Le fonti sono riconoscibili",
+        "Nessun dialogo fittizio sembra reale",
+        "L'incertezza è esplicita",
+        "Il racconto resta leggibile"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u06",
+      "title": "Racconto con note",
+      "goal": "Consegnare una narrazione documentaria con mappa delle testimonianze e note.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Inventario e provenienze",
+          "text": "Il dossier comprende schede di N1, R1 ed E1 con origine inventata, data di redazione e limiti. Indica che nessuna traccia è una registrazione autentica."
+        },
+        {
+          "number": 2,
+          "title": "Apparato delle affermazioni",
+          "text": "Collega ogni fatto raccontato a una traccia e attribuiscilo correttamente. Per le ipotesi conserva alternative e controlli mancanti."
+        },
+        {
+          "number": 3,
+          "title": "Revisione prima del pubblico",
+          "text": "Verifica citazioni, privacy, diritti e chiarezza delle attribuzioni; prepara domande per test con lettori, senza sostenere che tali prove siano state eseguite."
+        }
+      ],
+      "exercise": "Assembla un racconto di 350–450 parole e una mappa delle tre tracce del caso V-01, allegando il registro delle affermazioni e le verifiche mancanti.",
+      "self_checks": [
+        "La mappa è completa",
+        "Le citazioni sono tracciabili",
+        "I limiti sono dichiarati",
+        "Non si simulano test esterni"
+      ],
+      "status": "preview_in_review"
+    }
+  ],
+  "assessment": {
+    "human_review_completed": false,
+    "participant_trials_completed": 0
+  },
+  "copyright": "© 2026 Michele Bottino"
+}
