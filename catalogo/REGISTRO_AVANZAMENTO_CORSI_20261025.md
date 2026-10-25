@@ -17,7 +17,7 @@ Data del controllo: 25 ottobre 2026. Documento di coordinamento editoriale. Font
 | Fotografie senza nome | `in_development` | Anteprima pubblica, 6 unità e 18 lezioni brevi; progetto non validato | Espandere esempi autentici, prove di comprensione, revisione editoriale |
 | Cronologie impossibili | `in_development` | Anteprima pubblica, 6 unità e 18 lezioni brevi; caso C-01 simulato | Ampliare prove guidate e introdurre verifica didattica indipendente |
 | Il museo in una stanza | `in_development` | Anteprima con 6 unità, 18 lezioni e 6 pannelli illustrati originali; caso B-01 simulato | Verificare accessibilità con persone, revisione didattica e test con utenti |
-| Lettere oltre la grafia | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma e requisiti dei facsimili |
+| Lettere oltre la grafia | `in_development` | Anteprima con 6 unità, 18 lezioni ed esempio testuale L-01 interamente inventato | Reperire un facsimile con diritti verificati, revisione diplomatica indipendente e prove con lettori |
 | L’albero che racconta | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma, privacy e fonti familiari |
 | Voci senza registratore | `coming_soon` | Solo scheda di catalogo e ipotesi di struttura | Definire programma, consenso e metodo |
 

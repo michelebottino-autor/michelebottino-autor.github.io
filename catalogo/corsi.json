@@ -554,13 +554,13 @@
         "Edizione commentata"
       ],
       "final_project": "Edizione annotata di una lettera",
-      "level": "Da definire",
-      "status": "coming_soon",
+      "level": "Introduttivo",
+      "status": "in_development",
       "duration_minutes": null,
       "logo": "./loghi/lettere-oltre-la-grafia.svg",
       "source_locale": "it",
       "locales": {
-        "it": "planned",
+        "it": "in_review",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -577,7 +577,9 @@
       "pricing": {
         "payment_enabled": false
       },
-      "url": "#interesse"
+      "url": "../lettere-oltre-la-grafia/",
+      "syllabus": "./programmi/lettere-oltre-la-grafia.json",
+      "syllabus_status": "editorial_draft_public_preview"
     },
     {
       "id": "albero-che-racconta",

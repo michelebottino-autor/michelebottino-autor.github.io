@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "course_id": "lettere-oltre-la-grafia",
+  "status": "preview_in_review",
+  "case_id": "L-01",
+  "case_nature": "simulated_text_only",
+  "source_note": "Il frammento di lettera è inventato; non costituisce un facsimile autentico né documenta un mittente reale.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "La lettera come oggetto e documento",
+      "goal": "Registrare provenienza, custodia e condizioni del supporto prima di interpretare la scrittura.",
+      "status": "preview_in_review",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Prima descrivere, poi leggere",
+          "text": "Registra supporto, formato, piegature, numerazione e annotazioni. Una nota sul retro può essere successiva alla lettera: non attribuirla automaticamente allo scrivente. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 2,
+          "title": "La catena di provenienza",
+          "text": "Documenta chi custodisce il materiale, come è stato trovato e quali passaggi di copia sono noti. Se il percorso non è ricostruibile, indica esplicitamente la lacuna. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 3,
+          "title": "Originale, copia, fotografia",
+          "text": "Distingui l'originale, la riproduzione integrale e le immagini ritagliate. Una fotografia parziale può nascondere data, indirizzo o elementi sul verso: conserva sempre il collegamento all'intero documento. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        }
+      ],
+      "exercise": "Usa una lettera interamente inventata per l'esercizio L-01: prepara una scheda con supporto e provenienza dichiaratamente simulati, distinguendo elementi osservabili e dati non accertabili. Non attribuire persone reali.",
+      "self_checks": [
+        "Provenienza dichiarata",
+        "Originale distinto dalla copia",
+        "Descrizione ripetibile",
+        "Lacune registrate"
+      ]
+    },
+    {
+      "id": "u02",
+      "title": "Trascrivere senza correggere in silenzio",
+      "goal": "Separare la trascrizione diplomatica dalla versione di lettura e dalle integrazioni editoriali.",
+      "status": "preview_in_review",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "La trascrizione diplomatica",
+          "text": "Riproduci la sequenza leggibile senza modernizzare grafie, punteggiatura e abbreviazioni non sciolte. Le parti mancanti richiedono segni convenzionali spiegati. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 2,
+          "title": "Segnalare lacune e lettere incerte",
+          "text": "Usa una notazione coerente per parola illeggibile, carattere incerto e integrazione. Non sostituire la congettura più plausibile a una lettera che non si riesce a leggere. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 3,
+          "title": "Versione di lettura e apparato",
+          "text": "Prepara una versione comprensibile distinta dalla trascrizione. Ogni scioglimento, normalizzazione o integrazione deve poter essere ricondotto alla riga e al punto della riproduzione. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        }
+      ],
+      "exercise": "Per l'esempio fittizio «Car[a?] Lu... / ci ved[?]amo domani», produci una trascrizione diplomatica con segni di incertezza e una versione di lettura separata. Motiva ogni integrazione.",
+      "self_checks": [
+        "Grafie non corrette in silenzio",
+        "Segni editoriali spiegati",
+        "Integrazioni visibili",
+        "Due versioni distinte"
+      ]
+    },
+    {
+      "id": "u03",
+      "title": "Grafia difficile, strumenti digitali e OCR",
+      "goal": "Utilizzare ingrandimenti e trascrizione assistita senza attribuire all'IA valore di prova.",
+      "status": "preview_in_review",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Osservare i tratti",
+          "text": "Confronta la forma della stessa lettera in parole diverse, osserva legature e inclinazione. Evita conclusioni sull'identità o sulla personalità dell'autore basate soltanto sulla grafia. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 2,
+          "title": "OCR e trascrizione automatica",
+          "text": "Una macchina può confondere segni, numeri e nomi. Conserva sempre la sua proposta separata dalla lettura umana e confrontala riga per riga con il documento visibile. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 3,
+          "title": "Registro delle correzioni",
+          "text": "Per ogni divergenza annota lettura automatica, lettura rivista, posizione e motivo. Quando nessuna soluzione è provata, mantieni l'incertezza invece di scegliere la parola più narrativa. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        }
+      ],
+      "exercise": "Confronta la lettura ipotetica generata dall'IA «Cara Lucia, ci vediamo domani» con l'esempio incompleto. Segna le parole che l'IA ha inventato o sciolto senza conferma.",
+      "self_checks": [
+        "Proposta automatica conservata",
+        "Controllo sul testo disponibile",
+        "Divergenze motivate",
+        "Incertezze mantenute"
+      ]
+    },
+    {
+      "id": "u04",
+      "title": "Date, nomi e contesto delle parole",
+      "goal": "Distinguere ciò che è scritto nella lettera dalle identificazioni e dalla cronologia ricavate altrove.",
+      "status": "preview_in_review",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Data del foglio e data dell'evento",
+          "text": "La data scritta in testa a una lettera riguarda il documento; un incontro promesso non è un incontro verificato. Conserva due campi distinti. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 2,
+          "title": "Nomi omonimi e attribuzioni",
+          "text": "Una firma abbreviata non basta a identificare una persona reale. Se il collegamento deriva da memoria familiare o schedatura tardiva, cita tale fonte e indica il grado di sicurezza. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 3,
+          "title": "Toponimi e lessico storico",
+          "text": "Trascrivi fedelmente il nome geografico o la parola desueta. Aggiungi eventuali equivalenti moderni in nota, distinguendo interpretazione linguistica e accertamento topografico. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        }
+      ],
+      "exercise": "Nel caso L-01 una lettera simulata reca «14 maggio», ma promette un incontro «domani»: redigi una scheda che distingua data del foglio e appuntamento futuro e non affermi che l'incontro avvenne.",
+      "self_checks": [
+        "Date del documento separate",
+        "Identità non inventate",
+        "Toponimi annotati",
+        "Ipotesi riconoscibili"
+      ]
+    },
+    {
+      "id": "u05",
+      "title": "Traduzione, commento e tutela",
+      "goal": "Tradurre senza perdere ambiguità, proteggendo le persone e i diritti.",
+      "status": "preview_in_review",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Una traduzione che non colmi il vuoto",
+          "text": "Quando una frase è dubbia, segnala l'ambiguità anche nella traduzione. Non rendere un pronome o un nome proprio più preciso di quanto consenta il testo originale. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 2,
+          "title": "Commentare con riferimenti",
+          "text": "Ogni nota deve indicare riga, affermazione, fonte esterna verificata quando disponibile e limiti. Una spiegazione culturale non dimostra automaticamente il significato voluto da chi scrisse. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 3,
+          "title": "Privacy e pubblicabilità",
+          "text": "Valuta persone viventi, indirizzi, informazioni familiari, proprietà del supporto e diritti d'autore. Non pubblicare immagini o trascrizioni autentiche finché la legittimità del riuso non sia verificata. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        }
+      ],
+      "exercise": "Scrivi un commento di 120 parole e una traduzione o parafrasi didattica dell'esempio L-01, conservando le parti illeggibili. Indica quali permessi verificheresti prima di usare una vera lettera familiare.",
+      "self_checks": [
+        "Traduzione prudente",
+        "Note con posizione",
+        "Privacy considerata",
+        "Diritti da verificare"
+      ]
+    },
+    {
+      "id": "u06",
+      "title": "Edizione critica di una lettera",
+      "goal": "Assemblare una scheda che permetta di ripetere la lettura e valutare le scelte editoriali.",
+      "status": "preview_in_review",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Frontespizio e dati essenziali",
+          "text": "Registra codice, titolo attribuito, provenienza, cronologia del documento, descrizione fisica, responsabilità dell'edizione e stato dei diritti. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 2,
+          "title": "Testo, note e varianti",
+          "text": "Presenta trascrizione diplomatica, lettura facilitata, eventuale traduzione, glossario e apparato di lezioni incerte. Distingui chiaramente i livelli editoriali. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        },
+        {
+          "number": 3,
+          "title": "Controllo finale e consegna",
+          "text": "Verifica corrispondenza con il facsimile, coerenza delle notazioni, riferimenti a immagini e limiti. La revisione indipendente e i test con lettori restano necessari prima di dichiarare l'edizione validata. Applica il criterio all'esempio fittizio L-01, conservando la distinzione fra ciò che è leggibile e ciò che rimane ipotetico."
+        }
+      ],
+      "exercise": "Allestisci un dossier L-01 con scheda di provenienza, trascrizione diplomatica, testo di lettura, registro delle incertezze, commento e verifica di privacy e diritti.",
+      "self_checks": [
+        "Dossier completo",
+        "Scelte editoriali tracciabili",
+        "Limiti espliciti",
+        "Revisione indipendente non simulata"
+      ]
+    }
+  ],
+  "assessment": {
+    "human_review_completed": false,
+    "participant_trials_completed": 0
+  },
+  "copyright": "© 2026 Michele Bottino"
+}
