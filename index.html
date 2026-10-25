@@ -226,7 +226,8 @@ p{max-width:76ch}
  .school-entry-more{margin:18px 0 0;font-weight:700}
  @media(max-width:1060px){.school-entry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
  @media(max-width:620px){.school-entry-grid{grid-template-columns:1fr}.school-entry-head>.btn{width:100%}.school-entry{padding:19px}}
- </style></head>
+ </style><link rel="stylesheet" href="/assets/css/nav-unificata-2026.css">
+</head>
 <body>
 <nav aria-label="Informazioni e trasparenza del sito" class="site-transparency-links" style="padding:10px 16px;text-align:center;font:14px/1.6 system-ui,sans-serif;background:#f3eee5;color:#29251f"><a href="privacy/">Privacy</a> · <a href="cookie/">Cookie e statistiche</a> · <a href="contatti/">Contatti</a> · <a href="adc/carta/">Carta del Laboratorio ADC</a></nav><a class="skip-link" href="#contenuto">Vai al contenuto</a>
 <header class="container">
@@ -235,7 +236,7 @@ p{max-width:76ch}
 <div class="logo">
 <a href="./">Michele Bottino</a>
 </div>
-<button aria-controls="menu" aria-expanded="false" aria-label="Apri il menu di navigazione" class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" type="button">
+<button aria-controls="menu" aria-expanded="false" aria-label="Apri il menu di navigazione" class="menu-toggle" id="menu-toggle" type="button">
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-menu" id="menu">
@@ -491,5 +492,6 @@ document.addEventListener("keydown", function (event) {
 </script>
 <script>document.querySelectorAll('[data-books-gallery]').forEach(function(g){var t=g.querySelector('.books-track');g.querySelectorAll('[data-scroll]').forEach(function(b){b.addEventListener('click',function(){var tile=t.querySelector('.book-tile');var step=tile?tile.getBoundingClientRect().width+21:250;t.scrollBy({left:(b.dataset.scroll==='next'?1:-1)*step*2,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});});});</script><script>(function(){var b=document.getElementById('fb-load-feed'),c=document.getElementById('fb-feed');if(!b||!c)return;b.addEventListener('click',function(){if(c.querySelector('iframe')){c.hidden=!c.hidden;b.setAttribute('aria-expanded',String(!c.hidden));b.textContent=c.hidden?'Mostra i post pubblici della pagina':'Nascondi i post della pagina';return;}var f=document.createElement('iframe');f.title='Post pubblici della pagina Facebook Michele Bottino';f.src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmichelebottinoautor%2F&tabs=timeline&width=500&height=420&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false';f.loading='lazy';f.referrerPolicy='strict-origin-when-cross-origin';f.setAttribute('allow','encrypted-media; picture-in-picture; web-share');c.appendChild(f);c.hidden=false;b.setAttribute('aria-expanded','true');b.textContent='Nascondi i post della pagina';});})();</script><script defer src="analytics-consenso.js"></script>
 <script defer src="/pwa-init.js"></script>
+<script defer src="/assets/js/site-nav.js"></script>
 </body>
 </html>
