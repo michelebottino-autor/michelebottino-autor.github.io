@@ -1,1 +1,29 @@
-'use strict';(()=>{const lab=document.querySelector('[data-revision-lab="scrittura"]');if(!lab)return;const answer={claim:'b',source:'c',revision:'a'};const notes={claim:'La pubblicazione dimostra ciò che il giornale riportò, non certifica automaticamente che gli aiuti arrivarono a destinazione.',source:'Le tre pagine appartengono alla stessa testata: documentano una sequenza editoriale ma non forniscono tre riscontri indipendenti.',revision:'La frase corretta mantiene la data e la provenienza della notizia, distinguendo il contenuto pubblicato dall’esito degli interventi.'};for(const f of lab.querySelectorAll('[data-revision-question]')){f.querySelector('[data-check]').addEventListener('click',()=>{const code=f.dataset.revisionQuestion;const selected=f.querySelector('input[type=radio]:checked');const output=f.querySelector('[data-revision-feedback]');if(!selected){output.textContent='Seleziona una risposta prima della verifica.';output.removeAttribute('data-result');return}const correct=selected.value===answer[code];output.dataset.result=correct?'correct':'incorrect';output.textContent=(correct?'Corretto. ':'Da rivedere. ')+notes[code]})}const explain=lab.querySelector('.mb-revision-explain');const show=lab.querySelector('[data-revision-show]');show.addEventListener('click',()=>{let open=explain.dataset.expanded!=='true';explain.dataset.expanded=String(open);show.setAttribute('aria-expanded',String(open));show.textContent=open?'Nascondi la revisione':'Mostra la revisione commentata'});lab.querySelector('[data-revision-reset]').addEventListener('click',()=>{lab.querySelectorAll('input[type=radio]').forEach(x=>x.checked=false);lab.querySelectorAll('[data-revision-feedback]').forEach(x=>{x.textContent='';x.removeAttribute('data-result')});explain.dataset.expanded='false';show.setAttribute('aria-expanded','false');show.textContent='Mostra la revisione commentata'})})();
+'use strict';
+(()=>{
+ const lab=document.querySelector('[data-revision-lab="scrittura"]'),engine=window.MBFormativeQuiz;
+ if(!lab||!engine)return;
+ const answers={claim:'b',source:'c',revision:'a'};
+ const notes={
+ claim:'La pubblicazione dimostra ciò che il giornale riportò, non certifica automaticamente che gli aiuti arrivarono a destinazione.',
+ source:'Le tre pagine appartengono alla stessa testata: documentano una sequenza editoriale ma non forniscono tre riscontri indipendenti.',
+ revision:'La frase corretta mantiene la data e la provenienza della notizia, distinguendo il contenuto pubblicato dall’esito degli interventi.'
+ };
+ for(const fieldset of lab.querySelectorAll('[data-revision-question]')){
+  fieldset.querySelector('[data-check]')?.addEventListener('click',()=>{
+   const code=fieldset.dataset.revisionQuestion;
+   engine.evaluate(fieldset,{answer:answers[code],feedbackSelector:'[data-revision-feedback]',
+    correctText:notes[code],wrongText:notes[code],emptyText:'Seleziona una risposta prima della verifica.'});
+  });
+ }
+ const explain=lab.querySelector('.mb-revision-explain'),show=lab.querySelector('[data-revision-show]');
+ show.addEventListener('click',()=>{
+  const open=explain.dataset.expanded!=='true';
+  explain.dataset.expanded=String(open);show.setAttribute('aria-expanded',String(open));
+  show.textContent=open?'Nascondi la revisione':'Mostra la revisione commentata';
+ });
+ lab.querySelector('[data-revision-reset]').addEventListener('click',()=>{
+  engine.clear(lab,'[data-revision-feedback]');
+  explain.dataset.expanded='false';show.setAttribute('aria-expanded','false');
+  show.textContent='Mostra la revisione commentata';
+ });
+})();
