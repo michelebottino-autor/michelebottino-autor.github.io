@@ -37,3 +37,24 @@ body:has(#site-nav) .grid-2>.card{background:#fffdf8!important;border:1px solid 
 body:has(#site-nav) .grid-2>.card h3{color:#2c2924!important}
 body:has(#site-nav) .page-header{padding:clamp(26px,4vw,52px)!important}
 @media(max-width:760px){body:has(#site-nav) .hero.container .hero-flex{grid-template-columns:1fr!important}body:has(#site-nav) .hero.container .hero-image img{min-height:0;max-height:420px;aspect-ratio:4/3}body:has(#site-nav) .grid-2{grid-template-columns:1fr}body:has(#site-nav) .hero.container .hero-text{padding:28px 20px!important}}
+
+/* Revisione homepage mobile: rispetto al riferimento grafico, eliminare il riquadro bianco introduttivo. */
+body:has(#site-nav) .hero.container{background:#192323!important}
+body:has(#site-nav) .hero.container .hero-flex{background:linear-gradient(125deg,#172321,#29302b)!important}
+body:has(#site-nav) .hero.container .hero-text{background:transparent!important;color:#f8f1e5!important}
+body:has(#site-nav) .hero.container .hero-text .editorial-eyebrow{color:#d2b281!important;letter-spacing:.15em!important}
+body:has(#site-nav) .hero.container .hero-text .hero-links,body:has(#site-nav) .hero.container .hero-text .identity-block{color:#e9dfcf!important}
+body:has(#site-nav) .hero.container .hero-text h1{color:#f6eee2!important}
+body:has(#site-nav) .hero.container .hero-text h2{color:#dbc08f!important}
+body:has(#site-nav) .hero.container .hero-text .cta{display:flex;flex-wrap:wrap;gap:10px}
+body:has(#site-nav) .hero.container .hero-image{overflow:hidden}
+body:has(#site-nav) .hero.container .hero-image img{display:block;filter:saturate(.85) contrast(1.03);object-fit:cover}
+@media(max-width:760px){
+body:has(#site-nav) .hero.container{margin:0 auto 22px!important;border-radius:0!important}
+body:has(#site-nav) .hero.container .hero-flex{display:flex!important;flex-direction:column!important;gap:0!important}
+body:has(#site-nav) .hero.container .hero-text{padding:36px 25px!important}
+body:has(#site-nav) .hero.container .hero-text h1{font-size:clamp(3.3rem,13vw,5rem)!important;line-height:1.02!important}
+body:has(#site-nav) .hero.container .hero-image{width:100%;max-width:none!important}
+body:has(#site-nav) .hero.container .hero-image img{width:100%;height:360px!important;max-height:360px!important;min-height:0!important;object-position:center 20%;border:0!important}
+body:has(#site-nav) .hero.container .cta .btn{width:auto!important;min-height:44px}
+}
