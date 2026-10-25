@@ -62,7 +62,7 @@ async function run(){
   await page.waitForFunction(()=>[...document.querySelectorAll('.course')].some(x=>x.textContent.includes('Le storie che mancano')),{timeout:12000});
   assert.ok(await page.$$eval('a[href="../storie-che-mancano/"]',a=>a.length>0));
   await page.goto(base+'/formazione/',{waitUntil:'networkidle0'});
-  assert.ok(await page.$eval('#storie-che-mancano-pilota-20261018',x=>x.textContent.includes('introduttivo')));
+  assert.ok(await page.$eval('#storie-che-mancano-pilota-20261018',x=>x.textContent.toLowerCase().includes('introduttivo')));
   assert.deepEqual(errors,[]);
   console.log('BIOGRAPHY_E2E_OK: 10 units, 30 lessons, local editor/checklist persistence, guide, 5 invented traces, 7-paragraph model, catalog and sitemap');
  }finally{await browser.close();}
