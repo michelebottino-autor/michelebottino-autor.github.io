@@ -1,1 +1,14 @@
-'use strict';(()=>{const labs=document.querySelectorAll('[data-evidence-lab]');for(const lab of labs){for(const fieldset of lab.querySelectorAll('[data-lab-question]')){const button=fieldset.querySelector('[data-lab-check]'),answer=fieldset.dataset.labAnswer,feedback=fieldset.querySelector('[data-lab-feedback]');button.addEventListener('click',()=>{const selected=fieldset.querySelector('input[type=radio]:checked');if(!selected){feedback.textContent='Seleziona una risposta prima di verificare.';feedback.removeAttribute('data-result');return;}const correct=selected.value===answer;feedback.dataset.result=correct?'correct':'incorrect';feedback.textContent=(correct?'Corretto. ':'Da rivedere. ')+(correct?fieldset.dataset.labCorrect:fieldset.dataset.labWrong);});}const reset=lab.querySelector('[data-lab-reset]');reset?.addEventListener('click',()=>{lab.querySelectorAll('input[type=radio]').forEach(x=>x.checked=false);lab.querySelectorAll('[data-lab-feedback]').forEach(x=>{x.textContent='';x.removeAttribute('data-result')});});}})();
+'use strict';
+(()=>{
+ const engine=window.MBFormativeQuiz;
+ if(!engine)return;
+ for(const lab of document.querySelectorAll('[data-evidence-lab]')){
+  for(const fieldset of lab.querySelectorAll('[data-lab-question]')){
+   fieldset.querySelector('[data-lab-check]')?.addEventListener('click',()=>engine.evaluate(fieldset,{
+    answer:fieldset.dataset.labAnswer,feedbackSelector:'[data-lab-feedback]',
+    correctText:fieldset.dataset.labCorrect,wrongText:fieldset.dataset.labWrong
+   }));
+  }
+  lab.querySelector('[data-lab-reset]')?.addEventListener('click',()=>engine.clear(lab,'[data-lab-feedback]'));
+ }
+})();
