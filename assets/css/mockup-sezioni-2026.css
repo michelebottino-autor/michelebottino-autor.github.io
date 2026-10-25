@@ -1,0 +1,22 @@
+/* Layout strutturale tratto dal mockup editoriale approvato; nessuna immagine o biografia inventata. */
+.mockup-hero{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(240px,.95fr);min-height:295px;margin:20px 0 36px!important;background:#f5efe5;border:1px solid #ded3c4}
+.mockup-hero__copy{position:relative;z-index:2;padding:clamp(25px,4vw,58px);align-self:center}
+.mockup-hero__eyebrow{margin:0 0 16px!important;font:600 12px/1.4 Arial,sans-serif!important;letter-spacing:.18em;text-transform:uppercase;color:#846745!important}
+.mockup-hero h1{margin:0 0 15px!important;font:normal clamp(2.7rem,5vw,5rem)/1.05 Georgia,serif!important;letter-spacing:-.04em;color:#242420!important}
+.mockup-hero__summary{max-width:48ch;font:normal clamp(1rem,1.4vw,1.13rem)/1.65 Georgia,serif!important;color:#4d4740!important}
+.mockup-hero__link{display:inline-block;background:#93734e;color:white!important;text-decoration:none;padding:12px 20px;margin-top:12px;font:600 .78rem/1.4 Arial,sans-serif;letter-spacing:.055em}
+.mockup-hero__visual{background:#e5dbca;min-height:290px}
+.mockup-hero__visual img{display:block;width:100%;height:100%;min-height:290px;object-fit:cover}
+.mockup-hero--ink{background:#1a2423}
+.mockup-hero--ink h1,.mockup-hero--ink .mockup-hero__summary{color:#f8f1e6!important}
+.mockup-hero--ink .mockup-hero__eyebrow{color:#dbc08f!important}
+.mockup-hero--ink .mockup-hero__visual{background:#202b2a}
+.mockup-hero--ink .mockup-hero__visual img{object-position:50% 22%}
+.mockup-hero--wide{grid-template-columns:minmax(0,1fr) minmax(200px,.8fr)}
+.mockup-hero__visual--documents{background:linear-gradient(140deg,#e5ddcf,#c0ac8d);display:grid;place-items:center}
+.mockup-hero__visual--documents:before{content:"ADC";font:normal clamp(5rem,9vw,10rem)/1 Georgia,serif;color:#856e4b33}
+body:has(#site-nav) main .mockup-hero h1{font-family:Georgia,serif!important}
+body:has(#site-nav) main>.mockup-hero + section>h1{display:none}
+body:has(#site-nav) main>.page-header:has(+.mockup-hero){display:none}
+body:has(#site-nav) main>.mockup-hero ~ .grid-2 .card{border-radius:2px}
+@media(max-width:760px){.mockup-hero{grid-template-columns:1fr;min-height:0;margin:12px 0 22px!important}.mockup-hero__copy{padding:29px 24px}.mockup-hero__visual{min-height:205px;max-height:285px}.mockup-hero__visual img{min-height:205px;max-height:285px;object-position:center 30%}.mockup-hero h1{font-size:clamp(2.5rem,10vw,3.8rem)!important}.mockup-hero__summary{font-size:1.04rem!important}}
