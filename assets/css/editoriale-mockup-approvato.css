@@ -58,3 +58,16 @@ body:has(#site-nav) .hero.container .hero-image{width:100%;max-width:none!import
 body:has(#site-nav) .hero.container .hero-image img{width:100%;height:360px!important;max-height:360px!important;min-height:0!important;object-position:center 20%;border:0!important}
 body:has(#site-nav) .hero.container .cta .btn{width:auto!important;min-height:44px}
 }
+
+/* Ritratto mobile sempre percepibile anche con i precedenti layout hero */
+@media(max-width:760px){
+  body:has(#site-nav) .hero.container .hero-image{
+    display:block!important;position:relative!important;isolation:isolate;
+    background:#24302d url("/images/michele-bottino-foto-ufficiale.webp") center 20%/cover no-repeat!important;
+    min-height:360px!important;
+  }
+  body:has(#site-nav) .hero.container .hero-image img{
+    position:relative!important;z-index:1!important;opacity:1!important;
+    visibility:visible!important;mix-blend-mode:normal!important;
+  }
+}
