@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18-tre-dossier-raggiungibili",
+  "version": "2026-10-25-indice-E024-precisato",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -73,9 +73,19 @@
         "rationes",
         "decimarum",
         "1308",
-        "1310"
+        "1310",
+        "525",
+        "670",
+        "897",
+        "santa maria",
+        "san giorgio",
+        "michael",
+        "thomasius",
+        "presbiter",
+        "sella",
+        "decime"
       ],
-      "description": "Dossier sulle attestazioni ecclesiastiche e i loro limiti."
+      "description": "Dossier ADC sulle voci 525, 670 e 897 delle decime 1308–1310: Santa Maria e San Giorgio, con riserva sulla collazione dell'edizione Sella e degli originali vaticani. Nessuna localizzazione delle chiese dimostrata."
     },
     {
       "title": "Diario di lettura del processo 334",
