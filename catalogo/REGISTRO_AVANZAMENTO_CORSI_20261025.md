@@ -10,7 +10,7 @@ Data del controllo: 25 ottobre 2026. Documento di coordinamento editoriale. Font
 | Scrittura Investigativa e Ricostruzione dei Fatti Reali | `in_development` | 10 unità, laboratori e taccuino; anteprima in sviluppo | Revisione editoriale indipendente e test con partecipanti |
 | Le storie che mancano | `in_development` | 10 unità, laboratorio fotografico e cronologia; anteprima | Verifica didattica indipendente e test con partecipanti |
 | L’archivio diventa racconto | `in_development` | 10 unità, laboratorio documentario e caso simulato; anteprima | Verifica didattica indipendente e test con partecipanti |
-| Voci da salvare | `coming_soon` | Scheda di catalogo | Programma e requisiti su consenso e registrazioni |
+| Voci da salvare | `in_development` | Anteprima con 6 unità e 18 lezioni, caso O-01 simulato senza audio | Verifica specialistica dei modelli di consenso, revisione didattica e test con partecipanti |
 | Atlante delle storie | `coming_soon` | Scheda di catalogo | Definire fonti, territorio e modello di atlante |
 | Scrivere i vuoti | `coming_soon` | Scheda di catalogo | Definire confini tra narrativa e documentazione |
 | Dal dossier al libro | `coming_soon` | Scheda di catalogo | Definire workflow editoriale e materiali di prova |
