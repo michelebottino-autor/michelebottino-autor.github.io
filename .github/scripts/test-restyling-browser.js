@@ -10,6 +10,9 @@ const fs = require('fs');
     await page.screenshot({path:'restyling-screenshots/home-'+name+'.png',fullPage:true});
     const bg=await page.locator('.hero.container').evaluate(el=>getComputedStyle(el).backgroundColor);
     const nav=page.locator('#menu');
+    if(!await page.locator('.hero.container .hero-image img').isVisible())errors.push(name+': ritratto non visibile');
+    const heroColor=await page.locator('.hero.container').evaluate(el=>getComputedStyle(el).backgroundColor);
+    if(heroColor==='rgb(255, 255, 255)' || heroColor==='rgba(0, 0, 0, 0)')errors.push(name+': hero senza fondo editoriale');
     if(name==='mobile'){
       const toggle=page.locator('#menu-toggle');
       await toggle.click();
