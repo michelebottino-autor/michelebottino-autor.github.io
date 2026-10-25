@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "course_id": "voci-da-salvare",
+  "status": "preview_in_review",
+  "case_id": "O-01",
+  "case_kind": "entirely_fictional_no_audio",
+  "source_note": "Non esiste intervista, voce o registrazione autentica relativa al caso O-01.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Progettare l'intervista",
+      "goal": "Definire obiettivo, interlocutori e domande aperte.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Una ricerca prima di una registrazione",
+          "text": "Indica la domanda di ricerca, il contesto e perché la testimonianza sarebbe pertinente. L'esempio O-01 è immaginario."
+        },
+        {
+          "number": 2,
+          "title": "Domande non suggestive",
+          "text": "Chiedere «Che cosa ricordi?» evita di suggerire una risposta preconfezionata. Le domande devono permettere anche silenzi e incertezze."
+        },
+        {
+          "number": 3,
+          "title": "Scheda di sessione",
+          "text": "Progetta una scheda con data, finalità e responsabile della raccolta; non inserire dati reali nei materiali del sito."
+        }
+      ],
+      "exercise": "Progetta sei domande aperte per un'intervista immaginaria O-01, indicando quali risposte necessiterebbero di altre fonti.",
+      "self_checks": [
+        "Esempio simulato dichiarato",
+        "Fonti e ipotesi separate",
+        "Privacy e diritti considerati",
+        "Limiti verificabili esplicitati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u02",
+      "title": "Consenso e responsabilità",
+      "goal": "Separare partecipazione, registrazione, conservazione e pubblicazione.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Informazioni prima del colloquio",
+          "text": "Spiega finalità, utilizzi previsti, modalità di conservazione e diffusione in termini comprensibili."
+        },
+        {
+          "number": 2,
+          "title": "Autorizzazioni distinte",
+          "text": "Consentire una conversazione non significa autorizzare automaticamente registrazione o pubblicazione online."
+        },
+        {
+          "number": 3,
+          "title": "Tutela dei terzi",
+          "text": "Una testimonianza può nominare altre persone: valuta la necessità di ogni dettaglio e proteggi dati di persone viventi."
+        }
+      ],
+      "exercise": "Prepara una matrice ipotetica distinta per colloquio, registrazione, conservazione e pubblicazione. Non utilizzarla come modulo legale approvato.",
+      "self_checks": [
+        "Esempio simulato dichiarato",
+        "Fonti e ipotesi separate",
+        "Privacy e diritti considerati",
+        "Limiti verificabili esplicitati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u03",
+      "title": "Originale e qualità della registrazione",
+      "goal": "Progettare integrità e accessi senza raccogliere audio sul sito.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Metadati della registrazione",
+          "text": "Prevedi identificativo, durata, data e responsabilità della custodia, senza dichiarare di possedere un audio inesistente."
+        },
+        {
+          "number": 2,
+          "title": "Originale e copia di lavoro",
+          "text": "Un originale invariato deve restare distinguibile dal file elaborato o montato."
+        },
+        {
+          "number": 3,
+          "title": "Limiti tecnici",
+          "text": "Rumore o parole indecifrabili non autorizzano a inventare il testo mancante."
+        }
+      ],
+      "exercise": "Compila una scheda fittizia di conservazione O-01 con codici, accessi, copia di lavoro e limiti; non caricare audio.",
+      "self_checks": [
+        "Esempio simulato dichiarato",
+        "Fonti e ipotesi separate",
+        "Privacy e diritti considerati",
+        "Limiti verificabili esplicitati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u04",
+      "title": "Trascrizione e controllo umano",
+      "goal": "Distinguerne livelli e rettifiche, senza promuovere ipotesi a citazioni.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Ascolto e prima bozza",
+          "text": "Una trascrizione è una rappresentazione dell'audio da controllare sui passaggi effettivamente udibili."
+        },
+        {
+          "number": 2,
+          "title": "Errori del riconoscimento automatico",
+          "text": "L'IA può sbagliare nomi, numeri o punteggiatura; ogni correzione richiede confronto con la traccia originale."
+        },
+        {
+          "number": 3,
+          "title": "Rinvii temporali",
+          "text": "In un progetto reale collega la citazione al punto di ascolto; in O-01 nessuna frase è tratta da registrazioni autentiche."
+        }
+      ],
+      "exercise": "Confronta due trascrizioni inventate «partimmo alle sei» e «partimmo alle sette» spiegando perché, senza audio, nessuna può essere verificata.",
+      "self_checks": [
+        "Esempio simulato dichiarato",
+        "Fonti e ipotesi separate",
+        "Privacy e diritti considerati",
+        "Limiti verificabili esplicitati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u05",
+      "title": "Raccontare senza deformare",
+      "goal": "Scrivere un testo leggibile, attribuito e criticamente prudente.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "La testimonianza non è prova universale",
+          "text": "Un ricordo documenta quanto riferito: altre fonti possono confermare o smentire gli eventi narrati."
+        },
+        {
+          "number": 2,
+          "title": "Citazione o parafrasi",
+          "text": "Virgolette solo per parole verificabili: la parafrasi deve essere dichiarata come tale."
+        },
+        {
+          "number": 3,
+          "title": "Montaggio trasparente",
+          "text": "Tagli e riordini non devono cambiare il significato o simulare una sequenza che la fonte non sostiene."
+        }
+      ],
+      "exercise": "Scrivi un testo di 200 parole sull'intervista immaginaria, distinguendo parole simulate, parafrasi e accertamenti mancanti.",
+      "self_checks": [
+        "Esempio simulato dichiarato",
+        "Fonti e ipotesi separate",
+        "Privacy e diritti considerati",
+        "Limiti verificabili esplicitati"
+      ],
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u06",
+      "title": "Custodia e restituzione",
+      "goal": "Costruire un piano di archivio con controllo degli accessi.",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Conservare responsabilmente",
+          "text": "Definisci custodia, copie, autorizzazioni e criteri di accesso per una futura raccolta reale."
+        },
+        {
+          "number": 2,
+          "title": "Descrizione pubblica e privata",
+          "text": "Non tutto ciò che serve al catalogo interno deve essere accessibile a chiunque online."
+        },
+        {
+          "number": 3,
+          "title": "Progetto finale",
+          "text": "Consegna una proposta simulata di raccolta, non una registrazione autentica; annota che la revisione indipendente è ancora da eseguire."
+        }
+      ],
+      "exercise": "Consegna un dossier didattico simulato con piano, matrice delle autorizzazioni, scheda tecnica, nota di trascrizione e progetto di custodia.",
+      "self_checks": [
+        "Esempio simulato dichiarato",
+        "Fonti e ipotesi separate",
+        "Privacy e diritti considerati",
+        "Limiti verificabili esplicitati"
+      ],
+      "status": "preview_in_review"
+    }
+  ],
+  "assessment": {
+    "human_review_completed": false,
+    "participant_trials_completed": 0
+  },
+  "copyright": "© 2026 Michele Bottino"
+}
