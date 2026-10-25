@@ -1,0 +1,9 @@
+/* Laboratorio documentario: fonte visiva autentica, distinto dalle simulazioni. */
+.mb-source-study{margin:30px auto;padding:18px;background:#f6f9fb;border:1px solid #c6d7df;border-radius:13px;color:#173247;max-width:1000px}
+.mb-source-study h2{font-size:clamp(1.4rem,3vw,2rem);margin:4px 0 12px}
+.mb-source-study .mb-source-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:20px;align-items:start}
+.mb-source-study img{width:100%;height:auto;display:block;background:#e2e8eb;border:1px solid #d5dde0}
+.mb-source-study figure{margin:0}.mb-source-study figcaption{font-size:.86rem;line-height:1.55;margin:10px 0}
+.mb-source-study p,.mb-source-study li{max-width:75ch;line-height:1.65}.mb-source-study ul{padding-left:20px}
+.mb-source-study a{word-break:break-word}.mb-source-study .mb-source-meta{font-weight:bold;font-size:.85rem;letter-spacing:.02em}
+@media(max-width:760px){.mb-source-study{padding:13px}.mb-source-study .mb-source-grid{grid-template-columns:minmax(0,1fr)}}
