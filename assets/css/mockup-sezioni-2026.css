@@ -20,3 +20,7 @@ body:has(#site-nav) main>.mockup-hero + section>h1{display:none}
 body:has(#site-nav) main>.page-header:has(+.mockup-hero){display:none}
 body:has(#site-nav) main>.mockup-hero ~ .grid-2 .card{border-radius:2px}
 @media(max-width:760px){.mockup-hero{grid-template-columns:1fr;min-height:0;margin:12px 0 22px!important}.mockup-hero__copy{padding:29px 24px}.mockup-hero__visual{min-height:205px;max-height:285px}.mockup-hero__visual img{min-height:205px;max-height:285px;object-position:center 30%}.mockup-hero h1{font-size:clamp(2.5rem,10vw,3.8rem)!important}.mockup-hero__summary{font-size:1.04rem!important}}
+
+/* Evita titoli duplicati nelle sezioni originali, conservandone il testo. */
+body:has(#site-nav) main>.mockup-hero + .page-header{display:none!important}
+body:has(#site-nav) main>.mockup-hero + h1{display:none!important}
