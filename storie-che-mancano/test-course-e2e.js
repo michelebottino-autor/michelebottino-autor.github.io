@@ -46,7 +46,9 @@ async function run(){
   }
   await page.goto(base+'/storie-che-mancano/unita-1/',{waitUntil:'networkidle0'});
   await page.type('#notebook-text','Annotazione personale di collaudo: osservazione diversa da interpretazione.');
-  await page.click('#check-1-0');await page.click('#save-draft');
+  await page.$eval('#check-1-0',el=>{if(!el.checked){el.checked=true;el.dispatchEvent(new Event('change',{bubbles:true}));}});
+   assert.equal(await page.$eval('#check-1-0',el=>el.checked),true,'Checkbox must be selected before saving');
+   await page.click('#save-draft');
   assert.ok((await page.$eval('#notebook-status',e=>e.textContent)).includes('Salvataggio locale'));
   await page.reload({waitUntil:'networkidle0'});
   assert.ok((await page.$eval('#notebook-text',e=>e.value)).includes('Annotazione personale'));
