@@ -12,7 +12,8 @@ assert(js.includes("bm_completed_at"),'Timestamp completamento assente');
 assert(js.includes("semplificazione didattica"),'Distinzione pipeline didattica assente');
 for(const id of ['units','pct','bar','lessonArticle','continueCourse','quiz','check1','check2'])
  assert(html.includes('id="'+id+'"'),'ID HTML mancante: '+id);
-assert(html.includes('course.js?v=36'),'Baseline cache diversa da v33');
+assert(html.includes('course.js?v=36'),'Versione JavaScript del corso diversa dalla baseline v36');
+assert(html.includes('course.css?v=39'),'Versione CSS del corso diversa dalla versione dichiarata v39');
 assert(js.includes('const progressPct='),'Calcolo avanzamento ponderato assente');
 assert(js.includes('function certificateEligible(){return done>=8&&check1Passed()&&check2Passed()&&finalPassed()}'),'Gate attestato finale assente');
 assert(html.includes('10.5281/zenodo.23198223'),'DOI Release 1.0 assente');
