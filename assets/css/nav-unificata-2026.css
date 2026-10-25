@@ -1,0 +1,10 @@
+/* Menu globale condiviso — non modifica i menu didattici o ADC secondari. */
+#site-nav .nav-menu{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#site-nav .has-submenu{position:relative}
+#site-nav .submenu{display:none;position:absolute;top:100%;left:0;z-index:100;min-width:215px;list-style:none;padding:10px;background:#182420;border:1px solid #b99b63;border-radius:12px;box-shadow:0 14px 35px #0005}
+#site-nav .submenu a{display:block;padding:8px 11px;color:#ecd49c}
+#site-nav .has-submenu.open>.submenu,#site-nav .has-submenu:focus-within>.submenu{display:block}
+#site-nav .submenu-toggle{cursor:pointer;border:0;background:transparent;color:#e5ca88;font:inherit;padding:10px}
+#site-nav .menu-toggle{display:none}
+@media(max-width:900px){#site-nav{display:flex;flex-wrap:wrap}#site-nav .menu-toggle{display:block;margin-left:auto}#site-nav .nav-menu{display:none!important;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;gap:3px}#site-nav .nav-menu.active{display:flex!important}#site-nav .nav-menu>li{width:100%}#site-nav .submenu{position:static;box-shadow:none;min-width:0}#site-nav .submenu-toggle{width:100%;text-align:left}#site-nav .has-submenu:not(.open)>.submenu{display:none!important}}
+@media(min-width:901px){#site-nav .nav-menu{display:flex!important}}
