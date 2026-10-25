@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "course_id": "fotografie-senza-nome",
+  "example_id": "FOTO-LOC-TERRELL-01",
+  "status": "editorial_draft_not_published",
+  "source_kind": "catalogo_fotografico_istituzionale",
+  "institution": "Library of Congress, Prints and Photographs Division",
+  "record_url": "https://www.loc.gov/item/97500102/",
+  "image_url": "https://tile.loc.gov/storage-services/service/pnp/ppmsca/68700/68742r.jpg",
+  "digital_id": "LC-DIG-ppmsca-68742",
+  "catalog_number": "97500102",
+  "catalog_title": "[Mary Church Terrell, three-quarter length portrait, seated, facing front]",
+  "photo_date_as_catalogued": "between 1880 and 1900, printed later",
+  "creator": "non identificato nella descrizione catalografica consultata",
+  "rights_notice": "No known restrictions on publication",
+  "comparison": [
+    {
+      "category": "osservato",
+      "text": "Ritratto fotografico di una persona seduta e rivolta verso l'obiettivo. Ulteriori dettagli devono essere descritti osservando la riproduzione, senza attribuzioni psicologiche."
+    },
+    {
+      "category": "attestato_dal_catalogo",
+      "text": "La Library of Congress identifica il soggetto come Mary Church Terrell; la ripresa è compresa in un intervallo 1880–1900 e la stampa è successiva."
+    },
+    {
+      "category": "non_accertato",
+      "text": "Il giorno e l'anno esatto della ripresa, il luogo, l'autore dell'immagine e lo stato d'animo della persona non risultano stabiliti dal solo record."
+    }
+  ],
+  "wrong_caption": "Mary Church Terrell fu fotografata nel 1890, sorridente per un successo personale.",
+  "corrected_caption": "Ritratto catalogato dalla Library of Congress come Mary Church Terrell, datato fra il 1880 e il 1900, con stampa successiva. Il record non stabilisce l'anno preciso.",
+  "exercises": [
+    "Individua due informazioni che provengono dall'immagine e due che provengono dal catalogo.",
+    "Spiega in 70–100 parole perché l'identificazione del soggetto non permette di scegliere una data esatta.",
+    "Compila una scheda con codice, collocazione, identificativo digitale, fonte, datazione per intervallo e tre questioni aperte."
+  ],
+  "limitation": "Il soggetto di questo esempio è già catalogato; non va presentato come individuo anonimo. Serve a distinguere la certezza bibliografica sull'identificazione dall'incertezza cronologica.",
+  "copyright_attribution": "© 2026 Michele Bottino — elaborazione didattica originale; fotografia: Library of Congress"
+}
