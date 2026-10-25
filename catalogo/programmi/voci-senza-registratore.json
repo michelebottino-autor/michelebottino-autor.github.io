@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "course_id": "voci-senza-registratore",
+  "title": "Voci senza registratore",
+  "status": "editorial_draft",
+  "objective": "Raccontare memorie indirette conservando provenienza, catene informative, attribuzioni e rispetto delle persone.",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Memoria diretta e indiretta",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u02",
+      "title": "Attribuzioni e catene di racconto",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u03",
+      "title": "Confrontare versioni",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u04",
+      "title": "Etica delle persone viventi",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u05",
+      "title": "Montaggio narrativo trasparente",
+      "status": "preview_in_review"
+    },
+    {
+      "id": "u06",
+      "title": "Racconto con note",
+      "status": "preview_in_review"
+    }
+  ],
+  "public_preview": "../voci-senza-registratore/",
+  "public_preview_status": "in_review_not_certified",
+  "locales": {
+    "it": "in_review",
+    "en": "planned",
+    "es": "planned",
+    "fr": "planned",
+    "de": "planned",
+    "pt": "planned"
+  },
+  "copyright": "© 2026 Michele Bottino"
+}

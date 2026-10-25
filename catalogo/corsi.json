@@ -640,13 +640,13 @@
         "Racconto con note"
       ],
       "final_project": "Racconto breve con mappa delle testimonianze",
-      "level": "Da definire",
-      "status": "coming_soon",
+      "level": "Introduttivo",
+      "status": "in_development",
       "duration_minutes": null,
       "logo": "./loghi/voci-senza-registratore.svg",
       "source_locale": "it",
       "locales": {
-        "it": "planned",
+        "it": "in_review",
         "en": "planned",
         "es": "planned",
         "fr": "planned",
@@ -663,7 +663,9 @@
       "pricing": {
         "payment_enabled": false
       },
-      "url": "#interesse"
+      "url": "../voci-senza-registratore/",
+      "syllabus": "./programmi/voci-senza-registratore.json",
+      "syllabus_status": "editorial_draft_public_preview"
     }
   ],
   "payment_configuration": {
