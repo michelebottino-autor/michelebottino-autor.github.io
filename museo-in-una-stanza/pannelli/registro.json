@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "course_id": "museo-in-una-stanza",
+  "case_id": "B-01",
+  "status": "simulated_only",
+  "panels": [
+    {
+      "id": "B01",
+      "title": "Registro",
+      "kind": "simulated_visual_asset",
+      "path": "./pannelli/b01.svg",
+      "visible": "Righe e colonne di un registro inventato.",
+      "not_proved": "Non prova nomi, transazioni o apertura di una bottega reale.",
+      "question": "Quale documento dovresti verificare prima di ricostruire l'attività commerciale?",
+      "source_historic": false,
+      "rights": "© 2026 Michele Bottino — original didactic illustration"
+    },
+    {
+      "id": "B02",
+      "title": "Insegna",
+      "kind": "simulated_visual_asset",
+      "path": "./pannelli/b02.svg",
+      "visible": "Una tavola illustrativa con la parola «BOTTEGA».",
+      "not_proved": "Non dimostra l'esistenza o la denominazione di un esercizio storico.",
+      "question": "Come distingueresti una fotografia originale di insegna da questa ricostruzione?",
+      "source_historic": false,
+      "rights": "© 2026 Michele Bottino — original didactic illustration"
+    },
+    {
+      "id": "B03",
+      "title": "Fotografia",
+      "kind": "simulated_visual_asset",
+      "path": "./pannelli/b03.svg",
+      "visible": "Un'illustrazione in cornice mostra scaffali e un bancone.",
+      "not_proved": "Non attesta luogo, data dello scatto, persone o utilizzo storico.",
+      "question": "Quali informazioni servirebbero per identificare luogo e datazione?",
+      "source_historic": false,
+      "rights": "© 2026 Michele Bottino — original didactic illustration"
+    },
+    {
+      "id": "B04",
+      "title": "Ricevuta",
+      "kind": "simulated_visual_asset",
+      "path": "./pannelli/b04.svg",
+      "visible": "Un foglio schematico con campi e una cifra segnaposto.",
+      "not_proved": "Non documenta un pagamento reale, una vendita o tutte le transazioni.",
+      "question": "Per provare il pagamento servirebbe una quietanza o un riscontro separato?",
+      "source_historic": false,
+      "rights": "© 2026 Michele Bottino — original didactic illustration"
+    },
+    {
+      "id": "B05",
+      "title": "Attrezzo",
+      "kind": "simulated_visual_asset",
+      "path": "./pannelli/b05.svg",
+      "visible": "Sagoma didattica di un attrezzo manuale.",
+      "not_proved": "La forma non identifica un proprietario, una professione o un periodo certo.",
+      "question": "Quali segni materiali misureresti e fotograferesti su un attrezzo autentico?",
+      "source_historic": false,
+      "rights": "© 2026 Michele Bottino — original didactic illustration"
+    },
+    {
+      "id": "B06",
+      "title": "Testimonianza audio",
+      "kind": "simulated_visual_asset",
+      "path": "./pannelli/b06.svg",
+      "visible": "Un'icona sonora e una forma d'onda illustrativa, senza audio autentico.",
+      "not_proved": "Non costituisce una registrazione di persona reale o una testimonianza raccolta.",
+      "question": "Quali consensi e trascrizioni servirebbero per una vera intervista?",
+      "source_historic": false,
+      "rights": "© 2026 Michele Bottino — original didactic illustration"
+    }
+  ]
+}
