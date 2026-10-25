@@ -130,32 +130,19 @@ p{max-width:76ch}
 .book-tile .book-art.cover-unavailable img{display:none!important}
 @media(max-width:600px){.book-tile{flex-basis:132px!important;max-width:132px!important}.book-tile .book-art{height:165px!important;min-height:165px!important;max-height:165px!important}main{padding-inline:14px}}
 </style><link rel="stylesheet" href="../site-uniform.css"/>
-<link rel="manifest" href="/manifest.webmanifest"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Michele Bottino"/><link rel="apple-touch-icon" href="/images/logo.png"/></head>
+<link rel="manifest" href="/manifest.webmanifest"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Michele Bottino"/><link rel="apple-touch-icon" href="/images/logo.png"/><link rel="stylesheet" href="/assets/css/nav-unificata-2026.css">
+<link rel="stylesheet" href="/assets/css/editoriale-mockup-approvato.css">
+</head>
 <body>
 <nav aria-label="Informazioni e trasparenza del sito" class="site-transparency-links" style="padding:10px 16px;text-align:center;font:14px/1.6 system-ui,sans-serif;background:#f3eee5;color:#29251f"><a href="../privacy/">Privacy</a> · <a href="../cookie/">Cookie e statistiche</a> · <a href="../contatti/">Contatti</a> · <a href="../adc/">Laboratorio ADC</a></nav><a class="skip-link" href="#contenuto">Vai al contenuto</a>
-<header class="container">
-<nav class="nav">
-<div class="logo">
-<a href="../">Michele Bottino</a>
-</div>
-<button aria-label="Apri il menu di navigazione" class="menu-toggle" onclick="toggleMenu()">
-<span></span><span></span><span></span>
-</button>
-<ul class="nav-menu" id="menu">
-<li><a href="../">Home</a></li>
-<li><a href="../biografia/">Autore</a></li>
-<li><a href="../opere/">Opere</a></li>
-<li><a href="../poetica/">Poetica</a></li>
-<li><a href="../ricerca/">Ricerca</a></li>
-<li><a href="../articoli/">Articoli</a></li>
-<li><a href="../strutture-irrisolto/">Strutture dell’irrisolto</a></li>
-<li><a href="./">Indagini</a></li>
-<li><a href="../media/">Media</a></li>
-<li><a href="../adc/">Laboratorio ADC</a></li>
-<li><a href="../contatti/">Contatti</a></li>
-</ul>
-</nav>
-</header>
+<header class="container"><nav class="nav" id="site-nav"><div class="logo"><a href="/">Michele Bottino</a></div><button class="menu-toggle" id="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Apri il menu di navigazione"><span></span><span></span><span></span></button><ul class="nav-menu" id="menu"><li><a href="/">Home</a></li>
+<li class="has-submenu"><button type="button" class="submenu-toggle" aria-controls="submenu-autore" aria-expanded="false">Autore</button><ul class="submenu" id="submenu-autore"><li><a href="/biografia/">Biografia</a></li><li><a href="/poetica/">Poetica</a></li></ul></li>
+<li class="has-submenu"><button type="button" class="submenu-toggle" aria-controls="submenu-opere" aria-expanded="false">Opere</button><ul class="submenu" id="submenu-opere"><li><a href="/opere/">Romanzi e saggi</a></li><li><a href="/testi-musicali/">Testi musicali</a></li></ul></li>
+<li class="has-submenu"><button type="button" class="submenu-toggle" aria-controls="submenu-scritti" aria-expanded="false">Scritti</button><ul class="submenu" id="submenu-scritti"><li><a href="/articoli/">Articoli</a></li><li><a href="/indagini/">Indagini</a></li></ul></li>
+<li class="has-submenu"><button type="button" class="submenu-toggle" aria-controls="submenu-metodo" aria-expanded="false">Metodo e ricerca</button><ul class="submenu" id="submenu-metodo"><li><a href="/metodo/">Metodo</a></li><li><a href="/ricerca/">Ricerca</a></li><li><a href="/strutture-irrisolto/">Strutture irrisolte</a></li></ul></li>
+<li class="has-submenu"><button type="button" class="submenu-toggle" aria-controls="submenu-adc" aria-expanded="false">Laboratorio ADC</button><ul class="submenu" id="submenu-adc"><li><a href="/adc/">Archivio Documentale</a></li><li><a href="/adc/fonti/">Fonti</a></li><li><a href="/adc/atlante/">Atlante</a></li><li><a href="/adc/storia/">Storia</a></li><li><a href="/adc/elena/">Elena</a></li></ul></li>
+<li class="has-submenu"><button type="button" class="submenu-toggle" aria-controls="submenu-formazione" aria-expanded="false">Formazione</button><ul class="submenu" id="submenu-formazione"><li><a href="/formazione/">Scuola</a></li><li><a href="/catalogo/">Catalogo completo</a></li><li><a href="/corso/">Bottino Method</a></li><li><a href="/scrittura-investigativa/">Scrittura Investigativa</a></li><li><a href="/storie-che-mancano/">Le storie che mancano</a></li><li><a href="/archivio-vivo/">L’archivio diventa racconto</a></li></ul></li>
+<li><a href="/media/">Media</a></li><li><a aria-current="page" href="/contatti/">Contatti</a></li></ul></nav></header>
 <main id="contenuto"><nav aria-label="Percorso di navigazione" class="editorial-breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span>Le indagini di Elia Ferri </span></nav>
 <section class="container article-header">
 <div class="article-cover">
@@ -236,5 +223,6 @@ function toggleMenu() {
 }
 </script>
 <script defer src="../analytics-consenso.js"></script>
-<script defer src="/pwa-init.js"></script></body>
+<script defer src="/pwa-init.js"></script><script defer src="/assets/js/site-nav.js"></script>
+</body>
 </html>

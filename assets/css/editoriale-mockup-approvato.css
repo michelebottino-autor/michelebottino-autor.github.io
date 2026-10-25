@@ -1,0 +1,90 @@
+/* Identita editoriale approvata: carbone, avorio e bronzo. Scoped ai layout autore.
+   I micrositi formativi e i componenti ADC specializzati conservano i loro stili. */
+:root{--mb-editorial-charcoal:#171b1a;--mb-editorial-ivory:#f7f4ed;--mb-editorial-bronze:#9b7850;--mb-editorial-text:#292723;--mb-editorial-line:#ddd4c7}
+body:has(#site-nav){background:var(--mb-editorial-ivory)!important;color:var(--mb-editorial-text)!important;font-family:Georgia,"Times New Roman",serif!important}
+body:has(#site-nav)>header{background:var(--mb-editorial-charcoal)!important;color:#f6efe4!important;border-bottom:1px solid #a58a63}
+body:has(#site-nav) #site-nav{max-width:1320px;margin-inline:auto;min-height:70px}
+body:has(#site-nav) #site-nav .logo a{font:normal clamp(1.3rem,2vw,2rem) Georgia,serif!important;color:#f4ede1!important;letter-spacing:-.035em;text-decoration:none}
+body:has(#site-nav) #site-nav .nav-menu>li>a,body:has(#site-nav) #site-nav .submenu-toggle{color:#e9dfd0!important;font:.73rem/1.3 Arial,sans-serif!important;letter-spacing:.06em;text-transform:uppercase}
+body:has(#site-nav) #site-nav .submenu{background:#202625!important;border:1px solid #877253!important}
+body:has(#site-nav) #site-nav .submenu a{color:#f4eadc!important;font:.85rem/1.5 Arial,sans-serif!important}
+body:has(#site-nav) main{color:var(--mb-editorial-text)!important}
+body:has(#site-nav) main h1,body:has(#site-nav) main h2,body:has(#site-nav) main h3{color:#201e1b!important;font-family:Georgia,"Times New Roman",serif!important}
+body:has(#site-nav) main p,body:has(#site-nav) main li{color:#454039}
+body:has(#site-nav) main .hero,body:has(#site-nav) main .page-header{background:linear-gradient(120deg,#faf8f2,#eae0d1)!important;border-color:var(--mb-editorial-line)!important}
+body:has(#site-nav) main .card,body:has(#site-nav) main .book-card,body:has(#site-nav) main .article-card{background:#fffdf8!important;border:1px solid var(--mb-editorial-line)!important;box-shadow:0 10px 27px #29201813;color:#292723!important}
+body:has(#site-nav) main a:not(.btn):not(.button){color:#825f3a}
+body:has(#site-nav) main .btn,body:has(#site-nav) main .button{background:#927049!important;color:white!important;border-color:#927049!important;border-radius:3px!important}
+body:has(#site-nav)>footer{background:#171b1a!important;color:#eee6da!important;border-top:1px solid #a58a63}
+body:has(#site-nav)>footer a{color:#e1c9a5!important}
+body:has(#site-nav) #adc-design-nav,body:has(#site-nav) #adc-design-nav *{color:inherit}
+@media(max-width:900px){body:has(#site-nav) #site-nav .nav-menu.active{background:#171b1a;padding:12px!important}body:has(#site-nav) #site-nav .menu-toggle{background:transparent;border:1px solid #b79b71}body:has(#site-nav) #site-nav .menu-toggle span{background:#eee7db}}
+
+/* Impaginazioni effettive corrispondenti alle sezioni del mockup */
+body:has(#site-nav) .hero.container{max-width:1400px!important;display:block;background:linear-gradient(112deg,#1b2424 0%,#2a3535 48%,#7a746c 100%)!important;border:0!important;border-radius:0!important;margin:0 auto 38px!important;padding:0!important;box-shadow:none!important}
+body:has(#site-nav) .hero.container .hero-flex{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(280px,.87fr);align-items:stretch;gap:0!important}
+body:has(#site-nav) .hero.container .hero-text{padding:clamp(26px,4vw,68px)!important}
+body:has(#site-nav) .hero.container .hero-text h1{font:normal clamp(3.2rem,6vw,6rem)/.99 Georgia,serif!important;color:#f7efe6!important;letter-spacing:-.045em}
+body:has(#site-nav) .hero.container .hero-text h2{color:#d8bc8c!important;font:normal 1rem/1.5 Arial,sans-serif!important;letter-spacing:.13em;text-transform:uppercase}
+body:has(#site-nav) .hero.container .hero-text p{color:#f0e9df!important}
+body:has(#site-nav) .hero.container .hero-text a{color:#e3c38d!important}
+body:has(#site-nav) .hero.container .hero-image{position:relative;min-width:0}
+body:has(#site-nav) .hero.container .hero-image img{width:100%;height:100%;min-height:510px;max-height:none;object-fit:cover;object-position:center 20%;border:0!important;border-radius:0!important;box-shadow:none!important}
+body:has(#site-nav) .hero.container .cta .btn{background:#9b7850!important;border:1px solid #b79c73!important;color:#fff!important}
+body:has(#site-nav) .hero.container .cta .btn.secondary{background:transparent!important;color:#f7efdf!important}
+body:has(#site-nav) .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+body:has(#site-nav) .grid-2>.card{background:#fffdf8!important;border:1px solid #ddd4c7!important;padding:clamp(22px,2.5vw,32px)}
+body:has(#site-nav) .grid-2>.card h3{color:#2c2924!important}
+body:has(#site-nav) .page-header{padding:clamp(26px,4vw,52px)!important}
+@media(max-width:760px){body:has(#site-nav) .hero.container .hero-flex{grid-template-columns:1fr!important}body:has(#site-nav) .hero.container .hero-image img{min-height:0;max-height:420px;aspect-ratio:4/3}body:has(#site-nav) .grid-2{grid-template-columns:1fr}body:has(#site-nav) .hero.container .hero-text{padding:28px 20px!important}}
+
+/* Revisione homepage mobile: rispetto al riferimento grafico, eliminare il riquadro bianco introduttivo. */
+body:has(#site-nav) .hero.container{background:#192323!important}
+body:has(#site-nav) .hero.container .hero-flex{background:linear-gradient(125deg,#172321,#29302b)!important}
+body:has(#site-nav) .hero.container .hero-text{background:transparent!important;color:#f8f1e5!important}
+body:has(#site-nav) .hero.container .hero-text .editorial-eyebrow{color:#d2b281!important;letter-spacing:.15em!important}
+body:has(#site-nav) .hero.container .hero-text .hero-links,body:has(#site-nav) .hero.container .hero-text .identity-block{color:#e9dfcf!important}
+body:has(#site-nav) .hero.container .hero-text h1{color:#f6eee2!important}
+body:has(#site-nav) .hero.container .hero-text h2{color:#dbc08f!important}
+body:has(#site-nav) .hero.container .hero-text .cta{display:flex;flex-wrap:wrap;gap:10px}
+body:has(#site-nav) .hero.container .hero-image{overflow:hidden}
+body:has(#site-nav) .hero.container .hero-image img{display:block;filter:saturate(.85) contrast(1.03);object-fit:cover}
+@media(max-width:760px){
+body:has(#site-nav) .hero.container{margin:0 auto 22px!important;border-radius:0!important}
+body:has(#site-nav) .hero.container .hero-flex{display:flex!important;flex-direction:column!important;gap:0!important}
+body:has(#site-nav) .hero.container .hero-text{padding:36px 25px!important}
+body:has(#site-nav) .hero.container .hero-text h1{font-size:clamp(3.3rem,13vw,5rem)!important;line-height:1.02!important}
+body:has(#site-nav) .hero.container .hero-image{width:100%;max-width:none!important}
+body:has(#site-nav) .hero.container .hero-image img{width:100%;height:360px!important;max-height:360px!important;min-height:0!important;object-position:center 20%;border:0!important}
+body:has(#site-nav) .hero.container .cta .btn{width:auto!important;min-height:44px}
+}
+
+/* Ritratto mobile sempre percepibile anche con i precedenti layout hero */
+@media(max-width:760px){
+  body:has(#site-nav) .hero.container .hero-image{
+    display:block!important;position:relative!important;isolation:isolate;
+    background:#24302d url("/images/michele-bottino-foto-ufficiale.webp") center 20%/cover no-repeat!important;
+    min-height:360px!important;
+  }
+  body:has(#site-nav) .hero.container .hero-image img{
+    position:relative!important;z-index:1!important;opacity:1!important;
+    visibility:visible!important;mix-blend-mode:normal!important;
+  }
+}
+
+/* Priorita editoriale sui dispositivi piccoli: ritratto vicino al titolo. */
+@media(max-width:760px){
+  body:has(#site-nav) .hero.container .hero-flex{display:grid!important;grid-template-columns:1fr!important}
+  body:has(#site-nav) .hero.container .hero-text{display:contents!important}
+  body:has(#site-nav) .hero.container .hero-text>.editorial-eyebrow{grid-row:1;padding:28px 24px 0!important;margin:0!important}
+  body:has(#site-nav) .hero.container .hero-text>h1{grid-row:2;padding:0 24px!important;margin:8px 0 0!important}
+  body:has(#site-nav) .hero.container .hero-text>h2{grid-row:3;padding:0 24px!important;margin:10px 0 20px!important}
+  body:has(#site-nav) .hero.container .hero-image{grid-row:4;min-height:320px!important}
+  body:has(#site-nav) .hero.container .hero-image img{height:320px!important;max-height:320px!important}
+  body:has(#site-nav) .hero.container .hero-text>p:not(.editorial-eyebrow),
+  body:has(#site-nav) .hero.container .hero-text>.adc-logo-home,
+  body:has(#site-nav) .hero.container .hero-text>.cta,
+  body:has(#site-nav) .hero.container .hero-text>.identity-block{padding-left:24px!important;padding-right:24px!important}
+  body:has(#site-nav) .hero.container .hero-text>.identity-block{padding-bottom:24px!important}
+  #mb-consent{max-height:min(42dvh,320px)!important;overflow-y:auto!important;bottom:8px!important;padding:12px!important}
+}
