@@ -1,0 +1,12 @@
+/* Identita condivisa delle sezioni specialistiche. Non modifica logiche dei corsi o componenti ADC. */
+body.mb-editorial-scope{--mb-ink:#1b2422;--mb-ivory:#f6f1e8;--mb-bronze:#a18055;--mb-line:#d8c9b5;accent-color:#9b7850}
+body.mb-editorial-scope>header{background:#1b2422!important;color:#f5ebdb!important;border-bottom:2px solid #a18055!important}
+body.mb-editorial-scope>header a,body.mb-editorial-scope>header strong{color:#f5ebdb!important}
+body.mb-editorial-scope>header nav a{color:#e9dbc5!important}
+body.mb-editorial-scope>header nav a:hover,body.mb-editorial-scope>header nav a:focus-visible{color:#e9c48d!important;text-decoration:underline;text-underline-offset:5px}
+body.mb-editorial-scope main :is(h1,h2,h3){font-family:Georgia,"Times New Roman",serif}
+body.mb-editorial-scope main :is(.hero,.page-hero){border-color:#d8c9b5}
+body.mb-editorial-scope main :is(.card,.course-card,.program-card){border-color:var(--mb-line)}
+body.mb-editorial-scope main a:focus-visible,body.mb-editorial-scope button:focus-visible{outline:3px solid #b58b53;outline-offset:3px}
+body.mb-editorial-scope>footer{border-top:2px solid #a18055}
+@media(max-width:760px){body.mb-editorial-scope>header nav{max-width:100%;overflow-wrap:anywhere}body.mb-editorial-scope main :is(h1,h2){overflow-wrap:break-word}}
