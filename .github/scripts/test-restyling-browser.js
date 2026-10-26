@@ -19,6 +19,14 @@ const fs = require('fs');
       if(await toggle.getAttribute('aria-expanded')!=='true')errors.push('Menu mobile non aperto');
       if(!await nav.isVisible())errors.push('Menu mobile invisibile');
       await page.screenshot({path:'restyling-screenshots/menu-mobile.png'});
+      const dimensions=await nav.evaluate(el=>({h:el.getBoundingClientRect().height,win:innerHeight}));
+      if(dimensions.h>dimensions.win*.75)errors.push('Menu mobile troppo alto');
+      const school=page.locator('#toggle-scuola');
+      if(!await school.isVisible())errors.push('Toggle Formazione assente');
+      else {await school.click();if(await school.getAttribute('aria-expanded')!=='true')errors.push('Formazione non apribile');if(!await page.locator('#submenu-scuola').isVisible())errors.push('Sottomenu Formazione invisibile');}
+      await toggle.click();
+      if(await nav.isVisible())errors.push('Menu non si chiude');
+
     }
     console.log(name+' hero-background: '+bg);
     await page.close();
