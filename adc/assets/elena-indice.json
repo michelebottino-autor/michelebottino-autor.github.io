@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-25-indice-E024-precisato",
+  "version": "2026-10-28-calata",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -500,6 +500,24 @@
         "inventario"
       ],
       "description": "Guida alle voci 33–35 e ad altre unità dell’inventario 81 di Palermo; contenuto dei volumi non ancora letto."
+    },
+    {
+      "title": "La Calata di San Filippo: culto e testimonianze",
+      "url": "/adc/calata-san-filippo/",
+      "tags": [
+        "san",
+        "filippo",
+        "calata",
+        "esorcismi",
+        "possessione",
+        "pitre",
+        "salomone",
+        "1886",
+        "1766",
+        "marzacchina",
+        "castrorao"
+      ],
+      "description": "Ricostruzione critica della Calata: distinzione tra culto e corsa, testimonianza ottocentesca, credenze sugli esorcismi e cronologie tradizionali non dimostrate."
     }
   ]
 }
