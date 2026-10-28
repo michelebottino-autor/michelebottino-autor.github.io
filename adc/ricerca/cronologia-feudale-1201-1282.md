@@ -2,7 +2,7 @@
 
 Registro critico di ricerca, 12 ottobre 2026. Non è un'edizione diplomatica né una successione completa dei feudatari.
 
-- **Giugno 1201:** diploma attribuito a Federico II, MGH, Diplomata Friderici II, I, n. 33, p. 67. La concessione relativa a Calatabiano e all'arcivescovo Berardo di Messina richiede verifica del dispositivo latino integrale; l'arenga da sola non basta a definirne la portata giuridica.
+- **Giugno 1201:** diploma di Federico II, *MGH, Diplomata Friderici II*, I, n. 33, p. 67, relativo alla concessione del castello di Calatabiano all'arcivescovo Berardo e alla Chiesa di Messina. L'arenga è consultabile nella trascrizione del progetto Aracne (https://www.detail-lod.it/documents/ara69.arenga_028), che identifica data, destinatario e regesto. Non è il testo integrale del diploma: dispositio, eventuali riserve e tradizione manoscritta vanno collazionate nell'edizione MGH (https://www.dmgh.de/mgh_dd_f_ii_1/) prima di concludere sulla precisa estensione giuridica della concessione.
 - **1213:** vendita del castello da Armaleo Monaldeschi alla Chiesa di Catania per 15.000 tarì, riferita da Antonio Mursia (2023–2024, p. 103) e Francesco Muciaccia (1951, p. 104). Non è stata consultata la pergamena originale.
 - **14 marzo 1213:** notizia di conferma al vescovo Gualtiero di Pagliara; occorre verificare il testo e il rapporto cronologico con la vendita.
 - **1282:** restituzione del castello alla Chiesa messinese durante l'arcivescovado di Rainaldo da Lentini, secondo la ricostruzione biografica di Salvatore Fodale. Distinguere gli atti sul castello da quelli relativi al grande giardino di Messina.
