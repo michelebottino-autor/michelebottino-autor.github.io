@@ -357,4 +357,7 @@
   <url><loc>https://michelebottino-autor.github.io/opere/europa/</loc><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/opere/uomo-consapevole/</loc><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/opere/calatabiano-sacra/</loc><priority>0.7</priority></url>
+  <url>
+    <loc>https://michelebottino-autor.github.io/adc/materiali-patrimonio/</loc>
+  </url>
 </urlset>
