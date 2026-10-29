@@ -79,6 +79,18 @@
 @media(max-width:1120px){.desktop-nav{gap:9px}.desktop-nav a{font-size:.74rem}.header-cta{display:none}.hero-grid{grid-template-columns:.75fr 1fr}.hero-land{display:none}}
 @media(max-width:850px){.desktop-nav,.header-cta{display:none}.mobile-nav{display:block;margin-left:auto}.header-inner{min-height:70px}.hero-grid{grid-template-columns:.8fr 1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.book-list{grid-template-columns:repeat(2,1fr)}.adc-grid{grid-template-columns:1fr}}
 @media(max-width:600px){body{font-size:15.5px}.brand-name{font-size:1.25rem}.monogram{font-size:1.85rem}.brand small{font-size:.5rem}.hero-grid{display:flex;flex-direction:column}.hero-photo{min-height:260px;max-height:310px}.hero-photo:after{background:linear-gradient(0deg,#091b33,transparent 35%)}.hero-copy{padding:23px 20px 35px}.hero h1{font-size:clamp(2rem,8vw,2.8rem)}.two-paths,.audience,.footer-grid{grid-template-columns:1fr}.two-paths{gap:13px}.feature-grid{grid-template-columns:1fr;gap:15px}.book-list{gap:13px}.book{padding:12px}.book img{max-height:185px}.adc-files{grid-template-columns:repeat(2,minmax(0,1fr))}.adc-preview-head{display:block}.adc-search{margin-top:10px}.section-head{padding-top:35px}.footer-grid{gap:18px}}
+/* FIX MENU SMARTPHONE: il pannello non deve aumentare l'altezza dell'header */
+@media(max-width:850px){
+ .site-header{position:relative;overflow:visible}
+ .header-inner{position:relative;min-height:74px;height:auto;align-items:center;flex-wrap:nowrap}
+ .brand{min-width:0;max-width:calc(100% - 116px);flex:1 1 auto}
+ .brand-name{white-space:normal}
+ .mobile-nav{display:block;position:relative;flex:0 0 auto;margin-left:auto;align-self:center;min-width:0}
+ .mobile-nav summary{display:flex;gap:6px;white-space:nowrap;padding:8px 12px;min-width:92px}
+ .mobile-nav .mobile-menu{position:absolute;display:block;top:calc(100% + 12px);right:0;left:auto;width:min(340px,calc(100vw - 32px));max-width:calc(100vw - 32px);max-height:calc(100dvh - 110px);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;z-index:1100;box-shadow:0 16px 36px #0006;border:1px solid #b99458;border-radius:0 0 10px 10px}
+ .mobile-nav:not([open]) .mobile-menu{display:none}
+ .mobile-menu a{white-space:normal;overflow-wrap:break-word;min-height:48px;padding:11px 13px;font-size:1rem}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style></head>
 <body>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
