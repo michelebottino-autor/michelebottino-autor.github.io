@@ -123,6 +123,17 @@ p{max-width:76ch}
 .adc-home-actions a{display:flex;align-items:center;justify-content:center;min-width:0;text-align:center;padding:12px 13px;border:1px solid #cab78e;border-radius:10px;background:#f3eadb;color:#17324b!important;font-weight:700;line-height:1.35;text-decoration:none!important}
 .adc-home-actions a:hover,.adc-home-actions a:focus-visible{background:#e7d5b6;text-decoration:underline!important}
 @media(max-width:760px){.adc-home-actions{grid-template-columns:1fr;gap:9px;margin:14px 0 0}.adc-home-actions a{padding:12px 14px;font-size:.94rem}}
+
+/* Tre fatti storici in evidenza nella prima visita: fonti e limiti espliciti */
+.adc-curiosita{margin:24px 0;padding:24px clamp(16px,3vw,32px);background:#f7f4ec;border:1px solid #ded7c8;border-radius:16px}
+.adc-curiosita h2{margin:0 0 9px;color:#192f45}.adc-curiosita>p{margin:0 0 18px;color:#506070}
+.adc-curiosita-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.adc-curiosita-grid article{padding:20px 18px;border:1px solid #e1e0dc;border-radius:12px;background:#fff;display:flex;flex-direction:column;min-width:0}
+.adc-curiosita-data{color:#805e35;font-size:.78rem;font-weight:750;letter-spacing:.04em;text-transform:uppercase}
+.adc-curiosita-grid h3{font:700 1.2rem/1.35 Georgia,serif;margin:10px 0;color:#17334c}
+.adc-curiosita-grid p{font-size:.96rem;line-height:1.58;margin:0 0 16px;color:#354657}
+.adc-curiosita-grid a{margin-top:auto;color:#184f81;font-weight:700;text-underline-offset:3px}
+@media(max-width:800px){.adc-curiosita-grid{grid-template-columns:1fr}.adc-curiosita{padding:19px 15px}.adc-curiosita-grid article{padding:17px}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
@@ -210,10 +221,19 @@ main#contenuto p,main#contenuto li{hyphens:none!important;overflow-wrap:break-wo
   <div class="adc-visual-grid">
     <a class="adc-visual-card" href="/adc/storia/"><span class="adc-visual-photo"><img src="/adc/assets/home/castello-calatabiano-home.avif" alt="Fotografia del castello di Calatabiano, scattata da Michele Bottino" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Fotografia: Michele Bottino — archivio personale</span><strong>Il castello</strong><small>Le vicende medievali e i documenti del 1201 e del 1213</small><span class="adc-visual-go">Leggi la storia →</span></a>
     <a class="adc-visual-card" href="/adc/materiali-patrimonio/"><span class="adc-visual-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maria%20SS.%20Annunziata%20(Calatabiano)%2001.jpg?width=1000" alt="Chiesa Maria Santissima Annunziata a Calatabiano, patrimonio religioso del paese" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Foto: Codas / Wikimedia Commons, CC BY-SA 4.0 (chiesa dell’Annunziata)</span><strong>Le chiese e la Terra Vecchia</strong><small>La chiesa dell’Annunziata, il Santissimo Crocifisso, le opere e le iscrizioni</small><span class="adc-visual-go">Scopri i luoghi →</span></a>
-    <a class="adc-visual-card" href="/adc/fonti/"><span class="adc-visual-photo"><img src="https://media.cultura.gov.it/mibac/files/boards/be78e33bc8ca0c99bff70aa174035096/TESORI%20D%27ITALIA%20-%20IMMAGINI/2025/Pergamene%20ex%20copertine%20notarili%20Catania/PergameneCatania2.jpg" alt="Pergamena storica conservata presso l'Archivio di Stato di Catania: fotografia illustrativa, non documento attribuito a Calatabiano" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Ministero della Cultura · immagine di contesto</span><strong>I documenti storici</strong><small>Pergamene, studi, attestazioni e fonti consultabili</small><span class="adc-visual-go">Esplora le fonti →</span></a>
+    <a class="adc-visual-card" href="/adc/fonti/"><span class="adc-visual-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Catania%20-%20Archivio%20di%20Stato%20di%20Catania%20-%202024-09-10%2023-27-44%20001.jpg?width=960" alt="Sede dell'Archivio di Stato di Catania, istituto di conservazione documentaria" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Archivio di Stato di Catania · fotografia dell’istituto (Wikimedia Commons)</span><strong>I documenti storici</strong><small>Documenti, edizioni delle fonti e attestazioni archivistiche</small><span class="adc-visual-go">Esplora le fonti →</span></a>
     <a class="adc-visual-card" href="/adc/calata-san-filippo/"><span class="adc-visual-photo"><img src="https://www.gazzettinonline.it/wp-content/uploads/2020/02/Festa-San-Filippo-a-Calatabiano.-.jpg" alt="Processione di San Filippo a Calatabiano, fotografia della festa" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Gazzettinonline · fotografia della festa</span><strong>Le tradizioni</strong><small>La Calata di San Filippo e la memoria della comunità</small><span class="adc-visual-go">Conosci la tradizione →</span></a>
   </div>
-  <nav class="adc-home-actions" aria-label="Altri percorsi dell’archivio"><a href="/adc/cerca/">Cerca nell’archivio</a><a href="/adc/custode/">Chiedi al Custode</a><a href="#adc-risorse-complete">Tutti i dossier e gli approfondimenti</a></nav>
+  <section class="adc-curiosita" aria-labelledby="adc-curiosita-titolo">
+  <h2 id="adc-curiosita-titolo">Lo sapevi che…?</h2>
+  <p>Tre episodi della storia di Calatabiano ricostruiti attraverso fonti e studi citati nell’Archivio.</p>
+  <div class="adc-curiosita-grid">
+    <article><span class="adc-curiosita-data">1213 · Il castello</span><h3>Una conferma regia per la Chiesa di Catania</h3><p>Nel marzo 1213 Costanza d’Aragona e il figlio Enrico confermarono alla Chiesa di Catania il castello di Calatabiano. La testimonianza è nota attraverso un’edizione a stampa, non dall’esame dell’originale.</p><a href="/adc/storia/">Leggi la ricostruzione e le fonti</a></article>
+    <article><span class="adc-curiosita-data">1537 · Gli zuccheri</span><h3>Il commercio dello zucchero compare negli atti</h3><p>Uno studio di Stracuzzi segnala un atto del 25 maggio 1537 in cui Francesco Mirulla concede a Pietro Faraone l’arbitrio degli zuccheri per Calatabiano. Il riferimento archivistico resta da verificare sull’originale.</p><a href="/adc/dossier-zucchero/">Approfondisci il dossier</a></article>
+    <article><span class="adc-curiosita-data">1502 · San Filippo</span><h3>Una croce dipinta commissionata per la chiesa</h3><p>Una testimonianza del 24 ottobre 1502 riguarda la commissione a Salvo d’Antonio di una croce dipinta per la chiesa di San Filippo Siriaco. È una traccia della storia del culto, distinta dall’origine della festa attuale.</p><a href="/adc/calata-san-filippo/">Scopri la storia e le fonti</a></article>
+  </div>
+</section>
+<nav class="adc-home-actions" aria-label="Altri percorsi dell’archivio"><a href="/adc/cerca/">Cerca nell’archivio</a><a href="/adc/custode/">Chiedi al Custode</a><a href="#adc-risorse-complete">Tutti i dossier e gli approfondimenti</a></nav>
 </section>
 <details class="adc-extra-resources" id="adc-risorse-complete"><summary><strong>Altre risorse dell'Archivio</strong><span>Ricerca, dossier, dedica, fotografie e approfondimenti</span></summary><div class="adc-extra-resources-inner">
 <p class="adc-embed-invite"><strong>Condividi la storia di Calatabiano.</strong> Hai un sito, un blog o curi le pagine di un’associazione? <a href="./incorpora/">Porta la ricerca dell’Archivio nel tuo sito</a> e contribuisci a far conoscere le fonti del territorio.</p>
