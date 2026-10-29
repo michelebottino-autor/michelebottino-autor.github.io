@@ -135,6 +135,19 @@
 @media(max-width:980px){.features .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.features .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.features .feature h3{font-size:1.07rem}.books .book-list{gap:12px}.book strong{line-height:1.25}}
 @media(max-width:380px){.features .feature-grid{grid-template-columns:1fr}}
+
+/* ADC homepage: corregge clipping dei titoli su viewport stretti */
+.adc-grid,.adc-grid>*{min-width:0}
+.adc-preview{min-width:0;max-width:100%;overflow:hidden}
+.adc-preview-head{display:block;min-width:0}
+.adc-preview-heading{min-width:0;display:grid;gap:5px;overflow-wrap:break-word}
+.adc-preview-heading strong{display:block;font-size:clamp(1.02rem,2.2vw,1.35rem);line-height:1.3;white-space:normal;overflow-wrap:break-word}
+.adc-preview-heading span{display:block;color:#c0ccda;font-size:.86rem;line-height:1.45}
+.adc-files{min-width:0}
+.adc-file{min-width:0}
+.adc-file span{white-space:normal;overflow-wrap:break-word}
+@media(max-width:600px){.adc-grid{gap:22px}.adc-preview{padding:13px}.adc-files{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.adc-preview-heading strong{font-size:1.08rem}.adc-file span{font-size:.79rem;line-height:1.42}}
+@media(max-width:360px){.adc-files{grid-template-columns:1fr}.adc-file img{height:150px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style><link rel="stylesheet" href="/assets/css/mb-navigation-final.css"></head>
 <body>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
@@ -161,7 +174,7 @@
 <article class="feature"><figure><img src="/images/logo_laboratorio_adc_640.webp" alt="Identità visiva del Laboratorio ADC" loading="lazy"></figure><div class="feature-content"><h3>Laboratorio ADC</h3><p>Documenti, inventari e strumenti per la consultazione archivistica.</p><a href="/adc/">Esplora l'Archivio →</a></div></article>
 
 </div></div></section>
-<section class="adc-band" aria-labelledby="adc-title"><div class="wrap adc-grid"><div><span class="eyebrow">Laboratorio archivistico ADC</span><h2 id="adc-title">Archivio Documentale Calatabiano</h2><p>Un progetto di raccolta, studio e divulgazione delle fonti storiche. L'accesso ai materiali conserva la distinzione tra attestazioni, interpretazioni e questioni ancora aperte.</p><a class="pill gold" href="/adc/">Esplora il laboratorio →</a></div><div class="adc-preview"><div class="adc-preview-head"><strong>ADC · Percorsi documentari</strong><span class="adc-search">Ricerca e consultazione</span></div><div class="adc-files"><a class="adc-file" href="/adc/crocifisso-1502/"><img src="/images/adc-social/fonti-v3.png" alt="" loading="lazy"><span>San Filippo nel 1502</span></a><a class="adc-file" href="/adc/calata-san-filippo/"><img src="/adc/assets/foto-secondo-lotto/chiesa-imperio-calatabiano-2025.webp" alt="" loading="lazy"><span>La Calata di San Filippo</span></a><a class="adc-file" href="/adc/atlante/"><img src="/images/adc-social/atlante-v3.png" alt="" loading="lazy"><span>Atlante documentario</span></a></div></div></div></section>
+<section class="adc-band" aria-labelledby="adc-title"><div class="wrap adc-grid"><div><span class="eyebrow">Laboratorio archivistico ADC</span><h2 id="adc-title">Archivio Documentale Calatabiano</h2><p>Un progetto di raccolta, studio e divulgazione delle fonti storiche. L'accesso ai materiali conserva la distinzione tra attestazioni, interpretazioni e questioni ancora aperte.</p><a class="pill gold" href="/adc/">Esplora il laboratorio →</a></div><div class="adc-preview"><div class="adc-preview-head"><div class="adc-preview-heading"><strong>ADC · Percorsi documentari</strong><span>Tre accessi diretti alle schede dell’archivio</span></div></div><div class="adc-files"><a class="adc-file" href="/adc/crocifisso-1502/"><img src="/images/adc-social/fonti-v3.png" alt="" loading="lazy"><span>San Filippo nel 1502</span></a><a class="adc-file" href="/adc/calata-san-filippo/"><img src="/adc/assets/foto-secondo-lotto/chiesa-imperio-calatabiano-2025.webp" alt="" loading="lazy"><span>La Calata di San Filippo</span></a><a class="adc-file" href="/adc/atlante/"><img src="/images/adc-social/atlante-v3.png" alt="" loading="lazy"><span>Atlante documentario</span></a></div></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-grid"><div><strong>Michele Bottino</strong><p>Scrittore e saggista. Romanzi, saggi e scrittura; accanto, la ricerca documentaria.</p><small>© 2026 Michele Bottino. Tutti i diritti riservati.</small></div><div><b>Navigazione</b><p><a href="/biografia/">Autore</a><a href="/opere/">Opere</a><a href="/articoli/">Scritti</a><a href="/formazione/">Formazione</a><a href="/contatti/">Contatti</a></p></div><div><b>Archivio ADC</b><p><a href="/adc/">Archivio</a><a href="/adc/fonti/">Fonti</a><a href="/adc/atlante/">Atlante</a><a href="/adc/mediateca/">Mediateca</a><a href="/adc/elena/">Elena</a></p><p><a href="/privacy/">Privacy</a><a href="/cookie/">Cookie</a><a href="/disclaimer/">Disclaimer</a></p></div></div></footer>
 <script defer src="/analytics-consenso.js"></script><script defer src="/pwa-init.js"></script>
