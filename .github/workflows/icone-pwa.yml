@@ -1,0 +1,42 @@
+name: Pubblica icone premium PWA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/icone-pwa.yml'
+permissions:
+  contents: write
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Converti icona premium in PNG Android e iOS
+        run: |
+          python -m pip install --disable-pip-version-check pillow pillow-avif-plugin
+          python - <<'PY'
+          from PIL import Image
+          import pillow_avif
+          from pathlib import Path
+          image = Image.open('icons/mb-premium-192.avif').convert('RGB')
+          for size in (192,512):
+              image.resize((size,size),Image.Resampling.LANCZOS).save(f'icons/mb-{size}.png',optimize=True)
+          PY
+      - name: Controlla dimensioni e salva
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          for size in (192,512):
+              with Image.open(f'icons/mb-{size}.png') as im:
+                  assert im.size==(size,size)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add icons/mb-192.png icons/mb-512.png
+          if ! git diff --cached --quiet; then
+            git commit -m "PWA: aggiorna icone PNG Android e iOS"
+            git push
+          fi
