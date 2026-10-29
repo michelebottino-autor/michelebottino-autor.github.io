@@ -1,0 +1,43 @@
+/* ADC: interfaccia archivistica pagine interne — esclusivamente stile.
+   Compatibile con navigazione-unificata.js, Elena, tabelle e player video. */
+body.adc-inner-2026{--adc-ui-night:#0c202e;--adc-ui-ink:#213746;--adc-ui-gold:#b99b67;--adc-ui-line:#dbe4e6;--adc-ui-paper:#f4f4f0;background:#f4f4f0!important;color:#213746!important}
+body.adc-inner-2026 #adc-unified-header{background:#0c202e!important;border-bottom:2px solid #b99b67!important;color:#f2f6f7!important;z-index:2500!important;box-shadow:0 8px 24px #1129361b!important}
+body.adc-inner-2026 #adc-unified-header .adc-u-bar{max-width:1250px!important;padding:14px 20px!important}
+body.adc-inner-2026 #adc-unified-header .adc-u-brand{color:#f6f6f1!important;font:700 clamp(1.05rem,2.5vw,1.48rem)/1.22 Georgia,serif!important}
+body.adc-inner-2026 #adc-unified-header .adc-u-brand small{color:#d5bd8f!important;font-size:.72rem!important}
+body.adc-inner-2026 #adc-unified-header .adc-u-links{max-width:1250px!important;padding:0 20px 13px!important;gap:5px 10px!important}
+body.adc-inner-2026 #adc-unified-header .adc-u-links a{color:#dee8ed!important;min-height:43px;padding:9px 13px!important;border-radius:6px!important;display:inline-flex;align-items:center;font-weight:600}
+body.adc-inner-2026 #adc-unified-header .adc-u-links a:is(:hover,[aria-current=page]){background:#284653!important;color:#f6dba6!important}
+body.adc-inner-2026 #adc-unified-header .adc-u-toggle{border:1px solid #c5a875!important;background:#c5a87514!important;color:white!important}
+body.adc-inner-2026 main#contenuto,body.adc-inner-2026 main.adc-unified-page{max-width:1200px!important;width:100%;margin-inline:auto!important;padding:clamp(18px,2.5vw,32px)!important;background:transparent!important}
+body.adc-inner-2026 main :is(p,li,figcaption){hyphens:none!important;-webkit-hyphens:none!important;word-break:normal!important;overflow-wrap:break-word!important}
+body.adc-inner-2026 main :is(h1,h2,h3){text-wrap:balance}
+body.adc-inner-2026 main h1{color:#103543!important;font:700 clamp(2rem,4.2vw,3.4rem)/1.12 Georgia,serif!important;letter-spacing:-.025em}
+body.adc-inner-2026 main h2{color:#153b48}
+body.adc-inner-2026 main a:not(.adc-unified-nav a){text-underline-offset:3px}
+body.adc-inner-2026 main :is(a,button,input):focus-visible{outline:3px solid #b99b67!important;outline-offset:3px!important}
+body.adc-inner-2026 main :is(img,iframe){max-width:100%}
+body.adc-inner-2026 main :is(.card,.adc-feature,.adc-scholars-access,.media-note,.media-videos,.adc-photo-context){border-color:#dbe4e6!important;border-radius:13px!important;box-shadow:0 8px 24px #11293609}
+body.adc-inner-2026 main :is(.adc-scholars-access,.media-note){background:#fff!important}
+body.adc-inner-2026 main .adc-scholars-access{padding:clamp(20px,3vw,36px)!important;margin-bottom:20px!important;border-top:3px solid #b99b67!important}
+body.adc-inner-2026 main .adc-scholars-access h2{color:#123b48!important}
+body.adc-inner-2026 main .adc-scholars-grid a{border-radius:9px!important}
+body.adc-inner-2026 main .adc-photo-feature{max-width:100%;overflow:hidden;border-radius:12px!important}
+body.adc-inner-2026 main .adc-photo-feature img{display:block;width:100%;height:auto;object-fit:cover}
+body.adc-inner-2026 main .media-topics{display:flex;flex-wrap:wrap;gap:9px;padding:16px 0!important}
+body.adc-inner-2026 main .media-topics a{min-height:45px;display:inline-flex;align-items:center;gap:6px;border:1px solid #d3e0e1!important;background:#fff!important;border-radius:8px!important;text-decoration:none!important;color:#173c47!important;padding:9px 13px!important}
+body.adc-inner-2026 main .media-videos{background:#fff!important}
+body.adc-inner-2026>footer.adc-inner-footer{display:block!important;max-width:none!important;width:100%!important;margin:0!important;padding:0!important;background:#0c202e!important;color:#dce8e8!important;border:0!important;border-top:2px solid #b99b67!important;font:15px/1.55 system-ui,sans-serif!important}
+.adc-inner-footer *{box-sizing:border-box}
+.adc-inner-footer__grid{max-width:1250px;margin:auto;padding:38px clamp(18px,3.5vw,44px) 28px;display:grid;grid-template-columns:minmax(0,1.35fr) repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,39px)}
+.adc-inner-footer__brand{color:#fff!important;text-decoration:none!important;font:700 1.2rem/1.24 Georgia,serif!important}
+.adc-inner-footer__brand small{display:block;color:#d7bb84;font:600 .7rem/1.4 system-ui,sans-serif;margin-top:6px}
+.adc-inner-footer__about p{color:#b6c9ce!important;font-size:.89rem;line-height:1.6;margin:12px 0 0}
+body.adc-inner-2026>footer.adc-inner-footer nav.adc-inner-footer__links{display:flex!important;flex-direction:column!important;justify-content:flex-start!important;align-items:flex-start!important;flex-wrap:nowrap!important;gap:0!important;min-width:0;width:auto;margin:0!important;padding:0!important;background:none!important;border:0!important}
+.adc-inner-footer__links h2{color:#d7bb84!important;font:650 .94rem/1.3 system-ui,sans-serif!important;margin:0 0 9px!important}
+.adc-inner-footer__links a{color:#e1eaec!important;text-decoration:none!important;font:.89rem/1.42 system-ui,sans-serif!important;display:inline-flex;align-items:center;min-height:40px;padding:6px 0;margin:0!important}
+.adc-inner-footer__links a:hover{color:#e6c790!important;text-decoration:underline!important}
+.adc-inner-footer__bottom{max-width:1250px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid #ffffff2b;padding:17px clamp(18px,3.5vw,44px) 24px;color:#aec2c5;font-size:.79rem}
+.adc-inner-footer__bottom a{color:#d7bb84!important;text-decoration:none!important}
+@media(max-width:980px){.adc-inner-footer__grid{grid-template-columns:repeat(3,minmax(0,1fr))}.adc-inner-footer__about{grid-column:1/-1}}
+@media(max-width:760px){body.adc-inner-2026 #adc-unified-header .adc-u-links[data-open=true]{display:flex!important;flex-direction:column!important;width:100%;max-height:70dvh;overflow-y:auto;padding:4px 16px 16px!important}body.adc-inner-2026 #adc-unified-header .adc-u-links a{display:flex!important;width:100%;white-space:normal!important;overflow-wrap:break-word!important;min-height:47px!important}body.adc-inner-2026 main#contenuto,body.adc-inner-2026 main.adc-unified-page{padding:15px 16px 29px!important}body.adc-inner-2026 main .adc-scholars-access{padding:19px 16px!important}body.adc-inner-2026 main .media-topics a{width:100%;justify-content:space-between}.adc-inner-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:21px 17px;padding:28px 18px 23px}.adc-inner-footer__about{grid-column:1/-1}.adc-inner-footer__links:last-child{grid-column:1/-1}}
