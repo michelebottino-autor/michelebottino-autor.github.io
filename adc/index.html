@@ -134,6 +134,17 @@ p{max-width:76ch}
 .adc-curiosita-grid p{font-size:.96rem;line-height:1.58;margin:0 0 16px;color:#354657}
 .adc-curiosita-grid a{margin-top:auto;color:#184f81;font-weight:700;text-underline-offset:3px}
 @media(max-width:800px){.adc-curiosita-grid{grid-template-columns:1fr}.adc-curiosita{padding:19px 15px}.adc-curiosita-grid article{padding:17px}}
+
+/* Accessi paralleli allo stesso patrimonio: nessuna duplicazione documentaria */
+.adc-ingressi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:18px 0 25px}
+.adc-ingresso{display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:15px;border:1px solid #bccbd2;text-decoration:none!important;color:#153247!important;min-width:0}
+.adc-ingresso-cittadini{background:#f4f0e6}.adc-ingresso-studiosi{background:#e8eef1}
+.adc-ingresso-label{font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#725b3d}
+.adc-ingresso strong{font:700 clamp(1.3rem,2.5vw,1.8rem)/1.2 Georgia,serif}
+.adc-ingresso>span:not(.adc-ingresso-label):not(.adc-ingresso-action){line-height:1.5}
+.adc-ingresso-action{margin-top:auto;padding-top:9px;color:#1c557d;font-weight:750}
+.adc-ingresso:hover,.adc-ingresso:focus-visible{outline:2px solid #a77c47;outline-offset:2px}
+@media(max-width:760px){.adc-ingressi{grid-template-columns:1fr;gap:11px;margin:12px 0 20px}.adc-ingresso{padding:19px}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
@@ -215,6 +226,10 @@ main#contenuto p,main#contenuto li{hyphens:none!important;overflow-wrap:break-wo
   <p><strong>Una ricerca indipendente a cura di Michele Bottino, aperta gratuitamente alla comunità.</strong></p>
   <figure><img src="/adc/assets/foto-territorio/veduta-calatabiano-2026.webp" alt="Panorama del territorio di Calatabiano e dell'Etna" width="1280" height="459" loading="eager" fetchpriority="high"><figcaption>Il territorio di Calatabiano. Foto: <a href="https://commons.wikimedia.org/wiki/File:Calatabiano_-_Calatabiano_-_2026-09-30_13-57-28_001.jpg">Effems / Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</figcaption></figure>
 </section>
+<nav class="adc-ingressi" aria-label="Scegli il percorso di consultazione">
+  <a class="adc-ingresso adc-ingresso-cittadini" href="/adc/storia-per-tutti/"><span class="adc-ingresso-label">Per cittadini e visitatori</span><strong>Scopri e racconta la storia</strong><span>Luoghi, vicende e tradizioni di Calatabiano, con un linguaggio accessibile.</span><span class="adc-ingresso-action">Entra nel percorso narrativo →</span></a>
+  <a class="adc-ingresso adc-ingresso-studiosi" href="/adc/fonti/"><span class="adc-ingresso-label">Per storici, archivisti e ricercatori</span><strong>Consulta fonti e dossier</strong><span>Attestazioni, bibliografia, rinvii archivistici e questioni ancora aperte.</span><span class="adc-ingresso-action">Entra nel percorso scientifico →</span></a>
+</nav>
 <section class="adc-visual-access" aria-labelledby="adc-access-title">
   <h2 id="adc-access-title">Scopri la storia del tuo paese</h2>
   <p>Scegli un argomento: ogni percorso conduce alle ricostruzioni storiche e alle testimonianze disponibili.</p>
