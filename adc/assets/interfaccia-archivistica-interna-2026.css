@@ -41,3 +41,13 @@ body.adc-inner-2026>footer.adc-inner-footer nav.adc-inner-footer__links{display:
 .adc-inner-footer__bottom a{color:#d7bb84!important;text-decoration:none!important}
 @media(max-width:980px){.adc-inner-footer__grid{grid-template-columns:repeat(3,minmax(0,1fr))}.adc-inner-footer__about{grid-column:1/-1}}
 @media(max-width:760px){body.adc-inner-2026 #adc-unified-header .adc-u-links[data-open=true]{display:flex!important;flex-direction:column!important;width:100%;max-height:70dvh;overflow-y:auto;padding:4px 16px 16px!important}body.adc-inner-2026 #adc-unified-header .adc-u-links a{display:flex!important;width:100%;white-space:normal!important;overflow-wrap:break-word!important;min-height:47px!important}body.adc-inner-2026 main#contenuto,body.adc-inner-2026 main.adc-unified-page{padding:15px 16px 29px!important}body.adc-inner-2026 main .adc-scholars-access{padding:19px 16px!important}body.adc-inner-2026 main .media-topics a{width:100%;justify-content:space-between}.adc-inner-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:21px 17px;padding:28px 18px 23px}.adc-inner-footer__about{grid-column:1/-1}.adc-inner-footer__links:last-child{grid-column:1/-1}}
+
+/* Capitoli narrativi: conservare #top-storia, usato nei collegamenti interni. */
+body.adc-inner-2026 main#top-storia{max-width:1200px!important;width:100%!important;margin-inline:auto!important;padding:clamp(18px,2.5vw,32px)!important;background:transparent!important}
+body.adc-inner-2026 main#top-storia h1{font:700 clamp(2rem,4.2vw,3.4rem)/1.12 Georgia,serif!important;color:#103543!important;letter-spacing:-.025em}
+body.adc-inner-2026 main#top-storia .routes{border:1px solid #dbe4e6!important;background:#fff!important;border-radius:14px!important;padding:clamp(14px,2vw,22px)!important}
+body.adc-inner-2026 main#top-storia .route{border-color:#dce5e4!important;background:#f8faf9!important;border-radius:10px!important}
+body.adc-inner-2026 main#top-storia :is(.sources,.note){border-radius:12px!important}
+body.adc-inner-2026 main#top-storia :is(p,li){hyphens:none!important;-webkit-hyphens:none!important;word-break:normal!important;overflow-wrap:break-word!important}
+body.adc-inner-2026 main#top-storia :is(a,button):focus-visible{outline:3px solid #b99b67!important;outline-offset:3px}
+@media(max-width:760px){body.adc-inner-2026 main#top-storia{padding:15px 16px 29px!important}}
