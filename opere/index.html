@@ -9,7 +9,7 @@
 <meta content="Michele Bottino" name="author"/>
 <meta content="index, follow" name="robots"/>
 <meta content="index, follow, max-image-preview:large" name="googlebot"/>
-<meta content="#f7f5f0" name="theme-color"/>
+<meta content="#0A1A3A" name="theme-color"/>
 <link href="https://michelebottino-autor.github.io/opere/" rel="canonical"/>
 <meta content="default-src 'self';
     script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
@@ -284,6 +284,25 @@ p{max-width:76ch}
   .unified-links a { display:block; box-sizing:border-box; width:100%; padding:12px 14px; border-radius:10px; text-align:center; font-family:system-ui,-apple-system,Segoe UI,sans-serif; font-size:.95rem; font-weight:600; line-height:1.35; }
   .unified-links a.unified-primary { color:#fff; }
 }
+
+/* Uniformazione Opere v1 — presentazione blu notte/oro, contenuti bibliografici invariati */
+body{background:#f8f9fa;color:#172b46}
+#contenuto{background:#f8f9fa;max-width:1220px}
+#contenuto .editorial-breadcrumb{margin:0 0 15px;padding:16px 8px;color:#55657a;font-size:.88rem}
+#contenuto .mockup-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(200px,.65fr);align-items:center;gap:28px;margin:0 0 26px;padding:clamp(24px,4vw,52px)!important;background:linear-gradient(115deg,#07162b,#102c4b)!important;color:#fff!important;border-radius:13px!important;border:1px solid #c49b5a55!important}
+#contenuto .mockup-hero__copy h1{color:#fff!important;font:700 clamp(2.2rem,4vw,3.9rem)/1.12 Georgia,serif!important}
+#contenuto .mockup-hero__eyebrow{color:#dfb979!important;letter-spacing:.12em}
+#contenuto .mockup-hero__summary{color:#e3eaf3!important;max-width:66ch;line-height:1.65}
+#contenuto .mockup-hero__link{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;border-radius:7px;background:#c49b5a!important;color:#081a32!important;text-decoration:none;font-weight:700}
+#contenuto .mockup-hero__visual{min-width:0}
+#contenuto .mockup-hero__visual img{display:block;width:auto;max-width:100%;height:auto;max-height:320px;object-fit:contain!important;margin:0 auto;padding:12px!important;background:#eee7dd!important;border-radius:8px}
+#contenuto h2,#contenuto h3{color:#0a1a3a}
+#contenuto .unified-book-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+#contenuto .unified-book{min-width:0;background:#fff;border:1px solid #dfe5eb;border-top:3px solid #c49b5a;border-radius:11px;box-shadow:0 8px 24px #0a1a3a0a;padding:20px;scroll-margin-top:90px}
+#contenuto .unified-book img{max-width:100%;height:auto;object-fit:contain}
+#contenuto a:focus-visible{outline:3px solid #c49b5a;outline-offset:4px}
+@media(max-width:850px){#contenuto .mockup-hero{grid-template-columns:minmax(0,1fr) minmax(130px,.45fr);gap:16px}#contenuto .unified-book-list{grid-template-columns:1fr}}
+@media(max-width:600px){#contenuto{padding-left:16px!important;padding-right:16px!important}#contenuto .mockup-hero{grid-template-columns:1fr;padding:23px 19px!important}#contenuto .mockup-hero__visual img{max-height:230px}#contenuto .unified-book{padding:16px}#contenuto .editorial-breadcrumb{padding:12px 0}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
