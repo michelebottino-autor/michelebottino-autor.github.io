@@ -191,6 +191,16 @@
 .footer-bottom a{color:#d8bf98;text-decoration:none;white-space:nowrap;font-weight:600}
 @media(max-width:1000px){.footer-refined{grid-template-columns:repeat(3,minmax(0,1fr))}.footer-about{grid-column:1/-1}.footer-about p{max-width:65ch}}
 @media(max-width:600px){.footer-refined{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px;row-gap:27px;padding-top:30px;padding-bottom:22px}.footer-about{grid-column:1/-1}.footer-logo{font-size:1.26rem!important}.footer-monogram{font-size:2rem}.footer-about p{font-size:.9rem}.footer-column h2{font-size:.94rem}.footer-column a{font-size:.87rem;overflow-wrap:anywhere}.footer-column:last-child{grid-column:1/-1}.footer-column:last-child ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.footer-bottom{padding-top:15px;padding-bottom:22px;align-items:flex-start;font-size:.76rem}.footer-bottom span{max-width:26ch}}
+
+/* Footer smartphone: corregge conflitto CSS storico .footer a su brand.
+   Il collegamento PWA è incluso nella lista Informazioni, non aggiunto fuori griglia. */
+.footer .footer-logo{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-start!important;gap:17px!important;margin:0 0 20px!important;max-width:100%;width:max-content;min-width:0}
+.footer .footer-logo>.footer-monogram{display:block;flex:0 0 auto;font:2rem/1 Georgia,serif;color:#c49b5a;border-right:1px solid #c49b5a;padding-right:15px;margin-right:0}
+.footer .footer-logo>span:last-child{display:flex;min-width:0;flex-direction:column;align-items:flex-start;font:1.34rem/1.18 Georgia,serif;white-space:normal;overflow-wrap:break-word}
+.footer .footer-logo small{font:600 .6rem/1.6 system-ui,sans-serif;letter-spacing:.075em;white-space:normal}
+.footer .footer-column a{display:inline-flex!important;margin:0!important}
+.footer .pwa-install-link{max-width:1280px;margin:0 auto;padding:0 20px 22px;font-size:.85rem}
+@media(max-width:600px){.footer .footer-logo{gap:14px!important}.footer .footer-logo>.footer-monogram{font-size:1.9rem;padding-right:13px}.footer .footer-logo>span:last-child{font-size:1.27rem}.footer .footer-logo small{font-size:.55rem}.footer-bottom{padding-bottom:34px}}
 @media(prefers-reduced-motion:reduce){.home-share-button{transition:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style><link rel="stylesheet" href="/assets/css/mb-navigation-final.css"></head>
 <body>
@@ -229,7 +239,7 @@
   </div>
   <nav class="footer-column" aria-label="Collegamenti autore"><h2>Il sito dell'autore</h2><ul><li><a href="/biografia/">Biografia</a></li><li><a href="/opere/">Libri e opere</a></li><li><a href="/poetica/">Poetica</a></li><li><a href="/articoli/">Articoli e scritti</a></li><li><a href="/formazione/">Formazione</a></li><li><a href="/contatti/">Contatti</a></li></ul></nav>
   <nav class="footer-column" aria-label="Collegamenti Archivio ADC"><h2>Archivio Documentale</h2><ul><li><a href="/adc/">Laboratorio ADC</a></li><li><a href="/adc/fonti/">Fonti e documenti</a></li><li><a href="/adc/atlante/">Atlante</a></li><li><a href="/adc/mediateca/">Mediateca</a></li><li><a href="/adc/elena/">Elena</a></li></ul></nav>
-  <nav class="footer-column" aria-label="Informazioni legali"><h2>Informazioni</h2><ul><li><a href="/privacy/">Privacy</a></li><li><a href="/cookie/">Cookie</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/sitemap.xml">Mappa del sito</a></li></ul></nav>
+  <nav class="footer-column" aria-label="Informazioni legali"><h2>Informazioni</h2><ul><li><a href="/privacy/">Privacy</a></li><li><a href="/cookie/">Cookie</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/sitemap.xml">Mappa del sito</a></li><li><a href="/installa/">Installa il sito</a></li></ul></nav>
 </div>
 <div class="wrap footer-bottom"><span>© 2026 Michele Bottino. Tutti i diritti riservati.</span><a href="#contenuto">Torna all'inizio ↑</a></div>
 </footer>
