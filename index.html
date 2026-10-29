@@ -148,6 +148,14 @@
 .adc-file span{white-space:normal;overflow-wrap:break-word}
 @media(max-width:600px){.adc-grid{gap:22px}.adc-preview{padding:13px}.adc-files{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.adc-preview-heading strong{font-size:1.08rem}.adc-file span{font-size:.79rem;line-height:1.42}}
 @media(max-width:360px){.adc-files{grid-template-columns:1fr}.adc-file img{height:150px}}
+
+/* ADC: terza scheda panoramica in mobile; evita l'ultimo elemento isolato. */
+@media(min-width:361px) and (max-width:600px){
+ .adc-files>.adc-file:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);min-height:112px;align-items:stretch}
+ .adc-files>.adc-file:last-child:nth-child(odd) img{width:100%;height:100%;min-height:112px;object-fit:cover}
+ .adc-files>.adc-file:last-child:nth-child(odd) span{display:flex;align-items:center;padding:12px;font-size:.93rem;line-height:1.4}
+}
+.adc-file:focus-visible{outline:3px solid #f1c77f;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style><link rel="stylesheet" href="/assets/css/mb-navigation-final.css"></head>
 <body>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
