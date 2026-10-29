@@ -221,6 +221,16 @@
 .home-training a:focus-visible{outline:3px solid #f2c779;outline-offset:4px}
 @media(max-width:850px){.home-training-head{align-items:start;flex-direction:column}.home-training-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.home-training{padding:35px 0 39px}.home-training-grid{grid-template-columns:1fr;gap:11px}.home-training-card{padding:19px}.home-training-card h3{font-size:1.23rem}.home-training-head>.pill{width:100%;max-width:340px}.home-training-head{margin-bottom:20px}}
+
+/* Identità accademica: ORCID come riferimento, non certificazione */
+.author-identifier{margin-top:19px;margin-bottom:4px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
+.author-identifier-label{font:600 .7rem/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.11em;color:#cad6e5}
+.author-identifier a{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:44px;border:1px solid #e0c28b80;border-radius:8px;background:#ffffff10;color:#fff;text-decoration:none;padding:8px 11px;font-size:.86rem;max-width:100%;overflow-wrap:anywhere}
+.author-identifier a:hover{border-color:#c49b5a;background:#ffffff1d}
+.author-identifier a:focus-visible{outline:3px solid #efc67d;outline-offset:4px}
+.author-orcid-symbol{display:inline-flex;align-items:center;justify-content:center;flex:none;width:26px;height:26px;border-radius:50%;background:#a6ce39;color:#172118;font:700 14px/1 system-ui,sans-serif}
+.author-orcid-number{font-variant-numeric:tabular-nums;white-space:nowrap;color:#f4dbaa}
+@media(max-width:370px){.author-identifier a{font-size:.77rem;padding:8px}.author-orcid-number{white-space:normal}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style><link rel="stylesheet" href="/assets/css/mb-navigation-final.css"></head>
 <body>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
@@ -228,7 +238,7 @@
 <main id="contenuto">
 <section class="hero" aria-labelledby="hero-title"><div class="hero-grid">
  <div class="hero-photo"><img src="/images/michele-bottino-foto-ufficiale.webp" alt="Ritratto ufficiale di Michele Bottino" width="650" height="800" fetchpriority="high"></div>
- <div class="hero-copy"><span class="eyebrow">Michele Bottino</span><h1 id="hero-title">Romanzi, saggi e <em>il valore delle parole</em></h1><p class="lead">Michele Bottino è scrittore e autore di romanzi e saggi. Attraverso la narrativa esplora persone, vicende e scelte; attraverso la saggistica affronta temi culturali e sociali. Accanto ai libri coltiva la ricerca storico-documentaria.</p><div class="hero-actions"><a class="pill gold" href="/opere/">Scopri i libri <span aria-hidden="true">→</span></a><a class="pill outline" href="/biografia/">Conosci l’autore <span aria-hidden="true">→</span></a></div></div>
+ <div class="hero-copy"><span class="eyebrow">Michele Bottino</span><h1 id="hero-title">Romanzi, saggi e <em>il valore delle parole</em></h1><p class="lead">Michele Bottino è scrittore e autore di romanzi e saggi. Attraverso la narrativa esplora persone, vicende e scelte; attraverso la saggistica affronta temi culturali e sociali. Accanto ai libri coltiva la ricerca storico-documentaria.</p><div class="author-identifier"><span class="author-identifier-label">Identificativo autore e ricercatore</span><a href="https://orcid.org/0009-0009-2797-9267" target="_blank" rel="noopener noreferrer" aria-label="Apri il profilo ORCID di Michele Bottino, identificativo 0009-0009-2797-9267"><span class="author-orcid-symbol" aria-hidden="true">iD</span><span>ORCID <span class="author-orcid-number">0009-0009-2797-9267</span></span><span aria-hidden="true">↗</span></a></div><div class="hero-actions"><a class="pill gold" href="/opere/">Scopri i libri <span aria-hidden="true">→</span></a><a class="pill outline" href="/biografia/">Conosci l’autore <span aria-hidden="true">→</span></a></div></div>
  <figure class="hero-land" style="margin:0"><img src="/adc/assets/foto-territorio/veduta-calatabiano-2026.webp" alt="Veduta del territorio di Calatabiano e dell'Etna" loading="lazy"><figcaption>La memoria dei luoghi attraverso le fonti.</figcaption></figure>
 </div></section>
 <div class="intro-strip"><div class="two-paths wrap"><div class="path"><b aria-hidden="true">✦</b><span><strong>Narrativa e saggistica</strong><small>Libri, scrittura, articoli e poetica</small></span></div><div class="path"><b aria-hidden="true">▤</b><span><strong>Ricerca storico-documentaria</strong><small>L’Archivio Documentale Calatabiano è un’attività distinta</small></span></div></div></div>
