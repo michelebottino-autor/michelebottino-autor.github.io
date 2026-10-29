@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "title": "Michele Bottino",
+  "subtitle": "Opere e Archivio Documentale Calatabiano",
+  "items": [
+    {
+      "title": "Archivio Documentale",
+      "description": "Calatabiano: storia, tradizioni e fonti",
+      "symbol": "▤",
+      "url": "https://michelebottino-autor.github.io/adc/"
+    },
+    {
+      "title": "Area per studiosi",
+      "description": "Documenti e dossier scientifici",
+      "symbol": "⌑",
+      "url": "https://michelebottino-autor.github.io/adc/fonti/"
+    },
+    {
+      "title": "Opere e pubblicazioni",
+      "description": "Libri e scritti dell'autore",
+      "symbol": "▣",
+      "url": "https://michelebottino-autor.github.io/opere/"
+    },
+    {
+      "title": "Cerca nell'ADC",
+      "description": "Ricerca documentaria",
+      "symbol": "⌕",
+      "url": "https://michelebottino-autor.github.io/adc/cerca/"
+    }
+  ]
+}
