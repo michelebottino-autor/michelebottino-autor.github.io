@@ -178,6 +178,33 @@ body>header.mb-nav .mb-mark{color:#c49b5a!important}
  body>header.mb-nav details.mb-mobile:not([open]) nav.mb-dropdown{display:none!important}
 }
 @media(max-width:760px){#contenuto{padding-top:4px!important}#contenuto .editorial-breadcrumb{padding:9px 16px!important;margin:0 auto 9px!important}#contenuto .mockup-hero{margin-top:0!important}#contenuto .mockup-hero__summary{font-size:1rem!important;line-height:1.65!important}}
+
+/* Biografia: lettura continua, spaziature editoriali e footer condiviso */
+#contenuto>.container.page-header,#contenuto>.container.section{margin-top:0!important;margin-bottom:0!important;padding-top:12px!important;padding-bottom:12px!important}
+#contenuto>.container.section:last-of-type{padding-bottom:38px!important}
+#contenuto .content-box,#contenuto .page-header-box{margin-top:0!important;margin-bottom:0!important;padding:clamp(18px,3vw,30px)!important}
+#contenuto .info-grid{gap:14px!important}
+#contenuto .info-box{padding:clamp(17px,2.7vw,25px)!important}
+#contenuto .content-box p,#contenuto .page-header-box p{line-height:1.7!important}
+body>footer.bio-footer{display:block!important;max-width:none!important;width:100%!important;margin:0!important;padding:0!important;background:#061429!important;color:#dce4ef!important;border:0!important;border-top:2px solid #c49b5a!important;font:15px/1.55 system-ui,sans-serif!important}
+.bio-footer *{box-sizing:border-box}
+.bio-footer-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);max-width:1280px;margin:auto;padding:40px clamp(17px,3vw,40px) 32px}
+.bio-footer-about{min-width:0}
+.bio-footer-brand{display:flex!important;align-items:center!important;gap:16px!important;margin:0 0 17px!important;text-decoration:none!important;color:#fff!important;font:1.35rem/1.2 Georgia,serif!important}
+.bio-footer-mark{flex:none;border-right:1px solid #c49b5a;padding-right:14px;color:#c49b5a;font:2.1rem/1 Georgia,serif}
+.bio-footer-brand small{display:block;color:#b9c9d9;font:600 .62rem/1.7 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;margin-top:3px}
+.bio-footer-about p{max-width:35ch;color:#bbc9d8;font-size:.91rem;margin:0}
+body>footer.bio-footer nav.bio-footer-links{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:flex-start!important;justify-content:flex-start!important;min-width:0!important;width:auto!important;gap:0!important;padding:0!important;margin:0!important;background:none!important}
+.bio-footer-links h2{color:#e7c17e!important;font:600 1rem/1.3 system-ui,sans-serif!important;margin:0 0 10px!important}
+.bio-footer-links a{display:inline-flex!important;align-items:center!important;min-height:39px!important;margin:0!important;padding:5px 0!important;color:#e1e9f4!important;font:.91rem/1.4 system-ui,sans-serif!important;text-decoration:none!important}
+.bio-footer-links a:hover,.bio-footer-bottom a:hover{color:#e7c17e!important;text-decoration:underline!important}
+.bio-footer-bottom{display:flex;justify-content:space-between;gap:18px;border-top:1px solid #ffffff33;max-width:1280px;margin:auto;padding:17px clamp(17px,3vw,40px) 24px;color:#b4c2d3;font-size:.79rem}
+.bio-footer-bottom a{color:#e7c17e!important;text-decoration:none}
+.bio-footer-counter{max-width:1280px;margin:auto;padding:0 clamp(17px,3vw,40px) 17px;color:#b4c2d3;font-size:.79rem}
+.bio-footer-counter summary{cursor:pointer;color:#b4c2d3!important;font-size:.8rem}
+.bio-footer-counter .visit-counter{margin:7px 0}
+@media(max-width:980px){.bio-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.bio-footer-about{grid-column:1/-1}}
+@media(max-width:600px){#contenuto>.container.page-header,#contenuto>.container.section{padding-top:9px!important;padding-bottom:9px!important}#contenuto .content-box,#contenuto .page-header-box{padding:19px!important}#contenuto .content-box p,#contenuto .page-header-box p{font-size:1rem!important;line-height:1.7!important}.bio-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;padding:30px 17px 23px}.bio-footer-about{grid-column:1/-1}.bio-footer-links:last-child{grid-column:1/-1}.bio-footer-links a{font-size:.85rem!important;overflow-wrap:anywhere}.bio-footer-brand{font-size:1.23rem!important}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
@@ -268,18 +295,7 @@ body>header.mb-nav .mb-mark{color:#c49b5a!important}
 </div>
 </section>
 </main>
-<footer class="container">
-<p>
-    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
-    <br/>
-<a href="../privacy/">Privacy Policy</a> |
-    <a href="../cookie/">Cookie Policy</a> |
-    <a href="../disclaimer/">Disclaimer</a>
-</p>
-<div class="visit-counter">
-    Visite: <span id="v-count">...</span>
-</div>
-</footer>
+<footer class="bio-footer" aria-label="Informazioni e collegamenti del sito"><div class="bio-footer-grid"><div class="bio-footer-about"><a class="bio-footer-brand" href="/"><span class="bio-footer-mark" aria-hidden="true">MB</span><span>Michele Bottino<small>Scrittore · Saggista · Autore</small></span></a><p>Romanzi, saggi e scrittura. Accanto all'attività letteraria, la ricerca documentaria.</p></div><nav class="bio-footer-links" aria-label="Navigazione autore"><h2>Il sito dell'autore</h2><a href="/biografia/" aria-current="page">Biografia</a><a href="/opere/">Libri e opere</a><a href="/poetica/">Poetica</a><a href="/articoli/">Articoli e scritti</a><a href="/formazione/">Formazione</a><a href="/contatti/">Contatti</a></nav><nav class="bio-footer-links" aria-label="Archivio Documentale"><h2>Archivio Documentale</h2><a href="/adc/">Laboratorio ADC</a><a href="/adc/fonti/">Fonti e documenti</a><a href="/adc/atlante/">Atlante</a><a href="/adc/mediateca/">Mediateca</a><a href="/adc/elena/">Elena</a></nav><nav class="bio-footer-links" aria-label="Informazioni"><h2>Informazioni</h2><a href="/privacy/">Privacy</a><a href="/cookie/">Cookie e statistiche</a><a href="/disclaimer/">Disclaimer</a><a href="/sitemap.xml">Mappa del sito</a><a href="/installa/">Installa il sito</a></nav></div><div class="bio-footer-bottom"><span>© 2026 Michele Bottino. Tutti i diritti riservati.</span><a href="#contenuto">Torna all'inizio ↑</a></div><details class="bio-footer-counter"><summary>Informazioni sul contatore</summary><div class="visit-counter">Visite: <span id="v-count">...</span></div></details></footer>
 <script>
 function setMenuExpandedState(isExpanded) {
   const toggle = document.getElementById("menu-toggle");
