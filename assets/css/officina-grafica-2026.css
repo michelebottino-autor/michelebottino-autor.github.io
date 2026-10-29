@@ -1,0 +1,58 @@
+/* Officina delle Storie — layout coordinato autore, ottobre 2026.
+   Conserva struttura del catalogo e logiche JS di lingua/filtri. */
+#mb-common-header{background:#07162b!important;color:#f3f6fb!important;border-bottom:2px solid #c49b5a!important;z-index:2000}
+#mb-common-header .mbc-brand{font-weight:700;color:#fff!important}
+#mb-common-header .mbc-links a[aria-current=page],#mb-common-header .mbc-links a:hover{background:#243b59!important;color:#f6d28b!important}
+#mb-common-header button{border-color:#c49b5a!important;color:white!important}
+#mb-common-header .mbc-links{min-width:0}
+body.mb-editorial-scope{--mb-line:#d9e2ed;--mb-bronze:#c49b5a;accent-color:#c49b5a}
+body.mb-editorial-scope main{max-width:1200px}
+body.mb-editorial-scope main p,body.mb-editorial-scope main li{hyphens:none!important;-webkit-hyphens:none!important;word-break:normal!important;overflow-wrap:break-word!important}
+body.mb-editorial-scope a:focus-visible,body.mb-editorial-scope button:focus-visible{outline:3px solid #e7c17e!important;outline-offset:3px}
+body.mb-editorial-scope>footer.school-site-footer{display:block!important;max-width:none!important;width:100%!important;margin:0!important;padding:0!important;text-align:left!important;border:0!important;border-top:2px solid #c49b5a!important;background:#061429!important;color:#dce4ef!important;font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif!important}
+.school-site-footer *{box-sizing:border-box}
+.school-footer-grid{display:grid;grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,38px);max-width:1280px;margin:auto;padding:38px clamp(17px,3vw,40px) 28px}
+.school-footer-brand{display:flex;align-items:center;gap:15px;color:#fff!important;text-decoration:none!important;font:1.28rem/1.2 Georgia,serif!important;margin-bottom:15px}
+.school-footer-mark{flex:none;border-right:1px solid #c49b5a;padding-right:13px;color:#c49b5a;font:2rem/1 Georgia,serif}
+.school-footer-brand small{display:block;color:#bccbdc;font:600 .63rem/1.65 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+.school-footer-about p{color:#bccbdc;font-size:.9rem;max-width:34ch;margin:0}
+body.mb-editorial-scope>footer.school-site-footer nav.school-footer-links{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;flex-wrap:nowrap!important;width:auto!important;min-width:0!important;gap:0!important;margin:0!important;padding:0!important;border:0!important;background:none!important}
+.school-footer-links h2{color:#e7c17e!important;font:650 1rem/1.3 system-ui,sans-serif!important;margin:0 0 9px!important}
+.school-footer-links a{display:inline-flex!important;align-items:center!important;min-height:39px!important;padding:5px 0!important;margin:0!important;color:#e1e9f4!important;font:.9rem/1.4 system-ui,sans-serif!important;text-decoration:none!important}
+.school-footer-links a:hover,.school-footer-bottom a:hover{color:#e7c17e!important;text-decoration:underline!important}
+.school-footer-bottom{max-width:1280px;margin:auto;border-top:1px solid #ffffff33;padding:17px clamp(17px,3vw,40px) 23px;color:#b6c4d2;font-size:.79rem}
+.school-footer-bottom a{color:#e7c17e!important;text-decoration:none!important}
+body.school-hub-unified{background:#f8f9fa!important;color:#172b46!important;--bg:#f8f9fa;--panel:#fff;--text:#172b46;--muted:#596a7c;--accent:#c49b5a;--line:#dce3ea;color-scheme:light}
+body.school-hub-unified main{padding-top:12px!important}
+body.school-hub-unified .hero{margin:8px 0 24px!important;border:1px solid #c49b5a77!important;background:linear-gradient(115deg,#07162b,#153454)!important;color:#e5edf6!important;box-shadow:0 10px 30px #0a1a3a15}
+body.school-hub-unified .hero h1{color:#fff!important}
+body.school-hub-unified .hero p{color:#e2eaf4!important}
+body.school-hub-unified .hero .eyebrow{color:#dcb777!important}
+body.school-hub-unified .hero .button{color:#061429!important;background:#c49b5a!important}
+body.school-hub-unified .school-counts span{color:#eaf1fa;border-color:#c49b5a88}
+body.school-hub-unified .hero-visual img{background:#102544!important;border-color:#c49b5a55!important}
+body.school-hub-unified .school-section{margin:18px 0 28px!important;padding:clamp(18px,3vw,30px);border-radius:12px;background:white;border:1px solid #e1e6ed}
+body.school-hub-unified .school-section h2,body.school-hub-unified .school-section h3{color:#0a1a3a!important}
+body.school-hub-unified .school-section>p,body.school-hub-unified .school-course p{color:#46566b!important}
+body.school-hub-unified .school-course{background:#f9fafc!important;border:1px solid #dae2ed!important;border-radius:11px!important;box-shadow:0 5px 14px #0a1a3a08}
+body.school-hub-unified .school-course .school-label{color:#84622f!important}
+body.school-hub-unified .school-tags span{background:#e8edf4!important;color:#263c56!important}
+body.school-hub-unified .school-course .button,body.school-hub-unified .school-section>.button{background:#0a1a3a!important;color:#fff!important;border:1px solid #0a1a3a!important;min-height:44px}
+body.school-hub-unified .school-planned span{color:#765b35!important}
+body.school-hub-unified .school-note{background:#f4f6fa!important;border-color:#c49b5a!important;color:#1e344f!important}
+body.school-catalog-unified{background:#f8f9fa!important;color:#172b46!important}
+body.school-catalog-unified main{padding-top:14px!important}
+body.school-catalog-unified main>.hero{padding:clamp(25px,4vw,48px)!important;margin:7px 0 21px!important;background:linear-gradient(115deg,#07162b,#153454)!important;border:1px solid #c49b5a77!important;border-radius:14px!important;color:#e3ecf6!important}
+body.school-catalog-unified main>.hero h1{color:#fff!important}
+body.school-catalog-unified main>.hero .eyebrow{color:#dcb777!important}
+body.school-catalog-unified main>.hero .lead{color:#e3ecf6!important;line-height:1.65}
+body.school-catalog-unified #school-quick-access{background:#fff!important;border:1px solid #dce3ec!important;margin-bottom:20px!important}
+body.school-catalog-unified .quick-courses a{border-color:#dce3ed!important;background:#f7f9fb!important}
+body.school-catalog-unified .quick-courses a span{color:#86652f!important}
+body.school-catalog-unified .course{border-color:#dce3ed!important}
+body.school-catalog-unified .course-head{background:linear-gradient(125deg,#07162b,#173c61)!important}
+body.school-catalog-unified .cta,body.school-catalog-unified .filters button[aria-pressed=true]{background:#0a1a3a!important;color:white!important}
+body.school-catalog-unified .filters button{min-height:43px}
+body.school-catalog-unified .course-body h3{overflow-wrap:break-word!important}
+@media(max-width:980px){.school-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.school-footer-about{grid-column:1/-1}}
+@media(max-width:700px){#mb-common-header .mbc-links[data-open=true]{display:flex!important;width:100%!important;max-height:70dvh;overflow-y:auto}#mb-common-header .mbc-links a{margin:0!important;min-height:46px!important;white-space:normal!important;overflow-wrap:break-word!important}.school-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 18px;padding:30px 17px 22px}.school-footer-about{grid-column:1/-1}.school-footer-links:last-child{grid-column:1/-1}.school-footer-links a{font-size:.85rem!important;overflow-wrap:anywhere}body.school-hub-unified main{padding:12px 15px 25px!important}body.school-hub-unified .hero{padding:21px 17px!important;margin:4px 0 16px!important}body.school-hub-unified .school-section{margin:13px 0!important;padding:18px 15px!important}body.school-hub-unified .school-grid{grid-template-columns:1fr!important;gap:12px!important}body.school-hub-unified .school-course{padding:17px!important}body.school-catalog-unified main{padding:10px 15px 35px!important}body.school-catalog-unified main>.hero{padding:23px 18px!important;margin:4px 0 14px!important}body.school-catalog-unified .quick-courses{grid-template-columns:1fr!important}}
