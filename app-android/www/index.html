@@ -4,9 +4,35 @@
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0d2928;color:#f6f0df;font:16px/1.5 system-ui,sans-serif;min-height:100dvh}header,main,footer{max-width:700px;margin:auto;padding:18px 20px}header{padding-top:max(24px,env(safe-area-inset-top));padding-bottom:8px}.eyebrow{letter-spacing:.16em;font-size:.7rem;color:#e2c98d;font-weight:700}h1{font:700 clamp(1.8rem,8vw,2.7rem)/1.15 Georgia,serif;margin:8px 0}header p{margin:8px 0 0;color:#d7e3da;font-size:.94rem}main{display:grid;gap:10px}.card{display:flex;align-items:center;gap:14px;padding:17px;border:1px solid #8c805f;border-radius:14px;color:#fff;text-decoration:none;background:#19403a;min-height:84px}.card strong{display:block;font-size:1.03rem}.card small{display:block;color:#d4ded5;margin-top:3px;font-size:.83rem}.glyph{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:12px;background:#2b554b;color:#ffe1a2;font-size:1.3rem}a:focus-visible{outline:3px solid #f3cf83;outline-offset:3px}footer{font-size:.78rem;color:#cbd6ce;padding-bottom:max(24px,env(safe-area-inset-bottom))}footer p{margin:4px 0}nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}nav a{color:#ffdea0;font-size:.85rem;text-underline-offset:3px}@media(max-width:360px){header,main,footer{padding-left:14px;padding-right:14px}.card{padding:12px}}
 </style></head>
 <body><header><div class="eyebrow">ARCHIVIO · SCRITTURA · RICERCA</div><h1>Michele Bottino</h1><p>Opere e Archivio Documentale Calatabiano, in un unico punto d'accesso.</p></header>
-<main aria-label="Percorsi dell'app">
+<main aria-label="Percorsi dell'app" id="links">
+
 <a class="card" href="https://michelebottino-autor.github.io/adc/" target="_blank" rel="noopener"><span class="glyph" aria-hidden="true">▤</span><span><strong>Archivio Documentale</strong><small>Calatabiano: storia, tradizioni e fonti</small></span></a>
 <a class="card" href="https://michelebottino-autor.github.io/adc/fonti/" target="_blank" rel="noopener"><span class="glyph" aria-hidden="true">⌑</span><span><strong>Area per studiosi</strong><small>Documenti e dossier scientifici</small></span></a>
 <a class="card" href="https://michelebottino-autor.github.io/opere/" target="_blank" rel="noopener"><span class="glyph" aria-hidden="true">▣</span><span><strong>Opere e pubblicazioni</strong><small>Libri e scritti dell'autore</small></span></a>
 <a class="card" href="https://michelebottino-autor.github.io/adc/cerca/" target="_blank" rel="noopener"><span class="glyph" aria-hidden="true">⌕</span><span><strong>Cerca nell'ADC</strong><small>Ricerca documentaria</small></span></a>
-</main><footer><p>Versione di prova · collegamenti al sito ufficiale.</p><nav aria-label="Collegamenti"><a href="https://michelebottino-autor.github.io/" target="_blank" rel="noopener">Sito ufficiale</a><a href="https://michelebottino-autor.github.io/installa/" target="_blank" rel="noopener">Versione web</a></nav></footer></body></html>
+</main><footer><p>Versione di prova · collegamenti al sito ufficiale.</p><nav aria-label="Collegamenti"><a href="https://michelebottino-autor.github.io/" target="_blank" rel="noopener">Sito ufficiale</a><a href="https://michelebottino-autor.github.io/installa/" target="_blank" rel="noopener">Versione web</a></nav></footer><script>
+(function(){
+'use strict';
+const endpoint='https://michelebottino-autor.github.io/app/config.json';
+const mount=document.getElementById('links');
+const allowed='https://michelebottino-autor.github.io/';
+const render=data=>{
+ if(!data||!Array.isArray(data.items)||data.items.length>12)return;
+ const frag=document.createDocumentFragment();
+ for(const item of data.items){
+  if(typeof item.url!=='string'||!item.url.startsWith(allowed))continue;
+  const a=document.createElement('a');a.className='card';a.href=item.url;a.target='_blank';a.rel='noopener';
+  const glyph=document.createElement('span');glyph.className='glyph';glyph.setAttribute('aria-hidden','true');glyph.textContent=String(item.symbol||'▤').slice(0,2);
+  const body=document.createElement('span');
+  const strong=document.createElement('strong');strong.textContent=String(item.title||'').slice(0,100);
+  const small=document.createElement('small');small.textContent=String(item.description||'').slice(0,160);
+  body.append(strong,small);a.append(glyph,body);frag.append(a);
+ }
+ if(frag.childNodes.length)mount.replaceChildren(frag);
+};
+try{const cached=JSON.parse(localStorage.getItem('mb-app-menu')||'null');if(cached)render(cached)}catch(_){}
+fetch(endpoint,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(data=>{
+ render(data);try{localStorage.setItem('mb-app-menu',JSON.stringify(data))}catch(_){}
+}).catch(()=>{});
+})();
+</script></body></html>
