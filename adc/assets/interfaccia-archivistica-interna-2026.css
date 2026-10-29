@@ -51,3 +51,19 @@ body.adc-inner-2026 main#top-storia :is(.sources,.note){border-radius:12px!impor
 body.adc-inner-2026 main#top-storia :is(p,li){hyphens:none!important;-webkit-hyphens:none!important;word-break:normal!important;overflow-wrap:break-word!important}
 body.adc-inner-2026 main#top-storia :is(a,button):focus-visible{outline:3px solid #b99b67!important;outline-offset:3px}
 @media(max-width:760px){body.adc-inner-2026 main#top-storia{padding:15px 16px 29px!important}}
+
+/* Inventario e ricerca: moduli funzionali preservati, superfici di consultazione coerenti. */
+body.adc-inner-2026 main#contenuto form[role=search]{background:#fff!important;border:1px solid #dce4e6!important;border-top:3px solid #b99b67!important;border-radius:13px!important;padding:clamp(17px,2.8vw,29px)!important;margin:18px 0 20px!important;box-shadow:0 8px 20px #1129360b}
+body.adc-inner-2026 main#contenuto form[role=search] label{color:#1d3b46!important;font-weight:700!important}
+body.adc-inner-2026 main#contenuto form[role=search] :is(input,select){min-height:48px!important;border:1px solid #aebec3!important;border-radius:8px!important;background:#fff!important;color:#172f3b!important;font:inherit;max-width:100%}
+body.adc-inner-2026 main#contenuto form[role=search] button{min-height:48px!important;border:0!important;border-radius:8px!important;background:#123947!important;color:#fff!important;font-weight:700!important;padding:10px 20px!important}
+body.adc-inner-2026 main#contenuto #items :is(article,.item),body.adc-inner-2026 main#contenuto #results :is(article,.result){border-color:#dce4e6!important;border-radius:11px!important;background:#fff!important}
+body.adc-inner-2026 main#contenuto #count,body.adc-inner-2026 main#contenuto #status{color:#405765!important;font-weight:600}
+body.adc-inner-2026 main#contenuto .adc-share-entry{background:#eaf2f2!important;border-color:#d0dfe0!important;color:#274953!important}
+body.adc-inner-2026 main#contenuto .adc-share-entry a{color:#205663!important}
+body.adc-inner-2026 main#contenuto .elena-panel{background:#fff!important;border:1px solid #dce4e6!important;border-top:3px solid #b99b67!important;border-radius:15px!important;box-shadow:0 10px 28px #11293611!important;padding:clamp(18px,3vw,32px)!important}
+body.adc-inner-2026 main#contenuto .elena-panel h2{color:#173947!important}
+body.adc-inner-2026 main#contenuto .elena-form :is(input,button){min-height:48px;border-radius:9px!important}
+body.adc-inner-2026 main#contenuto .elena-form button{background:#123947!important;color:#fff!important}
+body.adc-inner-2026 main#contenuto .elena-examples button{min-height:43px}
+@media(max-width:760px){body.adc-inner-2026 main#contenuto form[role=search]{padding:19px 16px!important}body.adc-inner-2026 main#contenuto form[role=search] .search-row{min-width:0;max-width:100%}body.adc-inner-2026 main#contenuto .elena-form{display:flex;flex-direction:column!important}body.adc-inner-2026 main#contenuto .elena-form input{min-width:0!important;width:100%!important}}
