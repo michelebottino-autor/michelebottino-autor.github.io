@@ -303,6 +303,37 @@ body{background:#f8f9fa;color:#172b46}
 #contenuto a:focus-visible{outline:3px solid #c49b5a;outline-offset:4px}
 @media(max-width:850px){#contenuto .mockup-hero{grid-template-columns:minmax(0,1fr) minmax(130px,.45fr);gap:16px}#contenuto .unified-book-list{grid-template-columns:1fr}}
 @media(max-width:600px){#contenuto{padding-left:16px!important;padding-right:16px!important}#contenuto .mockup-hero{grid-template-columns:1fr;padding:23px 19px!important}#contenuto .mockup-hero__visual img{max-height:230px}#contenuto .unified-book{padding:16px}#contenuto .editorial-breadcrumb{padding:12px 0}}
+
+/* OPERE 2026-10-29: isolamento componenti da CSS di navigazione legacy */
+@media(max-width:1050px){
+ body>header.mb-nav{overflow:visible!important;position:relative!important;z-index:3000!important}
+ body>header.mb-nav .mb-inner{position:relative!important;display:flex!important;flex-wrap:nowrap!important;max-width:1280px!important}
+ body>header.mb-nav details.mb-mobile{position:static!important;display:block!important;flex:0 0 auto!important;width:auto!important;margin-left:auto!important}
+ body>header.mb-nav details.mb-mobile>summary{width:auto!important;display:flex!important;flex-wrap:nowrap!important;white-space:nowrap!important}
+ body>header.mb-nav nav.mb-dropdown{position:absolute!important;display:block!important;right:16px!important;left:auto!important;top:100%!important;width:min(340px,calc(100vw - 32px))!important;min-width:0!important;max-width:calc(100vw - 32px)!important;height:auto!important;max-height:calc(100dvh - 100px)!important;overflow-y:auto!important;overflow-x:hidden!important;flex-wrap:nowrap!important;justify-content:initial!important;align-items:initial!important;padding:10px 13px 15px!important;background:#102544!important;box-shadow:0 18px 36px #0006!important}
+ body>header.mb-nav nav.mb-dropdown a{display:block!important;width:100%!important;min-height:48px!important;padding:11px 10px!important;white-space:normal!important;overflow-wrap:break-word!important;font-size:1rem!important;line-height:1.4!important}
+ body>header.mb-nav details.mb-mobile:not([open]) nav.mb-dropdown{display:none!important}
+}
+/* Footer editoriale — isolato dai vecchi selettori footer e nav */
+body>footer.mb-page-footer{display:block!important;visibility:visible!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;background:#061429!important;color:#dce4ef!important;border:0!important;border-top:2px solid #c49b5a!important;font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif!important}
+.mb-page-footer *{box-sizing:border-box}
+.mb-footer-inner{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);max-width:1280px;margin:auto;padding:40px clamp(17px,3vw,40px) 32px}
+.mb-footer-about{min-width:0}
+.mb-footer-brand{display:flex!important;align-items:center!important;gap:16px!important;margin:0 0 17px!important;text-decoration:none!important;color:white!important;font:1.35rem/1.2 Georgia,serif!important}
+.mb-footer-mark{flex:none;border-right:1px solid #c49b5a;padding-right:14px;color:#c49b5a;font:2.1rem/1 Georgia,serif}
+.mb-footer-brand small{display:block;color:#b9c9d9;font:600 .62rem/1.7 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;margin-top:3px}
+.mb-footer-about p{max-width:35ch;color:#bbc9d8;font-size:.91rem;margin:0}
+body>footer.mb-page-footer nav.mb-footer-links{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;flex-wrap:nowrap!important;gap:0!important;min-width:0!important;width:auto!important;margin:0!important;padding:0!important;background:none!important;border:0!important}
+.mb-footer-links h2{font:600 1rem/1.3 system-ui,sans-serif!important;color:#e7c17e!important;margin:0 0 10px!important}
+.mb-footer-links a{display:inline-flex!important;align-items:center!important;min-height:39px!important;margin:0!important;padding:5px 0!important;color:#e1e9f4!important;text-decoration:none!important;font:.91rem/1.4 system-ui,sans-serif!important}
+.mb-footer-links a:hover,.mb-footer-bottom a:hover{color:#e7c17e!important;text-decoration:underline!important}
+.mb-footer-bottom{display:flex;justify-content:space-between;gap:18px;border-top:1px solid #ffffff33;max-width:1280px;margin:auto;padding:17px clamp(17px,3vw,40px) 24px;color:#b4c2d3;font-size:.79rem}
+.mb-footer-bottom a{color:#e7c17e!important;text-decoration:none}
+.mb-counter{max-width:1280px;margin:0 auto;padding:0 clamp(17px,3vw,40px) 16px;color:#b4c2d3;font-size:.79rem}
+.mb-counter summary{width:max-content;max-width:100%;cursor:pointer;color:#b4c2d3!important;font-size:.8rem}
+.mb-counter .visit-counter{margin:6px 0!important;color:#b4c2d3}
+@media(max-width:980px){.mb-footer-inner{grid-template-columns:repeat(3,minmax(0,1fr))}.mb-footer-about{grid-column:1/-1}}
+@media(max-width:600px){.mb-footer-inner{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px;row-gap:24px;padding:30px 17px 22px}.mb-footer-about{grid-column:1/-1}.mb-footer-links:last-child{grid-column:1/-1}.mb-footer-links a{font-size:.85rem!important;overflow-wrap:anywhere}.mb-footer-bottom{align-items:flex-start}.mb-footer-brand{font-size:1.23rem!important}.mb-footer-mark{font-size:1.9rem}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
@@ -314,8 +345,8 @@ body{background:#f8f9fa;color:#172b46}
 <link rel="stylesheet" href="/assets/css/mockup-sezioni-2026.css">
 <link rel="stylesheet" href="/assets/css/mb-navigation-final.css"></head>
 <body>
-<nav aria-label="Informazioni e trasparenza del sito" class="site-transparency-links" style="padding:10px 16px;text-align:center;font:14px/1.6 system-ui,sans-serif;background:#f3eee5;color:#29251f"><a href="../privacy/">Privacy</a> · <a href="../cookie/">Cookie e statistiche</a> · <a href="../contatti/">Contatti</a> · <a href="../adc/">Laboratorio ADC</a></nav><a class="skip-link" href="#contenuto">Vai al contenuto</a>
-<header class="mb-nav"><div class="mb-inner"><a class="mb-brand" href="/" aria-label="Michele Bottino — homepage"><span class="mb-mark" aria-hidden="true">MB</span><span><span class="mb-name">Michele Bottino</span><span class="mb-tag">Scrittore · Saggista · Ricerca</span></span></a><nav class="mb-desktop" aria-label="Navigazione principale"><a href="/">Home</a><a href="/biografia/">Autore</a><a href="/opere/" aria-current="page">Opere</a><a href="/articoli/">Scritti</a><a href="/metodo/">Metodo e ricerca</a><a href="/adc/">Laboratorio ADC</a><a href="/formazione/">Formazione</a><a href="/media/">Media</a><a href="/contatti/">Contatti</a></nav><details class="mb-mobile"><summary aria-label="Apri il menu di navigazione">☰ Menu</summary><nav class="mb-dropdown" aria-label="Navigazione smartphone"><a href="/">Home</a><a href="/biografia/">Autore</a><a href="/opere/" aria-current="page">Opere</a><a href="/articoli/">Scritti</a><a href="/metodo/">Metodo e ricerca</a><a href="/adc/">Laboratorio ADC</a><a href="/formazione/">Formazione</a><a href="/media/">Media</a><a href="/contatti/">Contatti</a></nav></details></div></header>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+<header class="mb-nav"><div class="mb-inner"><a class="mb-brand" href="/" aria-label="Michele Bottino — homepage"><span class="mb-mark" aria-hidden="true">MB</span><span><span class="mb-name">Michele Bottino</span><span class="mb-tag">Scrittore · Saggista · Autore</span></span></a><nav class="mb-desktop" aria-label="Navigazione principale"><a href="/">Home</a><a href="/biografia/">Autore</a><a href="/opere/" aria-current="page">Opere</a><a href="/articoli/">Scritti</a><a href="/metodo/">Metodo e ricerca</a><a href="/adc/">Laboratorio ADC</a><a href="/formazione/">Formazione</a><a href="/media/">Media</a><a href="/contatti/">Contatti</a></nav><details class="mb-mobile"><summary aria-label="Apri il menu di navigazione">☰ Menu</summary><nav class="mb-dropdown" aria-label="Navigazione smartphone"><a href="/">Home</a><a href="/biografia/">Autore</a><a href="/opere/" aria-current="page">Opere</a><a href="/articoli/">Scritti</a><a href="/metodo/">Metodo e ricerca</a><a href="/adc/">Laboratorio ADC</a><a href="/formazione/">Formazione</a><a href="/media/">Media</a><a href="/contatti/">Contatti</a></nav></details></div></header>
 
 <main class="page container" id="contenuto"><nav aria-label="Percorso di navigazione" class="editorial-breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span>Opere </span></nav>
 <section class="mockup-hero mockup-hero--wide" aria-label="Presentazione delle opere"><div class="mockup-hero__copy"><p class="mockup-hero__eyebrow">Libri, saggi e pubblicazioni</p><h1>Opere</h1><p class="mockup-hero__summary">Romanzi e saggi di Michele Bottino: un catalogo bibliografico che conserva titoli, descrizioni e riferimenti editoriali effettivamente disponibili.</p><a class="mockup-hero__link" href="#opera-stige">Esplora il catalogo</a></div><div class="mockup-hero__visual"><img src="../images/opere/stige_copertina.jpg" alt="Copertina del libro Stige" loading="eager" style="object-fit:contain;padding:20px;background:#e7dccb"></div></section>
@@ -338,18 +369,13 @@ body{background:#f8f9fa;color:#172b46}
 <article class="unified-book" id="opera-uomo-consapevole"><div class="unified-cover"><img src="../images/opere/uomo-consapevole_copertina.webp" alt="Copertina di L’Uomo Consapevole: Costruire Insieme il Rispetto" loading="lazy" decoding="async" width="600" height="942" onerror="this.hidden=true;this.parentElement.classList.add('unified-cover-missing')"><span class="unified-cover-label">L’Uomo Consapevole: Costruire Insieme il Rispetto</span></div><div class="unified-info"><p class="unified-category">Saggistica · crescita personale</p><h3>L’Uomo Consapevole: Costruire Insieme il Rispetto: Un Percorso di Crescita per l’Equilibrio di Genere</h3><p>Percorso di riflessione su identità maschile, stereotipi, emozioni, comunicazione e rispetto fra i generi.</p><p class="unified-metadata">Kindle · 44 pagine equivalenti · ASIN B0FDBL9XGT</p><div class="unified-links"><a class="unified-primary" href="uomo-consapevole/">Scheda dettagliata</a><a href="https://www.amazon.it/dp/B0FDBL9XGT" rel="noopener noreferrer" target="_blank">Amazon Kindle</a></div></div></article>
 <article class="unified-book" id="opera-calatabiano-sacra"><div class="unified-cover"><img src="../images/opere/calatabianosacra_copertina.jpg" alt="Copertina di Calatabiano Sacra: Il mistero della luce sull’acqua" loading="lazy" decoding="async" onerror="this.hidden=true;this.parentElement.classList.add('unified-cover-missing')"><span class="unified-cover-label">Calatabiano Sacra: Il mistero della luce sull’acqua</span></div><div class="unified-info"><p class="unified-category">Ricerca storico-documentaria</p><h3>Calatabiano Sacra: Il mistero della luce sull’acqua</h3><p>Indagine sulla memoria religiosa di Calatabiano attraverso pergamene, epigrafi, archivi e tradizioni.</p><p class="unified-metadata">Cartaceo · 133 pagine · ISBN 9798272417756</p><div class="unified-links"><a class="unified-primary" href="calatabiano-sacra/">Scheda dettagliata</a><a href="https://www.amazon.it/dp/B0FYXD5VNC" rel="noopener noreferrer" target="_blank">Amazon cartaceo</a></div></div></article></div><p class="note">Ogni libro compare una sola volta. I formati riportati si riferiscono alle edizioni documentate; per approfondire la sinossi e i dati bibliografici consulta la scheda dettagliata.</p></section>
 </main>
-<footer class="container">
-<p>
-    © 2026 Michele Bottino. Tutti i diritti riservati. Sito ufficiale dell’autore.
-    <br/>
-<a href="../privacy/">Privacy Policy</a> |
-    <a href="../cookie/">Cookie Policy</a> |
-    <a href="../disclaimer/">Disclaimer</a>
-</p>
-<div class="visit-counter">
-    Aperture registrate dal contatore: <span id="visit-count" aria-live="polite">...</span>
-</div>
-</footer>
+<footer class="mb-page-footer" aria-label="Informazioni e collegamenti del sito"><div class="mb-footer-inner">
+<div class="mb-footer-about"><a class="mb-footer-brand" href="/"><span class="mb-footer-mark" aria-hidden="true">MB</span><span>Michele Bottino<small>Scrittore · Saggista · Autore</small></span></a><p>Romanzi, saggi e scrittura. Accanto all'attività letteraria, la ricerca documentaria.</p></div>
+<nav aria-label="Navigazione autore" class="mb-footer-links"><h2>Il sito dell'autore</h2><a href="/biografia/">Biografia</a><a href="/opere/" aria-current="page">Libri e opere</a><a href="/poetica/">Poetica</a><a href="/articoli/">Articoli e scritti</a><a href="/formazione/">Formazione</a><a href="/contatti/">Contatti</a></nav>
+<nav aria-label="Navigazione ADC" class="mb-footer-links"><h2>Archivio Documentale</h2><a href="/adc/">Laboratorio ADC</a><a href="/adc/fonti/">Fonti e documenti</a><a href="/adc/atlante/">Atlante</a><a href="/adc/mediateca/">Mediateca</a><a href="/adc/elena/">Elena</a></nav>
+<nav aria-label="Informazioni e trasparenza" class="mb-footer-links"><h2>Informazioni</h2><a href="/privacy/">Privacy</a><a href="/cookie/">Cookie e statistiche</a><a href="/disclaimer/">Disclaimer</a><a href="/sitemap.xml">Mappa del sito</a><a href="/installa/">Installa il sito</a></nav>
+</div><div class="mb-footer-bottom"><span>© 2026 Michele Bottino. Tutti i diritti riservati.</span><a href="#contenuto">Torna all'inizio ↑</a></div>
+<details class="mb-counter"><summary>Informazioni sul contatore</summary><div class="visit-counter">Aperture registrate dal contatore: <span id="visit-count" aria-live="polite">...</span></div></details></footer>
 <script>
 function setMenuExpandedState(isExpanded) {
   const toggle = document.getElementById("menu-toggle");
