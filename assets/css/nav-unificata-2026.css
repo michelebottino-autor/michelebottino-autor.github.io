@@ -51,3 +51,17 @@
   body>header #site-nav .submenu{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
   body>header #site-nav .submenu a{white-space:normal!important;overflow-wrap:break-word!important}
 }
+
+/* Mobile: sottomenu accessibili senza doppia area di scorrimento. */
+@media(max-width:900px){
+ body>header #site-nav>.nav-menu.active{
+   max-height:none!important;height:auto!important;
+   overflow:visible!important;overscroll-behavior:auto!important;
+ }
+ body>header #site-nav>.nav-menu .has-submenu.open>.submenu{
+   display:block!important;position:static!important;
+   visibility:visible!important;height:auto!important;
+ }
+ body>header #site-nav>.nav-menu .has-submenu:not(.open)>.submenu{display:none!important}
+ body>header #site-nav>.nav-menu>li{position:relative!important;pointer-events:auto!important}
+}
