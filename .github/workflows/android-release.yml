@@ -1,0 +1,70 @@
+name: Android APK firmato
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: app-android
+    env:
+      MB_KEYSTORE_BASE64: ${{ secrets.MB_ANDROID_KEYSTORE_BASE64 }}
+      MB_KEYSTORE_PASSWORD: ${{ secrets.MB_ANDROID_KEYSTORE_PASSWORD }}
+      MB_KEY_ALIAS: ${{ secrets.MB_ANDROID_KEY_ALIAS }}
+      MB_KEY_PASSWORD: ${{ secrets.MB_ANDROID_KEY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Verifica credenziali firma
+        run: |
+          test -n "$MB_KEYSTORE_BASE64"
+          test -n "$MB_KEYSTORE_PASSWORD"
+          test -n "$MB_KEY_ALIAS"
+          test -n "$MB_KEY_PASSWORD"
+          test -d "$ANDROID_HOME"
+      - name: Prepara Android
+        run: |
+          npm install --no-audit --no-fund
+          npx cap add android
+          npx cap sync android
+      - name: Firma APK con chiave persistente
+        run: |
+          printf '%s' "$MB_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/mb-release.jks"
+          cat >> android/app/build.gradle <<'GRADLE'
+
+          android {
+            signingConfigs {
+              mbRelease {
+                storeFile file(System.getenv("RUNNER_TEMP") + "/mb-release.jks")
+                storePassword System.getenv("MB_KEYSTORE_PASSWORD")
+                keyAlias System.getenv("MB_KEY_ALIAS")
+                keyPassword System.getenv("MB_KEY_PASSWORD")
+              }
+            }
+            buildTypes {
+              release {
+                signingConfig signingConfigs.mbRelease
+              }
+            }
+          }
+          GRADLE
+          chmod +x android/gradlew
+          cd android
+          ./gradlew assembleRelease --no-daemon
+          jarsigner -verify -certs app/build/outputs/apk/release/app-release.apk
+      - name: Pubblica APK firmato
+        uses: actions/upload-artifact@v4
+        with:
+          name: michele-bottino-android-release
+          path: app-android/android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
