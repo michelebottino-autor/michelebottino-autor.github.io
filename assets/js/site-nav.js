@@ -1,63 +1,62 @@
 (() => {
-  const nav = document.getElementById("site-nav") || document.querySelector("header .nav");
-  const menu = document.getElementById("menu");
-  const toggle = document.getElementById("menu-toggle") || document.querySelector(".menu-toggle");
-
-  if (!nav || !menu || !toggle) return;
-
-  if (!toggle.hasAttribute("type")) toggle.setAttribute("type", "button");
-  if (!toggle.hasAttribute("aria-controls")) toggle.setAttribute("aria-controls", "menu");
-  if (!toggle.hasAttribute("aria-expanded")) toggle.setAttribute("aria-expanded", "false");
-
-  const closeAllSubmenus = (except = null) => {
-    document.querySelectorAll(".has-submenu").forEach(item => {
-      if (item !== except) {
-        item.classList.remove("open");
-        const button = item.querySelector(".submenu-toggle");
-        if (button) button.setAttribute("aria-expanded", "false");
-      }
+  'use strict';
+  function init() {
+    const nav = document.getElementById('site-nav') || document.querySelector('header .nav');
+    const menu = document.getElementById('menu');
+    const toggle = document.getElementById('menu-toggle') || document.querySelector('.menu-toggle');
+    if (!nav || !menu || !toggle || nav.dataset.navInitialized === 'true') return;
+    nav.dataset.navInitialized = 'true';
+    toggle.type = 'button';
+    toggle.setAttribute('aria-controls',menu.id || 'menu');
+    toggle.setAttribute('aria-expanded','false');
+    const closeSubmenus = (except) => {
+      nav.querySelectorAll('.has-submenu').forEach(item => {
+        if (item === except) return;
+        item.classList.remove('open');
+        const button = item.querySelector('.submenu-toggle');
+        if (button) button.setAttribute('aria-expanded','false');
+      });
+    };
+    const close = () => {
+      menu.classList.remove('active');
+      toggle.setAttribute('aria-expanded','false');
+      closeSubmenus();
+    };
+    toggle.addEventListener('click',event => {
+      event.preventDefault();
+      event.stopPropagation();
+      const open = !menu.classList.contains('active');
+      menu.classList.toggle('active',open);
+      toggle.setAttribute('aria-expanded',String(open));
+      if (!open) closeSubmenus();
     });
-  };
-
-  const closeMobileMenu = () => {
-    menu.classList.remove("active");
-    toggle.setAttribute("aria-expanded", "false");
-    closeAllSubmenus();
-  };
-
-  toggle.addEventListener("click", () => {
-    const isActive = menu.classList.toggle("active");
-    toggle.setAttribute("aria-expanded", String(isActive));
-    if (!isActive) closeAllSubmenus();
-  });
-
-  document.querySelectorAll(".submenu-toggle").forEach(button => {
-    button.addEventListener("click", function () {
-      const parent = this.parentElement;
-      const willOpen = !parent.classList.contains("open");
-      if (window.innerWidth > 900) closeAllSubmenus(parent);
-      parent.classList.toggle("open");
-      this.setAttribute("aria-expanded", String(willOpen));
-    });
-
-    button.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
+    nav.querySelectorAll('.submenu-toggle').forEach(button => {
+      button.type = 'button';
+      button.addEventListener('click',event => {
         event.preventDefault();
-        closeAllSubmenus();
-        this.focus();
-      }
+        event.stopPropagation();
+        const item = button.closest('.has-submenu');
+        if (!item) return;
+        const open = !item.classList.contains('open');
+        closeSubmenus(item);
+        item.classList.toggle('open',open);
+        button.setAttribute('aria-expanded',String(open));
+      });
     });
-  });
-
-  document.addEventListener("click", event => {
-    if (!nav.contains(event.target)) closeMobileMenu();
-  });
-
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeMobileMenu();
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 900 && menu.classList.contains("active")) closeMobileMenu();
-  });
+    // Anchors remain native links: do not prevent their click or replace navigation.
+    nav.addEventListener('click',event => {
+      if (event.target.closest('a[href]')) close();
+    });
+    document.addEventListener('click',event => {
+      if (!nav.contains(event.target)) close();
+    });
+    document.addEventListener('keydown',event => {
+      if (event.key === 'Escape') { close(); toggle.focus(); }
+    });
+    window.addEventListener('resize',() => {
+      if (window.innerWidth > 900) close();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
 })();
