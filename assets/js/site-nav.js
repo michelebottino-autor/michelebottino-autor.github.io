@@ -30,6 +30,24 @@
       toggle.setAttribute('aria-expanded',String(open));
       if (!open) closeSubmenus();
     });
+    // Capture-phase handler takes precedence over legacy inline listeners on older pages.
+    // It prevents a single tap from opening and immediately closing a submenu.
+    nav.addEventListener('click', event => {
+      const button = event.target.closest('.submenu-toggle');
+      if (!button || !nav.contains(button)) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      const item = button.closest('.has-submenu');
+      if (!item) return;
+      const open = !item.classList.contains('open');
+      closeSubmenus(item);
+      item.classList.toggle('open',open);
+      button.setAttribute('aria-expanded',String(open));
+      if (window.innerWidth <= 900 && !menu.classList.contains('active')) {
+        menu.classList.add('active');
+        toggle.setAttribute('aria-expanded','true');
+      }
+    }, true);
     nav.querySelectorAll('.submenu-toggle').forEach(button => {
       button.type = 'button';
       button.addEventListener('click',event => {
