@@ -91,6 +91,29 @@
  .mobile-nav:not([open]) .mobile-menu{display:none}
  .mobile-menu a{white-space:normal;overflow-wrap:break-word;min-height:48px;padding:11px 13px;font-size:1rem}
 }
+
+/* Presentazione fotografica premium: ogni settore usa una vera risorsa distinta. */
+.features{background:linear-gradient(180deg,#f7f8fa,#fff);padding-bottom:64px}
+.feature-grid{gap:17px}
+.feature{border-radius:9px;border:1px solid #d5dce5;box-shadow:0 12px 28px #0a1a3a15;transition:transform .2s,box-shadow .2s}
+.feature:hover{transform:translateY(-3px);box-shadow:0 18px 32px #0a1a3a20}
+.feature figure{aspect-ratio:16/9;background:#0a1a3a;position:relative}
+.feature figure:after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,#07162b55);pointer-events:none}
+.feature figure img{object-fit:cover;object-position:center}
+.feature-content{padding:21px 23px 23px;border-top:3px solid var(--gold)}
+.feature h3{font-size:clamp(1.28rem,1.7vw,1.65rem);color:var(--navy)}
+.feature-content>a{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:600px){
+ .features{padding-bottom:42px}
+ .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .feature{min-width:0}
+ .feature figure{aspect-ratio:4/3}
+ .feature-content{padding:13px 12px 15px}
+ .feature h3{font-size:clamp(1.02rem,4vw,1.25rem);line-height:1.22}
+ .feature p{font-size:.85rem;line-height:1.48}
+ .feature a{font-size:.84rem;line-height:1.3}
+}
+@media(max-width:380px){.feature-grid{grid-template-columns:1fr}.feature figure{aspect-ratio:16/8}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style></head>
 <body>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
@@ -111,11 +134,11 @@
 <section class="features" aria-labelledby="percorsi-title"><div class="wrap"><div class="section-head"><span class="gold-line"></span><h2 id="percorsi-title">Percorsi e approfondimenti</h2><p>Sei ingressi diretti ai contenuti già pubblicati, senza duplicare i dossier.</p></div>
 <div class="feature-grid">
 <article class="feature"><figure><img src="/images/opere/calatabianosacra_copertina.jpg" alt="Copertina di Calatabiano Sacra" loading="lazy"></figure><div class="feature-content"><h3>Libri e pubblicazioni</h3><p>Romanzi, saggi e opere pubblicate.</p><a href="/opere/">Scopri le opere →</a></div></article>
-<article class="feature"><figure><img src="/adc/assets/foto-territorio/veduta-calatabiano-2026.webp" alt="Paesaggio del territorio di Calatabiano" loading="lazy"></figure><div class="feature-content"><h3>Dossier documentari</h3><p>Ricerche, studi e testimonianze storiche organizzati per argomento.</p><a href="/adc/fonti/">Esplora i dossier →</a></div></article>
-<article class="feature"><figure><img src="/adc/assets/foto-territorio/veduta-calatabiano-2026.webp" alt="Calatabiano, contesto territoriale dell'Atlante" loading="lazy"></figure><div class="feature-content"><h3>Atlante storico-documentario</h3><p>Luoghi e fonti messi in relazione attraverso percorsi di ricerca.</p><a href="/adc/atlante/">Apri l'Atlante →</a></div></article>
-<article class="feature"><figure><img src="/adc/assets/foto-territorio/veduta-calatabiano-2026.webp" alt="Veduta del territorio rappresentato nella Mediateca" loading="lazy"></figure><div class="feature-content"><h3>Mediateca</h3><p>Materiali audiovisivi e testimonianze disponibili nell'archivio.</p><a href="/adc/mediateca/">Accedi alla Mediateca →</a></div></article>
+<article class="feature"><figure><img src="/images/adc-social/dossier-1213-1537-v3.png" alt="Anteprima grafica del dossier medievale" loading="lazy"></figure><div class="feature-content"><h3>Dossier documentari</h3><p>Ricerche, studi e testimonianze storiche organizzati per argomento.</p><a href="/adc/fonti/">Esplora i dossier →</a></div></article>
+<article class="feature"><figure><img src="/images/adc-social/atlante-v3.png" alt="Copertina editoriale dell’Atlante storico-documentario" loading="lazy"></figure><div class="feature-content"><h3>Atlante storico-documentario</h3><p>Luoghi e fonti messi in relazione attraverso percorsi di ricerca.</p><a href="/adc/atlante/">Apri l'Atlante →</a></div></article>
+<article class="feature"><figure><img src="/adc/assets/foto-territorio/calatabiano-dalla-rocca-2006.webp" alt="Panorama storico di Calatabiano dalla rocca" loading="lazy"></figure><div class="feature-content"><h3>Mediateca</h3><p>Materiali audiovisivi e testimonianze disponibili nell'archivio.</p><a href="/adc/mediateca/">Accedi alla Mediateca →</a></div></article>
 <article class="feature"><figure><img src="/images/logo_laboratorio_adc_640.webp" alt="Identità visiva del Laboratorio ADC" loading="lazy"></figure><div class="feature-content"><h3>Laboratorio ADC</h3><p>Documenti, inventari e strumenti per la consultazione archivistica.</p><a href="/adc/">Esplora l'Archivio →</a></div></article>
-<article class="feature"><figure><img src="/images/opere/stige_copertina.jpg" alt="Copertina di un'opera di Michele Bottino" loading="lazy"></figure><div class="feature-content"><h3>Scritti e ricerca</h3><p>Articoli, approfondimenti e pagine dedicate al metodo di lavoro.</p><a href="/articoli/">Leggi gli scritti →</a></div></article>
+<article class="feature"><figure><img src="/images/adc-social/storia-v3.png" alt="Immagine editoriale dedicata alla ricerca storica" loading="lazy"></figure><div class="feature-content"><h3>Scritti e ricerca</h3><p>Articoli, approfondimenti e pagine dedicate al metodo di lavoro.</p><a href="/articoli/">Leggi gli scritti →</a></div></article>
 </div></div></section>
 <section class="audience" aria-label="Due modalità di accesso all'Archivio"><article><span class="eyebrow">Per tutti</span><h2>Scopri Calatabiano e il suo patrimonio</h2><p>Un percorso narrativo accessibile per conoscere territorio, storia e tradizioni.</p><a class="pill gold" href="/adc/storia-per-tutti/">Inizia il percorso →</a></article><article><span class="eyebrow">Per studiosi e ricercatori</span><h2>Consulta l'Archivio Documentale</h2><p>Documenti, fonti, schede e percorsi di ricerca verificabili.</p><a class="pill outline" href="/adc/fonti/">Apri le fonti →</a></article></section>
 <section class="books wrap" aria-labelledby="books-title"><div class="section-head"><span class="gold-line"></span><h2 id="books-title">Libri e pubblicazioni</h2><p>Una selezione delle opere presenti nel catalogo ufficiale.</p></div><div class="book-list">
