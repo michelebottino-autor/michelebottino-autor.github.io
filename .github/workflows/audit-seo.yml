@@ -10,6 +10,7 @@ on:
       - 'robots.txt'
       - '**/index.html'
       - 'scripts/audit_site.py'
+      - 'analytics-consenso.js'
       - '.github/workflows/audit-seo.yml'
 
 permissions:
@@ -27,3 +28,5 @@ jobs:
           python-version: '3.12'
       - name: Validate sitemap, canonical, HTML and JSON-LD
         run: python scripts/audit_site.py
+      - name: Check consent JavaScript syntax
+        run: node --check analytics-consenso.js
