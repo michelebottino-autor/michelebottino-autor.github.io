@@ -37,8 +37,13 @@ jobs:
           npx cap add android
           npx cap sync android
       - name: Firma APK con chiave persistente
+        env:
+          BUILD_NUMBER: ${{ github.run_number }}
         run: |
+          umask 077
           printf '%s' "$MB_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/mb-release.jks"
+          trap 'rm -f "$RUNNER_TEMP/mb-release.jks"' EXIT
+          sed -i -E "s/versionCode[[:space:]]+[0-9]+/versionCode $((1000 + BUILD_NUMBER))/" android/app/build.gradle
           cat >> android/app/build.gradle <<'GRADLE'
 
           android {
@@ -60,7 +65,10 @@ jobs:
           chmod +x android/gradlew
           cd android
           ./gradlew assembleRelease --no-daemon
-          jarsigner -verify -certs app/build/outputs/apk/release/app-release.apk
+          test -s app/build/outputs/apk/release/app-release.apk
+          APKSIGNER=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -n 1)
+          test -n "$APKSIGNER"
+          "$APKSIGNER" verify --verbose --print-certs app/build/outputs/apk/release/app-release.apk
       - name: Pubblica APK firmato
         uses: actions/upload-artifact@v4
         with:
