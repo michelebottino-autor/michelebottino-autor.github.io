@@ -56,3 +56,88 @@ body.school-catalog-unified .filters button{min-height:43px}
 body.school-catalog-unified .course-body h3{overflow-wrap:break-word!important}
 @media(max-width:980px){.school-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.school-footer-about{grid-column:1/-1}}
 @media(max-width:700px){#mb-common-header .mbc-links[data-open=true]{display:flex!important;width:100%!important;max-height:70dvh;overflow-y:auto}#mb-common-header .mbc-links a{margin:0!important;min-height:46px!important;white-space:normal!important;overflow-wrap:break-word!important}.school-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 18px;padding:30px 17px 22px}.school-footer-about{grid-column:1/-1}.school-footer-links:last-child{grid-column:1/-1}.school-footer-links a{font-size:.85rem!important;overflow-wrap:anywhere}body.school-hub-unified main{padding:12px 15px 25px!important}body.school-hub-unified .hero{padding:21px 17px!important;margin:4px 0 16px!important}body.school-hub-unified .school-section{margin:13px 0!important;padding:18px 15px!important}body.school-hub-unified .school-grid{grid-template-columns:1fr!important;gap:12px!important}body.school-hub-unified .school-course{padding:17px!important}body.school-catalog-unified main{padding:10px 15px 35px!important}body.school-catalog-unified main>.hero{padding:23px 18px!important;margin:4px 0 14px!important}body.school-catalog-unified .quick-courses{grid-template-columns:1fr!important}}
+
+
+/* OFFICINA v2 — identità autonoma scuola: grafite, petrolio e giada.
+   Specificità circoscritta alle due pagine della formazione. */
+body.school-hub-unified,body.school-catalog-unified{--school-ink:#132a35;--school-deep:#071b27;--school-dark:#0b2833;--school-accent:#b8e3b5;--school-line:#cddbdc;--school-surface:#fff;--school-page:#f2f6f5;background:#f2f6f5!important;color:#132a35!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header{background:#071b27!important;background-image:none!important;border:0!important;border-bottom:1px solid #b8e3b555!important;box-shadow:0 5px 25px #071b2717!important}
+body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-bar{padding-top:15px!important;padding-bottom:12px!important}
+body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-brand{font:700 clamp(1.16rem,2.4vw,1.6rem)/1.2 Georgia,serif!important;letter-spacing:-.02em}
+body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-brand:before{content:"◈";display:inline-flex;align-items:center;justify-content:center;margin-right:11px;width:37px;height:37px;border:1px solid #b8e3b590;border-radius:11px;background:#b8e3b514;color:#b8e3b5;font:600 1.3rem/1 system-ui,sans-serif}
+body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-links{gap:5px 12px;padding-bottom:11px!important}
+body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-links a{color:#c4d7dc!important;border-radius:100px!important;min-height:42px;padding:9px 14px!important;font-weight:550}
+body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-links a:is(:hover,[aria-current=page]){background:#b8e3b520!important;color:#d5f3d2!important}
+body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header button{background:#b8e3b514!important;border:1px solid #b8e3b580!important;color:#eef8f3!important}
+body:is(.school-hub-unified,.school-catalog-unified) main{width:100%;max-width:1220px;padding:23px clamp(16px,3.2vw,36px) 55px!important}
+body.school-hub-unified .hero,body.school-catalog-unified main>.hero{background:radial-gradient(ellipse at 93% 12%,#2b60645c,transparent 55%),linear-gradient(125deg,#081c29,#123943)!important;color:#f0f9f7!important;border:1px solid #6d98917d!important;border-radius:22px!important;box-shadow:0 24px 50px #0a293023!important}
+body.school-hub-unified .hero{padding:clamp(25px,4vw,50px)!important;margin:8px 0 28px!important}
+body.school-catalog-unified main>.hero{padding:clamp(30px,5vw,60px)!important;margin:8px 0 26px!important;position:relative;overflow:hidden}
+body.school-hub-unified .hero h1,body.school-catalog-unified main>.hero h1{font:700 clamp(2.45rem,6.3vw,5rem)/1.06 Georgia,serif!important;letter-spacing:-.048em!important;color:#f8fbf8!important;margin:12px 0 16px!important;text-wrap:balance}
+body.school-hub-unified .hero .eyebrow,body.school-catalog-unified main>.hero .eyebrow{color:#b8e3b5!important;letter-spacing:.14em!important}
+body.school-hub-unified .hero p,body.school-catalog-unified main>.hero .lead{color:#dcebea!important;line-height:1.72!important}
+body.school-hub-unified .hero p[style]{color:#b8e3b5!important}
+body.school-hub-unified .hero-visual img{border-color:#b8e3b555!important;background:#102e39!important;border-radius:17px!important;box-shadow:0 20px 35px #0004}
+body.school-hub-unified .school-counts span{color:#dbf4df!important;background:#c0e6bb17!important;border:1px solid #c0e6bb60!important;border-radius:7px!important;font-size:.8rem!important}
+body.school-hub-unified .hero .button,body.school-catalog-unified .cta,body.school-catalog-unified .filters button[aria-pressed=true]{background:#b8e3b5!important;border-color:#b8e3b5!important;color:#0a2831!important;border-radius:9px!important;font-weight:750!important;box-shadow:none!important}
+body.school-hub-unified .hero .button:hover,body.school-catalog-unified .cta:hover{background:#d9f3d5!important}
+body.school-hub-unified .school-section{background:#fff!important;border:1px solid #d7e4e3!important;border-radius:18px!important;box-shadow:0 12px 28px #0b28330a;padding:clamp(23px,3.5vw,39px)!important;margin:17px 0 24px!important}
+body.school-hub-unified .school-section>.eyebrow{color:#39766b!important}
+body.school-hub-unified .school-section h2{font-size:clamp(1.65rem,3vw,2.45rem)!important;color:#102b37!important;letter-spacing:-.025em!important}
+body.school-hub-unified .school-grid{gap:15px!important;margin:18px 0!important}
+body.school-hub-unified .school-course{background:#f6faf9!important;border:1px solid #d3e4e0!important;border-radius:14px!important;padding:23px!important;box-shadow:none!important;transition:border-color .2s,transform .2s}
+body.school-hub-unified .school-course:hover{border-color:#8fb7a9!important;transform:translateY(-2px)}
+body.school-hub-unified .school-course h3{font-size:clamp(1.28rem,2.5vw,1.65rem)!important;color:#143541!important}
+body.school-hub-unified .school-course p{color:#485e67!important}
+body.school-hub-unified .school-course .school-label{color:#387a68!important}
+body.school-hub-unified .school-tags span{color:#31564c!important;background:#e2f2e8!important;border:1px solid #c9e2d5;border-radius:6px!important}
+body.school-hub-unified .school-course .button,body.school-hub-unified .school-section>.button{background:#0d3640!important;color:#f4fcf9!important;border:1px solid #0d3640!important;border-radius:8px!important}
+body.school-hub-unified .school-note{background:#eef6f2!important;border-color:#8dbca2!important}
+body.school-catalog-unified #school-quick-access{background:#fff!important;border:1px solid #d7e4e3!important;border-radius:16px!important;box-shadow:0 10px 25px #0b28330a!important}
+body.school-catalog-unified .quick-courses a{background:#f5faf8!important;border:1px solid #cfe1d9!important;border-radius:12px!important;padding:18px!important}
+body.school-catalog-unified .quick-courses a:hover{border-color:#79a998!important;background:#f0f8f2!important}
+body.school-catalog-unified .quick-courses a span{color:#387a68!important}
+body.school-catalog-unified .quick-courses a strong{color:#173541!important}
+body.school-catalog-unified .lang-picker select{border-color:#a6c5bc!important;border-radius:9px!important;min-height:45px}
+body.school-catalog-unified .filters button{border:1px solid #bcd3cf!important;background:#fff!important;color:#224a4e!important;border-radius:8px!important;min-height:44px}
+body.school-catalog-unified .filters button[aria-pressed=true]{background:#133d43!important;border-color:#133d43!important;color:white!important}
+body.school-catalog-unified .course{border-color:#d3e3df!important;border-radius:16px!important;box-shadow:0 12px 25px #0b283310!important;overflow:hidden}
+body.school-catalog-unified .course-head{background:radial-gradient(circle at 72% 26%,#246572,#092432 74%)!important}
+body.school-catalog-unified .course-body h3{color:#123541!important}
+body.school-catalog-unified .tags span{background:#e9f4ed!important;color:#315d4d!important;border-radius:6px!important}
+body.school-catalog-unified .note,body.school-catalog-unified .interest{border:1px solid #d3e3df!important;border-left:4px solid #5b9a81!important;background:#fff!important;border-radius:12px!important}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer{background:radial-gradient(ellipse at 10% 0%,#1c485145,transparent 42%),#071b27!important;border:0!important;border-top:1px solid #b8e3b54a!important;color:#dceceb!important;position:relative}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-top{max-width:1250px;margin:auto;padding:46px clamp(18px,4vw,50px) 0}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-eyebrow{margin:0 0 7px;color:#b8e3b5;font:750 .7rem/1.4 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-heading{margin:0;color:#f5fbf9;font:700 clamp(1.9rem,3.7vw,2.8rem)/1.16 Georgia,serif!important;letter-spacing:-.03em}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-desc{max-width:600px;margin:12px 0 18px;color:#b6cdd0;font-size:.96rem;line-height:1.65}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-cta{display:inline-flex;align-items:center;min-height:46px;gap:12px;padding:11px 19px;background:#b8e3b5;color:#0b2831!important;border-radius:8px;text-decoration:none;font-weight:750;font-size:.91rem}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-grid{grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(17px,3vw,40px);padding-top:34px;padding-bottom:36px}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-brand{color:#f3faf6!important;font-size:1.2rem!important}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-mark{border-color:#b8e3b5;color:#b8e3b5}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-brand small{color:#b8d3ce!important}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-about p{color:#afc5c7}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-links h2{color:#b8e3b5!important;font-size:.92rem!important}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-links a{color:#d4e6e7!important;font-size:.87rem!important}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-links a:hover{color:#b8e3b5!important}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-bottom{border-color:#ffffff24;color:#adc6c9}
+body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-bottom a{color:#b8e3b5!important}
+@media(max-width:980px){body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.school-footer-about{grid-column:1/-1}}
+@media(max-width:700px){
+ body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-bar{flex-wrap:nowrap!important;gap:8px!important;padding:12px 16px!important}
+ body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-brand{font-size:1.08rem!important;min-width:0!important}
+ body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-brand:before{width:31px;height:31px;margin-right:7px}
+ body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-links{padding:0 15px 12px!important}
+ body:is(.school-hub-unified,.school-catalog-unified) #mb-common-header .mbc-links a{width:100%;border-radius:8px!important}
+ body:is(.school-hub-unified,.school-catalog-unified) main{padding:12px 15px 35px!important}
+ body.school-hub-unified .hero,body.school-catalog-unified main>.hero{padding:24px 20px!important;margin:4px 0 18px!important;border-radius:16px!important}
+ body.school-hub-unified .school-section{padding:18px 16px!important;border-radius:13px!important;margin:13px 0 19px!important}
+ body.school-hub-unified .school-course{padding:18px!important}
+ body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-top{padding:34px 18px 0}
+ body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 15px;padding:30px 18px 26px}
+ body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-about{grid-column:1/-1}
+ body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-links:last-child{grid-column:1/-1}
+ body:is(.school-hub-unified,.school-catalog-unified)>footer.school-site-footer .school-footer-bottom{line-height:1.8;padding:16px 18px 25px}
+ body.school-hub-unified .school-grid{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){body.school-hub-unified .school-course{transition:none!important}body.school-hub-unified .school-course:hover{transform:none!important}}
