@@ -1,0 +1,29 @@
+name: Audit SEO e struttura sito
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * 1'
+  push:
+    paths:
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - '**/index.html'
+      - 'scripts/audit_site.py'
+      - '.github/workflows/audit-seo.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate sitemap, canonical, HTML and JSON-LD
+        run: python scripts/audit_site.py
