@@ -11,3 +11,12 @@
 #adc-unified-header .adc-u-links a:hover,#adc-unified-header .adc-u-links a[aria-current=page]{background:#365a4c}
 #adc-unified-header .adc-u-toggle:focus-visible,#adc-unified-header a:focus-visible{outline:3px solid #d8b87c;outline-offset:2px}
 @media(max-width:760px){#adc-unified-header .adc-u-toggle{display:block}#adc-unified-header .adc-u-links{display:none;flex-direction:column;gap:2px;padding:4px 16px 18px}#adc-unified-header .adc-u-links[data-open=true]{display:flex}#adc-unified-header .adc-u-links a{display:block;padding:12px 10px;border-bottom:1px solid #ffffff20;font-size:1rem}}
+
+/* Surface interattive sempre sopra contenuti editoriali e widget. */
+#adc-unified-header{isolation:isolate;z-index:1000!important}
+#adc-unified-header .adc-u-bar,#adc-unified-header .adc-u-links{position:relative;z-index:1}
+#adc-unified-header .adc-u-links a,#adc-unified-header .adc-u-toggle{position:relative;pointer-events:auto!important;touch-action:manipulation}
+@media(max-width:760px){
+#adc-unified-header .adc-u-links[data-open="true"]{display:flex!important;position:relative;visibility:visible!important}
+#adc-unified-header .adc-u-links a{min-height:46px;display:flex!important;align-items:center}
+}
