@@ -117,6 +117,12 @@ p{max-width:76ch}
 .adc-visual-card small{display:block;padding:9px 18px 16px;font-size:.96rem!important;line-height:1.5}
 .adc-visual-card .adc-visual-go{display:block;margin:auto 18px 18px!important;padding:12px 14px;border-radius:8px;text-align:center;background:#eef1f7;color:#193e72!important;font-size:.94rem!important}
 @media(max-width:760px){.adc-visual-card .adc-visual-photo{height:clamp(185px,52vw,260px)}.adc-visual-card{min-height:0!important}.adc-visual-card strong{padding-top:9px}}
+
+/* Navigazione a seguito delle quattro schede: nessun segnaposto né separatore testuale */
+.adc-home-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 0;padding:0;align-items:stretch}
+.adc-home-actions a{display:flex;align-items:center;justify-content:center;min-width:0;text-align:center;padding:12px 13px;border:1px solid #cab78e;border-radius:10px;background:#f3eadb;color:#17324b!important;font-weight:700;line-height:1.35;text-decoration:none!important}
+.adc-home-actions a:hover,.adc-home-actions a:focus-visible{background:#e7d5b6;text-decoration:underline!important}
+@media(max-width:760px){.adc-home-actions{grid-template-columns:1fr;gap:9px;margin:14px 0 0}.adc-home-actions a{padding:12px 14px;font-size:.94rem}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
@@ -207,7 +213,7 @@ main#contenuto p,main#contenuto li{hyphens:none!important;overflow-wrap:break-wo
     <a class="adc-visual-card" href="/adc/fonti/"><span class="adc-visual-photo"><img src="https://media.cultura.gov.it/mibac/files/boards/be78e33bc8ca0c99bff70aa174035096/TESORI%20D%27ITALIA%20-%20IMMAGINI/2025/Pergamene%20ex%20copertine%20notarili%20Catania/PergameneCatania2.jpg" alt="Pergamena storica conservata presso l'Archivio di Stato di Catania: fotografia illustrativa, non documento attribuito a Calatabiano" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Ministero della Cultura · immagine di contesto</span><strong>I documenti storici</strong><small>Pergamene, studi, attestazioni e fonti consultabili</small><span class="adc-visual-go">Esplora le fonti →</span></a>
     <a class="adc-visual-card" href="/adc/calata-san-filippo/"><span class="adc-visual-photo"><img src="https://www.gazzettinonline.it/wp-content/uploads/2020/02/Festa-San-Filippo-a-Calatabiano.-.jpg" alt="Processione di San Filippo a Calatabiano, fotografia della festa" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Gazzettinonline · fotografia della festa</span><strong>Le tradizioni</strong><small>La Calata di San Filippo e la memoria della comunità</small><span class="adc-visual-go">Conosci la tradizione →</span></a>
   </div>
-  <p class="adc-landing-links"><a href="/adc/cerca/">Cerca nell'archivio</a> · <a href="/adc/custode/">Chiedi al Custode</a> · <a href="#adc-risorse-complete">Tutti i dossier e gli approfondimenti</a></p>
+  <nav class="adc-home-actions" aria-label="Altri percorsi dell’archivio"><a href="/adc/cerca/">Cerca nell’archivio</a><a href="/adc/custode/">Chiedi al Custode</a><a href="#adc-risorse-complete">Tutti i dossier e gli approfondimenti</a></nav>
 </section>
 <details class="adc-extra-resources" id="adc-risorse-complete"><summary><strong>Altre risorse dell'Archivio</strong><span>Ricerca, dossier, dedica, fotografie e approfondimenti</span></summary><div class="adc-extra-resources-inner">
 <p class="adc-embed-invite"><strong>Condividi la storia di Calatabiano.</strong> Hai un sito, un blog o curi le pagine di un’associazione? <a href="./incorpora/">Porta la ricerca dell’Archivio nel tuo sito</a> e contribuisci a far conoscere le fonti del territorio.</p>
