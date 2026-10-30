@@ -1,0 +1,32 @@
+name: Verifica contatore ADC
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'adc/assets/navigazione-unificata.js'
+      - 'adc/contatore-config.json'
+      - 'adc-contatore/**'
+      - '.github/workflows/adc-contatore-check.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verifica sintassi JavaScript
+        run: |
+          node --check adc/assets/navigazione-unificata.js
+          node --check adc-contatore/src/worker.js
+      - name: Verifica configurazione e schema
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          cfg=json.loads(pathlib.Path('adc/contatore-config.json').read_text())
+          assert cfg['base']==2000
+          assert 'endpoint' in cfg
+          sql=pathlib.Path('adc-contatore/schema.sql').read_text()
+          assert "('adc', 2000)" in sql
+          print('Contatore ADC: controlli statici superati')
+          PY
