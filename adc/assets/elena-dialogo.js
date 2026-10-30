@@ -68,6 +68,7 @@
             ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
             : 'Nessuna attestazione approvata individuata per questa domanda.');
         article.append(evidence);
+        if(r.kind==='documentary' && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         const voiceControls=make('div','elena-dialogue-voice');
         const read=make('button','elena-dialogue-read','Ascolta la risposta');
         read.type='button';
