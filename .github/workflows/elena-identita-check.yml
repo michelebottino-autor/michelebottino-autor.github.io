@@ -1,0 +1,20 @@
+name: Elena - verifica identita pubblica
+on:
+  push:
+    paths:
+      - 'adc/assets/elena-presenza.js'
+      - 'adc/assets/elena-dialogo.js'
+      - 'adc/elena/index.html'
+      - '.github/scripts/test-elena-identita.js'
+      - '.github/workflows/elena-identita-check.yml'
+  workflow_dispatch:
+jobs:
+  verifica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check adc/assets/elena-presenza.js
+      - run: node .github/scripts/test-elena-identita.js
