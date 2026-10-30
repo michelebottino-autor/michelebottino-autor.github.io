@@ -22,6 +22,17 @@
       return {e,score,strong};
     }).filter(x => x.score >= 5 && x.strong).sort((a,b) => b.score-a.score || a.e.title.localeCompare(b.e.title,'it')).filter((x,i,all) => all.findIndex(y => y.e.url===x.e.url)===i).slice(0,5).map(x=>x.e);
   }
+  // Contesto effimero: solo l'ultima domanda in questa scheda, senza memorizzazione.
+  function contextualQuery(q, previous) {
+    const current=String(q||'').trim();
+    const antecedent=String(previous||'').trim();
+    if(!antecedent || !current || current.length>160) return current;
+    const follow=/^(?:e\s+)?(?:quali?\s+(?:fonti|documenti|prove)|dove\s+(?:si\s+)?(?:trova|legg[oe]|sono)|in\s+che\s+(?:anno|periodo)|e\s+(?:poi|prima)|puoi\s+(?:approfondire|spiegare)|parlami\s+(?:di\s+)?(?:quest[oaie]|quello)|e\s+(?:quest[oaie]|quello)|che\s+(?:cosa|documenti|fonti)\s+(?:lo|la|ne))\b/i;
+    if(!follow.test(current))return current;
+    const keywords=tokens(antecedent).slice(0,5);
+    if(!keywords.length)return current;
+    return (current+' '+keywords.join(' ')).slice(0,160);
+  }
   function reply(q, index, approved) {
     const n = normalize(q);
     // Risposte canoniche consentite soltanto con stato, fonte e testo approvati.
@@ -34,7 +45,7 @@
   function mount() {
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
-    let index={entries:[]}, approved=[], turns=0;
+    let index={entries:[]}, approved=[], turns=0, previousQuestion='';
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
     const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)) index=a[0].value;
@@ -45,7 +56,9 @@
       const q=String(query||'').trim().slice(0,160);if(!q)return;
       ready.then(()=>{
         if(!turns)output.replaceChildren();
-        const r=reply(q,index,approved);
+        const effective=contextualQuery(q,previousQuestion);
+        const r=reply(effective,index,approved);
+        previousQuestion=effective;
         output.append(make('p','elena-dialogue-question','Domanda: '+q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
@@ -101,5 +114,5 @@
     if(loc.searchParams.has('q')||loc.hash.startsWith('#q=')){loc.searchParams.delete('q');loc.hash='';try{history.replaceState(null,'',loc.pathname+loc.search)}catch(e){}}
     if(initial && initial.length<=160)run(initial);
   }
-  return {normalize,tokens,rank,reply,safeUrl,mount};
+  return {normalize,tokens,rank,reply,contextualQuery,safeUrl,mount};
 });
