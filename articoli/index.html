@@ -190,6 +190,16 @@ body>footer.articles-footer nav.articles-footer-links{display:flex!important;fle
 .articles-footer-counter summary{cursor:pointer;color:#b4c2d3!important;font-size:.8rem}
 @media(max-width:980px){.articles-footer-inner{grid-template-columns:repeat(3,minmax(0,1fr))}.articles-footer-about{grid-column:1/-1}}
 @media(max-width:600px){#contenuto{padding-top:3px!important;padding-bottom:25px!important}#contenuto .editorial-breadcrumb{padding:8px 17px!important;margin-bottom:8px!important}#contenuto>.container{padding:9px 16px!important}#contenuto .page-header-box{padding:24px 20px!important}#contenuto .page-header-box p{font-size:1rem!important}#contenuto .content-box{padding:18px!important}#contenuto .articles-grid{grid-template-columns:1fr!important;gap:13px!important}.articles-footer-inner{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;padding:30px 17px 23px}.articles-footer-about{grid-column:1/-1}.articles-footer-links:last-child{grid-column:1/-1}.articles-footer-links a{font-size:.85rem!important;overflow-wrap:anywhere}.articles-footer-brand{font-size:1.23rem!important}}
+
+/* Schede Articoli: impaginazione editoriale compatta e immagini proporzionate. */
+#contenuto .featured-box{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start;gap:clamp(18px,3vw,32px);padding:clamp(16px,2.5vw,26px);overflow:hidden}
+#contenuto .featured-box>div{min-width:0}
+#contenuto .featured-box>div:first-child img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain;object-position:center;background:#f1eee9;border-radius:9px}
+#contenuto .featured-box>div:nth-child(2){display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+#contenuto .featured-box .featured-label,#contenuto .featured-box h2,#contenuto .featured-box p,#contenuto .featured-box .meta-line,#contenuto .featured-box .tag-line{margin:0}
+#contenuto .featured-box h2{line-height:1.22}
+#contenuto .featured-box .section-link{margin-top:5px}
+@media(max-width:760px){#contenuto .featured-box{grid-template-columns:minmax(0,1fr)}#contenuto .featured-box>div:first-child img{max-height:260px}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
