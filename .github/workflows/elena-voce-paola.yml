@@ -57,11 +57,11 @@ jobs:
               tag.decompose()
           elements=main.select('h1,h2,h3,p,li')
           parts=[e.get_text(' ',strip=True) for e in elements]
-          parts=[re.sub(r'\\s+',' ',v) for v in parts if v.strip()]
+          parts=[re.sub(r'\s+',' ',v) for v in parts if v.strip()]
           full=' '.join(parts)
           if len(full)<400:raise SystemExit('Testo insufficiente')
           chunks=[];buf=''
-          for sentence in re.split(r'(?<=[.!?])\\s+',full):
+          for sentence in re.split(r'(?<=[.!?])\s+',full):
               if len(buf)+len(sentence)>900 and buf:
                   chunks.append(buf);buf=''
               if len(sentence)>900:
@@ -77,7 +77,7 @@ jobs:
               subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','96k',str(mp3)],check=True)
               segments.append(mp3)
           concat=Path('/tmp/paola/concat.txt')
-          concat.write_text(''.join("file '"+str(p)+"'\\n" for p in segments))
+          concat.write_text(''.join("file '"+str(p)+"'\n" for p in segments))
           dest=Path('adc/audio/elena-paola-storia-per-tutti.mp3')
           subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i',str(concat),'-c','copy',str(dest)],check=True)
           print('Testo',len(full),'caratteri,',len(segments),'segmenti, audio',dest.stat().st_size,'byte')
