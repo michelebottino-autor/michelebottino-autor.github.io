@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS visits (id TEXT PRIMARY KEY, total INTEGER NOT NULL CHECK (total >= 0));
+INSERT OR IGNORE INTO visits (id, total) VALUES ('adc', 2000);
