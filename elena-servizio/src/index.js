@@ -4,7 +4,20 @@ const ORIGIN='https://michelebottino-autor.github.io';
 const APPROVED=ORIGIN+'/adc/assets/elena-risposte-approvate.json';
 const normalize=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
 const safePath=u=>typeof u==='string'&&/^\/adc\/[a-z0-9/_-]*(?:\.html)?$/i.test(u);
-const valid=a=>a&&a.status==='APPROVED_FOR_PUBLICATION'&&typeof a.question==='string'&&typeof a.answer==='string'&&a.answer.trim()&&typeof a.reviewer==='string'&&a.reviewer.trim()&&typeof a.reviewed_at==='string'&&a.reviewed_at.trim()&&Array.isArray(a.sources)&&a.sources.length>0&&a.sources.every(s=>s&&safePath(s.url)&&typeof s.title==='string'&&s.title.trim()&&typeof s.page==='string'&&s.page.trim());
+const evidenceStates=new Set(['SOURCE_IDENTIFIED','EDITION_TEXT_CHECKED','IMAGE_COLLATED','ORIGINAL_COLLATED']);
+const valid=a=>a&&a.status==='APPROVED_FOR_PUBLICATION'
+ && evidenceStates.has(a.evidence_status)
+ && typeof a.evidence_limitations==='string'
+ && typeof a.question==='string'&&a.question.trim()
+ && typeof a.answer==='string'&&a.answer.trim()
+ && typeof a.reviewer==='string'&&a.reviewer.trim()
+ && typeof a.reviewed_at==='string'&&a.reviewed_at.trim()
+ && typeof a.review_rationale==='string'&&a.review_rationale.trim()
+ && Array.isArray(a.sources)&&a.sources.length>0
+ && a.sources.every(x=>x&&safePath(x.url)&&typeof x.title==='string'&&x.title.trim()
+ && typeof x.page==='string'&&x.page.trim()
+ && typeof x.source_type==='string'&&x.source_type.trim());
+
 function json(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff','access-control-allow-origin':ORIGIN,'vary':'Origin'}})}
 export default {
  async fetch(request,env){
@@ -33,6 +46,6 @@ export default {
   }catch{return json({kind:'unavailable',answer:'Le risposte documentarie non sono disponibili in questo momento.',sources:[]},503)}
   const found=entries.find(a=>valid(a)&&normalize(a.question)===normalize(query));
   if(!found)return json({kind:'unverified',answer:'Non è disponibile una risposta verificata per questa domanda. Consulta le schede pubbliche dell’ADC.',sources:[]});
-  return json({kind:'documentary',answer:found.answer,sources:found.sources.map(s=>({title:s.title,page:s.page,url:s.url})),reviewed_at:found.reviewed_at});
+  return json({kind:'documentary',answer:found.answer,sources:found.sources.map(s=>({title:s.title,page:s.page,url:s.url})),reviewed_at:found.reviewed_at,evidence_status:found.evidence_status,evidence_limitations:found.evidence_limitations});
  }
 };
