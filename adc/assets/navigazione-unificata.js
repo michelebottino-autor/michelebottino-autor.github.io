@@ -89,13 +89,16 @@
       var endpoint = cfg.endpoint;
       var registered = false;
       try { registered = sessionStorage.getItem('adc-visita-registrata-v1') === '1'; } catch(_) {}
+      if (!registered) { try { sessionStorage.setItem('adc-visita-registrata-v1','1'); } catch(_) {} }
       return fetch(endpoint, {method: registered ? 'GET' : 'POST', mode:'cors', cache:'no-store'}).then(function(r){if(!r.ok)throw Error('counter');return r.json();}).then(function(result){
         if (!Number.isSafeInteger(result.total) || result.total < 2000) return;
         count.textContent = format(result.total);
         state.textContent = 'Conteggio delle sessioni di visita · indipendente da Google';
         if (!registered) { try {sessionStorage.setItem('adc-visita-registrata-v1','1');} catch(_) {} }
       });
-    }).catch(function(){ state.textContent = 'Contatore temporaneamente non disponibile'; });
+    }).catch(function(){
+      state.textContent = 'Contatore temporaneamente non disponibile';
+    });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
