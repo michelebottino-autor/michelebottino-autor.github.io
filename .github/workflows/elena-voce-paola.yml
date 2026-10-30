@@ -1,6 +1,9 @@
 name: Elena - genera campione voce Paola
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/elena-voce-paola.yml'
 permissions:
   contents: write
 jobs:
