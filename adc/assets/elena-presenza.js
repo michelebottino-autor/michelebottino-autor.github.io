@@ -3,7 +3,7 @@
  'use strict';
  if(document.querySelector('[data-elena-assistente]'))return;
  const root=document.createElement('aside');root.dataset.elenaAssistente='';root.className='elena-presenza';
- root.innerHTML=`<button class="elena-presenza-toggle" type="button" aria-expanded="false" aria-controls="elena-presenza-panel">Elena · Posso aiutarti?</button><section id="elena-presenza-panel" class="elena-presenza-panel" hidden aria-label="Assistenza di Elena"><div class="elena-presenza-heading"><strong>Elena, archivista di Calatabiano</strong><button type="button" class="elena-presenza-close" aria-label="Chiudi Elena">×</button></div><p class="elena-presenza-message"></p><form class="elena-presenza-form"><label for="elena-presenza-query">Che cosa stai cercando?</label><input id="elena-presenza-query" type="search" maxlength="160" autocomplete="off" placeholder="Un luogo, una data, un documento" required><button type="submit">Chiedi a Elena</button></form><div class="elena-presenza-result" aria-live="polite"></div><div class="elena-voice-controls"><button type="button" class="elena-paola-sample">Ascolta Paola</button><button type="button" class="elena-voice-read" hidden>Leggi la risposta</button><button type="button" class="elena-voice-page">Leggi la pagina</button><button type="button" class="elena-voice-stop" hidden>Interrompi lettura</button></div><p class="elena-voice-note">Voce italiana del dispositivo, se disponibile. Lettura soltanto su richiesta.</p><a href="/adc/elena/">Apri la pagina completa di Elena</a><p class="elena-presenza-privacy">Le risposte provengono dalle schede pubbliche dell'ADC. La domanda è elaborata nel browser e non viene inserita nell'indirizzo della pagina.</p></section>`;
+ root.innerHTML=`<button class="elena-presenza-toggle" type="button" aria-expanded="false" aria-controls="elena-presenza-panel">Elena · Posso aiutarti?</button><section id="elena-presenza-panel" class="elena-presenza-panel" hidden aria-label="Assistenza di Elena"><div class="elena-presenza-heading"><strong>Elena, archivista di Calatabiano</strong><button type="button" class="elena-presenza-close" aria-label="Chiudi Elena">×</button></div><p class="elena-presenza-message"></p><form class="elena-presenza-form"><label for="elena-presenza-query">Che cosa stai cercando?</label><input id="elena-presenza-query" type="search" maxlength="160" autocomplete="off" placeholder="Un luogo, una data, un documento" required><button type="submit">Chiedi a Elena</button></form><div class="elena-presenza-result" aria-live="polite"></div><div class="elena-voice-controls"><button type="button" class="elena-paola-sample">Ascolta Paola</button><button type="button" class="elena-voice-read" hidden>Leggi la risposta</button><button type="button" class="elena-voice-page">Leggi la pagina</button><button type="button" class="elena-voice-stop" hidden>Interrompi lettura</button></div><p class="elena-voice-note">Risposte standard lette da Paola. Le altre letture dipendono dalla disponibilità della voce sul dispositivo.</p><a href="/adc/elena/">Apri la pagina completa di Elena</a><p class="elena-presenza-privacy">Le risposte provengono dalle schede pubbliche dell'ADC. La domanda è elaborata nel browser e non viene inserita nell'indirizzo della pagina.</p></section>`;
  const voiceStyle=document.createElement('style');voiceStyle.textContent='.elena-voice-controls{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 6px}.elena-voice-controls button{border:1px solid #8b997e;border-radius:7px;background:#f5f3eb;color:#163d34;padding:9px 12px;font:600 .87rem system-ui;cursor:pointer}.elena-voice-controls button:focus-visible{outline:3px solid #b39256;outline-offset:2px}.elena-voice-controls button[hidden]{display:none}.elena-voice-note{font-size:.76rem;color:#4f6057;margin:5px 0 12px}';document.head.appendChild(voiceStyle);
  document.body.append(root);
  const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result'),send=form.querySelector('button');
@@ -19,9 +19,11 @@
  paolaSampleAudio.addEventListener('ended',()=>{paolaSampleButton.textContent='Ascolta Paola';});
  window.addEventListener('pagehide',()=>paolaSampleAudio.pause());
  const readButton=root.querySelector('.elena-voice-read'),pageButton=root.querySelector('.elena-voice-page'),stopButton=root.querySelector('.elena-voice-stop'),voiceNote=root.querySelector('.elena-voice-note');
- let spokenAnswer='';
+ let spokenAnswer='',spokenKind='';
+ const paolaAnswerAudio=new Audio();paolaAnswerAudio.preload='none';
+ paolaAnswerAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
  const synthesis=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window)?window.speechSynthesis:null;
- function stopSpeech(){if(synthesis)synthesis.cancel();paolaSampleAudio.pause();paolaSampleButton.textContent='Ascolta Paola';stopButton.hidden=true;}
+ function stopSpeech(){if(synthesis)synthesis.cancel();paolaAnswerAudio.pause();paolaAnswerAudio.currentTime=0;paolaSampleAudio.pause();paolaSampleButton.textContent='Ascolta Paola';stopButton.hidden=true;}
  function speakText(text){
    if(!synthesis){voiceNote.textContent='La lettura vocale non è disponibile in questo browser.';return;}
    stopSpeech();
@@ -43,7 +45,13 @@
    stopButton.hidden=false;
    synthesis.speak(utterance);
  }
- readButton.addEventListener('click',()=>speakText(spokenAnswer));
+ readButton.addEventListener('click',()=>{
+   if(spokenKind==='index'||spokenKind==='empty'){
+     stopSpeech();
+     paolaAnswerAudio.src='/adc/audio/elena-paola-risposta-'+(spokenKind==='index'?'indice':'vuota')+'.mp3';
+     paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Lettura con la voce Paola.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Audio Paola non disponibile. Riprova più tardi.';});
+   }else{voiceNote.textContent='Questa risposta non dispone ancora di una registrazione Paola verificata.';}
+ });
  pageButton.addEventListener('click',()=>{
    const main=document.querySelector('main#contenuto,main');
    if(!main){voiceNote.textContent='Non ho trovato il testo della pagina.';return;}
@@ -110,14 +118,14 @@
    try{
      const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
      const reply=engine.reply(q,data.index,data.approved);
-     spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!synthesis;result.replaceChildren(make('p',reply.title),make('p',reply.text));
+     spokenKind=reply.kind;spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
      for(const source of (reply.links||[]).slice(0,5)){
        if(!/^\/adc\/(?!\/)[a-z0-9/_\-.]*$/i.test(source.url))continue;
        const p=make('p'),link=make('a',source.title);link.href=source.url;p.append(link);result.append(p);
      }
      input.value='';
-   }catch(_){readButton.hidden=true;spokenAnswer='';result.replaceChildren(make('p','La consultazione non è disponibile in questo momento. Puoi aprire la pagina completa di Elena.'));}
+   }catch(_){readButton.hidden=true;spokenAnswer='';spokenKind='';result.replaceChildren(make('p','La consultazione non è disponibile in questo momento. Puoi aprire la pagina completa di Elena.'));}
    finally{busy=false;send.disabled=false;}
  });
 })();
