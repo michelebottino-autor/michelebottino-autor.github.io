@@ -67,7 +67,7 @@
  // Messaggio uguale per tutti i visitatori e per tutte le sezioni ADC.
  msg.textContent='Posso aiutarti a orientarti nelle fonti pubbliche dell’Archivio Documentale Calatabiano.';
  const make=(tag,text,cls)=>{const el=document.createElement(tag);el.textContent=text||'';if(cls)el.className=cls;return el;};
- let loader=null,resources=null,busy=false;
+ let loader=null,resources=null,busy=false,previousQuestion='';
  function loadEngine(){
    if(window.ElenaADCDialogo)return Promise.resolve(window.ElenaADCDialogo);
    if(!loader)loader=new Promise((resolve,reject)=>{
@@ -118,7 +118,9 @@
    busy=true;send.disabled=true;result.replaceChildren(make('p','Consulto le schede pubbliche dell’Archivio…'));
    try{
      const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
-     const reply=engine.reply(q,data.index,data.approved);
+     const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
+     const reply=engine.reply(effective,data.index,data.approved);
+     previousQuestion=effective;
      spokenKind=reply.kind;spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
      for(const source of (reply.links||[]).slice(0,5)){
