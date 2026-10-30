@@ -17,7 +17,7 @@ export default {
   const size=Number(request.headers.get('content-length')||0);
   if(size>2048)return json({error:'Richiesta troppo grande'},413);
   let query;
-  try{const payload=await request.json();query=payload?.question}catch{return json({error:'JSON non valido'},400)}
+  try{const raw=await request.text();if(raw.length>2048)return json({error:'Richiesta troppo grande'},413);const payload=JSON.parse(raw);query=payload?.question}catch{return json({error:'JSON non valido'},400)}
   if(typeof query!=='string'||!query.trim()||query.length>160)return json({error:'Domanda non valida'},400);
   // Il token opzionale protegge l'accesso amministrativo, non va incorporato nel frontend pubblico.
   if(env.ELENA_PRIVATE_TOKEN){
