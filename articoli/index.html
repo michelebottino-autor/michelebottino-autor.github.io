@@ -211,6 +211,14 @@ body>footer.articles-footer nav.articles-footer-links{display:flex!important;fle
 #contenuto .articles-grid .card-link{margin-top:auto;align-self:flex-start}
 @media(max-width:950px){#contenuto .articles-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:560px){#contenuto .articles-grid>.card{grid-template-columns:minmax(0,1fr);gap:14px;padding:16px}#contenuto .articles-grid>.card>img{max-height:250px}}
+
+/* Serie correlate — testo contenuto e spaziatura coerente con le schede. */
+#contenuto .articles-related-section{box-sizing:border-box;min-width:0;width:100%;max-width:100%;overflow:clip}
+#contenuto .articles-related-section .content-box{box-sizing:border-box;min-width:0;width:100%;max-width:100%;padding:clamp(20px,3vw,32px);overflow-wrap:break-word}
+#contenuto .articles-related-section h2{margin:0 0 14px;line-height:1.2}
+#contenuto .articles-related-section p{max-width:68ch;width:100%;margin:0 0 18px;line-height:1.65}
+#contenuto .articles-related-section .section-link{display:inline-flex;align-items:center;max-width:100%;white-space:normal;overflow-wrap:anywhere;margin:0;text-decoration:none}
+@media(max-width:560px){#contenuto .articles-related-section .content-box{padding:18px 16px}#contenuto .articles-related-section h2{font-size:clamp(1.55rem,7vw,2rem)}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
      Per attivarla serve l’ID G-XXXXXXXXXX e una gestione del consenso adeguata.
@@ -234,7 +242,7 @@ body>footer.articles-footer nav.articles-footer-links{display:flex!important;fle
     </div>
 </div>
 </section>
-<section class="container section">
+<section class="container section articles-related-section">
 <div class="content-box">
 <h2>Serie correlate</h2>
 <p>
