@@ -17,8 +17,16 @@
    if(!text.trim())return;
    const utterance=new SpeechSynthesisUtterance(text.slice(0,14000));
    utterance.lang='it-IT';utterance.rate=.94;utterance.pitch=1;
-   const available=synthesis.getVoices(),italian=available.filter(v=>/^it(?:-|_)/i.test(v.lang));
-   if(italian.length)utterance.voice=italian.find(v=>v.localService)||italian[0];
+   const italian=synthesis.getVoices().filter(v=>/^it(?:-|_)/i.test(v.lang));
+   const paola=italian.find(v=>/paola/i.test(v.name));
+   const female=italian.find(v=>/(elsa|isabella|alice|federica|silvia|bianca|sara)/i.test(v.name));
+   const chosen=paola||female;
+   if(!chosen){
+     voiceNote.textContent='La voce Paola non è disponibile nel browser. Nessuna voce alternativa verrà avviata automaticamente.';
+     return;
+   }
+   utterance.voice=chosen;
+   voiceNote.textContent=paola?'Voce Paola disponibile su questo dispositivo.':'Voce femminile provvisoria. La voce Paola richiede ancora l’integrazione audio dedicata.';
    utterance.onend=()=>{stopButton.hidden=true;};
    utterance.onerror=()=>{stopButton.hidden=true;voiceNote.textContent='Lettura interrotta. Verifica le impostazioni vocali del dispositivo.';};
    stopButton.hidden=false;
