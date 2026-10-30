@@ -1,1 +1,5 @@
-{"endpoint":"","base":2000,"note":"Impostare endpoint solo dopo la pubblicazione del servizio autonomo ADC."}
+{
+  "endpoint": "https://adc-contatore-visite.michele-bottino.workers.dev/visite",
+  "base": 2000,
+  "note": "Contatore di sessioni ADC; base editoriale 2000, servizio Cloudflare D1 senza Google."
+}
