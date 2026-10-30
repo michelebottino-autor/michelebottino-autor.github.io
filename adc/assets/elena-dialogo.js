@@ -45,7 +45,7 @@
   function mount() {
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
-    let index={entries:[]}, approved=[], turns=0, previousQuestion='';
+    let index={entries:[]}, approved=[], turns=0, previousQuestion='', activeAudio=null;
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
     const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)) index=a[0].value;
@@ -71,12 +71,14 @@
         const audio=new Audio();
         audio.preload='none';
         const recordings={index:'/adc/audio/elena-paola-risposta-indice.mp3',empty:'/adc/audio/elena-paola-risposta-vuota.mp3'};
-        const stopAudio=()=>{audio.pause();audio.currentTime=0;stop.hidden=true;read.hidden=false;};
+        const stopAudio=()=>{audio.pause();audio.currentTime=0;if(activeAudio===audio)activeAudio=null;stop.hidden=true;read.hidden=false;};
         read.addEventListener('click',()=>{
           if(!recordings[r.kind]){
             status.textContent='La lettura vocale di questa risposta non è ancora disponibile.';
             return;
           }
+          if(activeAudio && activeAudio!==audio){activeAudio.pause();activeAudio.currentTime=0;}
+          activeAudio=audio;
           audio.src=recordings[r.kind];
           audio.play().then(()=>{
             stop.hidden=false;read.hidden=true;status.textContent='Elena sta leggendo la risposta.';
@@ -85,7 +87,7 @@
           });
         });
         stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
-        audio.addEventListener('ended',()=>{stop.hidden=true;read.hidden=false;status.textContent='Lettura terminata.';});
+        audio.addEventListener('ended',()=>{stopAudio();status.textContent='Lettura terminata.';});
         voiceControls.append(read,stop,status);
         article.append(voiceControls);
         if(r.links.length) {
