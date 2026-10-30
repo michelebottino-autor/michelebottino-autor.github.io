@@ -20,3 +20,9 @@ L'identificazione di Arnaldo con Armaleo Monaldeschi e i dettagli fiscali riport
 
 ## Esito
 La scheda è **delimitata e documentabile a livello dell'edizione**, non approvata per essere trasformata in una risposta storica certificata di Elena. Mancano il riscontro visuale conclusivo sull'edizione, l'eventuale comparazione con il manoscritto e la decisione firmata del revisore. Nessuna modifica al registro approvazioni.
+
+## Controllo supplementare del 30 ottobre 2026
+
+L'anteprima online del volume Hillen risulta identificata come PDF di 68 pagine. Dal frontespizio e dalla prefazione si verifica che l'autore presenta il lavoro come **raccolta di documenti già editi**, non come nuova edizione critica delle pergamene. La visualizzazione delle pagine specifiche del documento n. 4 non è riuscita in questa sessione: il servizio di anteprima ha restituito un errore di accesso/cache durante la richiesta delle immagini. **Non si dichiara quindi effettuato il controllo visivo delle pp. 47–49.**
+
+Resta invariato lo stato delle attestazioni A01–A03: riscontro editoriale preesistente sul testo digitale, approvazione formale assente. Non promuovere questa scheda nel registro pubblico delle risposte di Elena. La verifica visiva va ripetuta sulla copia digitale stabilmente acquisita, con confronto delle pagine numerate dell'edizione e registrazione degli estremi delle immagini.
