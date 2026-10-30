@@ -31,11 +31,22 @@ jobs:
           printf '%s\n' "Benvenuti nell'Archivio Documentale Calatabiano. Sono Elena e posso accompagnarvi nella consultazione delle fonti storiche." | piper --model /tmp/paola/it_IT-paola-medium.onnx --length_scale 1.32 --noise_scale 0.55 --noise_w 0.8 --output_file /tmp/paola/benvenuto.wav
           ffmpeg -hide_banner -loglevel error -y -i /tmp/paola/benvenuto.wav -codec:a libmp3lame -b:a 96k adc/audio/elena-paola-benvenuto.mp3
           test -s adc/audio/elena-paola-benvenuto.mp3
+          python - <<'PY'
+          import pathlib, subprocess
+          clips = {
+            'risposta-indice': 'Fonti e percorsi da consultare. Non è disponibile una risposta sintetica verificata per questa domanda. Questi percorsi potrebbero essere pertinenti: consulta le fonti prima di trarre conclusioni.',
+            'risposta-vuota': 'Nessuna fonte sufficiente individuata. Non ho trovato un percorso sufficientemente pertinente nell’indice pubblico. Puoi consultare il repertorio generale oppure riprovare indicando una località, un anno o un argomento.'
+          }
+          for key, value in clips.items():
+              wav = pathlib.Path('/tmp/paola') / (key + '.wav')
+              subprocess.run(['piper', '--model', '/tmp/paola/it_IT-paola-medium.onnx', '--length_scale', '1.32', '--noise_scale', '0.55', '--noise_w', '0.8', '--output_file', str(wav)], input=value, text=True, check=True)
+              subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','96k','adc/audio/elena-paola-'+key+'.mp3'],check=True)
+          PY
       - name: Pubblica campione audio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add adc/audio/elena-paola-benvenuto.mp3
+          git add adc/audio/elena-paola-*.mp3
           if ! git diff --cached --quiet; then
             git commit -m "Elena: campione audio voce Paola verificata"
             git push
