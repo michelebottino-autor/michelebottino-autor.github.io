@@ -62,6 +62,12 @@
         output.append(make('p','elena-dialogue-question','Domanda: '+q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
+        const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary'
+          ? 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.'
+          : r.kind==='index'
+            ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
+            : 'Nessuna attestazione approvata individuata per questa domanda.');
+        article.append(evidence);
         const voiceControls=make('div','elena-dialogue-voice');
         const read=make('button','elena-dialogue-read','Ascolta la risposta');
         read.type='button';
