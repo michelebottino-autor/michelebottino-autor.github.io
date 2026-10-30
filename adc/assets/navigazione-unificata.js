@@ -61,3 +61,42 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true});
   else start();
 })();
+/* Contatore ADC nel footer di tutte le pagine: nessun Google Analytics. */
+(function () {
+  'use strict';
+  if (!location.pathname.startsWith('/adc/')) return;
+  function init() {
+    var footer = document.querySelector('footer');
+    if (!footer || document.getElementById('adc-visite-footer')) return;
+    var wrap = document.createElement('p');
+    wrap.id = 'adc-visite-footer';
+    wrap.style.cssText = 'text-align:center;margin:18px auto 8px;padding:12px 14px;max-width:400px;border-top:1px solid rgba(194,170,111,.35);font-variant-numeric:tabular-nums;';
+    var label = document.createElement('strong');
+    label.textContent = 'Visite all’archivio: ';
+    var count = document.createElement('span');
+    count.id = 'adc-visite-numero';
+    count.textContent = '2.000';
+    var state = document.createElement('small');
+    state.style.cssText = 'display:block;font-size:.76rem;margin-top:4px;opacity:.8;';
+    state.textContent = 'Valore iniziale; conteggio in attivazione';
+    wrap.append(label, count, state);
+    var bottom = footer.querySelector('.adc-archive-footer__bottom,.adc-inner-footer__bottom');
+    if (bottom) footer.insertBefore(wrap, bottom);
+    else footer.appendChild(wrap);
+    var format = function (value) { return Number(value).toLocaleString('it-IT'); };
+    fetch('/adc/contatore-config.json', {cache:'no-store'}).then(function(r){if(!r.ok)throw Error('config');return r.json();}).then(function(cfg){
+      if (!cfg || !/^https:\/\/[-a-zA-Z0-9.]+\/visite$/.test(cfg.endpoint || '')) return;
+      var endpoint = cfg.endpoint;
+      var registered = false;
+      try { registered = sessionStorage.getItem('adc-visita-registrata-v1') === '1'; } catch(_) {}
+      return fetch(endpoint, {method: registered ? 'GET' : 'POST', mode:'cors', cache:'no-store'}).then(function(r){if(!r.ok)throw Error('counter');return r.json();}).then(function(result){
+        if (!Number.isSafeInteger(result.total) || result.total < 2000) return;
+        count.textContent = format(result.total);
+        state.textContent = 'Conteggio delle sessioni di visita · indipendente da Google';
+        if (!registered) { try {sessionStorage.setItem('adc-visita-registrata-v1','1');} catch(_) {} }
+      });
+    }).catch(function(){ state.textContent = 'Contatore temporaneamente non disponibile'; });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+})();
