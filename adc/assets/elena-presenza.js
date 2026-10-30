@@ -54,20 +54,14 @@
    }else{voiceNote.textContent='Questa risposta non dispone ancora di una registrazione Paola verificata.';}
  });
  pageButton.addEventListener('click',()=>{
-   if(window.location.pathname.replace(/index\\.html$/,'').replace(/\\/$/,'')==='/adc/storia-per-tutti'){
-     stopSpeech();paolaPageAudio.play().then(()=>{voiceNote.textContent='Lettura della pagina con Paola.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='La registrazione di questa pagina non è ancora disponibile.';});return;
-   }
-   voiceNote.textContent='La lettura Paola di questa pagina non è ancora disponibile. Nessuna voce sostitutiva verrà avviata.';return;
-   const main=document.querySelector('main#contenuto,main');
-   if(!main){voiceNote.textContent='Non ho trovato il testo della pagina.';return;}
-   const copy=main.cloneNode(true);
-   copy.querySelectorAll('script,style,nav,form,button,aside,[hidden],.elena-presenza').forEach(e=>e.remove());
-   const text=(copy.innerText||copy.textContent||'').replace(/\s+/g,' ').trim();
-   speakText(text);
+   const path=window.location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');
+   if(path!=='/adc/storia-per-tutti'){voiceNote.textContent='La lettura con Paola di questa pagina non è ancora disponibile.';return;}
+   stopSpeech();
+   paolaPageAudio.play().then(()=>{voiceNote.textContent='Lettura della pagina con Paola.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='La registrazione della pagina non è ancora disponibile.';});
  });
  stopButton.addEventListener('click',stopSpeech);
  window.addEventListener('pagehide',stopSpeech);
- if(!synthesis){readButton.disabled=true;pageButton.disabled=true;voiceNote.textContent='Questo browser non supporta la lettura vocale.';}
+
  // Messaggio uguale per tutti i visitatori e per tutte le sezioni ADC.
  msg.textContent='Posso aiutarti a orientarti nelle fonti pubbliche dell’Archivio Documentale Calatabiano.';
  const make=(tag,text,cls)=>{const el=document.createElement(tag);el.textContent=text||'';if(cls)el.className=cls;return el;};
