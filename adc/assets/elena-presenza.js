@@ -21,9 +21,10 @@
  const readButton=root.querySelector('.elena-voice-read'),pageButton=root.querySelector('.elena-voice-page'),stopButton=root.querySelector('.elena-voice-stop'),voiceNote=root.querySelector('.elena-voice-note');
  let spokenAnswer='',spokenKind='';
  const paolaAnswerAudio=new Audio();paolaAnswerAudio.preload='none';
+ const paolaPageAudio=new Audio('/adc/audio/elena-paola-storia-per-tutti.mp3');paolaPageAudio.preload='none';paolaPageAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
  paolaAnswerAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
  const synthesis=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window)?window.speechSynthesis:null;
- function stopSpeech(){if(synthesis)synthesis.cancel();paolaAnswerAudio.pause();paolaAnswerAudio.currentTime=0;paolaSampleAudio.pause();paolaSampleButton.textContent='Ascolta Paola';stopButton.hidden=true;}
+ function stopSpeech(){if(synthesis)synthesis.cancel();paolaAnswerAudio.pause();paolaAnswerAudio.currentTime=0;paolaPageAudio.pause();paolaPageAudio.currentTime=0;paolaSampleAudio.pause();paolaSampleButton.textContent='Ascolta Paola';stopButton.hidden=true;}
  function speakText(text){
    if(!synthesis){voiceNote.textContent='La lettura vocale non è disponibile in questo browser.';return;}
    stopSpeech();
@@ -53,6 +54,10 @@
    }else{voiceNote.textContent='Questa risposta non dispone ancora di una registrazione Paola verificata.';}
  });
  pageButton.addEventListener('click',()=>{
+   if(window.location.pathname.replace(/index\\.html$/,'').replace(/\\/$/,'')==='/adc/storia-per-tutti'){
+     stopSpeech();paolaPageAudio.play().then(()=>{voiceNote.textContent='Lettura della pagina con Paola.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='La registrazione di questa pagina non è ancora disponibile.';});return;
+   }
+   voiceNote.textContent='La lettura Paola di questa pagina non è ancora disponibile. Nessuna voce sostitutiva verrà avviata.';return;
    const main=document.querySelector('main#contenuto,main');
    if(!main){voiceNote.textContent='Non ho trovato il testo della pagina.';return;}
    const copy=main.cloneNode(true);
