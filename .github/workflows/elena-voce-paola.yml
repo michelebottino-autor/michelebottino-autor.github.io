@@ -42,6 +42,46 @@ jobs:
               subprocess.run(['piper', '--model', '/tmp/paola/it_IT-paola-medium.onnx', '--length_scale', '1.32', '--noise_scale', '0.55', '--noise_w', '0.8', '--output_file', str(wav)], input=value, text=True, check=True)
               subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','96k','adc/audio/elena-paola-'+key+'.mp3'],check=True)
           PY
+      - name: Crea lettura integrale pagina Storia per tutti
+        run: |
+          python -m pip install --disable-pip-version-check beautifulsoup4
+          python - <<'PY'
+          from bs4 import BeautifulSoup
+          from pathlib import Path
+          import subprocess, re
+          source=Path('adc/storia-per-tutti/index.html').read_text(encoding='utf-8')
+          soup=BeautifulSoup(source,'html.parser')
+          main=soup.select_one('main')
+          if main is None: raise SystemExit('Contenuto principale mancante')
+          for tag in main.select('script,style,nav,form,button,aside,footer,[hidden],.elena-presenza'):
+              tag.decompose()
+          elements=main.select('h1,h2,h3,p,li')
+          parts=[e.get_text(' ',strip=True) for e in elements]
+          parts=[re.sub(r'\\s+',' ',v) for v in parts if v.strip()]
+          full=' '.join(parts)
+          if len(full)<400:raise SystemExit('Testo insufficiente')
+          chunks=[];buf=''
+          for sentence in re.split(r'(?<=[.!?])\\s+',full):
+              if len(buf)+len(sentence)>900 and buf:
+                  chunks.append(buf);buf=''
+              if len(sentence)>900:
+                  while len(sentence)>900:
+                      chunks.append(sentence[:900]);sentence=sentence[900:]
+              buf=(buf+' '+sentence).strip()
+          if buf:chunks.append(buf)
+          segments=[]
+          for i,chunk in enumerate(chunks):
+              wav=Path('/tmp/paola')/f'pagina-{i:03d}.wav'
+              mp3=Path('/tmp/paola')/f'pagina-{i:03d}.mp3'
+              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.32','--noise_scale','0.55','--noise_w','0.8','--output_file',str(wav)],input=chunk,text=True,check=True)
+              subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','96k',str(mp3)],check=True)
+              segments.append(mp3)
+          concat=Path('/tmp/paola/concat.txt')
+          concat.write_text(''.join("file '"+str(p)+"'\\n" for p in segments))
+          dest=Path('adc/audio/elena-paola-storia-per-tutti.mp3')
+          subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i',str(concat),'-c','copy',str(dest)],check=True)
+          print('Testo',len(full),'caratteri,',len(segments),'segmenti, audio',dest.stat().st_size,'byte')
+          PY
       - name: Pubblica campione audio
         run: |
           git config user.name "github-actions[bot]"
