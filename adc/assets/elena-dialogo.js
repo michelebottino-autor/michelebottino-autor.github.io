@@ -49,6 +49,32 @@
         output.append(make('p','elena-dialogue-question','Domanda: '+q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
+        const voiceControls=make('div','elena-dialogue-voice');
+        const read=make('button','elena-dialogue-read','Ascolta la risposta');
+        read.type='button';
+        const stop=make('button','elena-dialogue-stop','Interrompi');
+        stop.type='button';stop.hidden=true;
+        const status=make('p','elena-dialogue-voice-status','');
+        const audio=new Audio();
+        audio.preload='none';
+        const recordings={index:'/adc/audio/elena-paola-risposta-indice.mp3',empty:'/adc/audio/elena-paola-risposta-vuota.mp3'};
+        const stopAudio=()=>{audio.pause();audio.currentTime=0;stop.hidden=true;read.hidden=false;};
+        read.addEventListener('click',()=>{
+          if(!recordings[r.kind]){
+            status.textContent='La lettura vocale di questa risposta non è ancora disponibile.';
+            return;
+          }
+          audio.src=recordings[r.kind];
+          audio.play().then(()=>{
+            stop.hidden=false;read.hidden=true;status.textContent='Elena sta leggendo la risposta.';
+          }).catch(()=>{
+            stopAudio();status.textContent='Non è stato possibile riprodurre la registrazione.';
+          });
+        });
+        stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
+        audio.addEventListener('ended',()=>{stop.hidden=true;read.hidden=false;status.textContent='Lettura terminata.';});
+        voiceControls.append(read,stop,status);
+        article.append(voiceControls);
         if(r.links.length) {
           article.append(make('p','elena-dialogue-sources',r.kind==='documentary'?'Fonti della risposta:':'Apri i documenti e i percorsi:'));
           const list=make('ul','elena-dialogue-links');
