@@ -21,7 +21,7 @@
  const readButton=root.querySelector('.elena-voice-read'),pageButton=root.querySelector('.elena-voice-page'),stopButton=root.querySelector('.elena-voice-stop'),voiceNote=root.querySelector('.elena-voice-note');
  let spokenAnswer='',spokenKind='';
  const paolaAnswerAudio=new Audio();paolaAnswerAudio.preload='none';
- const paolaPageAudio=new Audio('/adc/audio/elena-paola-storia-per-tutti.mp3');paolaPageAudio.preload='none';paolaPageAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
+ const paolaPageAudio=new Audio();paolaPageAudio.preload='none';paolaPageAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
  paolaAnswerAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
  const synthesis=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window)?window.speechSynthesis:null;
  function stopSpeech(){if(synthesis)synthesis.cancel();paolaAnswerAudio.pause();paolaAnswerAudio.currentTime=0;paolaPageAudio.pause();paolaPageAudio.currentTime=0;paolaSampleAudio.pause();paolaSampleButton.textContent='Ascolta Elena';stopButton.hidden=true;}
@@ -55,8 +55,10 @@
  });
  pageButton.addEventListener('click',()=>{
    const path=window.location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');
-   if(path!=='/adc/storia-per-tutti'){voiceNote.textContent='La lettura di questa pagina non è ancora disponibile.';return;}
+   const recordings={'/adc/storia-per-tutti':'/adc/audio/elena-paola-storia-per-tutti.mp3','/adc/elena':'/adc/audio/elena-paola-pagina-elena.mp3'};
+   if(!recordings[path]){voiceNote.textContent='La lettura di questa pagina non è ancora disponibile.';return;}
    stopSpeech();
+   paolaPageAudio.src=recordings[path];
    paolaPageAudio.play().then(()=>{voiceNote.textContent='Elena sta leggendo la pagina.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='La registrazione della pagina non è ancora disponibile.';});
  });
  stopButton.addEventListener('click',stopSpeech);
