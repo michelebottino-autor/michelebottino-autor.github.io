@@ -49,5 +49,6 @@ jobs:
           git add adc/audio/elena-paola-*.mp3
           if ! git diff --cached --quiet; then
             git commit -m "Elena: campione audio voce Paola verificata"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
