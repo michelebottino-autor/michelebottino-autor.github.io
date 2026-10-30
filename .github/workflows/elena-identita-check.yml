@@ -4,6 +4,7 @@ on:
     paths:
       - 'adc/assets/elena-presenza.js'
       - 'adc/assets/elena-dialogo.js'
+      - '.github/scripts/test-elena-contesto.js'
       - 'adc/elena/index.html'
       - '.github/scripts/test-elena-identita.js'
       - '.github/workflows/elena-identita-check.yml'
@@ -18,3 +19,4 @@ jobs:
           node-version: '22'
       - run: node --check adc/assets/elena-presenza.js
       - run: node .github/scripts/test-elena-identita.js
+      - run: node .github/scripts/test-elena-contesto.js
