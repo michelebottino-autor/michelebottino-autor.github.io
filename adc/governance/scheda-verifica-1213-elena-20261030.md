@@ -34,3 +34,15 @@ Resta invariato lo stato delle attestazioni A01–A03: riscontro editoriale pree
 **Limite del riscontro:** le richieste di immagine delle pagine del PDF hanno restituito un errore di cache. Non è stato dunque completato il confronto visivo pagina per pagina e non è stata esaminata la pergamena originale. Stato immutato: **REVISIONE RICHIESTA, NON APPROVATA PER PUBBLICAZIONE NELLE RISPOSTE DI ELENA**. Nessuna deduzione aggiuntiva circa l'identità del conte Arnaldo.
 
 Riferimento digitale: https://api.pageplace.de/preview/DT0400.9783846900598_A26790113/preview-9783846900598_A26790113.pdf
+
+## Matrice puntuale di riscontro sul testo edito
+
+| ID | Riscontro nel testo dell'edizione | Pagina a stampa | Esito |
+| --- | --- | --- | --- |
+| A01 | Formula di datazione del privilegio a Messina nel marzo 1213 | p. 49 | Riscontro testuale positivo |
+| A02 | Intitolazione di Costanza e del figlio Enrico; `castrum Calatabianum` e pertinenze della Chiesa di Catania | pp. 47–48 | Riscontro testuale positivo |
+| A03 | `comiti Arnaldo` e `quindecim millibus tarenorum`, con successiva conferma del castello | pp. 48–49 | Riscontro testuale positivo |
+
+**Numerazione:** le pagine 47–49 sono quelle stampate nel volume e non gli indici di pagina del visualizzatore PDF. La sezione del documento n. 4 inizia nel file PDF intorno alla pagina 47 del visualizzatore (indice zero 46).
+
+**Conclusione metodologica:** la collazione sul livello testuale della riproduzione a stampa è conclusa per A01–A03; la collazione visiva delle immagini e l'eventuale esame dell'originale **non** sono conclusi. Non è giustificata alcuna identificazione automatica fra il conte Arnaldo nominato nel testo e Armaleo Monaldeschi. Nessun passaggio a `APPROVED_FOR_PUBLICATION` è autorizzato da questa verifica.
