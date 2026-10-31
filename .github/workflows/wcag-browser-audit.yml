@@ -4,6 +4,12 @@ on:
     paths:
       - 'index.html'
       - 'adc/index.html'
+      - 'adc/custode/**'
+      - 'adc/percorsi.html'
+      - 'adc/fonti/**'
+      - 'adc/carta/**'
+      - 'adc/contribuisci/**'
+      - 'adc/inventario/testimonianze.json'
       - 'accessibilita/**'
       - 'privacy/**'
       - 'cookie/**'
@@ -29,3 +35,4 @@ jobs:
         run: |
           node tests/accessibility/audit.cjs
           node tests/accessibility/consent-navigation.cjs
+          node tests/accessibility/adc-editorial-custode.cjs
