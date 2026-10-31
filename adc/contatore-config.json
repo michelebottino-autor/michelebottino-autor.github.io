@@ -1,5 +1,5 @@
 {
   "endpoint": "https://adc-contatore-visite.michele-bottino.workers.dev/visite",
   "base": 2000,
-  "note": "Contatore di sessioni ADC; base editoriale 2000, servizio Cloudflare D1 senza Google."
+  "note": "Il servizio restituisce un totale comprensivo della base storica di 2000; il sito mostra solo le sessioni registrate, sottraendo tale base."
 }
