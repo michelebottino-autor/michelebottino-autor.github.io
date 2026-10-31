@@ -5,7 +5,8 @@ const pages = ['/', '/adc/', '/accessibilita/', '/privacy/', '/cookie/'];
  const browser = await chromium.launch({ headless: true });
  let failures = 0;
  for (const path of pages) {
-  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
   try {
    const response = await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'domcontentloaded' });
    if (!response || !response.ok()) throw new Error('HTTP non valido');
@@ -14,7 +15,7 @@ const pages = ['/', '/adc/', '/accessibilita/', '/privacy/', '/cookie/'];
    for (const violation of result.violations) console.log(' -', violation.id, violation.impact, violation.nodes.length, violation.help);
    if (result.violations.length) failures++;
   } catch (error) { failures++; console.error(path, error.message); }
-  await page.close();
+  await context.close();
  }
  await browser.close();
  if (failures) { console.error('Audit automatico: pagine con problemi:', failures); process.exitCode = 1; }
