@@ -13,6 +13,7 @@ const pages = ['/', '/adc/', '/accessibilita/', '/privacy/', '/cookie/'];
    const result = await new AxeBuilder({ page }).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']).analyze();
    console.log(path, 'violazioni:', result.violations.length, 'incomplete:', result.incomplete.length);
    for (const violation of result.violations) console.log(' -', violation.id, violation.impact, violation.nodes.length, violation.help);
+   for (const node of violation.nodes.slice(0, 10)) console.log('   selector:', node.target.join(', '), 'html:', node.html.slice(0, 280), 'summary:', node.failureSummary?.slice(0, 400));
    if (result.violations.length) failures++;
   } catch (error) { failures++; console.error(path, error.message); }
   await context.close();
