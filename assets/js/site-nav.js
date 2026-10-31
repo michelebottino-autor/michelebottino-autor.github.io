@@ -69,7 +69,11 @@
       if (!nav.contains(event.target)) close();
     });
     document.addEventListener('keydown',event => {
-      if (event.key === 'Escape') { close(); toggle.focus(); }
+      if (event.key !== 'Escape') return;
+      const wasOpen = menu.classList.contains('active') || !!nav.querySelector('.has-submenu.open');
+      if (!wasOpen) return;
+      close();
+      toggle.focus();
     });
     window.addEventListener('resize',() => {
       if (window.innerWidth > 900) close();
