@@ -7,7 +7,7 @@ const { chromium } = require('playwright');
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' });
   const page = await context.newPage();
   const gaRequests = [];
-  page.on('request', request => { if (/googletagmanager\\.com\\/gtag\\/js|google-analytics\\.com\\/(g\\/collect|collect)/.test(request.url())) gaRequests.push(request.url()); });
+  page.on('request', request => { const url = request.url(); if (url.includes('googletagmanager.com/gtag/js') || url.includes('google-analytics.com/g/collect') || url.includes('google-analytics.com/collect')) gaRequests.push(url); });
   try {
    const response = await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'domcontentloaded' });
    if (!response?.ok()) throw new Error('HTTP non valido');
