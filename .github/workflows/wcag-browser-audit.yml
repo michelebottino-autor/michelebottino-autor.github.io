@@ -1,0 +1,29 @@
+name: Audit automatico accessibilità WCAG
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'adc/index.html'
+      - 'accessibilita/**'
+      - 'privacy/**'
+      - 'cookie/**'
+      - 'tests/accessibility/**'
+      - '.github/workflows/wcag-browser-audit.yml'
+  workflow_dispatch:
+jobs:
+  wcag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Installazione strumenti
+        run: |
+          npm install --no-save --no-package-lock playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
+      - name: Avvio server statico
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/adc-a11y-server.log 2>&1 &
+      - name: Verifica automatica WCAG pagine campione
+        run: node tests/accessibility/audit.cjs
