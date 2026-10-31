@@ -120,19 +120,19 @@ p{max-width:76ch}
 <header class="container">
 <nav class="nav" id="site-nav">
 <a href="../../../">Michele Bottino</a>
-<button id="menu-toggle" onclick="toggleMenu()">☰</button>
+<button id="menu-toggle" type="button" aria-label="Apri menu di navigazione" aria-controls="menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
 <ul class="nav-menu" id="menu">
 <li><a href="../../../">Home</a></li>
 <li class="has-submenu">
-<button class="submenu-toggle">Autore</button>
-<ul class="submenu">
+<button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-autore">Autore</button>
+<ul class="submenu" id="submenu-autore">
 <li><a href="../../../biografia/">Biografia</a></li>
 <li><a href="../../../poetica/">Poetica</a></li>
 </ul>
 </li>
 <li class="has-submenu">
-<button class="submenu-toggle active">Metodo</button>
-<ul class="submenu">
+<button class="submenu-toggle active" type="button" aria-expanded="false" aria-controls="submenu-metodo">Metodo</button>
+<ul class="submenu" id="submenu-metodo">
 <li><a href="../../../metodo/">Metodo</a></li>
 <li><a class="active" href="../../">Strutture</a></li>
 </ul>
@@ -169,13 +169,18 @@ p{max-width:76ch}
 </footer>
 <script>
 function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
+  const menu = document.getElementById("menu");
+  const button = document.getElementById("menu-toggle");
+  const expanded = menu.classList.toggle("active");
+  button.setAttribute("aria-expanded", String(expanded));
+  button.setAttribute("aria-label", expanded ? "Chiudi menu di navigazione" : "Apri menu di navigazione");
 }
 
 document.querySelectorAll(".submenu-toggle").forEach(btn => {
   btn.onclick = () => {
     const parent = btn.parentElement;
-    parent.classList.toggle("open");
+    const expanded = parent.classList.toggle("open");
+    btn.setAttribute("aria-expanded", String(expanded));
   };
 });
 
