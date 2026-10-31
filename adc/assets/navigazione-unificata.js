@@ -75,7 +75,7 @@
     label.textContent = 'Visite all’archivio: ';
     var count = document.createElement('span');
     count.id = 'adc-visite-numero';
-    count.textContent = '2.000';
+    count.textContent = '—';
     var state = document.createElement('small');
     state.style.cssText = 'display:block;font-size:.76rem;margin-top:4px;opacity:.8;';
     state.textContent = '';
