@@ -33,3 +33,14 @@ Per ogni nome distinguere incarico, citazione documentaria e biografia completa.
 
 ## Metodo di pubblicazione
 Aggiornare la cronologia narrativa già esistente per periodi, e collocare gli atti dettagliati nei dossier tematici senza duplicare il testo. Questo registro è interno e non implica approvazione automatica per Elena.
+
+## Controllo duplicazioni eseguito — 31 ottobre 2026
+
+| Tema | Pagina canonica già esistente | Decisione |
+|---|---|---|
+| Danni del terremoto 1818 | `/adc/terremoto-1818/` | Non creare altra scheda: aggiornare solo con nuove fonti |
+| Rivolta dell'8 giugno 1879 | `/adc/rivolta-1879/` e richiamo in `/adc/fonti/` | Già pubblicato; nessuna nuova scoperta |
+| Eventi 1922–1943 e Seconda guerra mondiale | `/adc/calatabiano-1922-1943/`, `/adc/calatabiano-1922-1943/ricostruzione-1943.html`, registro `/adc/ricerca/registro-scoperte-calatabiano-1922-1943.md` | Evitare nuove sezioni parallele, collazionare solo fonti aggiuntive |
+| Racconto storico generale | `/adc/storia-per-tutti/` e `/adc/storia/` | Una sola sequenza narrativa con collegamenti ai dossier |
+
+**Ordine del lavoro:** 1) censimento pagine canoniche; 2) tabella eventi con ID e fonte; 3) controllo di novità documentaria; 4) revisione storica; 5) integrazione nel dossier esistente; 6) collaudo link e indice. La presenza di un titolo nei risultati di ricerca sul repository è prova di esistenza del file, non di completezza del suo contenuto.
