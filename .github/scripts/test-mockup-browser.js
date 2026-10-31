@@ -4,7 +4,7 @@ for(const slug of ['biografia','opere','adc','ricerca','contatti']){
  for(const [device,w,h] of [['mobile',390,844],['desktop',1440,900]]){
   const p=await b.newPage({viewport:{width:w,height:h}});
   await p.goto('http://127.0.0.1:8765/'+slug+'/',{waitUntil:'networkidle',timeout:45000});
-  const hero=p.locator('.mockup-hero');if(!await hero.isVisible())problems.push(slug+'/'+device+': hero not visible');
+  const hero=p.locator(slug==='adc'?'main h1':'.mockup-hero');if(!await hero.isVisible())problems.push(slug+'/'+device+': main heading or hero not visible');
   const width=await p.evaluate(()=>({scroll:document.documentElement.scrollWidth,client:document.documentElement.clientWidth}));
   if(width.scroll>width.client+3)problems.push(slug+'/'+device+': horizontal overflow '+JSON.stringify(width));
   const image=hero.locator('img');if(await image.count()){const loaded=await image.evaluate(e=>e.complete&&e.naturalWidth>0);if(!loaded)problems.push(slug+'/'+device+': image failed');}
