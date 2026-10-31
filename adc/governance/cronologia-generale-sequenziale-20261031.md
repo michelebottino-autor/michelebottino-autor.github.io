@@ -44,3 +44,16 @@ Aggiornare la cronologia narrativa già esistente per periodi, e collocare gli a
 | Racconto storico generale | `/adc/storia-per-tutti/` e `/adc/storia/` | Una sola sequenza narrativa con collegamenti ai dossier |
 
 **Ordine del lavoro:** 1) censimento pagine canoniche; 2) tabella eventi con ID e fonte; 3) controllo di novità documentaria; 4) revisione storica; 5) integrazione nel dossier esistente; 6) collaudo link e indice. La presenza di un titolo nei risultati di ricerca sul repository è prova di esistenza del file, non di completezza del suo contenuto.
+
+## Integrazione mirata — emergenza Calatabiano–acquedotto Fiumefreddo, 2015–2018
+
+**Controllo antiridondanza:** il riferimento al 24 ottobre 2015 compare già in `adc/storia/index.html`; l'acquedotto Fiumefreddo è menzionato in `adc/ricerca/registro-scoperte-calatabiano-1922-1943.md`. Le ordinanze 443, 506 e 529 non sono emerse nella ricerca testuale per numero; questa sezione registra i riferimenti primari ulteriori e non costituisce un nuovo dossier pubblico.
+
+- 24 ottobre 2015: movimento franoso a Calatabiano e danneggiamento dell'acquedotto Fiumefreddo, principale fonte idrica di Messina; fatto richiamato nei provvedimenti della Protezione civile.
+- 6 novembre 2015: dichiarazione dello stato di emergenza, come indicato nei preamboli delle ordinanze successive.
+- 7 e 13 novembre 2015: ordinanze 295 e 297, richiamate nei provvedimenti successivi.
+- 31 marzo 2017: ordinanza 443, disciplina del subentro della Regione Siciliana. GU 8 aprile 2017: https://www.gazzettaufficiale.it/atto/serie_generale/caricaDettaglioAtto/originario?atto.codiceRedazionale=17A02525&atto.dataPubblicazioneGazzetta=2017-04-08&elenco30giorni=false
+- 16 febbraio 2018: ordinanza 506, proroga contabilità speciale 5982. GU 26 febbraio 2018: https://www.gazzettaufficiale.it/atto/serie_generale/caricaDettaglioAtto/originario?atto.codiceRedazionale=18A01295&atto.dataPubblicazioneGazzetta=2018-02-26&elenco30giorni=false
+- 6 luglio 2018: ordinanza 529, proroga contabilità speciale 5982. GU 13 luglio 2018: https://www.gazzettaufficiale.it/atto/serie_generale/caricaDettaglioAtto/originario?atto.codiceRedazionale=18A04749&atto.dataPubblicazioneGazzetta=2018-07-13&elenco30giorni=false
+
+**Limite:** le ordinanze attestano l'iter amministrativo e il suo oggetto, non il completamento fisico di tutti i lavori, il consuntivo finale o un bilancio nominativo delle persone interessate. Non confondere la legge nazionale n. 9/1952 sulle alluvioni con prova specifica di danni a Calatabiano nel 1951; occorrono allegati e atti territoriali.
