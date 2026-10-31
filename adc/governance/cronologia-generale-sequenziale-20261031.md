@@ -1,5 +1,8 @@
 # ADC — Cronologia generale e matrice di ricostruzione (31 ottobre 2026)
 
+## Rettifica antiridondanza — 31 ottobre 2026
+Il dossier pubblico `/adc/rivolta-1879/` risulta già pubblicato (29 ottobre 2026), con Cordova, Depretis, stampa britannica e ricerca Trombetta; la voce del 1879 in questa cronologia è un **rimando a un contenuto esistente**, non una scoperta né proposta di nuovo dossier. Anche `/adc/fonti/` lo collega già. La ricerca su Carmelo Quagliata è già nel registro `adc/ricerca/registro-scoperte-calatabiano-1922-1943.md` e in `/adc/storia/`. Prima di aggiungere un evento, cercare sempre titolo, date, protagonisti, varianti e dossier nel repository e verificare la pagina pubblica. Per questi eventi aggiornare soltanto il documento canonico, se emerge una fonte realmente nuova.
+
 ## Criterio di ordinamento
 Un evento = un identificativo, una data (o intervallo), un luogo, una categoria, le persone documentate, una fonte precisa e uno stato di verifica. Le pagine pubbliche raccontano la storia; i dossier conservano prove e riserve. Non creare un secondo racconto generale parallelo a `/adc/storia-per-tutti/`.
 
