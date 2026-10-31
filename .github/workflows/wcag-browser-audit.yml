@@ -11,6 +11,7 @@ on:
       - 'adc/assets/elena-risposte-approvate.json'
       - 'adc/percorsi.html'
       - 'adc/storia/**'
+      - 'adc/dossier-rationes/**'
       - 'adc/atlante/**'
       - 'adc/inventario/**'
       - 'adc/mediateca/**'
