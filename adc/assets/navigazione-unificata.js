@@ -72,10 +72,10 @@
     wrap.id = 'adc-visite-footer';
     wrap.style.cssText = 'text-align:center;margin:18px auto 8px;padding:12px 14px;max-width:400px;border-top:1px solid rgba(194,170,111,.35);font-variant-numeric:tabular-nums;';
     var label = document.createElement('strong');
-    label.textContent = 'Visite all’archivio: ';
+    label.textContent = 'Conteggio sessioni (base iniziale 2.000): ';
     var count = document.createElement('span');
     count.id = 'adc-visite-numero';
-    count.textContent = '2.000';
+    count.textContent = '—';
     var state = document.createElement('small');
     state.style.cssText = 'display:block;font-size:.76rem;margin-top:4px;opacity:.8;';
     state.textContent = '';
@@ -89,7 +89,6 @@
       var endpoint = cfg.endpoint;
       var registered = false;
       try { registered = sessionStorage.getItem('adc-visita-registrata-v1') === '1'; } catch(_) {}
-      if (!registered) { try { sessionStorage.setItem('adc-visita-registrata-v1','1'); } catch(_) {} }
       return fetch(endpoint, {method: registered ? 'GET' : 'POST', mode:'cors', cache:'no-store'}).then(function(r){if(!r.ok)throw Error('counter');return r.json();}).then(function(result){
         if (!Number.isSafeInteger(result.total) || result.total < 2000) return;
         count.textContent = format(result.total);

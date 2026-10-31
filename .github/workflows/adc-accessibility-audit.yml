@@ -1,0 +1,22 @@
+name: Audit contatore e navigazione ADC
+on:
+  pull_request:
+    paths:
+      - 'adc/assets/navigazione-unificata.js'
+      - 'adc/assets/navigazione-unificata.css'
+      - 'adc/contatore-config.json'
+      - 'tests/adc-navigation-counter.test.cjs'
+      - '.github/workflows/adc-accessibility-audit.yml'
+  workflow_dispatch:
+jobs:
+  static-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Controllo sintassi
+        run: node --check adc/assets/navigazione-unificata.js
+      - name: Verifica statica contatore e menu
+        run: node --test tests/adc-navigation-counter.test.cjs
