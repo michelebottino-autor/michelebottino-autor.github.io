@@ -1,6 +1,6 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
-const paths = ['adc/percorsi.html','adc/fonti/index.html','adc/carta/index.html','adc/contribuisci/index.html','adc/custode/index.html'];
+const paths = ['adc/index.html','adc/percorsi.html','adc/fonti/index.html','adc/carta/index.html','adc/contribuisci/index.html','adc/custode/index.html','adc/storia/index.html','adc/atlante/index.html','adc/inventario/index.html','adc/mediateca/index.html','adc/elena/index.html'];
 const inventory = JSON.parse(fs.readFileSync('adc/inventario/testimonianze.json','utf8'));
 if (!Array.isArray(inventory.schede) || !inventory.schede.length) throw Error('Inventario non disponibile');
 (async () => {
@@ -28,7 +28,7 @@ if (!Array.isArray(inventory.schede) || !inventory.schede.length) throw Error('I
  for(const item of cases){
   await page.locator('#question').fill(item.q);
   await page.locator('#askform button[type="submit"]').click();
-  await page.waitForFunction(() => document.querySelector('#status').textContent.includes('testimonianz') || document.querySelector('#status').textContent.includes('Non ho trovato'), {timeout:15000});
+  await page.locator('#evidence .evidence-card').filter({hasText:item.expected}).first().waitFor({timeout:15000});
   const evidence = await page.locator('#evidence').innerText();
   const status = await page.locator('#status').innerText();
   if(!evidence.includes(item.expected)) errors.push('Custode '+item.q+': scheda attesa non mostrata. Stato: '+status);
@@ -38,7 +38,7 @@ if (!Array.isArray(inventory.schede) || !inventory.schede.length) throw Error('I
  }
  await page.locator('#question').fill('argomentoinesistentezzxq');
  await page.locator('#askform button[type="submit"]').click();
- await page.waitForFunction(() => document.querySelector('#status').textContent.includes('Non ho trovato') || document.querySelector('#status').textContent.includes('testimonianz'), {timeout:15000});
+ await page.waitForFunction(() => document.querySelector('#status').textContent.includes('Non ho trovato riferimenti sufficienti'), null, {timeout:15000});
  if(await page.locator('#evidence .evidence-card').count()) errors.push('Custode: fonti inventate su domanda senza riscontro');
  await browser.close();
  if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}
