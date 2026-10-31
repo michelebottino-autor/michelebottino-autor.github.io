@@ -5,6 +5,10 @@ on:
       - 'index.html'
       - 'adc/index.html'
       - 'adc/custode/**'
+      - 'adc/elena/**'
+      - 'adc/assets/elena-dialogo.js'
+      - 'adc/assets/elena-indice.json'
+      - 'adc/assets/elena-risposte-approvate.json'
       - 'adc/percorsi.html'
       - 'adc/fonti/**'
       - 'adc/carta/**'
@@ -36,3 +40,4 @@ jobs:
           node tests/accessibility/audit.cjs
           node tests/accessibility/consent-navigation.cjs
           node tests/accessibility/adc-editorial-custode.cjs
+          node tests/accessibility/elena-documentary.cjs
