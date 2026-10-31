@@ -9,9 +9,11 @@ test('counter never displays an unverified numeric placeholder', () => {
   assert.match(js, /count\.textContent = '—';/);
   assert.doesNotMatch(js, /count\.textContent = '2\.000';/);
 });
-test('counter identifies its conventional baseline', () => {
-  assert.equal(config.base, 2000);
-  assert.match(js, /Conteggio sessioni \(base iniziale 2\.000\)/);
+test('counter excludes the conventional baseline from the public total', () => {
+  assert.equal(config.base, undefined);
+  assert.match(js, /Conteggio sessioni: /);
+  assert.match(js, /format\(result\.total - 2000\)/);
+  assert.doesNotMatch(js, /Conteggio sessioni \(base iniziale/);
 });
 test('counter checks server response before displaying it', () => {
   assert.match(js, /Number\.isSafeInteger\(result\.total\)/);
@@ -27,5 +29,5 @@ test('navigation exposes state and Escape keyboard handling', () => {
 test('visit registration is recorded only after a valid server response', () => {
   const marker = "sessionStorage.setItem('adc-visita-registrata-v1','1')";
   assert.equal(js.split(marker).length - 1, 1);
-  assert.ok(js.indexOf(marker) > js.indexOf('count.textContent = format(result.total)'));
+  assert.ok(js.indexOf(marker) > js.indexOf('count.textContent = format(result.total - 2000)'));
 });
