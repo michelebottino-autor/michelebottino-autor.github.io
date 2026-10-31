@@ -23,3 +23,9 @@ test('navigation exposes state and Escape keyboard handling', () => {
   assert.match(js, /button\.focus\(\)/);
   assert.match(css, /:focus-visible/);
 });
+
+test('visit registration is recorded only after a valid server response', () => {
+  const marker = "sessionStorage.setItem('adc-visita-registrata-v1','1')";
+  assert.equal(js.split(marker).length - 1, 1);
+  assert.ok(js.indexOf(marker) > js.indexOf('count.textContent = format(result.total)'));
+});
