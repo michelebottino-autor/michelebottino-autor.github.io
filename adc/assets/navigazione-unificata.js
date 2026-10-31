@@ -72,7 +72,7 @@
     wrap.id = 'adc-visite-footer';
     wrap.style.cssText = 'text-align:center;margin:18px auto 8px;padding:12px 14px;max-width:400px;border-top:1px solid rgba(194,170,111,.35);font-variant-numeric:tabular-nums;';
     var label = document.createElement('strong');
-    label.textContent = 'Visite all’archivio: ';
+    label.textContent = 'Conteggio sessioni (base iniziale 2.000): ';
     var count = document.createElement('span');
     count.id = 'adc-visite-numero';
     count.textContent = '—';
