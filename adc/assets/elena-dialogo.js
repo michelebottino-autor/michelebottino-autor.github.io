@@ -76,10 +76,28 @@
         stop.type='button';stop.hidden=true;
         const status=make('p','elena-dialogue-voice-status','');
         const audio=new Audio();
+        let utterance=null;
+        const synthesis=typeof window!=='undefined' ? window.speechSynthesis : null;
         audio.preload='none';
         const recordings={index:'/adc/audio/elena-paola-risposta-indice.mp3',empty:'/adc/audio/elena-paola-risposta-vuota.mp3'};
-        const stopAudio=()=>{audio.pause();audio.currentTime=0;if(activeAudio===audio)activeAudio=null;stop.hidden=true;read.hidden=false;};
+        const stopAudio=()=>{audio.pause();audio.currentTime=0;if(utterance && synthesis){synthesis.cancel();utterance=null;}if(activeAudio===audio)activeAudio=null;stop.hidden=true;read.hidden=false;};
         read.addEventListener('click',()=>{
+          if(r.kind==='documentary'){
+            if(!synthesis || typeof SpeechSynthesisUtterance==='undefined'){
+              status.textContent='La lettura vocale non è supportata da questo browser.';
+              return;
+            }
+            if(activeAudio && activeAudio!==audio){activeAudio.pause();activeAudio.currentTime=0;}
+            synthesis.cancel();
+            utterance=new SpeechSynthesisUtterance(r.text);
+            utterance.lang='it-IT';
+            utterance.rate=1;
+            utterance.onend=()=>{utterance=null;stop.hidden=true;read.hidden=false;status.textContent='Lettura terminata.';};
+            utterance.onerror=()=>{utterance=null;stop.hidden=true;read.hidden=false;status.textContent='Lettura vocale non riuscita.';};
+            stop.hidden=false;read.hidden=true;status.textContent='Elena sta leggendo la risposta.';
+            synthesis.speak(utterance);
+            return;
+          }
           if(!recordings[r.kind]){
             status.textContent='La lettura vocale di questa risposta non è ancora disponibile.';
             return;
