@@ -1,5 +1,4 @@
 {
   "endpoint": "https://adc-contatore-visite.michele-bottino.workers.dev/visite",
-  "base": 2000,
-  "note": "Il servizio restituisce un totale comprensivo della base storica di 2000; il sito mostra solo le sessioni registrate, sottraendo tale base."
+  "note": "Il servizio restituisce un totale comprensivo di 2000 unità iniziali; il frontend sottrae queste unità e visualizza soltanto le sessioni registrate."
 }
