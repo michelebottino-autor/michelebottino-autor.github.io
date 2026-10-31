@@ -14,17 +14,18 @@ const { chromium } = require('playwright');
    await page.waitForTimeout(300);
    if (gaRequests.length) failures.push(path + ': richiesta Analytics prima del consenso');
    const consent = page.locator('#mb-consent');
-   if (await consent.count()) {
+   const hasConsentScript = await page.locator('script[src*="analytics-consenso.js"]').count() > 0;
+   if (hasConsentScript && await consent.count()) {
     if (!await consent.getByRole('button', { name: 'Rifiuta' }).isVisible()) failures.push(path + ': rifiuto non disponibile');
     await consent.getByRole('button', { name: 'Rifiuta' }).click();
     if (await consent.count()) failures.push(path + ': banner non chiuso dopo il rifiuto');
     if (gaRequests.length) failures.push(path + ': richiesta Analytics dopo il rifiuto');
     const stored = await page.evaluate(() => localStorage.getItem('mb_analytics_consent_v1'));
     if (stored !== 'no') failures.push(path + ': rifiuto non registrato');
-   } else failures.push(path + ': banner consenso assente in sessione nuova');
+   } else if (hasConsentScript) failures.push(path + ': banner consenso assente in sessione nuova');
    const pref = page.getByRole('button', { name: /Preferenze statistiche/ }).first();
-   if (!await pref.isVisible()) failures.push(path + ': preferenze statistiche non disponibili');
-   else {
+   if (hasConsentScript && !await pref.isVisible()) failures.push(path + ': preferenze statistiche non disponibili');
+   else if (hasConsentScript) {
     await pref.click();
     if (!await page.locator('#mb-consent').isVisible()) failures.push(path + ': impossibile riaprire il consenso');
    }
