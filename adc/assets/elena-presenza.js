@@ -57,7 +57,7 @@
      if(!main){voiceNote.textContent='Non è stato individuato il testo principale della pagina.';return;}
      const copy=main.cloneNode(true);
      copy.querySelectorAll('nav,aside,footer,script,style,button,form,iframe,svg,[aria-hidden="true"],[hidden],.elena-presenza').forEach(node=>node.remove());
-     const text=(copy.innerText||copy.textContent||'').replace(/\\s+/g,' ').trim();
+     const text=(copy.innerText||copy.textContent||'').replace(/\s+/g,' ').trim();
      if(!text){voiceNote.textContent='Questa pagina non contiene testo leggibile.';return;}
      speakText(text.slice(0,3500));
      voiceNote.textContent='Lettura del testo principale della pagina (prima parte, fino a 3.500 caratteri), con la voce disponibile sul dispositivo.';
