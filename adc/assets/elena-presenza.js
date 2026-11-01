@@ -19,7 +19,7 @@
  paolaSampleAudio.addEventListener('ended',()=>{paolaSampleButton.textContent='Ascolta Elena';});
  window.addEventListener('pagehide',()=>paolaSampleAudio.pause());
  const readButton=root.querySelector('.elena-voice-read'),pageButton=root.querySelector('.elena-voice-page'),stopButton=root.querySelector('.elena-voice-stop'),voiceNote=root.querySelector('.elena-voice-note');
- let spokenAnswer='',spokenKind='';
+ let spokenAnswer='',spokenKind='',spokenId='';
  const paolaAnswerAudio=new Audio();paolaAnswerAudio.preload='none';
  const paolaPageAudio=new Audio();paolaPageAudio.preload='none';paolaPageAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
  paolaAnswerAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
@@ -46,7 +46,11 @@
      stopSpeech();
      paolaAnswerAudio.src='/adc/audio/elena-paola-risposta-'+(spokenKind==='index'?'indice':'vuota')+'.mp3';
      paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Elena sta leggendo la risposta.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Registrazione vocale non disponibile. Riprova più tardi.';});
-   }else if(spokenKind==='documentary' && spokenAnswer){speakText(spokenAnswer);}else{voiceNote.textContent='Nessuna risposta disponibile per la lettura.';}
+   }else if(spokenKind==='documentary' && /^[A-Za-z0-9_-]{1,80}$/.test(spokenId)){
+     stopSpeech();
+     paolaAnswerAudio.src='/adc/audio/elena-paola-documentaria-'+spokenId+'.mp3';
+     paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Paola sta leggendo la risposta documentaria.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Registrazione Paola non ancora disponibile per questa risposta.';});
+   }else{voiceNote.textContent='Nessuna registrazione Paola disponibile per questa risposta.';}
  });
  pageButton.addEventListener('click',()=>{
    const path=window.location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');
@@ -126,7 +130,7 @@
      const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
      const reply=engine.reply(effective,data.index,data.approved);
      previousQuestion=effective;
-     spokenKind=reply.kind;spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary');result.replaceChildren(make('p',reply.title),make('p',reply.text));
+     spokenKind=reply.kind;spokenId=reply.id||'';spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
      for(const source of (reply.links||[]).slice(0,5)){
        if(!/^\/adc\/(?!\/)[a-z0-9/_\-.]*$/i.test(source.url))continue;
