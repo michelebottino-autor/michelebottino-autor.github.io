@@ -46,6 +46,18 @@
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
     let index={entries:[]}, approved=[], turns=0, previousQuestion='', activeAudio=null;
+    // Il benvenuto usa la registrazione originale Paola anche nella pagina completa.
+    const welcome=document.getElementById('elena-paola-welcome');
+    if(welcome){
+      const welcomeAudio=new Audio('/adc/audio/elena-paola-benvenuto.mp3');welcomeAudio.preload='none';
+      welcome.addEventListener('click',()=>{
+        if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta Paola';return;}
+        welcomeAudio.currentTime=0;
+        welcomeAudio.play().then(()=>{welcome.textContent='Ferma Paola';}).catch(()=>{welcome.textContent='Audio Paola non disponibile';});
+      });
+      welcomeAudio.addEventListener('ended',()=>{welcome.textContent='Ascolta Paola';});
+      window.addEventListener('pagehide',()=>welcomeAudio.pause());
+    }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
     const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)) index=a[0].value;
@@ -91,7 +103,14 @@
             synthesis.cancel();
             utterance=new SpeechSynthesisUtterance(r.text);
             utterance.lang='it-IT';
-            utterance.rate=1;
+            utterance.rate=.94;
+            const paolaVoice=synthesis.getVoices().find(v=>/^it(?:-|_)/i.test(v.lang)&&/paola/i.test(v.name));
+            if(!paolaVoice){
+              utterance=null;
+              status.textContent='La voce Paola non è disponibile per la sintesi di questa risposta. Le registrazioni originali di Paola restano ascoltabili; non viene usata una voce sostitutiva.';
+              return;
+            }
+            utterance.voice=paolaVoice;
             utterance.onend=()=>{utterance=null;stop.hidden=true;read.hidden=false;status.textContent='Lettura terminata.';};
             utterance.onerror=()=>{utterance=null;stop.hidden=true;read.hidden=false;status.textContent='Lettura vocale non riuscita.';};
             stop.hidden=false;read.hidden=true;status.textContent='Elena sta leggendo la risposta.';
