@@ -8,7 +8,7 @@
   'use strict';
   const normalize = s => String(s || '').toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
   const stop = new Set('calatabiano storia storico storica documento documenti fonte fonti cosa quale quali dove quando come sapere informazioni vorrei vorremmo cerca cercare trovare parla dice del della delle degli dello nella nelle nei sui sul con per alla alle anche sono hanno un una che chi gli dai dai dal dei era erano e il la di da a in si'.split(' '));
-  const aliases = {mulino:'mulini',mulini:'mulino',chiesa:'chiese',chiese:'chiesa',origine:'origini',origini:'origine',mappa:'cartografia',mappe:'cartografia',foto:'fotografie',ponte:'alcantara'};
+  const aliases = {mulino:'mulini',mulini:'mulino',chiesa:'chiese',chiese:'chiesa',origine:'origini',origini:'origine',mappa:'cartografia',mappe:'cartografia',foto:'fotografie',fotografia:'fotografie',fotografie:'foto',ponte:'alcantara',castelli:'castello',castello:'castelli',pergamena:'pergamene',pergamene:'pergamena',monastero:'monasteri',monasteri:'monastero',decime:'rationes',rationes:'decime',zuccherificio:'zucchero',trappeto:'zucchero',trappeti:'zucchero',crocifisso:'croce',croce:'crocifisso',ferroviaria:'ferrovia',stazioni:'stazione',stazione:'ferrovia',terremoti:'terremoto'};
   const safeUrl = u => typeof u === 'string' && /^\/adc\/[a-z0-9/_-]*(?:\.html)?$/i.test(u);
   const tokens = q => [...new Set(normalize(q).split(/[^a-z0-9]+/).filter(x => x.length > 2 && !stop.has(x)).flatMap(x => aliases[x] ? [x, aliases[x]] : [x]))];
   function rank(q, entries) {
