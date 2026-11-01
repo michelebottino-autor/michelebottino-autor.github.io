@@ -56,3 +56,31 @@
 @media(prefers-reduced-motion:reduce){
  .elena-presenza-toggle{transition:none!important}
 }
+
+
+/* Elena mobile — correzione leggibilità e dimensioni, 2026-11-01.
+   Regole circoscritte al pannello, senza modificare il motore documentario. */
+.elena-presenza-panel,
+.elena-presenza-panel *{box-sizing:border-box}
+.elena-presenza-panel{font:400 15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.elena-presenza-panel p,.elena-presenza-panel a,.elena-presenza-panel label{font-size:inherit;line-height:inherit}
+.elena-presenza-panel .elena-presenza-privacy,.elena-presenza-panel .elena-voice-note{font-size:12px;line-height:1.45}
+.elena-presenza-panel .elena-presenza-evidence{font-size:13px;line-height:1.5}
+.elena-presenza-panel .elena-presenza-heading{position:sticky;top:-18px;z-index:2;background:#f5f2eb;padding:10px 0;border-bottom:1px solid #d8cdbb}
+.elena-presenza-panel .elena-presenza-heading strong{font-size:15px;line-height:1.35}
+.elena-presenza-panel .elena-presenza-close{min-width:40px;min-height:40px}
+.elena-presenza-panel .elena-presenza-result{font-size:15px;line-height:1.55;overflow-wrap:anywhere}
+.elena-presenza-panel .elena-presenza-result p{margin:9px 0}
+.elena-presenza-panel .elena-presenza-form input{font-size:16px;max-width:100%}
+@media(max-width:600px){
+ .elena-presenza-panel{
+   width:min(360px,calc(100vw - 24px));
+   max-height:min(64dvh,500px);
+   padding:14px;
+   overscroll-behavior:contain;
+   overflow-y:auto;
+   overflow-x:hidden;
+ }
+ .elena-presenza-panel .elena-presenza-heading{top:-14px}
+ .elena-presenza-panel .elena-voice-controls button{font-size:13px;padding:9px 11px}
+}
