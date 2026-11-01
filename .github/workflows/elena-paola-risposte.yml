@@ -1,0 +1,61 @@
+name: Elena - audio Paola risposte approvate
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'adc/assets/elena-risposte-approvate.json'
+      - '.github/workflows/elena-paola-risposte.yml'
+permissions:
+  contents: write
+concurrency:
+  group: elena-paola-risposte
+  cancel-in-progress: false
+jobs:
+  genera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dipendenze
+        run: |
+          python -m pip install --disable-pip-version-check piper-tts
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Modello Paola verificato
+        run: |
+          mkdir -p /tmp/paola
+          curl -fLsS --retry 3 -o /tmp/paola/it_IT-paola-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/it/it_IT/paola/medium/it_IT-paola-medium.onnx
+          curl -fLsS --retry 3 -o /tmp/paola/it_IT-paola-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/it/it_IT/paola/medium/it_IT-paola-medium.onnx.json
+          echo '6fc918b5a0ea6137382833dddfa567bffbe6a5060c02043c87192ee59c04210c  /tmp/paola/it_IT-paola-medium.onnx' | sha256sum -c -
+      - name: Sintesi soltanto delle risposte approvate
+        run: |
+          python - <<'PY'
+          import json,re,subprocess
+          from pathlib import Path
+          data=json.loads(Path('adc/assets/elena-risposte-approvate.json').read_text(encoding='utf-8'))
+          output=Path('adc/audio');output.mkdir(exist_ok=True)
+          for a in data['answers']:
+              if a.get('status')!='APPROVED_FOR_PUBLICATION':continue
+              ident=a.get('id','')
+              if not re.fullmatch(r'[A-Za-z0-9_-]{1,80}',ident):raise ValueError('Identificativo audio non valido')
+              if not a.get('sources') or not a.get('answer','').strip():raise ValueError('Risposta priva di fonte o testo')
+              wav=Path('/tmp/paola')/(ident+'.wav')
+              mp3=output/('elena-paola-documentaria-'+ident+'.mp3')
+              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.12','--noise_scale','0.55','--noise_w','0.8','--output_file',str(wav)],input=a['answer'],text=True,check=True)
+              subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','128k',str(mp3)],check=True)
+              if mp3.stat().st_size<1000:raise ValueError('Audio vuoto')
+              print(ident,mp3.stat().st_size)
+          PY
+      - name: Pubblica MP3 senza modificare i testi
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add adc/audio/elena-paola-documentaria-*.mp3
+          if ! git diff --cached --quiet; then
+            git commit -m "Elena: audio Paola per risposte approvate"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
