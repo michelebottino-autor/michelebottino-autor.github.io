@@ -1,0 +1,51 @@
+name: Elena - confronto naturalezza Paola
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  campioni-paola:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Installa Piper e FFmpeg
+        run: |
+          python -m pip install --disable-pip-version-check piper-tts
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Scarica esattamente il modello Paola già usato
+        run: |
+          mkdir -p /tmp/paola
+          curl -fLsS --retry 3 -o /tmp/paola/it_IT-paola-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/it/it_IT/paola/medium/it_IT-paola-medium.onnx
+          curl -fLsS --retry 3 -o /tmp/paola/it_IT-paola-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/it/it_IT/paola/medium/it_IT-paola-medium.onnx.json
+          echo '6fc918b5a0ea6137382833dddfa567bffbe6a5060c02043c87192ee59c04210c  /tmp/paola/it_IT-paola-medium.onnx' | sha256sum -c -
+      - name: Genera tre alternative senza sostituire la registrazione pubblica
+        run: |
+          mkdir -p /tmp/campioni
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          model='/tmp/paola/it_IT-paola-medium.onnx'
+          text="Benvenuti nell'Archivio Documentale Calatabiano. Sono Elena. Posso accompagnarvi nella consultazione delle fonti storiche."
+          settings={
+              'A-attuale':('1.32','0.55','0.8'),
+              'B-fluida':('1.12','0.55','0.8'),
+              'C-conversazionale':('1.06','0.65','0.8')
+          }
+          for name,(length,noise,noise_w) in settings.items():
+              wav=Path('/tmp/campioni')/(name+'.wav')
+              mp3=wav.with_suffix('.mp3')
+              subprocess.run(['piper','--model',model,'--length_scale',length,'--noise_scale',noise,'--noise_w',noise_w,'--output_file',str(wav)],input=text,text=True,check=True)
+              subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','128k',str(mp3)],check=True)
+              print(name,mp3.stat().st_size,'bytes')
+          PY
+      - name: Conserva i campioni come artifact per confronto
+        uses: actions/upload-artifact@v4
+        with:
+          name: confronto-paola-benvenuto
+          path: /tmp/campioni/*.mp3
+          retention-days: 14
