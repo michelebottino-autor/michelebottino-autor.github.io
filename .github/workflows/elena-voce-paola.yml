@@ -28,7 +28,7 @@ jobs:
       - name: Genera audio con profilo NarrazioneADC
         run: |
           mkdir -p adc/audio
-          printf '%s\n' "Benvenuti nell'Archivio Documentale Calatabiano. Sono Elena e posso accompagnarvi nella consultazione delle fonti storiche." | piper --model /tmp/paola/it_IT-paola-medium.onnx --length_scale 1.20 --noise_scale 0.30 --noise_w 0.45 --output_file /tmp/paola/benvenuto.wav
+          printf '%s\n' "Benvenuti nell'Archivio Documentale Calatabiano. Sono Elena e posso accompagnarvi nella consultazione delle fonti storiche." | piper --model /tmp/paola/it_IT-paola-medium.onnx --length_scale 1.34 --noise_scale 0.30 --noise_w 0.45 --output_file /tmp/paola/benvenuto.wav
           ffmpeg -hide_banner -loglevel error -y -i /tmp/paola/benvenuto.wav -codec:a libmp3lame -b:a 96k adc/audio/elena-paola-benvenuto.mp3
           test -s adc/audio/elena-paola-benvenuto.mp3
           python - <<'PY'
@@ -39,7 +39,7 @@ jobs:
           }
           for key, value in clips.items():
               wav = pathlib.Path('/tmp/paola') / (key + '.wav')
-              subprocess.run(['piper', '--model', '/tmp/paola/it_IT-paola-medium.onnx', '--length_scale', '1.20', '--noise_scale', '0.30', '--noise_w', '0.45', '--output_file', str(wav)], input=value, text=True, check=True)
+              subprocess.run(['piper', '--model', '/tmp/paola/it_IT-paola-medium.onnx', '--length_scale', '1.34', '--noise_scale', '0.30', '--noise_w', '0.45', '--output_file', str(wav)], input=value, text=True, check=True)
               subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','96k','adc/audio/elena-paola-'+key+'.mp3'],check=True)
           PY
       - name: Crea lettura integrale pagina Storia per tutti
@@ -73,7 +73,7 @@ jobs:
           for i,chunk in enumerate(chunks):
               wav=Path('/tmp/paola')/f'pagina-{i:03d}.wav'
               mp3=Path('/tmp/paola')/f'pagina-{i:03d}.mp3'
-              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.20','--noise_scale','0.30','--noise_w','0.45','--output_file',str(wav)],input=chunk,text=True,check=True)
+              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.34','--noise_scale','0.30','--noise_w','0.45','--output_file',str(wav)],input=chunk,text=True,check=True)
               subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','96k',str(mp3)],check=True)
               segments.append(mp3)
           concat=Path('/tmp/paola/concat.txt')
@@ -113,7 +113,7 @@ jobs:
           for i,chunk in enumerate(chunks):
               wav=Path('/tmp/paola')/f'pagina-{i:03d}.wav'
               mp3=Path('/tmp/paola')/f'pagina-{i:03d}.mp3'
-              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.20','--noise_scale','0.30','--noise_w','0.45','--output_file',str(wav)],input=chunk,text=True,check=True)
+              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.34','--noise_scale','0.30','--noise_w','0.45','--output_file',str(wav)],input=chunk,text=True,check=True)
               subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','96k',str(mp3)],check=True)
               segments.append(mp3)
           concat=Path('/tmp/paola/concat.txt')
