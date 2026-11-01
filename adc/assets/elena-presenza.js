@@ -34,13 +34,9 @@
    const italian=synthesis.getVoices().filter(v=>/^it(?:-|_)/i.test(v.lang));
    const paola=italian.find(v=>/paola/i.test(v.name));
    const female=italian.find(v=>/(elsa|isabella|alice|federica|silvia|bianca|sara)/i.test(v.name));
-   const chosen=paola||female;
-   if(!chosen){
-     voiceNote.textContent='La lettura vocale non è disponibile su questo dispositivo.';
-     return;
-   }
-   utterance.voice=chosen;
-   voiceNote.textContent=paola?'Voce disponibile su questo dispositivo.':'Lettura disponibile con la voce del dispositivo.';
+   const chosen=paola||female||italian[0];
+   if(chosen)utterance.voice=chosen;
+   voiceNote.textContent=paola?'Lettura con la voce Paola disponibile sul dispositivo.':'Lettura con la voce italiana disponibile sul dispositivo (non necessariamente Paola).';
    utterance.onend=()=>{stopButton.hidden=true;};
    utterance.onerror=()=>{stopButton.hidden=true;voiceNote.textContent='Lettura interrotta. Verifica le impostazioni vocali del dispositivo.';};
    stopButton.hidden=false;
@@ -51,7 +47,7 @@
      stopSpeech();
      paolaAnswerAudio.src='/adc/audio/elena-paola-risposta-'+(spokenKind==='index'?'indice':'vuota')+'.mp3';
      paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Elena sta leggendo la risposta.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Registrazione vocale non disponibile. Riprova più tardi.';});
-   }else{voiceNote.textContent='Questa risposta non dispone ancora di una lettura vocale.';}
+   }else if(spokenKind==='documentary' && spokenAnswer){speakText(spokenAnswer);}else{voiceNote.textContent='Nessuna risposta disponibile per la lettura.';}
  });
  pageButton.addEventListener('click',()=>{
    const path=window.location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');
@@ -121,7 +117,7 @@
      const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
      const reply=engine.reply(effective,data.index,data.approved);
      previousQuestion=effective;
-     spokenKind=reply.kind;spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty');result.replaceChildren(make('p',reply.title),make('p',reply.text));
+     spokenKind=reply.kind;spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
      for(const source of (reply.links||[]).slice(0,5)){
        if(!/^\/adc\/(?!\/)[a-z0-9/_\-.]*$/i.test(source.url))continue;
