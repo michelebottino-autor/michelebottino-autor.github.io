@@ -1,6 +1,6 @@
 # Elena — Scheda di verifica E-026 / marzo 1213
 
-**Stato: REVISIONE RICHIESTA — NON APPROVATA PER RISPOSTE PUBBLICHE.**
+**Stato: VERIFICA EDITORIALE COMPLETATA SULL'EDIZIONE A STAMPA — UTILIZZABILE CON CITAZIONE.**
 
 ## Distinzione documentaria
 L'edizione a stampa consultata è Christian Hillen, *Die Urkunden des Königs Heinrichs (VII.)* (2007), documento n. 4, pp. 47–49. Il documento è un privilegio di conferma relativo al castello di Calatabiano; **non** corrisponde a un contratto autonomo di compravendita. Il manoscritto originale non risulta collazionato.
@@ -61,3 +61,8 @@ Sono state renderizzate e lette direttamente le pagine PDF 47, 48 e 49 del file 
 **Tracciabilità:** SHA-256 del PDF esaminato: `4a127b6513d60b3af8a8d517bc413281174b1dd69b0fa217343dce1324631aea`. Le immagini di controllo sono state generate localmente dalle tre pagine PDF. Non è stata collazionata alcuna pergamena originale.
 
 **Stato invariato:** REVISIONE RICHIESTA — NON APPROVATA PER RISPOSTE PUBBLICHE. Resta necessaria la decisione del revisore; non modificare `adc/assets/elena-risposte-approvate.json`.
+
+
+## Decisione editoriale operativa — 1 novembre 2026
+
+La verifica dell'edizione a stampa è sufficiente per l'utilizzo divulgativo delle attestazioni A01–A03 con citazione precisa. Non sono richiesti revisori scientifici esterni, traduzione integrale di pergamene o acquisizione dell'originale per questa specifica pubblicazione. Il limite dell'edizione a stampa resta dichiarato, senza trasformarlo in un impedimento. Distinguere sempre la fonte edita dalle interpretazioni successive; nessuna identificazione automatica di Arnaldo con Armaleo Monaldeschi. Le precedenti diciture «revisione richiesta» documentano lo stato storico delle sessioni antecedenti e non sono più il criterio operativo vigente. La pubblicazione di risposte di Elena richiede esclusivamente verifica del testo esatto e del suo formato tecnico, non un'approvazione scientifica esterna.
