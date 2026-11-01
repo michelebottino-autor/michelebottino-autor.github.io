@@ -37,7 +37,7 @@
     const n = normalize(q);
     // Risposte canoniche consentite soltanto con stato, fonte e testo approvati.
     const answer = (approved || []).find(x => x && x.status === 'APPROVED_FOR_PUBLICATION' && x.question && normalize(x.question)===n && typeof x.answer==='string' && x.answer.trim() && Array.isArray(x.sources) && x.sources.length && x.sources.every(s=>s && safeUrl(s.url) && s.page && s.title) && x.reviewer && x.reviewed_at && x.review_rationale && ['SOURCE_IDENTIFIED','EDITION_TEXT_CHECKED','IMAGE_COLLATED','ORIGINAL_COLLATED'].includes(x.evidence_status) && typeof x.evidence_limitations==='string' && x.sources.every(s=>s.source_type));
-    if (answer) return {kind:'documentary',title:'Risposta documentata',text:answer.answer,links:answer.sources.map(s=>({title:s.title+' — p. '+s.page,url:s.url})),limitation:answer.evidence_limitations,evidence_status:answer.evidence_status};
+    if (answer) return {kind:'documentary',id:answer.id,title:'Risposta documentata',text:answer.answer,links:answer.sources.map(s=>({title:s.title+' — p. '+s.page,url:s.url})),limitation:answer.evidence_limitations,evidence_status:answer.evidence_status};
     const matches = rank(q, index?.entries);
     if (matches.length) return {kind:'index',title:'Fonti e percorsi da consultare',text:'Non è disponibile una risposta sintetica verificata per questa domanda. Questi percorsi potrebbero essere pertinenti: consulta le fonti prima di trarre conclusioni.',links:matches.map(e=>({title:e.title,url:e.url,description:e.description}))};
     return {kind:'empty',title:'Nessuna fonte sufficiente individuata',text:'Non ho trovato un percorso sufficientemente pertinente nell’indice pubblico. Puoi consultare il repertorio generale oppure riprovare indicando una località, un anno o un argomento.',links:[{title:'Consulta le fonti e i documenti',url:'/adc/fonti/'},{title:'Leggi la storia di Calatabiano',url:'/adc/storia/'}]};
@@ -91,10 +91,10 @@
         let utterance=null;
         const synthesis=typeof window!=='undefined' ? window.speechSynthesis : null;
         audio.preload='none';
-        const recordings={index:'/adc/audio/elena-paola-risposta-indice.mp3',empty:'/adc/audio/elena-paola-risposta-vuota.mp3'};
+        const recordings={index:'/adc/audio/elena-paola-risposta-indice.mp3',empty:'/adc/audio/elena-paola-risposta-vuota.mp3',documentary:'/adc/audio/elena-paola-documentaria-'+(r.id||'')+'.mp3'};
         const stopAudio=()=>{audio.pause();audio.currentTime=0;if(utterance && synthesis){synthesis.cancel();utterance=null;}if(activeAudio===audio)activeAudio=null;stop.hidden=true;read.hidden=false;};
         read.addEventListener('click',()=>{
-          if(r.kind==='documentary'){
+          if(r.kind==='documentary' && !r.id){
             if(!synthesis || typeof SpeechSynthesisUtterance==='undefined'){
               status.textContent='La lettura vocale non è supportata da questo browser.';
               return;
@@ -127,7 +127,7 @@
           audio.play().then(()=>{
             stop.hidden=false;read.hidden=true;status.textContent='Elena sta leggendo la risposta.';
           }).catch(()=>{
-            stopAudio();status.textContent='Non è stato possibile riprodurre la registrazione.';
+            stopAudio();status.textContent='Registrazione Paola non ancora disponibile per questa risposta.';
           });
         });
         stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
