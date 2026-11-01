@@ -46,3 +46,18 @@ Riferimento digitale: https://api.pageplace.de/preview/DT0400.9783846900598_A267
 **Numerazione:** le pagine 47–49 sono quelle stampate nel volume e non gli indici di pagina del visualizzatore PDF. La sezione del documento n. 4 inizia nel file PDF intorno alla pagina 47 del visualizzatore (indice zero 46).
 
 **Conclusione metodologica:** la collazione sul livello testuale della riproduzione a stampa è conclusa per A01–A03; la collazione visiva delle immagini e l'eventuale esame dell'originale **non** sono conclusi. Non è giustificata alcuna identificazione automatica fra il conte Arnaldo nominato nel testo e Armaleo Monaldeschi. Nessun passaggio a `APPROVED_FOR_PUBLICATION` è autorizzato da questa verifica.
+
+
+## Collazione visiva conclusiva dell'edizione — 1 novembre 2026
+
+Sono state renderizzate e lette direttamente le pagine PDF 47, 48 e 49 del file allegato `preview-9783846900598_A26790113.pdf` (68 pagine). La numerazione delle pagine PDF coincide qui con quella stampata.
+
+- **p. 47:** il documento n. 4 inizia dopo la conclusione del documento precedente; intestazione `Messina, 1213 III`, regesto e apertura dell'atto di Costanza ed Enrico.
+- **p. 48:** menzione del `castrum Calatabianum`, dei conti Pagano e Gualtiero de Parisio, del conte Arnaldo e del pagamento di `quindecim millibus tarenorum`.
+- **p. 49:** prosecuzione della concessione e conferma alla Chiesa di Catania, datazione `Datum in civitate Messane ... MCCXIII, mense martii`; segue l'inizio del documento n. 5.
+
+**Esito:** collazione visiva positiva per A01–A03 sull'edizione PDF. I precedenti rilievi di impossibilità di visualizzare le pagine descrivono soltanto le sessioni antecedenti e sono superati da questo controllo. Le accuse ai de Parisio sono riportate come affermazioni dell'atto, non come verifica storica indipendente. Non è documentata l'identità Arnaldo = Armaleo Monaldeschi né la provenienza materiale dei fondi versati.
+
+**Tracciabilità:** SHA-256 del PDF esaminato: `4a127b6513d60b3af8a8d517bc413281174b1dd69b0fa217343dce1324631aea`. Le immagini di controllo sono state generate localmente dalle tre pagine PDF. Non è stata collazionata alcuna pergamena originale.
+
+**Stato invariato:** REVISIONE RICHIESTA — NON APPROVATA PER RISPOSTE PUBBLICHE. Resta necessaria la decisione del revisore; non modificare `adc/assets/elena-risposte-approvate.json`.
