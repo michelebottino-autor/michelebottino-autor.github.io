@@ -5,6 +5,7 @@ on:
     paths:
       - 'adc/assets/elena-risposte-approvate.json'
       - '.github/workflows/elena-paola-risposte.yml'
+      - 'adc/tools/paola_prosodia.py'
 permissions:
   contents: write
 concurrency:
@@ -33,7 +34,9 @@ jobs:
       - name: Sintesi soltanto delle risposte approvate
         run: |
           python - <<'PY'
-          import json,re,subprocess
+          import json,re,sys
+          sys.path.insert(0,'adc/tools')
+          from paola_prosodia import synthesize
           from pathlib import Path
           data=json.loads(Path('adc/assets/elena-risposte-approvate.json').read_text(encoding='utf-8'))
           output=Path('adc/audio');output.mkdir(exist_ok=True)
@@ -42,10 +45,8 @@ jobs:
               ident=a.get('id','')
               if not re.fullmatch(r'[A-Za-z0-9_-]{1,80}',ident):raise ValueError('Identificativo audio non valido')
               if not a.get('sources') or not a.get('answer','').strip():raise ValueError('Risposta priva di fonte o testo')
-              wav=Path('/tmp/paola')/(ident+'.wav')
               mp3=output/('elena-paola-documentaria-'+ident+'.mp3')
-              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.20','--noise_scale','0.30','--noise_w','0.45','--output_file',str(wav)],input=a['answer'],text=True,check=True)
-              subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','128k',str(mp3)],check=True)
+              synthesize(a['answer'],mp3)
               if mp3.stat().st_size<1000:raise ValueError('Audio vuoto')
               print(ident,mp3.stat().st_size)
           PY
