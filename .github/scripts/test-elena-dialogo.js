@@ -12,6 +12,12 @@ const second=e.reply(contextual,index,approved.answers);
 assert(second.links.some(l=>l.url==='/adc/processo-334/'));
 const empty=e.reply('zxqvtrpl inesistente',index,approved.answers);
 assert.equal(empty.kind,'empty');
-assert(approved.answers.length===0);
+assert(approved.answers.length>=1);
+const historical=e.reply('Chi possedeva il castello di Calatabiano nel 1213?',index,approved.answers);
+assert.equal(historical.kind,'documentary');
+assert(historical.text.includes('15.000 tarì'));
+assert(historical.links.some(l=>l.url==='/adc/dossier-1213-1537/'));
+assert(historical.limitation.includes('edizione a stampa'));
+
 assert(!first.text.includes('è attestato che'));
-console.log('ELENA_DIALOGO_VERIFICATO: indice, domanda successiva, assenza fonti, nessuna risposta inventata.');
+console.log('ELENA_DIALOGO_VERIFICATO: indice, risposta E-026 documentata, domanda successiva, astensione senza fonti.');
