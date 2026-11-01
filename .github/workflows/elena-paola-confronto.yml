@@ -1,6 +1,9 @@
 name: Elena - confronto naturalezza Paola
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/elena-paola-confronto.yml'
 permissions:
   contents: read
 jobs:
