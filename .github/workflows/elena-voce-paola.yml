@@ -28,7 +28,7 @@ jobs:
       - name: Genera audio con profilo NarrazioneADC
         run: |
           mkdir -p adc/audio
-          printf '%s\n' "Benvenuti nell'Archivio Documentale Calatabiano. Sono Elena e posso accompagnarvi nella consultazione delle fonti storiche." | piper --model /tmp/paola/it_IT-paola-medium.onnx --length_scale 1.32 --noise_scale 0.55 --noise_w 0.8 --output_file /tmp/paola/benvenuto.wav
+          printf '%s\n' "Benvenuti nell'Archivio Documentale Calatabiano. Sono Elena e posso accompagnarvi nella consultazione delle fonti storiche." | piper --model /tmp/paola/it_IT-paola-medium.onnx --length_scale 1.20 --noise_scale 0.30 --noise_w 0.45 --output_file /tmp/paola/benvenuto.wav
           ffmpeg -hide_banner -loglevel error -y -i /tmp/paola/benvenuto.wav -codec:a libmp3lame -b:a 96k adc/audio/elena-paola-benvenuto.mp3
           test -s adc/audio/elena-paola-benvenuto.mp3
           python - <<'PY'
