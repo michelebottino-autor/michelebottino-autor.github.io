@@ -37,7 +37,7 @@ def synthesize(text, destination):
         concat = []
         for index, (part, pause) in enumerate(segments(text)):
             wav = tmp / f"frase-{index:03d}.wav"
-            subprocess.run(["piper", "--model", MODEL, "--length_scale", "1.20",
+            subprocess.run(["piper", "--model", MODEL, "--length_scale", "1.34",
                             "--noise_scale", "0.30", "--noise_w", "0.45",
                             "--output_file", str(wav)],
                            input=part, text=True, check=True)
