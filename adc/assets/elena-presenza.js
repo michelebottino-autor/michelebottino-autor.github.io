@@ -33,10 +33,9 @@
    utterance.lang='it-IT';utterance.rate=.94;utterance.pitch=1;
    const italian=synthesis.getVoices().filter(v=>/^it(?:-|_)/i.test(v.lang));
    const paola=italian.find(v=>/paola/i.test(v.name));
-   const female=italian.find(v=>/(elsa|isabella|alice|federica|silvia|bianca|sara)/i.test(v.name));
-   const chosen=paola||female||italian[0];
-   if(chosen)utterance.voice=chosen;
-   voiceNote.textContent=paola?'Lettura con la voce Paola disponibile sul dispositivo.':'Lettura con la voce italiana disponibile sul dispositivo (non necessariamente Paola).';
+   if(!paola){voiceNote.textContent='La voce Paola non è disponibile per questa lettura sul dispositivo. Non verrà utilizzata un’altra voce.';return;}
+   utterance.voice=paola;
+   voiceNote.textContent='Lettura con la voce Paola disponibile sul dispositivo.';
    utterance.onend=()=>{stopButton.hidden=true;};
    utterance.onerror=()=>{stopButton.hidden=true;voiceNote.textContent='Lettura interrotta. Verifica le impostazioni vocali del dispositivo.';};
    stopButton.hidden=false;
