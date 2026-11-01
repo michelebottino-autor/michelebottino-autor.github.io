@@ -51,11 +51,11 @@
     if(welcome){
       const welcomeAudio=new Audio('/adc/audio/elena-paola-benvenuto.mp3');welcomeAudio.preload='none';
       welcome.addEventListener('click',()=>{
-        if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta Paola';return;}
+        if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta Elena';return;}
         welcomeAudio.currentTime=0;
-        welcomeAudio.play().then(()=>{welcome.textContent='Ferma Paola';}).catch(()=>{welcome.textContent='Audio Paola non disponibile';});
+        welcomeAudio.play().then(()=>{welcome.textContent='Ferma Elena';}).catch(()=>{welcome.textContent='Audio Paola non disponibile';});
       });
-      welcomeAudio.addEventListener('ended',()=>{welcome.textContent='Ascolta Paola';});
+      welcomeAudio.addEventListener('ended',()=>{welcome.textContent='Ascolta Elena';});
       window.addEventListener('pagehide',()=>welcomeAudio.pause());
     }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
