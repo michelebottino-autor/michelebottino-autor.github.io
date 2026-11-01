@@ -1,5 +1,25 @@
 {
   "schema": 1,
-  "description": "Risposte editoriali approvate singolarmente. Nessuna risposta formalmente approvata al momento della pubblicazione.",
-  "answers": []
+  "description": "Risposte documentarie sottoposte a controllo editoriale ADC, con citazioni e limiti espliciti.",
+  "answers": [
+    {
+      "id": "E-026-A01-A03",
+      "question": "Chi possedeva il castello di Calatabiano nel 1213?",
+      "answer": "Nel marzo 1213 Costanza, insieme al figlio Enrico, confermò alla Chiesa di Catania il castello di Calatabiano con le sue pertinenze. Il privilegio ricorda che il castello era stato acquisito al fisco regio dopo la vicenda del conte Pagano de Parisio e successivamente affidato al conte Arnaldo. Il testo menziona un pagamento di 15.000 tarì ad Arnaldo o al suo procuratore. Si tratta di un privilegio di concessione e conferma, non del contratto originale di compravendita.",
+      "status": "APPROVED_FOR_PUBLICATION",
+      "reviewer": "Redazione ADC",
+      "reviewed_at": "2026-11-01",
+      "review_rationale": "Controllo editoriale sul testo e sulle immagini delle pagine 47–49 dell'edizione Hillen; contenuto circoscritto alle attestazioni A01–A03.",
+      "evidence_status": "IMAGE_COLLATED",
+      "evidence_limitations": "Verifica sull'edizione a stampa; pergamena originale non esaminata. L'identità del conte Arnaldo non è ulteriormente stabilita dal privilegio.",
+      "sources": [
+        {
+          "title": "Dossier ADC — Calatabiano nel 1213, Hillen n. 4",
+          "page": "47–49",
+          "url": "/adc/dossier-1213-1537/",
+          "source_type": "printed_edition"
+        }
+      ]
+    }
+  ]
 }
