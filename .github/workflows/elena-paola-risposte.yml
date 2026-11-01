@@ -44,7 +44,7 @@ jobs:
               if not a.get('sources') or not a.get('answer','').strip():raise ValueError('Risposta priva di fonte o testo')
               wav=Path('/tmp/paola')/(ident+'.wav')
               mp3=output/('elena-paola-documentaria-'+ident+'.mp3')
-              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.12','--noise_scale','0.55','--noise_w','0.8','--output_file',str(wav)],input=a['answer'],text=True,check=True)
+              subprocess.run(['piper','--model','/tmp/paola/it_IT-paola-medium.onnx','--length_scale','1.20','--noise_scale','0.30','--noise_w','0.45','--output_file',str(wav)],input=a['answer'],text=True,check=True)
               subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(wav),'-codec:a','libmp3lame','-b:a','128k',str(mp3)],check=True)
               if mp3.stat().st_size<1000:raise ValueError('Audio vuoto')
               print(ident,mp3.stat().st_size)
