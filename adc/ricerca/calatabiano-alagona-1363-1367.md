@@ -34,3 +34,15 @@ Marrone, nella stessa sezione dedicata a Manfredi Alagona (p. 33 dell'edizione),
 ## Regola di pubblicazione
 
 Non scrivere che il 9 settembre 1364 è la data **documentaria certa**: riportare sempre «1363 nell'atto secondo Marrone; 1364 nella correzione critica». Non confondere pegno, restituzione e permuta con un'unica investitura. Non collegare al Processo 334 senza prova specifica.
+
+## Ricostruzione giuridica del rapporto con la Chiesa di Catania (1390)
+
+**Attestazione bibliografica:** Marrone, *Repertorio*, sezione I, p. 32, riferisce che Manfredi Alagona fu signore di Calatabiano «avuta in concessione enfiteutica dalla chiesa di Catania, come risulta da un documento del 10.2.1390», citando **Henri Bresc, *Un monde méditerranéen*, 1986, p. 813**. Il documento del 10 febbraio non è stato direttamente esaminato: la data è quella dell'attestazione citata, non necessariamente la data di stipulazione originaria della concessione.
+
+**Confronto di titoli:** il pegno di Calatabiano da Artale a Manfredi (atto con anno 1363 discordante e correzione di Marrone al 1364), la restituzione e la permuta entro giugno 1367, e la concessione enfiteutica attestata nel 1390 sono **rapporti distinti**. Non è dimostrato un trasferimento ininterrotto del medesimo titolo né il percorso giuridico che condusse dal regime del 1367 a quello del 1390.
+
+**Confronto con Aci, da non confondere:** Marrone riferisce separatamente che il **7 marzo 1390** Manfredi dichiarò di tenere **Aci e il suo territorio** dal vescovo e dal capitolo della cattedrale di Catania per **30 onze annue** (ASP, fondo Moncada, 2957, foglio non numerato). **Le 30 onze riguardano Aci, non Calatabiano.** Non è lecito trasferire a Calatabiano quel canone o supporre identiche condizioni contrattuali.
+
+**Qualificazione giuridica prudente:** il termine «enfiteusi» implica, nella sua accezione generale, un diritto di godimento derivato da un concedente, ma il solo regesto di Marrone non consente di stabilire per Calatabiano durata, canone, facoltà di alienazione, clausole di devoluzione, diritti giurisdizionali, limiti territoriali o titolarità del dominio diretto con certezza documentaria. L'espressione «Chiesa di Catania» non identifica da sola quale organo ecclesiastico abbia stipulato l'atto.
+
+**Prossimi riscontri:** consultare Bresc (1986), p. 813, e relativa nota per risalire alla segnatura del documento 10.2.1390; collazionare testo e tradizione; verificare se l'atto attesta una concessione nuova, una ricognizione o la prosecuzione di un rapporto precedente.
