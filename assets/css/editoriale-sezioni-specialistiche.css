@@ -10,3 +10,19 @@ body.mb-editorial-scope main :is(.card,.course-card,.program-card){border-color:
 body.mb-editorial-scope main a:focus-visible,body.mb-editorial-scope button:focus-visible{outline:3px solid #b58b53;outline-offset:3px}
 body.mb-editorial-scope>footer{border-top:2px solid #a18055}
 @media(max-width:760px){body.mb-editorial-scope>header nav{max-width:100%;overflow-wrap:anywhere}body.mb-editorial-scope main :is(h1,h2){overflow-wrap:break-word}}
+
+/* ADC: separazione visiva fra racconto e apparato di ricerca.
+   Intervento presentazionale: nessuna modifica alle attestazioni o alle fonti. */
+body.mb-editorial-scope main .racconto-storico{
+  background:#fffdf9;
+  border-left:4px solid #a18055;
+  padding:clamp(18px,3vw,30px);
+  margin:1.5rem 0 2.25rem;
+  border-radius:0 12px 12px 0;
+}
+body.mb-editorial-scope main .racconto-storico h2{margin-top:0}
+body.mb-editorial-scope main .racconto-storico p:last-child{margin-bottom:0}
+body.mb-editorial-scope main .racconto-storico + p{margin-top:2rem}
+@media(max-width:600px){
+ body.mb-editorial-scope main .racconto-storico{padding:18px;margin:1.25rem 0 1.75rem}
+}
