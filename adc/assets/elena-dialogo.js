@@ -49,7 +49,7 @@
     // Il benvenuto usa la registrazione originale Paola anche nella pagina completa.
     const welcome=document.getElementById('elena-paola-welcome');
     if(welcome){
-      const welcomeAudio=new Audio('/adc/audio/elena-paola-benvenuto.mp3');welcomeAudio.preload='none';
+      const welcomeAudio=new Audio('/adc/audio/elena-paola-benvenuto.mp3');welcomeAudio.preload='none';welcomeAudio.playbackRate=0.95;welcomeAudio.preservesPitch=true;
       welcome.addEventListener('click',()=>{
         if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta Elena';return;}
         welcomeAudio.currentTime=0;
@@ -90,7 +90,7 @@
         const audio=new Audio();
         let utterance=null;
         const synthesis=typeof window!=='undefined' ? window.speechSynthesis : null;
-        audio.preload='none';
+        audio.preload='none';audio.playbackRate=0.95;audio.preservesPitch=true;
         const recordings={index:'/adc/audio/elena-paola-risposta-indice.mp3',empty:'/adc/audio/elena-paola-risposta-vuota.mp3',documentary:'/adc/audio/elena-paola-documentaria-'+(r.id||'')+'.mp3'};
         const stopAudio=()=>{audio.pause();audio.currentTime=0;if(utterance && synthesis){synthesis.cancel();utterance=null;}if(activeAudio===audio)activeAudio=null;stop.hidden=true;read.hidden=false;};
         read.addEventListener('click',()=>{
@@ -109,7 +109,14 @@
         });
         stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
         audio.addEventListener('ended',()=>{stopAudio();status.textContent='Lettura terminata.';});
-        voiceControls.append(read,stop,status);
+        const speedLabel=make('label','elena-dialogue-speed-label','Velocità di lettura: ');
+        const speed=make('select','elena-dialogue-speed');speed.setAttribute('aria-label','Velocità di lettura');
+        for(const [value,label] of [['0.85','Lenta'],['0.95','Naturale'],['1','Originale'],['1.1','Rapida']]){
+          const option=make('option','',label);option.value=value;if(value==='0.95')option.selected=true;speed.append(option);
+        }
+        speed.addEventListener('change',()=>{audio.playbackRate=Number(speed.value);audio.preservesPitch=true;});
+        speedLabel.append(speed);
+        voiceControls.append(read,stop,speedLabel,status);
         article.append(voiceControls);
         if(r.links.length) {
           article.append(make('p','elena-dialogue-sources',r.kind==='documentary'?'Fonti della risposta:':'Apri i documenti e i percorsi:'));
