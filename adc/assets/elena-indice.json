@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-28-calata",
+  "version": "2026-11-08-allineamento-pagine",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -518,6 +518,92 @@
         "castrorao"
       ],
       "description": "Ricostruzione critica della Calata: distinzione tra culto e corsa, testimonianza ottocentesca, credenze sugli esorcismi e cronologie tradizionali non dimostrate."
+    },
+    {
+      "title": "Le dimore e i portali di Calatabiano",
+      "url": "/adc/patrimonio-edilizio/",
+      "tags": [
+        "dimore",
+        "portali",
+        "palazzo",
+        "gravina",
+        "patrimonio",
+        "edifici"
+      ],
+      "description": "Percorso sul patrimonio edilizio storico di Calatabiano e sulle relative fonti."
+    },
+    {
+      "title": "Palazzo Gravina dei Principi di Palagonia",
+      "url": "/adc/patrimonio-edilizio/palazzo-gravina/",
+      "tags": [
+        "palazzo",
+        "gravina",
+        "palagonia",
+        "portale",
+        "barocco"
+      ],
+      "description": "Scheda storico-architettonica del Palazzo Gravina con attribuzioni e verifiche aperte."
+    },
+    {
+      "title": "Castello di San Marco",
+      "url": "/adc/patrimonio-edilizio/san-marco/",
+      "tags": [
+        "san marco",
+        "castello",
+        "residenza",
+        "fondaco",
+        "chiesa"
+      ],
+      "description": "Scheda sul complesso storico di San Marco e sulle sue trasformazioni."
+    },
+    {
+      "title": "Fonti del patrimonio edilizio",
+      "url": "/adc/patrimonio-edilizio/fonti.html",
+      "tags": [
+        "fonti",
+        "gravina",
+        "edifici",
+        "immagini",
+        "attribuzioni"
+      ],
+      "description": "Fonti e limiti delle attribuzioni relative al patrimonio edilizio."
+    },
+    {
+      "title": "Contrada Pianotta: necropoli romana",
+      "url": "/adc/pianotta/",
+      "tags": [
+        "pianotta",
+        "necropoli",
+        "romana",
+        "tombe",
+        "archeologia"
+      ],
+      "description": "Studi archeologici e riferimenti bibliografici sulla necropoli di Contrada Pianotta."
+    },
+    {
+      "title": "Fonti amministrative e paesaggistiche",
+      "url": "/adc/fonti-amministrative-paesaggistiche/",
+      "tags": [
+        "statuto",
+        "comunale",
+        "dissesto",
+        "paesaggio",
+        "piano paesaggistico"
+      ],
+      "description": "Schede e collegamenti istituzionali relativi a fonti amministrative e paesaggistiche."
+    },
+    {
+      "title": "Edifici, materiali e patrimonio artistico",
+      "url": "/adc/materiali-patrimonio/",
+      "tags": [
+        "materiali",
+        "patrimonio",
+        "artistico",
+        "edilizi",
+        "castello",
+        "chiese"
+      ],
+      "description": "Catalogo critico dei materiali edilizi e del patrimonio artistico locale."
     }
   ]
 }
