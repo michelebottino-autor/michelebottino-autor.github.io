@@ -24,9 +24,10 @@
       const matchedSpecific=specific.filter(match).length;
       return {e,score,strong:matchedSpecific>0,matchedSpecific};
     }).filter(x => x.score >= 5 && x.strong);
-    // Se esistono risultati che coprono tutti i termini specifici, scarta quelli parziali.
-    const complete=specific.length>1 && candidates.some(x=>x.matchedSpecific===specific.length);
-    return candidates.filter(x=>!complete || x.matchedSpecific===specific.length)
+    // Per domande con più termini, privilegia la copertura massima quando almeno due coincidono.
+    const bestCoverage=candidates.reduce((max,x)=>Math.max(max,x.matchedSpecific),0);
+    const requireCoverage=specific.length>1 && bestCoverage>1;
+    return candidates.filter(x=>!requireCoverage || x.matchedSpecific===bestCoverage)
       .sort((a,b) => b.score-a.score || a.e.title.localeCompare(b.e.title,'it'))
       .filter((x,i,all) => all.findIndex(y => y.e.url===x.e.url)===i).slice(0,5).map(x=>x.e);
   }
