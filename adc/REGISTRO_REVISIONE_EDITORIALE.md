@@ -302,3 +302,13 @@ Questo è un collaudo mirato di layout e comportamento applicativo. Non certific
 - **Correzione:** avvisi distinti per indisponibilità dell'indice e del registro di risposte approvate; quando manca l'indice e non esiste una risposta approvata corrispondente, viene restituito un messaggio tecnico, non una conclusione storica.
 - **Commit:** `5fde88503dfc8fa70036e3888337f669cee825ea`.
 - **Verifica:** rilettura statica post-commit del file `adc/assets/elena-dialogo.js`. **Non eseguito** un collaudo browser con richieste di rete bloccate; resta aperto.
+
+
+### Elena — collaudo funzionale su risorse pubblicate — 9 novembre 2026
+
+- **Ambiente:** Node.js v24.19.0 su PC autorizzato «Michele», caricamento HTTP delle tre risorse pubbliche `elena-dialogo.js`, `elena-indice.json`, `elena-risposte-approvate.json`; HTTP 200 per tutte e tre nel primo ciclo. Il test esegue la funzione pubblica `reply()` sul codice effettivamente distribuito, non l'interfaccia grafica completa.
+- **Dati:** 42 voci di orientamento, una risposta approvata.
+- **Casi e attese:** 1213 → `documentary`, dossier 1213 e limiti; Pianotta → `index`, Pianotta; mulini medievali → `index`, acque-mulini-confini; notai medievali → `index`, notai-medievali; Palazzo Gravina → `index`, scheda palazzo; termini inesistenti → `empty`; primo sindaco → `empty`, nessuna attribuzione inventata.
+- **Esito:** 7/7 classificazioni e collegamenti principali attesi superati, dopo correzione dell'aspettativa del caso «primo sindaco», che deve restare `empty` in assenza di una risposta approvata.
+- **Pertinenza residua:** le domande su mulini e notai producono anche collegamenti secondari di pertinenza debole. Aggiunti qualificatori temporali al gruppo di termini generici, commit `da96e6d7632f6e5f4a02a781dd28fd19bcc609cd`; il secondo ciclo 7/7 conferma i risultati principali ma **non elimina** tutti i collegamenti secondari. Non dichiarare risolto il problema.
+- **Limiti del test:** nessuna simulazione di errori HTTP, nessuna interazione DOM, nessuna prova voce o accessibilità mobile. Non ripetere i sette casi senza modifiche alla logica; il prossimo test deve misurare esplicitamente i falsi positivi e l'ordine dei risultati.
