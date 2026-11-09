@@ -312,3 +312,13 @@ Questo è un collaudo mirato di layout e comportamento applicativo. Non certific
 - **Esito:** 7/7 classificazioni e collegamenti principali attesi superati, dopo correzione dell'aspettativa del caso «primo sindaco», che deve restare `empty` in assenza di una risposta approvata.
 - **Pertinenza residua:** le domande su mulini e notai producono anche collegamenti secondari di pertinenza debole. Aggiunti qualificatori temporali al gruppo di termini generici, commit `da96e6d7632f6e5f4a02a781dd28fd19bcc609cd`; il secondo ciclo 7/7 conferma i risultati principali ma **non elimina** tutti i collegamenti secondari. Non dichiarare risolto il problema.
 - **Limiti del test:** nessuna simulazione di errori HTTP, nessuna interazione DOM, nessuna prova voce o accessibilità mobile. Non ripetere i sette casi senza modifiche alla logica; il prossimo test deve misurare esplicitamente i falsi positivi e l'ordine dei risultati.
+
+
+### Elena — falsi positivi, misurazione e correzione mirata — 9 novembre 2026
+
+- **Ambito:** solo pertinenza delle ricerche; nessun audit globale.
+- **Misura iniziale sul sito pubblico:** «mulini medievali» 2 risultati, entrambi pertinenti; «notai medievali» 1 risultato pertinente; «Palazzo Gravina» 4 risultati, dei quali 2 meno specifici rispetto alla richiesta; «castello di San Marco» mostrava fino a 5 risultati, compresi collegamenti deboli.
+- **Causa:** il ranking ammetteva corrispondenze con un solo termine specifico anche quando esistevano schede che ne coprivano più di uno.
+- **Correzione:** filtro basato sulla massima copertura dei termini specifici della domanda quando almeno due termini trovano riscontro; ordinamento e deduplicazione per URL conservati. Commit intermedi `9a01998b0ffd391e7a6fba8cd327fccb10c14b89` e finale `39d4cb4e2f64905283ac6a0a723ecaf44a0329be`.
+- **Prova:** Node.js su PC «Michele» con JS e JSON prelevati dal commit immutabile `39d4cb4e2f64905283ac6a0a723ecaf44a0329be`. 8/8 casi superati, inclusi i 7 precedenti perché la logica di ranking è stata modificata. «Palazzo Gravina» ora 2 collegamenti (scheda e pagina del patrimonio); «castello di San Marco» 1 collegamento specifico; mulini 2 e notai 1, senza regressioni.
+- **Limite:** prova eseguita sul contenuto del commit GitHub, non ancora confermata la propagazione della nuova versione su GitHub Pages. Non equivale a collaudo DOM o accessibilità. Ulteriori verifiche solo se compaiono nuovi falsi positivi documentati.
