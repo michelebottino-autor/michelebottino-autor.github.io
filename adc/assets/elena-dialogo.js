@@ -77,6 +77,8 @@
       const q=String(query||'').trim().slice(0,160);if(!q)return;
       ready.then(()=>{
         if(!turns)output.replaceChildren();
+        if(window.speechSynthesis)window.speechSynthesis.cancel();
+        if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
         const effective=contextualQuery(q,previousQuestion);
         const partial=(!indexAvailable || !approvedAvailable);
         const r=(!indexAvailable && !approvedAvailable)
@@ -89,7 +91,7 @@
           r.links=[];
         }
         previousQuestion=effective;
-        output.append(make('p','elena-dialogue-question','Domanda: '+q));
+        output.append(make('p','elena-dialogue-question',q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
         const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary'
@@ -110,35 +112,36 @@
         const stop=make('button','elena-dialogue-stop','Interrompi');
         stop.type='button';stop.hidden=true;
         const status=make('p','elena-dialogue-voice-status','');
-        const audio=new Audio();
+        const synthesis=window.speechSynthesis;
         let utterance=null;
-        const synthesis=typeof window!=='undefined' ? window.speechSynthesis : null;
-        audio.preload='none';audio.playbackRate=0.95;audio.preservesPitch=true;
-        const recordings={index:'/adc/audio/elena-paola-risposta-indice.mp3',empty:'/adc/audio/elena-paola-risposta-vuota.mp3',documentary:'/adc/audio/elena-paola-documentaria-'+(r.id||'')+'.mp3'};
-        const stopAudio=()=>{audio.pause();audio.currentTime=0;if(utterance && synthesis){synthesis.cancel();utterance=null;}if(activeAudio===audio)activeAudio=null;stop.hidden=true;read.hidden=false;};
-        read.addEventListener('click',()=>{
-          if(!recordings[r.kind]){
-            status.textContent='La lettura vocale di questa risposta non è ancora disponibile.';
-            return;
-          }
-          if(activeAudio && activeAudio!==audio){activeAudio.pause();activeAudio.currentTime=0;}
-          activeAudio=audio;
-          audio.src=recordings[r.kind];
-          audio.play().then(()=>{
-            stop.hidden=false;read.hidden=true;status.textContent='Elena sta leggendo la risposta.';
-          }).catch(()=>{
-            stopAudio();status.textContent='Registrazione Paola non ancora disponibile per questa risposta.';
-          });
-        });
-        stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
-        audio.addEventListener('ended',()=>{stopAudio();status.textContent='Lettura terminata.';});
-        const speedLabel=make('label','elena-dialogue-speed-label','Velocità di lettura: ');
-        const speed=make('select','elena-dialogue-speed');speed.setAttribute('aria-label','Velocità di lettura');
-        for(const [value,label] of [['0.85','Lenta'],['0.95','Naturale'],['1','Originale'],['1.1','Rapida']]){
+        const stopAudio=()=>{
+          if(synthesis) synthesis.cancel();
+          if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
+          utterance=null;stop.hidden=true;read.hidden=false;
+        };
+        const speedLabel=make('label','elena-dialogue-speed-label','Velocità: ');
+        const speed=make('select','elena-dialogue-speed');speed.setAttribute('aria-label','Velocità della risposta vocale');
+        for(const [value,label] of [['0.85','Lenta'],['0.95','Naturale'],['1','Normale'],['1.1','Rapida']]){
           const option=make('option','',label);option.value=value;if(value==='0.95')option.selected=true;speed.append(option);
         }
-        speed.addEventListener('change',()=>{audio.playbackRate=Number(speed.value);audio.preservesPitch=true;});
         speedLabel.append(speed);
+        read.addEventListener('click',()=>{
+          if(!synthesis || typeof SpeechSynthesisUtterance==='undefined'){
+            status.textContent='La lettura vocale non è supportata da questo browser.';return;
+          }
+          stopAudio();
+          const spoken=r.title+'. '+r.text+(r.kind==='documentary' && r.limitation ? ' Limiti della verifica: '+r.limitation : '');
+          utterance=new SpeechSynthesisUtterance(spoken);
+          utterance.lang='it-IT';utterance.rate=Number(speed.value);utterance.pitch=1;
+          const voices=synthesis.getVoices();
+          const italian=voices.filter(v=>v.lang && v.lang.toLowerCase().startsWith('it'));
+          utterance.voice=italian.find(v=>/female|femmina|elsa|paola|alice|lucia|elsa/i.test(v.name)) || italian[0] || null;
+          utterance.onend=()=>{utterance=null;stop.hidden=true;read.hidden=false;status.textContent='Lettura terminata.';};
+          utterance.onerror=()=>{utterance=null;stop.hidden=true;read.hidden=false;status.textContent='Lettura vocale non riuscita. Verifica le impostazioni vocali del dispositivo.';};
+          stop.hidden=false;read.hidden=true;status.textContent='Elena sta leggendo la risposta visualizzata.';
+          synthesis.speak(utterance);
+        });
+        stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
         voiceControls.append(read,stop,speedLabel,status);
         article.append(voiceControls);
         if(r.links.length) {
