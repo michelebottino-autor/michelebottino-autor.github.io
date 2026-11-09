@@ -15,12 +15,20 @@
     const ts = tokens(q);
     if (!ts.length) return [];
     const generic = new Set(['archivio','ricerca','bibliografia','territorio','medievale','medievali','medioevo']);
-    return (entries || []).filter(e => e && safeUrl(e.url)).map(e => {
+    const specific = ts.filter(t => !generic.has(t));
+    const candidates = (entries || []).filter(e => e && safeUrl(e.url)).map(e => {
       const title = normalize(e.title), tags = (e.tags || []).map(normalize), description = normalize(e.description);
-      const score = ts.reduce((sum,t) => sum + (title.split(/[^a-z0-9]+/).includes(t) ? 6 : 0) + (tags.some(tag => tag === t || tag.split(/[^a-z0-9]+/).includes(t)) ? 5 : 0) + (description.split(/[^a-z0-9]+/).includes(t) ? 1 : 0),0);
-      const strong = ts.some(t => !generic.has(t) && (title.split(/[^a-z0-9]+/).includes(t) || tags.some(tag => tag === t || tag.split(/[^a-z0-9]+/).includes(t))));
-      return {e,score,strong};
-    }).filter(x => x.score >= 5 && x.strong).sort((a,b) => b.score-a.score || a.e.title.localeCompare(b.e.title,'it')).filter((x,i,all) => all.findIndex(y => y.e.url===x.e.url)===i).slice(0,5).map(x=>x.e);
+      const titleWords=title.split(/[^a-z0-9]+/), descriptionWords=description.split(/[^a-z0-9]+/);
+      const match=t=>titleWords.includes(t) || tags.some(tag => tag === t || tag.split(/[^a-z0-9]+/).includes(t));
+      const score = ts.reduce((sum,t) => sum + (titleWords.includes(t) ? 6 : 0) + (tags.some(tag => tag === t || tag.split(/[^a-z0-9]+/).includes(t)) ? 5 : 0) + (descriptionWords.includes(t) ? 1 : 0),0);
+      const matchedSpecific=specific.filter(match).length;
+      return {e,score,strong:matchedSpecific>0,matchedSpecific};
+    }).filter(x => x.score >= 5 && x.strong);
+    // Se esistono risultati che coprono tutti i termini specifici, scarta quelli parziali.
+    const complete=specific.length>1 && candidates.some(x=>x.matchedSpecific===specific.length);
+    return candidates.filter(x=>!complete || x.matchedSpecific===specific.length)
+      .sort((a,b) => b.score-a.score || a.e.title.localeCompare(b.e.title,'it'))
+      .filter((x,i,all) => all.findIndex(y => y.e.url===x.e.url)===i).slice(0,5).map(x=>x.e);
   }
   // Contesto effimero: solo l'ultima domanda in questa scheda, senza memorizzazione.
   function contextualQuery(q, previous) {
