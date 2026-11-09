@@ -322,3 +322,12 @@ Questo è un collaudo mirato di layout e comportamento applicativo. Non certific
 - **Correzione:** filtro basato sulla massima copertura dei termini specifici della domanda quando almeno due termini trovano riscontro; ordinamento e deduplicazione per URL conservati. Commit intermedi `9a01998b0ffd391e7a6fba8cd327fccb10c14b89` e finale `39d4cb4e2f64905283ac6a0a723ecaf44a0329be`.
 - **Prova:** Node.js su PC «Michele» con JS e JSON prelevati dal commit immutabile `39d4cb4e2f64905283ac6a0a723ecaf44a0329be`. 8/8 casi superati, inclusi i 7 precedenti perché la logica di ranking è stata modificata. «Palazzo Gravina» ora 2 collegamenti (scheda e pagina del patrimonio); «castello di San Marco» 1 collegamento specifico; mulini 2 e notai 1, senza regressioni.
 - **Limite:** prova eseguita sul contenuto del commit GitHub, non ancora confermata la propagazione della nuova versione su GitHub Pages. Non equivale a collaudo DOM o accessibilità. Ulteriori verifiche solo se compaiono nuovi falsi positivi documentati.
+
+
+### Elena — conferma distribuzione GitHub Pages — 9 novembre 2026
+
+- **Obiettivo circoscritto:** verificare soltanto che la nuova logica di pertinenza sia stata distribuita, senza rieseguire gli otto test funzionali.
+- **Verifica remota:** richiesta HTTP diretta dal PC «Michele» a `https://michelebottino-autor.github.io/adc/assets/elena-dialogo.js?verifica=20261109` con risposta **200 OK**.
+- **Evidenza di versione:** il corpo della risposta contiene la nuova istruzione `bestCoverage=candidates.reduce`, introdotta nel commit `39d4cb4e2f64905283ac6a0a723ecaf44a0329be`.
+- **Metadati HTTP:** `Last-Modified: Mon, 09 Nov 2026 06:58:18 GMT`; `ETag: "6af16f0a-3800"`.
+- **Esito:** **distribuzione della correzione confermata** sul sito pubblico. Non costituisce nuovo test browser/DOM né nuova verifica delle fonti; il collaudo funzionale 8/8 resta quello già registrato.
