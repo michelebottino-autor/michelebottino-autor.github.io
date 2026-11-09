@@ -331,3 +331,12 @@ Questo è un collaudo mirato di layout e comportamento applicativo. Non certific
 - **Evidenza di versione:** il corpo della risposta contiene la nuova istruzione `bestCoverage=candidates.reduce`, introdotta nel commit `39d4cb4e2f64905283ac6a0a723ecaf44a0329be`.
 - **Metadati HTTP:** `Last-Modified: Mon, 09 Nov 2026 06:58:18 GMT`; `ETag: "6af16f0a-3800"`.
 - **Esito:** **distribuzione della correzione confermata** sul sito pubblico. Non costituisce nuovo test browser/DOM né nuova verifica delle fonti; il collaudo funzionale 8/8 resta quello già registrato.
+
+
+### Elena — interfaccia conversazionale e lettura vocale — 9 novembre 2026
+
+- **Richiesta:** visualizzare domande e risposte come chat, con risposte vocali.
+- **Interfaccia:** in `adc/elena/index.html` introdotti messaggi utente/Elena separati, cronologia a scorrimento, compositore compatto per smartphone, esempi di domanda, messaggio iniziale e riduzione di spiegazioni ripetute. Commit `5c5fa5eb3ace96a2e072a55032ecc7ed94b18c29`.
+- **Voce:** in `adc/assets/elena-dialogo.js` il comando «Ascolta la risposta» usa `SpeechSynthesisUtterance` per leggere il **testo della risposta corrente** e, quando presente, il limite della verifica; scelta preferenziale di voce italiana disponibile, regolazione velocità e comando Interrompi. Conservata la registrazione originale del benvenuto. Commit `63a37bd981b83f5ee85e5d6e5c996d199d4d9772`.
+- **Integrità:** `reply()`, `rank()`, indice e risposte approvate non modificati in questo lotto; nessun motore generativo aggiunto e nessuna fonte storica alterata.
+- **Verifica:** `node --check` sul JavaScript del commit indicato, uscita 0. **Non ancora eseguiti** collaudo visivo mobile, riproduzione vocale reale su Android, comportamento di voci non disponibili, e conferma distribuzione della nuova UI su GitHub Pages.
