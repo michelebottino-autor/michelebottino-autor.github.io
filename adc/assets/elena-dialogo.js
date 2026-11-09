@@ -45,7 +45,7 @@
   function mount() {
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
-    let index={entries:[]}, approved=[], turns=0, previousQuestion='', activeAudio=null;
+    let index={entries:[]}, approved=[], turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
     // Il benvenuto usa la registrazione originale Paola anche nella pagina completa.
     const welcome=document.getElementById('elena-paola-welcome');
     if(welcome){
@@ -60,8 +60,8 @@
     }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
     const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json')]).then(a=>{
-      if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)) index=a[0].value;
-      if(a[1].status==='fulfilled' && Array.isArray(a[1].value?.answers)) approved=a[1].value.answers;
+      if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)){index=a[0].value;indexAvailable=true;}
+      if(a[1].status==='fulfilled' && Array.isArray(a[1].value?.answers)){approved=a[1].value.answers;approvedAvailable=true;}
     });
     const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e};
     function run(query) {
@@ -69,13 +69,17 @@
       ready.then(()=>{
         if(!turns)output.replaceChildren();
         const effective=contextualQuery(q,previousQuestion);
-        const r=reply(effective,index,approved);
+        const r=(!indexAvailable && !approvedAvailable)
+          ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
+          : reply(effective,index,approved);
         previousQuestion=effective;
         output.append(make('p','elena-dialogue-question','Domanda: '+q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
         const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary'
           ? 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.'
+          : r.kind==='unavailable'
+            ? 'Caricamento delle fonti non riuscito: nessuna conclusione storica può essere tratta.'
           : r.kind==='index'
             ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
             : 'Nessuna attestazione approvata individuata per questa domanda.');
