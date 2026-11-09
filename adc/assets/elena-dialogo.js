@@ -69,9 +69,16 @@
       ready.then(()=>{
         if(!turns)output.replaceChildren();
         const effective=contextualQuery(q,previousQuestion);
+        const partial=(!indexAvailable || !approvedAvailable);
         const r=(!indexAvailable && !approvedAvailable)
           ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
           : reply(effective,index,approved);
+        if(!indexAvailable && r.kind!=='documentary'){
+          r.kind='unavailable';
+          r.title='Indice documentario non disponibile';
+          r.text='Non è stato possibile consultare l’indice delle fonti. Non si può concludere che manchino testimonianze pertinenti.';
+          r.links=[];
+        }
         previousQuestion=effective;
         output.append(make('p','elena-dialogue-question','Domanda: '+q));
         const article=make('article','elena-dialogue-answer');
@@ -84,6 +91,9 @@
             ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
             : 'Nessuna attestazione approvata individuata per questa domanda.');
         article.append(evidence);
+        if(partial) article.append(make('p','elena-dialogue-evidence',!indexAvailable
+          ? 'Avviso tecnico: l’indice delle fonti non è stato caricato; la consultazione è parziale.'
+          : 'Avviso tecnico: le risposte storiche approvate non sono state caricate; i percorsi suggeriti non escludono l’esistenza di risposte già verificate.'));
         if(r.kind==='documentary' && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         const voiceControls=make('div','elena-dialogue-voice');
         const read=make('button','elena-dialogue-read','Ascolta la risposta');
