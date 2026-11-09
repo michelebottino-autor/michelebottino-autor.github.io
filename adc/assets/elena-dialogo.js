@@ -143,7 +143,8 @@
         });
         stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
         voiceControls.append(read,stop,speedLabel,status);
-        article.append(voiceControls);
+        // Il comando vocale precede il testo lungo: resta subito visibile anche su smartphone.
+        article.insertBefore(voiceControls,article.children[1] || null);
         if(r.links.length) {
           article.append(make('p','elena-dialogue-sources',r.kind==='documentary'?'Fonti della risposta:':'Apri i documenti e i percorsi:'));
           const list=make('ul','elena-dialogue-links');
