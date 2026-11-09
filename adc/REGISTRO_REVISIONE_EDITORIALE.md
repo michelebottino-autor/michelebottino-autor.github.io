@@ -293,3 +293,12 @@ Questo è un collaudo mirato di layout e comportamento applicativo. Non certific
 - **Commit:** `2a9324714055d2bcc3906e3b5dd26ff1854b7d19`.
 - **Verifica:** controllo statico del codice aggiornato; non ancora test di errore di rete in browser.
 - **Aperto:** distinguere anche i casi di fallimento di una sola delle due risorse, e collaudare il flusso con rete simulata; non ripetere gli audit generali già registrati.
+
+
+### Elena — caricamento parziale delle risorse — 9 novembre 2026
+
+- **Ambito:** prosecuzione della verifica già aperta, senza rieseguire audit globali.
+- **Problema:** il fallimento di una sola richiesta JSON non era segnalato all'utente. Con indice indisponibile, l'assenza di corrispondenze poteva essere confusa con assenza di testimonianze; con risposte approvate indisponibili, i percorsi suggeriti non esplicitavano il limite della consultazione.
+- **Correzione:** avvisi distinti per indisponibilità dell'indice e del registro di risposte approvate; quando manca l'indice e non esiste una risposta approvata corrispondente, viene restituito un messaggio tecnico, non una conclusione storica.
+- **Commit:** `5fde88503dfc8fa70036e3888337f669cee825ea`.
+- **Verifica:** rilettura statica post-commit del file `adc/assets/elena-dialogo.js`. **Non eseguito** un collaudo browser con richieste di rete bloccate; resta aperto.
