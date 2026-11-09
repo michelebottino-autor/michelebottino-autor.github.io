@@ -247,3 +247,40 @@ Il controllo statico non certifica l’esecuzione JavaScript su tutti i disposit
 ### Limiti
 
 Questo è un collaudo mirato di layout e comportamento applicativo. Non certifica l'intera accessibilità WCAG, tutti i browser o tutti i possibili quesiti. I rapporti non promuovono fonti indirette a prove originali.
+
+
+## Stato consolidato e protocollo anti-ripetizione — 9 novembre 2026
+
+**Scopo.** Questo aggiornamento integra il registro editoriale esistente. Non istituisce un secondo archivio, non modifica le fonti storiche e non trasforma controlli statici in collaudi browser.
+
+### Esiti già acquisiti — non ripetere senza una modifica pertinente
+
+| Ambito | Evidenza disponibile | Validità e limiti |
+| --- | --- | --- |
+| Sitemap ADC | Confronto di 42 percorsi ADC; controllo di unicità delle URL | Valido per la versione esaminata; ripetere soltanto dopo cambi di struttura o sitemap |
+| Struttura delle pagine ADC | Verificati titoli, canonical, descrizioni, ID e ancore; controlli immagini alt su campioni dichiarati | Non equivale a una certificazione completa di accessibilità |
+| Ricerca ADC | Elenco statico aggiornato da 35 a 42 percorsi; commit `b518f3eb8829e6696e3edfc67b385fc264f621ec` | Copertura del catalogo verificata sul codice, non nuova prova browser |
+| Custode | Elenco aggiornato a 37 percorsi, poi sostituito con reindirizzamento verso Elena; commit `2c6dbd2eb5df7b86c79bc5e477ec228aec0d51f6` | Il vecchio motore non è più quello pubblico; non collaudarlo come servizio autonomo |
+| Homepage ADC | Collegamenti al Custode sostituiti con Elena; commit `e3ff20cd7d52af4ee1b88bca813ae7fb462ad962` | Controllo statico post-commit positivo |
+| Indice Elena | Aggiunte sette sezioni pubblicate; commit `4b87f3f92aa0c5af2e07dd6dc917dc2ab692174e` | Copertura documentaria statica verificata |
+| Deduplicazione Elena | 45 voci portate a 42 URL distinti, conservando tag e cautele; commit `c148c4f3824aa1632e75461dbf39c91f8a246401` | Nessuna URL duplicata nel file riletto |
+| Risposte approvate Elena | Una risposta approvata, relativa al 1213; confronto di coerenza con il dossier ADC | Non è una nuova collazione della pergamena originale |
+| Browser mobile e Custode storico | Collaudo Chromium del 21 ottobre documentato in questo registro | Prova riferita a una versione precedente; non valida automaticamente per Elena unificata |
+
+### Verifiche ancora aperte — non segnare come superate
+
+1. **Elena unificata, browser reale:** caricamento dell'indice e delle risposte approvate, domande campione, gestione errori di rete, collegamenti alle fonti, reindirizzamento da `/adc/custode/` con parametro `q`.
+2. **Risposte storiche:** campione con esito atteso e classificazione separata fra risposta approvata, proposta di percorso e assenza di prove. Nessuna risposta nuova senza revisione documentaria.
+3. **Voce Elena:** disponibilità dei file audio, avvio/interruzione e comportamento su dispositivi mobili; nessun esito dichiarato in assenza di prova.
+4. **Mediateca e navigazione:** verificare soltanto comportamenti non ancora collaudati o componenti modificati dopo l'ultima prova.
+5. **Pubblicazione GitHub Pages:** controllare distribuzione e comportamento pubblico dei commit recenti; la presenza del codice nel repository non basta a certificarli.
+6. **Copertura dell'intero sito autore:** il presente registro riguarda prevalentemente ADC; pagine editoriali esterne all'ADC, moduli, privacy e altri sottosistemi richiedono un inventario distinto prima di qualsiasi attestazione globale.
+
+### Regola operativa obbligatoria
+
+- Prima di ogni controllo consultare questo registro e identificare **file, componente, ultimo commit pertinente e tipo di verifica già effettuata**.
+- Non rieseguire una verifica superata e ancora valida; procedere soltanto sui file cambiati o su un rischio nuovo, dichiarando il motivo.
+- Separare sempre: **esaminato staticamente**, **collaudato nel browser**, **verificato sulle fonti**, **pubblicato e controllato online**. Nessuno di questi stati implica automaticamente gli altri.
+- Ogni difetto deve avere riproduzione, file interessato, correzione minima, commit e prova successiva; evitare interventi editoriali senza evidenza.
+- Le modifiche storiche restano subordinate alla verifica delle fonti; non aggiornare una conclusione storica soltanto per uniformità con un riassunto o con un indice.
+- Aggiornare **questo stesso registro** alla conclusione di ogni lotto di lavoro. Non creare registri paralleli né ripetere test globali dopo ogni modifica locale.
