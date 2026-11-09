@@ -284,3 +284,12 @@ Questo è un collaudo mirato di layout e comportamento applicativo. Non certific
 - Ogni difetto deve avere riproduzione, file interessato, correzione minima, commit e prova successiva; evitare interventi editoriali senza evidenza.
 - Le modifiche storiche restano subordinate alla verifica delle fonti; non aggiornare una conclusione storica soltanto per uniformità con un riassunto o con un indice.
 - Aggiornare **questo stesso registro** alla conclusione di ogni lotto di lavoro. Non creare registri paralleli né ripetere test globali dopo ogni modifica locale.
+
+
+### Elena — gestione errore caricamento dati — 9 novembre 2026
+
+- **Difetto riproducibile per ispezione del flusso:** `Promise.allSettled` lasciava entrambi gli insiemi di dati vuoti se fallivano le due richieste JSON; `reply()` trattava quindi il problema di rete come mancanza di fonti pertinenti.
+- **Intervento circoscritto:** introdotti indicatori di disponibilità per indice e risposte approvate. Quando entrambi i caricamenti falliscono, l'interfaccia segnala che l'archivio è temporaneamente non disponibile e che non si può concludere nulla sulle testimonianze.
+- **Commit:** `2a9324714055d2bcc3906e3b5dd26ff1854b7d19`.
+- **Verifica:** controllo statico del codice aggiornato; non ancora test di errore di rete in browser.
+- **Aperto:** distinguere anche i casi di fallimento di una sola delle due risorse, e collaudare il flusso con rete simulata; non ripetere gli audit generali già registrati.
