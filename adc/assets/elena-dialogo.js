@@ -14,7 +14,7 @@
   function rank(q, entries) {
     const ts = tokens(q);
     if (!ts.length) return [];
-    const generic = new Set(['archivio','ricerca','bibliografia','territorio']);
+    const generic = new Set(['archivio','ricerca','bibliografia','territorio','medievale','medievali','medioevo']);
     return (entries || []).filter(e => e && safeUrl(e.url)).map(e => {
       const title = normalize(e.title), tags = (e.tags || []).map(normalize), description = normalize(e.description);
       const score = ts.reduce((sum,t) => sum + (title.split(/[^a-z0-9]+/).includes(t) ? 6 : 0) + (tags.some(tag => tag === t || tag.split(/[^a-z0-9]+/).includes(t)) ? 5 : 0) + (description.split(/[^a-z0-9]+/).includes(t) ? 1 : 0),0);
