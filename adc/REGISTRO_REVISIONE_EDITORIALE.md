@@ -340,3 +340,11 @@ Questo è un collaudo mirato di layout e comportamento applicativo. Non certific
 - **Voce:** in `adc/assets/elena-dialogo.js` il comando «Ascolta la risposta» usa `SpeechSynthesisUtterance` per leggere il **testo della risposta corrente** e, quando presente, il limite della verifica; scelta preferenziale di voce italiana disponibile, regolazione velocità e comando Interrompi. Conservata la registrazione originale del benvenuto. Commit `63a37bd981b83f5ee85e5d6e5c996d199d4d9772`.
 - **Integrità:** `reply()`, `rank()`, indice e risposte approvate non modificati in questo lotto; nessun motore generativo aggiunto e nessuna fonte storica alterata.
 - **Verifica:** `node --check` sul JavaScript del commit indicato, uscita 0. **Non ancora eseguiti** collaudo visivo mobile, riproduzione vocale reale su Android, comportamento di voci non disponibili, e conferma distribuzione della nuova UI su GitHub Pages.
+
+
+### Elena — comando vocale non visibile su Android — 9 novembre 2026
+
+- **Segnalazione:** screenshot reale Android della risposta approvata sul castello nel 1213: la risposta compare correttamente ma il comando vocale non è visibile nel primo tratto della scheda.
+- **Causa individuata nel codice:** i comandi di ascolto erano aggiunti dopo tutto il testo, le cautele e gli avvisi; con risposta lunga rimanevano fuori dall'area immediatamente visibile.
+- **Correzione mirata:** `voiceControls` inserito subito dopo il titolo della risposta, prima del testo; nessuna modifica al ranking o alla risposta storica. Commit `cf68da3d4480c61ebcf8e13544d251002c013402`.
+- **Verifica:** `node --check` sul file del commit, uscita 0. **Da confermare su Android:** visibilità del comando, avvio effettivo della sintesi vocale, arresto, compatibilità browser e distribuzione pubblica.
