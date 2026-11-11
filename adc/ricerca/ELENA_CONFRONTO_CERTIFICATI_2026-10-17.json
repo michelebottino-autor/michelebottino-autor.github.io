@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-17",
+  "baseline_version": "2026-10-16-risposte-documentarie-v2",
+  "existing_facts": 10,
+  "existing_ids": [
+    "1213",
+    "1201",
+    "1267",
+    "1282",
+    "1502",
+    "1537",
+    "processo334",
+    "nome",
+    "ponte",
+    "zucchero"
+  ],
+  "exported_local_certified": 0,
+  "existing_records_preserved": true,
+  "changes_to_public_answers": 0,
+  "review": "PENDING_HUMAN_SOURCE_CERTIFICATION",
+  "finding": "Le dieci risposte pubbliche sono gia corredate di fonti ADC e limiti dichiarati, ma non equivalgono a dieci PDF locali scientificamente certificati. Nessun merge automatico."
+}
