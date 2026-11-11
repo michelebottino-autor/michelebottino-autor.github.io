@@ -348,3 +348,15 @@ Questo è un collaudo mirato di layout e comportamento applicativo. Non certific
 - **Causa individuata nel codice:** i comandi di ascolto erano aggiunti dopo tutto il testo, le cautele e gli avvisi; con risposta lunga rimanevano fuori dall'area immediatamente visibile.
 - **Correzione mirata:** `voiceControls` inserito subito dopo il titolo della risposta, prima del testo; nessuna modifica al ranking o alla risposta storica. Commit `cf68da3d4480c61ebcf8e13544d251002c013402`.
 - **Verifica:** `node --check` sul file del commit, uscita 0. **Da confermare su Android:** visibilità del comando, avvio effettivo della sintesi vocale, arresto, compatibilità browser e distribuzione pubblica.
+
+## Consolidamento pubblico ADC — 11 novembre 2026
+
+**Perimetro controllato:** sitemap principale con 42 URL della sezione ADC; lettura diretta delle pagine di sintesi, storia, fonti, inventario, atlante, mediateca, Elena, epigrafe, patrimonio e dossier principali, non certificazione integrale delle 42 pagine. Per le 14 pagine principali controllate in questo ciclo: un H1, canonical presente e nessun link letterale href="#"; controllo automatico statico non equivale a collaudo HTML/WCAG/browser né a esecuzione dei componenti JS.
+
+**Correzioni pubblicate:**
+- `adc/processo-334/index.html`: stato editoriale portato all'11/11/2026; citazione del repertorio ASPa/Protonotaro del Regno, Tommaso erede di Francesco, vendite/atti successori/investitura separati; ricognizione delle 20 pagine e ipotesi di procura di p.13 presentate come distinte da trascrizione diplomatica e provvedimento eseguito. Conservata la cronologia delle proposte precedenti. Commit `fb79a7c5ee15822b88056440ae82ba67129994f0`.
+- `adc/programma/index.html`: priorità 1 allineata alla reale collazione: atto del 1484, titolo successorio, mandante/procuratore, provvedimento d'investitura e verifiche degli effetti. Processo 184 citato in repertorio distinto dalla sola etichetta errata P184 nei vecchi file. Commit `0c4ba26abc052ceac8fbfb0cfb69c838641ed301`.
+
+**Rettifica documentaria:** non modificare i riferimenti a Tribunale del Real Patrimonio presenti in `adc/storia/index.html` (Riveli beni/anime) e `adc/dossier-zucchero/index.html` (Scritture pendenti richiamate da Morreale): si riferiscono a serie diverse e non attribuiscono il Processo 334 al TRP. La serie dell'investitura n.334 resta il Protonotaro del Regno.
+
+**Limiti espliciti:** non effettuato test browser mobile, accessibilità automatica completa, controllo HTTP di tutti i link esterni, collazione filologica di tutte le 42 pagine e ispezione del deploy GitHub Pages immediatamente dopo commit. La pubblicazione nel repository main è confermata dai commit; la propagazione pubblica va verificata separatamente. Non sono stati pubblicati nuovi dati paleografici non verificati e non sono stati alterati PDF originali, database ADC, foto o modelli HTR.
