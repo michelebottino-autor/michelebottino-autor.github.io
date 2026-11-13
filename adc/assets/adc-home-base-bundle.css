@@ -1,0 +1,374 @@
+/* ADC — foglio aggregato, ordine delle regole invariato. Originali preservati nel repository. */
+
+/* Sorgente: /site-uniform.css */
+header .logo a,header .brand-name{display:inline-block!important;font-family:Georgia,serif!important;font-size:clamp(1.13rem,1.7vw,1.48rem)!important;font-weight:700!important;letter-spacing:.025em!important;line-height:1.3!important;text-decoration:none!important;color:#28231d!important}
+header nav a:focus-visible,header nav button:focus-visible,.course-feature a:focus-visible{outline:3px solid #a6784b;outline-offset:3px}
+.course-feature{margin:42px auto;padding:32px clamp(22px,4vw,48px);background:#f4eee5;border:1px solid #ded2c1;border-radius:12px;box-sizing:border-box}
+.course-feature h2{font:700 clamp(1.6rem,3vw,2.25rem)/1.2 Georgia,serif;color:#28231d;margin:9px 0 14px}
+.course-feature p{max-width:780px;line-height:1.75;color:#423b34}
+.course-feature-link{display:inline-block;margin-top:10px;padding:11px 18px;background:#463a2e;color:#fff!important;border-radius:5px;text-decoration:none;font-weight:650}
+@media(max-width:700px){.course-feature{margin:28px auto;padding:24px 18px}}
+/* Mobile responsive layout */
+html,body{max-width:100%;overflow-x:clip}
+main pre{max-width:100%;overflow-x:auto;white-space:pre}
+main img,main iframe,main video{max-width:100%}
+@media(max-width:760px){body>header nav.nav{flex-direction:column;align-items:stretch}body>header nav.nav>ul:not(.submenu):not(.nav-menu){width:100%;display:flex;flex-wrap:wrap;gap:4px 14px}body>header nav.nav>ul:not(.submenu):not(.nav-menu)>li{width:auto}body>main,body>main.container{width:100%;min-width:0;padding-inline:16px}main .architecture{min-width:0;max-width:100%;overflow-x:auto}main h1{font-size:clamp(2.2rem,10vw,3.4rem)}}
+
+/* Navigazione mobile accessibile e consenso non invasivo */
+.mb-mobile-menu-button{display:none}
+@media(max-width:760px){
+body>header nav.nav{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px}
+body>header nav.nav>.logo{min-width:0}
+body>header nav.nav>.mb-mobile-menu-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 16px;border:1px solid #bba992;border-radius:8px;background:#f8f3ea;color:#29251f;font:600 15px/1.3 system-ui,sans-serif}
+body>header nav.nav>ul:not(.submenu):not(.nav-menu){display:none;grid-column:1/-1;width:100%;margin:0;padding:12px 0 0;border-top:1px solid #e4e0d7}
+body>header nav.nav>ul.mb-mobile-menu-open:not(.submenu):not(.nav-menu){display:flex;flex-direction:column;align-items:stretch;gap:2px}
+body>header nav.nav>ul.mb-mobile-menu-open:not(.submenu):not(.nav-menu)>li{width:100%}
+body>header nav.nav>ul.mb-mobile-menu-open:not(.submenu):not(.nav-menu) a{display:block;padding:10px 4px}
+.mb-preferences-control{bottom:calc(8px + env(safe-area-inset-bottom,0px))!important;right:8px!important;font-size:11px!important;max-width:140px!important;padding:4px 7px!important;opacity:.85}
+}
+
+/* Evita duplicazioni nei menu gia dotati di toggle nativo. */
+@media(max-width:760px){
+body>header nav.nav:has(>.menu-toggle){display:flex;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap}
+body>header nav.nav:has(>.menu-toggle)>.menu-toggle{display:block;flex:0 0 auto;min-width:44px;min-height:44px}
+body>header nav.nav:has(>.menu-toggle)>.nav-menu{width:100%;flex-basis:100%;margin:0}
+body>header nav.nav:has(>.menu-toggle)>.nav-menu:not(.open):not(.active):not(.show){display:none}
+body>header nav.nav:has(>.menu-toggle)>.nav-menu.open,
+body>header nav.nav:has(>.menu-toggle)>.nav-menu.active,
+body>header nav.nav:has(>.menu-toggle)>.nav-menu.show{display:flex}
+}
+.mb-preferences-control{position:static!important;display:inline-block;margin:14px 0 6px!important;max-width:none!important;opacity:1!important}
+
+/* Correzione definitiva: un solo toggle visibile nella navigazione mobile. */
+@media(max-width:760px){
+ body>header nav.nav:has(>.menu-toggle)>.mb-mobile-menu-button{display:none!important}
+ body>header nav.nav:has(>.menu-toggle)>.nav-menu:not(.open):not(.active):not(.show){display:none!important}
+ body>header nav.nav:has(>.menu-toggle)>.nav-menu.open,
+ body>header nav.nav:has(>.menu-toggle)>.nav-menu.active,
+ body>header nav.nav:has(>.menu-toggle)>.nav-menu.show{display:flex!important}
+ body>header nav.nav:has(>.menu-toggle){display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}
+ body>header nav.nav:has(>.menu-toggle)>.logo{flex:1 1 auto}
+ body>header nav.nav:has(>.menu-toggle)>.menu-toggle{flex:0 0 auto}
+ .mb-preferences-control{position:static!important;inset:auto!important;transform:none!important}
+}
+
+/* Uniformazione dell'esperienza di navigazione: tutte le sezioni del sito d'autore. */
+:root{--site-accent:#b79b69;--site-focus:#e7d4aa}
+a,button,input,select,textarea{touch-action:manipulation}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--site-focus);outline-offset:3px}
+button,[role="button"],input[type="submit"],input[type="button"]{min-height:44px}
+nav a,header a{display:inline-flex;align-items:center;min-height:40px}
+img{max-width:100%;height:auto}
+main{min-width:0}
+main p,main li{overflow-wrap:break-word}
+main :is(h1,h2,h3){text-wrap:balance}
+main :is(pre,table){max-width:100%;overflow-x:auto}
+@media(max-width:680px){main{min-width:0}nav{max-width:100%}main :is(input,textarea,select){max-width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Sistema visivo coordinato 2026 — sito d'autore.
+   Colori sobri, icone riconoscibili e interazioni accessibili. */
+:root{--mb-forest:#173c36;--mb-leaf:#3c806b;--mb-parchment:#f8f6f1;--mb-brass:#b79b69}
+main .card,main .book-tile{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+@media(hover:hover){main .card:hover,main .book-tile:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(17,46,39,.13);border-color:rgba(183,155,105,.6)}}
+main .card-link,main .section-link,main .course-feature-link{display:inline-flex;align-items:center;gap:.55em;text-decoration-thickness:1px;text-underline-offset:4px}
+main .card-link::after,main .section-link::after{content:"";width:.9em;height:.9em;flex:none;background:currentColor;clip-path:polygon(12% 45%,70% 45%,49% 24%,58% 16%,93% 50%,58% 84%,49% 76%,70% 55%,12% 55%)}
+main .editorial-icon{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:13px;background:linear-gradient(145deg,#e6f3ed,#f4f6e9);color:#24624f;box-shadow:inset 0 0 0 1px rgba(23,60,54,.1)}
+main .card:nth-child(4n+2) .editorial-icon{background:#e8f0ff;color:#315c9d}
+main .card:nth-child(4n+3) .editorial-icon{background:#fff2dd;color:#97651f}
+main .card:nth-child(4n+4) .editorial-icon{background:#f3e9ff;color:#79539e}
+main .category-pill{border-radius:999px;letter-spacing:.015em}
+main .card a:focus-visible,main .book-tile a:focus-visible{outline:3px solid var(--mb-brass);outline-offset:4px}
+@media(max-width:600px){main .card,main .book-tile{max-width:100%;min-width:0}main .card-link,main .section-link{min-height:44px;align-items:center}}
+@media(prefers-reduced-motion:reduce){main .card,main .book-tile{transition:none}main .card:hover,main .book-tile:hover{transform:none}}
+
+/* Identità 2026: intestazione coerente per il sito autore e l'ADC.
+   L'ADC continua a usare le proprie regole specialistiche per i dossier. */
+body>header:not(.adc-unified-header) {
+  background:#173c36!important;
+  border-bottom:3px solid #c5a16a!important;
+  color:#fff!important;
+}
+body>header:not(.adc-unified-header) .logo a,
+body>header:not(.adc-unified-header) .logo a:visited{
+  color:#fff!important;
+  text-decoration:none!important;
+}
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > a,
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > button {
+  color:#fff!important;
+}
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > a:hover,
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > a[aria-current="page"],
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > button:hover{
+  color:#f4d49c!important;
+}
+body>header:not(.adc-unified-header) nav.nav .submenu{
+  background:#fffdf9;
+  color:#25302e;
+}
+body>header:not(.adc-unified-header) nav.nav .submenu a{color:#25302e!important}
+body>header:not(.adc-unified-header) .menu-toggle{
+  background:transparent!important;
+  border:2px solid #e7c58d!important;
+  border-radius:8px;
+  min-width:46px;
+  min-height:46px;
+}
+body>header:not(.adc-unified-header) .menu-toggle span{background:#fff!important}
+body>header:not(.adc-unified-header) .menu-toggle:focus-visible{
+  outline:3px solid #fff!important;
+  outline-offset:2px;
+}
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > a:focus-visible,
+body>header:not(.adc-unified-header) nav.nav > .nav-menu > li > button:focus-visible{
+  outline:3px solid #f4d49c;
+  outline-offset:2px;
+}
+@media(max-width:760px){
+  body>header:not(.adc-unified-header) nav.nav > .nav-menu{
+    padding:12px 0 0;
+    border-top:1px solid rgba(255,255,255,.28);
+  }
+  body>header:not(.adc-unified-header) nav.nav > .nav-menu > li{
+    min-width:0;
+  }
+  body>header:not(.adc-unified-header) nav.nav .submenu a{
+    color:#25302e!important;
+  }
+}
+
+/* Impaginazione editoriale condivisa — 18 ottobre 2026.
+   Migliora leggibilità e coerenza senza sovrascrivere le identità delle singole sezioni. */
+:root {
+  --ref-ink: #25352f;
+  --ref-ink-soft: #52605a;
+  --ref-accent: #795a37;
+  --ref-paper: #faf8f3;
+  --ref-surface: #fffefa;
+  --ref-rule: #e4ddd0;
+  --ref-focus: #a67531;
+}
+html { scroll-padding-top: 1.75rem; text-rendering: optimizeLegibility; }
+body { font-kerning: normal; -webkit-font-smoothing: antialiased; }
+:where(main, article, .container) :where(h1,h2,h3) {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+:where(main, article) p { text-wrap: pretty; }
+:where(main, article) :is(h1,h2,h3) { line-height: 1.25; }
+:where(main, article) :is(ol,ul) li + li { margin-block-start: .28em; }
+:where(main, article) a:not(.btn):not(.button):not(.card-link) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+:where(main, article) a:hover { text-decoration-thickness: 2px; }
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible {
+  outline: 3px solid var(--ref-focus);
+  outline-offset: 4px;
+}
+::selection { background: #ded2ba; color: #20322e; }
+:where(main, article) :where(blockquote) {
+  border-inline-start: 3px solid #a78b65;
+  padding: .6rem 1.25rem;
+  margin-inline: 0;
+  background: #f5f1e8;
+}
+:where(main, article) :where(table) {
+  max-width: 100%;
+  border-collapse: collapse;
+}
+:where(main, article) :where(th,td) { overflow-wrap: anywhere; }
+:where(main, article) :where(img) { max-width: 100%; }
+:where(main, article) :where(.card,.panel,.box,.case,.unitlist a) {
+  border-color: var(--ref-rule);
+  box-shadow: 0 12px 32px rgba(37,49,42,.055);
+}
+:where(main) :where(.note,.status,.notice) {
+  border-radius: 0 12px 12px 0;
+  overflow-wrap: anywhere;
+}
+:where(main) :where(.meta,.small,.muted) { line-height: 1.65; }
+:where(main) :is(button,.btn,.button,button[type="submit"]) {
+  min-height: 44px;
+  font-family: inherit;
+  font-size: inherit;
+}
+:where(main) :is(input,textarea,select) { max-width: 100%; }
+:where(main) :where(.editorial-breadcrumb) { letter-spacing: .01em; }
+/* Le sezioni archivistiche condividono una gerarchia, pur conservando il tema storico. */
+body:has(.adc-project-nav) :where(main) > h1 {
+  letter-spacing: -.03em;
+  max-width: 24ch;
+}
+body:has(.adc-project-nav) :where(main) > p:first-of-type {
+  max-width: 77ch;
+}
+body:has(.adc-project-nav) :where(main) > article,
+body:has(.adc-project-nav) :where(main) > section {
+  scroll-margin-top: 2rem;
+}
+body:has(.adc-project-nav) :where(main) > :is(section,article) > h2:first-child {
+  margin-top: 0;
+}
+body:has(.adc-project-nav) .adc-project-nav a:focus-visible {
+  outline-offset: -2px;
+}
+body:has(.adc-project-nav) :where(main) a {
+  transition: color .18s ease;
+}
+/* Le istruzioni specialistiche per condividere il motore restano opzionali. */
+.embed-instructions {
+  margin: 1.2rem 0;
+  padding: .75rem 1rem;
+  border: 1px solid var(--ref-rule);
+  border-radius: 12px;
+  background: #fffdf9;
+}
+.embed-instructions summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--ref-accent);
+  padding: .3rem 0;
+}
+.embed-instructions[open] summary { margin-bottom: 1rem; }
+@media (min-width: 900px) {
+  body:has(.adc-project-nav) :where(main) > h1 { font-size: clamp(2.35rem, 4.4vw, 3.75rem); }
+}
+@media (max-width: 650px) {
+  :where(main,article) :is(h1,h2,h3) { overflow-wrap: break-word; }
+  :where(main,article) :is(p,li) { hyphens: auto; }
+  :where(main,article) table { font-size: .93em; }
+  :where(main) :where(.note,.status,.notice) { padding: 14px 16px; }
+  .embed-instructions { padding: .55rem .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media print {
+  body { background: #fff !important; color: #111 !important; }
+  :where(main,article) a { color: #111; }
+  :where(main,article) :is(.card,.panel,.box) { box-shadow: none; }
+}
+
+/* Marchio editoriale Michele Bottino, ottobre 2026.
+   Monogramma derivato dal logo approvato. Esclusi i loghi specialistici ADC. */
+body>header:not(.adc-unified-header) .logo a:not(:has(img)){
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-start;
+  gap:11px;
+  max-width:100%;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:500!important;
+  letter-spacing:.01em!important;
+  line-height:1.15!important;
+  white-space:nowrap;
+}
+body>header:not(.adc-unified-header) .logo a:not(:has(img))::before{
+  content:"";
+  display:block;
+  flex:0 0 52px;
+  width:52px;
+  height:52px;
+  border:1px solid rgba(201,170,112,.55);
+  border-radius:2px;
+  background:#faf9f6 url("/icons/mb-192.png") center/contain no-repeat;
+  box-sizing:border-box;
+}
+@media(max-width:430px){
+  body>header:not(.adc-unified-header) .logo a:not(:has(img)){gap:7px;font-size:1.08rem!important}
+  body>header:not(.adc-unified-header) .logo a:not(:has(img))::before{width:42px;height:42px;flex-basis:42px}
+}
+
+
+
+/* Sorgente: /adc/condividi.css */
+/* Condivisione ADC: pannello editoriale e azioni riconoscibili, mobile-first. */
+.adc-share{clear:both;position:relative;margin:clamp(2.5rem,6vw,4rem) 0 1.5rem;padding:clamp(20px,4vw,34px);border:1px solid #d9e0d8;border-radius:20px;background:linear-gradient(145deg,#fffdf8 0%,#edf3ee 100%);color:#25302e;font:16px/1.6 system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 12px 32px rgba(23,60,54,.07);overflow:hidden}
+.adc-share:before{content:"";display:block;position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#173c36,#4c8874,#b79b69)}
+.adc-share h2{font:700 clamp(1.5rem,3vw,2rem)/1.25 Georgia,serif;color:#173c36;margin:0 0 10px;letter-spacing:-.02em}
+.adc-share p{font-size:.98rem;line-height:1.65;margin:0 0 13px;max-width:65ch;color:#46564e}
+.adc-share .adc-share-author{font-size:.9rem;margin:0 0 22px}
+.adc-share a{color:#215e4e}
+.adc-share-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.adc-share-actions a,.adc-share-actions button{box-sizing:border-box;display:flex;align-items:center;justify-content:flex-start;gap:10px;min-width:0;min-height:54px;padding:12px 13px;border:1px solid #dce5dd;border-radius:11px;background:#fff;color:#253b32;font:650 .9rem/1.3 system-ui,-apple-system,sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 2px 5px rgba(23,60,54,.035);transition:background .15s,border-color .15s,transform .15s}
+.adc-share-actions a:hover,.adc-share-actions button:hover{background:#f5faf6;border-color:#7ca38f;transform:translateY(-1px)}
+.adc-share-actions a:focus-visible,.adc-share-actions button:focus-visible{outline:3px solid #b79b69;outline-offset:2px}
+.adc-share-actions .adc-share-primary{background:#173c36;color:white;border-color:#173c36}
+.adc-share-actions .adc-share-primary:hover{background:#285b4e;color:white}
+.adc-share-actions .adc-share-copy{background:#f3f6f2}
+.adc-share-icon{flex:0 0 35px;width:35px;height:35px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#eaf2ed;color:#21624f}
+.adc-share-icon svg{width:19px;height:19px;display:block;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.adc-share-actions .adc-share-primary .adc-share-icon{background:rgba(255,255,255,.16);color:white}
+.adc-share-actions [data-network="facebook"] .adc-share-icon{background:#e8f0ff;color:#1769cc}
+.adc-share-actions [data-network="whatsapp"] .adc-share-icon{background:#e1f8e9;color:#128c4b}
+.adc-share-actions [data-network="telegram"] .adc-share-icon{background:#e4f5ff;color:#168ac1}
+.adc-share-actions [data-network="linkedin"] .adc-share-icon{background:#e5f1fb;color:#096a9e}
+.adc-share-actions [data-network="email"] .adc-share-icon{background:#fff1dc;color:#a36b18}
+.adc-share-actions [data-network="x"] .adc-share-icon{background:#eef0f3;color:#202d38}
+@media(max-width:760px){.adc-share-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.adc-share{padding:20px 15px;border-radius:15px}.adc-share-actions{gap:8px}.adc-share-actions a,.adc-share-actions button{min-height:53px;padding:9px 8px;font-size:.84rem;gap:7px}.adc-share-icon{width:31px;height:31px;flex-basis:31px}}
+@media(prefers-reduced-motion:reduce){.adc-share-actions a,.adc-share-actions button{transition:none}.adc-share-actions a:hover,.adc-share-actions button:hover{transform:none}}
+
+@media(max-width:420px){
+ .adc-share-actions a,.adc-share-actions button{font-size:.81rem;line-height:1.3;overflow-wrap:anywhere}
+ .adc-share-actions .adc-share-icon{flex-basis:29px;width:29px;height:29px}
+}
+
+
+
+/* Sorgente: /adc/tipografia.css */
+/* ADC — tipografia editoriale condivisa. Migliora la lettura senza alterare contenuti o dati. */
+:root{--adc-ink:#28342f;--adc-link:#765037;--adc-rule:#ded8cd}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-kerning:normal;overflow-wrap:break-word}
+main p,main li,article p,article li{line-height:1.78;hyphens:auto;overflow-wrap:break-word}
+main p,article p{margin-block:0 1.15em}
+main h1,main h2,main h3,article h1,article h2,article h3{text-wrap:balance;overflow-wrap:normal;hyphens:none}
+main h2,article h2{line-height:1.3;margin-block:2.1rem .8rem}
+main h3,article h3{line-height:1.35;margin-block:1.5rem .6rem}
+main a,article a{text-underline-offset:.17em;text-decoration-thickness:from-font;overflow-wrap:anywhere}
+main a:focus-visible,article a:focus-visible{outline:3px solid #a36a45;outline-offset:3px;border-radius:2px}
+main ul,main ol,article ul,article ol{padding-inline-start:1.45em;margin-block:.65em 1.35em}
+main li+li,article li+li{margin-block-start:.38em}
+main blockquote,article blockquote{margin:1.5rem 0;padding:.8rem 1.2rem;border-inline-start:3px solid #b18c68;background:#f7f2e9}
+main img,article img{max-width:100%;height:auto}
+main figure,article figure{max-width:100%;margin:1.6rem 0}
+main figcaption,article figcaption{font-size:.91em;line-height:1.6;color:#5d625c;margin-top:.55rem}
+main table,article table{max-width:100%;font-variant-numeric:tabular-nums}
+main th,main td,article th,article td{line-height:1.55;overflow-wrap:anywhere}
+main hr,article hr{border:0;border-top:1px solid var(--adc-rule);margin:2rem 0}
+@media(max-width:640px){main p,main li,article p,article li{line-height:1.72}main h2,article h2{margin-block-start:1.8rem}main blockquote,article blockquote{padding:.65rem .85rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Identità ADC: verde archivio, pergamena e lettura accessibile. */
+:root{--adc-green:#173c36;--adc-gold:#b79b69;--adc-paper:#f8f6f1;--adc-text:#25302e}
+body{font-size:clamp(16px,1.1vw,18px);-webkit-font-smoothing:antialiased}
+main,article{max-width:100%}
+main p,main li,article p,article li{max-width:76ch}
+main h1,main h2,main h3,article h1,article h2,article h3{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.015em}
+main a,article a{color:#286354;text-decoration-thickness:1px}
+main a:hover,article a:hover{color:#173c36}
+main input,main select,main textarea,main button{font:inherit;max-width:100%}
+main input[type="search"],main input[type="text"],main select,main textarea{min-height:44px}
+main button,main a.btn{min-height:44px}
+main img,article img{max-width:100%;height:auto}
+main table,article table{display:block;max-width:100%;overflow-x:auto}
+main blockquote,article blockquote{border-left-color:#b79b69}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Tabelle editoriali ADC: schede leggibili su smartphone, intestazioni conservate. */
+@media(max-width:680px){
+  main table.adc-mobile-cards,article table.adc-mobile-cards{display:block;width:100%;max-width:100%;overflow:visible;border:0;background:transparent}
+  .adc-mobile-cards thead{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+  .adc-mobile-cards tbody,.adc-mobile-cards tr,.adc-mobile-cards td,.adc-mobile-cards th[scope="row"]{display:block;width:100%;min-width:0;max-width:100%;box-sizing:border-box}
+  .adc-mobile-cards tbody tr{margin:0 0 1.15rem;padding:1rem 1.05rem;border:1px solid #dce3dc;border-radius:14px;background:#fff;box-shadow:0 2px 9px rgba(21,52,43,.045)}
+  .adc-mobile-cards tbody td,.adc-mobile-cards tbody th[scope="row"]{border:0!important;padding:.65rem 0!important;text-align:left!important;white-space:normal!important;overflow-wrap:break-word!important;word-break:normal!important;hyphens:auto}
+  .adc-mobile-cards tbody td+td,.adc-mobile-cards tbody th[scope="row"]+td{border-top:1px solid #e8eae6!important}
+  .adc-mobile-cards tbody td::before,.adc-mobile-cards tbody th[scope="row"]::before{content:attr(data-label);display:block;margin:0 0 .28rem;color:#315d4d;font:700 .78rem/1.45 system-ui,-apple-system,sans-serif;letter-spacing:.015em;hyphens:none;overflow-wrap:normal}
+  .adc-mobile-cards tbody td:first-child,.adc-mobile-cards tbody th[scope="row"]:first-child{font-weight:600;color:#233f35}
+  .adc-mobile-cards a{overflow-wrap:anywhere}
+}
+
