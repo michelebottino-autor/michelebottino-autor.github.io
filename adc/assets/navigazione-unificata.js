@@ -103,3 +103,16 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })();
+
+/* Carica il client di presenza anonima su tutte le pagine ADC che usano la navigazione condivisa.
+   Il client rimane inattivo in assenza di consenso o di un backend verificato. */
+(function () {
+  'use strict';
+  if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/')) return;
+  if (document.querySelector('script[data-adc-presence]')) return;
+  var script = document.createElement('script');
+  script.src = '/assets/js/lettori-presenti.js';
+  script.defer = true;
+  script.dataset.adcPresence = 'true';
+  document.head.appendChild(script);
+})();
