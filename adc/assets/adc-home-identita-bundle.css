@@ -1,0 +1,618 @@
+/* ADC — foglio aggregato, ordine delle regole invariato. Originali preservati nel repository. */
+
+/* Sorgente: /adc/identita-2026.css */
+/* ADC — nuova identità grafica ufficiale, contenuti storico-documentari invariati. */
+:root{--adc-green:#123c31;--adc-gold:#c5a16a;--adc-paper:#f5f2eb;--adc-ink:#253d34}
+body{background:var(--adc-paper);color:var(--adc-ink);overflow-wrap:break-word}
+body>header:not(.adc-unified-header){max-width:none;background:var(--adc-green);color:#fff;border-bottom:3px solid var(--adc-gold)}
+body>header:not(.adc-unified-header) a,body>header:not(.adc-unified-header) .nav-menu a{color:#fff}
+body>header:not(.adc-unified-header) h1,body>header:not(.adc-unified-header) h2,body>header:not(.adc-unified-header) p{color:#fff}
+body>header:not(.adc-unified-header) .logo a{font:700 1.32rem Georgia,serif;color:#e7c58d}
+body>header:not(.adc-unified-header) .menu-toggle span{background:#fff}
+body>header:not(.adc-unified-header) nav{max-width:1160px;margin-inline:auto}
+.adc-project-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding:16px max(20px,calc((100vw - 1160px)/2));background:#18493c;color:#fff;border-bottom:3px solid var(--adc-gold)}
+.adc-project-brand{color:#fff!important;font:700 clamp(1.14rem,2vw,1.4rem) Georgia,serif;text-decoration:none!important}
+.adc-project-brand small{display:block;color:#e7c58d;font:600 .7rem system-ui;letter-spacing:.07em;text-transform:uppercase;margin-top:5px}
+.adc-project-links{display:flex;flex-wrap:wrap;gap:5px}
+.adc-project-links a{color:#fff!important;padding:9px 11px;border-radius:5px;text-decoration:none!important;font:600 .88rem system-ui}
+.adc-project-links a:hover,.adc-project-links a:focus-visible,.adc-project-links a[aria-current=page]{background:#ffffff2b}
+.adc-project-links a:focus-visible,.adc-project-brand:focus-visible{outline:3px solid var(--adc-gold);outline-offset:2px}
+body>main,body>main.page,main.container{max-width:1160px;margin-inline:auto}
+main h1,main h2,main h3,main h4{font-family:Georgia,'Times New Roman',serif;color:var(--adc-green);text-wrap:balance}
+main a{color:#145540}
+main .card,main .adc-gateway-card,main .adc-path-grid>a,main .adc-feature{background:#fff;border:1px solid #dcded5;border-radius:10px;box-shadow:0 5px 20px #1b35270a}
+main .note,main blockquote{background:#f4f0e7;border-left:4px solid var(--adc-gold)}
+main img,main iframe{max-width:100%}
+main a:focus-visible,main button:focus-visible,main input:focus-visible{outline:3px solid var(--adc-gold);outline-offset:3px}
+.adc-gateway{background:transparent!important;border:0!important;box-shadow:none!important}
+.adc-gateway-head{background:linear-gradient(125deg,#143e32,#225446 65%,#304e3e);padding:clamp(28px,5vw,62px);border-radius:12px;color:#fff}
+.adc-gateway-head h1,.adc-gateway-head p{color:#fff!important}
+.adc-gateway-head .adc-gateway-eyebrow{color:#e7c58d!important}
+.adc-gateway-grid{gap:18px}
+.adc-gateway-card:hover{box-shadow:0 9px 28px #1b35271b;transform:translateY(-2px)}
+.adc-welcome{background:linear-gradient(135deg,#143e32,#225446)!important;color:#fff!important;border-radius:12px;padding:clamp(26px,5vw,54px)}
+.adc-welcome h2,.adc-welcome h3,.adc-welcome p,.adc-welcome label{color:#fff!important}
+.adc-welcome .adc-welcome-identity p{color:#e7c58d!important}
+.adc-welcome .adc-hero-links a{color:#fff!important}
+.adc-welcome .adc-hero-search button{background:var(--adc-gold);color:#1b2f27;border:0;border-radius:6px}
+.adc-welcome .adc-hero-search input{background:#fff;color:#253d34;border-radius:6px}
+body>footer:not(.adc-unified-footer){background:var(--adc-green)!important;color:#f1eee6!important;border-top:3px solid var(--adc-gold)!important;max-width:none!important;padding:24px clamp(20px,5vw,60px)}
+body>footer:not(.adc-unified-footer) a{color:#e7c58d!important}
+body>footer:not(.adc-unified-footer) p{color:#f1eee6!important}
+@media(max-width:850px){.adc-project-nav{justify-content:center;text-align:center}.adc-project-links{justify-content:center}.adc-gateway-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}}
+@media(max-width:600px){.adc-project-nav{padding:15px 12px}.adc-project-links a{font-size:.82rem;padding:8px}.adc-gateway-head{padding:24px 19px}.adc-welcome{padding:24px 18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.adc-gateway-card{transition:none;transform:none!important}}
+
+/* Accessibilità: maggiore contrasto quando richiesto dalle preferenze di sistema. */
+@media(prefers-contrast:more){.adc-project-nav{background:#10382d}.adc-project-links a:focus-visible{outline-width:4px}}
+
+
+/* ADC 2026 · correzioni responsive e contrasto dopo verifica Android */
+body>header:not(.adc-unified-header) .logo a,
+body>header:not(.adc-unified-header) .logo a:visited {
+  color:#fff!important;
+  text-decoration:none!important;
+  text-shadow:none;
+}
+body>header:not(.adc-unified-header) .menu-toggle {
+  display:none;
+  background:transparent!important;
+  border:2px solid #e7c58d!important;
+  color:#fff!important;
+  border-radius:8px;
+  min-width:46px;
+  min-height:46px;
+  padding:8px 9px;
+}
+body>header:not(.adc-unified-header) .menu-toggle span {
+  display:block;
+  background:#fff!important;
+  width:23px;
+  height:2px;
+  margin:4px 0;
+  border-radius:2px;
+}
+body>header:not(.adc-unified-header) .menu-toggle:focus-visible {
+  outline:3px solid #fff!important;
+  outline-offset:3px;
+}
+.adc-project-brand {
+  display:block!important;
+  flex:0 1 auto;
+  max-width:100%;
+  white-space:normal;
+  line-height:1.24;
+}
+.adc-project-brand small {
+  display:block!important;
+  line-height:1.45;
+  max-width:100%;
+}
+.adc-project-nav,.adc-project-links {box-sizing:border-box}
+.adc-project-links a {box-sizing:border-box;line-height:1.35}
+.site-transparency-links a {
+  display:inline!important;
+  min-height:0!important;
+  padding:0!important;
+  line-height:inherit!important;
+}
+@media(max-width:760px) {
+  body>header.container:not(.adc-unified-header) {
+    padding:12px 16px!important;
+  }
+  body>header:not(.adc-unified-header) .menu-toggle {
+    display:inline-flex!important;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  body>header:not(.adc-unified-header) nav.nav {
+    width:100%;
+    max-width:100%;
+    min-height:46px;
+    gap:10px!important;
+  }
+  body>header:not(.adc-unified-header) .logo a {
+    font-size:1.16rem!important;
+    line-height:1.3!important;
+  }
+  .site-transparency-links {
+    padding:8px 12px!important;
+    font-size:12px!important;
+    line-height:1.45!important;
+  }
+  .site-transparency-links a {white-space:nowrap}
+}
+@media(max-width:600px) {
+  .adc-project-nav {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
+    gap:12px;
+    padding:15px 16px 14px;
+    width:100%;
+  }
+  .adc-project-brand {
+    width:100%;
+    flex:none;
+    font-size:1.31rem;
+    text-align:center;
+  }
+  .adc-project-brand small {
+    margin-top:6px;
+    font-size:.68rem;
+    letter-spacing:.06em;
+    text-align:center;
+  }
+  .adc-project-links {
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
+    justify-items:stretch;
+    align-items:stretch;
+  }
+  .adc-project-links a {
+    display:flex!important;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-width:0;
+    min-height:44px;
+    padding:9px 4px;
+    font-size:.82rem;
+    line-height:1.22;
+    white-space:normal;
+  }
+  .adc-unified-header .adc-unified-header-inner {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+    padding:16px 0;
+  }
+  .adc-unified-header .adc-unified-brand {
+    display:block;
+    text-align:center;
+    line-height:1.3;
+  }
+  .adc-unified-header .adc-unified-nav {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    width:100%;
+    gap:6px;
+    margin:0;
+  }
+  .adc-unified-header .adc-unified-nav a {
+    display:flex;
+    min-height:44px;
+    padding:8px 3px;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.25;
+    font-size:.81rem;
+  }
+}
+@media(min-width:601px) and (max-width:850px) {
+  .adc-project-brand {text-align:center}
+  .adc-project-brand small {text-align:center}
+}
+
+/* Impaginazione editoriale condivisa — 18 ottobre 2026.
+   Migliora leggibilità e coerenza senza sovrascrivere le identità delle singole sezioni. */
+:root {
+  --ref-ink: #25352f;
+  --ref-ink-soft: #52605a;
+  --ref-accent: #795a37;
+  --ref-paper: #faf8f3;
+  --ref-surface: #fffefa;
+  --ref-rule: #e4ddd0;
+  --ref-focus: #a67531;
+}
+html { scroll-padding-top: 1.75rem; text-rendering: optimizeLegibility; }
+body { font-kerning: normal; -webkit-font-smoothing: antialiased; }
+:where(main, article, .container) :where(h1,h2,h3) {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+:where(main, article) p { text-wrap: pretty; }
+:where(main, article) :is(h1,h2,h3) { line-height: 1.25; }
+:where(main, article) :is(ol,ul) li + li { margin-block-start: .28em; }
+:where(main, article) a:not(.btn):not(.button):not(.card-link) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+:where(main, article) a:hover { text-decoration-thickness: 2px; }
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible {
+  outline: 3px solid var(--ref-focus);
+  outline-offset: 4px;
+}
+::selection { background: #ded2ba; color: #20322e; }
+:where(main, article) :where(blockquote) {
+  border-inline-start: 3px solid #a78b65;
+  padding: .6rem 1.25rem;
+  margin-inline: 0;
+  background: #f5f1e8;
+}
+:where(main, article) :where(table) {
+  max-width: 100%;
+  border-collapse: collapse;
+}
+:where(main, article) :where(th,td) { overflow-wrap: anywhere; }
+:where(main, article) :where(img) { max-width: 100%; }
+:where(main, article) :where(.card,.panel,.box,.case,.unitlist a) {
+  border-color: var(--ref-rule);
+  box-shadow: 0 12px 32px rgba(37,49,42,.055);
+}
+:where(main) :where(.note,.status,.notice) {
+  border-radius: 0 12px 12px 0;
+  overflow-wrap: anywhere;
+}
+:where(main) :where(.meta,.small,.muted) { line-height: 1.65; }
+:where(main) :is(button,.btn,.button,button[type="submit"]) {
+  min-height: 44px;
+  font-family: inherit;
+  font-size: inherit;
+}
+:where(main) :is(input,textarea,select) { max-width: 100%; }
+:where(main) :where(.editorial-breadcrumb) { letter-spacing: .01em; }
+/* Le sezioni archivistiche condividono una gerarchia, pur conservando il tema storico. */
+body:has(.adc-project-nav) :where(main) > h1 {
+  letter-spacing: -.03em;
+  max-width: 24ch;
+}
+body:has(.adc-project-nav) :where(main) > p:first-of-type {
+  max-width: 77ch;
+}
+body:has(.adc-project-nav) :where(main) > article,
+body:has(.adc-project-nav) :where(main) > section {
+  scroll-margin-top: 2rem;
+}
+body:has(.adc-project-nav) :where(main) > :is(section,article) > h2:first-child {
+  margin-top: 0;
+}
+body:has(.adc-project-nav) .adc-project-nav a:focus-visible {
+  outline-offset: -2px;
+}
+body:has(.adc-project-nav) :where(main) a {
+  transition: color .18s ease;
+}
+/* Le istruzioni specialistiche per condividere il motore restano opzionali. */
+.embed-instructions {
+  margin: 1.2rem 0;
+  padding: .75rem 1rem;
+  border: 1px solid var(--ref-rule);
+  border-radius: 12px;
+  background: #fffdf9;
+}
+.embed-instructions summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--ref-accent);
+  padding: .3rem 0;
+}
+.embed-instructions[open] summary { margin-bottom: 1rem; }
+@media (min-width: 900px) {
+  body:has(.adc-project-nav) :where(main) > h1 { font-size: clamp(2.35rem, 4.4vw, 3.75rem); }
+}
+@media (max-width: 650px) {
+  :where(main,article) :is(h1,h2,h3) { overflow-wrap: break-word; }
+  :where(main,article) :is(p,li) { hyphens: auto; }
+  :where(main,article) table { font-size: .93em; }
+  :where(main) :where(.note,.status,.notice) { padding: 14px 16px; }
+  .embed-instructions { padding: .55rem .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media print {
+  body { background: #fff !important; color: #111 !important; }
+  :where(main,article) a { color: #111; }
+  :where(main,article) :is(.card,.panel,.box) { box-shadow: none; }
+}
+
+/* ADC homepage · mobile header refinement 2026-10-21 */
+@media (max-width: 600px) {
+  /* Scoped to the ADC landing page; desktop and other archives stay unchanged. */
+  body:has(.adc-welcome) .adc-project-nav {
+    gap: 8px;
+    padding: 10px 14px 11px;
+  }
+  body:has(.adc-welcome) .adc-project-brand {
+    font-size: 1.19rem;
+    line-height: 1.2;
+  }
+  body:has(.adc-welcome) .adc-project-brand small {
+    margin-top: 3px;
+    line-height: 1.3;
+    letter-spacing: .035em;
+  }
+  body:has(.adc-welcome) .adc-project-links { gap: 4px 6px; }
+  body:has(.adc-welcome) .adc-project-links a {
+    min-height: 44px;
+    padding: 7px 4px;
+  }
+  /* Keep footer actions reachable above the fixed Elena control. */
+  body:has(.adc-welcome) footer { padding-bottom: 75px; }
+}
+
+
+
+/* Sorgente: /adc/assets/elena-presenza.css */
+.elena-presenza{position:fixed;right:18px;bottom:18px;z-index:900;font:15px/1.45 system-ui,sans-serif;color:#253d34}.elena-presenza-toggle{background:#123c31;color:white;border:2px solid #c5a16a;border-radius:999px;padding:12px 18px;cursor:pointer;box-shadow:0 6px 24px #0003;font:600 15px system-ui}.elena-presenza-panel{position:absolute;right:0;bottom:60px;width:min(350px,calc(100vw - 30px));max-height:min(72vh,540px);overflow:auto;background:#f5f2eb;border:1px solid #c5a16a;border-radius:14px;padding:18px;box-shadow:0 8px 30px #0004}.elena-presenza-panel[hidden]{display:none}.elena-presenza-heading{display:flex;justify-content:space-between;gap:10px;align-items:center}.elena-presenza-close{border:0;background:transparent;font-size:26px;cursor:pointer;color:#123c31}.elena-presenza-form{display:grid;gap:8px}.elena-presenza-form input{width:100%;padding:10px;border:1px solid #8d978c;border-radius:6px;font:inherit}.elena-presenza-form button{padding:10px;border:0;border-radius:6px;background:#123c31;color:#fff;cursor:pointer}.elena-presenza-panel a{color:#123c31;text-decoration:underline}.elena-presenza-privacy{font-size:12px;color:#526459}.elena-presenza-toggle:focus-visible,.elena-presenza-panel button:focus-visible,.elena-presenza-panel a:focus-visible{outline:3px solid #c5a16a;outline-offset:3px}@media(max-width:480px){.elena-presenza{right:12px;bottom:12px}.elena-presenza-toggle{padding:11px 14px}}
+.elena-presenza-result{margin:12px 0;line-height:1.55}.elena-presenza-result p{margin:8px 0}.elena-presenza-result .elena-presenza-evidence{padding:9px 11px;background:#fff;border-left:3px solid #c5a16a;font-size:.89rem}.elena-presenza-form button:disabled{opacity:.6;cursor:wait}
+
+/* Elena: pulsante mobile compatto, pannello leggibile */
+@media(max-width:600px){
+  .elena-presenza {
+    right:12px;
+    bottom:calc(12px + env(safe-area-inset-bottom,0px));
+    max-width:calc(100vw - 24px);
+  }
+  .elena-presenza-toggle {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:60px;
+    min-width:60px;
+    height:56px;
+    min-height:56px;
+    padding:0!important;
+    border-radius:17px;
+    font-size:0!important;
+    line-height:1!important;
+    white-space:nowrap;
+    box-shadow:0 5px 16px rgba(0,0,0,.20);
+  }
+  .elena-presenza-toggle::before {
+    content:"Elena";
+    color:#fff;
+    font:700 13px/1.2 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  }
+  .elena-presenza-panel {
+    right:0;
+    bottom:calc(100% + 12px);
+    width:min(340px,calc(100vw - 24px));
+    max-height:min(68vh,480px);
+    overflow:auto;
+  }
+  .elena-presenza-form input {min-width:0}
+}
+/* Mobile: reduce floating control footprint without affecting desktop. */
+@media(max-width:600px){
+ .elena-presenza{right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+ .elena-presenza-toggle{width:48px;min-width:48px;height:48px;min-height:48px;border-radius:15px;box-shadow:0 3px 10px rgba(0,0,0,.22)}
+ .elena-presenza-toggle::before{font-size:11px}
+ .elena-presenza-panel{right:0;max-height:min(68dvh,480px)}
+}
+
+/* Mobile reading mode: Elena remains tappable, never display:none. */
+@media(max-width:600px){
+ .elena-presenza-toggle{transition:opacity .18s ease,transform .18s ease}
+ .elena-presenza-reading .elena-presenza-toggle:not(:focus-visible){
+   opacity:.58;
+   transform:none;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .elena-presenza-toggle{transition:none!important}
+}
+
+
+/* Elena mobile — correzione leggibilità e dimensioni, 2026-11-01.
+   Regole circoscritte al pannello, senza modificare il motore documentario. */
+.elena-presenza-panel,
+.elena-presenza-panel *{box-sizing:border-box}
+.elena-presenza-panel{font:400 15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.elena-presenza-panel p,.elena-presenza-panel a,.elena-presenza-panel label{font-size:inherit;line-height:inherit}
+.elena-presenza-panel .elena-presenza-privacy,.elena-presenza-panel .elena-voice-note{font-size:12px;line-height:1.45}
+.elena-presenza-panel .elena-presenza-evidence{font-size:13px;line-height:1.5}
+.elena-presenza-panel .elena-presenza-heading{position:sticky;top:-18px;z-index:2;background:#f5f2eb;padding:10px 0;border-bottom:1px solid #d8cdbb}
+.elena-presenza-panel .elena-presenza-heading strong{font-size:15px;line-height:1.35}
+.elena-presenza-panel .elena-presenza-close{min-width:40px;min-height:40px}
+.elena-presenza-panel .elena-presenza-result{font-size:15px;line-height:1.55;overflow-wrap:anywhere}
+.elena-presenza-panel .elena-presenza-result p{margin:9px 0}
+.elena-presenza-panel .elena-presenza-form input{font-size:16px;max-width:100%}
+@media(max-width:600px){
+ .elena-presenza-panel{
+   width:min(360px,calc(100vw - 24px));
+   max-height:min(64dvh,500px);
+   padding:14px;
+   overscroll-behavior:contain;
+   overflow-y:auto;
+   overflow-x:hidden;
+ }
+ .elena-presenza-panel .elena-presenza-heading{top:-14px}
+ .elena-presenza-panel .elena-voice-controls button{font-size:13px;padding:9px 11px}
+}
+
+
+
+/* Sorgente: /adc/assets/ricerca-home-2026.css */
+/* Homepage ADC: ricerca leggibile, compatta e accessibile su ogni schermo. */
+.adc-welcome {
+  background: linear-gradient(152deg, #173c36 0%, #214e42 100%);
+}
+.adc-welcome .adc-welcome-inner { max-width: 760px; }
+.adc-welcome .adc-welcome-identity { gap: 12px; }
+.adc-welcome .adc-welcome-identity img { width: 56px; height: 56px; }
+.adc-welcome .adc-welcome-identity p {
+  margin: 0;
+  font-size: .77rem;
+  line-height: 1.45;
+  letter-spacing: .045em;
+}
+.adc-welcome #adc-titolo {
+  max-width: 21ch;
+  margin: 14px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 4.1vw, 3rem);
+  line-height: 1.13;
+  letter-spacing: -.025em;
+  color: #fff;
+  text-wrap: balance;
+}
+.adc-welcome .adc-welcome-lead {
+  max-width: 62ch;
+  margin: 0;
+  font-size: clamp(1rem, 1.55vw, 1.09rem);
+  line-height: 1.6;
+  color: #f3f1e9 !important;
+}
+.adc-welcome .adc-hero-search {
+  margin: 20px 0 15px;
+  padding: clamp(17px, 2.3vw, 24px);
+  background: #fffdf9;
+  border: 1px solid #eee7dc;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(8, 26, 21, .11);
+}
+.adc-welcome .adc-hero-search label {
+  display: block;
+  margin: 0 0 12px;
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #253d34 !important;
+}
+.adc-welcome .adc-hero-search p {
+  margin: 10px 0 0;
+  max-width: none;
+  font-size: .87rem;
+  line-height: 1.5;
+  color: #53645b !important;
+}
+.adc-welcome .adc-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: stretch;
+}
+.adc-welcome .adc-search-row input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  height: auto;
+  padding: 12px 14px;
+  border: 1px solid #84968b;
+  border-radius: 9px;
+  background: #fff;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.adc-welcome .adc-search-row input::placeholder { color: #67736d; opacity: 1; }
+.adc-welcome .adc-search-row button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 48px;
+  width: auto;
+  padding: 10px 18px;
+  margin: 0;
+  border: 0;
+  border-radius: 9px;
+  background: #c5a16a;
+  color: #1b3028 !important;
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1.35;
+  white-space: normal;
+  cursor: pointer;
+}
+.adc-welcome .adc-search-row button:hover {
+  background: #d6b782;
+  color: #132b22 !important;
+}
+.adc-welcome .adc-search-row button:focus-visible,
+.adc-welcome .adc-search-row input:focus-visible {
+  outline: 3px solid #8a622f;
+  outline-offset: 3px;
+}
+.adc-welcome .adc-hero-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+.adc-welcome .adc-hero-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 9px;
+  background: rgba(255,255,255,.06);
+  color: #fff7e9 !important;
+  text-decoration: none;
+  font-size: .94rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+.adc-welcome .adc-hero-links a:hover,
+.adc-welcome .adc-hero-links a:focus-visible {
+  background: rgba(255,255,255,.15);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .adc-welcome { padding: 22px 18px; border-radius: 15px; }
+  .adc-welcome .adc-welcome-identity img { width: 48px; height: 48px; }
+  .adc-welcome #adc-titolo { margin: 13px 0 10px; font-size: clamp(1.83rem, 6.4vw, 2.16rem); }
+  .adc-welcome .adc-welcome-lead { line-height: 1.57; }
+  .adc-welcome .adc-search-row { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .adc-welcome .adc-search-row button { width: 100%; }
+  .adc-welcome .adc-hero-links a { font-size: .91rem; padding: 9px 11px; }
+}
+@media (max-width: 360px) {
+  .adc-welcome { padding: 18px 14px; }
+  .adc-welcome .adc-hero-search { padding: 15px 13px; }
+  .adc-welcome .adc-hero-links a { flex: 1 1 auto; }
+}
+
+
+
+/* Sorgente: /adc/assets/foto-territorio.css */
+/* Fotografie territoriali verificate e didascalie editoriali: ADC */
+.adc-photo-feature{max-width:1090px;margin:clamp(25px,4vw,42px) auto;padding:9px;
+  background:#fffdf9;border:1px solid #dcded5;border-radius:13px;
+  box-shadow:0 7px 28px rgba(18,60,49,.09);overflow:hidden}
+.adc-photo-feature img{display:block;width:100%;height:auto;max-height:460px;
+  object-fit:cover;object-position:center;border-radius:8px;aspect-ratio:auto}
+.adc-photo-feature figcaption{padding:12px clamp(11px,2vw,22px) 8px;
+  color:#48574d;font:400 .88rem/1.65 system-ui,-apple-system,'Segoe UI',sans-serif;
+  max-width:100%;text-wrap:pretty}
+.adc-photo-feature figcaption strong{color:#123c31}
+.adc-photo-feature figcaption em{display:block;margin-top:5px;color:#655849;font-style:normal}
+.adc-photo-feature figcaption a{color:#765037;text-underline-offset:3px;overflow-wrap:anywhere}
+.adc-photo-feature figcaption a:focus-visible{outline:3px solid #c5a16a;outline-offset:3px}
+@media(max-width:600px){.adc-photo-feature{margin:20px auto;padding:6px;border-radius:10px}
+ .adc-photo-feature img{max-height:290px}
+ .adc-photo-feature figcaption{padding:10px 8px;font-size:.84rem;line-height:1.55}}
+
+
+/* Foto documentarie ADC, lotto 2: layout coerente con le schede esistenti */
+.adc-photo-context{display:block;margin:30px 0;padding:clamp(17px,3vw,28px);
+  border:1px solid #dcded5;background:#fffdf9;border-radius:13px}
+.adc-photo-context>h2{margin-top:0;color:#123c31}
+.adc-photo-caveat{max-width:80ch;color:#435649;font-size:.96rem}
+.adc-photo-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:20px 0}
+.adc-photo-gallery .adc-photo-tile{display:flex;flex-direction:column;min-width:0;
+  margin:0;background:#f8f6f1;border:1px solid #deded3;border-radius:10px;overflow:hidden}
+.adc-photo-gallery .adc-photo-tile img{display:block;width:100%;height:300px;object-fit:contain;background:#eceee7}
+.adc-photo-gallery .adc-photo-tile figcaption{padding:15px 17px;font:400 .88rem/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:#42554b}
+.adc-photo-gallery .adc-photo-tile figcaption strong{color:#123c31}
+.adc-photo-gallery .adc-photo-tile figcaption em{display:block;margin-top:7px;font-style:normal;color:#695d4d}
+.adc-photo-context :is(a):focus-visible{outline:3px solid #b5874e;outline-offset:3px}
+@media(max-width:660px){
+ .adc-photo-gallery{grid-template-columns:1fr;gap:15px}
+ .adc-photo-gallery .adc-photo-tile img{height:260px}
+ .adc-photo-context{padding:16px}
+ .adc-photo-context .adc-photo-feature{margin:18px 0}
+}
