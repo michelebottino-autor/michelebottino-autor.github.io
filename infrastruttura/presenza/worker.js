@@ -57,10 +57,18 @@ export class Presence {
     const now = Date.now();
     sql.exec('DELETE FROM active WHERE seen_at < ?', now - WINDOW_MS);
     sql.exec('INSERT INTO active (id,page,seen_at) VALUES (?,?,?) ON CONFLICT(id) DO UPDATE SET page=excluded.page, seen_at=excluded.seen_at', id, page, now);
+    // Un allarme elimina i token scaduti anche quando non arrivano altri lettori.
+    await this.ctx.storage.setAlarm(now + WINDOW_MS + 5000);
     const total = sql.exec('SELECT COUNT(*) AS n FROM active').one().n;
     const here = sql.exec('SELECT COUNT(*) AS n FROM active WHERE page=?', page).one().n;
     return Response.json({ total: Number(total), page: Number(here), windowSeconds: WINDOW_MS / 1000 }, {
       headers: { 'Cache-Control': 'no-store' }
     });
+  }
+  async alarm() {
+    const sql = this.ctx.storage.sql;
+    sql.exec('DELETE FROM active WHERE seen_at < ?', Date.now() - WINDOW_MS);
+    const remaining = sql.exec('SELECT COUNT(*) AS n FROM active').one().n;
+    if (Number(remaining) > 0) await this.ctx.storage.setAlarm(Date.now() + WINDOW_MS + 5000);
   }
 }
