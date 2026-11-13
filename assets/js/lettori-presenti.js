@@ -3,10 +3,17 @@
 (() => {
   'use strict';
   if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/')) return;
+  if (window.__mbPresenceClientInstalled) return;
+  window.__mbPresenceClientInstalled = true;
   const consentKey = 'mb_analytics_consent_v1';
+  const consentDateKey = 'mb_analytics_consent_date_v1';
   const tokenKey = 'adc-presenza-scheda-v1';
   const consent = () => {
-    try { return localStorage.getItem(consentKey) === 'yes'; } catch (_) { return false; }
+    try {
+      const date = Number(localStorage.getItem(consentDateKey));
+      return localStorage.getItem(consentKey) === 'yes' && Number.isFinite(date) &&
+        date > 0 && date <= Date.now() && Date.now() - date <= 180 * 24 * 60 * 60 * 1000;
+    } catch (_) { return false; }
   };
   let host, timer, endpoint, started = false, busy = false;
   const page = location.pathname.replace(/\/index\.html$/i, '/').replace(/\/+$/, '/') || '/adc/';
@@ -26,6 +33,12 @@
   }
   function mount() {
     if (host || !document.querySelector('main')) return;
+    if (!document.querySelector('link[href="/assets/css/lettori-presenti.css"]')) {
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = '/assets/css/lettori-presenti.css';
+      document.head.appendChild(css);
+    }
     host = document.createElement('aside');
     host.className = 'mb-presence';
     host.setAttribute('aria-label', 'Lettori attivi nell’Archivio Documentale Calatabiano');
