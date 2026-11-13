@@ -1,32 +1,109 @@
-/* ADC / Michele Bottino — presenza anonima, attivabile solo con endpoint configurato.
-   Nessuna cifra simulata. Nessuna richiesta senza consenso statistiche. */
-(()=>{'use strict';
-const endpoint=(window.MB_PRESENCE_ENDPOINT||'').replace(/\/$/,'');
-if(!/^https:\/\/[a-z0-9.-]+(?:\/[^?#]*)?$/i.test(endpoint))return;
-const consent=()=>{try{return localStorage.getItem('mb_analytics_consent_v1')==='yes'}catch(_){return false}};
-if(!consent())return;
-const page=location.pathname.replace(/\/index\.html$/,'/').replace(/\/+$/,'/')||'/';
-if(page.startsWith('/adc/widget/'))return;
-const id=crypto.randomUUID?crypto.randomUUID():Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');
-let timer=null,host=null;
-function mount(){
- const main=document.querySelector('main');if(!main)return;
- host=document.createElement('aside');host.className='mb-presence';host.setAttribute('aria-label','Lettori presenti su questa pagina');
- host.innerHTML='<span class="mb-presence-icon" aria-hidden="true">●</span><span class="mb-presence-label">Lettori presenti</span><strong class="mb-presence-count" aria-live="off"></strong>';
- host.hidden=true;main.appendChild(host);
-}
-async function beat(){
- if(document.hidden||!consent())return;
- try{
-  const response=await fetch(endpoint+'/presence',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({page,id})});
-  if(!response.ok)throw Error('not available');
-  const data=await response.json();
-  if(!Number.isSafeInteger(data.count)||data.count<1||data.count>1000000)throw Error('invalid');
-  if(host){host.querySelector('.mb-presence-count').textContent=String(data.count);host.hidden=false}
- }catch(_){if(host)host.hidden=true}
-}
-function start(){if(timer||!consent())return;beat();timer=setInterval(beat,45000)}
-function stop(){if(timer){clearInterval(timer);timer=null}if(host)host.hidden=true}
-function init(){mount();start();document.addEventListener('visibilitychange',()=>document.hidden?stop():start());window.addEventListener('pagehide',stop)}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+/* ADC — presenza anonima. Visualizza soltanto dati effettivamente restituiti dal servizio.
+ * Richiede consenso statistiche e endpoint HTTPS configurato. */
+(() => {
+  'use strict';
+  if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/')) return;
+  const consentKey = 'mb_analytics_consent_v1';
+  const tokenKey = 'adc-presenza-scheda-v1';
+  const consent = () => {
+    try { return localStorage.getItem(consentKey) === 'yes'; } catch (_) { return false; }
+  };
+  let host, timer, endpoint, started = false, busy = false;
+  const page = location.pathname.replace(/\/index\.html$/i, '/').replace(/\/+$/, '/') || '/adc/';
+  const active = () => consent() && !document.hidden;
+  function ensureToken() {
+    try {
+      let existing = sessionStorage.getItem(tokenKey);
+      if (existing && /^[a-f0-9-]{32,36}$/i.test(existing)) return existing;
+      const created = crypto.randomUUID ? crypto.randomUUID()
+        : Array.from(crypto.getRandomValues(new Uint8Array(16)), v => v.toString(16).padStart(2, '0')).join('');
+      sessionStorage.setItem(tokenKey, created);
+      return created;
+    } catch (_) {
+      return crypto.randomUUID ? crypto.randomUUID()
+        : Array.from(crypto.getRandomValues(new Uint8Array(16)), v => v.toString(16).padStart(2, '0')).join('');
+    }
+  }
+  function mount() {
+    if (host || !document.querySelector('main')) return;
+    host = document.createElement('aside');
+    host.className = 'mb-presence';
+    host.setAttribute('aria-label', 'Lettori attivi nell’Archivio Documentale Calatabiano');
+    host.title = 'Stima delle schede attive negli ultimi due minuti, non delle persone uniche';
+    const dot = document.createElement('span');
+    dot.className = 'mb-presence-icon';
+    dot.setAttribute('aria-hidden', 'true');
+    dot.textContent = '●';
+    const label = document.createElement('span');
+    label.className = 'mb-presence-label';
+    label.textContent = 'Lettori online nell’ADC';
+    const count = document.createElement('strong');
+    count.className = 'mb-presence-count';
+    count.setAttribute('aria-live', 'off');
+    host.append(dot, label, count);
+    host.hidden = true;
+    const footer = document.querySelector('footer');
+    if (footer) footer.prepend(host);
+    else document.querySelector('main').append(host);
+  }
+  async function loadEndpoint() {
+    try {
+      const r = await fetch('/adc/presenza-config.json', { cache: 'no-store', credentials: 'omit' });
+      if (!r.ok) return null;
+      const config = await r.json();
+      const url = typeof config.endpoint === 'string' ? config.endpoint.replace(/\/+$/, '') : '';
+      const parsed = new URL(url);
+      if (parsed.protocol !== 'https:' || parsed.username || parsed.password || parsed.search || parsed.hash) return null;
+      return parsed.href.replace(/\/+$/, '');
+    } catch (_) { return null; }
+  }
+  async function beat() {
+    if (!active() || !endpoint || busy) return;
+    busy = true;
+    try {
+      const response = await fetch(endpoint + '/presence', {
+        method: 'POST', mode: 'cors', credentials: 'omit', cache: 'no-store',
+        referrerPolicy: 'no-referrer',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ page, id: ensureToken() })
+      });
+      if (!response.ok) throw Error('unavailable');
+      const data = await response.json();
+      if (!Number.isSafeInteger(data.total) || data.total < 1 || data.total > 1000000) throw Error('invalid count');
+      mount();
+      if (host) {
+        host.querySelector('.mb-presence-count').textContent = String(data.total);
+        host.hidden = false;
+      }
+    } catch (_) { if (host) host.hidden = true; }
+    finally { busy = false; }
+  }
+  async function start() {
+    if (!active() || started) return;
+    started = true;
+    endpoint = await loadEndpoint();
+    if (!started || !active() || !endpoint) { started = false; return; }
+    await beat();
+    timer = setInterval(beat, 40000);
+  }
+  function stop() {
+    started = false;
+    if (timer) clearInterval(timer);
+    timer = null;
+    if (host) host.hidden = true;
+  }
+  function refresh() { if (active()) start(); else stop(); }
+  function init() {
+    refresh();
+    document.addEventListener('visibilitychange', refresh);
+    window.addEventListener('pagehide', stop);
+    window.addEventListener('pageshow', refresh);
+    window.addEventListener('storage', event => { if (event.key === consentKey) refresh(); });
+    // Il pannello delle preferenze salva il consenso prima della fine del click.
+    document.addEventListener('click', event => {
+      if (event.target.closest('#mb-consent [data-choice]')) setTimeout(refresh, 0);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
 })();
