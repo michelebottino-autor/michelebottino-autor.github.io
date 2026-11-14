@@ -28,3 +28,33 @@ body.mb-author-refine main :is(a,p,li) { overflow-wrap:break-word; }
  body.mb-author-refine {scroll-behavior:auto}
  body.mb-author-refine *,body.mb-author-refine *::before,body.mb-author-refine *::after { animation-duration:.01ms!important;transition-duration:.01ms!important; }
 }
+
+/* Schede delle opere — presentazione bibliografica, senza tagli alle copertine. */
+body.mb-book-page main { width:min(100%,960px); }
+body.mb-book-page main>h1 { max-width:28ch;letter-spacing:-.024em;line-height:1.14;overflow-wrap:break-word; }
+body.mb-book-page .book-cover {
+ width:min(260px,72vw);max-width:100%;max-height:none;height:auto;
+ display:block;object-fit:contain;margin:20px 0 30px;
+ border-radius:4px;box-shadow:0 12px 28px rgba(25,31,37,.16);
+}
+body.mb-book-page .panel { border-color:#e2ddd4;box-shadow:0 6px 22px rgba(30,35,40,.035); }
+body.mb-book-page .panel h2 { font-size:clamp(1.3rem,2.6vw,1.67rem);line-height:1.25; }
+body.mb-book-page .actions { display:flex;flex-wrap:wrap;gap:10px; }
+body.mb-book-page .actions a { display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin:0; }
+body.mb-book-page .note { line-height:1.65; }
+/* Articoli documentari e racconti: evita fotografie deformate e titoli debordanti. */
+body.mb-case-article main :is(h1,h2,h3) { overflow-wrap:break-word; }
+body.mb-case-article main figure img { max-width:100%;height:auto; }
+body.mb-case-article main .article-meta-grid { max-width:100%; }
+body.mb-case-article main :is(.hero-image,.hero-text,.article-meta,.card) { min-width:0; }
+body.mb-case-article main .hero-image img { object-fit:contain; }
+@media(max-width:700px) {
+ body.mb-book-page header,body.mb-book-page main,body.mb-book-page footer { padding-inline:18px; }
+ body.mb-book-page main { padding-top:30px; }
+ body.mb-book-page main>h1 { font-size:clamp(1.9rem,7.6vw,2.65rem); }
+ body.mb-book-page .book-cover { margin:18px auto 26px; }
+ body.mb-book-page .panel { padding:22px 19px; }
+ body.mb-book-page .actions a { flex:1 1 180px; }
+ body.mb-case-article main .hero h1 { font-size:clamp(1.95rem,8vw,3.1rem); }
+ body.mb-case-article main .article-meta-grid { grid-template-columns:minmax(0,1fr); }
+}
