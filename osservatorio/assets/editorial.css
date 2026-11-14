@@ -93,9 +93,9 @@ body:not(:has(.story-grid)) main.wrap article .share {
 }
 @media(prefers-reduced-motion:no-preference) {
   body:has(.story-grid) .story,body:has(.story-grid) .feature { transition:box-shadow .18s ease,transform .18s ease; }
-  @media(hover:hover) {
-    body:has(.story-grid) .story:hover,body:has(.story-grid) .feature:hover {
-      box-shadow:0 12px 32px rgba(17,35,57,.09);transform:translateY(-2px);
-    }
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+  body:has(.story-grid) .story:hover,body:has(.story-grid) .feature:hover {
+    box-shadow:0 12px 32px rgba(17,35,57,.09);transform:translateY(-2px);
   }
 }
