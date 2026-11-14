@@ -1,0 +1,30 @@
+/* Rifinitura conservativa delle sole pagine editoriali dell'autore.
+   Esclude archivio ADC, applicazioni, prototipi e strumenti. */
+body.mb-author-refine { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+body.mb-author-refine :is(main,article,section,.container) { min-width:0; }
+body.mb-author-refine main :is(h1,h2,h3) { text-wrap:balance; overflow-wrap:break-word; }
+body.mb-author-refine main :is(p,li,figcaption) { overflow-wrap:break-word; }
+body.mb-author-refine main :is(img,video,canvas,svg) { max-width:100%; }
+body.mb-author-refine main img { height:auto; }
+body.mb-author-refine main :is(figure,picture) { max-width:100%; }
+body.mb-author-refine main figure { margin-inline:0; }
+body.mb-author-refine main figcaption { line-height:1.5; }
+body.mb-author-refine :is(a,button,input,select,textarea,summary):focus-visible {
+ outline:3px solid #b68c51;outline-offset:3px;
+}
+body.mb-author-refine main :is(pre,table) { max-width:100%; }
+body.mb-author-refine main pre { overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere; }
+body.mb-author-refine main :is(a,p,li) { overflow-wrap:break-word; }
+@media(max-width:700px) {
+ body.mb-author-refine main :is(h1,h2,h3) { hyphens:auto; }
+ body.mb-author-refine main h1 { line-height:1.13; }
+ body.mb-author-refine main h2 { line-height:1.24; }
+ body.mb-author-refine main :is(p,li) { line-height:1.67; }
+ body.mb-author-refine main :is(button,a.btn,a.button,[role="button"]) { touch-action:manipulation; }
+ body.mb-author-refine main :is(input,select,textarea) { max-width:100%; font-size:max(16px,1em); }
+ body.mb-author-refine main :is(table) { display:block;overflow-x:auto;-webkit-overflow-scrolling:touch; }
+}
+@media(prefers-reduced-motion:reduce) {
+ body.mb-author-refine {scroll-behavior:auto}
+ body.mb-author-refine *,body.mb-author-refine *::before,body.mb-author-refine *::after { animation-duration:.01ms!important;transition-duration:.01ms!important; }
+}
