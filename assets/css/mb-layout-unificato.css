@@ -1,0 +1,38 @@
+/* Testata e piè di pagina comuni del sito Michele Bottino.
+   Scoped: nessuna modifica all'interfaccia dell'ADC o alle applicazioni. */
+body.mb-unified-shell { --shell-navy:#07162b;--shell-gold:#c49b5a; }
+body.mb-unified-shell > .mb-skip-unified { position:absolute;left:-9999px;top:0;z-index:99999; }
+body.mb-unified-shell > .mb-skip-unified:focus { position:fixed;left:12px;top:12px;background:white;color:#10243d;padding:10px 15px;outline:3px solid #c49b5a;border-radius:6px; }
+body.mb-unified-shell > header.mb-nav { max-width:none!important;width:100%!important;margin:0!important;padding:0!important;border:0!important;border-bottom:2px solid var(--shell-gold)!important;border-radius:0!important;background:var(--shell-navy)!important;color:#fff!important;box-shadow:none!important;position:relative!important;z-index:90; }
+body.mb-unified-shell > header.mb-nav .mb-inner { box-sizing:border-box;max-width:1200px;width:calc(100% - 40px);min-height:78px;margin:auto;padding:10px 0;display:flex;align-items:center;justify-content:space-between;gap:18px; }
+body.mb-unified-shell > header.mb-nav a { color:#f9fafc!important;text-decoration:none; }
+body.mb-unified-shell > header.mb-nav a:hover { color:#eac88f!important; }
+body.mb-unified-shell > header.mb-nav .mb-brand { display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none!important;flex:0 0 auto; }
+body.mb-unified-shell > header.mb-nav .mb-mark { display:inline-flex;align-items:center;justify-content:center;color:#e5c38d;border-right:1px solid #c49b5a;padding-right:12px;font:700 1.55rem Georgia,serif; }
+body.mb-unified-shell > header.mb-nav .mb-name { display:block;color:#fff;font:700 clamp(1rem,1.7vw,1.3rem)/1.2 Georgia,serif;white-space:nowrap; }
+body.mb-unified-shell > header.mb-nav .mb-tag { display:block;color:#d8c4a4;font:500 .68rem/1.4 system-ui,sans-serif;letter-spacing:.04em; }
+body.mb-unified-shell > header.mb-nav .mb-desktop { display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:3px 13px; }
+body.mb-unified-shell > header.mb-nav .mb-desktop a { font:550 .77rem/1.4 system-ui,sans-serif;white-space:nowrap;padding:9px 0;border-bottom:2px solid transparent; }
+body.mb-unified-shell > header.mb-nav a[aria-current="page"] { color:#f0d4a5!important;border-bottom-color:#c49b5a; }
+body.mb-unified-shell > header.mb-nav .mb-mobile { display:none;position:relative; }
+body.mb-unified-shell > header.mb-nav .mb-mobile summary { list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;padding:8px 15px;color:#fff;border:1px solid #a28b68;border-radius:6px;font:600 .94rem system-ui,sans-serif; }
+body.mb-unified-shell > header.mb-nav .mb-mobile summary::-webkit-details-marker { display:none; }
+body.mb-unified-shell > header.mb-nav .mb-dropdown { position:absolute!important;right:0;top:calc(100% + 12px);width:min(330px,calc(100vw - 32px));max-height:70dvh;overflow-y:auto;display:flex;flex-direction:column;background:#102849;padding:8px 14px 14px;border:1px solid #bba274;box-shadow:0 15px 36px #0006;border-radius:8px;z-index:100; }
+body.mb-unified-shell > header.mb-nav .mb-mobile:not([open]) .mb-dropdown { display:none!important; }
+body.mb-unified-shell > header.mb-nav .mb-dropdown a { font:500 1rem/1.45 system-ui,sans-serif;display:block;padding:11px 5px;min-height:46px;border-bottom:1px solid #ffffff24;white-space:normal; }
+body.mb-unified-shell :is(.mb-nav a,.mb-nav summary,.mb-unified-footer a):focus-visible { outline:3px solid #f0d4a5;outline-offset:3px; }
+body.mb-unified-shell > footer.mb-unified-footer { box-sizing:border-box;max-width:none!important;width:100%!important;margin:0!important;padding:44px 0 20px!important;background:var(--shell-navy)!important;color:#e2e8f0!important;border:0!important;border-top:2px solid var(--shell-gold)!important;border-radius:0!important;font:400 .93rem/1.6 system-ui,sans-serif!important; }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-inner { width:min(1180px,calc(100% - 40px));margin:auto;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,42px); }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-about { max-width:27ch; }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-brand { display:block;color:#fff!important;font:700 1.37rem/1.3 Georgia,serif;text-decoration:none; }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-about p { color:#c2cfdb;font:400 .89rem/1.65 system-ui,sans-serif;margin:12px 0 0; }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-links { display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0; }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-links h2 { color:#e6c48f!important;font:700 .89rem/1.3 system-ui,sans-serif!important;letter-spacing:.015em;margin:0 0 9px;padding:0; }
+body.mb-unified-shell > footer.mb-unified-footer a { color:#e2e8f0!important;font:inherit;text-decoration:none; }
+body.mb-unified-shell > footer.mb-unified-footer a:hover { text-decoration:underline;text-underline-offset:4px; }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-bottom { width:min(1180px,calc(100% - 40px));margin:30px auto 0;padding-top:18px;border-top:1px solid #ffffff30;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;color:#c9d3dd;font-size:.83rem; }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-bottom a { color:#e6c48f!important; }
+body.mb-unified-shell > footer.mb-unified-footer .mb-footer-page-note { width:min(1180px,calc(100% - 40px));margin:15px auto 0;color:#c9d3dd;font-size:.81rem; }
+@media(max-width:1150px) { body.mb-unified-shell > header.mb-nav .mb-desktop { display:none!important; }body.mb-unified-shell > header.mb-nav .mb-mobile { display:block!important; } }
+@media(max-width:760px) { body.mb-unified-shell > footer.mb-unified-footer .mb-footer-inner { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:520px) { body.mb-unified-shell > header.mb-nav .mb-inner { width:calc(100% - 30px);min-height:70px; }body.mb-unified-shell > header.mb-nav .mb-brand {gap:7px;}body.mb-unified-shell > header.mb-nav .mb-mark{font-size:1.3rem;padding-right:7px;}body.mb-unified-shell > header.mb-nav .mb-name{font-size:1.02rem;}body.mb-unified-shell > header.mb-nav .mb-tag{font-size:.53rem;}body.mb-unified-shell > header.mb-nav .mb-mobile summary{padding:8px 10px;font-size:.84rem;}body.mb-unified-shell > footer.mb-unified-footer .mb-footer-inner { grid-template-columns:1fr;gap:22px; }body.mb-unified-shell > footer.mb-unified-footer .mb-footer-about{max-width:none;} }
