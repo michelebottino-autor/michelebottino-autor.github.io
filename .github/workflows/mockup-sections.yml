@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '22'
       - run: node .github/scripts/test-mockup-sections.js
-      - run: npm install --no-save playwright@1.56.1
+      - run: npm install --no-save playwright
       - run: npx playwright install --with-deps chromium
       - name: Serve site
         run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/mockup-site.log 2>&1 &
