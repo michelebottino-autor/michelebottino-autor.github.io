@@ -28,6 +28,7 @@ on:
 jobs:
   wcag:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,9 +41,15 @@ jobs:
       - name: Avvio server statico
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/adc-a11y-server.log 2>&1 &
-      - name: Verifica automatica WCAG pagine campione
-        run: |
-          node tests/accessibility/audit.cjs
-          node tests/accessibility/consent-navigation.cjs
-          node tests/accessibility/adc-editorial-custode.cjs
-          node tests/accessibility/elena-documentary.cjs
+      - name: Audit automatico WCAG
+        timeout-minutes: 3
+        run: node tests/accessibility/audit.cjs
+      - name: Consenso e navigazione
+        timeout-minutes: 3
+        run: node tests/accessibility/consent-navigation.cjs
+      - name: Controllo editoriale e Custode ADC
+        timeout-minutes: 3
+        run: node tests/accessibility/adc-editorial-custode.cjs
+      - name: Controllo risposte documentarie Elena
+        timeout-minutes: 2
+        run: node tests/accessibility/elena-documentary.cjs
