@@ -155,15 +155,15 @@ p{max-width:76ch}
   <div class="contact-panel">
     <p class="contact-eyebrow">Recapito ufficiale</p>
     <h2>Scrivimi</h2>
-    <p>Per proposte editoriali, inviti, collaborazioni culturali e scientifiche, richieste stampa o informazioni sulle pubblicazioni puoi usare il modulo oppure scrivere direttamente all'indirizzo seguente.</p>
-    <p class="contact-direct"><a href="mailto:michele.bottino@gmail.com">michele.bottino@gmail.com</a></p>
+    <p>Per proposte editoriali, inviti, collaborazioni culturali e scientifiche, richieste stampa o informazioni sulle pubblicazioni puoi usare il modulo tramite il modulo dedicato qui sotto.</p>
+    <p class="contact-direct">Per scrivere, utilizza il modulo di contatto quando sarà attivato.</p>
     <p class="contact-subnote">Puoi allegare documenti e immagini utili alla tua richiesta. Evita l'invio di dati sensibili o documenti riservati senza un accordo preventivo.</p>
     <p>Per gli aggiornamenti pubblici: <a href="https://www.facebook.com/michelebottinoautor" target="_blank" rel="noopener noreferrer">pagina Facebook ufficiale</a>.</p>
   </div>
   <div class="contact-panel contact-panel--form">
-    <h2>Modulo di contatto</h2>
+    <h2>Modulo di contatto</h2><p class="contact-subnote" role="status">Il modulo è in fase di attivazione e protezione antispam. L’invio sarà disponibile dopo l’attivazione del recapito riservato.</p>
     <p class="contact-subnote">I campi contrassegnati con * sono obbligatori.</p>
-    <form id="mb-contact-form" class="contact-form contact-form-complete" action="https://formsubmit.co/michele.bottino@gmail.com" method="POST" enctype="multipart/form-data">
+    <form id="mb-contact-form" class="contact-form contact-form-complete" action="#mb-contact-form" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Nuovo contatto dal sito Michele Bottino">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_url" value="https://michelebottino-autor.github.io/contatti/">
@@ -190,7 +190,7 @@ p{max-width:76ch}
       <div class="contact-consent"><input id="contact-privacy" type="checkbox" name="consenso_privacy" value="Ho letto l'informativa privacy" required><label for="contact-privacy">Ho letto l'<a href="/privacy/" target="_blank" rel="noopener noreferrer">informativa privacy</a> e autorizzo il trattamento dei dati forniti per gestire questa richiesta. *</label></div>
       <p class="contact-subnote">L'invio avviene attraverso il servizio esterno FormSubmit, che trasmette il messaggio e gli eventuali allegati via email. È prevista una verifica antispam. Non inviare dati particolarmente delicati attraverso questo modulo.</p>
       <p id="contact-form-error" class="contact-form-error" role="alert" hidden></p>
-      <button type="submit" class="btn">Invia richiesta</button>
+      <button type="submit" class="btn" disabled aria-disabled="true">Invio temporaneamente non disponibile</button>
     </form>
   </div>
 </section>
@@ -207,7 +207,7 @@ function toggleMenu() {
 <script defer src="/pwa-init.js"></script><script defer src="/assets/js/site-nav.js"></script>
 <script id="mb-contact-form-checks">
 (function(){
- const form=document.getElementById('mb-contact-form');if(!form)return;
+ const form=document.getElementById('mb-contact-form');if(!form)return;form.addEventListener('submit',event=>event.preventDefault());
  const inputs=[...form.querySelectorAll('input[type="file"]')];
  const status=document.getElementById('contact-files-status');
  const error=document.getElementById('contact-form-error');
