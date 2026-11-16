@@ -15,6 +15,9 @@ on:
       - '.github/scripts/test-adc-app-shell.cjs'
       - 'adc/app-shell.js'
       - 'adc/app-shell.css'
+      - 'adc/reading-controls.js'
+      - 'adc/reading-controls.css'
+      - '.github/scripts/test-adc-reading-controls.cjs'
       - 'adc/assets/lettura-fonti.css'
       - 'adc/dossier-1213-1537/index.html'
       - 'adc/processo-334/index.html'
@@ -55,3 +58,6 @@ jobs:
       - name: Collegamenti tra notizie, fonti e limiti ADC
         timeout-minutes: 3
         run: node .github/scripts/test-adc-source-navigation.cjs
+      - name: Lettura regolabile e ripresa locale
+        timeout-minutes: 3
+        run: node .github/scripts/test-adc-reading-controls.cjs

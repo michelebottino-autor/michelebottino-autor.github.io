@@ -24,6 +24,8 @@
  if(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true){
   const shellCss=document.createElement('link');shellCss.rel='stylesheet';shellCss.href='/adc/app-shell.css';head.appendChild(shellCss);
   const shellJs=document.createElement('script');shellJs.src='/adc/app-shell.js';shellJs.defer=true;head.appendChild(shellJs);
+  const readerCss=document.createElement('link');readerCss.rel='stylesheet';readerCss.href='/adc/reading-controls.css';head.appendChild(readerCss);
+  const readerJs=document.createElement('script');readerJs.src='/adc/reading-controls.js';readerJs.defer=true;head.appendChild(readerJs);
  }
  // Nei percorsi ADC i collegamenti legacy all'installazione portano all'app Archivio.
  const updateLegacyInstall=()=>{
