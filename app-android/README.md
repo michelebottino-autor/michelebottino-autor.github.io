@@ -1,20 +1,21 @@
-# Michele Bottino — prototipo Android
-Questo progetto è separato dal sito GitHub Pages. È uno **scheletro Capacitor 8**, non ancora un APK né un'app pubblicata.
+# Archivio Documentale Calatabiano — prototipo Android
 
-## Compilazione
-Richiede Node.js compatibile con Capacitor 8, Android Studio e Android SDK. Dalla cartella app-android:
+Questa cartella conserva un contenitore **Android di prova** dell'Archivio Documentale Calatabiano (ADC). È distinta dall'app web installabile su Android, iOS, iPadOS, Windows, macOS e Linux, disponibile in `/adc/installa/`.
 
-```bash
+**Identità:** `it.michelebottino.adc`; nessun collegamento a opere o sezioni del sito personale. I quattro accessi puntano soltanto a `/adc/`.
+
+Il prototipo Capacitor apre le sezioni ADC nel browser: non equivale a una app nativa completa e non comprende un archivio offline. Per la consultazione multi-dispositivo, usare la PWA dedicata con manifest `/adc/manifest.webmanifest` e service worker `/adc/sw.js`.
+
+## Preparazione APK di test
+
+Richiede Node.js, Android SDK e Java compatibili con Capacitor 8. Dalla cartella `app-android`:
+
+```sh
 npm install
 npx cap add android
 npx cap sync android
-npx cap open android
+cd android
+./gradlew assembleDebug
 ```
 
-Per ottenere una build di debug usare Android Studio sul progetto generato. Non inserire chiavi di firma nel repository.
-
-## Comportamento
-Il contenitore mostra una schermata locale con quattro ingressi e apre il sito pubblico nel browser. Nessun archivio viene duplicato; i link online richiedono rete. Questo è un **prototipo tecnico**, non ancora la UX definitiva né un'app conforme ai criteri degli store.
-
-## Passaggi mancanti
-Generare e collaudare il progetto Android, integrare l'icona premium nelle risorse native, verificare navigazione/accessibilità/privacy, produrre APK di test e valutare la distribuzione.
+La compilazione e il collaudo su telefono reale sono operazioni separate. Non memorizzare chiavi di firma nel repository. Non rivendicare l'avvenuta pubblicazione su uno store.
