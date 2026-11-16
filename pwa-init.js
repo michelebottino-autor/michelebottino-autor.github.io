@@ -1,6 +1,15 @@
 /* Inizializzazione PWA condivisa: nessun consenso richiesto per funzioni locali. */
 (function(){
   'use strict';
+  // Non collegare l'Archivio ADC alla PWA del sito personale.
+  if(location.pathname.startsWith('/adc/')){
+    if(!document.querySelector('script[data-adc-app-init]')){
+      const app=document.createElement('script');
+      app.src='/adc/app-init.js';app.defer=true;app.dataset.adcAppInit='true';
+      document.head.appendChild(app);
+    }
+    return;
+  }
   const head=document.head;
   const ensureLink=(rel,href)=>{
     let link=head.querySelector('link[rel="'+rel+'"]');
