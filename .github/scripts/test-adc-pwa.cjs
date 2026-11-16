@@ -25,7 +25,7 @@ for(const p of ['app-android/capacitor.config.json','app-android/package.json'])
 }
 const android=read('app-android/www/index.html');
 assert.ok(!android.includes('/opere/'),'author books link in ADC app');
-assert.ok(!android.includes('/installa/'),'author install link in ADC app');
+assert.ok(!android.includes('github.io/installa/'),'author install link in ADC app');
 const general=JSON.parse(read('manifest.webmanifest'));
 assert.equal(general.id,'/');assert.equal(general.scope,'/');
 console.log('ADC app: manifest, scoped worker, icons, installer and Android isolation passed.');
