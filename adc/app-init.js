@@ -20,6 +20,11 @@
  let theme=head.querySelector('meta[name="theme-color"]');
  if(!theme){theme=document.createElement('meta');theme.name='theme-color';head.appendChild(theme)}
  theme.content='#143731';
+ // Barra rapida solo quando l'Archivio e' aperto come app installata.
+ if(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true){
+  const shellCss=document.createElement('link');shellCss.rel='stylesheet';shellCss.href='/adc/app-shell.css';head.appendChild(shellCss);
+  const shellJs=document.createElement('script');shellJs.src='/adc/app-shell.js';shellJs.defer=true;head.appendChild(shellJs);
+ }
  // Nei percorsi ADC i collegamenti legacy all'installazione portano all'app Archivio.
  const updateLegacyInstall=()=>{
   document.querySelectorAll('a[href="/installa/"]').forEach(link=>{

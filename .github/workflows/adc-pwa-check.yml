@@ -12,6 +12,9 @@ on:
       - 'app-android/**'
       - '.github/scripts/test-adc-pwa.cjs'
       - '.github/scripts/test-adc-pwa-browser.cjs'
+      - '.github/scripts/test-adc-app-shell.cjs'
+      - 'adc/app-shell.js'
+      - 'adc/app-shell.css'
       - '.github/workflows/adc-pwa-check.yml'
   workflow_dispatch:
 jobs:
@@ -34,3 +37,6 @@ jobs:
       - name: Smartphone, tablet, desktop e offline
         timeout-minutes: 5
         run: node .github/scripts/test-adc-pwa-browser.cjs
+      - name: Navigazione app installata e stato connessione
+        timeout-minutes: 3
+        run: node .github/scripts/test-adc-app-shell.cjs
