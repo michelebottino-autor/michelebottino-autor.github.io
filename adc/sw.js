@@ -1,8 +1,8 @@
 /* Archivio Documentale Calatabiano: PWA autonoma e limitata a /adc/. */
 'use strict';
-const VERSION='adc-offline-v1-20261116';
+const VERSION='adc-offline-v2-20261116';
 const PREFIX='adc-offline-';
-const CORE=['/adc/','/adc/offline.html','/adc/manifest.webmanifest','/adc/app-init.js','/adc/icons/adc-192.png','/adc/icons/adc-512.png','/adc/installa/'];
+const CORE=['/adc/','/adc/offline.html','/adc/manifest.webmanifest','/adc/app-init.js','/adc/app-shell.js','/adc/app-shell.css','/adc/icons/adc-192.png','/adc/icons/adc-512.png','/adc/installa/'];
 const PAGE_LIMIT=30;
 const isADC=url=>url.origin===self.location.origin&&url.pathname.startsWith('/adc/');
 const cacheablePage=url=>isADC(url)&&!url.search&&!/\/(?:cerca|contribuisci|custode|elena)(?:\/|$)/i.test(url.pathname);
