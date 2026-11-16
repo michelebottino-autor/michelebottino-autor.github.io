@@ -1,0 +1,20 @@
+/* Consultazione delle fotografie pubbliche ADC: nessun originale viene alterato. */
+.adc-photo-tile .adc-photo-open{border:0;background:transparent;padding:0;display:block;width:100%;cursor:zoom-in;text-align:inherit}
+.adc-photo-tile .adc-photo-open img{display:block;max-width:100%;height:auto}
+.adc-photo-tile .adc-photo-open:focus-visible{outline:3px solid #9b7443;outline-offset:4px}
+.adc-photo-tile .adc-photo-hint{display:block;padding:6px 0;font:600 13px/1.3 system-ui,sans-serif;color:#46584d}
+#adc-photo-viewer{padding:0;border:0;border-radius:12px;width:min(1100px,calc(100% - 22px));max-width:1100px;max-height:calc(100dvh - 28px);background:#f7f4ec;color:#17382f;box-shadow:0 14px 52px #0006}
+#adc-photo-viewer::backdrop{background:#081b18d9}
+#adc-photo-viewer .adc-viewer-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 14px;border-bottom:1px solid #c9cbbd;font:600 14px/1.3 system-ui,sans-serif}
+#adc-photo-viewer button{min-width:44px;min-height:44px;border:1px solid #8b9b8e;border-radius:8px;background:#fff;color:#17382f;padding:8px 12px;cursor:pointer;font:600 14px/1.3 system-ui,sans-serif}
+#adc-photo-viewer button:focus-visible{outline:3px solid #a0773a;outline-offset:2px}
+#adc-photo-viewer .adc-viewer-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center;padding:10px 14px}
+#adc-photo-viewer .adc-viewer-stage{height:min(57dvh,660px);overflow:auto;display:flex;align-items:center;justify-content:center;background:#e5e6df;overscroll-behavior:contain}
+#adc-photo-viewer .adc-viewer-image{max-width:100%;max-height:100%;height:auto;width:auto;object-fit:contain}
+#adc-photo-viewer .adc-viewer-stage.is-zoomed{display:block;text-align:center}
+#adc-photo-viewer .adc-viewer-stage.is-zoomed .adc-viewer-image{max-width:none;max-height:none;width:auto;height:auto;min-width:135%}
+#adc-photo-viewer .adc-viewer-caption{padding:12px 16px 17px;overflow:auto;max-height:21dvh;font:14px/1.65 system-ui,sans-serif}
+#adc-photo-viewer .adc-viewer-caption a{color:#68461f;text-decoration:underline}
+#adc-photo-viewer .adc-viewer-caption em{display:block;margin-top:5px}
+@media(max-width:600px){#adc-photo-viewer{width:calc(100% - 12px);max-height:calc(100dvh - 12px)}#adc-photo-viewer .adc-viewer-stage{height:49dvh}#adc-photo-viewer .adc-viewer-caption{max-height:25dvh}}
+@media(prefers-reduced-motion:reduce){#adc-photo-viewer *{scroll-behavior:auto!important}}
