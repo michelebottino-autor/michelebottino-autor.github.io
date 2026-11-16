@@ -5,7 +5,7 @@
   "description": "Fonti storiche, documenti e percorsi di ricerca dell'Archivio Documentale Calatabiano.",
   "lang": "it",
   "dir": "ltr",
-  "start_url": "/adc/?app=1",
+  "start_url": "/adc/",
   "scope": "/adc/",
   "display": "standalone",
   "background_color": "#f5f1e7",
