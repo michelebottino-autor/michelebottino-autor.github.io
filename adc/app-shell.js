@@ -5,6 +5,7 @@
  window.__adcAppShell=true;
  const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
  if(!standalone)return;
+ document.documentElement.classList.add('adc-app-installed');
  const setup=()=>{
   if(document.getElementById('adc-app-toolbar')||!document.body)return;
   const current=location.pathname;
