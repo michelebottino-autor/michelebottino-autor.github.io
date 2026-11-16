@@ -116,3 +116,12 @@
   script.dataset.adcPresence = 'true';
   document.head.appendChild(script);
 })();
+
+/* Collega le pagine ADC alla PWA con ambito esclusivo /adc/. */
+(function(){
+ 'use strict';
+ if(!location.pathname.startsWith('/adc/'))return;
+ if(document.querySelector('script[data-adc-app-init]'))return;
+ const app=document.createElement('script');app.src='/adc/app-init.js';
+ app.defer=true;app.dataset.adcAppInit='true';document.head.appendChild(app);
+})();
