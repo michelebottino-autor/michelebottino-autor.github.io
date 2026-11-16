@@ -1,0 +1,54 @@
+{
+  "id": "/adc/",
+  "name": "Archivio Documentale Calatabiano",
+  "short_name": "Archivio ADC",
+  "description": "Fonti storiche, documenti e percorsi di ricerca dell'Archivio Documentale Calatabiano.",
+  "lang": "it",
+  "dir": "ltr",
+  "start_url": "/adc/?app=1",
+  "scope": "/adc/",
+  "display": "standalone",
+  "background_color": "#f5f1e7",
+  "theme_color": "#143731",
+  "prefer_related_applications": false,
+  "categories": [
+    "education",
+    "books"
+  ],
+  "icons": [
+    {
+      "src": "/adc/icons/adc-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/adc/icons/adc-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Fonti documentarie",
+      "short_name": "Fonti",
+      "url": "/adc/fonti/"
+    },
+    {
+      "name": "Storia di Calatabiano",
+      "short_name": "Storia",
+      "url": "/adc/storia/"
+    },
+    {
+      "name": "Atlante",
+      "short_name": "Atlante",
+      "url": "/adc/atlante/"
+    },
+    {
+      "name": "Installa l'Archivio",
+      "short_name": "Installa",
+      "url": "/adc/installa/"
+    }
+  ]
+}
