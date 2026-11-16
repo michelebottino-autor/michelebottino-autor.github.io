@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 const root='http://127.0.0.1:8765';
 const cases=[
  {path:'/adc/dossier-1213-1537/',ids:['adc-notizia-1213','adc-notizia-1537','adc-fonti-e-limiti'],texts:['1213','1537','Tracciabilità']},
- {path:'/adc/processo-334/',ids:['adc-letture-proposte','adc-riscontro-repertorio','adc-limiti-334'],texts:['Registro pubblico','11 novembre','Che cosa sappiamo']},
+ {path:'/adc/processo-334/',ids:['adc-letture-proposte','aggiornamento-20261111','adc-limiti-334'],texts:['Registro pubblico','11 novembre','Che cosa sappiamo']},
  {path:'/adc/verifica-riproduzioni-184-334/',ids:['adc-dati-confronto','adc-repertorio-ufficiale','adc-verifiche-aperte'],texts:['Risultati del confronto','repertorio ufficiale','resta da verificare']}
 ];
 (async()=>{
