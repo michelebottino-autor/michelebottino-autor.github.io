@@ -35,7 +35,8 @@ self.addEventListener('fetch',event=>{
     if(res.ok&&cacheablePage(url)){
      const cache=await caches.open(VERSION);
      await cache.put(url.pathname,res.clone());
-     const keys=(await cache.keys()).filter(k=>k.url.startsWith(self.location.origin+'/adc/')&&k.url.endsWith('/')&&k.url!==(self.location.origin+'/adc/'));
+     const staticCore=new Set(CORE.map(p=>new URL(p,self.location.origin).pathname));
+     const keys=(await cache.keys()).filter(k=>{const p=new URL(k.url).pathname;return !staticCore.has(p)&&!/\.(?:css|js|json|webmanifest|png|jpe?g|webp|avif|svg|woff2?)$/i.test(p)});
      if(keys.length>PAGE_LIMIT)for(const k of keys.slice(0,keys.length-PAGE_LIMIT))await cache.delete(k);
     }
     return res;
