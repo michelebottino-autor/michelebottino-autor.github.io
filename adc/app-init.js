@@ -40,6 +40,6 @@
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',footerInstall,{once:true});else footerInstall();
  if('serviceWorker' in navigator&&location.protocol==='https:'){
   const register=()=>navigator.serviceWorker.register('/adc/sw.js',{scope:'/adc/'}).catch(err=>console.warn('ADC PWA:',err));
-  if(document.readyState==='complete')register();else window.addEventListener('load',register,{once:true});
+  register();
  }
 })();
