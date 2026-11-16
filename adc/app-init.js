@@ -16,6 +16,15 @@
  let theme=head.querySelector('meta[name="theme-color"]');
  if(!theme){theme=document.createElement('meta');theme.name='theme-color';head.appendChild(theme)}
  theme.content='#143731';
+ // Nei percorsi ADC i collegamenti legacy all'installazione portano all'app Archivio.
+ const updateLegacyInstall=()=>{
+  document.querySelectorAll('a[href="/installa/"]').forEach(link=>{
+    link.href='/adc/installa/';
+    link.textContent='Installa Archivio ADC';
+  });
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',updateLegacyInstall,{once:true});
+ else updateLegacyInstall();
  const footerInstall=()=>{
   if(location.pathname.startsWith('/adc/installa/'))return;
   const footer=document.querySelector('body>footer');
