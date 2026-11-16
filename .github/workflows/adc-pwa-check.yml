@@ -15,6 +15,10 @@ on:
       - '.github/scripts/test-adc-app-shell.cjs'
       - 'adc/app-shell.js'
       - 'adc/app-shell.css'
+      - 'adc/mediateca/**'
+      - 'adc/assets/photo-viewer.js'
+      - 'adc/assets/photo-viewer.css'
+      - '.github/scripts/test-adc-photo-viewer.cjs'
       - '.github/workflows/adc-pwa-check.yml'
   workflow_dispatch:
 jobs:
@@ -40,3 +44,6 @@ jobs:
       - name: Navigazione app installata e stato connessione
         timeout-minutes: 3
         run: node .github/scripts/test-adc-app-shell.cjs
+      - name: Mediateca immagini e attribuzioni
+        timeout-minutes: 3
+        run: node .github/scripts/test-adc-photo-viewer.cjs
