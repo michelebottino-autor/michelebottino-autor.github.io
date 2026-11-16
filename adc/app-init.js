@@ -38,7 +38,7 @@
   row.append(link);footer.append(row);
  };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',footerInstall,{once:true});else footerInstall();
- if('serviceWorker' in navigator&&location.protocol==='https:'){
+ if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'||location.hostname==='127.0.0.1')){
   const register=()=>navigator.serviceWorker.register('/adc/sw.js',{scope:'/adc/'}).catch(err=>console.warn('ADC PWA:',err));
   register();
  }
