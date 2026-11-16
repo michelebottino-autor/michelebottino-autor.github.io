@@ -3,7 +3,7 @@
  'use strict';
  if(window.__adcReadingReady||!location.pathname.startsWith('/adc/'))return;
  window.__adcReadingReady=true;
- const standalone=matchMedia('(display-mode:standalone)').matches||navigator.standalone===true;
+ const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
  if(!standalone)return;
  if(location.pathname.startsWith('/adc/installa/'))return;
  const SIZE_KEY='adc-reading-scale-v1',LAST_KEY='adc-reading-last-v1';
