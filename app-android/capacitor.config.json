@@ -1,6 +1,6 @@
 {
-  "appId": "it.michelebottino.autore",
-  "appName": "Michele Bottino",
+  "appId": "it.michelebottino.adc",
+  "appName": "Archivio ADC",
   "webDir": "www",
   "server": {
     "androidScheme": "https"
