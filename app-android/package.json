@@ -1,8 +1,8 @@
 {
-  "name": "michele-bottino-android",
+  "name": "archivio-documentale-calatabiano-android",
   "private": true,
   "version": "0.1.0",
-  "description": "Prototipo Android dell'app Michele Bottino e ADC",
+  "description": "Prototipo Android dell'Archivio Documentale Calatabiano, separato dal sito dell'autore",
   "scripts": {
     "android:init": "npx cap add android",
     "android:sync": "npx cap sync android",

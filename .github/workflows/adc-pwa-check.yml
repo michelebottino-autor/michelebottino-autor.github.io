@@ -1,0 +1,36 @@
+name: Verifica applicazione ADC
+on:
+  pull_request:
+    paths:
+      - 'adc/manifest.webmanifest'
+      - 'adc/sw.js'
+      - 'adc/app-init.js'
+      - 'adc/icons/**'
+      - 'adc/installa/**'
+      - 'pwa-init.js'
+      - 'adc/assets/navigazione-unificata.js'
+      - 'app-android/**'
+      - '.github/scripts/test-adc-pwa.cjs'
+      - '.github/scripts/test-adc-pwa-browser.cjs'
+      - '.github/workflows/adc-pwa-check.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Controllo manifest e identita ADC
+        run: node .github/scripts/test-adc-pwa.cjs
+      - name: Prepara browser di collaudo
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Avvio sito statico
+        run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/adc-pwa-http.log 2>&1 &
+      - name: Smartphone, tablet, desktop e offline
+        timeout-minutes: 5
+        run: node .github/scripts/test-adc-pwa-browser.cjs
