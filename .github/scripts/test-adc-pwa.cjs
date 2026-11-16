@@ -26,6 +26,13 @@ for(const p of ['app-android/capacitor.config.json','app-android/package.json'])
 const android=read('app-android/www/index.html');
 assert.ok(!android.includes('/opere/'),'author books link in ADC app');
 assert.ok(!android.includes('github.io/installa/'),'author install link in ADC app');
+const home=read('adc/index.html');
+const installHelp=read('adc/installa/index.html');
+assert.ok(home.includes('<link rel="manifest" href="/adc/manifest.webmanifest"/>'), 'ADC needs a static manifest in its homepage');
+assert.ok(home.includes('apple-mobile-web-app-title" content="Archivio ADC"'), 'ADC home title for iOS missing');
+assert.ok(home.includes('apple-touch-icon" sizes="192x192" href="/adc/icons/adc-192.png"'), 'ADC iOS icon missing');
+assert.ok(installHelp.includes('la pagina iniziale dell’Archivio ADC'), 'Apple installation should start at ADC homepage');
+assert.ok(installHelp.includes('File → Aggiungi al Dock'), 'Mac Safari instructions missing');
 const general=JSON.parse(read('manifest.webmanifest'));
 assert.equal(general.id,'/');assert.equal(general.scope,'/');
 console.log('ADC app: manifest, scoped worker, icons, installer and Android isolation passed.');
