@@ -25,6 +25,12 @@ const assert=require('node:assert/strict');
   await page.goto(BASE+'/adc/',{waitUntil:'domcontentloaded'});
   await page.locator('#adc-reader-controls').waitFor({state:'visible'});
   assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--adc-reader-scale').trim()),'1.1');
+  const homeConsent=page.locator('#mb-consent');
+  if(await homeConsent.count()){
+   const reject=homeConsent.getByRole('button',{name:'Rifiuta'});
+   if(await reject.count())await reject.click();
+   await homeConsent.waitFor({state:'detached'});
+  }
   await page.getByRole('button',{name:'Continua lettura'}).click();
   await page.waitForURL('**/adc/dossier-1213-1537/');
   await page.locator('#adc-reader-controls').waitFor({state:'visible'});
