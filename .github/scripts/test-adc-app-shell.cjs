@@ -23,6 +23,11 @@ const BASE='http://127.0.0.1:8765';
   assert.ok(box&&box.y>650,'toolbar must be at viewport bottom');
   const x=await page.evaluate(()=>({width:document.documentElement.scrollWidth,viewport:innerWidth}));
   assert.ok(x.width<=x.viewport+5,'overflow '+JSON.stringify(x));
+  const consent=page.locator('#mb-consent');
+  if(await consent.count()){
+   await consent.getByRole('button',{name:'Rifiuta'}).click();
+   await consent.waitFor({state:'detached'});
+  }
   await bar.getByRole('link',{name:'Fonti'}).click();
   await page.waitForURL('**/adc/fonti/');
   await page.locator('#adc-app-toolbar').waitFor({state:'visible'});
