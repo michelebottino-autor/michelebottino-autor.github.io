@@ -10,6 +10,10 @@
   if(!link){link=document.createElement('link');link.rel=rel;head.appendChild(link);}
   link.href=href;for(const duplicate of links)duplicate.remove();
  };
+ const responsiveCSS='/mobile-platform.css';
+ if(!head.querySelector('link[href="'+responsiveCSS+'"]')){
+  const css=document.createElement('link');css.rel='stylesheet';css.href=responsiveCSS;head.appendChild(css);
+ }
  replaceLink('manifest','/adc/manifest.webmanifest');
  replaceLink('apple-touch-icon','/adc/icons/adc-192.png');
  replaceLink('icon','/adc/icons/adc-192.png');
