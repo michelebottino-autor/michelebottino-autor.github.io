@@ -48,8 +48,8 @@
         setOpen(false); button.focus();
       }
     });
-    // Only remove navigations outside article content; preserve in-page dossier links.
-    var old = body.querySelectorAll('header, nav.adc-project-nav, nav#adc-design-nav, section.adc-accessi-distinti, nav.site-transparency-links');
+    // Limit legacy navigation cleanup to direct body children: never hide article or section headers.
+    var old = body.querySelectorAll(':scope > header, :scope > nav.adc-project-nav, :scope > nav#adc-design-nav, :scope > section.adc-accessi-distinti, :scope > nav.site-transparency-links');
     old.forEach(function (el) {
       if (el.closest('footer,details')) return;
       // Un'intestazione con un titolo proprio del dossier e' contenuto editoriale,
