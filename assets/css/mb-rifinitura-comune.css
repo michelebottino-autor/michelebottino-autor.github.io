@@ -37,3 +37,14 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Rifinitura editoriale condivisa: interfacce leggibili, senza cambiare i contenuti. */
+:where(main) :where(h1,h2,h3){letter-spacing:-.02em}
+:where(main) :where(img,video,iframe){max-width:100%}
+:where(main) :where(.card,.panel,.feature){border-radius:14px}
+:where(a,button,summary,input,select,textarea):focus-visible{outline-color:#c7a567}
+@media(max-width:680px){
+ :where(main) :where(p,li){line-height:1.68}
+ :where(main) :where(h1){overflow-wrap:break-word;hyphens:none}
+}
