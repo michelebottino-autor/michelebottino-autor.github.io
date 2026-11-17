@@ -67,3 +67,12 @@ body.adc-inner-2026 main#contenuto .elena-form :is(input,button){min-height:48px
 body.adc-inner-2026 main#contenuto .elena-form button{background:#123947!important;color:#fff!important}
 body.adc-inner-2026 main#contenuto .elena-examples button{min-height:43px}
 @media(max-width:760px){body.adc-inner-2026 main#contenuto form[role=search]{padding:19px 16px!important}body.adc-inner-2026 main#contenuto form[role=search] .search-row{min-width:0;max-width:100%}body.adc-inner-2026 main#contenuto .elena-form{display:flex;flex-direction:column!important}body.adc-inner-2026 main#contenuto .elena-form input{min-width:0!important;width:100%!important}}
+
+/* Navigazione mobile ADC: collegamenti contestuali compatti e invito alla lettura non redazionale. */
+body.adc-inner-2026 .adc-story-reading-link{margin:0 0 1.5rem;padding:12px 16px;background:#fff;border-left:3px solid #b99b67;border-radius:0 9px 9px 0;font-size:clamp(.95rem,2.6vw,1.05rem);line-height:1.55}
+body.adc-inner-2026 .adc-story-reading-link a{font-weight:650}
+@media(max-width:760px){
+  body.adc-inner-2026 > nav:not([class]):not([id]){max-width:1200px;margin:0 auto 8px!important;padding:10px 16px!important;font-size:.875rem!important;line-height:1.5!important;overflow-wrap:anywhere}
+  body.adc-inner-2026 > nav:not([class]):not([id]) a{font-size:inherit!important}
+  body.adc-inner-2026 main .eyebrow{font-size:.8rem!important;letter-spacing:.045em!important;line-height:1.5!important}
+}
