@@ -25,9 +25,9 @@ tabs.forEach((tab,index)=>{
  });
 });
 selectPlatform(isIOS?'ios':'android');
-if(standalone){installed.hidden=false;status.textContent='Applicazione già installata.';return}
-if(insideApp)status.textContent='Apri il collegamento in Chrome o Samsung Internet: il browser interno potrebbe impedire l’installazione.';
-else if(isAndroid)status.textContent='Se non compare il pulsante, usa il menu del browser per installare.';
+if(standalone){installed.hidden=false;status.textContent='Il sito è già aperto come app.';return}
+if(insideApp)status.textContent=isIOS?'Apri questa pagina in Safari e usa Condividi → Aggiungi alla schermata Home.':'Apri questa pagina in Chrome o Samsung Internet per installarla.';
+else if(isAndroid)status.textContent='Se il pulsante non compare, apri il menu del browser e scegli Installa app.';
 let installEvent=null;
 window.addEventListener('beforeinstallprompt',event=>{
  event.preventDefault();installEvent=event;button.hidden=false;
