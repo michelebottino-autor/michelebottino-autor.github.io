@@ -21,6 +21,7 @@
   ensureLink('apple-touch-icon','/icons/mb-192.png');
   if(!head.querySelector('meta[name="apple-mobile-web-app-capable"]')){const m=document.createElement('meta');m.name='apple-mobile-web-app-capable';m.content='yes';head.appendChild(m)}
   if(!head.querySelector('meta[name="apple-mobile-web-app-title"]')){const m=document.createElement('meta');m.name='apple-mobile-web-app-title';m.content='Michele Bottino';head.appendChild(m)}
+  if(!head.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]')){const m=document.createElement('meta');m.name='apple-mobile-web-app-status-bar-style';m.content='default';head.appendChild(m)}
   const css='/mobile-platform.css';
   if(!head.querySelector('link[href="'+css+'"]')){
     const link=document.createElement('link');
