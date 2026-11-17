@@ -36,7 +36,7 @@
     const shellJs=document.createElement('script');shellJs.src='/app-shell.js';shellJs.defer=true;head.appendChild(shellJs);
   }
   const addInstallLink=()=>{
-    if(location.pathname.startsWith('/installa/'))return;
+    if(location.pathname.startsWith('/installa/')||window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)return;
     const footer=document.querySelector('body>footer');
     if(!footer||footer.querySelector('a[href="/installa/"]'))return;
     const item=document.createElement('p');item.className='pwa-install-link';
