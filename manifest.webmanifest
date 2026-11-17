@@ -2,26 +2,20 @@
   "id": "/",
   "name": "Michele Bottino — Sito ufficiale",
   "short_name": "Michele Bottino",
-  "description": "Opere, ricerca e Archivio Documentale Calatabiano.",
+  "description": "Romanzi, saggi, ricerca storico-documentaria e servizi di verifica delle fonti di Michele Bottino.",
   "lang": "it",
   "dir": "ltr",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f8f6f1",
-  "theme_color": "#25302e",
+  "theme_color": "#0a1a3a",
   "prefer_related_applications": false,
   "categories": [
     "books",
     "education"
   ],
   "icons": [
-    {
-      "src": "/icons/mb-premium-192.avif",
-      "sizes": "192x192",
-      "type": "image/avif",
-      "purpose": "any"
-    },
     {
       "src": "/icons/mb-192.png",
       "sizes": "192x192",
@@ -43,19 +37,52 @@
   ],
   "shortcuts": [
     {
-      "name": "Archivio Documentale Calatabiano",
-      "short_name": "Archivio ADC",
-      "url": "/adc/"
-    },
-    {
-      "name": "Opere",
+      "name": "Opere e libri",
       "short_name": "Opere",
-      "url": "/opere/"
+      "url": "/opere/",
+      "icons": [
+        {
+          "src": "/icons/mb-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
-      "name": "Installazione",
-      "short_name": "Installa",
-      "url": "/installa/"
+      "name": "Ricerca storico-documentaria",
+      "short_name": "Ricerca",
+      "url": "/ricerca/",
+      "icons": [
+        {
+          "src": "/icons/mb-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Verifica delle fonti",
+      "short_name": "Verifica fonti",
+      "url": "/analisi-documentaria/",
+      "icons": [
+        {
+          "src": "/icons/mb-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contatti",
+      "short_name": "Contatti",
+      "url": "/contatti/",
+      "icons": [
+        {
+          "src": "/icons/mb-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }
