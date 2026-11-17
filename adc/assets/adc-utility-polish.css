@@ -1,0 +1,47 @@
+/* ADC utility pages: keep their independent installation and offline mechanics. */
+body.adc-utility-theme{
+ --adc-utility-navy:#0b2830;--adc-utility-gold:#c7a567;
+ --adc-utility-paper:#f7f5ef;--adc-utility-line:#dbe0d8;
+ background:var(--adc-utility-paper);
+ color:#233b40;
+}
+body.adc-utility-theme header {
+ background:var(--adc-utility-navy);
+ color:#f8f6ee;
+ border-bottom:3px solid var(--adc-utility-gold);
+}
+body.adc-utility-theme header a{color:#f8f6ee}
+body.adc-utility-theme :is(h1,h2) {
+ font-family:Georgia,"Times New Roman",serif;
+ letter-spacing:-.02em;line-height:1.16;color:#164249;
+ text-wrap:balance;
+}
+body.adc-utility-theme header :is(h1,h2){color:#f8f6ee}
+body.adc-utility-theme main :is(.card,.panel){
+ background:#fffefa;border-color:var(--adc-utility-line);
+ border-radius:15px;box-shadow:0 7px 24px rgba(14,48,52,.06);
+}
+body.adc-utility-theme main .notice{
+ border-left-color:var(--adc-utility-gold);
+ background:#f3eee1;color:#493d2b;
+}
+body.adc-utility-theme main button{
+ background:#16494b;color:#fff;min-height:46px;border-radius:10px;
+}
+body.adc-utility-theme :is(a,button,input,summary):focus-visible{
+ outline:3px solid var(--adc-utility-gold);
+ outline-offset:3px;
+}
+body.adc-utility-theme main{max-width:100%;overflow-wrap:break-word}
+body.adc-utility-theme :is(img,iframe){max-width:100%}
+body.adc-utility-theme footer{border-color:var(--adc-utility-line)}
+@media(max-width:680px){
+ body.adc-utility-theme .wrap{width:calc(100% - 34px)}
+ body.adc-utility-theme main{padding-block:28px 43px}
+ body.adc-utility-theme h1{font-size:clamp(1.95rem,7.8vw,2.6rem)}
+ body.adc-utility-theme main :is(p,li){line-height:1.66}
+ body.adc-utility-theme .card{padding:20px 17px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.adc-utility-theme *{scroll-behavior:auto;transition:none!important}
+}
