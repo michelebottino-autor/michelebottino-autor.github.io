@@ -1,5 +1,5 @@
 /* PWA ADC v6: rete prioritaria, offline per pagine pubbliche già visitate. */
-const CACHE='mb-static-v6';
+const CACHE='mb-static-v7';
 const CORE=['/','/offline.html','/site-uniform.css','/mobile-platform.css','/pwa-init.js','/manifest.webmanifest','/installa/','/adc/','/icons/mb-192.png','/icons/mb-512.png'];
 const MAX_PAGES=30;
 const isPublicPage=url=>{
