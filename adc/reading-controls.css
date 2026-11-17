@@ -1,33 +1,51 @@
-/* Strumenti di lettura solo nella PWA installata ADC. Preferenze locali al dispositivo. */
+/* ADC PWA: strumenti nel flusso del contenuto; nessuna sovrapposizione sui testi. */
 html.adc-app-installed{--adc-reader-scale:1}
-html.adc-app-installed main p,html.adc-app-installed main li,html.adc-app-installed main td,html.adc-app-installed main blockquote,html.adc-app-installed main figcaption{font-size:calc(1em * var(--adc-reader-scale))!important;line-height:1.7}
-#adc-reader-controls{display:none}
-@media(max-width:760px){
- html.adc-app-installed body{padding-bottom:calc(178px + env(safe-area-inset-bottom,0px))!important}
- html.adc-app-installed #adc-reader-controls{display:flex;position:fixed;z-index:1099;bottom:calc(98px + env(safe-area-inset-bottom,0px));left:auto;right:max(12px,env(safe-area-inset-right,0px));max-width:calc(100vw - 24px);background:#f8f7f2;border:1px solid #c1c9bc;border-radius:13px;gap:7px;align-items:center;justify-content:flex-end;padding:7px;font:600 13px/1.3 system-ui,sans-serif;box-shadow:0 3px 14px #00000020}
- html.adc-app-installed #adc-reader-controls button{min-width:46px;min-height:42px;border:1px solid #9daf9e;border-radius:9px;background:#fff;color:#16392e;font:700 14px system-ui,sans-serif;padding:7px 11px;cursor:pointer}
- html.adc-app-installed #adc-reader-controls button:focus-visible{outline:3px solid #a47639;outline-offset:2px}
- html.adc-app-installed #adc-reader-controls button[disabled]{opacity:.5;cursor:default}
- html.adc-app-installed #adc-reader-controls [data-reader-resume]{flex:0 1 auto;max-width:165px}
+html.adc-app-installed main p,
+html.adc-app-installed main li,
+html.adc-app-installed main td,
+html.adc-app-installed main blockquote,
+html.adc-app-installed main figcaption{
+  font-size:calc(1em * var(--adc-reader-scale))!important;
+  line-height:1.7;
 }
-
-/* PWA ADC — barra lettura compatta, non sovrapposta al menu inferiore. */
+#adc-reader-controls{display:none}
 html.adc-app-installed #adc-reader-controls [hidden]{display:none!important}
 @media(max-width:760px){
- html.adc-app-installed #adc-reader-controls{
-  max-width:min(300px,calc(100vw - 24px))!important;
-  gap:4px!important;
-  padding:5px!important;
-  bottom:calc(99px + env(safe-area-inset-bottom,0px))!important;
-  border-radius:12px!important;
- }
- html.adc-app-installed #adc-reader-controls button{
-  min-width:38px!important;min-height:38px!important;
-  padding:6px 9px!important;
-  font:700 13px/1.2 system-ui,sans-serif!important;
- }
- html.adc-app-installed #adc-reader-controls [data-reader-resume]{
-  max-width:120px!important;white-space:nowrap!important;
-  overflow:hidden!important;text-overflow:ellipsis!important;
- }
+  html.adc-app-installed #adc-reader-controls{
+    display:flex;
+    position:static!important;
+    z-index:auto!important;
+    width:max-content;
+    max-width:100%;
+    margin:0 0 18px;
+    padding:5px;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:5px;
+    border:1px solid #c1c9bc;
+    border-radius:12px;
+    background:#f8f7f2;
+    box-shadow:none;
+    font:600 13px/1.3 system-ui,sans-serif;
+  }
+  html.adc-app-installed #adc-reader-controls button{
+    min-width:44px;
+    min-height:44px;
+    border:1px solid #9daf9e;
+    border-radius:9px;
+    padding:8px 10px;
+    background:#fff;
+    color:#16392e;
+    font:700 14px/1.2 system-ui,sans-serif;
+    cursor:pointer;
+  }
+  html.adc-app-installed #adc-reader-controls button:focus-visible{
+    outline:3px solid #a47639;outline-offset:2px;
+  }
+  html.adc-app-installed #adc-reader-controls button[disabled]{opacity:.55;cursor:default}
+  html.adc-app-installed #adc-reader-controls [data-reader-resume]{
+    flex:0 1 auto;
+    max-width:160px;
+    white-space:nowrap;
+  }
 }
