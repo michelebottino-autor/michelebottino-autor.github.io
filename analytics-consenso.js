@@ -67,9 +67,9 @@ window.MB_ANALYTICS_ID = "G-5MVH0PN6E5";
     document.body.appendChild(d);
   }
   function preferenceControl(){
-    const b=document.createElement('button');b.type='button';b.textContent='Preferenze statistiche';
+    const b=document.createElement('button');b.type='button';b.textContent='Statistiche';
     b.setAttribute('aria-label','Preferenze statistiche: modifica il consenso');
-    b.style.cssText='position:fixed;bottom:8px;right:8px;z-index:9998;background:#fffaf1;color:#29251f;border:1px solid #aa9275;border-radius:6px;padding:5px 9px;font:12px system-ui,sans-serif;cursor:pointer';b.className='mb-preferences-control';
+    b.style.cssText='position:fixed;bottom:8px;right:8px;z-index:9998;background:#fffaf1;color:#29251f;border:1px solid #aa9275;border-radius:6px;padding:5px 8px;font:11px system-ui,sans-serif;cursor:pointer;max-width:100px;box-shadow:0 2px 6px #0002';b.className='mb-preferences-control';
     b.addEventListener('click',()=>{if(window.__mbAnalyticsLoaded){safeSet('');window['ga-disable-'+id]=true;location.reload();return;}safeSet('');const d=document.getElementById('mb-consent');if(d)d.remove();banner();});
     (document.querySelector('body > footer')||document.body).appendChild(b);
   }
