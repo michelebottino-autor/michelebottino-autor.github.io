@@ -1,5 +1,5 @@
 /* App installabile Michele Bottino: rete prioritaria, archivio pubblico offline. ADC ha un'app separata. */
-const CACHE='mb-static-v8';
+const CACHE='mb-static-v9';
 const CORE=['/','/offline.html','/site-uniform.css','/mobile-platform.css','/pwa-init.js','/manifest.webmanifest','/installa/','/installa/install.js','/opere/','/ricerca/','/analisi-documentaria/','/icons/mb-192.png','/icons/mb-512.png','/images/verifica-fonti-michele-bottino.png'];
 const MAX_PAGES=35;
 const MAX_ASSETS=100;
@@ -35,7 +35,10 @@ self.addEventListener('fetch',event=>{
           const cache=await caches.open(CACHE);
           const key=url.pathname;
           await cache.put(key,response.clone());
-          const keys=(await cache.keys()).filter(x=>x.mode==='navigate'||(x.headers.get('accept')||'').includes('text/html'));
+          const keys=(await cache.keys()).filter(x=>{
+            const pathname=new URL(x.url).pathname;
+            return !CORE.includes(pathname)&&!staticAsset(new URL(x.url));
+          });
           if(keys.length>MAX_PAGES)for(const k of keys.slice(0,keys.length-MAX_PAGES))await cache.delete(k);
         }
         return response;
