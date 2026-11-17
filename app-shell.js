@@ -35,7 +35,7 @@ function render(){
  offline.id='mb-app-network-status';
  offline.setAttribute('role','status');
  offline.setAttribute('aria-live','polite');
- offline.textContent='Connessione assente. Puoi consultare alcune pagine già salvate.';
+ offline.textContent='Sei offline. Alcune pagine già visitate potrebbero essere disponibili.';
  const refresh=()=>{offline.hidden=navigator.onLine};
  refresh();
  document.body.append(offline);
