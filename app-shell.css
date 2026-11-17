@@ -1,0 +1,14 @@
+/* Navigazione dell'app personale installata, indipendente da Archivio ADC. */
+html.mb-app-installed{scroll-padding-bottom:calc(94px + env(safe-area-inset-bottom,0px))}
+html.mb-app-installed body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+#mb-app-navigation{position:fixed;inset:auto 0 0;z-index:9900;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;background:#091a32;border-top:1px solid #b49465;box-shadow:0 -8px 28px #091a3226;padding:5px max(5px,env(safe-area-inset-right,0px)) calc(5px + env(safe-area-inset-bottom,0px)) max(5px,env(safe-area-inset-left,0px));font:12px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif}
+#mb-app-navigation a{display:flex;min-height:56px;min-width:0;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:6px 2px;color:#e0e5ed;text-decoration:none;border-radius:9px;font-size:clamp(10px,2.7vw,12px);font-weight:600;text-align:center}
+#mb-app-navigation a[aria-current="page"]{color:#f3d29a;background:#fff1}
+#mb-app-navigation a:focus-visible{outline:2px solid #f3d29a;outline-offset:-2px}
+#mb-app-navigation svg{height:20px;width:20px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8}
+#mb-app-navigation span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+#mb-app-network-status{position:fixed;left:12px;right:12px;bottom:calc(78px + env(safe-area-inset-bottom,0px));z-index:9899;margin:auto;max-width:500px;background:#fff8e9;color:#283547;border:1px solid #b49465;border-radius:9px;padding:11px 15px;box-shadow:0 5px 20px #0002;font:13px/1.45 system-ui,sans-serif;text-align:center}
+#mb-app-network-status[hidden]{display:none!important}
+html.mb-app-installed .mb-preferences-control{bottom:calc(85px + env(safe-area-inset-bottom,0px))!important}
+@media(max-width:350px){#mb-app-navigation a{font-size:10px}#mb-app-navigation svg{height:18px;width:18px}}
+@media(prefers-reduced-motion:reduce){#mb-app-navigation *{transition:none!important}}
