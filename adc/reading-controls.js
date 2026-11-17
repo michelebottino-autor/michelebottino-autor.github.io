@@ -46,7 +46,9 @@
    }else{const y=Number(read(key));if(Number.isFinite(y)&&y>=400)scrollTo({top:Math.min(y,Math.max(0,document.documentElement.scrollHeight-innerHeight)),behavior:'instant'})}
   });
   box.append(smaller,bigger,resume);
-  document.body.append(box);
+  // Gli strumenti fanno parte della pagina: non coprono il testo durante lo scorrimento.
+  const readingArea=document.querySelector('main')||document.body;
+  readingArea.insertBefore(box,readingArea.firstChild);
   if(canonical!=='/adc/'&&safePath(canonical))save(LAST_KEY,canonical);
   let pending=false;
   const record=()=>{
