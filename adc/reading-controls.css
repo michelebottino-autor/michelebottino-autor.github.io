@@ -10,3 +10,24 @@ html.adc-app-installed main p,html.adc-app-installed main li,html.adc-app-instal
  html.adc-app-installed #adc-reader-controls button[disabled]{opacity:.5;cursor:default}
  html.adc-app-installed #adc-reader-controls [data-reader-resume]{flex:0 1 auto;max-width:165px}
 }
+
+/* PWA ADC — barra lettura compatta, non sovrapposta al menu inferiore. */
+html.adc-app-installed #adc-reader-controls [hidden]{display:none!important}
+@media(max-width:760px){
+ html.adc-app-installed #adc-reader-controls{
+  max-width:min(300px,calc(100vw - 24px))!important;
+  gap:4px!important;
+  padding:5px!important;
+  bottom:calc(99px + env(safe-area-inset-bottom,0px))!important;
+  border-radius:12px!important;
+ }
+ html.adc-app-installed #adc-reader-controls button{
+  min-width:38px!important;min-height:38px!important;
+  padding:6px 9px!important;
+  font:700 13px/1.2 system-ui,sans-serif!important;
+ }
+ html.adc-app-installed #adc-reader-controls [data-reader-resume]{
+  max-width:120px!important;white-space:nowrap!important;
+  overflow:hidden!important;text-overflow:ellipsis!important;
+ }
+}
