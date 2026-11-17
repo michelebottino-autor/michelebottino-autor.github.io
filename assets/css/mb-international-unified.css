@@ -1,0 +1,109 @@
+/* Michele Bottino — international editorial pages.
+   Visual harmonisation only; no changes to scholarly content or navigation. */
+:root {
+ --intl-navy:#0b2830;
+ --intl-teal:#16484a;
+ --intl-gold:#c7a567;
+ --intl-paper:#f7f5ef;
+ --intl-ink:#23383f;
+ --intl-line:#dce1dc;
+}
+html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+body {
+ background:var(--intl-paper);
+ color:var(--intl-ink);
+ overflow-x:clip;
+}
+body :is(a,button,input,select,textarea,summary):focus-visible {
+ outline:3px solid var(--intl-gold);
+ outline-offset:3px;
+}
+body .site-head {
+ background:var(--intl-navy);
+ border-bottom:3px solid var(--intl-gold);
+ box-shadow:0 6px 18px rgba(8,35,43,.08);
+}
+body .site-head .nav {
+ min-height:82px;
+ gap:16px;
+}
+body .site-head .brand {
+ color:#fcfaf6;
+ font:700 clamp(1.18rem,2.1vw,1.44rem)/1.22 Georgia,"Times New Roman",serif;
+ text-wrap:balance;
+}
+body .site-head .nav-links { gap:8px 14px; }
+body .site-head .nav-links a {
+ color:#f5f3eb;
+ min-height:44px;
+ display:inline-flex;
+ align-items:center;
+ padding:8px 4px;
+ border-radius:6px;
+}
+body .site-head .nav-links a:hover,
+body .site-head .nav-links a[aria-current="page"] { color:#f2d398; }
+body .site-head .nav-links a.language {
+ border:1px solid #d1b27b;
+ padding:7px 12px;
+ border-radius:10px;
+}
+body .hero {
+ background:linear-gradient(115deg,#0b2830,#17444a 70%,#23565a);
+ color:#fcfaf6;
+ border-bottom:2px solid var(--intl-gold);
+}
+body .hero .eyebrow { color:#e7ca92; }
+body .hero h1 {
+ font-family:Georgia,"Times New Roman",serif;
+ font-size:clamp(2.2rem,5vw,4rem);
+ line-height:1.14;
+ letter-spacing:-.024em;
+ text-wrap:balance;
+ overflow-wrap:break-word;
+}
+body .hero p { color:#e5e9e5; }
+body .hero .action {
+ min-height:46px;
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:10px;
+}
+body .hero .action.primary { background:#f8f4ea;color:#16383f; }
+body .section { border-color:var(--intl-line); }
+body .section :is(h2,h3) {
+ color:#173a43;
+ letter-spacing:-.02em;
+ text-wrap:balance;
+}
+body .section :is(p,li) { overflow-wrap:break-word; }
+body .section :is(.panel,.book) {
+ border-radius:14px;
+ border-color:var(--intl-line);
+ box-shadow:0 7px 22px rgba(16,48,53,.045);
+}
+body .section .panel { background:#fffefa; }
+body .footer { background:var(--intl-navy);border-top:2px solid var(--intl-gold); }
+body .footer a { color:#edd49c; }
+body :is(img,iframe,video) { max-width:100%; }
+body :is(pre,table) { max-width:100%; }
+body .tablewrap { overflow-x:auto; }
+@media(max-width:750px) {
+ body .site-head .nav { min-height:0;align-items:stretch;gap:8px;padding-block:16px; }
+ body .site-head .nav-links { gap:5px 12px; }
+ body .site-head .nav-links a { min-height:44px; }
+ body .hero { padding-block:46px 54px; }
+ body .hero h1 { font-size:clamp(2.03rem,8vw,2.9rem); }
+ body .section { padding-block:36px; }
+ body .section .panel { padding:clamp(17px,4.4vw,23px); }
+ body .wrap { padding-inline:clamp(16px,4.5vw,25px); }
+ body .section :is(p,li) { line-height:1.69; }
+}
+@media(max-width:370px) {
+ body .site-head .nav-links a { font-size:.87rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+ html { scroll-behavior:auto; }
+ *,*::before,*::after { transition:none!important;animation:none!important; }
+}
