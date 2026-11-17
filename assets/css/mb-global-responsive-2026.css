@@ -1,0 +1,53 @@
+/* Michele Bottino — responsive editorial system v1, 17 Nov 2026.
+   Applied only to pages explicitly opted in with html.mb-global.
+   No content, metadata, user forms, archival claims or bibliography changes. */
+html.mb-global{--mb-gutter:clamp(16px,4.3vw,32px);--mb-navy:#0b2830;--mb-gold:#c7a567;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:16px}
+html.mb-global,html.mb-global body{max-width:100%;overflow-x:clip}
+html.mb-global body{font-kerning:normal}
+html.mb-global :is(main,article,section,.container,.wrap,.panel,.card){min-width:0}
+html.mb-global main :is(h1,h2,h3,h4){overflow-wrap:break-word;word-break:normal;hyphens:none;text-wrap:balance}
+html.mb-global main :is(p,li,figcaption){overflow-wrap:break-word;word-break:normal}
+html.mb-global main :is(img,video,iframe,canvas,picture,svg){max-width:100%}
+html.mb-global main :is(img,video){height:auto}
+html.mb-global main :is(pre,table){max-width:100%}
+html.mb-global main pre{overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}
+html.mb-global main :is(input,select,textarea,button){max-width:100%}
+html.mb-global :is(a,button,summary,input,textarea,select):focus-visible{outline:3px solid var(--mb-gold);outline-offset:3px}
+html.mb-global main :is(.book-cover,.cover-book,img[src*="/opere/"][alt*="Copertina"],img[src*="/opere/"][alt*="copertina"]){object-fit:contain}
+@media(max-width:760px){
+ html.mb-global body{font-size:16px;line-height:1.6}
+ html.mb-global main{min-width:0}
+ html.mb-global main :is(h1){font-size:clamp(1.86rem,7.4vw,2.55rem)!important;line-height:1.18!important;letter-spacing:-.025em!important}
+ html.mb-global main :is(h2){font-size:clamp(1.45rem,5.2vw,1.92rem)!important;line-height:1.22!important}
+ html.mb-global main :is(h3){font-size:clamp(1.14rem,4.3vw,1.45rem)!important;line-height:1.3!important}
+ html.mb-global main :is(p,li){font-size:clamp(.96rem,3.5vw,1.04rem);line-height:1.62!important}
+ html.mb-global main :is(.panel,.card,.content-box,.article-box,.info-box,.feature,.box){max-width:100%;padding:clamp(16px,4vw,23px);margin-block:clamp(12px,3.6vw,23px);border-radius:13px}
+ html.mb-global main :is(.grid,.grid-2,.grid-3,.cards-grid,.related-grid,.books){grid-template-columns:minmax(0,1fr);gap:14px}
+ html.mb-global main :is(.section){padding-block:clamp(22px,5vw,36px)}
+ html.mb-global main :is(.hero,.page-header,.hero-section){padding-block:clamp(25px,6vw,46px)}
+ html.mb-global main :is(.book-cover,img[class*="cover"]){height:auto;max-height:min(58vh,420px);object-fit:contain}
+ html.mb-global main .book-cover{width:auto;max-width:min(205px,55vw);margin:16px auto 21px}
+ html.mb-global main :is(.actions,.cta-buttons,.action-links){gap:10px}
+ html.mb-global main :is(.actions a,.btn,.button,.action){max-width:100%;min-height:44px;white-space:normal;text-align:center}
+ html.mb-global main :is(.meta,.small,.note,.footnote){font-size:.88rem;line-height:1.55}
+ html.mb-global main :is(table){display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ html.mb-global main :is(.breadcrumb,.editorial-breadcrumb){font-size:.83rem}
+ html.mb-global :is(.mb-nav .mb-inner,.site-head .nav){min-height:64px}
+ html.mb-global .mb-nav .mb-mark{font-size:1.3rem}
+ html.mb-global :is(.mb-nav .mb-tag){font-size:.58rem}
+ /* Catalog module on home: remove oversized contrasting canvas. */
+ html.mb-global :is(.home-opere-visual,.home-works-visual,.home-featured-book-image){padding:0;background:transparent;border:0;box-shadow:none}
+ html.mb-global :is(.home-opere-visual,.home-works-visual,.home-featured-book-image) img{display:block;width:auto;max-width:175px;max-height:260px;object-fit:contain;margin-inline:auto;box-shadow:0 9px 22px #0003;border-radius:4px}
+ html.mb-global :is(.mb-unified-footer .mb-footer-inner){grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:23px 16px}
+ html.mb-global .mb-unified-footer .mb-footer-about{grid-column:1/-1}
+ html.mb-global .mb-unified-footer .mb-footer-links{gap:6px}
+ html.mb-global .mb-unified-footer .mb-footer-links a{font-size:.82rem;line-height:1.45;padding-block:3px}
+ html.mb-global .mb-unified-footer .mb-footer-links h2{font-size:.84rem;margin-bottom:5px}
+ html.mb-global footer.mb-unified-footer{padding-block:28px 18px!important}
+ html.mb-global .mb-unified-footer .mb-footer-bottom{margin-top:21px}
+}
+@media(max-width:380px){
+ html.mb-global main h1{font-size:clamp(1.75rem,7.7vw,2rem)!important}
+ html.mb-global .mb-unified-footer .mb-footer-inner{gap:20px 10px}
+}
+@media(prefers-reduced-motion:reduce){html.mb-global{scroll-behavior:auto}}
