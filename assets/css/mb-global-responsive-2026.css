@@ -79,3 +79,24 @@ html.mb-global main :is(.book-cover,.cover-book,img[src*="/opere/"][alt*="Copert
  html.mb-global main .book-list{gap:10px}
  html.mb-global main .book-list img{max-width:min(100%,140px)}
 }
+
+
+/* Footer responsive: keep visible navigation readable without creating a long single column. */
+@media(max-width:760px){
+ html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-inner{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  width:calc(100% - 32px);gap:22px 16px;
+ }
+ html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-about{grid-column:1/-1}
+ html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-links{align-items:stretch;gap:4px}
+ html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-links a{
+  font-size:.9rem!important;line-height:1.35;display:inline-flex;align-items:center;min-height:34px;
+  overflow-wrap:anywhere
+ }
+ html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-links h2{font-size:.9rem!important}
+ html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-bottom{width:calc(100% - 32px);gap:8px}
+}
+@media(max-width:360px){
+ html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:16px 10px}
+ html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-links a{font-size:.85rem!important}
+}
