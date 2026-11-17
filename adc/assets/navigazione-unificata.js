@@ -52,6 +52,15 @@
     var old = body.querySelectorAll('header, nav.adc-project-nav, nav#adc-design-nav, section.adc-accessi-distinti, nav.site-transparency-links');
     old.forEach(function (el) {
       if (el.closest('footer,details')) return;
+      // Un'intestazione con un titolo proprio del dossier e' contenuto editoriale,
+      // non una navigazione duplicata: conservarla e nascondere solo i menu legacy.
+      if (el.tagName === 'HEADER' && el.querySelector('h1')) {
+        el.querySelectorAll('nav').forEach(function (menu) {
+          menu.hidden = true;
+          menu.style.setProperty('display','none','important');
+        });
+        return;
+      }
       el.hidden = true;
       el.style.setProperty('display','none','important');
     });
