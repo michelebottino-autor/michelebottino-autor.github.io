@@ -12,3 +12,11 @@ html.mb-app-installed body{padding-bottom:calc(76px + env(safe-area-inset-bottom
 html.mb-app-installed .mb-preferences-control{bottom:calc(85px + env(safe-area-inset-bottom,0px))!important}
 @media(max-width:350px){#mb-app-navigation a{font-size:10px}#mb-app-navigation svg{height:18px;width:18px}}
 @media(prefers-reduced-motion:reduce){#mb-app-navigation *{transition:none!important}}
+
+/* Spazi di sicurezza Safari/iOS e leggibilità testo, soltanto in modalità app. */
+html.mb-app-installed{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+html.mb-app-installed body{padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
+#mb-app-navigation{padding-bottom:max(8px,env(safe-area-inset-bottom,0px));padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px));-webkit-tap-highlight-color:transparent}
+#mb-app-navigation a{min-height:58px;touch-action:manipulation}
+#mb-app-navigation span{letter-spacing:.01em}
+@media(prefers-contrast:more){#mb-app-navigation a[aria-current="page"]{outline:2px solid #f3d29a}}
