@@ -1,0 +1,25 @@
+/* ADC: responsive conservativo per le pagine pubbliche dell'archivio.
+   Esclude modifiche ai dati, alle tabelle semantiche e agli strumenti di verifica. */
+html.adc-mobile-audit{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:16px}
+html.adc-mobile-audit,html.adc-mobile-audit body{max-width:100%;overflow-x:clip}
+html.adc-mobile-audit main :is(section,article,.container,.wrap,.panel,.card){min-width:0}
+html.adc-mobile-audit main :is(img,video,iframe,canvas){max-width:100%}
+html.adc-mobile-audit main :is(img,video){height:auto}
+html.adc-mobile-audit main :is(h1,h2,h3){overflow-wrap:break-word;word-break:normal;hyphens:none;text-wrap:balance}
+html.adc-mobile-audit main :is(p,li,figcaption){overflow-wrap:break-word}
+html.adc-mobile-audit main pre{max-width:100%;overflow-x:auto;white-space:pre-wrap}
+html.adc-mobile-audit main :is(input,textarea,select,button){max-width:100%}
+html.adc-mobile-audit :is(a,button,summary,input,textarea,select):focus-visible{outline:3px solid #c7a567;outline-offset:3px}
+@media(max-width:700px){
+ html.adc-mobile-audit main h1{font-size:clamp(1.85rem,7.6vw,2.5rem)!important;line-height:1.2!important}
+ html.adc-mobile-audit main h2{font-size:clamp(1.4rem,5vw,1.95rem)!important;line-height:1.25!important}
+ html.adc-mobile-audit main h3{font-size:clamp(1.12rem,4.2vw,1.48rem)!important;line-height:1.3!important}
+ html.adc-mobile-audit main :is(p,li){line-height:1.65;font-size:clamp(.96rem,3.65vw,1.07rem)}
+ html.adc-mobile-audit main :is(.card,.panel,.box,.feature,.source-card){max-width:100%;padding-inline:clamp(15px,4.2vw,22px)}
+ html.adc-mobile-audit main :is(.grid,.cards,.cards-grid,.grid-2,.grid-3){grid-template-columns:minmax(0,1fr);gap:14px}
+ html.adc-mobile-audit main :is(.section,.content-section){padding-block:clamp(20px,5vw,36px)}
+ html.adc-mobile-audit main :is(table){max-width:100%}
+ html.adc-mobile-audit main :is(.breadcrumb,.meta,.small){font-size:.88rem}
+ html.adc-mobile-audit main :is(img[class*="cover"]){height:auto;max-height:440px;object-fit:contain}
+}
+@media(prefers-reduced-motion:reduce){html.adc-mobile-audit{scroll-behavior:auto}}
