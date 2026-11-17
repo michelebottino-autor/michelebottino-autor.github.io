@@ -160,12 +160,12 @@
   <url><loc>https://michelebottino-autor.github.io/adc/percorsi.html</loc><priority>0.8</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/fonti/</loc><priority>0.8</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/cerca/</loc><priority>0.8</priority></url>
-  <url><loc>https://michelebottino-autor.github.io/adc/atlante/</loc><priority>0.8</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/atlante/</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/economia-storica/</loc><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/atlante/mortillaro-113/</loc><priority>0.6</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/atlante/collazione/</loc><priority>0.6</priority></url>
 <url><loc>https://michelebottino-autor.github.io/adc/scritture/</loc><priority>0.7</priority></url>
-  <url><loc>https://michelebottino-autor.github.io/adc/infrastrutture-novecento/</loc></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/infrastrutture-novecento/</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://michelebottino-autor.github.io/articoli/angela-celentano/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/articoli/cristina-golinucci/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/articoli/montagnareale/</loc></url>
@@ -181,7 +181,7 @@
   <url><loc>https://michelebottino-autor.github.io/installa/</loc><priority>0.5</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/notai-medievali/</loc><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/chiese-cinquecento/</loc><priority>0.7</priority></url>
-  <url><loc>https://michelebottino-autor.github.io/adc/archivio-gravina-cruillas/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/archivio-gravina-cruillas/</loc><lastmod>2026-11-17</lastmod><priority>0.7</priority></url>
   <url>
     <loc>https://michelebottino-autor.github.io/scrittura-investigativa/caso-pilota/</loc>
     <lastmod>2026-10-18</lastmod>
@@ -333,8 +333,8 @@
     <priority>0.5</priority>
   </url>
   <url><loc>https://michelebottino-autor.github.io/adc/patrimonio-edilizio/</loc><priority>0.8</priority></url>
-  <url><loc>https://michelebottino-autor.github.io/adc/patrimonio-edilizio/palazzo-gravina/</loc><priority>0.7</priority></url>
-  <url><loc>https://michelebottino-autor.github.io/adc/patrimonio-edilizio/san-marco/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/patrimonio-edilizio/palazzo-gravina/</loc><lastmod>2026-11-17</lastmod><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/patrimonio-edilizio/san-marco/</loc><lastmod>2026-11-17</lastmod><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/patrimonio-edilizio/fonti.html</loc><priority>0.7</priority></url>
 
   <!-- Integrazione sezioni pubbliche gia presenti nel repository -->
