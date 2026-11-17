@@ -6,11 +6,12 @@
 <meta name="theme-color" content="#091a32">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Michele Bottino">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/mb-192.png">
 <link rel="icon" href="/icons/mb-192.png">
 <link rel="canonical" href="https://michelebottino-autor.github.io/installa/">
-<meta name="description" content="Installa il sito ufficiale di Michele Bottino su Android, iPhone, iPad e computer.">
+<meta name="description" content="Come aggiungere il sito ufficiale di Michele Bottino alla schermata Home di iPhone, iPad e Android.">
 <title>Installa l'app | Michele Bottino</title>
 <style>
 :root{--navy:#091a32;--navy2:#142e4e;--gold:#d3af73;--paper:#f5f4f0;--ink:#17243b;--muted:#526176;--border:#e1e3e7;--white:#fff;color-scheme:light}
@@ -43,27 +44,29 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.13;font-weigh
 @media(max-width:650px){.topbar-inner{min-height:60px}.brand{font-size:1.12rem}.hero-inner{grid-template-columns:1fr;padding:43px 0 44px}.preview{display:none}h1{font-size:clamp(2.32rem,9.2vw,3.45rem)}.hero-cta{margin-top:23px}.content{padding-top:35px}.panel{border-radius:13px;padding:24px 20px}.links{grid-template-columns:1fr}.steps{gap:17px}.eyebrow{font-size:.69rem}.hero-note{display:block;width:100%}.detail{padding:0 17px}}
 @media(max-width:650px){.hero-inner{padding:30px 0 31px}h1{font-size:clamp(2rem,8vw,2.9rem);line-height:1.14;margin-bottom:14px}.lead{font-size:1rem;line-height:1.55}.eyebrow{margin-bottom:12px}.hero-cta{margin-top:18px}.content{padding-top:26px}.section-head{margin-bottom:16px}.section-head h2{font-size:1.6rem}.section-head p{font-size:.92rem}.platform-tabs{margin-bottom:16px}.panel{padding:20px 18px}.panel-intro{margin-bottom:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@supports(padding:env(safe-area-inset-bottom)){.topbar-inner{padding-top:env(safe-area-inset-top,0px)}.footer{padding-bottom:max(30px,env(safe-area-inset-bottom,0px))}.content{padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px))}}
+@media(max-width:650px){.lead{max-width:37ch}.panel-intro,.steps p{line-height:1.55}.steps li{gap:10px}.platform-tabs button{font-size:.94rem}.footer a{display:inline-block}}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="topbar-inner"><a class="brand" href="/">Michele Bottino</a><a class="back" href="/">← Sito ufficiale</a></div></header>
-<section class="hero"><div class="hero-inner"><div><p class="eyebrow">Sito ufficiale · Applicazione web</p><h1>Le mie opere.<br><em>La mia ricerca.</em><br>Sempre con te.</h1><p class="lead">Porta Michele Bottino sulla schermata Home del tuo smartphone. Libri, scritti e ricerca in un accesso diretto, senza account e senza costi.</p><div class="hero-cta"><a class="primary-link" href="#installazione">Come installare ↓</a><span class="hero-note">Android · iPhone · iPad · Computer</span></div></div><div class="preview" aria-hidden="true"><div class="device"><img src="/icons/mb-192.png" width="82" height="82" alt=""><b>Michele Bottino</b><small>Opere e ricerca</small></div></div></div></section>
+<section class="hero"><div class="hero-inner"><div><p class="eyebrow">Sito ufficiale · Applicazione web</p><h1>Opere e ricerca.<br><em>Un accesso diretto.</em></h1><p class="lead">Aggiungi il sito ufficiale alla schermata Home per consultare libri, scritti e attività di ricerca con un semplice tocco. Gratuito e senza registrazione.</p><div class="hero-cta"><a class="primary-link" href="#installazione">Come installare ↓</a><span class="hero-note">Android · iPhone · iPad · Computer</span></div></div><div class="preview" aria-hidden="true"><div class="device"><img src="/icons/mb-192.png" width="82" height="82" alt=""><b>Michele Bottino</b><small>Opere e ricerca</small></div></div></div></section>
 <main id="installazione" class="content">
-<div class="section-head"><h2>Installa in pochi passaggi</h2><p>Seleziona il tuo dispositivo. Ti mostreremo soltanto le istruzioni necessarie.</p></div>
+<div class="section-head"><h2>Aggiungi alla schermata Home</h2><p>Seleziona il dispositivo e segui le indicazioni del browser.</p></div>
 <div class="platform-tabs" role="tablist" aria-label="Scegli dispositivo"><button type="button" role="tab" id="tab-android" aria-controls="panel-android" aria-selected="true" data-platform="android">Android</button><button type="button" role="tab" id="tab-ios" aria-controls="panel-ios" aria-selected="false" data-platform="ios">iPhone / iPad</button></div>
 <section class="panel" id="panel-android" role="tabpanel" aria-labelledby="tab-android">
-<h3>Installa su Android</h3><p class="panel-intro">Utilizza Chrome o Samsung Internet per aggiungere l'app al telefono.</p>
+<h3>Installa su Android</h3><p class="panel-intro">Da Chrome o Samsung Internet puoi aggiungere il sito alla schermata Home.</p>
 <ol class="steps"><li><span class="number">1</span><div><strong>Apri in Chrome</strong><p>Se sei in Facebook o ChatGPT, apri la pagina nel browser del telefono.</p></div></li><li><span class="number">2</span><div><strong>Apri il menu del browser</strong><p>Tocca i tre puntini e scegli «Installa app» o «Aggiungi a schermata Home».</p></div></li><li><span class="number">3</span><div><strong>Conferma</strong><p>L'icona Michele Bottino comparirà tra le tue applicazioni o nella Home.</p></div></li></ol>
 <button class="install-button" id="pwa-install-button" type="button" hidden>Installa l'app</button><p id="install-result" class="status" role="status" aria-live="polite"></p>
 </section>
 <section class="panel" id="panel-ios" role="tabpanel" aria-labelledby="tab-ios" hidden>
-<h3>Installa su iPhone o iPad</h3><p class="panel-intro">Su Apple l'app si aggiunge direttamente da Safari.</p>
-<ol class="steps"><li><span class="number">1</span><div><strong>Apri il sito in Safari</strong><p>Non utilizzare il browser interno di Facebook o ChatGPT.</p></div></li><li><span class="number">2</span><div><strong>Premi Condividi</strong><p>Apri il menu di condivisione e scegli «Aggiungi alla schermata Home».</p></div></li><li><span class="number">3</span><div><strong>Tocca Aggiungi</strong><p>Se compare l'opzione «Apri come app web», attivala.</p></div></li></ol>
+<h3>Installa su iPhone o iPad</h3><p class="panel-intro">Su iPhone e iPad apri il sito in Safari: l'aggiunta alla schermata Home avviene dal menu Condividi.</p>
+<ol class="steps"><li><span class="number">1</span><div><strong>Apri la pagina in Safari</strong><p>Se stai navigando in un'altra app, apri il collegamento direttamente in Safari.</p></div></li><li><span class="number">2</span><div><strong>Apri Condividi</strong><p>Tocca il pulsante Condividi di Safari, poi scegli «Aggiungi alla schermata Home». Se non compare, scorri le azioni disponibili.</p></div></li><li><span class="number">3</span><div><strong>Conferma l'aggiunta</strong><p>Attiva «Apri come app web» quando disponibile, quindi tocca «Aggiungi». L'icona apparirà nella schermata Home.</p></div></li></ol>
 </section>
-<p id="already-installed" class="status" role="status" hidden>Hai già aperto il sito come applicazione installata.</p>
+<p id="already-installed" class="status" role="status" hidden>Stai già utilizzando il sito dalla schermata Home.</p>
 <details class="detail"><summary>Installazione su Windows e macOS</summary><p>In Chrome o Edge apri il menu e scegli «Installa», quando disponibile. Su Safari per Mac puoi usare «Aggiungi al Dock», nei sistemi supportati.</p></details>
 <div class="links"><a class="quicklink" href="/opere/">Esplora i libri <span aria-hidden="true">↗</span></a><a class="quicklink" href="/analisi-documentaria/">Verifica delle fonti <span aria-hidden="true">↗</span></a></div>
-<p class="offline">L'app è gratuita. Alcune pagine già caricate sono disponibili anche senza connessione; video, invio dei moduli e contenuti aggiornati richiedono Internet. L'<a href="/adc/installa/">Archivio Documentale Calatabiano</a> mantiene la propria app distinta.</p>
+<p class="offline">L'accesso è gratuito. Alcune pagine già visitate possono essere consultate senza connessione. Video, moduli e aggiornamenti richiedono Internet. L'<a href="/adc/installa/">Archivio Documentale Calatabiano</a> mantiene la propria app distinta.</p>
 </main>
 <footer class="footer">© 2026 Michele Bottino <a href="/privacy/">Privacy</a><a href="/cookie/">Cookie</a></footer>
 <script src="/pwa-init.js" defer></script><script src="./install.js" defer></script>
