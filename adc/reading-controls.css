@@ -49,3 +49,23 @@ html.adc-app-installed #adc-reader-controls [hidden]{display:none!important}
     white-space:nowrap;
   }
 }
+
+
+/* Lettura ADC: controlli coerenti con il nuovo tema, nel flusso del documento. */
+@media(max-width:760px){
+ html.adc-app-installed #adc-reader-controls{
+   gap:7px!important;padding:7px!important;
+   border:1px solid #d3d5cc!important;border-radius:15px!important;
+   background:#f2f0e9!important;
+   box-shadow:0 3px 11px rgba(19,50,52,.05)!important;
+ }
+ html.adc-app-installed #adc-reader-controls button{
+   min-height:46px!important;min-width:46px!important;
+   padding:9px 12px!important;border-radius:11px!important;
+   border:1px solid #c9cbbc!important;background:#fffefa!important;
+   color:#163b3f!important;
+ }
+ html.adc-app-installed #adc-reader-controls [data-reader-resume]{
+   border-color:#b99756!important;max-width:172px!important;
+ }
+}
