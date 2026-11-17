@@ -51,3 +51,14 @@ html.mb-global main :is(.book-cover,.cover-book,img[src*="/opere/"][alt*="Copert
  html.mb-global .mb-unified-footer .mb-footer-inner{gap:20px 10px}
 }
 @media(prefers-reduced-motion:reduce){html.mb-global{scroll-behavior:auto}}
+
+
+/* Schede delle opere: pulsanti non a tutta larghezza e dati più leggibili. */
+@media(max-width:760px){
+ html.mb-global body.mb-book-page main .actions{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px;margin-top:18px}
+ html.mb-global body.mb-book-page main .actions a{flex:0 1 auto!important;width:auto!important;min-width:0!important;margin:0!important;padding:10px 15px!important;border-radius:8px}
+ html.mb-global body.mb-book-page main>.panel{margin-block:17px;padding:19px 18px}
+ html.mb-global body.mb-book-page main>.panel p{margin-bottom:.85rem}
+ html.mb-global body.mb-book-page main>.book-cover{max-width:min(185px,52vw);max-height:285px;margin:18px auto 22px}
+ html.mb-global main .books .book img{max-height:200px;width:auto;object-fit:contain}
+}
