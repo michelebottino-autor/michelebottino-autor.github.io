@@ -5,23 +5,24 @@ const standalone=window.matchMedia('(display-mode: standalone)').matches||naviga
 if(!standalone)return;
 window.__mbAppShell=true;
 document.documentElement.classList.add('mb-app-installed');
+const english=location.pathname.startsWith('/en/');
 const items=[
- {label:'Home',url:'/',icon:'<path d="M3 10.5 12 3l9 7.5V21H3V10.5z"/><path d="M9 21v-7h6v7"/>'},
- {label:'Libri',url:'/opere/',icon:'<path d="M4 5.5C7 4.5 10 5 12 7v14c-3-2-6-2-8-1V5.5z"/><path d="M20 5.5c-3-1-6-.5-8 1.5v14c3-2 6-2 8-1V5.5z"/>'},
- {label:'Ricerca',url:'/ricerca/',icon:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>'},
- {label:'Fonti',url:'/analisi-documentaria/',icon:'<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/>'},
- {label:'Contatti',url:'/contatti/',icon:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>'}
+ {label:'Home',url:english?'/en/':'/',icon:'<path d="M3 10.5 12 3l9 7.5V21H3V10.5z"/><path d="M9 21v-7h6v7"/>'},
+ {label:english?'Books':'Libri',url:english?'/en/books/':'/opere/',icon:'<path d="M4 5.5C7 4.5 10 5 12 7v14c-3-2-6-2-8-1V5.5z"/><path d="M20 5.5c-3-1-6-.5-8 1.5v14c3-2 6-2 8-1V5.5z"/>'},
+ {label:english?'Research':'Ricerca',url:english?'/en/research/':'/ricerca/',icon:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>'},
+ {label:english?'Studies':'Fonti',url:english?'/en/studies/':'/analisi-documentaria/',icon:'<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/>'},
+ {label:english?'Contact':'Contatti',url:english?'/en/contact/':'/contatti/',icon:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>'}
 ];
 function render(){
  if(document.getElementById('mb-app-navigation')||!document.body)return;
  const nav=document.createElement('nav');
  nav.id='mb-app-navigation';
- nav.setAttribute('aria-label','Navigazione rapida dell’app Michele Bottino');
+ nav.setAttribute('aria-label',english?'Quick navigation — Michele Bottino':'Navigazione rapida dell’app Michele Bottino');
  const current=location.pathname.replace(/index\.html$/,'');
  items.forEach(item=>{
    const a=document.createElement('a');
    a.href=item.url;
-   if(current===item.url)a.setAttribute('aria-current','page');
+   if(current===item.url||(item.url!=='/'&&item.url!=='/en/'&&current.startsWith(item.url)))a.setAttribute('aria-current','page');
    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
    svg.setAttribute('viewBox','0 0 24 24');
    svg.setAttribute('aria-hidden','true');
@@ -35,7 +36,7 @@ function render(){
  offline.id='mb-app-network-status';
  offline.setAttribute('role','status');
  offline.setAttribute('aria-live','polite');
- offline.textContent='Sei offline. Alcune pagine già visitate potrebbero essere disponibili.';
+ offline.textContent=english?'You are offline. Some previously visited pages may still be available.':'Sei offline. Alcune pagine già visitate potrebbero essere disponibili.';
  const refresh=()=>{offline.hidden=navigator.onLine};
  refresh();
  document.body.append(offline);
