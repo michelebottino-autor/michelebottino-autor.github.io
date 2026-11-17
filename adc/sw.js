@@ -1,8 +1,8 @@
 /* Archivio Documentale Calatabiano: PWA autonoma e limitata a /adc/. */
 'use strict';
-const VERSION='adc-offline-v17-20261117-theme';
+const VERSION='adc-offline-v18-20261117-editoriale';
 const PREFIX='adc-offline-';
-const CORE=['/adc/','/adc/offline.html','/adc/manifest.webmanifest','/adc/app-init.js','/adc/app-shell.js','/adc/app-shell.css','/adc/reading-controls.js','/adc/reading-controls.css','/adc/assets/adc-utility-polish.css','/adc/assets/navigazione-unificata.css','/adc/assets/interfaccia-archivistica-interna-2026.css','/adc/tipografia.css','/adc/icons/adc-192.png','/adc/icons/adc-512.png','/adc/installa/'];
+const CORE=['/adc/','/adc/processo-334/','/adc/offline.html','/adc/manifest.webmanifest','/adc/app-init.js','/adc/app-shell.js','/adc/app-shell.css','/adc/reading-controls.js','/adc/reading-controls.css','/adc/assets/adc-utility-polish.css','/adc/assets/navigazione-unificata.css','/adc/assets/interfaccia-archivistica-interna-2026.css','/adc/tipografia.css','/adc/icons/adc-192.png','/adc/icons/adc-512.png','/adc/installa/'];
 const PAGE_LIMIT=30;
 const isADC=url=>url.origin===self.location.origin&&url.pathname.startsWith('/adc/');
 const cacheablePage=url=>isADC(url)&&!url.search&&!/\/(?:cerca|contribuisci|custode|elena)(?:\/|$)/i.test(url.pathname);
