@@ -113,3 +113,70 @@ body.adc-inner-2026 .adc-page-trail a:hover { text-decoration:underline; }
   body.adc-inner-2026 > header:has(h1) { padding:20px 16px!important; }
   body.adc-inner-2026 > main#contenuto { padding:18px 16px 34px!important; }
 }
+
+
+/* ADC — finitura editoriale comune alle pagine interne, novembre 2026. */
+body.adc-inner-2026{
+  --adc-ui-night:#0b2830;--adc-ui-ink:#173941;
+  --adc-ui-gold:#c7a567;--adc-ui-line:#d9dfdc;
+  --adc-ui-paper:#f7f5ef;background:#f7f5ef!important;color:#223942!important;
+}
+body.adc-inner-2026 #adc-unified-header{background:#0b2830!important;border-color:#c7a567!important}
+body.adc-inner-2026 main#contenuto,
+body.adc-inner-2026 main.adc-unified-page{
+  max-width:1130px!important;padding:clamp(18px,3vw,38px)!important;
+}
+body.adc-inner-2026 main h1{
+  font:700 clamp(2rem,4.3vw,3.35rem)/1.13 Georgia,"Times New Roman",serif!important;
+  color:#103942!important;letter-spacing:-.025em!important;
+  max-width:25ch;overflow-wrap:normal;hyphens:none!important;
+}
+body.adc-inner-2026 main h2{color:#17454c!important}
+body.adc-inner-2026 main :is(p,li){line-height:1.72}
+body.adc-inner-2026 main :is(.card,.panel,.box,.notice,.adc-feature){
+  border-radius:15px!important;
+}
+body.adc-inner-2026 main :is(.card,.panel,.box,.adc-feature){
+  border-color:#dbe1dc!important;box-shadow:0 7px 22px #1937320a;
+}
+body.adc-inner-2026 main :is(img,video,iframe){max-width:100%;height:auto}
+body.adc-inner-2026 main :is(a,button,summary):focus-visible{
+  outline:3px solid #c7a567!important;outline-offset:3px!important;
+}
+/* Quattro percorsi della schermata di riferimento: stesso ordine e stessi URL. */
+body.adc-inner-2026 #adc-percorsi-reciproci{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;width:min(100% - 34px,1060px)!important;
+  margin:22px auto 20px!important;padding:0!important;
+  background:transparent!important;border:0!important;box-shadow:none!important;
+}
+body.adc-inner-2026 #adc-percorsi-reciproci a{
+  display:flex;align-items:center;justify-content:flex-start;
+  min-width:0;min-height:58px;padding:13px 18px!important;
+  border:1px solid #d6dcd7;border-radius:14px;
+  background:#fdfbf6;color:#183e43!important;
+  text-decoration:none!important;font-weight:650;
+  box-shadow:0 3px 11px rgba(19,50,52,.045);
+  transition:background .16s,border-color .16s;
+}
+body.adc-inner-2026 #adc-percorsi-reciproci a:hover,
+body.adc-inner-2026 #adc-percorsi-reciproci a[aria-current="page"],
+body.adc-inner-2026 #adc-percorsi-reciproci a[href="/adc/materiali-patrimonio/"]:is(:hover,[aria-current="page"]){
+  background:#164a4c!important;color:#fff!important;border-color:#164a4c!important;
+}
+body.adc-inner-2026 #adc-percorsi-reciproci a:focus-visible{outline:3px solid #c7a567;outline-offset:2px}
+body.adc-inner-2026 main :is(pre,table){max-width:100%;overflow-x:auto}
+@media(max-width:680px){
+  body.adc-inner-2026 #adc-percorsi-reciproci{width:calc(100% - 32px)!important;gap:9px!important;margin:16px auto!important}
+  body.adc-inner-2026 #adc-percorsi-reciproci a{font-size:.92rem;line-height:1.35;padding:12px 13px!important;min-height:62px}
+  body.adc-inner-2026 main#contenuto,body.adc-inner-2026 main.adc-unified-page{padding:20px 16px 36px!important}
+  body.adc-inner-2026 main h1{font-size:clamp(1.95rem,7.2vw,2.65rem)!important;max-width:100%}
+  body.adc-inner-2026 main :is(p,li){line-height:1.67}
+}
+@media(max-width:360px){
+  body.adc-inner-2026 #adc-percorsi-reciproci{grid-template-columns:1fr!important}
+  body.adc-inner-2026 #adc-percorsi-reciproci a{min-height:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  body.adc-inner-2026 #adc-percorsi-reciproci a{transition:none}
+}
