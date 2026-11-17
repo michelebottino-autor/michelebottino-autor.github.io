@@ -139,7 +139,8 @@ body.adc-inner-2026 main :is(.card,.panel,.box,.notice,.adc-feature){
 body.adc-inner-2026 main :is(.card,.panel,.box,.adc-feature){
   border-color:#dbe1dc!important;box-shadow:0 7px 22px #1937320a;
 }
-body.adc-inner-2026 main :is(img,video,iframe){max-width:100%;height:auto}
+body.adc-inner-2026 main :is(img,video){max-width:100%;height:auto}
+body.adc-inner-2026 main iframe{max-width:100%}
 body.adc-inner-2026 main :is(a,button,summary):focus-visible{
   outline:3px solid #c7a567!important;outline-offset:3px!important;
 }
