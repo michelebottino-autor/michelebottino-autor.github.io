@@ -1,5 +1,5 @@
 /* App installabile Michele Bottino: rete prioritaria, archivio pubblico offline. ADC ha un'app separata. */
-const CACHE='mb-static-v10';
+const CACHE='mb-static-v11';
 const CORE=['/','/offline.html','/site-uniform.css','/mobile-platform.css','/pwa-init.js','/app-shell.js','/app-shell.css','/manifest.webmanifest','/installa/','/installa/install.js','/opere/','/ricerca/','/analisi-documentaria/','/icons/mb-192.png','/icons/mb-512.png','/images/verifica-fonti-michele-bottino.png'];
 const MAX_PAGES=35;
 const MAX_ASSETS=100;
