@@ -9,7 +9,7 @@ if(!button||!status||!installed||tabs.length!==2)return;
 const ua=navigator.userAgent||'';
 const isIOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 const isAndroid=/Android/i.test(ua);
-const insideApp=/FBAN|FBAV|Instagram|Line\\/|wv\\)/i.test(ua);
+const insideApp=/FBAN|FBAV|Instagram|Line|; wv/i.test(ua);
 const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 function selectPlatform(name){
   for(const tab of tabs){const active=tab.dataset.platform===name;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1}
