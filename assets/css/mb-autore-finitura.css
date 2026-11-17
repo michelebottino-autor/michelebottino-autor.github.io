@@ -58,3 +58,19 @@ body.mb-case-article main .hero-image img { object-fit:contain; }
  body.mb-case-article main .hero h1 { font-size:clamp(1.95rem,8vw,3.1rem); }
  body.mb-case-article main .article-meta-grid { grid-template-columns:minmax(0,1fr); }
 }
+
+
+/* Coerenza dei dossier, delle opere e degli articoli su mobile. */
+body.mb-author-refine main :is(.card,.panel,.box,.feature){
+ border-radius:14px;box-shadow:0 7px 22px rgba(13,43,48,.06);
+}
+body.mb-author-refine main :is(h1,h2,h3){letter-spacing:-.022em}
+body.mb-author-refine main :is(figure,img,video){max-width:100%}
+body.mb-author-refine main :is(a,button,summary):focus-visible{
+ outline:3px solid #c7a567!important;outline-offset:3px;
+}
+@media(max-width:700px){
+ body.mb-author-refine main :is(h1,h2,h3){hyphens:none!important;overflow-wrap:break-word}
+ body.mb-author-refine main :is(p,li){line-height:1.68}
+ body.mb-author-refine main :is(.card,.panel,.box,.feature){padding-inline:clamp(16px,4vw,22px)}
+}
