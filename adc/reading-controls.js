@@ -34,6 +34,8 @@
     const offset=Number(read(key));resume.textContent='Riprendi qui';
     resume.disabled=!Number.isFinite(offset)||offset<400;
    }
+   // Non occupare lo schermo con «Riprendi» finché non esiste una posizione salvata.
+   resume.hidden=resume.disabled;
   };
   const change=delta=>{size=Math.min(max,Math.max(min,Math.round((size+delta)*10)/10));apply();save(SIZE_KEY,size);update()};
   smaller.addEventListener('click',()=>change(-step));
