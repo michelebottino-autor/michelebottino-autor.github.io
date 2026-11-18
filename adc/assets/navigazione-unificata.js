@@ -5,7 +5,7 @@
     var body = document.body;
     if (!body) return;
     var names = [
-      ['Archivio','/adc/'], ['Storia','/adc/storia-per-tutti/'],
+      ['Archivio','/adc/'], ['Storia','/adc/storia-per-tutti/'], ['Le chiese','/adc/chiese/'],
       ['Fonti','/adc/fonti/'], ['Atlante','/adc/atlante/'],
       ['Mediateca','/adc/mediateca/'], ['Patrimonio','/adc/materiali-patrimonio/'],
       ['Elena','/adc/elena/'], ['Michele Bottino','/']
@@ -27,7 +27,7 @@
     nav.id = 'adc-u-links'; nav.setAttribute('aria-label','Navigazione principale ADC');
     names.forEach(function (item) {
       var a = document.createElement('a'); a.href = item[1]; a.textContent = item[0];
-      if (location.pathname === item[1]) a.setAttribute('aria-current','page');
+      if (location.pathname === item[1] || (item[1] === '/adc/chiese/' && location.pathname.startsWith('/adc/chiese/'))) a.setAttribute('aria-current','page');
       nav.appendChild(a);
     });
     header.appendChild(nav);
