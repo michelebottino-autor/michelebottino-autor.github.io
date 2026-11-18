@@ -8,11 +8,6 @@ Aggiornato: 11 ottobre 2026. Registro di lavoro: le notizie non verificate non s
 - Stato: DISCORDANZA APERTA. La modalità «colpi di pistola» è riportata dalla fonte B; l'Atlante classifica la modalità di uccisione come «indefinita». Non fonderle in una versione certa.
 - Da verificare: originale del Corriere di Catania, articolo di Filippo Condorelli, autunno 1943; Filippo Zappalà, Calatabiano ed il suo castello, 1955, p. 166; AUSSME, N 1/11, busta 2133.
 
-## R-002 — Memoria contemporanea di Carmelo Quagliata
-- Intervista a Ida Bonfiglio, «Memoria, Ida Bonfiglio: Carmelo Quagliata, 15 anni, ucciso dai tedeschi», L'Informazione, 11 giugno 2026. L'intervistata spiega l'iniziativa delle borse di studio dedicate al ragazzo.
-- Fonte: https://www.linformazione.eu/2026/06/memoria-ida-bonfiglio-carmelo-quagliata-15-anni-ucciso-dai-tedeschi/
-- Stato: TESTIMONIANZA SULLA MEMORIA PUBBLICA; non è testimonianza oculare del 1943. L'intervista completa non è stata ancora acquisita.
-
 ## R-003 — Libro di Filippo Zappalà: identificazione bibliografica
 - Scheda antiquaria: «Calatabiano ed il suo castello dalle origini ai nostri giorni», Edizioni Camene, Catania, 1955, 186 pagine illustrate. https://www.abebooks.it/Calatabiano-castello-origini-nostri-giorni-Zappala/32504495735/bd
 - Guida del Comune di Calatabiano (2007) cita l'opera nella bibliografia: https://diazilla.com/doc/777729/presentazione---comune-di-calatabiano

@@ -17,7 +17,6 @@ Data della ricognizione: 18 novembre 2026.
 - Edizioni La Rocca, scheda editoriale del volume di Salvatore Longo Minnolo (2021).
 - Gazzettino Online, presentazione di *Calatabiano… Fede, Storia e Tradizioni* (2015) e cronache biografiche/culturali collegate.
 - Free Press Online, articolo sul verbale di Zappulla e indice autore di Mario Pafumi (2026).
-- L’Informazione, articoli sulla memoria di Carmelo Quagliata e sull’iniziativa di Ida Bonfiglio (2026), e resoconto sulla presentazione del volume di Felice Vitale.
 - Clessidra 2021, annuncio e resoconto della presentazione del libro di Felice Vitale (2026).
 - Atlante delle stragi naziste e fasciste, scheda relativa agli eventi del 12 agosto 1943 e riferimento bibliografico a Filippo Zappalà.
 
