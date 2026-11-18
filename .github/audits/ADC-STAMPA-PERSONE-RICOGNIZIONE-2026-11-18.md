@@ -28,3 +28,26 @@ La ricognizione web non dimostra di avere individuato ogni articolo mai pubblica
 Le iniziali C. Ricca, I. Sgrò e S. Sorbello non sono state sciolte; non è stata accertata la consultazione integrale delle relative opere. Il volume collettaneo del 2015 è documentato da una cronaca della presentazione che nomina studiosi e relatori, ma non identifica i singoli titoli dei contributi. Il resoconto giornalistico del 1943 non è l’originale e presenta una discordanza sulla testata; è mantenuto come riferimento secondario.
 
 La pagina è una selezione nominativa documentaria, non un dizionario completo dei residenti, dei sindaci o delle personalità storiche. Le figure pubbliche contemporanee sono incluse soltanto in relazione a incarichi e contributi riportati da fonti linkate.
+
+## Integrazione Salvatore Zappulla — ricognizione del 18 novembre 2026
+
+La correzione nominativa è recepita: il giornalista considerato è **Salvatore Zappulla**. La scheda non incorpora affermazioni biografiche non documentate. Il repertorio `/adc/stampa/` riceve 21 record associati alla sua firma o al suo archivio autore; il totale della bozza passa da 44 a 65 record. La pagina nominativa collega i 21 riferimenti e l’archivio autore La Sicilia. Questa è una ricognizione incrementale, non una prova di completezza della produzione.
+
+### Corpus aggiunto
+
+- Dieci titoli elencati nell’archivio autore La Sicilia, dal 4 aprile al 6 ottobre 2026. Otto dispongono di un collegamento individuale verificato in questa ricognizione; per “Brucia Monte Castello, evacuato ristorante” e “«Disagi per lavoratori pendolari e turisti»” è indicato l’archivio autore perché il permalink individuale non è stato recuperato.
+- Undici ulteriori articoli o riferimenti, dal 2006 al 2026: castello, progetto museale, Villaggio Kala dei Normanni, chiesa Madre, scavi in contrada Pianotta, viabilità del Ponte Minissale, amministrazione comunale, cimitero, struttura incompiuta, depurazione e costa dell’Alcantara. Per ciascuno la scheda distingue pagina originale, archivio autore e copia/catalogazione su PatrimonioSOS.
+
+### Spunti emersi dalla lettura dei riferimenti
+
+- La cronaca del 27 dicembre 2014 su contrada Pianotta riferisce uno scavo della Soprintendenza in convenzione con l’Università di Catania e un basamento di età romana; la qualificazione come podio di edificio di culto è riportata come ipotesi degli archeologi. È un rinvio utile per collegare il reperto ADC di Pianotta, ma richiede confronto con relazioni di scavo e documentazione della Soprintendenza.
+- Le cronache del 2006 e 2007 descrivono il progetto di museo multimediale e polo culturale nel Castello; quelle del 2015 e 2011 riferiscono progetti/atti relativi a museo ecclesiastico e Villaggio Kala dei Normanni. Sono fonti per ricostruire progetti e decisioni dell’epoca, non prova del loro effettivo completamento o stato attuale.
+- Le notizie su depurazione e qualità delle acque riportano contestazioni e richieste di monitoraggio. Le affermazioni ambientali richiedono verifica indipendente con provvedimenti, analisi ufficiali, dati di ARPA/enti competenti e risposte dei soggetti interessati.
+
+### Discrepanze e limiti
+
+- Nell’archivio autore La Sicilia il titolo sul Ponte Minissale è indicato al 4 giugno 2026; la pagina individuale consultata riporta una data di pubblicazione del 28 luglio 2026. Entrambe le date sono registrate nella nota della scheda; resta da verificare la cronologia editoriale effettiva.
+- La pagina del cimitero presenta “Redazione Catania” nell’intestazione, ma una firma di Salvatore Zappulla nel testo finale: l’attribuzione resta aperta.
+- Per “Lo scheletro in cemento è una ferita mai rimarginata” la firma è leggibile nella pagina, ma la data esatta deve essere ricontrollata.
+- L’archivio autore consultato elenca dieci articoli recenti e non costituisce l’intero archivio professionale. L’indicizzazione web e gli archivi di testata possono omettere articoli cartacei, contenuti non indicizzati o pagine rimosse. Le copie su PatrimonioSOS sono registrate come riproduzioni/catalogazioni di articoli della testata, non come originali.
+- Le cronache giornalistiche sono fonti secondarie. I fatti amministrativi, archeologici, ambientali e patrimoniali devono essere confermati mediante documenti e fonti primarie prima di aggiornare le ricostruzioni storiche ADC.
