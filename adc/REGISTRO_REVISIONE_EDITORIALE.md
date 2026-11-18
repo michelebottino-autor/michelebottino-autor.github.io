@@ -460,3 +460,38 @@ Riscontri aggiuntivi effettuati direttamente sulle risorse HTTP e sul codice att
 - Confrontato il testo pubblicato di Angelo Manitta, «La prima strage nazista in territorio italiano a Castiglione di Sicilia il 12 agosto 1943», *Cultura e prospettive*, n. 16 (luglio-settembre 2012), p. 14, che riproduce un passo attribuito al giornalista Filippo Condorelli sul *Corriere di Sicilia*. La scheda Mangiameli cita invece il *Corriere di Catania*: **testata da verificare sul giornale originale**. Non attribuire a Condorelli la data 4 ottobre 1943, riferita nello studio anche all'articolo di N. Tuccari sulla distinta vicenda di Castiglione di Sicilia.
 - La scheda web dell'Atlante riporta anche il riferimento **AUSSME, N 1/11, busta 2133**, assente dal campo «Fonti archivistiche» del PDF esaminato. La segnatura è una pista di reperimento, non prova di consultazione del fascicolo.
 - Integrate le pagine canoniche `adc/calatabiano-1922-1943/` e `adc/storia/` senza duplicare la cronaca. Restano aperti: confronto dell'articolo originale Condorelli, p. 166 di Zappalà (1955), fascicolo AUSSME e fonti anagrafiche/municipali; distinzione fra 11/12 agosto per l'episodio e notizia d'incendio del 14 agosto. Nessuna fonte originale è stata dichiarata consultata in assenza di verifica.
+
+
+## Consolidamento attività «Sito web autore» — 18 novembre 2026
+
+**Scopo:** unificare lo stato delle conversazioni operative sul sito senza duplicare dossier, schede nominative o registri. Questo paragrafo è una ricognizione gestionale, **non** un attestato di collaudo integrale e **non** sostituisce le linee guida editoriali ADC.
+
+### Fonti di controllo e ambito
+- Repository `michelebottino-autor/michelebottino-autor.github.io`, ramo predefinito; consultati questo registro, `adc/LINEE-GUIDA-EDITORIALI.md`, e i file `adc/stampa/index.html`, `adc/stampa/autori/index.html`, `adc/persone/index.html`.
+- Cronologia commit esaminata al 18 novembre: `866ac86` (navigazione, footer, schede persone), `b0ebdde` (catalogo pubblicazioni, data Previtera), `0d7b2fe` (filtri), `ba9416b` (repertorio stampa), `c89ab6c` e `45abdcb` (filtri e autori).
+- Lo screenshot del progetto ChatGPT mostra conversazioni separate; non è stato effettuato un export integrale dei loro messaggi. Di conseguenza l'inventario delle conversazioni è **parziale** e i loro contenuti non vanno considerati tutti letti.
+
+### Stato centralizzato, senza duplicazione delle attività
+| Filone | Base esistente | Esito verificato | Residuo / criterio di chiusura |
+| --- | --- | --- | --- |
+| Identità e sito autore | Homepage e sezioni del repository | Repository accessibile ai controlli sui file | Verifica completa delle pagine autore, metadati e pubblicazione live ancora da attestare |
+| ADC e fonti storiche | Registro editoriale, dossier canonici e Inventario | Esistono verifiche statiche e registro delle questioni storiche | Collazione dei documenti originali e delle discordanze cronologiche, senza promuovere ipotesi a fatti |
+| Repertorio stampa e giornalisti | `adc/stampa/` | Catalogo presente; commit di ampliamento, filtri e deduplicazione rilevati | Confronto uno a uno delle attribuzioni, date, link effettivi e assenza di duplicati nel contenuto renderizzato |
+| Autori e persone | `adc/stampa/autori/` e `adc/persone/` | Entrambi gli indici presenti; commit recente di unificazione delle schede | Verifica che ogni persona abbia una sola scheda canonica e rinvii coerenti |
+| Grafica, menu e footer | Pagine ADC e componenti condivisi | Commit di uniformazione del 18 novembre; nei tre HTML letti sono presenti nav e footer | Test visivo mobile/desktop di tutte le sezioni, compresa homepage autore |
+| Chiese storiche e architetture | Dossier e pagine ADC già esistenti | La revisione generale del 17 novembre è registrata | Confrontare il censimento chiese con le schede reali prima di dichiararlo completo |
+| Condivisione automatica | Sito e metadati social | Nessun test funzionale di condivisione documentato in questa ricognizione | Provare URL e anteprime su servizi reali, verificando canonical/OG e immagini |
+| Campagna editoriale/promozionale | Conversazioni del progetto ChatGPT | Stato non ricostruibile integralmente da screenshot e repository | Ricostruire consegne e pubblicazioni solo con evidenze tracciabili |
+
+### Regole operative unificate
+1. **Una fonte canonica per ogni tema:** i dossier storici rimangono nei percorsi esistenti; per persone e autori privilegiare una scheda nominativa unica con rimandi da stampa e repertori.
+2. **Nessuna duplicazione di ricerca:** prima di aprire una scheda o articolo, cercare la persona, l'opera, il DOI, la segnatura e l'URL nel catalogo corrente.
+3. **Stati verificabili:** segnare «implementato nel repository» solo dopo commit; «verificato sul sito» dopo controllo HTTP/browser; «fonte verificata» solo dopo lettura del documento/edizione identificati.
+4. **Niente note di lavorazione nelle pagine pubbliche:** le questioni tecniche restano in questo registro, le avvertenze necessarie alla comprensione delle fonti restano nelle pagine secondo le linee guida ADC.
+5. **Non cancellare conversazioni:** la gestione del progetto ChatGPT non viene modificata da questo consolidamento; eventuali archiviazioni restano una decisione distinta.
+
+### Priorità per la prossima verifica
+1. Accertare sulla distribuzione pubblica la corrispondenza delle tre sezioni stampa/autori/persone con i file GitHub e provare i filtri.
+2. Esaminare la lista nominativa e i riferimenti delle pubblicazioni per duplicati e date discordanti, inclusi i casi Previtera e Zappulla.
+3. Controllare la uniformità effettiva di navigazione, footer, impaginazione e accessibilità su desktop e mobile.
+4. Mappare le conversazioni rimanenti del progetto ChatGPT soltanto se accessibili, senza dichiarare lette chat non consultate.
