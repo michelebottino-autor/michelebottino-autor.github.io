@@ -57,3 +57,8 @@ La correzione nominativa è recepita: il giornalista considerato è **Salvatore 
 - Per la notizia sull’area di sosta di Marina di San Marco e per “Lo scheletro in cemento è una ferita mai rimarginata” la firma è leggibile nella pagina, ma la data esatta deve essere ricontrollata.
 - L’archivio autore consultato elenca dieci articoli recenti e non costituisce l’intero archivio professionale. L’indicizzazione web e gli archivi di testata possono omettere articoli cartacei, contenuti non indicizzati o pagine rimosse. Le copie su PatrimonioSOS sono registrate come riproduzioni/catalogazioni di articoli della testata, non come originali.
 - Il catalogo include ora anche un articolo di cronaca del 2001, una pagina della Gazzetta del Sud del 2013 e un comunicato comunale del 2015, mantenendo distinti i generi documentari. Le cronache giornalistiche sono fonti secondarie. I fatti amministrativi, archeologici, ambientali e patrimoniali devono essere confermati mediante documenti e fonti primarie prima di aggiornare le ricostruzioni storiche ADC.
+
+
+## Immagini nelle schede Zappulla
+
+Le 26 schede bibliografiche includono una fotografia contestuale con didascalia, attribuzione e licenza Creative Commons verificata sulle pagine Wikimedia Commons. Le immagini mostrano luoghi di Calatabiano (litorale, veduta dal castello, complesso di San Marco, cimitero e chiesa); non sono presentate come fotografie degli eventi descritti. La scheda autore usa una veduta di Calatabiano, non un ritratto. Non è stato identificato con sicurezza un ritratto autorizzato del giornalista; gli omonimi individuati in rete non vengono associati al profilo senza prova.
