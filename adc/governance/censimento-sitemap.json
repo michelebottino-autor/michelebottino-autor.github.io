@@ -849,6 +849,17 @@
       "source_documentation_status": "not_audited",
       "independent_review_status": "not_performed",
       "editorial_status": "added_to_sitemap_after_repository_comparison"
+    },
+    {
+      "id": "ADC-WEB-078",
+      "identifier": "https://michelebottino-autor.github.io/adc/persone/",
+      "relative_path": "/adc/persone/",
+      "resource_kind": "web_page",
+      "title_candidate": "Persone, autori e protagonisti documentati",
+      "metadata_origin": "sitemap.xml",
+      "source_documentation_status": "not_audited",
+      "independent_review_status": "not_performed",
+      "editorial_status": "discovered_in_sitemap"
     }
   ]
 }
