@@ -36,4 +36,4 @@ Queste voci non sono state trasformate in certezze senza prove sufficienti. Sono
 
 ## Limite del collaudo
 
-La scansione automatica e il controllo dei collegamenti interni sono riusciti. La revisione visiva effettiva su desktop e telefono e la verifica dopo la pubblicazione restano necessarie prima di considerare completato il consolidamento grafico dell’intero sito. Le pagine dei widget mantengono la grafica compatta richiesta dall’incorporamento e non ricevono la navigazione completa.
+La scansione automatica e il controllo dei collegamenti interni sono riusciti. La verifica finale del sito pubblico, dopo la pubblicazione, resta necessaria per chiudere il controllo grafico. In locale non era disponibile il browser Playwright; le prove CI sono quindi il riscontro effettivo di rendering sui tre viewport indicati. Le pagine dei widget mantengono la grafica compatta richiesta dall’incorporamento e non ricevono la navigazione completa.
