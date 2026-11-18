@@ -1,0 +1,14 @@
+{
+  "format": "arontaeigis-trustprint-1",
+  "algorithm": "Ed25519",
+  "files": {
+    "index.html": {
+      "sha256": "ccf3d8b893ad8732afa0659bfc37bc8b80254a2ab35c7d7ad0aa6b1540c2927a",
+      "bytes": 56284
+    },
+    "robots.txt": {
+      "sha256": "afd158da1cd4b9bf51ceba16cbbc5ee5a78c4777ba632f63e4ba891b19846e8d",
+      "bytes": 389
+    }
+  }
+}
