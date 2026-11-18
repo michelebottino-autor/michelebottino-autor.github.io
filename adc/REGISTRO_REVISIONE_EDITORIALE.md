@@ -521,3 +521,20 @@ Riscontri aggiuntivi effettuati direttamente sulle risorse HTTP e sul codice att
 5. **Stato delle attribuzioni**: i file della pagina persone mantengono una sola scheda nominativa per Previtera e una per Zappulla. Questo non dimostra che tutte le firme, i 12 riferimenti Previtera e le 23 voci Zappulla siano stati collazionati con gli originali.
 
 **Decisione:** nessuna correzione pubblica alle date o alle attribuzioni in questa tornata. Prima di modificarle serve riscontro primario o copia d'archivio datata, preferibilmente prima pubblicazione, quotidiano cartaceo o archivio editoriale consultabile. Eventuali note tecniche di catalogazione visibili in `adc/stampa/` andranno spostate dal testo pubblico nella documentazione interna, preservando una formulazione prudente quando la discordanza è rilevante per il lettore.
+
+
+### Pulizia note pubbliche e confronto grafico statico — 18 novembre 2026
+
+**Correzioni editoriali effettivamente salvate**
+- `adc/stampa/index.html`: 26 occorrenze della dicitura «Nota di catalogazione» trattate; 7 marcatori meramente tecnici («link diretto») rimossi; 19 note riformulate in chiave bibliografica per il lettore, mantenendo provenienze, date discordanti, livelli di attribuzione e natura dei materiali. Commit `32ff20164118`. Controllo successivo del file conferma zero occorrenze della vecchia formula.
+- `adc/persone/index.html`: quattro descrizioni delle schede giornalistiche rese meno operative e più comprensibili senza sopprimere i limiti delle fonti (Previtera, Zappulla e due articoli senza URL singolo). Commit `93a37754bb28`.
+- Non sono state modificate date, attribuzioni dubbie, URL esterni o contenuti degli articoli di terzi.
+
+**Controllo grafico e funzionale statico — perimetro:** `adc/index.html`, `adc/stampa/index.html`, `adc/stampa/autori/index.html`, `adc/persone/index.html`, oltre a `adc/assets/navigazione-unificata.js`, `adc/assets/navigazione-unificata.css` e `adc/assets/interfaccia-archivistica-interna-2026.css`.
+- Tutte e quattro le pagine dichiarano `viewport`, `canonical`, un `h1` e includono la navigazione condivisa. Le tre pagine interne usano i medesimi CSS comuni e lo stesso script; il catalogo stampa contiene i controlli di filtro nel file HTML.
+- Le intestazioni HTML precedenti differiscono per collegamenti tra stampa, autori e persone. Lo script comune inserisce un menu uniforme e nasconde le intestazioni legacy figlie dirette del `body`, preservando quelle con `h1`; quindi le differenze nell'HTML non equivalgono necessariamente a menu multipli visibili a JavaScript attivo.
+- Lo script aggiunge anche una riga standard ai footer, ma **non elimina il testo preesistente**: possono permanere differenze nel testo dei footer. È un residuo di uniformità da valutare visivamente senza rimuovere crediti o informazioni legali.
+- Lo script gestisce apertura/chiusura menu mobile e tasto Escape nel codice. **Non equivale a prova funzionale reale**: non sono stati effettuati test touch, screenshot mobile, test di tastiera in browser né verifica dinamica dei filtri.
+- `/adc/` è stato accessibile allo strumento di consultazione web, mentre le tre sottopagine stampa/autori/persone hanno restituito un errore di accesso dello strumento. Questo **non prova un malfunzionamento del sito** né certifica la distribuzione dei commit recenti.
+
+**Prossimo criterio di chiusura:** acquisire prove browser effettive di menu e footer a viewport desktop/mobile, filtri per anno/autore e accesso alle schede; validare link di origine e diritti delle immagini, e distinguere il risultato degli asset distribuiti dal solo codice repository.
