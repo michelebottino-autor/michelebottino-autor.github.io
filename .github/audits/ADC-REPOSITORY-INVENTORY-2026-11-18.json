@@ -5849,6 +5849,7 @@
         "/adc/assets/adc-mobile-audit-2026.css",
         "/adc/assets/interfaccia-archivistica-interna-2026.css",
         "/adc/assets/navigazione-unificata.css",
+        "/adc/assets/navigazione-unificata.js",
         "/adc/fonti/",
         "/adc/identita-2026.css",
         "/adc/persone/",
@@ -5869,10 +5870,10 @@
         "/adc/stampa/",
         "/adc/stampa/autori/",
         "/adc/tipografia.css",
-        "https://michelebottino-autor.github.io/adc/persone/"
+        "https://michelebottino-autor.github.io/adc/stampa/autori/"
       ],
-      "sha": "f5c5f2ef1ee7ba2fb1815cf000c587cb124bdc30",
-      "size_bytes": 6470
+      "sha": "e0c05416a2b5d8ecfbf0783bc8857b662559c871",
+      "size_bytes": 6476
     },
     {
       "id": "ADC-REPO-0245",

@@ -18,6 +18,7 @@ La revisione è stata eseguita sul repository `michelebottino-autor/michelebotti
 
 ## Controlli eseguiti
 
+- `python scripts/audit_site.py`: zero errori sitemap/canonical/HTML/JSON-LD; restano 11 avvisi preesistenti su descrizioni mancanti e un frammento della pagina `/corso/`.
 - `node .github/scripts/verify-public-editorial.js`: superato; nessuna violazione delle regole editoriali pubbliche.
 - Controllo dei collegamenti interni nelle 86 pagine HTML ADC: 2.187 collegamenti verificati, nessun percorso o frammento locale non risolto.
 - Controllo degli identificativi della pagina persone: nessun ID duplicato; 29 profili nominativi nel repertorio unico e 17 schede bibliografiche.

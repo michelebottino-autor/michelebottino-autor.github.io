@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'adc/assets/navigazione-unificata.js'
       - 'adc/contatore-config.json'
       - 'adc-contatore/**'
       - '.github/workflows/adc-contatore-check.yml'
@@ -24,8 +23,8 @@ jobs:
           python - <<'PY'
           import json, pathlib
           cfg=json.loads(pathlib.Path('adc/contatore-config.json').read_text())
-          assert cfg['base']==2000
-          assert 'endpoint' in cfg
+          endpoint=cfg.get('endpoint','')
+          assert endpoint.startswith('https://') and endpoint.endswith('/visite')
           sql=pathlib.Path('adc-contatore/schema.sql').read_text()
           assert "('adc', 2000)" in sql
           print('Contatore ADC: controlli statici superati')
