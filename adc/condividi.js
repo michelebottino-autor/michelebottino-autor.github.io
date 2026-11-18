@@ -37,7 +37,7 @@ function ready(){
     copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>',
     quote:'<path d="M10 11H5V6h6v7l-4 5m12-7h-5V6h6v7l-4 5"/>'
   };
-  function decorate(el,key){el.dataset.network=key;var holder=document.createElement("span");holder.className="adc-share-icon";holder.setAttribute("aria-hidden","true");holder.innerHTML='<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'+icons[key]+'</svg>';el.prepend(holder);return el;}
+  function decorate(el,key){el.dataset.network=key;var holder=document.createElement("span");holder.className="adc-share-icon";holder.setAttribute("aria-hidden","true");holder.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">'+icons[key]+'</svg>';el.prepend(holder);return el;}
   function anchor(label,href,key){var a=document.createElement("a");a.textContent=label;a.href=href;a.target="_blank";a.rel="noopener noreferrer";decorate(a,key);links.appendChild(a)}
   if(typeof navigator.share==="function"){
     var native=document.createElement("button");native.type="button";native.textContent="Condividi…";
