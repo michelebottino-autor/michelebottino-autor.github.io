@@ -8,6 +8,7 @@
       ['Archivio','/adc/'], ['Storia','/adc/storia-per-tutti/'], ['Le chiese','/adc/chiese/'],
       ['Fonti','/adc/fonti/'], ['Atlante','/adc/atlante/'],
       ['Mediateca','/adc/mediateca/'], ['Patrimonio','/adc/materiali-patrimonio/'],
+      ['Stampa','/adc/stampa/'], ['Persone e libri','/adc/persone/'],
       ['Elena','/adc/elena/'], ['Michele Bottino','/']
     ];
     var header = document.createElement('div');
@@ -70,46 +71,26 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true});
   else start();
 })();
-/* Contatore ADC nel footer di tutte le pagine: nessun Google Analytics. */
+/* Applica un footer comune senza alterare i contenuti editoriali esistenti. */
 (function () {
   'use strict';
-  if (!location.pathname.startsWith('/adc/')) return;
+  if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/')) return;
   function init() {
     var footer = document.querySelector('footer');
-    if (!footer || document.getElementById('adc-visite-footer')) return;
-    var wrap = document.createElement('p');
-    wrap.id = 'adc-visite-footer';
-    wrap.style.cssText = 'text-align:center;margin:18px auto 8px;padding:12px 14px;max-width:400px;border-top:1px solid rgba(194,170,111,.35);font-variant-numeric:tabular-nums;';
-    var label = document.createElement('strong');
-    label.textContent = 'Conteggio sessioni: ';
-    var count = document.createElement('span');
-    count.id = 'adc-visite-numero';
-    count.textContent = '—';
-    var state = document.createElement('small');
-    state.style.cssText = 'display:block;font-size:.76rem;margin-top:4px;opacity:.8;';
-    state.textContent = '';
-    wrap.append(label, count, state);
-    var bottom = footer.querySelector('.adc-archive-footer__bottom,.adc-inner-footer__bottom');
-    if (bottom) footer.insertBefore(wrap, bottom);
-    else footer.appendChild(wrap);
-    var format = function (value) { return Number(value).toLocaleString('it-IT'); };
-    fetch('/adc/contatore-config.json', {cache:'no-store'}).then(function(r){if(!r.ok)throw Error('config');return r.json();}).then(function(cfg){
-      if (!cfg || !/^https:\/\/[-a-zA-Z0-9.]+\/visite$/.test(cfg.endpoint || '')) return;
-      var endpoint = cfg.endpoint;
-      var registered = false;
-      try { registered = sessionStorage.getItem('adc-visita-registrata-v1') === '1'; } catch(_) {}
-      return fetch(endpoint, {method: registered ? 'GET' : 'POST', mode:'cors', cache:'no-store'}).then(function(r){if(!r.ok)throw Error('counter');return r.json();}).then(function(result){
-        if (!Number.isSafeInteger(result.total) || result.total < 2000) return;
-        // Il servizio include 2.000 unità iniziali non corrispondenti a sessioni registrate.
-        count.textContent = format(result.total - 2000);
-        state.textContent = '';
-        if (!registered) { try {sessionStorage.setItem('adc-visita-registrata-v1','1');} catch(_) {} }
-      });
-    }).catch(function(){
-      state.textContent = '';
-    });
+    if (!footer) {
+      footer = document.createElement('footer');
+      document.body.appendChild(footer);
+    }
+    footer.classList.add('adc-global-footer');
+    footer.setAttribute('aria-label', 'Informazioni e collegamenti dell’Archivio Documentale Calatabiano');
+    if (footer.querySelector('[data-adc-footer-identity]')) return;
+    var line = document.createElement('div');
+    line.className = 'adc-u-footer-line';
+    line.dataset.adcFooterIdentity = 'true';
+    line.innerHTML = '<span>Archivio Documentale Calatabiano · A cura di Michele Bottino</span><nav aria-label="Collegamenti principali"><a href="/adc/">Archivio</a><a href="/adc/stampa/">Giornali storici</a><a href="/adc/persone/">Persone, libri e studi</a><a href="/">Sito dell’autore</a></nav>';
+    footer.appendChild(line);
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
   else init();
 })();
 
