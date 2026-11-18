@@ -31,12 +31,18 @@ La pagina è una selezione nominativa documentaria, non un dizionario completo d
 
 ## Integrazione Salvatore Zappulla — ricognizione del 18 novembre 2026
 
-La correzione nominativa è recepita: il giornalista considerato è **Salvatore Zappulla**. La scheda non incorpora affermazioni biografiche non documentate. Il repertorio `/adc/stampa/` riceve 23 record associati alla sua firma o al suo archivio autore; il totale della bozza passa da 44 a 67 record. La pagina nominativa collega i 21 riferimenti e l’archivio autore La Sicilia. Questa è una ricognizione incrementale, non una prova di completezza della produzione.
+La correzione nominativa è recepita: il giornalista considerato è **Salvatore Zappulla**. La scheda non incorpora affermazioni biografiche non documentate. Il repertorio `/adc/stampa/` riceve 26 record associati alla sua firma o al suo archivio autore; il totale della bozza passa da 44 a 70 record. La pagina nominativa collega i 26 riferimenti e l’archivio autore La Sicilia. Questa è una ricognizione incrementale, non una prova di completezza della produzione.
 
 ### Corpus aggiunto
 
 - Dieci titoli elencati nell’archivio autore La Sicilia, dal 4 aprile al 6 ottobre 2026. Otto dispongono di un collegamento individuale verificato in questa ricognizione; per “Brucia Monte Castello, evacuato ristorante” e “«Disagi per lavoratori pendolari e turisti»” è indicato l’archivio autore perché il permalink individuale non è stato recuperato.
-- Tredici ulteriori articoli o riferimenti, dal 2006 al 2026: castello, progetto museale, Villaggio Kala dei Normanni, chiesa Madre, scavi in contrada Pianotta, viabilità del Ponte Minissale, amministrazione comunale, cimitero, struttura incompiuta, depurazione, costa dell’Alcantara e Marina di San Marco. Per ciascuno la scheda distingue pagina originale, archivio autore e copia/catalogazione su PatrimonioSOS.
+- Sedici ulteriori articoli o riferimenti, dal 2001 al 2026: castello, progetto museale, Villaggio Kala dei Normanni, chiesa Madre, scavi in contrada Pianotta, viabilità del Ponte Minissale, amministrazione comunale, cimitero, struttura incompiuta, depurazione, costa dell’Alcantara e Marina di San Marco, la cronaca Gazzetta del Sud del 2013 e il comunicato comunale del marzo 2015 sulla giornata della Legalità. Per ciascuno la scheda distingue pagina originale, archivio autore e copia/catalogazione su PatrimonioSOS.
+
+### Ulteriori pubblicazioni e contributi individuati
+
+- È stato reperito il riferimento alla cronaca Gazzetta del Sud “L’ombra del racket sul delitto”, firmata Salvatore Zappulla e relativa all’uccisione di Carmelo Benvegna a Calatabiano. La pagina della Fondazione Antiusura riproduce il testo e indica l’edizione del 7 dicembre 2001; il ritaglio originale del quotidiano non è ancora stato acquisito.
+- Un PDF di un numero della Gazzetta del Sud del 30 agosto 2013 mostra il titolo “Caccia… all’ultima cicca”, il sottotitolo sulla pulizia della spiaggia e l’attribuzione a Salvatore Zappulla nella pagina dedicata a Calatabiano. Il PDF è una copia su archivio terzo.
+- Un documento comunale del 24 marzo 2015, conservato tramite una piattaforma terza, riporta il comunicato “Grande partecipazione alla 2ª giornata sulla Legalità” e la sigla “US/ Salvatore Zappulla”. È catalogato come comunicato dell’Ufficio stampa, non come articolo giornalistico.
 
 ### Spunti emersi dalla lettura dei riferimenti
 
@@ -50,4 +56,4 @@ La correzione nominativa è recepita: il giornalista considerato è **Salvatore 
 - La pagina del cimitero presenta “Redazione Catania” nell’intestazione, ma una firma di Salvatore Zappulla nel testo finale: l’attribuzione resta aperta.
 - Per la notizia sull’area di sosta di Marina di San Marco e per “Lo scheletro in cemento è una ferita mai rimarginata” la firma è leggibile nella pagina, ma la data esatta deve essere ricontrollata.
 - L’archivio autore consultato elenca dieci articoli recenti e non costituisce l’intero archivio professionale. L’indicizzazione web e gli archivi di testata possono omettere articoli cartacei, contenuti non indicizzati o pagine rimosse. Le copie su PatrimonioSOS sono registrate come riproduzioni/catalogazioni di articoli della testata, non come originali.
-- Le cronache giornalistiche sono fonti secondarie. I fatti amministrativi, archeologici, ambientali e patrimoniali devono essere confermati mediante documenti e fonti primarie prima di aggiornare le ricostruzioni storiche ADC.
+- Il catalogo include ora anche un articolo di cronaca del 2001, una pagina della Gazzetta del Sud del 2013 e un comunicato comunale del 2015, mantenendo distinti i generi documentari. Le cronache giornalistiche sono fonti secondarie. I fatti amministrativi, archeologici, ambientali e patrimoniali devono essere confermati mediante documenti e fonti primarie prima di aggiornare le ricostruzioni storiche ADC.
