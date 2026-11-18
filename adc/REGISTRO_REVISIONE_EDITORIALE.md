@@ -495,3 +495,16 @@ Riscontri aggiuntivi effettuati direttamente sulle risorse HTTP e sul codice att
 2. Esaminare la lista nominativa e i riferimenti delle pubblicazioni per duplicati e date discordanti, inclusi i casi Previtera e Zappulla.
 3. Controllare la uniformità effettiva di navigazione, footer, impaginazione e accessibilità su desktop e mobile.
 4. Mappare le conversazioni rimanenti del progetto ChatGPT soltanto se accessibili, senza dichiarare lette chat non consultate.
+
+
+### Riscontro strutturale incrociato — 18 novembre 2026
+
+**File letti:** `adc/stampa/index.html`, `adc/stampa/autori/index.html`, `adc/persone/index.html`, mediante contenuto del ramo predefinito GitHub.
+
+- Indice autori: 14 rimandi `/adc/persone/#...`, corrispondenti a 14 ancore distinte; **14/14 presenti** tra gli ID HTML della pagina persone.
+- Repertorio stampa: 66 rimandi alle schede personali relativi a 10 ID univoci; **66/66 corrispondenti** agli ID della pagina persone.
+- Persone: nessun ID HTML duplicato nella pagina letta; presenti 17 ID bibliografici `pub-001`–`pub-017`; i rimandi interni alla stessa pagina verso `/adc/persone/#...` risultano tutti presenti.
+- Le ricorrenze dei nomi nei titoli delle schede e nelle voci bibliografiche non sono automaticamente schede personali duplicate. Questi controlli non provano la correttezza delle attribuzioni, delle date o dei permalink esterni.
+- Il tentativo di lettura delle pagine pubbliche tramite browser di ricerca non ha restituito risorse accessibili. **Non certificati:** resa visiva, filtri interattivi, comportamento mobile e distribuzione effettiva. Il mancato accesso dello strumento non dimostra un errore del sito.
+
+**Conseguenza operativa:** non aprire schede nuove e non alterare le attribuzioni sulla base di ricorrenze nominali; successivamente controllare i riferimenti bibliografici Previtera/Zappulla, i permalink e le schede effettivamente pubblicate, con prova distinta per ogni intervento.
