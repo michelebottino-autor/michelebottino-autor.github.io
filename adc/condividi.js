@@ -2,6 +2,9 @@
 (function(){
 "use strict";
 function ready(){
+  if(!document.querySelector('link[data-adc-share-style]')){
+    var css=document.createElement("link");css.rel="stylesheet";css.href="/adc/assets/condivisione-responsive.css";css.dataset.adcShareStyle="true";document.head.appendChild(css);
+  }
   if(document.querySelector("[data-adc-share]"))return;
   var main=document.querySelector("main")||document.querySelector("article");
   if(!main)return;
