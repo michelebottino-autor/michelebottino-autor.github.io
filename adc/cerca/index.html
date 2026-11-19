@@ -10,7 +10,7 @@
 <style>
 :root{color-scheme:light}body{background:#f8f6f1;color:#25302e;font:16px/1.65 system-ui,sans-serif;margin:0}header,main,footer{max-width:960px;margin:auto;padding:20px clamp(16px,4vw,40px)}header{border-bottom:1px solid #ddd7cc}a{color:#765337}h1,h2{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(2rem,5vw,3rem)}label{display:block;font-weight:700;margin-bottom:8px}.search-row{display:flex;gap:10px;flex-wrap:wrap}.search-row input{flex:1 1 250px;min-width:0;border:1px solid #8d8a81;border-radius:7px;padding:13px;font:inherit}.search-row button{border:0;border-radius:7px;background:#345d54;color:white;font:inherit;font-weight:700;padding:12px 22px;cursor:pointer}.search-row button:focus-visible,.search-row input:focus-visible,a:focus-visible{outline:3px solid #b68c4e;outline-offset:3px}.result{background:#fff;border:1px solid #e1ddd4;border-radius:10px;padding:17px 20px;margin:14px 0}.result h2{font-size:1.3rem;margin:0 0 7px}.result p{margin:0;color:#4b5550;overflow-wrap:anywhere}mark{background:#ffecad;color:#252b25}.meta{color:#58635d;font-size:.95rem}#status{min-height:1.5em}footer{border-top:1px solid #ddd7cc;margin-top:35px}nav a{margin-right:16px}
 @media(max-width:767px){body > main{box-sizing:border-box}}
-</style>
+.search-topics{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:17px 0 22px}.search-topics span{color:#53625a;font-weight:650}.search-topics a{display:inline-flex;padding:7px 13px;border:1px solid #d7d0c4;border-radius:999px;background:#fffdf9;font-weight:600;text-decoration:none;min-height:40px;align-items:center}.search-topics a:hover{text-decoration:underline;border-color:#a38a67}.more-results{display:block;border:1px solid #aeb9af;border-radius:8px;background:#fffdf9;color:#264b38;padding:13px 19px;margin:19px auto;font:inherit;font-weight:700;cursor:pointer;min-height:46px}.more-results:hover{background:#f3f0e8}.search-empty{background:#fffdf9;padding:18px 20px;border:1px solid #ded8cd;border-radius:12px}.more-results:focus-visible{outline:3px solid #b68c4e;outline-offset:3px}</style>
 <link rel="stylesheet" href="/adc/tipografia.css">
 <link rel="stylesheet" href="/adc/identita-2026.css"><link rel="stylesheet" href="/adc/assets/elena-presenza.css"><link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/mb-192.png">
@@ -24,12 +24,19 @@
 <nav id="adc-design-nav" class="adc-project-nav" aria-label="Sezioni dell’Archivio Documentale Calatabiano"><a class="adc-project-brand" href="/adc/">Archivio Documentale Calatabiano<small>Al servizio della comunità · A cura di Michele Bottino</small></a><div class="adc-project-links"><a href="/adc/">Archivio</a><a href="/adc/fonti/">Fonti</a><a href="/adc/atlante/">Atlante</a><a href="/adc/storia/">Storia</a><a href="/adc/mediateca/">Mediateca</a><a href="/adc/elena/">Elena</a></div></nav>
 <main id="contenuto">
 <p class="meta"><a href="../">ADC</a> › Ricerca interna</p>
-<h1>Cerca nell'Archivio Documentale Calatabiano</h1>
-<p>Trova parole, nomi, luoghi e argomenti nelle pagine pubblicate dell'ADC. La ricerca riguarda il testo delle pagine, non il contenuto integrale di PDF e immagini.</p>
+<h1>Che cosa cerchi su Calatabiano?</h1>
+<p>Scrivi un nome, un luogo o un argomento. Troverai le pagine dell’Archivio che ne parlano e i documenti collegati.</p>
 <form id="search-form" role="search">
 <label for="query">Parole da cercare</label>
 <div class="search-row"><input id="query" name="q" type="search" minlength="2" placeholder="Es. castello, Mirulla, Fragalà, 1818" autocomplete="off" required><button type="submit">Cerca</button></div>
 </form>
+<nav class="search-topics" aria-label="Ricerche suggerite">
+  <span>Oppure scegli:</span>
+  <a href="?q=castello">Castello</a>
+  <a href="?q=chiese">Chiese</a>
+  <a href="?q=famiglie">Famiglie</a>
+  <a href="?q=botteghe">Botteghe</a>
+</nav>
 <p id="status" role="status" aria-live="polite"></p>
 <section id="documentary" aria-label="Testimonianze documentarie pertinenti"></section>
 <div id="results" aria-label="Risultati della ricerca"></div>
@@ -108,7 +115,20 @@ async function search(){
   if(testimonianze.length){const heading=document.createElement("h2");heading.textContent="Testimonianze documentarie";documentary.append(heading);const note=document.createElement("p");note.textContent="Schede dell'inventario con provenienza e limiti delle fonti.";documentary.append(note);for(const x of testimonianze){const article=document.createElement("article");article.className="result";const h=document.createElement("h2"),link=document.createElement("a");link.href=new URL(x.pagina,new URL("../inventario/",location.href)).href;link.textContent=x.titolo;h.append(link);const meta=document.createElement("p");meta.className="meta";meta.textContent=x.data+" · "+x.tema+" · "+x.id;const source=document.createElement("p");source.textContent="Fonte: "+x.provenienza;const caution=document.createElement("p");caution.textContent="Limite documentario: "+x.limiti;article.append(h,meta,source,caution);documentary.append(article);}}
   status.textContent=matches.length+" "+(matches.length===1?"pagina pertinente":"pagine pertinenti")+" e "+testimonianze.length+" "+(testimonianze.length===1?"testimonianza":"testimonianze")+" in inventario."+(failed?" Alcune pagine non sono raggiungibili.":"")+(inventarioDisponibile?"":" Inventario temporaneamente non disponibile.");
   if(matches.length){const h=document.createElement("h2");h.textContent="Articoli e approfondimenti";results.append(h);}
-  for(const page of matches){const article=document.createElement("article");article.className="result";const h=document.createElement("h2"),link=document.createElement("a");link.href=page.url;link.textContent=page.title;h.append(link);const p=document.createElement("p");highlight(p,excerpt(page.text,words),words);article.append(h,p);results.append(article);}
+  function showResult(page){const article=document.createElement("article");article.className="result";const h=document.createElement("h2"),link=document.createElement("a");link.href=page.url;link.textContent=page.title;h.append(link);const p=document.createElement("p");highlight(p,excerpt(page.text,words),words);article.append(h,p);results.append(article);}
+  matches.slice(0,12).forEach(showResult);
+  if(matches.length>12){
+    const more=document.createElement("button");
+    more.type="button";more.className="more-results";
+    more.textContent="Mostra altri risultati ("+(matches.length-12)+")";
+    more.addEventListener("click",()=>{more.remove();matches.slice(12).forEach(showResult);});
+    results.append(more);
+  }
+  if(!matches.length&&!testimonianze.length){
+    const p=document.createElement("p");p.className="search-empty";
+    p.textContent="Nessun risultato per queste parole. Prova con un nome più breve o un argomento generale, come castello, chiese o famiglie.";
+    results.append(p);
+  }
  }catch(e){status.textContent="Impossibile completare la ricerca. Riprova più tardi.";}
 }
 form.addEventListener("submit",event=>{event.preventDefault();search();});
