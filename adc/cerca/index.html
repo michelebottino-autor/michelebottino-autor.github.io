@@ -66,6 +66,21 @@ const normalize=s=>s.toLocaleLowerCase("it").normalize("NFD").replace(/[\u0300-\
 let cache=null;
 async function loadIndex(){
  if(cache)return cache;
+ // Preferire l'indice preparato, evitando il download di tutte le pagine a ogni ricerca.
+ try{
+   const response=await fetch("./indice-pagine.json",{cache:"no-cache"});
+   if(!response.ok)throw Error("indice");
+   const data=await response.json();
+   if(!Array.isArray(data.pages)||!data.pages.length)throw Error("indice vuoto");
+   const pages=data.pages.filter(page=>page&&typeof page.url==="string"&&typeof page.title==="string"&&typeof page.text==="string"&&page.url.startsWith(location.origin+"/adc/")).map(page=>({
+     url:page.url,title:page.title,text:page.text,normalized:normalize(page.title+" "+page.text)
+   }));
+   if(!pages.length)throw Error("indice senza pagine");
+   cache={pages,failed:0};
+   return cache;
+ }catch(e){
+   // Se l'indice non è disponibile, resta operativa la ricerca diretta nelle pagine.
+ }
  const paths=await discoverPageUrls();
  const responses=await Promise.allSettled(paths.map(async path=>{
    const url=new URL(path,location.href),response=await fetch(url.href);
