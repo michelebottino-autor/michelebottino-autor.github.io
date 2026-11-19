@@ -326,7 +326,39 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
 .adc-persone-accesso p{margin:0 0 18px;font-size:clamp(1rem,2.3vw,1.12rem);line-height:1.65;overflow-wrap:normal;word-break:normal}
 .adc-persone-accesso .adc-persone-accesso-link{display:inline-flex;align-items:center;gap:8px;max-width:100%;min-height:44px;font-weight:700;line-height:1.45;white-space:normal;overflow-wrap:anywhere}
 @media(max-width:640px){#adc-orientamento .adc-accessi-prioritari{grid-template-columns:minmax(0,1fr)}.adc-persone-accesso{margin:20px 0;padding:22px 20px}.adc-persone-accesso h2{font-size:1.55rem}.adc-persone-accesso p{font-size:1rem}}
-</style></head>
+</style>
+<style id="adc-primo-accesso-2026">
+/* Homepage di primo accesso: quattro percorsi, ricerca e spiegazione immediata. */
+#contenuto>.adc-first-visit,#contenuto>.adc-first-explore{max-width:1180px;margin-inline:auto}
+.adc-first-visit{display:grid;grid-template-columns:minmax(0,1.17fr) minmax(0,.83fr);gap:clamp(20px,3vw,40px);align-items:center;padding:clamp(23px,4vw,44px);background:#fffdf9;border:1px solid #e1d8cb;border-radius:18px;margin:0 0 30px}
+.adc-first-intro,.adc-first-image{min-width:0}
+.adc-first-kicker{margin:0 0 12px;color:#806447;font-size:.8rem;text-transform:uppercase;letter-spacing:.085em;font-weight:750}
+.adc-first-intro h1{font-size:clamp(2rem,4.2vw,3.6rem);line-height:1.13;letter-spacing:-.03em;margin:0 0 18px}
+.adc-first-lead{font-size:clamp(1.07rem,1.6vw,1.22rem);line-height:1.63;max-width:57ch;margin:0 0 10px}
+.adc-first-about{margin:0 0 24px;color:#4b5952;line-height:1.55;font-size:.96rem}
+.adc-first-search{display:block;background:#f5f1e9;border:1px solid #e4dccf;border-radius:13px;padding:18px;max-width:620px}
+.adc-first-search label{display:block;font-weight:700;margin-bottom:10px;line-height:1.35}
+.adc-first-search-row{display:flex;gap:10px;align-items:stretch;min-width:0}
+.adc-first-search input{display:block;width:100%;min-width:0;flex:1;background:white;border:1px solid #aeb8b0;border-radius:8px;padding:12px 14px;line-height:1.4;font:inherit;color:#25302e}
+.adc-first-search button{display:block;border:0;background:#315a47;color:white;font:inherit;font-weight:700;border-radius:8px;padding:12px 20px;cursor:pointer}
+.adc-first-image{margin:0;align-self:center}
+.adc-first-image img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:14px}
+.adc-first-image figcaption{margin:9px 2px 0;color:#5e6761;font-size:.77rem;line-height:1.4}
+.adc-first-explore{padding:4px 0 28px}
+.adc-first-explore h2{font-size:clamp(1.55rem,3vw,2.05rem);margin:0 0 18px}
+.adc-first-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.adc-first-grid a{display:block;background:#fff;border:1px solid #ded8cd;border-radius:14px;padding:21px 23px;min-height:104px;text-decoration:none;color:#23372e;transition:border-color .16s,background .16s}
+.adc-first-grid a:hover{border-color:#9d8767;background:#fffcf6}
+.adc-first-grid strong{display:block;font-size:1.14rem;line-height:1.3;color:#284c3c}
+.adc-first-grid span{display:block;color:#59635e;line-height:1.5;margin-top:5px;font-size:.96rem}
+.adc-first-more{margin:19px 0 0;font-size:.98rem;line-height:1.6}
+.adc-first-more a{font-weight:650;text-underline-offset:3px}
+#contenuto>.adc-extra-resources{margin-top:15px}
+@media(max-width:800px){.adc-first-visit{grid-template-columns:minmax(0,1fr)}.adc-first-image{max-width:600px}.adc-first-image img{max-height:270px}}
+@media(max-width:600px){.adc-first-visit{padding:22px 18px;gap:18px;margin-bottom:24px}.adc-first-intro h1{font-size:clamp(1.95rem,8vw,2.4rem)}.adc-first-search{padding:14px}.adc-first-grid{grid-template-columns:minmax(0,1fr)}.adc-first-grid a{padding:17px 19px;min-height:0}.adc-first-more span[aria-hidden]{display:none}.adc-first-more a{display:block;margin:7px 0}.adc-first-search-row{gap:7px}.adc-first-search button{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){.adc-first-grid a{transition:none}}
+</style>
+</head>
 <body class="adc-archive-home"><a class="skip-link" href="#contenuto">Vai al contenuto</a>
 <header class="container"><nav class="nav" id="site-nav"><div class="logo"><a href="../">Michele Bottino</a></div><button id="menu-toggle" type="button" aria-controls="menu" aria-expanded="false"  aria-label="Apri il menu di navigazione" class="menu-toggle"><span></span><span></span><span></span></button><ul class="nav-menu" id="menu"><li><a href="/">Home</a></li>
 <li class="has-submenu"><button type="button" class="submenu-toggle" aria-controls="submenu-autore" aria-expanded="false">Autore</button><ul class="submenu" id="submenu-autore"><li><a href="/biografia/">Biografia</a></li><li><a href="/poetica/">Poetica</a></li></ul></li>
@@ -338,41 +370,35 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
 <li><a href="/media/">Media</a></li><li><a href="/contatti/">Contatti</a></li></ul></nav></header>
 <nav id="adc-design-nav" class="adc-project-nav" aria-label="Sezioni dell’Archivio Documentale Calatabiano"><a class="adc-project-brand" href="/adc/">Archivio Documentale Calatabiano<small>Al servizio della comunità · A cura di Michele Bottino</small></a><div class="adc-project-links"><a href="/adc/" aria-current="page">Archivio</a><a href="/adc/esplora/">Esplora per argomento</a><a href="/adc/fonti/">Fonti</a><a href="/adc/atlante/">Atlante</a><a href="/adc/storia-per-tutti/">Storia</a><a href="/adc/mediateca/">Mediateca</a><a href="/adc/elena/">Elena</a><a href="/adc/materiali-patrimonio/">Patrimonio artistico</a><a href="/adc/stampa-ricerca/">Stampa e ricerca</a><a href="/adc/stampa/">Stampa storica</a></div></nav>
 <main class="page container" id="contenuto">
-<section id="adc-orientamento" aria-labelledby="adc-orientamento-titolo" style="padding:clamp(20px,3vw,34px);margin:0 0 27px;background:#fffdf9;border:1px solid #dfd6c6;border-radius:16px;box-shadow:0 10px 25px #23332b0b"><p class="editorial-kicker" style="margin:0 0 7px">Inizia da qui · Guida alla consultazione</p><h2 id="adc-orientamento-titolo" style="margin:0 0 10px;font-size:clamp(1.65rem,3vw,2.3rem)">Cosa vuoi cercare su Calatabiano?</h2><p style="margin:0 0 19px;max-width:74ch">Scegli un argomento e raggiungi direttamente articoli, documenti, schede e luoghi. Non occorre conoscere già l'organizzazione dell'archivio.</p><div class="adc-accessi-prioritari"><a class="btn secondary" href="/adc/storia/">Storia del paese</a><a class="btn secondary" href="/adc/fonti/">Pergamene e documenti</a><a class="btn secondary" href="/adc/atti-parlamentari/">Interrogazioni e interpellanze parlamentari</a><a class="btn secondary" href="/adc/atlante/">Castello e luoghi</a><a class="btn secondary" href="/adc/chiese/">Chiese e tradizioni</a><a class="btn secondary" href="/adc/dizionario-biografico/">Persone e famiglie</a><a class="btn secondary" href="/adc/persone/#catalogo-pubblicazioni">Libri e studi su Calatabiano</a><a class="btn secondary" href="/adc/materiali-patrimonio/">Monumenti e palazzi</a><a class="btn secondary" href="/adc/locali-storici/">Locali storici e botteghe</a><a class="btn secondary" href="/adc/stampa/">Giornali e giornalisti</a><a class="btn secondary" href="/adc/mediateca/">Fotografie e mappe</a></div><a class="section-link" href="/adc/esplora/">Apri l'indice completo e cerca per argomento</a><p style="margin:10px 0 0"><a href="/adc/cerca/">Oppure cerca in tutto l’archivio →</a></p></section>
 
-<section aria-label="Nuova ricerca storico-documentaria" style="padding:18px 22px;margin:0 0 22px;background:#fff;border:1px solid #e4e0d7;border-left:4px solid #806447;border-radius:12px"><p style="font-size:.83rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#806447;margin:0 0 7px">Nuova ricerca · 18 novembre 2026</p><h2 style="font-size:clamp(1.4rem,3vw,1.9rem);margin:0 0 8px">Palazzo Abbadotto, una pagina della storia di Calatabiano</h2><p style="margin:0 0 8px">Un racconto di storia e memoria tra le vicende della famiglia Abadotto, le antiche scuole elementari e il centro storico del paese.</p><a href="/adc/palazzo-abbadotto/">Leggi la ricerca sul Palazzo Abbadotto</a></section>
-<section class="adc-landing-intro" aria-labelledby="adc-landing-title">
-  <p class="adc-landing-eyebrow" style="font-weight:700;letter-spacing:.10em;text-transform:uppercase">Archivio Documentale Calatabiano</p>
-  <h1 id="adc-landing-title">Calatabiano, la storia che emerge dai documenti</h1>
-  <p>Il castello medievale, la Terra Vecchia, le chiese e le tradizioni: testimonianze e vicende del territorio raccontate attraverso le fonti storiche.</p>
-  <p><strong>Una ricerca indipendente a cura di Michele Bottino, aperta gratuitamente alla comunità.</strong></p>
-  <p>Inizia dalla <a href="/adc/storia/">storia di Calatabiano</a>, visita <a href="/adc/chiese/">Le chiese di Calatabiano</a> per conoscere i luoghi di culto del paese, esplora il <a href="/adc/dizionario-biografico/">dizionario biografico storico</a> oppure consulta l'<a href="/adc/atlante/">Atlante storico-documentario</a>.</p>
-  <figure><img src="/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026.jpg" srcset="/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-480.webp 480w, /adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-720.webp 720w, /adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-960.webp 960w, /adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-1536.webp 1536w" sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1100px) 80vw, 1100px" alt="Veduta panoramica di Calatabiano dalla Terra Vecchia con la chiesa in primo piano e il mare sullo sfondo" width="1536" height="961" loading="eager" decoding="async" fetchpriority="high" style="object-position:center 60%"><figcaption>Calatabiano dalla Terra Vecchia, elaborazione digitale a carattere illustrativo. © Michele Bottino.</figcaption></figure>
-</section>
-<section class="adc-dizionario-accesso" aria-labelledby="titolo-dizionario" style="margin:28px 0;padding:24px 28px;border:1px solid #e1d8cb;border-radius:16px;background:#fff"><p style="margin:0 0 6px;color:#806447;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem">Persone e storia</p><h2 id="titolo-dizionario" style="margin:0 0 8px">Dizionario biografico storico di Calatabiano</h2><p>Ventinove profili di persone legate alla storia del territorio, dalle istituzioni medievali alle famiglie feudali, con un indice alfabetico e i riferimenti alle fonti.</p><p><a class="section-link" href="/adc/dizionario-biografico/">Consulta le 29 biografie</a></p></section>
-<nav class="adc-ingressi" aria-label="Scegli il percorso di consultazione">
-  <a class="adc-ingresso adc-ingresso-cittadini" href="/adc/storia-per-tutti/"><span class="adc-ingresso-label">Per cittadini e visitatori</span><strong>Scopri e racconta la storia</strong><span>Luoghi, vicende e tradizioni di Calatabiano, con un linguaggio accessibile.</span><span class="adc-ingresso-action">Entra nel percorso narrativo →</span></a>
-  <a class="adc-ingresso adc-ingresso-studiosi" href="/adc/fonti/"><span class="adc-ingresso-label">Per storici, archivisti e ricercatori</span><strong>Consulta fonti e dossier</strong><span>Attestazioni, bibliografia, rinvii archivistici e questioni ancora aperte.</span><span class="adc-ingresso-action">Entra nel percorso scientifico →</span></a>
-</nav>
-<section class="adc-visual-access" aria-labelledby="adc-access-title">
-  <h2 id="adc-access-title">Scopri la storia del tuo paese</h2>
-  <p>Scegli un argomento: ogni percorso conduce alle ricostruzioni storiche e alle testimonianze disponibili.</p>
-  <div class="adc-visual-grid">
-    <a class="adc-visual-card" href="/adc/storia-per-tutti/#castello"><span class="adc-visual-photo"><img src="/adc/assets/home/castello-calatabiano-home.avif" alt="Fotografia del castello di Calatabiano, scattata da Michele Bottino" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Fotografia: Michele Bottino — archivio personale</span><strong>Il castello</strong><small>Le vicende medievali e i documenti del 1201 e del 1213</small><span class="adc-visual-go">Leggi la storia →</span></a>
-    <a class="adc-visual-card" href="/adc/materiali-patrimonio/"><span class="adc-visual-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maria%20SS.%20Annunziata%20(Calatabiano)%2001.jpg?width=1000" alt="Chiesa Maria Santissima Annunziata a Calatabiano, patrimonio religioso del paese" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Foto: Codas / Wikimedia Commons, CC BY-SA 4.0 (chiesa dell’Annunziata)</span><strong>Le chiese e la Terra Vecchia</strong><small>La chiesa dell’Annunziata, il Santissimo Crocifisso, le opere e le iscrizioni</small><span class="adc-visual-go">Scopri i luoghi →</span></a>
-    <a class="adc-visual-card" href="/adc/fonti/"><span class="adc-visual-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Catania%20-%20Archivio%20di%20Stato%20di%20Catania%20-%202024-09-10%2023-27-44%20001.jpg?width=960" alt="Sede dell'Archivio di Stato di Catania, istituto di conservazione documentaria" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Archivio di Stato di Catania · fotografia dell’istituto (Wikimedia Commons)</span><strong>I documenti storici</strong><small>Documenti, edizioni delle fonti e attestazioni archivistiche</small><span class="adc-visual-go">Esplora le fonti →</span></a>
-    <a class="adc-visual-card" href="/adc/calata-san-filippo/"><span class="adc-visual-photo"><img src="https://www.gazzettinonline.it/wp-content/uploads/2020/02/Festa-San-Filippo-a-Calatabiano.-.jpg" alt="Processione di San Filippo a Calatabiano, fotografia della festa" loading="lazy" decoding="async"></span><span class="adc-photo-credit">Gazzettinonline · fotografia della festa</span><strong>Le tradizioni</strong><small>La Calata di San Filippo e la memoria della comunità</small><span class="adc-visual-go">Conosci la tradizione →</span></a>
+<section class="adc-first-visit" aria-labelledby="adc-landing-title">
+  <div class="adc-first-intro">
+    <p class="adc-first-kicker">Archivio Documentale Calatabiano · ADC</p>
+    <h1 id="adc-landing-title">La storia di Calatabiano, a disposizione di tutti</h1>
+    <p class="adc-first-lead">Qui trovi storie, fotografie, luoghi, persone e documenti che raccontano il nostro paese. Puoi iniziare da un argomento che conosci oppure cercare qualcosa di preciso.</p>
+    <p class="adc-first-about">L’ADC è un archivio storico digitale indipendente, curato da Michele Bottino e consultabile gratuitamente.</p>
+    <form action="/adc/cerca/" method="get" role="search" class="adc-first-search">
+      <label for="adc-first-query">Che cosa vuoi sapere su Calatabiano?</label>
+      <div class="adc-first-search-row">
+        <input id="adc-first-query" type="search" name="q" minlength="2" required autocomplete="off" placeholder="Per esempio: castello, antiche botteghe, famiglie">
+        <button type="submit">Cerca</button>
+      </div>
+    </form>
   </div>
-  <section class="adc-curiosita" aria-labelledby="adc-curiosita-titolo">
-  <h2 id="adc-curiosita-titolo">Lo sapevi che…?</h2>
-  <p>Tre episodi della storia di Calatabiano ricostruiti attraverso fonti e studi citati nell’Archivio.</p>
-  <div class="adc-curiosita-grid">
-    <article><span class="adc-curiosita-data">1213 · Il castello</span><h3>Una conferma regia per la Chiesa di Catania</h3><p>Nel marzo 1213 Costanza d’Aragona e il figlio Enrico confermarono alla Chiesa di Catania il castello di Calatabiano. La fortezza rappresentava un centro di potere e un punto strategico per il controllo delle terre e delle vie di comunicazione.</p><a href="/adc/storia-per-tutti/#castello">Leggi la storia del castello</a> <a href="/adc/castello-sopralluogo/">Guarda le fotografie aeree del sopralluogo</a> <a href="/adc/castello-murature-restauri/">Scopri le mura e i restauri del castello</a></article>
-    <article><span class="adc-curiosita-data">1537 · Gli zuccheri</span><h3>Il commercio dello zucchero compare negli atti</h3><p>Un atto del 25 maggio 1537, ricordato negli studi storici, collega Francesco Mirulla e Pietro Faraone al commercio dello zucchero di Calatabiano. Il documento testimonia l’importanza delle attività agricole e mercantili nella vita economica del territorio.</p><a href="/adc/storia-per-tutti/#baronia">Leggi il capitolo sullo zucchero</a></article>
-    <article><span class="adc-curiosita-data">1502 · San Filippo</span><h3>Una croce dipinta commissionata per la chiesa</h3><p>Il 24 ottobre 1502 una testimonianza storica ricorda la commissione di una croce dipinta a Salvo d’Antonio per la chiesa di San Filippo Siriaco. L’episodio restituisce un momento della vita artistica e religiosa del paese all’inizio del Cinquecento.</p><a href="/adc/storia-per-tutti/#comunita">Leggi la storia religiosa</a></article>
-  </div>
+  <figure class="adc-first-image">
+    <img src="/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-720.webp" srcset="/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-480.webp 480w, /adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-720.webp 720w, /adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-960.webp 960w" sizes="(max-width: 740px) 100vw, 42vw" width="720" height="451" alt="Veduta panoramica di Calatabiano dalla Terra Vecchia" decoding="async" fetchpriority="high">
+    <figcaption>Calatabiano dalla Terra Vecchia · Elaborazione illustrativa © Michele Bottino</figcaption>
+  </figure>
 </section>
-<nav class="adc-home-actions" aria-label="Altri percorsi dell’archivio"><a href="/adc/cerca/">Cerca nell’archivio</a><a href="/adc/elena/">Chiedi a Elena</a><a href="#adc-risorse-complete">Tutti i dossier e gli approfondimenti</a></nav>
+<section class="adc-first-explore" aria-labelledby="adc-first-explore-title">
+  <h2 id="adc-first-explore-title">Da dove vuoi cominciare?</h2>
+  <div class="adc-first-grid">
+    <a href="/adc/storia-per-tutti/"><strong>La storia del paese</strong><span>Dalle origini alle vicende più recenti</span></a>
+    <a href="/adc/atlante/"><strong>Castello e luoghi</strong><span>Edifici, chiese, piazze e territorio</span></a>
+    <a href="/adc/persone/"><strong>Persone e memoria</strong><span>Famiglie, studiosi, autori e protagonisti</span></a>
+    <a href="/adc/fonti/"><strong>Documenti e ricerche</strong><span>Atti storici, testimonianze e studi</span></a>
+  </div>
+  <p class="adc-first-more"><a href="/adc/esplora/">Vedi tutti gli argomenti dell’Archivio</a><span aria-hidden="true"> · </span><a href="/adc/atti-parlamentari/">Ultima ricerca: Calatabiano in Parlamento</a></p>
 </section>
 <details class="adc-extra-resources" id="adc-risorse-complete"><summary><strong>Altre risorse dell'Archivio</strong><span>Ricerca, dossier, dedica, fotografie e approfondimenti</span></summary><div class="adc-extra-resources-inner">
 <p class="adc-embed-invite"><strong>Condividi la storia di Calatabiano.</strong> Hai un sito, un blog o curi le pagine di un’associazione? <a href="./incorpora/">Porta la ricerca dell’Archivio nel tuo sito</a> e contribuisci a far conoscere le fonti del territorio.</p>
