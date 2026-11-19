@@ -1,0 +1,40 @@
+name: Aggiorna indice ricerca ADC
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'adc/**'
+      - 'sitemap.xml'
+      - 'scripts/aggiorna_indice_adc.py'
+      - '!adc/cerca/indice-pagine.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: adc-search-index
+  cancel-in-progress: true
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepara indice dalle pagine e dalla sitemap
+        run: python scripts/aggiorna_indice_adc.py
+      - name: Salva soltanto se sono cambiati i contenuti
+        run: |
+          git add adc/cerca/indice-pagine.json
+          if git diff --cached --quiet; then
+            echo "Indice invariato"
+          else
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Aggiorna automaticamente indice di ricerca ADC"
+            git push origin HEAD:main
+          fi
