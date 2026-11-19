@@ -100,10 +100,83 @@ async function loadIndex(){
  cache={pages,failed:responses.filter(x=>x.status==="rejected").length};
  return cache;
 }
+const guidePaths={
+ "castello":"/adc/castello-murature-restauri/",
+ "chiese":"/adc/chiese/",
+ "famiglie":"/adc/dizionario-biografico/",
+ "persone":"/adc/persone/",
+ "botteghe":"/adc/locali-storici/",
+ "storia":"/adc/storia-per-tutti/",
+ "documenti":"/adc/fonti/",
+ "fonti":"/adc/fonti/",
+ "parlamento":"/adc/atti-parlamentari/",
+ "interpellanza":"/adc/atti-parlamentari/",
+ "interpellanze":"/adc/atti-parlamentari/"
+};
+function proximity(text,words){
+ if(words.length<2)return -1;
+ const hits=[];
+ for(let i=0;i<words.length;i++){
+   let pos=0,count=0;
+   while((pos=text.indexOf(words[i],pos))!==-1&&count<250){
+     hits.push([pos,i]);pos+=words[i].length;count++;
+   }
+ }
+ hits.sort((a,b)=>a[0]-b[0]);
+ const counts=Array(words.length).fill(0);
+ let have=0,left=0,best=Infinity,at=-1;
+ for(let right=0;right<hits.length;right++){
+   if(counts[hits[right][1]]++===0)have++;
+   while(have===words.length){
+     const width=hits[right][0]-hits[left][0];
+     if(width<best){best=width;at=hits[left][0];}
+     if(--counts[hits[left][1]]===0)have--;
+     left++;
+   }
+ }
+ return Number.isFinite(best)?{width:best,at}:-1;
+}
+function relevance(page,words){
+ const title=normalize(page.title),body=normalize(page.text);
+ const phrase=words.join(" "),pathname=new URL(page.url).pathname;
+ let score=0;
+ if(title===phrase)score+=145;
+ if(title.includes(phrase))score+=85;
+ if(body.includes(phrase))score+=32;
+ if(body.slice(0,850).includes(phrase))score+=24;
+ let everyTitle=true;
+ for(const word of words){
+   if(title.includes(word)){
+     score+=42;
+     if(new RegExp("(^|[^a-z0-9])"+word.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"($|[^a-z0-9])").test(title))score+=10;
+   }else everyTitle=false;
+   const at=body.indexOf(word);
+   if(at!==-1){
+     score+=4;if(at<1000)score+=9;
+     score+=Math.min(9,body.split(word).length-1);
+   }
+ }
+ if(everyTitle)score+=25;
+ if(words.length>1){
+   const near=proximity(body,words);
+   if(near!==-1){if(near.width<55)score+=45;else if(near.width<120)score+=27;else if(near.width<300)score+=12;}
+ }
+ if(words.length===1 && guidePaths[words[0]]===pathname)score+=140;
+ if(pathname==="/adc/")score-=65;
+ if(pathname==="/adc/fonti/"&&words[0]!=="documenti"&&words[0]!=="fonti")score-=20;
+ return score;
+}
 function excerpt(text,words){
- const norm=normalize(text);
- let index=norm.length;
- for(const word of words){const found=norm.indexOf(word);if(found>=0&&found<index)index=found;}
+ const norm=normalize(text),phrase=words.join(" ");
+ let index=norm.indexOf(phrase);
+ if(index<0&&words.length>1){
+   const near=proximity(norm,words);
+   if(near!==-1)index=near.at;
+ }
+ if(index<0){
+   index=norm.length;
+   for(const word of words){const found=norm.indexOf(word);if(found>=0&&found<index)index=found;}
+ }
  if(index===norm.length)index=0;
  const from=Math.max(0,index-85),to=Math.min(text.length,index+185);
  return (from?"…":"")+text.slice(from,to)+(to<text.length?"…":"");
@@ -124,7 +197,7 @@ async function search(){
  status.textContent="Ricerca nelle pagine ADC in corso…";
  try{
   const {pages,failed}=await loadIndex();
-  const matches=pages.map(page=>{const title=normalize(page.title);const score=words.reduce((n,w)=>n+(title.includes(w)?10:0)+(page.normalized.includes(w)?1:0),0);return {...page,score};}).filter(p=>words.every(w=>p.normalized.includes(w))).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,"it"));
+  const matches=pages.filter(page=>words.every(word=>page.normalized.includes(word))).map(page=>({...page,score:relevance(page,words)})).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,"it"));
   let testimonianze=[];let inventarioDisponibile=true;
   try{const response=await fetch("../inventario/testimonianze.json");if(!response.ok)throw Error();const inventory=await response.json();testimonianze=inventory.schede.map(x=>{const text=normalize([x.data,x.titolo,x.tipo,x.provenienza,x.tema,x.limiti].join(" "));return {...x,score:words.reduce((n,w)=>n+(normalize(x.titolo).includes(w)?10:0)+(text.includes(w)?1:0),0),text};}).filter(x=>words.every(w=>x.text.includes(w))).sort((a,b)=>b.score-a.score).slice(0,8);}catch(e){inventarioDisponibile=false;}
   if(testimonianze.length){const heading=document.createElement("h2");heading.textContent="Testimonianze documentarie";documentary.append(heading);const note=document.createElement("p");note.textContent="Schede dell'inventario con provenienza e limiti delle fonti.";documentary.append(note);for(const x of testimonianze){const article=document.createElement("article");article.className="result";const h=document.createElement("h2"),link=document.createElement("a");link.href=new URL(x.pagina,new URL("../inventario/",location.href)).href;link.textContent=x.titolo;h.append(link);const meta=document.createElement("p");meta.className="meta";meta.textContent=x.data+" · "+x.tema+" · "+x.id;const source=document.createElement("p");source.textContent="Fonte: "+x.provenienza;const caution=document.createElement("p");caution.textContent="Limite documentario: "+x.limiti;article.append(h,meta,source,caution);documentary.append(article);}}
