@@ -3,8 +3,8 @@
   "algorithm": "Ed25519",
   "files": {
     "index.html": {
-      "sha256": "ccf3d8b893ad8732afa0659bfc37bc8b80254a2ab35c7d7ad0aa6b1540c2927a",
-      "bytes": 56284
+      "sha256": "0568986ce06a6879203f083eb99eaef339ec5cd99908a2619f449cd69d060235",
+      "bytes": 56747
     },
     "robots.txt": {
       "sha256": "afd158da1cd4b9bf51ceba16cbbc5ee5a78c4777ba632f63e4ba891b19846e8d",
