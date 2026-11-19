@@ -16,11 +16,13 @@ test('mobile navigation exposes state and supports Escape', () => {
   assert.match(css, /:focus-visible/);
 });
 
-test('shared footer includes the main archive paths and hides no session counter', () => {
+test('shared footer includes the archive paths and displays the measured session counter', () => {
   assert.match(js, /data-adc-footer-identity/);
   assert.match(js, /\/adc\/stampa\//);
   assert.match(js, /\/adc\/persone\//);
-  assert.doesNotMatch(js, /Conteggio sessioni|adc-visite-footer|format\(result\.total/);
+  assert.match(js, /adc-visite-footer/);
+  assert.match(js, /Conteggio sessioni/);
+  assert.match(js, /result.total - 2000/);
 });
 
 test('shared page surfaces define consistent cards, headings and footer colors', () => {
