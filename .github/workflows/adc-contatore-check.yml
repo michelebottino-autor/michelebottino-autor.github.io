@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'adc/contatore-config.json'
+      - 'adc/assets/navigazione-unificata.js'
+      - 'tests/adc-navigation-counter.test.cjs'
       - 'adc-contatore/**'
       - '.github/workflows/adc-contatore-check.yml'
 jobs:
@@ -18,6 +20,7 @@ jobs:
         run: |
           node --check adc/assets/navigazione-unificata.js
           node --check adc-contatore/src/worker.js
+          node --test tests/adc-navigation-counter.test.cjs
       - name: Verifica configurazione e schema
         run: |
           python - <<'PY'
