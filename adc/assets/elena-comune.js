@@ -40,11 +40,27 @@
    const office=(base.offices||[]).find(o=>(o.keys||[]).some(k=>q.includes(norm(k)) &&
      (municipality|| /\b(orari|quando|apre|chiude|apertura)\b/.test(q))));
    if(office){
+     if(has(/\b(telefono|numero|recapito|contatto|chiamare|mail|email|pec)\b/)&&
+        !has(/\b(orari|orario|apertura|chiusura|apre|chiude|ricevimento)\b/)){
+       return {kind:'civic',title:'Recapiti — '+office.name,
+         text:'Per contattare '+office.name+' puoi chiamare il centralino del Comune: '+common.phone+
+           '. Per un eventuale recapito diretto consulta la scheda dell’ufficio sul portale ufficiale: non dispongo di un numero diretto verificato.',
+         links:[link('Elenco degli uffici e contatti',base.directories.offices),
+           link('Contatti del Municipio',common.url)].filter(Boolean),
+         limitation:'Il centralino è un recapito generale, non il numero diretto dell’ufficio.',
+         source:'Comune di Calatabiano',checked_at:base.verified_at};
+     }
      return {kind:'civic',title:'Orari — '+office.name,
        text:'Secondo l’avviso ufficiale del '+office.source_date+': '+office.opening+
          '\nPer festività, chiusure straordinarie o modifiche successive verifica il sito del Comune o chiama il centralino '+common.phone+'.',
        links:[link('Avviso ufficiale sugli orari',office.url),link('Elenco degli uffici comunali',base.directories.offices)].filter(Boolean),
        limitation:'L’orario riportato è quello dell’avviso citato, non una conferma in tempo reale dell’apertura.',source:'Comune di Calatabiano',checked_at:base.verified_at};
+   }
+   if(has(/\b(quanti|quante|numero di|elenco completo)\s+(?:sono\s+)?(?:gli\s+|degli\s+)?uffici\b/)&&municipality){
+     return {kind:'civic',title:'Elenco degli uffici comunali',
+       text:'Per conoscere il numero e l’elenco aggiornato degli uffici consulta la directory istituzionale. Non fornisco un totale che non sia stato verificato sul portale.',
+       links:[link('Directory degli uffici del Comune',base.directories.offices)].filter(Boolean),
+       limitation:'La struttura organizzativa può essere modificata dal Comune.',source:'Comune di Calatabiano'};
    }
    if(!municipality&&!has(/\b(telefono|numero|centralino|orario|orari|apertura|chiusura|pec)\b.*\b(calatabiano)\b/))return null;
    if(has(/\b(telefono|numero|centralino|chiamare|contattare|contatti|email|mail|pec|indirizzo|sede|dove si trova)\b/)){
