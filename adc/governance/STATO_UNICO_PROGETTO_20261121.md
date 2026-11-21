@@ -135,3 +135,20 @@ L'ADC conserva riferimenti alle `Rationes Decimarum`, ai diplomi medievali, al P
 ### Stato
 
 Ricognizione strutturale sui file completata per i dossier sopra elencati; nessuna modifica ai testi storici. Resta aperto il controllo esterno dei PDF e la valutazione editoriale dei tre racconti generali.
+
+
+## 11. Distinzione dei tre percorsi storici — 21 novembre 2026
+
+### Esame dei contenuti effettivi
+- `/adc/storia-per-tutti/`: sei capitoli di lettura continuativa, dalle testimonianze romane alla storia contemporanea. **Funzione canonica:** narrazione generale per il pubblico.
+- `/adc/storia/`: capitoli documentari e approfondimenti su castello, testimonianze ecclesiastiche, demografia, crisi sanitarie, terremoti e Processo 334. **Funzione:** approfondimento e contesto critico, senza qualificarsi come seconda storia generale di riferimento.
+- `/adc/percorsi.html`: sezioni monografiche su origini, chiese, castello, patrimonio edilizio e Quattrocento. **Funzione:** navigazione per argomento, non seconda narrazione cronologica principale.
+
+### Modifiche tecniche eseguite
+- Inserita una navigazione condivisa e accessibile nelle tre pagine con le voci «Leggi la storia», «Approfondisci la ricerca», «Esplora per argomento», evidenziando la pagina corrente.
+- Sostituita nella pagina di approfondimento l'etichetta fuorviante «Calatabiano raccontata a tutti · Capitolo iniziale» con «Documenti e storia · Percorso di approfondimento».
+- Precisata l'introduzione ai percorsi tematici, senza rimuovere testi storici o cambiare le URL canoniche.
+- Commit: `c8a8425`, `c401fa7`, `5ea356a`.
+- La struttura di navigazione è verificata a livello di file GitHub. Collaudo responsive e distribuzione in browser ancora da verificare.
+
+**Stato D-03:** funzione editoriale dei tre percorsi distinta e navigazione aggiornata; revisione semantica paragrafo per paragrafo ancora aperta. 
