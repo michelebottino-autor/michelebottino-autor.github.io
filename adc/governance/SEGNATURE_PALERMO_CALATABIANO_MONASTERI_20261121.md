@@ -67,3 +67,13 @@ https://saassipa.cultura.gov.it/wp-content/uploads/2020/08/122-Protonotaro-Reper
 - Nessun riscontro nuovo oggi per «domus virginum S. Annae», «monachi Calathabiani ad Nicosiam», «postilla 1239» o per un convento francescano istituito a Gesù e Maria.
 
 **Stato:** inventari ufficiali letti; fonti primarie ancora da acquisire e collazionare. Evitare sia il disconoscimento indiscriminato delle piste locali sia la promozione di una segnalazione d'inventario a prova storica di attività religiosa in loco.
+
+
+## F. Aggiornamento sulla consultazione digitale dei Riveli — 21 novembre 2026
+- **Novità istituzionale:** dal 27 aprile 2026, l'Archivio di Stato di Palermo e l'ICAR comunicano la disponibilità sul Portale Antenati delle serie dei Riveli di beni e anime della **Deputazione del Regno** (6.322 registri) e del **Tribunale del Real Patrimonio** (5.254 registri), in totale 11.576 unità pubblicate nel nuovo riversamento.
+- **Fonti primarie per la notizia di accesso:** https://saassipa.cultura.gov.it/27-aprile-2026-documentazione-disponibile-online-per-la-consultazione-diretta-stato-civile-e-riveli/ e https://icar.cultura.gov.it/archivio-notizie/notizia/nuova-pubblicazione-sul-portale-antenati-ampliata-la-documentazione-dellarchivio-di-stato-di-palermo .
+- **Portale:** https://antenati.cultura.gov.it/archive/?archivio=227 .
+- **Esito controllo operativo:** apertura diretta del portale tramite consultazione web e richiesta HTTP dal computer Michele: **HTTP 403**, senza accesso all'elenco delle unità. Perciò **non** è stato verificato se i singoli volumi di Calatabiano 1039 e 2146–2149 siano compresi nel primo lotto pubblicato, né sono state lette immagini o folia.
+- **Esclusione annunciata dall'Archivio:** la documentazione della *Suprema Giunta Centrale per la rettifica dei riveli* (1811–1820) non è prevista per la pubblicazione online; è consultabile in sala studio. Un secondo lotto di digitalizzazioni resta da pubblicare.
+- **Conseguenza pratica:** cercare ora i numeri 1039 e 2146–2149 fra le unità della Deputazione nel Portale Antenati quando accessibile; verificare titolo, segnatura, eventuale identificatore della riproduzione e **immagine della carta** prima di trascrivere contrade, conventi, censi o toponimi.
+- **Attenzione:** la quantità di registri online è un dato generale dell'Archivio di Stato di Palermo, non un numero di registri riferiti specificamente a Calatabiano.
