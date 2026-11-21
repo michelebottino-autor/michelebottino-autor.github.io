@@ -42,7 +42,7 @@
     nav.id = 'adc-u-links'; nav.setAttribute('aria-label','Navigazione principale ADC');
     names.forEach(function (item) {
       var a = document.createElement('a'); a.href = item[1]; a.textContent = item[0];
-      if (location.pathname === item[1] || (item[1] === '/adc/chiese/' && location.pathname.startsWith('/adc/chiese/')) || (item[1] === '/adc/monasteri/' && location.pathname.startsWith('/adc/monasteri/'))) a.setAttribute('aria-current','page');
+      if (location.pathname === item[1] || (item[1] === '/adc/#dedica-comunita' && location.pathname === '/adc/' && location.hash === '#dedica-comunita') || (item[1] === '/adc/chiese/' && location.pathname.startsWith('/adc/chiese/')) || (item[1] === '/adc/monasteri/' && location.pathname.startsWith('/adc/monasteri/'))) a.setAttribute('aria-current','page');
       nav.appendChild(a);
     });
     header.appendChild(nav);
@@ -54,6 +54,17 @@
     button.addEventListener('click',function (event) {
       event.preventDefault(); event.stopPropagation();
       setOpen(button.getAttribute('aria-expanded') !== 'true');
+    });
+    nav.addEventListener('click',function (event) {
+      var link = event.target.closest('a[href]');
+      if (link && nav.contains(link)) setOpen(false);
+    });
+    window.addEventListener('hashchange', function () {
+      nav.querySelectorAll('a[aria-current]').forEach(function (link) { link.removeAttribute('aria-current'); });
+      nav.querySelectorAll('a').forEach(function (link) {
+        if (link.getAttribute('href') === '/adc/#dedica-comunita' && location.pathname === '/adc/' && location.hash === '#dedica-comunita') link.setAttribute('aria-current','page');
+        else if (link.getAttribute('href') === location.pathname && !location.hash) link.setAttribute('aria-current','page');
+      });
     });
     document.addEventListener('click',function (event) {
       if (!header.contains(event.target)) setOpen(false);
