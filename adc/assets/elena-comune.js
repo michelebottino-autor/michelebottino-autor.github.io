@@ -206,6 +206,21 @@
        limitation:'Non attribuisco deleghe specifiche non documentate nelle schede consultate.',
        source:'Comune di Calatabiano',checked_at:admin.verified_at};
    }
+   const staff=(admin.staff||[]).find(p=>p&&p.name&&q.includes(norm(p.name)));
+   if(staff){
+     return {kind:'civic',title:'Responsabilità amministrativa — '+staff.name,
+       text:'La scheda del Comune riporta: '+staff.role+'.',
+       links:[safeLink('Scheda istituzionale di riferimento',staff.url)].filter(Boolean),
+       limitation:staff.limitation||'L’incarico è soggetto a possibili modifiche.',
+       checked_at:admin.verified_at,source:'Comune di Calatabiano'};
+   }
+   if(has(/\b(elenco personale|tutti i dipendenti|elenco dipendenti|nomi dipendenti|personale comunale)\b/)){
+     return {kind:'civic',title:'Elenco pubblico del personale comunale',
+       text:"Il Comune rende consultabile un repertorio nominativo del personale amministrativo. L’elenco risulta aggiornato al "+admin.staff_directory.source_updated_at+
+         " e non consente di attestare da solo l’organico attuale. Nominativi riportati: "+admin.staff_directory.names.join('; ')+".",
+       links:[safeLink('Repertorio istituzionale del personale',admin.staff_directory.url)],
+       limitation:admin.staff_directory.limitation,source:'Comune di Calatabiano'};
+   }
    if(has(/\b(organigramma|amministratori|amministrazione comunale|organi comunali|responsabili uffici|personale amministrativo|dirigenti)\b/)){
      return {kind:'civic',title:'Amministrazione e uffici comunali',
        text:'La sezione Amministrazione contiene organi di governo, aree amministrative, uffici e personale. Per conoscere funzioni e responsabili di un servizio specifico apri la relativa scheda ufficiale.',
