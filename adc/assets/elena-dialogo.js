@@ -44,6 +44,10 @@
   }
   function reply(q, index, approved) {
     const n = normalize(q);
+    // Richiesta esplicita di contribuire con una memoria personale: nessuna raccolta implicita nella chat.
+    if(/(?:raccont|testimonianz|ricord|memori)/.test(n) && /(?:voglio|vorrei|posso|condivid|inviar|pubblic|personal|infanzia|nonni|famiglia)/.test(n)){
+      return {kind:'contribution',title:'Condividi un ricordo con l’ADC',text:'Puoi raccontare un episodio di Calatabiano attraverso la scheda dedicata. Prima dell’invio decidi se autorizzare una possibile pubblicazione con il tuo nome, in forma anonima, oppure se non autorizzarla. Nulla viene pubblicato automaticamente.',links:[{title:'Apri la raccolta delle memorie',url:'/adc/memorie/'}]};
+    }
     // Risposte canoniche consentite soltanto con stato, fonte e testo approvati.
     const answer = (approved || []).find(x => x && x.status === 'APPROVED_FOR_PUBLICATION' && x.question && normalize(x.question)===n && typeof x.answer==='string' && x.answer.trim() && Array.isArray(x.sources) && x.sources.length && x.sources.every(s=>s && safeUrl(s.url) && s.page && s.title) && x.reviewer && x.reviewed_at && x.review_rationale && ['SOURCE_IDENTIFIED','EDITION_TEXT_CHECKED','IMAGE_COLLATED','ORIGINAL_COLLATED'].includes(x.evidence_status) && typeof x.evidence_limitations==='string' && x.sources.every(s=>s.source_type));
     if (answer) return {kind:'documentary',id:answer.id,title:'Risposta documentata',text:answer.answer,links:answer.sources.map(s=>({title:s.title+' — p. '+s.page,url:s.url})),limitation:answer.evidence_limitations,evidence_status:answer.evidence_status};
