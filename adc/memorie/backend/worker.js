@@ -85,13 +85,25 @@ export default {
     }
     if(request.method==='PATCH'){
      if(!(request.headers.get('content-type')||'').toLowerCase().startsWith('application/json'))return json({error:'Formato non supportato'},415,allow);
-     const d=await request.json(),stato=clean(d.stato);
-     if(!['in_revisione','approvata','pubblicata','ritirata','respinta'].includes(stato)||!valid(d.note_redazionali||'',5000)||!valid(d.testo_pubblico||'',20000))return json({error:'Dati non validi'},400,allow);
+     if(Number(request.headers.get('content-length')||0)>65000)return json({error:'Richiesta troppo lunga'},413,allow);
+     const raw=await request.text();
+     if(new TextEncoder().encode(raw).length>65000)return json({error:'Richiesta troppo lunga'},413,allow);
+     let d;try{d=JSON.parse(raw)}catch(_){return json({error:'Richiesta JSON non valida'},400,allow)}
+     if(!d||typeof d!=='object'||Array.isArray(d)||!valid(d.stato,30)||!valid(d.note_redazionali||'',5000)||!valid(d.testo_pubblico||'',20000))return json({error:'Dati non validi'},400,allow);
+     const stato=clean(d.stato);
+     if(!['in_revisione','approvata','pubblicata','ritirata','respinta'].includes(stato))return json({error:'Stato non valido'},400,allow);
      const existing=await env.DB.prepare('SELECT scelta_pubblicazione,stato FROM testimonianze WHERE id=?').bind(id).first();
      if(!existing)return json({error:'Non trovato'},404,allow);
-     if(stato==='approvata'&&(existing.scelta_pubblicazione==='non_autorizzata'||!['ricevuta','in_revisione'].includes(existing.stato)))return json({error:'Approvazione non consentita'},409,allow);
-     if(stato==='pubblicata'&&(existing.scelta_pubblicazione==='non_autorizzata'||existing.stato!=='approvata'||!clean(d.testo_pubblico)))return json({error:'Pubblicazione vietata: manca il consenso o l’approvazione preventiva'},409,allow);
      if(['ritirata','respinta'].includes(existing.stato))return json({error:'Testimonianza ritirata o respinta: non modificabile'},409,allow);
+     const permitted={
+       ricevuta:['in_revisione','approvata','respinta','ritirata'],
+       in_revisione:['in_revisione','approvata','respinta','ritirata'],
+       approvata:['in_revisione','pubblicata','respinta','ritirata'],
+       pubblicata:['ritirata']
+     };
+     if(!permitted[existing.stato]?.includes(stato))return json({error:'Passaggio redazionale non consentito'},409,allow);
+     if(stato==='approvata'&&existing.scelta_pubblicazione==='non_autorizzata')return json({error:'Approvazione vietata: pubblicazione non autorizzata'},409,allow);
+     if(stato==='pubblicata'&&(existing.scelta_pubblicazione==='non_autorizzata'||!clean(d.testo_pubblico)))return json({error:'Pubblicazione vietata: manca il consenso o un testo approvato'},409,allow);
      await env.DB.prepare('UPDATE testimonianze SET stato=?,note_redazionali=?,testo_pubblico=?,pubblicata_at=?,updated_at=? WHERE id=?')
       .bind(stato,clean(d.note_redazionali||''),stato==='pubblicata'?clean(d.testo_pubblico):null,stato==='pubblicata'?new Date().toISOString():null,new Date().toISOString(),id).run();
      return json({id,stato},200,allow);
