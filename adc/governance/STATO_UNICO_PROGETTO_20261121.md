@@ -442,3 +442,17 @@ Nella stessa cartella sono state aggiunte e riscontrate via ricerca Drive altre 
 - Verificato il **regesto 2 (19 marzo 1125)**: controversia per terre e fieno con monaci dipendenti da San Filippo di Demenna nei territori di Limina, Castro e Storiano; pergamena greco-latina, segnatura antica 72. **Avvertenza dell'inventario:** la parte latina è posteriore al 1145; non considerarla automaticamente coeva al documento greco.
 - In entrambi i casi il dato deriva dal **regesto istituzionale**, non da collazione del facsimile; non contiene prova di possesso a Calatabiano. Inserite le due testimonianze nella scheda canonica `/adc/monasteri/san-filippo-fragala/`, evitando una nuova pagina duplicata. Fonte: https://saassipa.cultura.gov.it/wp-content/uploads/2020/05/156-Pergame-varie.pdf .
 - Confermata la copia su disco fisico separato D di cui al §28: confronto SHA-256 sorgente/destinazione riuscito per sette file; l'unità G: di Google Drive non era leggibile a causa di un errore di accesso e non è stata modificata.
+
+
+## 30. Revisione editoriale delle pagine pubbliche — 21 novembre 2026
+
+**Perimetro effettivo:** rilette nel repository 12 pagine principali di `adc/storia/`, `adc/storia-per-tutti/`, `adc/fonti/`, `adc/chiese/` e l'indice e le 8 schede della sezione `adc/monasteri/`; inoltre esaminate alcune schede delle chiese e i dossier `adc/dossier-zucchero/` e `adc/archivio-gravina-cruillas/`. Controllo automatico puntuale delle 12 pagine principali: nessun paragrafo letteralmente identico ripetuto e nessun percorso locale o ancora interna mancante nei collegamenti esaminati. **Non equivale a una rilettura integrale dei 99 HTML ADC.**
+
+**Interventi pubblicati e verificati tramite rilettura di codice:**
+- `/adc/storia-per-tutti/`: capitolo «Una comunità oltre le mura» accorciato eliminando tre paragrafi che ripetevano la stessa idea; mantenute le attestazioni ecclesiastiche medievali e aggiunta distinzione fra chiese locali e monasteri documentati fuori territorio; link diretto a `/adc/monasteri/` nella bibliografia di capitolo.
+- `/adc/monasteri/san-filippo-fragala/`: eliminati dal testo pubblico i dettagli tecnici di un vecchio URL non risolto e del codice HTTP 403; mantenuti nomi del fondo, segnature, fonti e limite reale (facsimili non ancora collazionati).
+- `/adc/dossier-zucchero/`: sostituita la nota tecnica sull'impossibilità dello screenshot con l'informazione scientificamente rilevante sulla mancata collazione delle carte originali; collegato il repertorio dei Riveli in `/adc/storia/#riveli-segnature-palermo`.
+
+**Criteri editoriali:** mai trasformare l'esistenza di una scheda in prova di monastero nel territorio; non confondere un regesto con trascrizione diplomatica; non riprodurre log, errori HTTP o appunti di lavorazione nelle pagine per i lettori. I registri di governance trattengono le verifiche tecniche. Le ricerche sulle fonti continuano indipendentemente dal perfezionamento dei testi.
+
+**Controllo di pubblicazione:** i commit successivi richiedono conferma GitHub Actions; un audit HTML riuscito certifica soltanto l'assenza delle specifiche anomalie cercate dallo script, non il contenuto storico di ogni frase.
