@@ -3,6 +3,14 @@
 ## Stato
 **Stato verificato il 21 novembre 2026:** database D1 `adc-memorie-private` creato nella regione WEUR e schema importato (tabelle `testimonianze` e `richieste_giornaliere`); Worker `adc-memorie-api` distribuito con binding `DB` su `https://adc-memorie-api.darkaronteanonymous-72c.workers.dev`. Il servizio risponde con HTTP 503 / `Servizio non ancora configurato` perché non risultano ancora completati i segreti. Widget Turnstile ADC creato; chiave pubblica nel file `../config.json`, segreto mai nel repository. **Il modulo pubblico resta disattivato**, `enabled:false`. Non interpretare la distribuzione del Worker come avvio del trattamento di testimonianze.
 
+## Manutenzione automatica e collaudo D1 (21 novembre 2026)
+- Cron Trigger distribuito sul Worker: `25 3 * * *` (03:25 UTC) per la manutenzione quotidiana.
+- I contatori antispam scaduti da oltre 7 giorni vengono eliminati dal database; la cancellazione automatica delle testimonianze è **disabilitata** finché non viene attivata separatamente `RETENTION_PURGE_ENABLED=true`.
+- Criteri e durate predisposti: [CONSERVAZIONE.md](./CONSERVAZIONE.md). È necessaria la loro validazione prima di trattare testimonianze reali.
+- Test di regressione JavaScript: **15/15 superati** sul PC Michele.
+- Collaudo D1 remoto con una testimonianza sintetica: inserimento, lettura, cancellazione e conferma di **0 record residui**.
+- Il Worker resta in `HTTP 503` per i segreti non configurati. `config.json.enabled=false`: nessun invio diretto dal sito ADC.
+
 ## Componenti
 - `schema.sql`: schema per Cloudflare D1 (database privato).
 - `worker.js`: API per invio, consultazione interna, approvazione, pubblicazione, ritiro e cancellazione.
