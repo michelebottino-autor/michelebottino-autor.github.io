@@ -9,7 +9,7 @@
   const normalize = s => String(s || '').toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
   const stop = new Set('calatabiano storia storico storica documento documenti fonte fonti cosa quale quali dove quando come sapere informazioni vorrei vorremmo cerca cercare trovare parla dice del della delle degli dello nella nelle nei sui sul con per alla alle anche sono hanno un una che chi gli dai dai dal dei era erano e il la di da a in si'.split(' '));
   const aliases = {mulino:'mulini',mulini:'mulino',chiesa:'chiese',chiese:'chiesa',origine:'origini',origini:'origine',mappa:'cartografia',mappe:'cartografia',foto:'fotografie',fotografia:'fotografie',fotografie:'foto',ponte:'alcantara',castelli:'castello',castello:'castelli',pergamena:'pergamene',pergamene:'pergamena',monastero:'monasteri',monasteri:'monastero',decime:'rationes',rationes:'decime',zuccherificio:'zucchero',trappeto:'zucchero',trappeti:'zucchero',crocifisso:'croce',croce:'crocifisso',ferroviaria:'ferrovia',stazioni:'stazione',stazione:'ferrovia',terremoti:'terremoto'};
-  const safeUrl = u => typeof u === 'string' && /^\/adc\/[a-z0-9/_-]*(?:\.html)?$/i.test(u);
+  const safeUrl = u => typeof u === 'string' && (/^\/adc\/[a-z0-9/_-]*(?:\.html)?$/i.test(u) || /^https:\/\/comune\.calatabiano\.ct\.it\/[a-z0-9/?&=_.%-]*$/i.test(u));
   const tokens = q => [...new Set(normalize(q).split(/[^a-z0-9]+/).filter(x => x.length > 2 && !stop.has(x)).flatMap(x => aliases[x] ? [x, aliases[x]] : [x]))];
   function rank(q, entries) {
     const ts = tokens(q);
@@ -76,7 +76,7 @@
       limitation:entry.evidence_limitations,evidence_status:entry.evidence_status,
       reviewer:entry.reviewer,reviewed_at:entry.reviewed_at};
   }
-  function reply(q, index, approved, knowledge) {
+  function reply(q, index, approved, knowledge, municipality, news) {
     const n = normalize(q);
     // Richiesta esplicita di contribuire con una memoria personale: nessuna raccolta implicita nella chat.
     if(/(?:raccont|testimonianz|ricord|memori)/.test(n) && /(?:voglio|vorrei|posso|condivid|inviar|pubblic|personal|infanzia|nonni|famiglia)/.test(n)){
@@ -87,6 +87,9 @@
     if (answer) return {kind:'documentary',id:answer.id,title:'Risposta documentata',text:answer.answer,links:answer.sources.map(s=>({title:s.title+' — p. '+s.page,url:s.url})),limitation:answer.evidence_limitations,evidence_status:answer.evidence_status,reviewer:answer.reviewer,reviewed_at:answer.reviewed_at};
     const controlled=knowledgeAnswer(q,knowledge,approved);
     if(controlled)return controlled;
+    const civic=(typeof globalThis!=='undefined'&&globalThis.ElenaComune&&typeof globalThis.ElenaComune.reply==='function')
+      ?globalThis.ElenaComune.reply(q,municipality,news):null;
+    if(civic)return civic;
     const matches = rank(q, index?.entries);
     if (matches.length) return {kind:'index',title:'Fonti e percorsi da consultare',text:'Non è disponibile una risposta sintetica verificata per questa domanda. Questi percorsi potrebbero essere pertinenti: consulta le fonti prima di trarre conclusioni.',links:matches.map(e=>({title:e.title,url:e.url,description:e.description}))};
     return {kind:'empty',title:'Nessuna fonte sufficiente individuata',text:'Non ho trovato un percorso sufficientemente pertinente nell’indice pubblico. Puoi consultare il repertorio generale oppure riprovare indicando una località, un anno o un argomento.',links:[{title:'Consulta le fonti e i documenti',url:'/adc/fonti/'},{title:'Leggi la storia di Calatabiano',url:'/adc/storia/'}]};
@@ -94,7 +97,7 @@
   function mount() {
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
-    let index={entries:[]}, approved=[], knowledge={entries:[]}, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
+    let index={entries:[]}, approved=[], knowledge={entries:[]}, municipality=null, municipalNews=null, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
     const tools=document.createElement('div');tools.className='elena-conversation-tools';
     const availability=document.createElement('p');availability.className='elena-source-status';availability.setAttribute('role','status');
     availability.textContent='Caricamento del repertorio documentario…';
@@ -145,12 +148,14 @@
       window.addEventListener('pagehide',()=>welcomeAudio.pause());
     }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
-    const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json'),load('/adc/assets/elena-conoscenza-verificata.json')]).then(a=>{
+    const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json'),load('/adc/assets/elena-conoscenza-verificata.json'),load('/adc/assets/elena-comune-fonti.json'),load('/adc/assets/elena-comune-news.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)){index=a[0].value;indexAvailable=true;}
       if(a[1].status==='fulfilled' && Array.isArray(a[1].value?.answers)){approved=a[1].value.answers;approvedAvailable=true;}
       if(a[2].status==='fulfilled'&&a[2].value?.schema===1&&Array.isArray(a[2].value.entries)){
         knowledge=a[2].value;knowledgeAvailable=true;
       }
+      if(a[3].status==='fulfilled'&&a[3].value?.schema===1)municipality=a[3].value;
+      if(a[4].status==='fulfilled'&&a[4].value?.schema===1)municipalNews=a[4].value;
       availability.textContent=indexAvailable
         ? 'Indice consultabile: '+index.entries.length+' percorsi · '+(approvedAvailable?approved.filter(a=>a.status==='APPROVED_FOR_PUBLICATION').length+' risposte approvate':'risposte approvate non disponibili')
         : 'Indice non disponibile. La consultazione è temporaneamente limitata.';
@@ -209,7 +214,7 @@
         const partial=(!indexAvailable || !approvedAvailable);
         const r=(!indexAvailable && !approvedAvailable)
           ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
-          : reply(effective,index,approved,knowledge);
+          : reply(effective,index,approved,knowledge,municipality,municipalNews);
         if(!indexAvailable && r.kind!=='documentary'){
           r.kind='unavailable';
           r.title='Indice documentario non disponibile';
@@ -224,6 +229,8 @@
           ? 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.'
           : r.kind==='unavailable'
             ? 'Caricamento delle fonti non riuscito: nessuna conclusione storica può essere tratta.'
+          : r.kind==='civic'
+            ? 'Servizi e comunicazioni del Comune: informazioni attribuite al portale istituzionale. Verifica date e possibili aggiornamenti.'
           : r.kind==='index'
             ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
             : 'Nessuna attestazione approvata individuata per questa domanda.');
@@ -239,6 +246,7 @@
         if(partial) article.append(make('p','elena-dialogue-evidence',!indexAvailable
           ? 'Non è stato possibile consultare l’intero repertorio. La ricerca non è completa.'
           : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
+        if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
         if(r.kind==='documentary' && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         const voiceControls=make('div','elena-dialogue-voice');
         const read=make('button','elena-dialogue-read','Ascolta la risposta');
@@ -280,7 +288,7 @@
         // Il comando vocale precede il testo lungo: resta subito visibile anche su smartphone.
         article.insertBefore(voiceControls,article.children[1] || null);
         if(r.links.length) {
-          article.append(make('p','elena-dialogue-sources',r.kind==='documentary'?'Fonti della risposta:':'Apri i documenti e i percorsi:'));
+          article.append(make('p','elena-dialogue-sources',r.kind==='documentary'?'Fonti della risposta:':r.kind==='civic'?'Fonte ufficiale del Comune:':'Apri i documenti e i percorsi:'));
           const list=make('ul','elena-dialogue-links');
           for (const link of r.links) {
             if(!safeUrl(link.url))continue;
