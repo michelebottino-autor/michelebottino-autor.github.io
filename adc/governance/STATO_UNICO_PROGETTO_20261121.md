@@ -480,3 +480,12 @@ Revisionate direttamente, con conservazione dei riferimenti storici e bibliograf
 - `/adc/archivio-gravina-cruillas/`: rimossa dalla nota pubblica l'istruzione operativa per chiedere riproduzioni, mantenendo il riferimento a Vesco, inventario p. 150, I serie b. 55 bis fasc. 228 ter.
 
 **Controllo dopo il salvataggio:** le cinque pagine esistono in GitHub, hanno canonical e i collegamenti interni principali controllati non sono mancanti. Il controllo automatico dei link non è una verifica in browser né una valutazione scientifica frase per frase. Sono stati controllati anche contenuti di altre pagine senza applicare trasformazioni automatiche su citazioni, date o segnature. Non creare nuovi dossier paralleli e non nascondere lacune documentarie sotto formulazioni assertive.
+
+
+## 33. Ripristino dell'emblema grafico ADC — 21 novembre 2026
+
+- Segnalazione: l'emblema storico ADC non risultava più visibile nell'intestazione condivisa del sito.
+- **Diagnosi verificata in codice:** il file originale non era stato eliminato dal repository (`images/logo_laboratorio_adc_144.webp`, `_360.webp`, `_640.webp`). La navigazione unificata (`adc/assets/navigazione-unificata.js`) costruiva il marchio di testata con il solo nome in testo; contemporaneamente nascondeva l'intestazione precedente. Il logo era ancora presente nell'area `adc-welcome` della homepage, ma non nell'elemento condiviso delle pagine.
+- **Riparazione:** inserita l'immagine originale, con `srcset` 144/360 e testo accessibile nel collegamento del marchio; aggiornati `adc/assets/navigazione-unificata.js` e `adc/assets/navigazione-unificata.css` con dimensioni responsive 60/52/44 px, evitando duplicazioni e mantenendo il menu.
+- **Verifiche effettuate:** il repository contiene i tre file WebP originali; le pagine `adc/index.html`, `adc/storia/index.html`, `adc/chiese/index.html`, `adc/monasteri/index.html`, `adc/fonti/index.html` includono i due asset della navigazione comune. Il codice aggiornato è stato riletto da GitHub. Il controllo della distribuzione GitHub Pages va annotato separatamente al completamento; non equivale a collaudo visivo sullo smartphone.
+- **Preservazione dell'identità:** nessun logo nuovo generato; nessun file originale sostituito.
