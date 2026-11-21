@@ -192,3 +192,10 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 ### Criterio di chiusura
 - **Correzione nel repository:** completata per tutti gli 11 avvisi enumerati.
 - **Ricontrollo del nuovo audit e prova nel browser:** ancora richiesti prima di dichiarare definitivamente chiusi gli avvisi sul sito distribuito.
+
+
+### Esito di controllo successivo
+- GitHub Actions «Audit SEO e struttura sito», esecuzione `44880516997`, job `136774606226`, conclusione **success** (commit `25acad953`).
+- Log verificato: **«URL sitemap: 199 | errori: 0 | avvisi: 0»**.
+- **Stato correzioni SEO e ancora corsi: chiuso per l'audit automatico.** La prova di accessibilità in browser reale rimane distinta.
+- **Stato D-01 Rationes: formulazione corretta, collazione della pagina 53 ancora aperta.**
