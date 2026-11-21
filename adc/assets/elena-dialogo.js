@@ -76,7 +76,7 @@
       limitation:entry.evidence_limitations,evidence_status:entry.evidence_status,
       reviewer:entry.reviewer,reviewed_at:entry.reviewed_at};
   }
-  function reply(q, index, approved, knowledge, municipality, news) {
+  function reply(q, index, approved, knowledge, municipality, news, checks) {
     const n = normalize(q);
     // Richiesta esplicita di contribuire con una memoria personale: nessuna raccolta implicita nella chat.
     if(/(?:raccont|testimonianz|ricord|memori)/.test(n) && /(?:voglio|vorrei|posso|condivid|inviar|pubblic|personal|infanzia|nonni|famiglia)/.test(n)){
@@ -88,7 +88,7 @@
     const controlled=knowledgeAnswer(q,knowledge,approved);
     if(controlled)return controlled;
     const civic=(typeof globalThis!=='undefined'&&globalThis.ElenaComune&&typeof globalThis.ElenaComune.reply==='function')
-      ?globalThis.ElenaComune.reply(q,municipality,news):null;
+      ?globalThis.ElenaComune.reply(q,municipality,news,checks):null;
     if(civic)return civic;
     const matches = rank(q, index?.entries);
     if (matches.length) return {kind:'index',title:'Fonti e percorsi da consultare',text:'Non è disponibile una risposta sintetica verificata per questa domanda. Questi percorsi potrebbero essere pertinenti: consulta le fonti prima di trarre conclusioni.',links:matches.map(e=>({title:e.title,url:e.url,description:e.description}))};
@@ -97,7 +97,7 @@
   function mount() {
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
-    let index={entries:[]}, approved=[], knowledge={entries:[]}, municipality=null, municipalNews=null, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
+    let index={entries:[]}, approved=[], knowledge={entries:[]}, municipality=null, municipalNews=null, sourceChecks=null, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
     const tools=document.createElement('div');tools.className='elena-conversation-tools';
     const availability=document.createElement('p');availability.className='elena-source-status';availability.setAttribute('role','status');
     availability.textContent='Caricamento del repertorio documentario…';
@@ -148,7 +148,7 @@
       window.addEventListener('pagehide',()=>welcomeAudio.pause());
     }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
-    const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json'),load('/adc/assets/elena-conoscenza-verificata.json'),load('/adc/assets/elena-comune-fonti.json'),load('/adc/assets/elena-comune-news.json')]).then(a=>{
+    const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json'),load('/adc/assets/elena-conoscenza-verificata.json'),load('/adc/assets/elena-comune-fonti.json'),load('/adc/assets/elena-comune-news.json'),load('/adc/assets/elena-comune-verifiche.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)){index=a[0].value;indexAvailable=true;}
       if(a[1].status==='fulfilled' && Array.isArray(a[1].value?.answers)){approved=a[1].value.answers;approvedAvailable=true;}
       if(a[2].status==='fulfilled'&&a[2].value?.schema===1&&Array.isArray(a[2].value.entries)){
@@ -156,6 +156,7 @@
       }
       if(a[3].status==='fulfilled'&&a[3].value?.schema===1)municipality=a[3].value;
       if(a[4].status==='fulfilled'&&a[4].value?.schema===1)municipalNews=a[4].value;
+      if(a[5].status==='fulfilled'&&a[5].value?.schema===1)sourceChecks=a[5].value;
       availability.textContent=indexAvailable
         ? 'Indice consultabile: '+index.entries.length+' percorsi · '+(approvedAvailable?approved.filter(a=>a.status==='APPROVED_FOR_PUBLICATION').length+' risposte approvate':'risposte approvate non disponibili')
         : 'Indice non disponibile. La consultazione è temporaneamente limitata.';
@@ -214,7 +215,7 @@
         const partial=(!indexAvailable || !approvedAvailable);
         const r=(!indexAvailable && !approvedAvailable)
           ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
-          : reply(effective,index,approved,knowledge,municipality,municipalNews);
+          : reply(effective,index,approved,knowledge,municipality,municipalNews,sourceChecks);
         if(!indexAvailable && r.kind!=='documentary'){
           r.kind='unavailable';
           r.title='Indice documentario non disponibile';
