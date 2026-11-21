@@ -133,6 +133,10 @@
      previousQuestion=effective;
      spokenKind=reply.kind;spokenId=reply.id||'';spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
+     if(reply.kind==='documentary'&&reply.reviewed_at&&reply.evidence_status){
+       const levels={SOURCE_IDENTIFIED:'Fonte identificata',EDITION_TEXT_CHECKED:'Edizione controllata',IMAGE_COLLATED:'Collazione su immagini',ORIGINAL_COLLATED:'Originale collazionato'};
+       result.append(make('p',(levels[reply.evidence_status]||'Verifica documentaria')+' · Revisione: '+reply.reviewed_at+(reply.reviewer?' · '+reply.reviewer:''),'elena-presenza-evidence'));
+     }
      for(const source of (reply.links||[]).slice(0,5)){
        if(!/^\/adc\/(?!\/)[a-z0-9/_\-.]*$/i.test(source.url))continue;
        const p=make('p'),link=make('a',source.title);link.href=source.url;p.append(link);result.append(p);
