@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "enabled": false,
-  "endpoint": "",
-  "turnstile_site_key": "",
-  "description": "Abilitare solo dopo deploy Worker D1, Turnstile e verifica privacy. Mai inserire credenziali o token nel file pubblico."
+  "endpoint": "https://adc-memorie-api.darkaronteanonymous-72c.workers.dev",
+  "turnstile_site_key": "0x4AAAAAAGL6nzblg6gAlV30",
+  "description": "Worker e D1 distribuiti; invio diretto disattivato finché i segreti del Worker, il collaudo Turnstile e la verifica privacy non sono completati."
 }
