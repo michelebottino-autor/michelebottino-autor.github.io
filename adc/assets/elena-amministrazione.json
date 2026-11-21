@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "verified_at": "2026-11-21",
+  "scope": "Persone e funzioni pubbliche elencate nel portale istituzionale; per incarichi individuali non documentati nessuna delega inventata.",
+  "government": {
+    "mayor": {
+      "name": "Antonio Filippo Petralia",
+      "role": "Sindaco",
+      "url": "https://comune.calatabiano.ct.it/it/persone/petralia-antonio-filippo"
+    },
+    "deputy": {
+      "name": "Vanessa Gambacurta",
+      "role": "Vicesindaca; componente Giunta e Consiglio",
+      "url": "https://pagamentipa.comune.calatabiano.ct.it/it/persone/gambacurta-vanessa"
+    },
+    "executive": {
+      "title": "Giunta comunale",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/giunta-comunale",
+      "source_updated_at": "2026-07-24",
+      "members": [
+        "Antonio Filippo Petralia",
+        "Vanessa Gambacurta",
+        "Antonino Carmelo Scuderi",
+        "Carmelo Moreno Sterrantino",
+        "Antonino Fazio",
+        "Valeria Ferretti"
+      ],
+      "function": "Collabora con il Sindaco nel governo del Comune attraverso deliberazioni collegiali. Non si attribuiscono deleghe individuali se non verificate."
+    },
+    "council": {
+      "title": "Consiglio comunale",
+      "president": "Paolo Fabiano Calabrese",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/consiglio-comunale",
+      "source_updated_at": "2026-07-24",
+      "members": [
+        "Paolo Fabiano Calabrese",
+        "Veronica Intelisano",
+        "Vanessa Gambacurta",
+        "Rosalba Laganà",
+        "Verdiana Santoro",
+        "Antonino Carmelo Scuderi",
+        "Giuseppe Antonio Maria Sgroi",
+        "Agatino Spoto",
+        "Domenico Maria Miuccio",
+        "Angela Sofia Brancato",
+        "Maria Antonina Marino",
+        "Lucio Fabio Tradito"
+      ],
+      "function": "Organo di indirizzo e controllo politico-amministrativo."
+    }
+  },
+  "history": [
+    {
+      "period": "2026-03-11 — fase commissariale precedente alle elezioni amministrative del 2026",
+      "name": "Rossana Manno",
+      "role": "Commissaria straordinaria",
+      "url": "https://www.comune.calatabiano.ct.it/it/news/1966913",
+      "limitation": "L'avviso documenta l'insediamento l'11 marzo 2026. La successiva Giunta e il Consiglio risultano aggiornati al 24 luglio 2026; non si deve presentare Manno come attuale Sindaca."
+    }
+  ],
+  "staff": [
+    {
+      "name": "Emanuela Cangeri",
+      "role": "Responsabile Area 1 — Affari Generali e Sociali; indicata anche nei Servizi Demografici",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/area-1-affari-generali-e-sociali",
+      "source_updated_at": "2025-07-09",
+      "limitation": "Responsabilità indicata nella scheda istituzionale; verificare aggiornamenti e disposizioni successive."
+    }
+  ],
+  "directories": {
+    "administration": "https://www.comune.calatabiano.ct.it/it/menu/amministrazione",
+    "offices": "https://www.comune.calatabiano.ct.it/it/page/uffici-361",
+    "services": "https://www.comune.calatabiano.ct.it/it/menu/servizi",
+    "government": "https://www.comune.calatabiano.ct.it/it/page/organi-di-governo-333"
+  },
+  "procedures": [
+    {
+      "id": "residence",
+      "title": "Cambio abitazione o residenza",
+      "keywords": [
+        "cambio residenza",
+        "cambiare residenza",
+        "trasferimento residenza",
+        "cambio abitazione",
+        "residenza anagrafica"
+      ],
+      "office": "Servizi Demografici",
+      "summary": "Il Comune elenca la dichiarazione di cambio abitazione o residenza tra i procedimenti dei Servizi Demografici. Consulta la pagina ufficiale per modalità di presentazione, eventuale modulistica e documenti richiesti.",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/servizi-demografici",
+      "caution": "Non sono confermati qui requisiti individuali, termini o appuntamenti; non inviare dati anagrafici nella chat di Elena."
+    },
+    {
+      "id": "cie",
+      "title": "Carta d'identità elettronica",
+      "keywords": [
+        "carta identita",
+        "carta d'identita",
+        "carta di identita",
+        "cie",
+        "rinnovo documento"
+      ],
+      "office": "Servizi Demografici",
+      "summary": "La Carta di Identità Elettronica rientra tra le competenze dei Servizi Demografici. Verifica la pagina ufficiale per prenotazioni, costi e documentazione aggiornata.",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/servizi-demografici",
+      "caution": "La chat non prenota appuntamenti e non acquisisce documenti di identità."
+    },
+    {
+      "id": "anpr",
+      "title": "Certificati anagrafici e ANPR",
+      "keywords": [
+        "certificato anagrafico",
+        "certificato residenza",
+        "stato di famiglia",
+        "anpr",
+        "certificati anagrafici"
+      ],
+      "office": "Servizi Demografici",
+      "summary": "L'ufficio tratta servizi anagrafici e indica l'accesso ai servizi dell'ANPR. Consulta la scheda comunale e i servizi ufficiali di identità digitale per il certificato richiesto.",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/servizi-demografici",
+      "caution": "La disponibilità di uno specifico certificato e l'eventuale imposta di bollo devono essere verificate nel procedimento."
+    },
+    {
+      "id": "accesso_atti",
+      "title": "Accesso agli atti amministrativi",
+      "keywords": [
+        "accesso agli atti",
+        "accesso documenti",
+        "copia atto",
+        "atti amministrativi",
+        "accesso civico"
+      ],
+      "office": "Segreteria Affari Generali / URP",
+      "summary": "La Segreteria Affari Generali gestisce anche pratiche di accesso agli atti. La sezione Servizi del Comune contiene le procedure di accesso ai documenti amministrativi.",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/segreteria-affari-generali",
+      "caution": "La tipologia di accesso, l'interesse richiesto, la modulistica e i tempi dipendono dal procedimento effettivo."
+    },
+    {
+      "id": "edilizia",
+      "title": "Pratiche edilizie e urbanistiche — SUE",
+      "keywords": [
+        "pratica edilizia",
+        "permesso costruire",
+        "cila",
+        "scia edilizia",
+        "sanatoria",
+        "urbanistica",
+        "sportello edilizia"
+      ],
+      "office": "SUE — Sportello Unico Edilizia",
+      "summary": "Per pratiche edilizie e urbanistiche il Comune indica lo Sportello Unico per l'Edilizia. Consulta la scheda dell'ufficio e i procedimenti ufficiali per il titolo appropriato.",
+      "url": "https://www.comune.calatabiano.ct.it/index.php/it/unita_organizzative/s-u-e-sportello-unico-edilizia",
+      "caution": "Non è possibile stabilire il titolo edilizio o la documentazione necessaria senza caratteristiche e verifiche tecniche del caso."
+    },
+    {
+      "id": "suap",
+      "title": "Attività produttive — SUAP",
+      "keywords": [
+        "suap",
+        "aprire attivita",
+        "attivita commerciale",
+        "impresa",
+        "negozio",
+        "esercizio commerciale"
+      ],
+      "office": "SUAP — Sportello Unico Attività Produttive",
+      "summary": "Il SUAP costituisce il riferimento per procedimenti relativi alle attività produttive. Consulta l'ufficio per individuare il procedimento e i requisiti applicabili.",
+      "url": "https://pagamentipa.comune.calatabiano.ct.it/it/unita_organizzative/s-u-a-p-sportello-unico-delle-attivita-produttive",
+      "caution": "Elena non compila né presenta SCIA, dichiarazioni o pratiche a nome del visitatore."
+    },
+    {
+      "id": "tributi",
+      "title": "Tributi comunali — TARI e IMU",
+      "keywords": [
+        "pagare tari",
+        "pratica tari",
+        "dichiarazione tari",
+        "imu",
+        "tassa rifiuti",
+        "tributi comunali"
+      ],
+      "office": "Servizio Tributi",
+      "summary": "Il Servizio Tributi è il riferimento per le pratiche tributarie comunali. Consultane la scheda per le procedure ufficiali e gli eventuali canali di pagamento.",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/servizio-tributi",
+      "caution": "Scadenze, importi ed esenzioni non possono essere dedotti da Elena senza l'atto e l'annualità applicabili."
+    },
+    {
+      "id": "segnalazioni",
+      "title": "Segnalare un disservizio",
+      "keywords": [
+        "segnala disservizio",
+        "segnalare disservizio",
+        "segnalazione guasto",
+        "problema strada",
+        "disservizio raccolta"
+      ],
+      "office": "URP / servizi competenti",
+      "summary": "Il portale comunale prevede la segnalazione dei disservizi, compresi quelli relativi alla raccolta rifiuti e allo spazzamento stradale.",
+      "url": "https://www.comune.calatabiano.ct.it/it/topics/23/3",
+      "caution": "Elena non inoltra segnalazioni né può confermare che un intervento sia stato preso in carico."
+    }
+  ]
+}
