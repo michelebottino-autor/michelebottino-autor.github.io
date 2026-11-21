@@ -1,0 +1,42 @@
+name: Elena ADC - verifica fonti comunali
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 5 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: elena-verifica-fonti-comunali
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verifica raggiungibilità delle fonti istituzionali
+        run: python scripts/verifica_fonti_comune.py
+      - name: Valida formato ed esito
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('adc/assets/elena-comune-verifiche.json').read_text(encoding='utf-8'))
+          assert j['schema']==1 and j['entries']
+          assert len({e['id'] for e in j['entries']})==len(j['entries'])
+          assert all(e['url'].startswith('https://comune.calatabiano.ct.it/') for e in j['entries'])
+          assert all(e['status'] in {'raggiungibile','non_disponibile','errore_http','non_verificabile','redirect_non_ufficiale','url_non_ufficiale'} for e in j['entries'])
+          PY
+      - name: Registra solo esiti pubblici
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- adc/assets/elena-comune-verifiche.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Elena ADC: controllo giornaliero raggiungibilità fonti"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
