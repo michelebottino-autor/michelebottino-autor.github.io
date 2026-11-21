@@ -123,5 +123,123 @@
       ],
       "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizi-culturali-sport-e-turismo"
     }
+  ],
+  "service_guides": [
+    {
+      "id": "school_meals",
+      "title": "Refezione scolastica 2026/2027",
+      "keywords": [
+        "mensa scolastica",
+        "refezione",
+        "telemoney",
+        "pasti scuola",
+        "pranzo scuola"
+      ],
+      "fact": "L'avviso comunale del 29 settembre 2026 indica l'avvio del servizio di refezione per scuole dell'infanzia e primarie a decorrere dal 5 ottobre 2026 e l'uso dell'applicativo Telemoney.",
+      "source_date": "2026-09-29",
+      "source_url": "https://comune.calatabiano.ct.it/it/news/2046960",
+      "caution": "La comunicazione riguarda l'anno scolastico 2026/2027; per iscrizioni, pagamenti, sospensioni o modifiche verificare gli avvisi successivi."
+    },
+    {
+      "id": "school_bus",
+      "title": "Trasporto scolastico 2026/2027",
+      "keywords": [
+        "scuolabus",
+        "trasporto scolastico",
+        "autobus scuola",
+        "bus scolastico"
+      ],
+      "fact": "Il Comune ha pubblicato un avviso relativo al servizio scuolabus per l'anno scolastico 2026/2027. L'avviso descrive requisiti e modalità di domanda.",
+      "source_date": "2026",
+      "source_url": "https://comune.calatabiano.ct.it/index.php/it/news/servizio-scuolabus-2026-2027",
+      "caution": "L'avviso non prova che le iscrizioni siano ancora aperte o che un posto sia disponibile oggi; controllare eventuali aggiornamenti."
+    },
+    {
+      "id": "waste_paper",
+      "title": "Conferimento di carta e cartone",
+      "keywords": [
+        "carta e cartone",
+        "carta cartone",
+        "smaltimento carta",
+        "raccolta carta",
+        "carta riciclo"
+      ],
+      "fact": "Un avviso del 10 settembre 2026 comunica che, dal 15 settembre 2026, gli imballaggi in carta e cartone esposti in sacchetti di plastica non vengono ritirati. Il Comune richiede il mastello in dotazione o contenitori e buste di carta o cartone.",
+      "source_date": "2026-09-10",
+      "source_url": "https://comune.calatabiano.ct.it/index.php/it/news/modalita-di-conferimento-carta-e-cartone",
+      "caution": "Per modifiche, festività, turni e calendario settimanale verificare la pagina ufficiale della raccolta."
+    },
+    {
+      "id": "waste_directory",
+      "title": "Raccolta differenziata e servizi rifiuti",
+      "keywords": [
+        "rifiuti",
+        "differenziata",
+        "spazzatura",
+        "umido",
+        "indifferenziata",
+        "calendario raccolta",
+        "ingombranti",
+        "raee",
+        "isola ecologica",
+        "ecolandia"
+      ],
+      "fact": "Il Comune dispone di una sezione dedicata alla gestione rifiuti, con indicazioni sulla raccolta differenziata e sulla segnalazione di disservizi.",
+      "source_date": "",
+      "source_url": "https://comune.calatabiano.ct.it/it/topics/23",
+      "caution": "Non è stato confermato un calendario giornaliero aggiornato: non indico cosa conferire oggi senza un calendario valido."
+    },
+    {
+      "id": "civil_protection",
+      "title": "Protezione civile comunale",
+      "keywords": [
+        "protezione civile",
+        "allerta meteo",
+        "allerta",
+        "emergenza",
+        "rischio idrogeologico",
+        "maltempo",
+        "terremoto oggi"
+      ],
+      "fact": "Il Comune pubblica una scheda dell'ufficio Protezione Civile, responsabile delle attività relative al piano comunale e alla gestione delle emergenze.",
+      "source_date": "",
+      "source_url": "https://comune.calatabiano.ct.it/it/unita_organizzative/protezione-civile",
+      "caution": "Questa scheda non è un bollettino di allerta in tempo reale. In caso di emergenza consultare i canali ufficiali di Protezione civile e le autorità competenti."
+    },
+    {
+      "id": "ordinances",
+      "title": "Ordinanze e atti amministrativi",
+      "keywords": [
+        "ordinanze",
+        "ordinanza",
+        "albo pretorio",
+        "delibera",
+        "delibere",
+        "atti comunali",
+        "atti amministrativi",
+        "determinazioni",
+        "regolamento comunale"
+      ],
+      "fact": "Gli atti e i documenti dell'amministrazione sono consultabili attraverso le sezioni Documenti e dati e Albo Pretorio del portale comunale.",
+      "source_date": "",
+      "source_url": "https://comune.calatabiano.ct.it/it/menu/documenti-e-dati",
+      "caution": "Non è stata verificata una specifica ordinanza vigente. Occorre aprire l'atto completo per accertarne numero, data, efficacia e successive modifiche."
+    },
+    {
+      "id": "social_services",
+      "title": "Servizi di assistenza sociale",
+      "keywords": [
+        "servizi sociali",
+        "assistente sociale",
+        "assistenza sociale",
+        "contributi sociali",
+        "trasporto anziani",
+        "disabilita"
+      ],
+      "fact": "Il Comune dispone di una sezione dedicata ai servizi di assistenza sociale, con informazioni su prestazioni e opportunità pubblicate.",
+      "source_date": "",
+      "source_url": "https://comune.calatabiano.ct.it/it/topics/assistenza-sociale",
+      "caution": "Requisiti, graduatorie e termini dipendono dal singolo avviso; non è possibile confermare l'ammissibilità senza il relativo bando."
+    }
   ]
 }
