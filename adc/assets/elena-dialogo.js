@@ -55,6 +55,21 @@
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
     let index={entries:[]}, approved=[], turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
+    const tools=document.createElement('div');tools.className='elena-conversation-tools';
+    const availability=document.createElement('p');availability.className='elena-source-status';availability.setAttribute('role','status');
+    availability.textContent='Caricamento del repertorio documentario…';
+    const clear=document.createElement('button');clear.type='button';clear.className='elena-clear';clear.textContent='Nuova conversazione';
+    tools.append(availability,clear);
+    output.parentNode.insertBefore(tools,output);
+    output.setAttribute('role','log');output.setAttribute('aria-label','Conversazione con Elena');
+    output.setAttribute('aria-relevant','additions');
+    clear.addEventListener('click',()=>{
+      if(window.speechSynthesis)window.speechSynthesis.cancel();
+      if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
+      previousQuestion='';turns=0;input.value='';
+      output.replaceChildren(Object.assign(document.createElement('p'),{className:'elena-chat-welcome',textContent:'Nuova conversazione. Puoi cercare un documento, una persona o un luogo nelle fonti pubbliche ADC.'}));
+      input.focus();
+    });
     // Il benvenuto usa la registrazione originale Paola anche nella pagina completa.
     const welcome=document.getElementById('elena-paola-welcome');
     if(welcome){
@@ -71,6 +86,9 @@
     const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)){index=a[0].value;indexAvailable=true;}
       if(a[1].status==='fulfilled' && Array.isArray(a[1].value?.answers)){approved=a[1].value.answers;approvedAvailable=true;}
+      availability.textContent=indexAvailable
+        ? 'Indice consultabile: '+index.entries.length+' percorsi · '+(approvedAvailable?approved.filter(a=>a.status==='APPROVED_FOR_PUBLICATION').length+' risposte approvate':'risposte approvate non disponibili')
+        : 'Indice non disponibile. La consultazione è temporaneamente limitata.';
     });
     const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e};
     function run(query) {
@@ -156,6 +174,18 @@
           }
           article.append(list);
         }
+        const actions=make('div','elena-answer-actions');
+        const copy=make('button','elena-copy-answer','Copia risposta e fonti');copy.type='button';
+        const copyStatus=make('span','elena-copy-status','');copyStatus.setAttribute('role','status');
+        copy.addEventListener('click',async()=>{
+          const lines=[q,r.title,r.text,r.limitation?'Limiti della verifica: '+r.limitation:'',...(r.links||[]).filter(x=>safeUrl(x.url)).map(x=>x.title+' — '+location.origin+x.url),'Fonte: Archivio Documentale Calatabiano — '+location.origin+'/adc/elena/'].filter(Boolean);
+          try {
+            if(!navigator.clipboard || !window.isSecureContext)throw Error('Copia non supportata');
+            await navigator.clipboard.writeText(lines.join('\n\n'));
+            copyStatus.textContent='Testo e collegamenti copiati.';
+          }catch(_){copyStatus.textContent='Copia non disponibile in questo browser: seleziona il testo della risposta.';}
+        });
+        actions.append(copy,copyStatus);article.append(actions);
         output.append(article);turns++;
         while(output.children.length>16){output.removeChild(output.firstElementChild);output.removeChild(output.firstElementChild);}
         if(turns>1)article.scrollIntoView({block:'nearest',behavior:'smooth'});
