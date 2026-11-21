@@ -199,3 +199,12 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 - Log verificato: **«URL sitemap: 199 | errori: 0 | avvisi: 0»**.
 - **Stato correzioni SEO e ancora corsi: chiuso per l'audit automatico.** La prova di accessibilità in browser reale rimane distinta.
 - **Stato D-01 Rationes: formulazione corretta, collazione della pagina 53 ancora aperta.**
+
+
+## 16. Verifica automatizzata della galleria dell'Annunziata — 21 novembre 2026
+
+- Verificati catalogo JavaScript, categorie disponibili e percorsi delle quattro varianti di ciascuna fotografia. La collezione contiene 26 schede di opere/ambienti, 40 fotografie numerate consecutivamente e 160 file referenziati (`originali`, `hd`, `web`, `anteprime`), senza riferimenti a risorse mancanti nel repository.
+- Aggiunto `.github/scripts/check-adc-gallery-assets.mjs`: verifica deterministica di numeri, categorie, percorsi, unicità e presenza dei file.
+- Integrato lo script in `.github/workflows/audit-seo.yml`, con attivazione anche alle modifiche della cartella fotografica.
+- **Risultato GitHub Actions verificato:** run `44880694480`, job `136775114506`, `success`. Log: «URL sitemap: 199 | errori: 0 | avvisi: 0» e «Galleria ADC verificata: 26 schede, 40 fotografie, 160 file collegati, 0 errori».
+- **Conclusione circoscritta:** integrità dei riferimenti fotografici e coerenza dei filtri verificate automaticamente. Rimangono separati la verifica visiva su browser reale, i diritti, le attribuzioni iconografiche e il confronto con gli originali.
