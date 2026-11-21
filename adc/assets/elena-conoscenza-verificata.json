@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "version": "2026-11-21",
+  "description": "Archivio pubblico ADC di unità di conoscenza redazionalmente validate; nessuna generazione automatica.",
+  "entries": [
+    {
+      "id": "ADC-KB-1213-CASTELLO",
+      "status": "APPROVED_FOR_PUBLICATION",
+      "subject": "Castello di Calatabiano, privilegio del marzo 1213",
+      "question_intents": [
+        "possesso",
+        "concessione",
+        "castello",
+        "proprietario"
+      ],
+      "must_match_any": [
+        "1213"
+      ],
+      "must_match_subject": [
+        "castello",
+        "calatabiano"
+      ],
+      "keywords": [
+        "costanza",
+        "enrico",
+        "vescovo",
+        "chiesa",
+        "catania",
+        "privilegio",
+        "feudo",
+        "concessione",
+        "possedeva",
+        "apparteneva",
+        "possesso"
+      ],
+      "answer": "Nel marzo 1213 Costanza, insieme al figlio Enrico, confermò alla Chiesa di Catania il castello di Calatabiano con le sue pertinenze. Il documento ricorda che il castello era passato al fisco regio dopo la vicenda del conte Pagano de Parisio e successivamente era stato affidato al conte Arnaldo.",
+      "evidence_status": "IMAGE_COLLATED",
+      "evidence_limitations": "La verifica riguarda le pagine 47–49 dell'edizione Hillen, non la pergamena originale. Il privilegio è un atto di concessione e conferma; non è il contratto originale di compravendita.",
+      "reviewer": "Redazione ADC",
+      "reviewed_at": "2026-11-01",
+      "review_rationale": "Estratto controllato dal registro di risposta E-026-A01-A03, senza nuove attribuzioni.",
+      "source_answer_id": "E-026-A01-A03",
+      "sources": [
+        {
+          "title": "Dossier ADC — Calatabiano nel 1213, Hillen n. 4",
+          "url": "/adc/dossier-1213-1537/",
+          "page": "47–49",
+          "source_type": "printed_edition"
+        }
+      ]
+    },
+    {
+      "id": "ADC-KB-1213-TARI",
+      "status": "APPROVED_FOR_PUBLICATION",
+      "subject": "Somma indicata nel privilegio del 1213",
+      "question_intents": [
+        "pagamento",
+        "somma",
+        "tari"
+      ],
+      "must_match_any": [
+        "1213",
+        "15000",
+        "15.000"
+      ],
+      "must_match_subject": [
+        "arnaldo",
+        "tari",
+        "pagamento",
+        "somma"
+      ],
+      "keywords": [
+        "arnaldo",
+        "tari",
+        "pagamento",
+        "pagati",
+        "somma",
+        "denaro",
+        "15000"
+      ],
+      "answer": "Il privilegio del marzo 1213 menziona un pagamento di 15.000 tarì ad Arnaldo o al suo procuratore. Questa indicazione proviene dal testo della concessione e conferma, non da un contratto originale di compravendita.",
+      "evidence_status": "IMAGE_COLLATED",
+      "evidence_limitations": "Dato ricavato dalle pagine 47–49 dell'edizione Hillen. Non è stato esaminato l'originale della pergamena; la sola menzione della somma non documenta autonomamente tutte le circostanze della transazione.",
+      "reviewer": "Redazione ADC",
+      "reviewed_at": "2026-11-01",
+      "review_rationale": "Ripresa fedele della cifra e della riserva già presenti nella risposta approvata E-026-A01-A03.",
+      "source_answer_id": "E-026-A01-A03",
+      "sources": [
+        {
+          "title": "Dossier ADC — Calatabiano nel 1213, Hillen n. 4",
+          "url": "/adc/dossier-1213-1537/",
+          "page": "47–49",
+          "source_type": "printed_edition"
+        }
+      ]
+    }
+  ]
+}
