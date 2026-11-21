@@ -38,3 +38,11 @@ Sono stati aggiunti numeri di telefono presenti nelle pagine ufficiali per Servi
 La verifica automatica delle novità comunali è configurata in GitHub Actions, ma al controllo odierno non risultano ancora esecuzioni del workflow dedicato. I dati statici di recapito **non** vengono aggiornati dal workflow delle notizie: richiedono una revisione separata delle pagine di ufficio.
 
 Il 21 novembre 2026 il build GitHub Pages relativo all'ultimo commit risultava in corso; non presentare i nuovi recapiti come già visibili fino a deployment concluso e verifica HTTP. I test locali del motore hanno confermato i casi di contatto, orario e calendario.
+
+## Estensione servizi territoriali — 21 novembre 2026
+
+Le schede pubbliche in `elena-comune-fonti.json` includono ora i gruppi `service_guides`: refezione scolastica, scuolabus, regole per carta e cartone, raccolta rifiuti, Protezione civile, atti e ordinanze, assistenza sociale. Ciascuna scheda ha una fonte istituzionale esplicita, un testo limitato all'informazione verificabile e un'avvertenza per dati non confermati o scaduti.
+
+Il motore `elena-comune.js` associa le richieste alle schede tramite espressioni multi-parola; se due schede non sono distinguibili con sufficiente sicurezza non sceglie arbitrariamente. Per le richieste sul calendario giornaliero della raccolta non genera giorni non confermati. Il collegamento a una comunicazione scuolabus precedentemente restituita con HTTP 410 è stato sostituito con la sezione ufficiale Istruzione ancora consultabile.
+
+Il test `scripts/test_elena_servizi.cjs` controlla le sette categorie, la provenienza dei link, l'esclusione di URL estranei, il mancato uso di notizie scadute e le riserve sul calendario. L'integrazione non importa automaticamente tutti gli atti del Comune e non costituisce un servizio in tempo reale.
