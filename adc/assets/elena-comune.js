@@ -8,7 +8,7 @@
  'use strict';
  const norm=s=>String(s||'').toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
  const official=u=>{
-   try{const x=new URL(u);return x.protocol==='https:'&&x.hostname==='comune.calatabiano.ct.it'&&x.username===''&&x.password===''}catch(_){return false}
+   try{const x=new URL(u);return x.protocol==='https:'&&['comune.calatabiano.ct.it','www.comune.calatabiano.ct.it','pagamentipa.comune.calatabiano.ct.it'].includes(x.hostname)&&x.username===''&&x.password===''}catch(_){return false}
  };
  const link=(title,url)=>official(url)?{title,url}:null;
  const recent=(date,ageDays)=>{const t=Date.parse(date);return Number.isFinite(t)&&Date.now()-t>=-2*86400000&&Date.now()-t<=ageDays*86400000};
