@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-21-monasteri-canonici",
+  "version": "2026-11-21-fiumefreddo-fonti",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -705,6 +705,25 @@
         "carfalotto"
       ],
       "description": "La formula domus virginum Sant'Anna non è ancora riscontrata in un documento originale; istituzione da dimostrare."
+    },
+    {
+      "title": "San Giovanni di Fiumefreddo, atti del 1103 e 1106",
+      "url": "/adc/monasteri/san-giovanni-fiumefreddo/",
+      "tags": [
+        "monasteri",
+        "fiumefreddo",
+        "taormina",
+        "san giovanni",
+        "sant'agata",
+        "greco",
+        "latino",
+        "1103",
+        "1106",
+        "donazione",
+        "giacomo",
+        "roberto"
+      ],
+      "description": "Due donazioni edite in greco (1103) e latino (1106): chiesa di San Giovanni nel territorio antico di Taormina, con beni e rapporti ecclesiastici verso Catania. Nessun insediamento a Calatabiano attestato da questi testi."
     }
   ]
 }
