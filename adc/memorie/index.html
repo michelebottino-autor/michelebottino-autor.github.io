@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow"><title>Memorie e racconti di Calatabiano | ADC</title>
+<meta name="description" content="Condividi una testimonianza personale sulla storia e sulla vita di Calatabiano. Scegli se autorizzarne la pubblicazione con nome o in anonimato.">
+<link rel="canonical" href="https://michelebottino-autor.github.io/adc/memorie/">
+<link rel="stylesheet" href="/adc/assets/navigazione-unificata.css">
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f8f6f1;color:#23342d;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:1040px;margin:auto;padding:28px clamp(17px,4vw,44px) 70px}h1,h2{font-family:Georgia,serif;line-height:1.22}h1{font-size:clamp(2rem,5vw,3.2rem)}h2{font-size:1.45rem}a{color:#215c54}p{max-width:78ch}.lead{font-size:1.13rem}.sheet{background:#fff;border:1px solid #dfe1d8;border-radius:15px;padding:clamp(18px,3vw,30px);box-shadow:0 9px 30px #23342d0a}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:5px}.wide{grid-column:1/-1}label,legend{font-weight:650}input,textarea,select{font:inherit;width:100%;padding:11px 12px;border:1px solid #91a59a;border-radius:8px;background:#fff;color:#20362b}textarea{resize:vertical;min-height:180px}.choice{display:flex;gap:9px;align-items:flex-start;margin:10px 0;font-weight:400}.choice input{width:18px;flex:0 0 18px;margin-top:5px}fieldset{border:1px solid #d4ded5;border-radius:10px;margin:18px 0;padding:12px 17px}button{font:650 .94rem system-ui;padding:12px 17px;min-height:44px;border:1px solid #123c31;border-radius:9px;background:#123c31;color:#fff;cursor:pointer}button.secondary{background:#fff;color:#123c31}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.note{background:#f1eee5;border-left:4px solid #96794c;padding:13px 16px;border-radius:0 8px 8px 0}#memo-status{font-weight:600;min-height:2em}small{color:#536258}.privacy{font-size:.92rem}.hidden{display:none!important}footer{background:#0b2830;color:#fff;padding:25px;text-align:center}footer a{color:#f0d7a5}:focus-visible{outline:3px solid #bb955d;outline-offset:3px}@media(max-width:650px){.fields{grid-template-columns:1fr}.wide{grid-column:auto}}
+</style></head><body>
+<main id="contenuto"><p><a href="/adc/elena/">← Torna a Elena</a></p>
+<h1>Memorie e racconti di Calatabiano</h1>
+<p class="lead">Hai un ricordo della vita nel paese, delle sue persone, dei mestieri, delle feste o dei luoghi di un tempo? Puoi raccontarlo a Elena e contribuire a conservare la memoria della comunità.</p>
+<p>La tua testimonianza sarà trattata come <strong>memoria personale</strong>, distinta dalle fonti storiche verificate. Potrà essere conservata per la valutazione redazionale, ma <strong>non sarà pubblicata senza una tua scelta esplicita</strong>.</p>
+<section class="sheet" aria-labelledby="memo-title"><h2 id="memo-title">Racconta la tua storia</h2>
+<form id="memo-form">
+<div class="fields">
+<div class="field"><label for="memo-title-field">Titolo del ricordo *</label><input id="memo-title-field" name="titolo" maxlength="140" required placeholder="Per esempio: La festa in piazza"></div>
+<div class="field"><label for="memo-when">Periodo ricordato</label><input id="memo-when" name="periodo" maxlength="100" placeholder="Per esempio: anni Sessanta"></div>
+<div class="field wide"><label for="memo-place">Luogo o contrada</label><input id="memo-place" name="luogo" maxlength="180" placeholder="Calatabiano, Pasteria, San Marco…"></div>
+<div class="field wide"><label for="memo-story">La tua testimonianza *</label><textarea id="memo-story" name="racconto" minlength="30" maxlength="20000" required placeholder="Racconta ciò che ricordi, ciò che hai visto personalmente o ciò che ti è stato riferito…"></textarea><small>Indica, se possibile, se il ricordo è diretto oppure tramandato. Evita informazioni private di altre persone senza il loro consenso.</small></div>
+</div>
+<fieldset><legend>Come desideri che sia trattata la tua testimonianza? *</legend>
+<label class="choice"><input type="radio" name="pubblicazione" value="non_autorizzata" required checked><span><strong>Non autorizzo la pubblicazione.</strong> Invio il ricordo soltanto per la valutazione e l'eventuale conservazione interna.</span></label>
+<label class="choice"><input type="radio" name="pubblicazione" value="nome"><span><strong>Autorizzo una possibile pubblicazione con il mio nome</strong>, dopo revisione redazionale.</span></label>
+<label class="choice"><input type="radio" name="pubblicazione" value="anonima"><span><strong>Autorizzo una possibile pubblicazione anonima</strong>, dopo revisione redazionale.</span></label>
+</fieldset>
+<div class="fields">
+<div class="field"><label for="memo-author">Nome da attribuire (facoltativo)</label><input id="memo-author" name="autore" maxlength="100" autocomplete="name" placeholder="Nome e cognome o pseudonimo"></div>
+<div class="field"><label for="memo-contact">Recapito per eventuali chiarimenti (facoltativo)</label><input id="memo-contact" name="contatto" type="email" maxlength="180" autocomplete="email" placeholder="Indirizzo email"></div>
+</div>
+<label class="choice"><input type="checkbox" id="memo-consent" required><span>Confermo di avere il diritto di condividere questo racconto e di aver compreso che l'invio non comporta pubblicazione automatica. *</span></label>
+<p class="privacy">La scelta sulla pubblicazione potrà essere riesaminata con la redazione prima della pubblicazione. Le richieste di correzione o ritiro possono essere inviate tramite la pagina <a href="/contatti/">Contatti</a>. Non inserire dati sensibili o dettagli privati su altre persone. I minori dovrebbero condividere la testimonianza tramite un genitore o tutore.</p>
+<div class="actions"><button type="button" id="memo-send">Prepara l'invio alla redazione</button><button type="button" id="memo-download" class="secondary">Salva una copia del racconto</button></div>
+<p id="memo-status" role="status" aria-live="polite"></p>
+</form></section>
+<section aria-labelledby="memo-procedure"><h2 id="memo-procedure">Come funziona il registro delle memorie</h2><p>Le testimonianze ricevute saranno esaminate dalla redazione ADC. Saranno distinti ricordi diretti, racconti tramandati e fatti supportati da documenti. Per i racconti autorizzati, la redazione potrà proporre l'inserimento in una futura sezione pubblica, senza modificare il significato della testimonianza e senza esporre i recapiti privati.</p><p class="note"><strong>Importante:</strong> attualmente questo sito non dispone di un archivio server che memorizzi automaticamente gli invii. Il comando di invio apre il programma di posta dell'utente; solo l'effettiva spedizione e ricezione del messaggio consentono alla redazione di acquisire la testimonianza. La copia scaricabile resta sotto il controllo dell'utente.</p></section>
+</main><footer>Archivio Documentale Calatabiano · A cura di Michele Bottino · <a href="/adc/">Torna all'Archivio</a></footer>
+<script>
+(function(){
+'use strict';
+const form=document.getElementById('memo-form'),status=document.getElementById('memo-status');
+const get=id=>document.getElementById(id).value.trim();
+const selection=()=>form.querySelector('input[name="pubblicazione"]:checked')?.value||'non_autorizzata';
+function pack(){
+if(!form.reportValidity())return null;
+const author=get('memo-author'),publication=selection();
+if(publication==='nome'&&!author){document.getElementById('memo-author').setCustomValidity('Indica il nome da pubblicare oppure scegli anonimo.');form.reportValidity();document.getElementById('memo-author').setCustomValidity('');return null;}
+return {schema:'ADC-MEMORIA-1',title:get('memo-title-field'),period:get('memo-when'),place:get('memo-place'),story:get('memo-story'),publication,attribution:publication==='nome'?author:'',private_contact:get('memo-contact'),received_by:'Da verificare: invio a cura dell’utente',note:'Testimonianza personale non verificata; pubblicazione subordinata a valutazione redazionale.'};
+}
+document.getElementById('memo-download').addEventListener('click',()=>{
+const data=pack();if(!data)return;
+const file=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'});
+const url=URL.createObjectURL(file),a=document.createElement('a');a.href=url;a.download='memoria-calatabiano-bozza.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+status.textContent='Copia salvata sul dispositivo. Questo non equivale a un invio all’ADC.';
+});
+document.getElementById('memo-send').addEventListener('click',()=>{
+const d=pack();if(!d)return;
+const body=['Testimonianza personale per ADC','Titolo: '+d.title,'Periodo: '+d.period,'Luogo: '+d.place,'Scelta sulla pubblicazione: '+({nome:'Autorizzazione con nome',anonima:'Autorizzazione anonima',non_autorizzata:'Nessuna autorizzazione alla pubblicazione'}[d.publication]),'Nome per attribuzione: '+d.attribution,'Recapito facoltativo: '+d.private_contact,'','Racconto:',d.story,'','Testimonianza da verificare e valutare prima di eventuale pubblicazione.'].join('\n');
+const email='michele.bottino@gmail.com';
+const subject='ADC — proposta di memoria personale: '+d.title;
+if(body.length>11000){status.textContent='Il racconto è troppo lungo per un collegamento email. Salva una copia e allegala manualmente a una email indirizzata alla redazione.';return;}
+status.textContent='Si apre il programma di posta: controlla il contenuto e invia tu il messaggio. La testimonianza non è ancora stata ricevuta.';
+location.href='mailto:'+email+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+});
+})();
+</script><script src="/adc/assets/navigazione-unificata.js" defer></script></body></html>
