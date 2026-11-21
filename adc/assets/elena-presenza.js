@@ -80,10 +80,20 @@
  function loadEngine(){
    if(window.ElenaADCDialogo)return Promise.resolve(window.ElenaADCDialogo);
    if(!loader)loader=new Promise((resolve,reject)=>{
+     if(!window.ElenaComune){
+       const civic=document.createElement('script');civic.src='/adc/assets/elena-comune.js';civic.async=false;
+       civic.onerror=()=>reject(Error('Modulo comunale non disponibile'));
+       civic.onload=()=>loadMain();
+       document.head.append(civic);
+       return;
+     }
+     loadMain();
+     function loadMain(){
      const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js';script.async=true;
      script.onload=()=>window.ElenaADCDialogo?resolve(window.ElenaADCDialogo):reject(Error('Motore documentario non disponibile'));
      script.onerror=()=>reject(Error('Impossibile caricare il motore documentario'));
      document.head.append(script);
+     }
    }).catch(err=>{loader=null;throw err});
    return loader;
  }
@@ -91,13 +101,15 @@
    if(!resources)resources=Promise.all([
      fetch('/adc/assets/elena-indice.json',{cache:'no-store'}),
      fetch('/adc/assets/elena-risposte-approvate.json',{cache:'no-store'}),
-     fetch('/adc/assets/elena-conoscenza-verificata.json',{cache:'no-store'})
+     fetch('/adc/assets/elena-conoscenza-verificata.json',{cache:'no-store'}),
+     fetch('/adc/assets/elena-comune-fonti.json',{cache:'no-store'}),
+     fetch('/adc/assets/elena-comune-news.json',{cache:'no-store'})
    ]).then(async responses=>{
      if(!responses[0].ok||!responses[1].ok)throw Error('Indice delle risposte non disponibile');
-     return Promise.all(responses.map(r=>r.ok?r.json():null));
-   }).then(([index,approved,knowledge])=>{
+     return Promise.all(responses.map(r=>r.ok?r.json().catch(()=>null):null));
+   }).then(([index,approved,knowledge,municipality,news])=>{
      if(!Array.isArray(index?.entries)||!Array.isArray(approved?.answers))throw Error('Formato delle risorse documentarie non valido');
-     return {index,approved:approved.answers,knowledge:knowledge?.schema===1&&Array.isArray(knowledge.entries)?knowledge:{entries:[]}};
+     return {index,approved:approved.answers,knowledge:knowledge?.schema===1&&Array.isArray(knowledge.entries)?knowledge:{entries:[]},municipality:municipality?.schema===1?municipality:null,news:news?.schema===1?news:null};
    }).catch(err=>{resources=null;throw err});
    return resources;
  }
@@ -129,7 +141,7 @@
    try{
      const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
      const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
-     const reply=engine.reply(effective,data.index,data.approved,data.knowledge);
+     const reply=engine.reply(effective,data.index,data.approved,data.knowledge,data.municipality,data.news);
      previousQuestion=effective;
      spokenKind=reply.kind;spokenId=reply.id||'';spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
@@ -138,7 +150,7 @@
        result.append(make('p',(levels[reply.evidence_status]||'Verifica documentaria')+' · Revisione: '+reply.reviewed_at+(reply.reviewer?' · '+reply.reviewer:''),'elena-presenza-evidence'));
      }
      for(const source of (reply.links||[]).slice(0,5)){
-       if(!/^\/adc\/(?!\/)[a-z0-9/_\-.]*$/i.test(source.url))continue;
+       if(!(engine.safeUrl?engine.safeUrl(source.url):/^\/adc\/(?!\/)[a-z0-9/_\-.]*$/i.test(source.url)))continue;
        const p=make('p'),link=make('a',source.title);link.href=source.url;p.append(link);result.append(p);
      }
      const more=make('button','Apri questa domanda nella pagina completa di Elena','elena-open-full');
