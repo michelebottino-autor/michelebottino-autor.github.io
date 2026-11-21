@@ -31,6 +31,22 @@
 8. Definire e pubblicare un'informativa privacy specifica: titolare, scopo della raccolta, base giuridica, durata di conservazione, destinatari/fornitori, diritti e contatti. Eseguire backup e prove di ripristino, con accessi limitati. Le testimonianze possono coinvolgere terzi e richiedono valutazione editoriale.
 9. Solo a collaudo completato, aggiornare `../config.json` con `enabled:true`, l'origine HTTPS dell'API (campo `endpoint`) e la site key pubblica Turnstile.
 
+## Console redazionale locale
+Il file `redazione-cli.mjs` è stato predisposto e verificato per la gestione riservata delle pratiche mediante terminale locale sul PC autorizzato. Non è un pannello pubblico, non contiene token, non crea utenze e non deve essere eseguito su macchine condivise.
+
+Esempi nella cartella di distribuzione, dopo l'attivazione protetta del Worker:
+- `node redazione-cli.mjs elenco`: elenco sintetico delle pratiche;
+- `node redazione-cli.mjs leggi ADC-MEM-<uuid>`: lettura locale di una pratica;
+- `node redazione-cli.mjs stato ADC-MEM-<uuid> in_revisione`: passaggio di revisione;
+- `node redazione-cli.mjs stato ADC-MEM-<uuid> approvata`: approvazione di una testimonianza autorizzata;
+- `node redazione-cli.mjs stato ADC-MEM-<uuid> pubblicata`: pubblicazione con testo redatto;
+- `node redazione-cli.mjs stato ADC-MEM-<uuid> ritirata`: ritiro;
+- `node redazione-cli.mjs elimina ADC-MEM-<uuid>`: eliminazione irreversibile con conferma esplicita.
+
+Il programma chiede il token con digitazione nascosta e lo mantiene in memoria per la singola operazione. Non inserire il token in file pubblici, variabili di configurazione GitHub o argomenti della linea di comando. Proteggere comunque la sessione Windows e non stampare i risultati contenenti dati privati.
+
+**Stato dei segreti:** la verifica `wrangler secret list` del 21 novembre 2026 ha restituito `[]`. L'inserimento delle credenziali tramite accesso remoto è stato bloccato dai controlli di sicurezza; non è stato aggirato. L'interfaccia pubblica resta disattivata.
+
 ## Modello editoriale
 - `ricevuta`: conservazione privata; nessun pubblico accesso.
 - `in_revisione`: istruttoria, eventuale richiesta di chiarimenti.
