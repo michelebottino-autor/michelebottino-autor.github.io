@@ -37,6 +37,21 @@
        links:[link('Novità del Comune',base.directories.news),link('Avvisi ufficiali',base.directories.notices)].filter(Boolean),
        limitation:'Non attribuisco la qualifica di notizia attuale a comunicazioni non aggiornate.',source:'Comune di Calatabiano'};
    }
+   const requestsContact=has(/\b(telefono|numero|recapito|contatto|chiamare|mail|email|pec)\b/);
+   const requestsHours=has(/\b(orari|orario|apertura|chiusura|apre|chiude|ricevimento)\b/);
+   const officialOffice=(base.office_contacts||[]).find(o=>(o.keywords||[]).some(k=>q.includes(norm(k))));
+   if(requestsContact&&officialOffice&&!requestsHours){
+     const phones=Array.isArray(officialOffice.phones)?officialOffice.phones.filter(p=>/^0[0-9]{7,11}$/.test(p)):[];
+     if(phones.length&&official(officialOffice.url)){
+       return {kind:'civic',title:'Recapiti — '+officialOffice.name,
+         text:'Secondo la scheda ufficiale di '+officialOffice.name+', i numeri pubblicati sono: '+
+           phones.join(', ')+'. Per eventuali modifiche o chiarimenti, consulta la pagina istituzionale.',
+         links:[link('Scheda ufficiale — '+officialOffice.name,officialOffice.url),
+           link('Elenco di tutti gli uffici',base.directories.offices)].filter(Boolean),
+         limitation:'Numeri riportati dalla scheda pubblica dell’ufficio, non verificati tramite telefonata. Non implicano disponibilità immediata.',
+         checked_at:base.verified_at,source:'Comune di Calatabiano'};
+     }
+   }
    const office=(base.offices||[]).find(o=>(o.keys||[]).some(k=>q.includes(norm(k)) &&
      (municipality|| /\b(orari|quando|apre|chiude|apertura)\b/.test(q))));
    if(office){
