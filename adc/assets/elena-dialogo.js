@@ -9,7 +9,7 @@
   const normalize = s => String(s || '').toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
   const stop = new Set('calatabiano storia storico storica documento documenti fonte fonti cosa quale quali dove quando come sapere informazioni vorrei vorremmo cerca cercare trovare parla dice del della delle degli dello nella nelle nei sui sul con per alla alle anche sono hanno un una che chi gli dai dai dal dei era erano e il la di da a in si'.split(' '));
   const aliases = {mulino:'mulini',mulini:'mulino',chiesa:'chiese',chiese:'chiesa',origine:'origini',origini:'origine',mappa:'cartografia',mappe:'cartografia',foto:'fotografie',fotografia:'fotografie',fotografie:'foto',ponte:'alcantara',castelli:'castello',castello:'castelli',pergamena:'pergamene',pergamene:'pergamena',monastero:'monasteri',monasteri:'monastero',decime:'rationes',rationes:'decime',zuccherificio:'zucchero',trappeto:'zucchero',trappeti:'zucchero',crocifisso:'croce',croce:'crocifisso',ferroviaria:'ferrovia',stazioni:'stazione',stazione:'ferrovia',terremoti:'terremoto'};
-  const safeUrl = u => typeof u === 'string' && (/^\/adc\/[a-z0-9/_-]*(?:\.html)?$/i.test(u) || /^https:\/\/(?:www\.|pagamentipa\.)?comune\.calatabiano\.ct\.it\/[a-z0-9/?&=_.%-]*$/i.test(u));
+  const safeUrl = u => typeof u === 'string' && (/^\/adc\/[a-z0-9/_-]*(?:\.html)?$/i.test(u) || /^https:\/\/(?:www\.|pagamentipa\.)?comune\.calatabiano\.ct\.it\/[a-z0-9/?&=_.%-]*$/i.test(u) || /^https:\/\/(?:dark-aronte|michelebottino-autor)\.github\.io\/$/.test(u));
   const tokens = q => [...new Set(normalize(q).split(/[^a-z0-9]+/).filter(x => x.length > 2 && !stop.has(x)).flatMap(x => aliases[x] ? [x, aliases[x]] : [x]))];
   function rank(q, entries) {
     const ts = tokens(q);
@@ -36,7 +36,7 @@
     const current=String(q||'').trim();
     const antecedent=String(previous||'').trim();
     if(!antecedent || !current || current.length>160) return current;
-    const follow=/^(?:e\s+)?(?:quali?\s+(?:fonti|documenti|prove)|dove\s+(?:si\s+)?(?:trova|legg[oe]|sono)|in\s+che\s+(?:anno|periodo)|e\s+(?:poi|prima)|puoi\s+(?:approfondire|spiegare)|parlami\s+(?:di\s+)?(?:quest[oaie]|quello)|e\s+(?:quest[oaie]|quello)|che\s+(?:cosa|documenti|fonti)\s+(?:lo|la|ne))\b/i;
+    const follow=/^(?:e\s+)?(?:(?:quali?|le|i)\s+(?:fonti|documenti|prove)|dove\s+(?:si\s+)?(?:trova|legg[oe]|sono)|in\s+che\s+(?:anno|periodo)|e\s+(?:poi|prima)|puoi\s+(?:approfondire|spiegare)|parlami\s+(?:di\s+)?(?:quest[oaie]|quello)|e\s+(?:quest[oaie]|quello)|che\s+(?:cosa|documenti|fonti)\s+(?:lo|la|ne))\b/i;
     if(!follow.test(current))return current;
     const keywords=tokens(antecedent).slice(0,5);
     if(!keywords.length)return current;
@@ -76,8 +76,37 @@
       limitation:entry.evidence_limitations,evidence_status:entry.evidence_status,
       reviewer:entry.reviewer,reviewed_at:entry.reviewed_at};
   }
+  // Orientamento editoriale: informazioni sul servizio, mai risposte storiche create dal sistema.
+  function serviceAnswer(q) {
+    const n=normalize(q);
+    if(!n || n.length>160)return null;
+    const asksIdentity=/(?:chi|cos.?e|che cos.?e|cosa significa|parlami di)\s+(?:e\s+)?dark\s*aronte|(?:dark\s*aronte).*(?:chi|cos.?e|significa)/.test(n);
+    const asksCreators=/(?:chi|da chi).*(?:ideat|creat|realizzat|sviluppat|progettat|costruit).*(?:elena|assistente)|(?:elena).*(?:chi l.ha|chi ti ha|chi ha).*(?:ideat|creat|realizzat|sviluppat)/.test(n);
+    if(asksCreators || asksIdentity){
+      return {kind:'about',title:asksIdentity?'Chi è Dark Aronte':'Chi ha realizzato Elena?',
+        text:asksIdentity
+          ? 'Dark Aronte è il nome di un progetto tecnologico indipendente dedicato allo sviluppo di software e strumenti digitali. Nell’Archivio Documentale Calatabiano cura lo sviluppo tecnologico di Elena. Non rappresenta il Comune di Calatabiano.'
+          : 'Elena è un progetto ideato da Michele Bottino, scrittore, saggista e ricercatore indipendente, per l’Archivio Documentale Calatabiano. Lo sviluppo tecnologico è curato da Dark Aronte. È un’iniziativa indipendente, non un servizio ufficiale del Comune.',
+        links:[{title:'Archivio Documentale Calatabiano',url:'/adc/'},{title:'Sito di Michele Bottino',url:'https://michelebottino-autor.github.io/'},{title:'Dark Aronte',url:'https://dark-aronte.github.io/'}]};
+    }
+    const asksAbilities=/(?:cosa|che cosa|quali cose|come).*(?:puoi fare|sai fare|mi puoi aiutare|aiutarmi|funzioni|funziona elena)|(?:chi sei|presentati|a cosa servi|cosa sei|sei una intelligenza artificiale)/.test(n);
+    if(asksAbilities){
+      return {kind:'guide',title:'Come posso aiutarti',
+        text:'Posso orientarti fra documenti, luoghi e vicende di Calatabiano, cercare percorsi nell’archivio ADC e indicarti informazioni comunali presenti nelle fonti pubbliche disponibili. Quando una risposta storica non è stata verificata, ti segnalo soltanto i documenti da consultare. Non posso svolgere pratiche amministrative al posto tuo.',
+        links:[{title:'Fonti e documenti ADC',url:'/adc/fonti/'},{title:'Storia di Calatabiano',url:'/adc/storia/'},{title:'Esplora l’archivio',url:'/adc/'}]};
+    }
+    const asksPrivacy=/(?:registri|memorizzi|conservi|salvi|registrazione|privacy|dati personali|dati privati).*(?:domand|chat|conversazion|messagg|ricerc)|(?:chat|conversazion|domand).*(?:salvat|conservat|registrat)/.test(n);
+    if(asksPrivacy){
+      return {kind:'guide',title:'Le domande e la riservatezza',
+        text:'Questa interfaccia consulta repertori pubblici dal browser. La conversazione corrente non viene salvata da questo modulo; la risposta può usare la domanda precedente soltanto per capire meglio un seguito. Non inserire documenti personali, password o dati riservati nella chat. L’eventuale raccolta volontaria di memorie è un percorso distinto.',
+        links:[{title:'Archivio Documentale Calatabiano',url:'/adc/'}]};
+    }
+    return null;
+  }
   function reply(q, index, approved, knowledge, municipality, news, checks, admin) {
     const n = normalize(q);
+    const orientation=serviceAnswer(q);
+    if(orientation)return orientation;
     // Richiesta esplicita di contribuire con una memoria personale: nessuna raccolta implicita nella chat.
     if(/(?:raccont|testimonianz|ricord|memori)/.test(n) && /(?:voglio|vorrei|posso|condivid|inviar|pubblic|personal|infanzia|nonni|famiglia)/.test(n)){
       return {kind:'contribution',title:'Condividi un ricordo con l’ADC',text:'Puoi raccontare un episodio di Calatabiano attraverso la scheda dedicata. Prima dell’invio decidi se autorizzare una possibile pubblicazione con il tuo nome, in forma anonima, oppure se non autorizzarla. Nulla viene pubblicato automaticamente.',links:[{title:'Apri la raccolta delle memorie',url:'/adc/memorie/'}]};
@@ -214,10 +243,10 @@
         if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
         const effective=contextualQuery(q,previousQuestion);
         const partial=(!indexAvailable || !approvedAvailable);
-        const r=(!indexAvailable && !approvedAvailable)
+        const r=(!indexAvailable && !approvedAvailable && !municipality && !administration && !serviceAnswer(effective))
           ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
           : reply(effective,index,approved,knowledge,municipality,municipalNews,sourceChecks,administration);
-        if(!indexAvailable && r.kind!=='documentary'){
+        if(!indexAvailable && !['documentary','civic','guide','about','contribution'].includes(r.kind)){
           r.kind='unavailable';
           r.title='Indice documentario non disponibile';
           r.text='Non è stato possibile consultare l’indice delle fonti. Non si può concludere che manchino testimonianze pertinenti.';
@@ -235,6 +264,8 @@
             ? 'Servizi e comunicazioni del Comune: informazioni attribuite al portale istituzionale. Verifica date e possibili aggiornamenti.'
           : r.kind==='index'
             ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
+          : r.kind==='guide' || r.kind==='about' || r.kind==='contribution'
+            ? 'Informazioni sul servizio ADC. Per i dati storici consulta le fonti documentarie indicate.'
             : 'Nessuna attestazione approvata individuata per questa domanda.');
         article.append(evidence);
         if(r.kind==='documentary' && r.reviewed_at && r.evidence_status){
@@ -245,7 +276,7 @@
             ' · Revisione: '+r.reviewed_at+
             (r.reviewer?' · '+r.reviewer:'')));
         }
-        if(partial) article.append(make('p','elena-dialogue-evidence',!indexAvailable
+        if(partial && !['civic','guide','about','contribution'].includes(r.kind)) article.append(make('p','elena-dialogue-evidence',!indexAvailable
           ? 'Non è stato possibile consultare l’intero repertorio. La ricerca non è completa.'
           : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
         if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
@@ -304,7 +335,7 @@
         const copy=make('button','elena-copy-answer','Copia risposta e fonti');copy.type='button';
         const copyStatus=make('span','elena-copy-status','');copyStatus.setAttribute('role','status');
         copy.addEventListener('click',async()=>{
-          const lines=[q,r.title,r.text,r.limitation?'Limiti della verifica: '+r.limitation:'',...(r.links||[]).filter(x=>safeUrl(x.url)).map(x=>x.title+' — '+location.origin+x.url),'Fonte: Archivio Documentale Calatabiano — '+location.origin+'/adc/elena/'].filter(Boolean);
+          const lines=[q,r.title,r.text,r.limitation?'Limiti della verifica: '+r.limitation:'',...(r.links||[]).filter(x=>safeUrl(x.url)).map(x=>x.title+' — '+(x.url.startsWith('https://')?x.url:location.origin+x.url)),'Fonte: Archivio Documentale Calatabiano — '+location.origin+'/adc/elena/'].filter(Boolean);
           try {
             if(!navigator.clipboard || !window.isSecureContext)throw Error('Copia non supportata');
             await navigator.clipboard.writeText(lines.join('\n\n'));
@@ -327,5 +358,5 @@
     if(loc.searchParams.has('q')||loc.hash.startsWith('#q=')){loc.searchParams.delete('q');loc.hash='';try{history.replaceState(null,'',loc.pathname+loc.search)}catch(e){}}
     if(initial && initial.length<=160)run(initial);
   }
-  return {normalize,tokens,rank,reply,knowledgeAnswer,contextualQuery,safeUrl,mount};
+  return {normalize,tokens,rank,reply,serviceAnswer,knowledgeAnswer,contextualQuery,safeUrl,mount};
 });

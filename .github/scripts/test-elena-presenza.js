@@ -59,7 +59,15 @@ async function run(query, resources={}){
   assert(!a.text.includes('La consultazione non è disponibile'),a.text);
   assert(a.links.some(x=>x.url==='/adc/processo-334/'),'Il dossier reale non è recuperato');
   assert(a.text.includes('Non è disponibile una risposta sintetica verificata'));
-  assert.deepEqual(a.requests,['/adc/assets/elena-indice.json','/adc/assets/elena-risposte-approvate.json']);
+  assert.deepEqual(a.requests,[
+    '/adc/assets/elena-indice.json',
+    '/adc/assets/elena-risposte-approvate.json',
+    '/adc/assets/elena-conoscenza-verificata.json',
+    '/adc/assets/elena-comune-fonti.json',
+    '/adc/assets/elena-comune-news.json',
+    '/adc/assets/elena-comune-verifiche.json',
+    '/adc/assets/elena-amministrazione.json'
+  ]);
   assert.equal(a.send.disabled,false);
   assert.equal(a.input.value,'');
   console.log('PASS: dati reali → indice → link Processo 334, senza risposta inventata.');
