@@ -46,6 +46,31 @@
        links:[link('Novità del Comune',base.directories.news),link('Avvisi ufficiali',base.directories.notices)].filter(Boolean),
        limitation:'Non attribuisco la qualifica di notizia attuale a comunicazioni non aggiornate.',source:'Comune di Calatabiano'};
    }
+   // Servizi territoriali: una risposta descrittiva soltanto se esiste una scheda
+   // con fonte ufficiale. Mai inferire disponibilità, turni o validità attuale.
+   const cleanTokens=text=>norm(text).split(/[^a-z0-9]+/).filter(Boolean);
+   const service=(Array.isArray(base.service_guides)?base.service_guides:[])
+     .map(g=>{
+       if(!g||!Array.isArray(g.keywords)||!official(g.source_url)||typeof g.fact!=='string'||
+          typeof g.caution!=='string'||!g.caution.trim())return null;
+       const qwords=cleanTokens(q);
+       let match=0;
+       for(const keyword of g.keywords){
+         const words=cleanTokens(keyword);
+         if(words.length&&words.every((w,i)=>qwords.some((v,j)=>v===w&&
+            (words.length===1||words.every((x,k)=>qwords[j+k]===x)))))match=Math.max(match,words.length);
+       }
+       return match?{g,match}:null;
+     }).filter(Boolean).sort((a,b)=>b.match-a.match);
+   if(service.length && !(service.length>1&&service[0].match===service[1].match)){
+     const g=service[0].g;
+     return {kind:'civic',title:g.title,
+       text:g.fact+(g.source_date?'\\nFonte: comunicazione del '+g.source_date+'.':'')+
+         '\\nPer eventuali variazioni consulta sempre la pagina ufficiale.',
+       links:[link('Fonte istituzionale — '+g.title,g.source_url),
+         link('Portale del Comune',base.directories.municipality)].filter(Boolean),
+       limitation:g.caution,source:'Comune di Calatabiano',checked_at:base.verified_at};
+   }
    const requestsContact=has(/\b(telefono|numero|recapito|contatto|chiamare|mail|email|pec)\b/);
    const requestsHours=has(/\b(orari|orario|apertura|chiusura|apre|chiude|ricevimento)\b/);
    const officialOffice=(base.office_contacts||[]).find(o=>(o.keywords||[]).some(k=>q.includes(norm(k))));
