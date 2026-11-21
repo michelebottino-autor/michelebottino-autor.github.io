@@ -263,3 +263,13 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 - Commit scheda `214da07`, apparato `14a4690`.
 - **Controllo automatico successivo:** GitHub Actions run `44881463945`, conclusione **success**. Log «URL sitemap: 199 | errori: 0 | avvisi: 0» e «ADC_RICERCA_ELENA_OK: 80 pagine, 18 schede inventario, 43 rotte Elena».
 - Resta distinto l'esito tecnico del repository dall'effettiva lettura di commenti social: nessuna frequenza o citazione testuale di domande Facebook/Instagram verificata.
+
+
+## 19. Verifica mirata: Gesù e Maria, Carmine e testimonianze pubbliche — 21 novembre 2026
+
+- Ricerca web mirata sulle chiese, con tentativi di individuare domande su piattaforme social. **Nessun campione verificabile di commenti pubblici è stato acquisito:** non attribuire a specifici utenti né classificare per frequenza i temi individuati.
+- La guida storica comunale `https://diazilla.com/doc/777729/presentazione---comune-di-calatabiano` riporta per Gesù e Maria la collocazione di un quadro di Gesù e Maria nel 1709 a spese di Antonino Mirabelli e una custodia degli oli santi del 1714 con le braccia di Cristo e san Francesco incrociate. Sono notizie **secondarie**, non atti di committenza o una lettura autoptica di iscrizioni.
+- Il motivo delle braccia incrociate è pertinente all'iconografia francescana (cfr. `https://www.ofmcap.org/stemma-del-cardinale/`), ma **non prova** da solo un convento dei Minori a Calatabiano.
+- Integrate le due indicazioni nella scheda canonica `/adc/chiese/schede/gesu-e-maria/` e nel registro delle fonti `/adc/chiese/studi/ecc-002/`. Non creata una nuova narrazione parallela. Commit `5303ecf` e `445711f`.
+- La pubblicazione dei Carmelitani `https://carmelit.org/2025/10/18/il-carmelo-siciliano-nella-storia/` distingue un'ipotesi sul 1510, l'attestazione secondaria della fondazione conventuale nel 1518, la soppressione nel 1652 e il riferimento indiretto alla concessione del 1583 richiamato da Nicotra. La scheda critica ECC-003 **già censisce** la concessione del 1583; non duplicare la notizia né ricondurre automaticamente Santa Caterina all'edificio del Carmine attuale.
+- Prossima verifica scientifica: immagini leggibili della custodia del 1714 e della campana del Carmine, più documenti d'archivio francescani e carmelitani di Calatabiano. Verifiche tecniche GitHub Actions da distinguere dal collaudo delle fonti.
