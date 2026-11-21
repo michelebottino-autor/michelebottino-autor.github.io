@@ -131,7 +131,93 @@
      links:[link('Elenco degli uffici comunali',base.directories.offices),officialLink].filter(Boolean),
      limitation:'Non attribuisco orari o numeri diretti a uffici per i quali non ho dati verificati.',source:'Comune di Calatabiano'};
  }
- function reply(query,base,news,checks){
+ function administrativeReply(question,admin){
+   if(!admin||admin.schema!==1||!admin.government||!Array.isArray(admin.procedures))return null;
+   const q=norm(question), has=r=>r.test(q);
+   const safeLink=(title,url)=>official(url)?{title,url}:null;
+   const government=admin.government;
+   const procedureWords=/(pratica|pratiche|richiesta|richiedere|come fare|documenti necessari|modulo|presentare domanda|procedura|certificato|cila|scia|permesso|suap|residenza|carta d.identita|cie|anpr|tari|imu|accesso agli atti|disservizio|segnalare)/;
+   const procedure=admin.procedures.map(p=>{
+     if(!p||!official(p.url)||!Array.isArray(p.keywords)||!p.summary||!p.caution)return null;
+     const candidates=p.keywords.map(k=>norm(k)).filter(Boolean);
+     const score=candidates.reduce((max,k)=>q.includes(k)?Math.max(max,k.split(' ').length):max,0);
+     return score?{p,score}:null;
+   }).filter(Boolean).sort((a,b)=>b.score-a.score);
+   if((procedureWords.test(q)||procedure.some(x=>x.score>=2))&&procedure.length&&
+       !(procedure.length>1&&procedure[0].score===procedure[1].score)){
+     const p=procedure[0].p;
+     return {kind:'civic',title:'Pratica amministrativa — '+p.title,
+       text:p.summary+'\nUfficio di riferimento: '+p.office+
+         '.\nPer conoscere requisiti, documenti, costi, termini e modalità aggiornate consulta il procedimento ufficiale.',
+       links:[safeLink('Scheda del servizio o ufficio',p.url),safeLink('Tutti i servizi del Comune',admin.directories.services)].filter(Boolean),
+       limitation:p.caution+' Nessuna istanza viene acquisita o inviata attraverso Elena.',
+       source:'Comune di Calatabiano',checked_at:admin.verified_at};
+   }
+   if(has(/\b(commissionariamento|commissario|commissaria|rossana manno|marzo 2026)\b/)){
+     const h=admin.history[0];
+     return {kind:'civic',title:'Commissariamento nel 2026',
+       text:'L’avviso ufficiale documenta l’insediamento di '+h.name+' come '+h.role+
+         " l’11 marzo 2026. È una fase precedente alla successiva composizione degli organi comunali riportata nelle schede aggiornate a luglio 2026.",
+       links:[safeLink('Avviso sulla nomina commissariale',h.url),safeLink('Organi comunali',admin.directories.government)].filter(Boolean),
+       limitation:h.limitation,source:'Comune di Calatabiano',checked_at:admin.verified_at};
+   }
+   if(has(/\b(sindaco|sindaca|primo cittadino|petralia)\b/)){
+     return {kind:'civic',title:'Sindaco del Comune di Calatabiano',
+       text:'Le schede istituzionali aggiornate nel luglio 2026 indicano '+government.mayor.name+
+         ' come Sindaco del Comune di Calatabiano.',
+       links:[safeLink('Profilo istituzionale del Sindaco',government.mayor.url),
+         safeLink('Giunta comunale',government.executive.url)].filter(Boolean),
+       limitation:'La carica è riportata dalle schede istituzionali consultate; per eventuali cambiamenti successivi verifica il portale ufficiale.',
+       source:'Comune di Calatabiano',checked_at:admin.verified_at};
+   }
+   if(has(/\b(vicesindaco|vice sindaco|vicesindaca|gambacurta)\b/)){
+     return {kind:'civic',title:'Vicesindaca del Comune di Calatabiano',
+       text:'Il profilo istituzionale pubblicato il 24 luglio 2026 indica '+government.deputy.name+
+         ' come Vicesindaca e componente della Giunta e del Consiglio comunale.',
+       links:[safeLink('Profilo istituzionale',government.deputy.url)],limitation:'Verificare il profilo per possibili modifiche successive.',
+       source:'Comune di Calatabiano',checked_at:admin.verified_at};
+   }
+   if(has(/\b(giunta|assessori|assessore|assessora)\b/)){
+     return {kind:'civic',title:'Giunta comunale di Calatabiano',
+       text:'La scheda della Giunta aggiornata il '+government.executive.source_updated_at+
+         ' indica i componenti: '+government.executive.members.join('; ')+'.\n'+government.executive.function,
+       links:[safeLink('Composizione ufficiale della Giunta',government.executive.url)],
+       limitation:'I nomi non implicano deleghe individuali specifiche: servono atti di nomina e attribuzione delle competenze.',
+       source:'Comune di Calatabiano',checked_at:admin.verified_at};
+   }
+   if(has(/\b(consiglio comunale|consiglieri|consigliere|presidente del consiglio|calabrese)\b/)){
+     return {kind:'civic',title:'Consiglio comunale di Calatabiano',
+       text:'Secondo la scheda istituzionale del '+government.council.source_updated_at+
+         ', il presidente indicato è '+government.council.president+
+         '. I componenti elencati sono: '+government.council.members.join('; ')+'.\n'+government.council.function,
+       links:[safeLink('Composizione ufficiale del Consiglio',government.council.url)],
+       limitation:'Per variazioni, sostituzioni o surroghe successive occorre consultare le deliberazioni più recenti.',
+       source:'Comune di Calatabiano',checked_at:admin.verified_at};
+   }
+   const person=(government.executive.members.concat(government.council.members))
+     .find(name=>q.includes(norm(name))||norm(name).split(' ').filter(x=>x.length>4).some(x=>q.includes(x)));
+   if(person&&has(/\b(chi e|che ruolo|incarico|funzione|ruolo|amministrazione|comune)\b/)){
+     const roles=[];
+     if(government.executive.members.includes(person))roles.push('componente della Giunta');
+     if(government.council.members.includes(person))roles.push('componente del Consiglio');
+     return {kind:'civic',title:'Incarichi pubblicati — '+person,
+       text:'La persona risulta indicata come '+roles.join(' e ')+' nelle schede istituzionali aggiornate nel luglio 2026.',
+       links:[safeLink('Giunta',government.executive.url),safeLink('Consiglio',government.council.url)].filter(Boolean),
+       limitation:'Non attribuisco deleghe specifiche non documentate nelle schede consultate.',
+       source:'Comune di Calatabiano',checked_at:admin.verified_at};
+   }
+   if(has(/\b(organigramma|amministratori|amministrazione comunale|organi comunali|responsabili uffici|personale amministrativo|dirigenti)\b/)){
+     return {kind:'civic',title:'Amministrazione e uffici comunali',
+       text:'La sezione Amministrazione contiene organi di governo, aree amministrative, uffici e personale. Per conoscere funzioni e responsabili di un servizio specifico apri la relativa scheda ufficiale.',
+       links:[safeLink('Amministrazione comunale',admin.directories.administration),safeLink('Uffici e organigramma',admin.directories.offices)].filter(Boolean),
+       limitation:'L’elenco completo degli incarichi individuali è soggetto ad aggiornamenti amministrativi.',
+       source:'Comune di Calatabiano',checked_at:admin.verified_at};
+   }
+   return null;
+ }
+ function reply(query,base,news,checks,admin){
+   const administration=administrativeReply(query,admin);
+   if(administration)return administration;
    const result=replyInternal(query,base,news);
    if(!result||result.kind!=='civic')return result;
    const valid=checks?.schema===1&&Array.isArray(checks.entries)&&recent(checks.checked_at,7);
@@ -158,5 +244,5 @@
    }
    return result;
  }
- return {reply,official,norm,recent};
+ return {reply,administrativeReply,official,norm,recent};
 });
