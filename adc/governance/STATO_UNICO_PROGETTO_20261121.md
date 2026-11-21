@@ -456,3 +456,15 @@ Nella stessa cartella sono state aggiunte e riscontrate via ricerca Drive altre 
 **Criteri editoriali:** mai trasformare l'esistenza di una scheda in prova di monastero nel territorio; non confondere un regesto con trascrizione diplomatica; non riprodurre log, errori HTTP o appunti di lavorazione nelle pagine per i lettori. I registri di governance trattengono le verifiche tecniche. Le ricerche sulle fonti continuano indipendentemente dal perfezionamento dei testi.
 
 **Controllo di pubblicazione:** i commit successivi richiedono conferma GitHub Actions; un audit HTML riuscito certifica soltanto l'assenza delle specifiche anomalie cercate dallo script, non il contenuto storico di ogni frase.
+
+
+## 31. Pulizia editoriale delle pagine ADC — 21 novembre 2026
+Intervento diretto su **sei pagine pubbliche**, conservando riferimenti archivistici, citazioni e limiti delle prove:
+- `/adc/monasteri/agostiniani-e-trappeti/`: eliminate le istruzioni su ricerche per corrispondenza, fotoriproduzioni a pagamento e richieste all'Archivio, estranee al percorso online. Rimangono l'inventario 81, la voce 417, il volume antico 86 e l'assenza di prova di una sede conventuale a Calatabiano.
+- `/adc/chiese/studi/ecc-008/`: tolte etichette interne e formule sul processo di consultazione; evitata la ripetizione sul carattere ottocentesco dell'edificio.
+- `/adc/chiese/studi/ecc-014/`: sostituita l'introduzione di servizio con un testo storico sui luoghi, eliminando la nota sull'estensione del censimento ad altri comuni.
+- `/adc/monasteri/santa-maria-maniace/`: eliminata una formulazione metodologica ridondante, preservando la necessità del confronto topografico e diplomatico.
+- `/adc/monasteri/san-giovanni-fiumefreddo/`: reso più naturale il confronto fra gli atti del 1103 e 1106, che restano testimonianze distinte.
+- `/adc/dossier-1213-1537/`: rimossa la riga relativa al software «Cervello» e i codici di tracciamento A01–A06 dalla tabella destinata ai lettori; mantenute le differenze fra edizione del privilegio del 1213, storiografia e originale non consultato.
+
+La rilettura delle sei pagine dopo le modifiche non ha rilevato percorsi interni mancanti nei collegamenti del corpo pagina. I dati di questo controllo non certificano la qualità stilistica dell'intero ADC: gli altri contenuti sono da esaminare con lo stesso metodo. I registri interni conservano le informazioni operative e non vanno copiati negli articoli.
