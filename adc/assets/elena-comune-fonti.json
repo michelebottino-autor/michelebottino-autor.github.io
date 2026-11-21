@@ -50,5 +50,83 @@
     "events": "https://comune.calatabiano.ct.it/it/eventi",
     "faq": "https://comune.calatabiano.ct.it/it/faq"
   },
-  "source": "Sito ufficiale Comune di Calatabiano; avviso orari 2 settembre 2026 e scheda Municipio."
+  "source": "Sito ufficiale Comune di Calatabiano; avviso orari 2 settembre 2026 e scheda Municipio.",
+  "office_contacts": [
+    {
+      "name": "Servizi Demografici (Anagrafe, Stato Civile)",
+      "keywords": [
+        "anagrafe",
+        "demografici",
+        "stato civile",
+        "carta identita",
+        "residenza",
+        "certificati"
+      ],
+      "phones": [
+        "0957771027",
+        "0957771025",
+        "0957771022"
+      ],
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizi-demografici",
+      "source_updated_at": "2026-01-14"
+    },
+    {
+      "name": "Servizio Protocollo",
+      "keywords": [
+        "protocollo",
+        "registrazione atti",
+        "spedizione corrispondenza"
+      ],
+      "phones": [
+        "0957771026"
+      ],
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizio-protocollo",
+      "source_updated_at": "2026-01-14"
+    },
+    {
+      "name": "Servizio Tributi",
+      "keywords": [
+        "tributi",
+        "tari",
+        "cosap",
+        "tassa rifiuti"
+      ],
+      "phones": [
+        "0957771041"
+      ],
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizio-tributi",
+      "source_updated_at": "2026-01-14"
+    },
+    {
+      "name": "Servizio Pubblica Istruzione",
+      "keywords": [
+        "pubblica istruzione",
+        "scuolabus",
+        "trasporto scolastico",
+        "refezione scolastica",
+        "mensa scolastica"
+      ],
+      "phones": [
+        "0957771036"
+      ],
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizio-pubblica-istruzione",
+      "source_updated_at": "2026-01-14"
+    },
+    {
+      "name": "Servizi Culturali, Sport e Turismo",
+      "keywords": [
+        "cultura",
+        "culturali",
+        "biblioteca",
+        "eventi culturali",
+        "sport",
+        "turismo"
+      ],
+      "phones": [
+        "0957771040"
+      ],
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizi-culturali-sport-e-turismo",
+      "source_updated_at": "2026-01-14"
+    }
+  ]
 }
