@@ -91,6 +91,49 @@
         : 'Indice non disponibile. La consultazione è temporaneamente limitata.';
     });
     const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e};
+    // Esplorazione delle schede pubbliche: filtro locale senza inviare o memorizzare ricerche.
+    const explorer=document.createElement('section');
+    explorer.className='elena-explorer';
+    explorer.setAttribute('aria-labelledby','elena-explorer-title');
+    const exploreTitle=make('h2','','Esplora il repertorio');
+    exploreTitle.id='elena-explorer-title';
+    const exploreIntro=make('p','','Cerca per parola, nome, luogo o anno tra le schede indicizzate. I risultati sono collegamenti di consultazione, non conclusioni storiche.');
+    const exploreLabel=make('label','','Filtra le schede dell’Archivio');
+    exploreLabel.htmlFor='elena-explore-filter';
+    const exploreFilter=make('input');exploreFilter.id='elena-explore-filter';exploreFilter.type='search';
+    exploreFilter.maxLength=100;exploreFilter.autocomplete='off';
+    exploreFilter.placeholder='Per esempio: 1213, monasteri, Annunziata';
+    const exploreCount=make('p','elena-explore-count','Il repertorio sarà disponibile dopo il caricamento.');
+    exploreCount.setAttribute('role','status');
+    const exploreList=make('ul','elena-explore-list');
+    const exploreMore=make('button','elena-explore-more','Mostra altre schede');exploreMore.type='button';exploreMore.hidden=true;
+    explorer.append(exploreTitle,exploreIntro,exploreLabel,exploreFilter,exploreCount,exploreList,exploreMore);
+    output.parentNode.append(explorer);
+    let visibleEntries=12;
+    function renderExplorer(){
+      exploreList.replaceChildren();
+      const query=normalize(exploreFilter.value);
+      const words=query.split(/[^a-z0-9]+/).filter(Boolean);
+      const entries=indexAvailable?index.entries.filter(e=>e && safeUrl(e.url) && typeof e.title==='string'):[];
+      const selected=entries.filter(e=>{
+        const hay=normalize([e.title,e.description,...(Array.isArray(e.tags)?e.tags:[])].join(' '));
+        return words.every(word=>hay.includes(word));
+      });
+      for(const e of selected.slice(0,visibleEntries)){
+        const li=make('li'), link=make('a','',e.title);
+        link.href=e.url;
+        li.append(link);
+        if(e.description)li.append(make('p','',e.description));
+        exploreList.append(li);
+      }
+      exploreCount.textContent=indexAvailable
+        ? selected.length+' schede corrispondenti'+(selected.length>visibleEntries?' · mostrate le prime '+visibleEntries:'')
+        : 'Indice non disponibile: riprova quando la connessione sarà ripristinata.';
+      exploreMore.hidden=visibleEntries>=selected.length;
+    }
+    exploreFilter.addEventListener('input',()=>{visibleEntries=12;renderExplorer();});
+    exploreMore.addEventListener('click',()=>{visibleEntries+=12;renderExplorer();});
+    ready.then(renderExplorer);
     function run(query) {
       const q=String(query||'').trim().slice(0,160);if(!q)return;
       ready.then(()=>{
@@ -121,8 +164,8 @@
             : 'Nessuna attestazione approvata individuata per questa domanda.');
         article.append(evidence);
         if(partial) article.append(make('p','elena-dialogue-evidence',!indexAvailable
-          ? 'Avviso tecnico: l’indice delle fonti non è stato caricato; la consultazione è parziale.'
-          : 'Avviso tecnico: le risposte storiche approvate non sono state caricate; i percorsi suggeriti non escludono l’esistenza di risposte già verificate.'));
+          ? 'Non è stato possibile consultare l’intero repertorio. La ricerca non è completa.'
+          : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
         if(r.kind==='documentary' && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         const voiceControls=make('div','elena-dialogue-voice');
         const read=make('button','elena-dialogue-read','Ascolta la risposta');
