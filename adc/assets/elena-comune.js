@@ -149,6 +149,11 @@
      result.limitation=(result.limitation?result.limitation+' ':'')+
        'Il controllo tecnico delle pagine istituzionali non è stato aggiornato negli ultimi sette giorni.';
    }else if(listed.length){
+     const uncertain=listed.some(e=>e.status!=='raggiungibile');
+     if(uncertain){
+       result.limitation=(result.limitation?result.limitation+' ':'')+
+         'Almeno una pagina istituzionale non è stata verificabile nell’ultimo controllo tecnico; conferma i dati sul sito del Comune.';
+     }
      result.source_health_checked_at=checks.checked_at;
    }
    return result;
