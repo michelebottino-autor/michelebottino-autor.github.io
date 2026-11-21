@@ -208,3 +208,29 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 - Integrato lo script in `.github/workflows/audit-seo.yml`, con attivazione anche alle modifiche della cartella fotografica.
 - **Risultato GitHub Actions verificato:** run `44880694480`, job `136775114506`, `success`. Log: «URL sitemap: 199 | errori: 0 | avvisi: 0» e «Galleria ADC verificata: 26 schede, 40 fotografie, 160 file collegati, 0 errori».
 - **Conclusione circoscritta:** integrità dei riferimenti fotografici e coerenza dei filtri verificate automaticamente. Rimangono separati la verifica visiva su browser reale, i diritti, le attribuzioni iconografiche e il confronto con gli originali.
+
+
+## 17. Collaudo ricerca ADC ed Elena web — 21 novembre 2026
+
+**Perimetro:** codice effettivamente presente nel repository, test automatici GitHub Actions e richieste HTTP dall'host autorizzato «Michele». Non riguarda ELENA_UNICA Windows e non certifica l'interfaccia mediante test visivi.
+
+### Ricerca ADC
+- `/adc/cerca/` carica `adc/cerca/indice-pagine.json` (80 pagine), integrando 18 schede di `adc/inventario/testimonianze.json`. L'indice di pagine viene generato automaticamente a partire dalla sitemap e dal repository; il conteggio non deve essere confuso con le 90 pagine HTML ADC totali, fra cui alcuni percorsi tecnici, non indicizzati o esclusi dalla sitemap.
+- Aggiunto `.github/scripts/test-adc-public-search.cjs`, che esegue il JavaScript inline reale della pagina in un DOM simulato e verifica caricamento dell'indice, query «castello», «chiese», «annunziata», «parlamento», assenza risultati e query troppo breve; controlla inoltre esistenza e sicurezza dei 42 percorsi dell'indice Elena, risposta approvata sul 1213 e astensione in assenza di fonti.
+- Integrato il test in `.github/workflows/audit-seo.yml` e nei relativi trigger.
+- **CI superato:** run `44881006552`, log «ADC_RICERCA_ELENA_OK: 80 pagine, 18 schede inventario, 42 rotte Elena, query note e query vuote verificate». La stessa esecuzione riferisce «URL sitemap: 199 | errori: 0 | avvisi: 0» e prova integrità galleria fotografica.
+
+### Elena web
+- Nell'indice `adc/assets/elena-indice.json` la scheda «Rationes Decimarum» rimandava al vecchio `/adc/dossier-rationes/` e indicava 525 come voce corrente. Modificata per usare la sede canonica `/adc/chiese/studi/rationes/`, riportando 536 dalla riproduzione testuale **con la riserva della collazione della pagina a stampa**. Allineati altri rinvii di compatibilità (`/adc/chiese-cinquecento/`, `/adc/custode/`).
+- Corretto il dato 525 anche nel file archivistico `adc/assets/elena-risposte.json`, registrando la variante come trascrizione preliminare non confermata. Quel file non alimenta le risposte approvate del dialogo corrente: la distinzione resta esplicita.
+- Esteso `.github/workflows/elena-dialogo-check.yml` ai test di dialogo, contesto e widget. Il test del widget è stato aggiornato alla reale presenza dei controlli audio; la prima esecuzione ha rivelato un'incompletezza del DOM simulato, corretta nel test senza alterare il widget pubblico.
+- **CI superato:** run `44881092940`, log con «ELENA_DIALOGO_VERIFICATO», «ELENA_CONTESTO_OK» e «ELENA_WIDGET_REGRESSION_OK: 5 casi mirati». Controllati risposte approvate, rinvio al Processo 334, rifiuto di dati JSON errati o in bozza, domanda senza fonte, e riferimenti conversazionali effimeri.
+
+### Distribuzione HTTP dal PC Michele
+- URL `/adc/cerca/`, `/adc/elena/`, `/adc/cerca/indice-pagine.json`, `/adc/assets/elena-indice.json`, `/adc/assets/elena-dialogo.js`: **tutti HTTP 200** con `curl.exe` dal PC autorizzato.
+- **Limiti:** il tentativo di eseguire Edge headless non ha prodotto una prova utilizzabile (uscita con codice 1 senza output di pagina). Quindi non si rivendica un collaudo visivo/browser end-to-end. I test JavaScript sono simulazioni controllate e il controllo HTTP non prova l'esecuzione nel browser degli utenti.
+- Le nuove versioni del sito possono richiedere un normale ciclo di pubblicazione e cache; l'esito del GET non certifica, da solo, che ogni browser veda l'ultima revisione.
+
+### Chiusura
+- **Chiusi:** validazione logica della ricerca, integrità dei riferimenti Elena, regressione di risposta/documentazione e disponibilità HTTP dei file fondamentali.
+- **Aperti:** resa mobile, usabilità/tastiera e funzionamento audio su dispositivi reali, verifica browser end-to-end; servizio locale ELENA_UNICA è progetto separato.
