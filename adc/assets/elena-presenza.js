@@ -90,13 +90,14 @@
  function loadResources(){
    if(!resources)resources=Promise.all([
      fetch('/adc/assets/elena-indice.json',{cache:'no-store'}),
-     fetch('/adc/assets/elena-risposte-approvate.json',{cache:'no-store'})
+     fetch('/adc/assets/elena-risposte-approvate.json',{cache:'no-store'}),
+     fetch('/adc/assets/elena-conoscenza-verificata.json',{cache:'no-store'})
    ]).then(async responses=>{
-     if(responses.some(r=>!r.ok))throw Error('Indice delle risposte non disponibile');
-     return Promise.all(responses.map(r=>r.json()));
-   }).then(([index,approved])=>{
+     if(!responses[0].ok||!responses[1].ok)throw Error('Indice delle risposte non disponibile');
+     return Promise.all(responses.map(r=>r.ok?r.json():null));
+   }).then(([index,approved,knowledge])=>{
      if(!Array.isArray(index?.entries)||!Array.isArray(approved?.answers))throw Error('Formato delle risorse documentarie non valido');
-     return {index,approved:approved.answers};
+     return {index,approved:approved.answers,knowledge:knowledge?.schema===1&&Array.isArray(knowledge.entries)?knowledge:{entries:[]}};
    }).catch(err=>{resources=null;throw err});
    return resources;
  }
@@ -128,7 +129,7 @@
    try{
      const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
      const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
-     const reply=engine.reply(effective,data.index,data.approved);
+     const reply=engine.reply(effective,data.index,data.approved,data.knowledge);
      previousQuestion=effective;
      spokenKind=reply.kind;spokenId=reply.id||'';spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
