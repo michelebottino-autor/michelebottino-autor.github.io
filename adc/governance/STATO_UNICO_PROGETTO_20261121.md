@@ -401,3 +401,18 @@ Questo `STATO_UNICO_PROGETTO_20261121.md` è il **coordinamento attuale**, non s
 - Verificare che la notizia non sia già in una scheda canonica; aggiungere solo la prova nuova con grado A/B/C/D e la sua fonte.
 - Archiviare prima il facsimile e i metadati con hash; distinguere sempre OCR/HTR proposto da trascrizione approvata.
 - Dopo gli aggiornamenti, verificare GitHub Actions, sito pubblico, sitemap e indice Elena; preservare lo stato con un nuovo riferimento GitHub, senza sovrascrivere il backup precedente.
+
+
+## 27. Copia cloud selettiva e controllo distribuzione — 21 novembre 2026
+
+**Cartella Google Drive creata:** `ADC_BACKUP_20261121_FONTI_VERIFICATE`, ID `170btwkE5JpKXlxXSX22K0rFU9jxvpGfZ`; URL `https://drive.google.com/drive/folders/170btwkE5JpKXlxXSX22K0rFU9jxvpGfZ`. Sono state effettuate copie in nuove unità Drive, con risposta `success` e verifica mediante ricerca Drive:
+
+1. **Prima edizione 2025**: copia PDF `BACKUP_20261121_Calatabiano_Sacra_prima_edizione_2025.pdf`, ID `1r8Ok8JNGvbRlPoWVrU4RLZEgYTBXV7H5`. Fonte: PDF integrale già acquisito su Drive.
+2. **Registro delle evidenze seconda edizione**: copia Google Doc `BACKUP_20261121_Registro_evidenze_seconda_edizione`, ID `1yyuVRgcsnkckq3Vh5J07cwdmDVJIt1ELjFRTEP54Hlk`.
+3. **Inventario n. 81 Gravina-Cruillas**: copia PDF `BACKUP_20261121_Inventario_81_Gravina_Cruillas.pdf`, ID `1kWAW9jiBBiX2Z3DkRfCXqu8CdXCvFwW7`. Questa è una copia dell'inventario **non** del fascicolo originale 417 del 1799.
+
+**Conferma tecnica:** Google Drive ha accettato le tre copie e una ricerca successiva ha restituito i relativi ID. Le copie condividono la stessa infrastruttura/account Drive delle fonti, quindi difendono da perdita o modifica del singolo file, non da indisponibilità dell'intero account.
+
+**Distinzione indispensabile:** il collegamento remoto con PC Michele non consente l'invio dei suoi percorsi Windows direttamente al connettore Google Drive: l'azione `upload_file` richiede un `file_uri` autenticato del connettore, non percorsi locali. Pertanto **i cinque ZIP locali non sono stati caricati su Drive** e le tre copie cloud non sostituiscono un backup esterno integrale dell'archivio fotografico e dei risultati HTR. Nessuna credenziale o sessione locale è stata estratta per aggirare la limitazione.
+
+**Pubblicazione:** GitHub Pages run `44885126880` concluso con `success` al commit `b4db423cc22015a7f53af6b1a0c30632cf01bd68`. Audit precedente `44885040099` concluso con `success`, 208 URL sitemap, 0 errori/avvisi, 89 pagine nella ricerca, 18 schede inventario, 52 rotte Elena. Questo riscontro non sostituisce una verifica manuale di tutte le pagine in browser.
