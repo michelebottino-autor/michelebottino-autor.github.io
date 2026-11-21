@@ -1,7 +1,7 @@
 # ADC — Backend privato per le memorie
 
 ## Stato
-Implementazione predisposta nel repository pubblico; **nessun database, Worker, account o segreto viene creato automaticamente**. Non impostare `config.json.enabled=true` prima del collaudo su un servizio effettivamente operativo.
+**Stato verificato il 21 novembre 2026:** database D1 `adc-memorie-private` creato nella regione WEUR e schema importato (tabelle `testimonianze` e `richieste_giornaliere`); Worker `adc-memorie-api` distribuito con binding `DB` su `https://adc-memorie-api.darkaronteanonymous-72c.workers.dev`. Il servizio risponde con HTTP 503 / `Servizio non ancora configurato` perché non risultano ancora completati i segreti. Widget Turnstile ADC creato; chiave pubblica nel file `../config.json`, segreto mai nel repository. **Il modulo pubblico resta disattivato**, `enabled:false`. Non interpretare la distribuzione del Worker come avvio del trattamento di testimonianze.
 
 ## Componenti
 - `schema.sql`: schema per Cloudflare D1 (database privato).
@@ -37,4 +37,4 @@ Implementazione predisposta nel repository pubblico; **nessun database, Worker, 
 Non caricare nel repository pubblico testimonianze grezze, nomi di persone non autorizzate, contatti, indirizzi, email, consensi, esportazioni del database o credenziali. Per modifiche o ritiro l'utente deve poter contattare il titolare, che dovrà identificare la pratica e intervenire nell'archivio privato.
 
 ## Limiti attuali
-Questa release è un **prototipo distribuibile**, non un servizio attivato o collaudato in ambiente di produzione. Non contiene dashboard amministrativa autenticata pronta all'uso e non fornisce trascrizione di audio, archiviazione di fotografie o riconoscimento automatico di fonti.
+Questa release è un **prototipo distribuito ma non ancora attivo per l'acquisizione**. Manca la configurazione riservata dei tre segreti, la validazione dell'HTTPS da rete esterna, una prova integrale Turnstile/invio/lettura amministrativa e l'informativa privacy per la raccolta. L'ultimo controllo HTTPS da Node.js ha ricevuto HTTP 503, in linea con i segreti mancanti. Non contiene dashboard amministrativa autenticata pronta all'uso e non fornisce trascrizione di audio, archiviazione di fotografie o riconoscimento automatico di fonti.
