@@ -25,11 +25,11 @@
 <label class="choice"><input type="radio" name="pubblicazione" value="anonima"><span><strong>Autorizzo una possibile pubblicazione anonima</strong>, dopo revisione redazionale.</span></label>
 </fieldset>
 <div class="fields">
-<div class="field"><label for="memo-author">Nome da attribuire (facoltativo)</label><input id="memo-author" name="autore" maxlength="100" autocomplete="name" placeholder="Nome e cognome o pseudonimo"></div>
+<div class="field"><label for="memo-author">Nome da attribuire (obbligatorio soltanto se scegli la pubblicazione nominale)</label><input id="memo-author" name="autore" maxlength="100" autocomplete="name" placeholder="Nome e cognome o pseudonimo"></div>
 <div class="field"><label for="memo-contact">Recapito per eventuali chiarimenti (facoltativo)</label><input id="memo-contact" name="contatto" type="email" maxlength="180" autocomplete="email" placeholder="Indirizzo email"></div>
 </div>
-<label class="choice"><input type="checkbox" id="memo-consent" required><span>Confermo di avere il diritto di condividere questo racconto e di aver compreso che l'invio non comporta pubblicazione automatica. *</span></label>
-<p class="privacy">La scelta sulla pubblicazione potrà essere riesaminata con la redazione prima della pubblicazione. Le richieste di correzione o ritiro possono essere inviate tramite la pagina <a href="/contatti/">Contatti</a>. Non inserire dati sensibili o dettagli privati su altre persone. I minori dovrebbero condividere la testimonianza tramite un genitore o tutore.</p>
+<label class="choice"><input type="checkbox" id="memo-consent" required><span>Confermo di avere il diritto di condividere questo racconto, di aver letto le informazioni sul trattamento dei dati e di aver compreso che l'invio non comporta pubblicazione automatica. *</span></label>
+<p class="privacy">Per le modalità di trattamento dei dati consulta l'<a href="/privacy/#memorie-adc-privacy">informativa privacy dedicata alle memorie ADC</a>. La scelta sulla pubblicazione potrà essere riesaminata con la redazione prima della pubblicazione. Le richieste di correzione o ritiro possono essere inviate tramite la pagina <a href="/contatti/">Contatti</a>. Non inserire dati sensibili o dettagli privati su altre persone. I minori dovrebbero condividere la testimonianza tramite un genitore o tutore.</p>
 <div id="memo-antispam" class="hidden" aria-label="Verifica antispam"></div><div class="actions"><button type="button" id="memo-send">Prepara l'invio alla redazione</button><button type="button" id="memo-download" class="secondary">Salva una copia del racconto</button></div>
 <p id="memo-status" role="status" aria-live="polite"></p>
 </form></section>
