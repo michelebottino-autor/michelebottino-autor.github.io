@@ -9,6 +9,8 @@ on:
       - 'sitemap.xml'
       - 'robots.txt'
       - '**/index.html'
+      - 'adc/chiese/schede/maria-santissima-annunziata/galleria/**'
+      - '.github/scripts/check-adc-gallery-assets.mjs'
       - 'scripts/audit_site.py'
       - 'analytics-consenso.js'
       - 'sw.js'
@@ -41,6 +43,8 @@ jobs:
           name: audit-seo-report
           path: audit-seo-report.txt
           if-no-files-found: warn
+      - name: Verify Annunziata gallery files and filters
+        run: node .github/scripts/check-adc-gallery-assets.mjs
       - name: Check consent JavaScript syntax
         run: node --check analytics-consenso.js
       - name: Check PWA JavaScript syntax
