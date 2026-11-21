@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "verified_at": "2026-11-21",
+  "origin": "https://comune.calatabiano.ct.it",
+  "scope": "Recapiti e avvisi istituzionali; non sostituisce informazioni aggiornate dell'ente.",
+  "contacts": {
+    "title": "Comune di Calatabiano — Municipio",
+    "address": "Piazza Vittorio Emanuele III, 32, 95011 Calatabiano (CT)",
+    "phone": "+39 095 7771026",
+    "email": "protocollo@comune.calatabiano.ct.it",
+    "pec": "protocollo@pec.comune.calatabiano.ct.it",
+    "url": "https://comune.calatabiano.ct.it/it/vivere/758920",
+    "source_updated_at": "2025-07-09"
+  },
+  "offices": [
+    {
+      "name": "Anagrafe, Stato Civile e Protocollo",
+      "keys": [
+        "anagrafe",
+        "stato civile",
+        "protocollo",
+        "demografici",
+        "residenza",
+        "carta identita",
+        "certificato"
+      ],
+      "opening": "Dal lunedì al venerdì 9:00–12:30; martedì e giovedì anche 16:00–18:00.",
+      "url": "https://comune.calatabiano.ct.it/it/news/138332/nuovi-orari-di-apertura-al-pubblico-degli-uffici-comunali",
+      "source_date": "2026-09-02"
+    },
+    {
+      "name": "Tributi — TARI e COSAP",
+      "keys": [
+        "ufficio tributi",
+        "tributi",
+        "tari",
+        "cosap",
+        "tassa rifiuti"
+      ],
+      "opening": "Martedì 9:00–12:00; giovedì 16:00–18:00.",
+      "url": "https://comune.calatabiano.ct.it/it/news/138332/nuovi-orari-di-apertura-al-pubblico-degli-uffici-comunali",
+      "source_date": "2026-09-02"
+    }
+  ],
+  "directories": {
+    "offices": "https://comune.calatabiano.ct.it/it/page/uffici-361",
+    "news": "https://comune.calatabiano.ct.it/it/news",
+    "notices": "https://comune.calatabiano.ct.it/it/news?type=3",
+    "municipality": "https://comune.calatabiano.ct.it",
+    "events": "https://comune.calatabiano.ct.it/it/eventi",
+    "faq": "https://comune.calatabiano.ct.it/it/faq"
+  },
+  "source": "Sito ufficiale Comune di Calatabiano; avviso orari 2 settembre 2026 e scheda Municipio."
+}
