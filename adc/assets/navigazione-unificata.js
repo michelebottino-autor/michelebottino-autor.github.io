@@ -9,7 +9,7 @@
       ['Fonti','/adc/fonti/'], ['Atlante','/adc/atlante/'],
       ['Mediateca','/adc/mediateca/'], ['Patrimonio','/adc/materiali-patrimonio/'],
       ['Stampa','/adc/stampa/'], ['Persone e libri','/adc/persone/'],
-      ['Elena','/adc/elena/'], ['Michele Bottino','/']
+      ['Elena','/adc/elena/'], ['Origini e dedica','/adc/#dedica-comunita'], ['Carta ADC','/adc/carta/'], ['Michele Bottino','/']
     ];
     var header = document.createElement('div');
     header.id = 'adc-unified-header';
@@ -101,7 +101,7 @@
     var line = document.createElement('div');
     line.className = 'adc-u-footer-line';
     line.dataset.adcFooterIdentity = 'true';
-    line.innerHTML = '<span>Archivio Documentale Calatabiano · A cura di Michele Bottino</span><nav aria-label="Collegamenti principali"><a href="/adc/">Archivio</a><a href="/adc/stampa/">Giornali storici</a><a href="/adc/persone/">Persone, libri e studi</a><a href="/">Sito dell’autore</a></nav>';
+    line.innerHTML = '<span>Archivio Documentale Calatabiano · A cura di Michele Bottino</span><nav aria-label="Collegamenti principali"><a href="/adc/">Archivio</a><a href="/adc/stampa/">Giornali storici</a><a href="/adc/persone/">Persone, libri e studi</a><a href="/adc/#dedica-comunita">Origini e dedica</a><a href="/adc/carta/">Carta ADC</a><a href="/">Sito dell’autore</a></nav>';
     footer.appendChild(line);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
