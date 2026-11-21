@@ -47,3 +47,16 @@ Ricercare inoltre Taormina, Castelmola, Giardini Naxos, Piedimonte Etneo, Fiumef
 - **Eseguito:** controllo programmi PC e corpus, prova filtri, spoglio di 5.829 pagine testuali, consultazione cataloghi di tre archivi, acquisizione di due PDF con SHA-256, identificazione e lettura di due testi medievali editi (greco 1103, latino 1106), prima scheda pubblica `/adc/monasteri/san-giovanni-fiumefreddo/` con rimandi.
 - **Non eseguito:** spoglio esaustivo di tutti i fondi, download delle 720 pergamene messinesi, recupero degli identificativi IIIF dei singoli facsimili o collazione autoptica degli originali greci/latini.
 - **Priorità reale:** (1) individuare il canvas dell'atto San Giovanni 1103/1106 se presente nel Diplomatico; (2) trovare gli originali CFM Francavilla 1264; (3) leggere Riveli 1039 e fascicolo 417; (4) confrontare gli atti con i luoghi vicini e solo dopo aggiornare le attribuzioni storiche.
+
+
+## Aggiornamento: segnature correnti delle pergamene greche di Fragalà — 21 novembre 2026
+
+**Francesca Potenza**, «Un inedito atto di vendita greco dalla Palermo di età federiciana», *Revue des Études Byzantines*, 83 (2025), pp. 5–58, identifica nel fondo dell'Archivio di Stato di Palermo **Pergamene di diversa provenienza** gli originali:
+- **PDP 124.1 (anno 1105)**, terza redazione del testamento di Gregorio, categumeno di San Filippo di Fragalà. Edita fra l'altro in Cusa, *I diplomi greci ed arabi*, pp. 400–402, n. 22.
+- **PDP 125.2 (anno 1125 nella classificazione dell'articolo)**, atto greco-latino collegato a Fragalà. Edito fra l'altro in Cusa, pp. 416–417, n. 39. **Questione cronologica:** Potenza segnala una pubblicazione del documento con data nel titolo **1117**, mentre identifica l'attuale PDP come 1125; non conciliare senza leggere gli estremi diplomatici originali e la stratificazione greca/latina.
+
+Lo studio è disponibile come testo presso https://www.academia.edu/168291888/Un_inedito_atto_di_vendita_greco_dalla_Palermo_di_et%C3%A0_federiciana_Palermo_Archivio_di_Stato_Pergamene_di_diversa_provenienza_n_129_6_gi%C3%A0_Pergamene_varie_n_6_ e la scheda istituzionale dell'articolo è https://iris.uniroma1.it/handle/11573/1747868 .
+
+L'articolo cita come accesso digitale al **fondo** l'URL storico https://www.archiviodigitale.icar.beniculturali.it/it/185/ricerca/detail/374605 . Il 21 novembre 2026, dal PC Michele, il dominio storico **non risolveva**; l'URL con il dominio attuale https://archiviodigitale-icar.cultura.gov.it/it/185/ricerca/detail/374605 restituiva **HTTP 403**. Non interpretare il 403 come conferma che una specifica immagine non esista; non dichiarare acquisiti facsimili.
+
+**Aggiornata la scheda canonica** `/adc/monasteri/san-filippo-fragala/`, con le nuove segnature e la distinzione fra testi editi, inventari e fotografia originale. Per ogni eventuale download futuro verificare numero PDP, recto/verso, carta, immagine, scala, datazione, eventuale licenza e SHA-256. Nessuna menzione di Calatabiano in queste due pergamene è stata identificata.
