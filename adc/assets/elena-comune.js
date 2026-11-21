@@ -18,8 +18,17 @@
    const has=pattern=>pattern.test(q);
    const common=base.contacts;
    const officialLink=link('Sito ufficiale del Comune',base.directories.municipality);
-   const newsIntent=has(/\b(ultime|notizie|novita|news|avvisi|avviso|comunicati|eventi|cosa succede|cosa accade|consiglio comunale)\b/);
+   const eventIntent=has(/\b(eventi|manifestazioni|spettacoli|concerti|cosa fare|calendario eventi)\b/);
+   const newsIntent=has(/\b(ultime|notizie|novita|news|avvisi|avviso|comunicati|cosa succede|cosa accade|consiglio comunale)\b/);
    const municipality=has(/\b(comune|comunale|municipio|municipale|sindaco|uffici|ufficio|sportello|urp|anagrafe|protocollo|tributi|cosap|tari|stato civile|residenza|carta d.identita|certificati|pec)\b/);
+   if(eventIntent&&!newsIntent){
+     return {kind:'civic',title:'Eventi e manifestazioni a Calatabiano',
+       text:'Per conoscere il calendario aggiornato degli eventi organizzati o segnalati dal Comune consulta la pagina ufficiale. Non dispongo di una verifica continuativa degli eventi in programma e non posso confermare date o aperture senza un avviso attuale.',
+       links:[link('Calendario ufficiale degli eventi',base.directories.events),
+         link('Novità e comunicazioni del Comune',base.directories.news)].filter(Boolean),
+       limitation:'Il calendario comunale non comprende necessariamente tutte le iniziative private o associative.',
+       source:'Comune di Calatabiano',checked_at:base.verified_at};
+   }
    if(newsIntent){
      const records=Array.isArray(news?.entries)&&recent(news.checked_at,2)?news.entries.filter(e=>
        e&&typeof e.title==='string'&&e.title.length<=220&&official(e.url)&&recent(e.date,120)).slice(0,5):[];
