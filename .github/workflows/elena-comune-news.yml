@@ -1,0 +1,42 @@
+name: Elena ADC - notizie ufficiali Comune Calatabiano
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 6,12,18 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: elena-comune-news
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Importa metadati da fonte istituzionale
+        run: python scripts/aggiorna_news_comune.py
+      - name: Controlla che solo i metadati ammessi siano aggiornati
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('adc/assets/elena-comune-news.json').read_text(encoding='utf8'))
+          assert p['schema']==1 and len(p['entries'])>=1
+          assert all(set(e)=={'date','title','url'} for e in p['entries'])
+          assert all(e['url'].startswith('https://comune.calatabiano.ct.it/it/news/') for e in p['entries'])
+          PY
+      - name: Commit della sola lista pubblica
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- adc/assets/elena-comune-news.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Elena ADC: aggiorna notizie comunali da fonte ufficiale"
+            git push
+          fi
