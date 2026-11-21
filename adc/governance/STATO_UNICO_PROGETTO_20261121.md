@@ -152,3 +152,8 @@ Ricognizione strutturale sui file completata per i dossier sopra elencati; nessu
 - La struttura di navigazione è verificata a livello di file GitHub. Collaudo responsive e distribuzione in browser ancora da verificare.
 
 **Stato D-03:** funzione editoriale dei tre percorsi distinta e navigazione aggiornata; revisione semantica paragrafo per paragrafo ancora aperta. 
+
+
+## 12. Verifica dei PDF: 1213 e decime medievali — 21 novembre 2026
+
+Creato il registro interno `adc/governance/REGISTRO_RISCONTRI_FONTI_20261121.md` per separare edizioni lette, citazioni indirette e PDF non effettivamente disponibili. Il PDF del privilegio del 1213, nella raccolta di Hillen (2007), è stato consultato in testo ricercabile: n. 4, pp. 47–49, con riferimento a Calatabiano e ai 15.000 tarì. La fonte è una raccolta di stampe precedenti, non una nuova edizione critica, come già correttamente dichiarato nel dossier pubblico. Per Sella (1944), l'esistenza dell'edizione è confermata in catalogo, ma non è stata ottenuta una nuova lettura integrale libera del PDF; **resta aperta la discrepanza 525/536** e non è stata modificata la trascrizione pubblica. Nessun PDF è stato salvato localmente in questo ciclo, e nessuna nuova attestazione di visita pastorale è stata dichiarata.
