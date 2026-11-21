@@ -273,3 +273,11 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 - Integrate le due indicazioni nella scheda canonica `/adc/chiese/schede/gesu-e-maria/` e nel registro delle fonti `/adc/chiese/studi/ecc-002/`. Non creata una nuova narrazione parallela. Commit `5303ecf` e `445711f`.
 - La pubblicazione dei Carmelitani `https://carmelit.org/2025/10/18/il-carmelo-siciliano-nella-storia/` distingue un'ipotesi sul 1510, l'attestazione secondaria della fondazione conventuale nel 1518, la soppressione nel 1652 e il riferimento indiretto alla concessione del 1583 richiamato da Nicotra. La scheda critica ECC-003 **già censisce** la concessione del 1583; non duplicare la notizia né ricondurre automaticamente Santa Caterina all'edificio del Carmine attuale.
 - Prossima verifica scientifica: immagini leggibili della custodia del 1714 e della campana del Carmine, più documenti d'archivio francescani e carmelitani di Calatabiano. Verifiche tecniche GitHub Actions da distinguere dal collaudo delle fonti.
+
+
+## 20. Rilettura della prima edizione *Calatabiano Sacra* — 21 novembre 2026
+
+- Recuperato su Google Drive e letto il PDF integrale della prima edizione 2025, `calatabianosacra_michelebottino2025.pdf` (ISBN 9798272417756), con i tre PDF separati del capitolo X.
+- Confrontato direttamente con il Google Doc `01_REGISTRO_EVIDENZE – Calatabiano Sacra – Seconda Edizione`, che già marca **non riscontrate** le formule attribuite a postilla 1239, due monaci verso Nicosia e *domus virginum S. Annae*, oltre alla cronologia da rivedere della visita De Ciocchis.
+- Creato il fascicolo interno `adc/governance/RISCONTRI_CALATABIANO_SACRA_2025_MONACHESIMO_20261121.md`: tabella delle piste, lacune di segnatura e nuovi ingressi archivistici verificabili, inclusa pergamena 1264 dei Frati Minori di Francavilla nell'inventario dell'Archivio di Stato di Messina. La pergamena concerne **Francavilla**, non prova una fondazione francescana a Calatabiano.
+- Non inserite nuove attestazioni come fatti certi nelle schede pubbliche; prima edizione usata come repertorio di domande e ipotesi, non fonte indipendente di se stessa.
