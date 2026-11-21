@@ -281,3 +281,15 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 - Confrontato direttamente con il Google Doc `01_REGISTRO_EVIDENZE – Calatabiano Sacra – Seconda Edizione`, che già marca **non riscontrate** le formule attribuite a postilla 1239, due monaci verso Nicosia e *domus virginum S. Annae*, oltre alla cronologia da rivedere della visita De Ciocchis.
 - Creato il fascicolo interno `adc/governance/RISCONTRI_CALATABIANO_SACRA_2025_MONACHESIMO_20261121.md`: tabella delle piste, lacune di segnatura e nuovi ingressi archivistici verificabili, inclusa pergamena 1264 dei Frati Minori di Francavilla nell'inventario dell'Archivio di Stato di Messina. La pergamena concerne **Francavilla**, non prova una fondazione francescana a Calatabiano.
 - Non inserite nuove attestazioni come fatti certi nelle schede pubbliche; prima edizione usata come repertorio di domande e ipotesi, non fonte indipendente di se stessa.
+
+
+## 21. Palermo: fonti dirette inventariate sui Padri Agostiniani e sulle contrade — 21 novembre 2026
+
+Ricontrollati inventari ufficiali dell'Archivio di Stato di Palermo, incrociati con il Registro delle evidenze della seconda edizione *Calatabiano Sacra*. Creato il fascicolo `adc/governance/SEGNATURE_PALERMO_CALATABIANO_MONASTERI_20261121.md`, che registra:
+1. **Fidecommissaria del principe di Palagonia, inventario n. 81, voce 417, volume antico 86, anno 1799:** due magazzini con trappeti censiti dai Padri Agostiniani alla Secrezia di Calatabiano. **Dato certo a livello di inventario**, ma ubicazione, titolo e presenza di un convento non accertati.
+2. Nello stesso inventario, voce 422, volume antico 95 (1747–1749): causa con il Capitolo della Cattedrale di Catania relativa all'acqua del cavo di San Basilio; rapporto con i trappeti non dimostrato.
+3. **Deputazione del Regno, Riveli di Calatabiano:** 1039 (1681), 2146–2149 (1747–1750), oltre alle unità della rettifica 1811–1816 (nn. 443–444, 1315, 1607, 2185). Da verificare su ogni carta contrade, titolari, censi e registrazioni ecclesiastiche.
+4. **Tabulario San Filippo di Fragalà / Santa Maria di Maniace:** 80 pergamene in inventario, 1090–1620. Le pergamene 24–25 del 1217 riguardano acqua, terre e mulino di Santo Marchetto, ma il regesto non nomina Calatabiano. Evitare collegamenti geografici non dimostrati.
+5. **Protonotaro del Regno, repertorio processi di investitura n. 122:** identificati nuovamente i riferimenti 184 e 924, in relazione a Calatabiano. Gli atti integrali non sono stati ricollazionati.
+
+**Aggiornamenti pubblici:** aggiunta al dossier canonico `/adc/archivio-gravina-cruillas/` una sezione sui Padri Agostiniani, con riserva sul tenore del fascicolo; aggiornato solo il rimando nell'indice `/adc/fonti/`. Nessun collegamento monastico ipotetico è stato promosso a fatto certo. Fonte consultata: testo digitale degli inventari ufficiali; i tentativi di cattura grafica tramite screenshot web non hanno fornito una riproduzione utilizzabile. Collazione degli atti originali ancora aperta.
