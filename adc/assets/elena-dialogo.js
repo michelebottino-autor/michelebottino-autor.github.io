@@ -84,7 +84,7 @@
     }
     // Risposte canoniche consentite soltanto con stato, fonte e testo approvati.
     const answer = (approved || []).find(x => x && x.status === 'APPROVED_FOR_PUBLICATION' && x.question && normalize(x.question)===n && typeof x.answer==='string' && x.answer.trim() && Array.isArray(x.sources) && x.sources.length && x.sources.every(s=>s && safeUrl(s.url) && s.page && s.title) && x.reviewer && x.reviewed_at && x.review_rationale && ['SOURCE_IDENTIFIED','EDITION_TEXT_CHECKED','IMAGE_COLLATED','ORIGINAL_COLLATED'].includes(x.evidence_status) && typeof x.evidence_limitations==='string' && x.sources.every(s=>s.source_type));
-    if (answer) return {kind:'documentary',id:answer.id,title:'Risposta documentata',text:answer.answer,links:answer.sources.map(s=>({title:s.title+' — p. '+s.page,url:s.url})),limitation:answer.evidence_limitations,evidence_status:answer.evidence_status};
+    if (answer) return {kind:'documentary',id:answer.id,title:'Risposta documentata',text:answer.answer,links:answer.sources.map(s=>({title:s.title+' — p. '+s.page,url:s.url})),limitation:answer.evidence_limitations,evidence_status:answer.evidence_status,reviewer:answer.reviewer,reviewed_at:answer.reviewed_at};
     const controlled=knowledgeAnswer(q,knowledge,approved);
     if(controlled)return controlled;
     const matches = rank(q, index?.entries);
@@ -228,6 +228,14 @@
             ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
             : 'Nessuna attestazione approvata individuata per questa domanda.');
         article.append(evidence);
+        if(r.kind==='documentary' && r.reviewed_at && r.evidence_status){
+          const levels={SOURCE_IDENTIFIED:'Fonte identificata',EDITION_TEXT_CHECKED:'Edizione controllata',
+            IMAGE_COLLATED:'Collazione su immagini',ORIGINAL_COLLATED:'Originale collazionato'};
+          article.append(make('p','elena-dialogue-evidence',
+            (levels[r.evidence_status]||'Verifica documentaria')+
+            ' · Revisione: '+r.reviewed_at+
+            (r.reviewer?' · '+r.reviewer:'')));
+        }
         if(partial) article.append(make('p','elena-dialogue-evidence',!indexAvailable
           ? 'Non è stato possibile consultare l’intero repertorio. La ricerca non è completa.'
           : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
