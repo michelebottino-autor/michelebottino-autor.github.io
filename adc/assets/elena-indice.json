@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-21-allineamento-rationes",
+  "version": "2026-11-21-domande-chiese",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -569,6 +569,28 @@
         "chiese"
       ],
       "description": "Catalogo critico dei materiali edilizi e del patrimonio artistico locale."
+    },
+    {
+      "title": "Le chiese di Calatabiano: domande e chiarimenti",
+      "url": "/adc/chiese/",
+      "tags": [
+        "chiese",
+        "chiesa madre",
+        "annunziata",
+        "santissimo crocifisso",
+        "san filippo",
+        "madonna del carmine",
+        "campana",
+        "1881",
+        "1737",
+        "1740",
+        "1484",
+        "proprieta",
+        "proprietà",
+        "curia",
+        "terra vecchia"
+      ],
+      "description": "Indice delle dieci chiese e risposte documentate su antica e attuale Chiesa Madre, campana del Carmine, chiesa di San Filippo, data 1484 e questioni di proprietà. Le cronologie incerte e i diritti di proprietà non sono presentati come accertati."
     }
   ]
 }
