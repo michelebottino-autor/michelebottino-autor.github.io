@@ -304,3 +304,23 @@ Ricontrollati inventari ufficiali dell'Archivio di Stato di Palermo, incrociati 
 - Integrato il rinvio nella sede canonica `/adc/dossier-zucchero/`, senza attribuire un'interpretazione univoca alle carte.
 - **Limiti:** le pagine del PDF Trasselli sono state lette tramite trascrizione testuale online, mentre la cattura grafica via screenshot web non è riuscita. Le carte del Rivelo 1039 e gli atti citati da Vaccaro **non** sono stati ancora esaminati.
 - **Prossimo riscontro:** confrontare materialmente ff. 229, 254, 307 del Rivelo 1039, verificando toponimi, proprietari, coltura e destinazione delle «canne»; confrontare poi il fascicolo 417 del 1799 sui Padri Agostiniani e trappeti senza postulare identità fra le strutture.
+
+
+## 23. Nuova sezione «Monasteri e ordini religiosi» — 21 novembre 2026
+
+**Obiettivo editoriale:** distinguere ogni istituzione religiosa realmente documentata da presenze conventuali ricordate da fonti secondarie, rapporti patrimoniali e ipotesi territoriali; offrire navigazione reciproca fra chiese, monasteri, fonti e storia, senza duplicare le schede delle chiese.
+
+**Percorso principale:** `/adc/monasteri/`. **Sette schede:**
+- `/adc/monasteri/carmelitani-calatabiano/`: convento del Carmine, date 1518 e 1652 come testimonianze storiografiche non ancora collazionate su atti primari.
+- `/adc/monasteri/frati-minori-gesu-e-maria/`: ipotesi francescana fondata su una guida comunale, custodia degli oli santi datata 1714; nessuna fondazione conventuale provata.
+- `/adc/monasteri/agostiniani-e-trappeti/`: fascicolo 417, 1799, del fondo Gravina-Cruillas, rapporto patrimoniale inventariato con la Secrezia; non prova una sede monastica locale.
+- `/adc/monasteri/san-filippo-fragala/`: istituzione esterna, tabulario esistente; passaggi calatabianesi e postilla del 1239 non riscontrati.
+- `/adc/monasteri/santa-maria-maniace/`: istituzione esterna, controversia documentata del 1217; possedimenti di Calatabiano non desumibili dal regesto.
+- `/adc/monasteri/santa-croce-messina/`: monastero esterno e pista delle badesse Marullo; atti con beni locali ancora da identificare con segnatura completa.
+- `/adc/monasteri/sant-anna/`: supposta casa religiosa delle vergini, formula del volume 2025 non riscontrata in una fonte primaria.
+
+**Navigazione:** aggiunta voce «Monasteri» nel menu unificato ADC, link nell'homepage, nelle pagine `/adc/chiese/` e `/adc/fonti/`, rimandi specifici dalle schede della Madonna del Carmine e Gesù e Maria, dal dossier Gravina-Cruillas e dal dossier `/adc/acque-mulini-confini/`. Tutte le schede hanno percorsi reciproci verso l'atlante, le chiese, le fonti e la storia.
+
+**Pubblicazione tecnica:** introdotti otto URL nella sitemap (passaggio da 199 a 207), file CSS condiviso `/adc/monasteri/assets/monasteri.css` e otto nuove rotte nell'indice documentario di Elena (da 43 a 51). Gli URL sono intenzionalmente distinti fra istituzioni e status, senza unificare identità geografiche estranee.
+
+**Criterio di prova:** la creazione GitHub e l'indicizzazione dei percorsi sono fatti tecnici. La presenza di un monastero a Calatabiano è un fatto storico che necessita documenti autonomi; non confondere gli esiti.
