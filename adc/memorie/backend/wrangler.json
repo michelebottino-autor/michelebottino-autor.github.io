@@ -1,0 +1,13 @@
+{
+  "name": "adc-memorie-api",
+  "main": "worker.js",
+  "compatibility_date": "2026-11-21",
+  "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "adc-memorie-private",
+      "database_id": "50766b5a-2e3c-4995-b6be-04c65e568700"
+    }
+  ]
+}
