@@ -255,3 +255,11 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 - Nessun accesso ai commenti privati o a contenuti soggetti a login; non sono stati utilizzati profili individuali o dati personali.
 - Il 1510 attribuito alla campana e il 1518 del convento carmelitano sono dati riportati da fonti secondarie distinte; necessaria epigrafe/atto originale. I documenti di proprietà e responsabilità manutentiva del Carmine e del Crocifisso non sono stati letti.
 - La verifica della domanda sociale effettiva richiederebbe consultazione diretta di discussioni pubbliche specifiche e attribuibili, non un'inferenza da ricerca generica.
+
+
+### Integrazione ulteriore — Gesù e Maria e i Frati Minori
+- La guida storica comunale «Presentazione», sezione «Chiesa Gesù e Maria», riprodotta all'indirizzo `https://diazilla.com/doc/777729/presentazione---comune-di-calatabiano`, formula **come ipotesi** un antico collegamento con un convento dei Frati Minori scomparso, richiamando un simbolo dell'ordine presente nella chiesa.
+- La notizia non compariva nelle pagine ADC `/adc/chiese/schede/gesu-e-maria/` e `/adc/chiese/studi/ecc-002/`. È stata integrata nella sede narrativa canonica e nell'apparato critico con una riserva esplicita: **nessun atto primario di fondazione del convento è stato esaminato**, e il solo simbolo non dimostra la presenza istituzionale dell'ordine.
+- Commit scheda `214da07`, apparato `14a4690`.
+- **Controllo automatico successivo:** GitHub Actions run `44881463945`, conclusione **success**. Log «URL sitemap: 199 | errori: 0 | avvisi: 0» e «ADC_RICERCA_ELENA_OK: 80 pagine, 18 schede inventario, 43 rotte Elena».
+- Resta distinto l'esito tecnico del repository dall'effettiva lettura di commenti social: nessuna frequenza o citazione testuale di domande Facebook/Instagram verificata.
