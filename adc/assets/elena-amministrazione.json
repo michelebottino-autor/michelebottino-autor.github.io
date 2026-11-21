@@ -65,6 +65,25 @@
       "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/area-1-affari-generali-e-sociali",
       "source_updated_at": "2025-07-09",
       "limitation": "Responsabilità indicata nella scheda istituzionale; verificare aggiornamenti e disposizioni successive."
+    },
+    {
+      "name": "Anna Giuseppa Maria Di Gangi",
+      "role": "Responsabile E.Q. — Area 2 Economico-Finanziaria; indicata anche per la gestione economica del personale",
+      "url": "https://pagamentipa.comune.calatabiano.ct.it/it/persone/di-gangi-anna-giuseppa-maria",
+      "limitation": "Indicazione da scheda istituzionale; controllare eventuali variazioni degli incarichi."
+    },
+    {
+      "name": "Salvatore Borzì",
+      "role": "Responsabile — Area 3 Tecnica nella scheda pubblicata dal Comune",
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/area-3-tecnica",
+      "source_updated_at": "2025-07-09",
+      "limitation": "Dato proveniente da una scheda aggiornata nel 2025; la continuità dell'incarico al 2026 non è confermata autonomamente."
+    },
+    {
+      "name": "Filippa Noto",
+      "role": "Responsabile del Servizio Tributi nella scheda comunale",
+      "url": "https://www.comune.calatabiano.ct.it/it/unita_organizzative/servizio-tributi",
+      "limitation": "Incarico indicato sulla pagina di settore; verificare aggiornamenti."
     }
   ],
   "directories": {
@@ -198,5 +217,37 @@
       "url": "https://www.comune.calatabiano.ct.it/it/topics/23/3",
       "caution": "Elena non inoltra segnalazioni né può confermare che un intervento sia stato preso in carico."
     }
-  ]
+  ],
+  "staff_directory": {
+    "url": "https://www.comune.calatabiano.ct.it/index.php/it/page/personale-amministrativo-339?fromService=0",
+    "source_updated_at": "2023-07-11",
+    "limitation": "Elenco storico pubblicato dal Comune; non garantisce organico o incarichi attuali.",
+    "names": [
+      "Antonio Battiato",
+      "Sabrina Bevacqua",
+      "Vincenza Bonfiglio",
+      "Emanuela Cangeri",
+      "Maria Carruba",
+      "Maria Catena Contino",
+      "Antonino Cordima",
+      "Valerio Agatino Cucè",
+      "Maria Antonina Curcuruto",
+      "Davide De Domenico",
+      "Giambattista Di Bella",
+      "Anna Giuseppa Maria Di Gangi",
+      "Salvatore Fichera",
+      "Francesco Franco",
+      "Vincenzo Mario Ligresti",
+      "Ignazio Limina",
+      "Francesco Lo Giudice",
+      "Jessica Luca",
+      "Danila Nobile",
+      "Salvatore Nocera",
+      "Filippa Noto",
+      "Rosario Reitano",
+      "Ignazio Riscili",
+      "Bruno Sciuto",
+      "Antonina Settimo"
+    ]
+  }
 }
