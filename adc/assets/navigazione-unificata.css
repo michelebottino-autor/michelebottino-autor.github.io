@@ -143,3 +143,33 @@ body.adc-inner-2026 figcaption,body.adc-mobile-audit figcaption,body.adc-utility
   body.adc-inner-2026 table,body.adc-mobile-audit table,body.adc-utility-theme table {display:block;overflow-x:auto;max-width:100%}
   body.adc-inner-2026 .grid,body.adc-mobile-audit .grid,body.adc-utility-theme .grid {grid-template-columns:minmax(0,1fr)}
 }
+
+
+/* Ripristino dell'emblema storico ADC nella navigazione condivisa. */
+#adc-unified-header .adc-u-brand{
+  display:inline-flex;align-items:center;gap:13px;
+  min-width:0;max-width:min(100%,720px);
+  text-decoration:none;
+}
+#adc-unified-header .adc-u-brand .adc-u-emblem{
+  display:block!important;visibility:visible!important;opacity:1!important;
+  flex:0 0 60px;width:60px;height:60px;
+  border-radius:50%;object-fit:contain;
+  background:#f4eee1;
+  border:1px solid rgba(211,183,127,.7);
+}
+#adc-unified-header .adc-u-brand .adc-u-brand-text{
+  display:block;min-width:0;
+  overflow-wrap:normal;word-break:normal;
+}
+#adc-unified-header .adc-u-brand .adc-u-brand-text small{display:block;}
+@media(max-width:760px){
+  #adc-unified-header .adc-u-brand{gap:10px;max-width:calc(100% - 92px);}
+  #adc-unified-header .adc-u-brand .adc-u-emblem{flex-basis:52px;width:52px;height:52px;}
+  #adc-unified-header .adc-u-brand .adc-u-brand-text{font-size:clamp(.9rem,3.3vw,1.16rem);line-height:1.15;}
+  #adc-unified-header .adc-u-brand .adc-u-brand-text small{font-size:.66rem;line-height:1.3;}
+}
+@media(max-width:390px){
+  #adc-unified-header .adc-u-brand .adc-u-emblem{flex-basis:44px;width:44px;height:44px;}
+  #adc-unified-header .adc-u-brand{gap:8px;}
+}
