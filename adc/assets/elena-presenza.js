@@ -46,6 +46,8 @@
      stopSpeech();
      paolaAnswerAudio.src='/adc/audio/elena-paola-risposta-'+(spokenKind==='index'?'indice':'vuota')+'.mp3';
      paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Elena sta leggendo la risposta.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Registrazione vocale non disponibile. Riprova più tardi.';});
+   }else if(spokenKind==='civic'){
+     speakText(spokenAnswer);
    }else if(spokenKind==='documentary' && /^[A-Za-z0-9_-]{1,80}$/.test(spokenId)){
      stopSpeech();
      paolaAnswerAudio.src='/adc/audio/elena-paola-documentaria-'+spokenId+'.mp3';
@@ -102,8 +104,8 @@
      fetch('/adc/assets/elena-indice.json',{cache:'no-store'}),
      fetch('/adc/assets/elena-risposte-approvate.json',{cache:'no-store'}),
      fetch('/adc/assets/elena-conoscenza-verificata.json',{cache:'no-store'}),
-     fetch('/adc/assets/elena-comune-fonti.json',{cache:'no-store'}),
-     fetch('/adc/assets/elena-comune-news.json',{cache:'no-store'})
+     fetch('/adc/assets/elena-comune-fonti.json',{cache:'no-store'}).catch(()=>({ok:false})),
+     fetch('/adc/assets/elena-comune-news.json',{cache:'no-store'}).catch(()=>({ok:false}))
    ]).then(async responses=>{
      if(!responses[0].ok||!responses[1].ok)throw Error('Indice delle risposte non disponibile');
      return Promise.all(responses.map(r=>r.ok?r.json().catch(()=>null):null));
@@ -143,7 +145,7 @@
      const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
      const reply=engine.reply(effective,data.index,data.approved,data.knowledge,data.municipality,data.news);
      previousQuestion=effective;
-     spokenKind=reply.kind;spokenId=reply.id||'';spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary');result.replaceChildren(make('p',reply.title),make('p',reply.text));
+     spokenKind=reply.kind;spokenId=reply.id||'';spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary'||reply.kind==='civic');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
      if(reply.kind==='documentary'&&reply.reviewed_at&&reply.evidence_status){
        const levels={SOURCE_IDENTIFIED:'Fonte identificata',EDITION_TEXT_CHECKED:'Edizione controllata',IMAGE_COLLATED:'Collazione su immagini',ORIGINAL_COLLATED:'Originale collazionato'};
