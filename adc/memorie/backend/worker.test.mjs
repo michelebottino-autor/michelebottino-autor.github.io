@@ -90,3 +90,24 @@ test('modifica amministrativa oltre 65 KB bloccata',async()=>{
  const response=await call('/v1/redazione/'+id,{method:'PATCH',headers:{Authorization:'Bearer '+'A'.repeat(40),'Content-Type':'application/json'},body:'x'.repeat(65001)});
  assert.equal(response.status,413);
 });
+
+test('manutenzione senza opzione purge: cancella soltanto contatori tecnici',async()=>{
+ const statements=[];
+ const env={...live,RETENTION_PURGE_ENABLED:'false',DB:{prepare(sql){const item={sql,bind(...args){this.args=args;return this},async run(){statements.push({sql:this.sql,args:this.args});return {success:true}}};return item}}};
+ let pending;
+ await worker.scheduled({},env,{waitUntil(p){pending=p}});
+ await pending;
+ assert.equal(statements.length,1);
+ assert.match(statements[0].sql,/DELETE FROM richieste_giornaliere/);
+ assert.equal(statements[0].args.length,1);
+});
+test('politica purge esplicita: esclude testimonianze pubblicate',async()=>{
+ const statements=[];
+ const env={...live,RETENTION_PURGE_ENABLED:'true',DB:{prepare(sql){return{sql,bind(...args){this.args=args;return this},async run(){statements.push({sql:this.sql,args:this.args});return {success:true}}}}}};
+ let pending;
+ await worker.scheduled({},env,{waitUntil(p){pending=p}});
+ await pending;
+ assert.equal(statements.length,4);
+ assert.ok(statements.slice(1).every(x=>!x.args.includes('pubblicata')));
+ assert.ok(statements.some(x=>x.args.includes('approvata')));
+});
