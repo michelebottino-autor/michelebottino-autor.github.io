@@ -435,3 +435,10 @@ Nella stessa cartella sono state aggiunte e riscontrate via ricerca Drive altre 
 - Questo protegge il corpus da perdita di uno dei due dischi, ma entrambi sono nello stesso computer e quindi non sostituiscono una copia in sede fisicamente separata contro furto, incendio, malware o guasto comune.
 - Il volume Google Drive `G:\` è montato o indicato da PowerShell, ma il tentativo `Get-ChildItem G:\` restituisce **Accesso negato**; non è stato usato né sono stati modificati permessi/credenziali. Le **sette copie Drive** di §27 rimangono conservate, ma non sono i cinque ZIP locali.
 - Lo stato delle pagine pubbliche è conservato anche nel ramo GitHub `backup/adc-2026-11-21-dopo-consolidamento`; la nuova copia di lavoro su D è materiale privato e **non va indicizzata o esposta nel sito**.
+
+
+## 29. Consolidamento Fragalà: due regesti identificati — 21 novembre 2026
+- Verificato nel PDF istituzionale dell'Archivio di Stato di Palermo `156-Pergame-varie.pdf` il **regesto 1 (maggio 1105)**: successione di Gregorio, abate di San Filippo di Fragalà, con menzione delle grangie e dei riferimenti a Ruggero, Adelasia e Simone; descrizione di strumento notarile bilingue, segnatura antica 73.
+- Verificato il **regesto 2 (19 marzo 1125)**: controversia per terre e fieno con monaci dipendenti da San Filippo di Demenna nei territori di Limina, Castro e Storiano; pergamena greco-latina, segnatura antica 72. **Avvertenza dell'inventario:** la parte latina è posteriore al 1145; non considerarla automaticamente coeva al documento greco.
+- In entrambi i casi il dato deriva dal **regesto istituzionale**, non da collazione del facsimile; non contiene prova di possesso a Calatabiano. Inserite le due testimonianze nella scheda canonica `/adc/monasteri/san-filippo-fragala/`, evitando una nuova pagina duplicata. Fonte: https://saassipa.cultura.gov.it/wp-content/uploads/2020/05/156-Pergame-varie.pdf .
+- Confermata la copia su disco fisico separato D di cui al §28: confronto SHA-256 sorgente/destinazione riuscito per sette file; l'unità G: di Google Drive non era leggibile a causa di un errore di accesso e non è stata modificata.
