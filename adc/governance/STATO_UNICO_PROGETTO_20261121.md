@@ -377,3 +377,27 @@ Questo `STATO_UNICO_PROGETTO_20261121.md` è il **coordinamento attuale**, non s
 - Pubblicata la scheda canonica `/adc/monasteri/san-giovanni-fiumefreddo/`, collegata all'indice monasteri e indicizzata su sitemap ed Elena; il numero di schede monastiche passa da 7 a **8**, di cui una nuova relativa a un'istituzione esterna nella zona di Fiumefreddo. Nessuna scheda è una prova di sede conventuale a Calatabiano senza documenti specifici.
 - Nuovo registro analitico: `adc/governance/RICOGNIZIONE_TRE_ARCHIVI_TERRITORIO_20261121.md`. Da utilizzare per altre acquisizioni senza duplicare il registro generale.
 - **Rimane aperto** lo spoglio sistematico delle migliaia di pergamene, in particolare il recupero di immagini native e identificativi IIIF, e la verifica di Castelmola/Giardini Naxos/Piedimonte su carte specifiche. Sono state cercate le varianti toponomastiche, non lette tutte le unità d'archivio.
+
+
+## 26. Messa in sicurezza e pubblicazione delle evidenze già verificate — 21 novembre 2026
+
+### Stato preservato su GitHub
+- Creato il ramo immutato di ripristino `backup/adc-2026-11-21-prima-consolidamento` a partire dal commit `b9ecf6deb40e5ade521b9bc44d865b0a5dcd2395`, precedente ai nuovi aggiornamenti editoriali.
+- L'indice canonico `/adc/fonti/` collega ora `/adc/monasteri/san-giovanni-fiumefreddo/`; la pagina `/adc/storia/` cita in modo circoscritto la forma `Calatabien` nell'elenco diocesano riportato da Mellusi, doc. XII di Starrabba, e rinvia alle due donazioni edite di San Giovanni (1103, 1106). Nessun collegamento territoriale a Calatabiano viene attribuito agli atti di Fiumefreddo.
+- Il testo degli atti greco e latino e le informazioni sulla loro provenienza sono descritti nel registro `RICOGNIZIONE_TRE_ARCHIVI_TERRITORIO_20261121.md`; nessuna trascrizione originale o conferma di monastero a Calatabiano è stata simulata.
+
+### Copie locali verificate sul PC Michele
+**Cartella:** `C:\Users\Michele Bottino\Documents\ADC_BACKUP_SICUREZZA\CONSOLIDAMENTO_20261121`. Creati e verificati mediante controllo ZIP di ogni membro e SHA-256:
+- `SITO_GITHUB_MAIN_20261121.zip`: 164.724.425 byte, 1.457 elementi, SHA-256 `4D5135B043F69330A3487C09A2AD0CF6E1669E9F16C65B1925BBFC1C4967C85E`. Copia del ramo main scaricata prima di alcune modifiche successive; per uno stato precisamente ripristinabile usare il ramo GitHub sopra indicato.
+- `RICOGNIZIONE_TRE_ARCHIVI_20261121.zip`: 2.469.554 byte, 4 elementi, SHA-256 `FB4BCC09A31DD35145372C1A8E59636FFD428F26175525A5871B1227A940D2C8`.
+- `FONTI_DIGITALIZZATE_ADC_20261121.zip`: 277.765.436 byte, 120 elementi, SHA-256 `FAE494E96AFCF815B0086765BC96ABD9CA6EFAACBA2A6CF26D1490F4179A3F10`.
+- `RIVELI_1681_SCREENSHOT_E_DERIVATI.zip`: 6.623.638 byte, 19 elementi, SHA-256 `A0B23002C18678AAEBA775061F77FE8B77FC2C97D0320B8BEDB8C77DE601CA06`.
+- `DOSSIER_PILOTA_RIVELI_1681_20261121.zip`: 15.350.343 byte, 131 elementi, SHA-256 `98173E4499DFF332F708B036107EEE2C559C4F8317E1228582056E5D563D44D4`.
+- `MANIFESTO_FONTI_DIGITALIZZATE_SHA256.csv`: 120 righe con nome relativo, byte, data ultima modifica e hash di ogni documento; `VERIFICA_BACKUP.json` registra gli esiti `all_zips_valid: true`.
+
+**Limite dichiarato:** le copie dei documenti privati sono sullo **stesso PC/disco**; non equivalgono a un backup esterno o cloud dei file locali. Non è stata trasferita l'intera cartella `Documenti` o tutto l'archivio fotografico privato. GitHub conserva il codice e i contenuti pubblicati, non automaticamente tutte le scansioni dei fondi custodite soltanto sul PC. Il materiale ancora da acquisire (pergamene digitali non scaricate, fascicolo 417 originale) non può essere considerato conservato.
+
+### Regola delle successive pubblicazioni
+- Verificare che la notizia non sia già in una scheda canonica; aggiungere solo la prova nuova con grado A/B/C/D e la sua fonte.
+- Archiviare prima il facsimile e i metadati con hash; distinguere sempre OCR/HTR proposto da trascrizione approvata.
+- Dopo gli aggiornamenti, verificare GitHub Actions, sito pubblico, sitemap e indice Elena; preservare lo stato con un nuovo riferimento GitHub, senza sovrascrivere il backup precedente.
