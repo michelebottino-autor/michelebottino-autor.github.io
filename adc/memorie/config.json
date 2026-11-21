@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "enabled": false,
+  "endpoint": "",
+  "turnstile_site_key": "",
+  "description": "Abilitare solo dopo deploy Worker D1, Turnstile e verifica privacy. Mai inserire credenziali o token nel file pubblico."
+}
