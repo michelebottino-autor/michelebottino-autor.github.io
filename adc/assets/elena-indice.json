@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-21-domande-chiese",
+  "version": "2026-11-21-monasteri-canonici",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -591,6 +591,120 @@
         "terra vecchia"
       ],
       "description": "Indice delle dieci chiese e risposte documentate su antica e attuale Chiesa Madre, campana del Carmine, chiesa di San Filippo, data 1484 e questioni di proprietà. Le cronologie incerte e i diritti di proprietà non sono presentati come accertati."
+    },
+    {
+      "title": "Monasteri e ordini religiosi nella storia di Calatabiano",
+      "url": "/adc/monasteri/",
+      "tags": [
+        "monasteri",
+        "conventi",
+        "frati",
+        "monache",
+        "carmelitani",
+        "francescani",
+        "agostiniani",
+        "religiosi",
+        "chiese",
+        "istituzioni"
+      ],
+      "description": "Guida ADC alle presenze carmelitane, ipotesi francescane, rapporti agostiniani e istituzioni esterne: indica per ogni pista ciò che è documentato e ciò che resta da verificare."
+    },
+    {
+      "title": "I Carmelitani di Calatabiano",
+      "url": "/adc/monasteri/carmelitani-calatabiano/",
+      "tags": [
+        "carmelitani",
+        "madonna del carmine",
+        "carmine",
+        "convento",
+        "campana",
+        "1518",
+        "1652"
+      ],
+      "description": "La tradizione storica sulla chiesa e sul convento del Carmine, con fonti secondarie e documenti ancora da collazionare."
+    },
+    {
+      "title": "La pista dei Frati Minori a Gesù e Maria",
+      "url": "/adc/monasteri/frati-minori-gesu-e-maria/",
+      "tags": [
+        "francescani",
+        "frati minori",
+        "gesu e maria",
+        "1714",
+        "custodia",
+        "braccia incrociate"
+      ],
+      "description": "Ipotesi di un antico convento francescano presso Gesù e Maria; la sola iconografia della custodia del 1714 non prova la fondazione."
+    },
+    {
+      "title": "Padri Agostiniani e trappeti del 1799",
+      "url": "/adc/monasteri/agostiniani-e-trappeti/",
+      "tags": [
+        "agostiniani",
+        "trappeti",
+        "1799",
+        "secrezia",
+        "417",
+        "palagonia",
+        "magazzini"
+      ],
+      "description": "Fascicolo 417 Gravina-Cruillas: due magazzini con trappeti censiti alla Secrezia di Calatabiano. Non prova un convento agostiniano locale."
+    },
+    {
+      "title": "San Filippo di Fragalà e Calatabiano",
+      "url": "/adc/monasteri/san-filippo-fragala/",
+      "tags": [
+        "fragala",
+        "fragalà",
+        "san filippo",
+        "monaci",
+        "basiliani",
+        "1217",
+        "tabulario"
+      ],
+      "description": "Monastero esterno documentato nel Val Demone; le presunte tappe calatabianesi dei monaci non sono confermate."
+    },
+    {
+      "title": "Santa Maria di Maniace e Calatabiano",
+      "url": "/adc/monasteri/santa-maria-maniace/",
+      "tags": [
+        "maniace",
+        "santa maria di maniace",
+        "mulini",
+        "fragala",
+        "1217"
+      ],
+      "description": "Istituzione monastica esterna e controversia del 1217; manca prova che le terre del regesto fossero a Calatabiano."
+    },
+    {
+      "title": "Santa Croce di Messina e le badesse",
+      "url": "/adc/monasteri/santa-croce-messina/",
+      "tags": [
+        "santa croce",
+        "messina",
+        "marullo",
+        "badesse",
+        "monache",
+        "orti",
+        "carfalotto",
+        "1566",
+        "1567"
+      ],
+      "description": "Pista patrimoniale della prima edizione di Calatabiano Sacra da confermare su atti originali; monastero situato a Messina."
+    },
+    {
+      "title": "La possibile casa religiosa di Sant'Anna",
+      "url": "/adc/monasteri/sant-anna/",
+      "tags": [
+        "sant anna",
+        "sant'anna",
+        "domus virginum",
+        "monache",
+        "casa religiosa",
+        "orti",
+        "carfalotto"
+      ],
+      "description": "La formula domus virginum Sant'Anna non è ancora riscontrata in un documento originale; istituzione da dimostrare."
     }
   ]
 }
