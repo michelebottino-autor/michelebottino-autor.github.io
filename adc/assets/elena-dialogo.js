@@ -70,6 +70,28 @@
       output.replaceChildren(Object.assign(document.createElement('p'),{className:'elena-chat-welcome',textContent:'Nuova conversazione. Puoi cercare un documento, una persona o un luogo nelle fonti pubbliche ADC.'}));
       input.focus();
     });
+    // Percorsi d'accesso: non alterano le evidenze né il controllo delle risposte.
+    const profilePrompts={
+      cittadino:{feedback:'Percorso cittadino: luoghi, fotografie, vicende e memoria di Calatabiano.',examples:[['La storia di Calatabiano','origini Calatabiano'],['Chiese del paese','chiese Calatabiano'],['Fotografie storiche','fotografie Calatabiano']]},
+      studente:{feedback:'Percorso scuola: cronologie, luoghi, fonti e letture introduttive.',examples:[['Storia per tutti','storia per tutti'],['Il castello','castello Calatabiano'],['Dove sono le fonti?','fonti documenti']]},
+      ricercatore:{feedback:'Percorso ricerca: manoscritti, atti, trascrizioni e limiti delle attribuzioni.',examples:[['Pergamene medievali','pergamene medievali'],['Rationes Decimarum','rationes decimarum'],['Monasteri e documenti','monasteri documenti']]},
+      istituzione:{feedback:'Percorso istituzioni: consultazione delle fonti, patrimonio e collaborazione con l’Archivio.',examples:[['Patrimonio storico','patrimonio Calatabiano'],['Inventario delle fonti','inventario fonti'],['Attività dell’ADC','archivio documentale']]}
+    };
+    const profileFeedback=document.getElementById('elena-profile-feedback');
+    const examples=document.querySelector('.elena-examples');
+    document.querySelectorAll('[data-elena-profile]').forEach(button=>button.addEventListener('click',()=>{
+      const choice=profilePrompts[button.dataset.elenaProfile];if(!choice || !examples)return;
+      document.querySelectorAll('[data-elena-profile]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+      if(profileFeedback)profileFeedback.textContent=choice.feedback;
+      examples.replaceChildren();
+      choice.examples.forEach(([label,query])=>{
+        const item=document.createElement('button');item.type='button';item.dataset.query=query;item.textContent=label;
+        item.addEventListener('click',()=>{input.value=query;form.requestSubmit();});
+        examples.append(item);
+      });
+      input.placeholder='Scrivi la tua domanda a Elena…';
+      input.focus();
+    }));
     // Il benvenuto usa la registrazione originale Paola anche nella pagina completa.
     const welcome=document.getElementById('elena-paola-welcome');
     if(welcome){
