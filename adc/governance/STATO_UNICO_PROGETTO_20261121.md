@@ -416,3 +416,12 @@ Questo `STATO_UNICO_PROGETTO_20261121.md` è il **coordinamento attuale**, non s
 **Distinzione indispensabile:** il collegamento remoto con PC Michele non consente l'invio dei suoi percorsi Windows direttamente al connettore Google Drive: l'azione `upload_file` richiede un `file_uri` autenticato del connettore, non percorsi locali. Pertanto **i cinque ZIP locali non sono stati caricati su Drive** e le tre copie cloud non sostituiscono un backup esterno integrale dell'archivio fotografico e dei risultati HTR. Nessuna credenziale o sessione locale è stata estratta per aggirare la limitazione.
 
 **Pubblicazione:** GitHub Pages run `44885126880` concluso con `success` al commit `b4db423cc22015a7f53af6b1a0c30632cf01bd68`. Audit precedente `44885040099` concluso con `success`, 208 URL sitemap, 0 errori/avvisi, 89 pagine nella ricerca, 18 schede inventario, 52 rotte Elena. Questo riscontro non sostituisce una verifica manuale di tutte le pagine in browser.
+
+
+### Estensione della copia Drive: secondo lotto
+Nella stessa cartella sono state aggiunte e riscontrate via ricerca Drive altre **quattro copie native Google Docs**:
+- `BACKUP_20261121_Master_ricerca_seconda_edizione`, ID `1C05wXyx0i7iH5RDY-vA_Z6-43UODngzM75Ts33rMdvI`.
+- `BACKUP_20261121_Dossier_fonti_immagini_seconda_edizione`, ID `1vPHVbXpLMLQfCweVCvdTOMlgAG8ClrZcDKa8iCRkar4`.
+- `BACKUP_20261121_Cronologia_critica_Calatabiano`, ID `1V04XosZHwmAQ6GhV7wsH-VSGckR048a4Ck1X9fKIW_o`.
+- `BACKUP_20261121_Manoscritto_canonico_Calatabiano_Sacra`, ID `1yUqPSMNA9dkyup-zScmiRmYtMCgjun6t17LKBnEfo3Y`.
+**Totale: sette documenti duplicati nella cartella**. I risultati Drive includono sette documenti e la cartella. Si tratta di copie di file già esistenti su Google Drive, non di un caricamento dei cinque ZIP salvati localmente.
