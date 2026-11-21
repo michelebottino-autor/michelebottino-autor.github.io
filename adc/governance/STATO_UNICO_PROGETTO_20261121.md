@@ -234,3 +234,24 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 ### Chiusura
 - **Chiusi:** validazione logica della ricerca, integrità dei riferimenti Elena, regressione di risposta/documentazione e disponibilità HTTP dei file fondamentali.
 - **Aperti:** resa mobile, usabilità/tastiera e funzionamento audio su dispositivi reali, verifica browser end-to-end; servizio locale ELENA_UNICA è progetto separato.
+
+
+## 18. Domande pubbliche sulle chiese e ricognizione web — 21 novembre 2026
+
+**Obiettivo:** utilizzare temi emergenti nella consultazione pubblica per migliorare la leggibilità delle dieci schede, senza confondere l'interesse dei cittadini con una testimonianza storica.
+
+### Perimetro effettivamente verificato
+- Eseguite ricerche sul web, compresi tentativi mirati a Facebook, Instagram e Reddit. Le ricerche non hanno consentito una lettura completa e attribuibile di commenti social specifici riguardanti le chiese di Calatabiano. Pertanto **non** si rivendicano domande citate testualmente da utenti, frequenze, graduatorie di interesse o statistiche social.
+- Rilevati argomenti effettivamente discussi dalla stampa e riportati in fonti pubbliche: relazione fra proprietà ecclesiastica, conservazione e fruizione del castello; presenza del Crocifisso e della Madonna del Carmine sul Monte Castello; campana e simulacro; cronologie controverse delle chiese.
+- **Fonti pubbliche di confronto:** Comune di Calatabiano, scheda Santissimo Crocifisso `https://www.comune.calatabiano.ct.it/it/vivere/chiesa-del-ss-crocifisso`; Comune, Annunziata `https://comune.calatabiano.ct.it/it/vivere/chiesa-maria-ss-annunziata`; Diocesi di Acireale, elenco parrocchie `https://www.diocesiacireale.it/diocesi/comunita-e-persone/parrocchie/calatabiano/parrocchia-maria-ss-annunziata/`; guida comunale storica riprodotta `https://diazilla.com/doc/777729/presentazione---comune-di-calatabiano`; Provincia Italiana dei Carmelitani `https://carmelit.org/2025/10/18/il-carmelo-siciliano-nella-storia/`; LiveSicilia, 10 marzo 2022 `https://livesicilia.it/calatabiano-castello-vendita/`. Le notizie sul castello non costituiscono documenti di proprietà delle singole chiese.
+- Le cinque domande formulate nell'indice ADC sono **redazionali**, derivate dal confronto fra documentazione esistente e questioni potenzialmente utili al pubblico, non trascrizioni di commenti.
+
+### Interventi pubblici
+- In `/adc/chiese/` introdotta una sezione di orientamento con risposte circoscritte a: antica e attuale Chiesa Madre, distinzione costruzione 1737–1740/erezione parrocchiale 1881, Santissimo Crocifisso e San Filippo come due denominazioni, campana del Carmine, lettura ancora incerta dell'epigrafe 1484, proprietà e manutenzione da accertare sui titoli. Ogni punto collega le schede canoniche e/o apparati di prova; nessuna attribuzione giuridica non dimostrata.
+- In `adc/assets/elena-indice.json` aggiunta la scheda di orientamento verso `/adc/chiese/`, rendendo questi argomenti reperibili tramite il componente pubblico Elena senza aggiungere risposte documentarie approvate non verificate.
+- Le dieci schede individuali sono rimaste integre; nessuna pagina parallela creata.
+
+### Limiti e passi documentari
+- Nessun accesso ai commenti privati o a contenuti soggetti a login; non sono stati utilizzati profili individuali o dati personali.
+- Il 1510 attribuito alla campana e il 1518 del convento carmelitano sono dati riportati da fonti secondarie distinte; necessaria epigrafe/atto originale. I documenti di proprietà e responsabilità manutentiva del Carmine e del Crocifisso non sono stati letti.
+- La verifica della domanda sociale effettiva richiederebbe consultazione diretta di discussioni pubbliche specifiche e attribuibili, non un'inferenza da ricerca generica.
