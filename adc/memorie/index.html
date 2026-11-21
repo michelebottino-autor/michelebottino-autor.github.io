@@ -34,10 +34,43 @@
 <p id="memo-status" role="status" aria-live="polite"></p>
 </form></section>
 <section aria-labelledby="memo-procedure"><h2 id="memo-procedure">Come funziona il registro delle memorie</h2><p>Le testimonianze ricevute saranno esaminate dalla redazione ADC. Saranno distinti ricordi diretti, racconti tramandati e fatti supportati da documenti. Per i racconti autorizzati, la redazione potrà proporre l'inserimento in una futura sezione pubblica, senza modificare il significato della testimonianza e senza esporre i recapiti privati.</p><p class="note" id="memo-channel-note"><strong>Invio attuale:</strong> la testimonianza viene preparata nel programma di posta. L’archivio privato per la ricezione diretta sarà attivato solo dopo il collaudo del sistema; non è ancora in funzione.</p></section>
+<section id="registro-pubblico" aria-labelledby="registro-pubblico-title" class="sheet" style="margin-top:30px"><h2 id="registro-pubblico-title">Registro pubblico delle memorie</h2><p>Qui saranno raccolti i racconti la cui pubblicazione è stata autorizzata dall'autore e approvata dalla redazione ADC. Le testimonianze personali non equivalgono, da sole, a una verifica documentaria.</p><p id="registro-stato" role="status">Consultazione del registro…</p><div id="registro-elenco" aria-live="polite"></div></section>
 </main><footer>Archivio Documentale Calatabiano · A cura di Michele Bottino · <a href="/adc/">Torna all'Archivio</a></footer>
 <script>
 (function(){
 'use strict';
+// Pubblicazione selettiva: solo record già approvati e resi pubblici dall'archivio.
+async function loadPublicMemories(){
+ const statusEl=document.getElementById('registro-stato'),list=document.getElementById('registro-elenco');
+ const make=(tag,text)=>{const el=document.createElement(tag);el.textContent=text||'';return el;};
+ try{
+  const configResponse=await fetch('/adc/memorie/config.json',{cache:'no-store'});
+  if(!configResponse.ok)throw Error('config');
+  const cfg=await configResponse.json();
+  let records;
+  if(cfg.enabled && cfg.endpoint && /^https:\/\/[-a-z0-9.]+\/?$/i.test(cfg.endpoint)){
+    const response=await fetch(cfg.endpoint.replace(/\/$/,'')+'/v1/pubbliche',{cache:'no-store'});
+    if(!response.ok)throw Error('pubbliche');
+    records=(await response.json()).entries;
+  }else{
+    const response=await fetch('/adc/memorie/registro.json',{cache:'no-store'});
+    if(!response.ok)throw Error('registro');
+    records=(await response.json()).entries;
+  }
+  if(!Array.isArray(records))throw Error('formato');
+  const safe=records.filter(entry=>entry && typeof entry==='object' && typeof (entry.testo_pubblico||entry.testo)==='string' && (entry.testo_pubblico||entry.testo).trim().length>0).slice(0,100);
+  statusEl.textContent=safe.length ? safe.length+' testimonianze consultabili' : 'Non ci sono ancora testimonianze pubblicate.';
+  list.replaceChildren();
+  for(const entry of safe){
+    const article=make('article'),title=make('h3',String(entry.titolo||entry.title||'Testimonianza'));
+    const meta=make('p',[entry.periodo||entry.period,entry.luogo||entry.place,entry.autore||entry.author].filter(x=>typeof x==='string'&&x.trim()).join(' · '));
+    const body=make('p',String(entry.testo_pubblico||entry.testo));
+    body.style.whiteSpace='pre-wrap';article.style.cssText='border-top:1px solid #e2e6df;padding:16px 0';
+    article.append(title,meta,body);list.append(article);
+  }
+ }catch(_){statusEl.textContent='Il registro pubblico non è disponibile in questo momento.';}
+}
+loadPublicMemories();
 const form=document.getElementById('memo-form'),status=document.getElementById('memo-status');
 let direct=null;
 const sendButton=document.getElementById('memo-send');
