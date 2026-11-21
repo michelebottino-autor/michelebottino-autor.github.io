@@ -55,3 +55,38 @@ test('richiesta troppo lunga respinta senza scritture',async()=>{
  assert.equal(response.status,413);
  assert.equal(operations,before);
 });
+
+test('nessuna pubblicazione diretta, ritiro definitivo',async()=>{
+ const record={scelta_pubblicazione:'nome',stato:'ricevuta'};
+ const fakeDb={
+  prepare(sql){
+   let params=[];
+   return {
+    bind(...args){params=args;return this},
+    async first(){return {...record}},
+    async all(){return {results:[]}},
+    async run(){if(sql.startsWith('UPDATE testimonianze SET'))record.stato=params[0];return {success:true}}
+   };
+  }
+ };
+ const env={...live,DB:fakeDb};
+ const id='ADC-MEM-00000000-0000-4000-a000-000000000001';
+ const patch=(stato,testo_pubblico='')=>call('/v1/redazione/'+id,{method:'PATCH',headers:{Authorization:'Bearer '+'A'.repeat(40),'Content-Type':'application/json'},body:JSON.stringify({stato,testo_pubblico})},env);
+ assert.equal((await patch('pubblicata','Testo verificato')).status,409);
+ assert.equal((await patch('approvata')).status,200);
+ assert.equal((await patch('pubblicata','Testo verificato')).status,200);
+ assert.equal((await patch('approvata')).status,409);
+ assert.equal((await patch('ritirata')).status,200);
+ assert.equal((await patch('pubblicata','Testo verificato')).status,409);
+});
+test('la scelta di non pubblicare blocca l\'approvazione',async()=>{
+ const env={...live,DB:{prepare(){return {bind(){return this},async first(){return {scelta_pubblicazione:'non_autorizzata',stato:'ricevuta'}}}}}};
+ const id='ADC-MEM-00000000-0000-4000-a000-000000000002';
+ const response=await call('/v1/redazione/'+id,{method:'PATCH',headers:{Authorization:'Bearer '+'A'.repeat(40),'Content-Type':'application/json'},body:JSON.stringify({stato:'approvata'})},env);
+ assert.equal(response.status,409);
+});
+test('modifica amministrativa oltre 65 KB bloccata',async()=>{
+ const id='ADC-MEM-00000000-0000-4000-a000-000000000003';
+ const response=await call('/v1/redazione/'+id,{method:'PATCH',headers:{Authorization:'Bearer '+'A'.repeat(40),'Content-Type':'application/json'},body:'x'.repeat(65001)});
+ assert.equal(response.status,413);
+});
