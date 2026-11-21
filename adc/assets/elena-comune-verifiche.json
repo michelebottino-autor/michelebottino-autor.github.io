@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "checked_at": "2026-11-21T19:16:30+00:00",
+  "meaning": "Controllo tecnico URL; non attesta validita' giuridica, aggiornamento degli orari o correttezza dei recapiti.",
+  "entries": [
+    {
+      "id": "contacts:municipio",
+      "url": "https://comune.calatabiano.ct.it/it/vivere/758920",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "office_hours:0",
+      "url": "https://comune.calatabiano.ct.it/it/news/138332/nuovi-orari-di-apertura-al-pubblico-degli-uffici-comunali",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "office_hours:1",
+      "url": "https://comune.calatabiano.ct.it/it/news/138332/nuovi-orari-di-apertura-al-pubblico-degli-uffici-comunali",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "office_contact:0",
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizi-demografici",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "office_contact:1",
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizio-protocollo",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "office_contact:2",
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizio-tributi",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "office_contact:3",
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizio-pubblica-istruzione",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "office_contact:4",
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/servizi-culturali-sport-e-turismo",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "guide:school_meals",
+      "url": "https://comune.calatabiano.ct.it/it/news/2046960",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "guide:school_bus",
+      "url": "https://comune.calatabiano.ct.it/it/topics/istruzione",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "guide:waste_paper",
+      "url": "https://comune.calatabiano.ct.it/index.php/it/news/modalita-di-conferimento-carta-e-cartone",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "guide:waste_directory",
+      "url": "https://comune.calatabiano.ct.it/it/topics/23",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "guide:civil_protection",
+      "url": "https://comune.calatabiano.ct.it/it/unita_organizzative/protezione-civile",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "guide:ordinances",
+      "url": "https://comune.calatabiano.ct.it/it/menu/documenti-e-dati",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "guide:social_services",
+      "url": "https://comune.calatabiano.ct.it/it/topics/assistenza-sociale",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "directory:offices",
+      "url": "https://comune.calatabiano.ct.it/it/page/uffici-361",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "directory:news",
+      "url": "https://comune.calatabiano.ct.it/it/news",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "directory:notices",
+      "url": "https://comune.calatabiano.ct.it/it/news?type=3",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "directory:municipality",
+      "url": "https://comune.calatabiano.ct.it",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "directory:events",
+      "url": "https://comune.calatabiano.ct.it/it/eventi",
+      "status": "raggiungibile"
+    },
+    {
+      "id": "directory:faq",
+      "url": "https://comune.calatabiano.ct.it/it/faq",
+      "status": "raggiungibile"
+    }
+  ]
+}
