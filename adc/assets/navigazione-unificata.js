@@ -5,7 +5,7 @@
     var body = document.body;
     if (!body) return;
     var names = [
-      ['Archivio','/adc/'], ['Storia','/adc/storia-per-tutti/'], ['Le chiese','/adc/chiese/'],
+      ['Archivio','/adc/'], ['Storia','/adc/storia-per-tutti/'], ['Le chiese','/adc/chiese/'], ['Monasteri','/adc/monasteri/'],
       ['Fonti','/adc/fonti/'], ['Atlante','/adc/atlante/'],
       ['Mediateca','/adc/mediateca/'], ['Patrimonio','/adc/materiali-patrimonio/'],
       ['Stampa','/adc/stampa/'], ['Persone e libri','/adc/persone/'],
@@ -28,7 +28,7 @@
     nav.id = 'adc-u-links'; nav.setAttribute('aria-label','Navigazione principale ADC');
     names.forEach(function (item) {
       var a = document.createElement('a'); a.href = item[1]; a.textContent = item[0];
-      if (location.pathname === item[1] || (item[1] === '/adc/chiese/' && location.pathname.startsWith('/adc/chiese/'))) a.setAttribute('aria-current','page');
+      if (location.pathname === item[1] || (item[1] === '/adc/chiese/' && location.pathname.startsWith('/adc/chiese/')) || (item[1] === '/adc/monasteri/' && location.pathname.startsWith('/adc/monasteri/'))) a.setAttribute('aria-current','page');
       nav.appendChild(a);
     });
     header.appendChild(nav);
