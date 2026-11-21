@@ -173,3 +173,22 @@ Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle
 **Correzione circoscritta:** aggiunto un link canonical alla galleria fotografica dell'Annunziata e inserita la galleria in `sitemap.xml`. Numero di URL previsto dopo l'aggiornamento: 199. Conservati tutti i 40 riferimenti alle immagini della galleria. Non è stato dichiarato un esito di indicizzazione Google né eseguita una verifica visiva in browser.
 
 **Distinzione essenziale:** lo ZIP allegato è un'istantanea precedente e non include l'ADC corrente. Il repository è la base operativa; i registri sono documentazione storica del processo, non attestazioni di avvenuta revisione filologica di ogni fonte.
+
+
+## 15. Prima bonifica di errori riproducibili — 21 novembre 2026
+
+### Incongruenza documentaria D-01: Rationes
+- Il repertorio pubblico `adc/chiese/studi/rationes/index.html` presentava la cifra 525 da una trascrizione preliminare come se la numerazione 525/536 fosse una «controversia» attestata. Il testo è stato corretto per distinguere il dato della riproduzione testuale (536) dalla trascrizione preliminare non verificata (525), senza cambiare le citazioni latine.
+- Aggiornata anche la scheda di riferimento della voce 897, specificando che il numero proviene dalla riproduzione testuale. La pagina a stampa non è stata nuovamente consultata in PDF, pertanto **la collazione filologica resta aperta**.
+- Commit: `da76861`.
+
+### Risultati del controllo GitHub Actions
+- Esecuzione SEO n. `44880372266`, job `136774152477`: stato **success** ma log con **11 avvisi**: 10 pagine `adc/chiese/studi/ecc-*/` senza meta description e un link `#contenuto` inesistente nella pagina `/corso/`.
+- Verificate le 10 pagine ECC: la meta description era effettivamente assente in ciascuna. Aggiunte descrizioni originali, coerenti con l'apparato specifico, senza modificare le affermazioni storiche.
+- Verificato `corso/index.html`: il collegamento «Vai al contenuto» portava a `#contenuto` non presente, mentre `main` aveva `id="main"`. Corretto il collegamento a `#main`.
+- La vecchia esecuzione CI non prova ancora che i successivi commit siano esenti dagli avvisi. Occorre verificare il nuovo audit automatico e la distribuzione pubblica.
+- Commit pagina corso: `25acad9`. Le dieci descrizioni ECC sono state salvate in dieci commit separati (dal `61604cb` a `0109945`).
+
+### Criterio di chiusura
+- **Correzione nel repository:** completata per tutti gli 11 avvisi enumerati.
+- **Ricontrollo del nuovo audit e prova nel browser:** ancora richiesti prima di dichiarare definitivamente chiusi gli avvisi sul sito distribuito.
