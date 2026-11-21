@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08-allineamento-pagine",
+  "version": "2026-11-21-allineamento-rationes",
   "scope": "Indice iniziale di orientamento; non motore di risposta documentaria completo",
   "entries": [
     {
@@ -69,14 +69,14 @@
     },
     {
       "title": "Chiese medievali e Rationes Decimarum",
-      "url": "/adc/dossier-rationes/",
+      "url": "/adc/chiese/studi/rationes/",
       "tags": [
         "chiese",
         "rationes",
         "decimarum",
         "1308",
         "1310",
-        "525",
+        "536",
         "670",
         "897",
         "santa maria",
@@ -87,7 +87,7 @@
         "sella",
         "decime"
       ],
-      "description": "Dossier ADC sulle voci 525, 670 e 897 delle decime 1308–1310: Santa Maria e San Giorgio, con riserva sulla collazione dell'edizione Sella e degli originali vaticani. Nessuna localizzazione delle chiese dimostrata."
+      "description": "Dossier ADC sulle voci 536 (p. 53), 670 (p. 59) e 897 (p. 67), secondo la riproduzione testuale delle decime del 1308–1310. Una precedente trascrizione preliminare riportava 525: la pagina a stampa di Sella resta da ricollazionare. La posizione delle chiese non è dimostrata."
     },
     {
       "title": "Diario di lettura del processo 334",
