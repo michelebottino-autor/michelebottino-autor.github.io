@@ -30,15 +30,33 @@
 </div>
 <label class="choice"><input type="checkbox" id="memo-consent" required><span>Confermo di avere il diritto di condividere questo racconto e di aver compreso che l'invio non comporta pubblicazione automatica. *</span></label>
 <p class="privacy">La scelta sulla pubblicazione potrà essere riesaminata con la redazione prima della pubblicazione. Le richieste di correzione o ritiro possono essere inviate tramite la pagina <a href="/contatti/">Contatti</a>. Non inserire dati sensibili o dettagli privati su altre persone. I minori dovrebbero condividere la testimonianza tramite un genitore o tutore.</p>
-<div class="actions"><button type="button" id="memo-send">Prepara l'invio alla redazione</button><button type="button" id="memo-download" class="secondary">Salva una copia del racconto</button></div>
+<div id="memo-antispam" class="hidden" aria-label="Verifica antispam"></div><div class="actions"><button type="button" id="memo-send">Prepara l'invio alla redazione</button><button type="button" id="memo-download" class="secondary">Salva una copia del racconto</button></div>
 <p id="memo-status" role="status" aria-live="polite"></p>
 </form></section>
-<section aria-labelledby="memo-procedure"><h2 id="memo-procedure">Come funziona il registro delle memorie</h2><p>Le testimonianze ricevute saranno esaminate dalla redazione ADC. Saranno distinti ricordi diretti, racconti tramandati e fatti supportati da documenti. Per i racconti autorizzati, la redazione potrà proporre l'inserimento in una futura sezione pubblica, senza modificare il significato della testimonianza e senza esporre i recapiti privati.</p><p class="note"><strong>Importante:</strong> attualmente questo sito non dispone di un archivio server che memorizzi automaticamente gli invii. Il comando di invio apre il programma di posta dell'utente; solo l'effettiva spedizione e ricezione del messaggio consentono alla redazione di acquisire la testimonianza. La copia scaricabile resta sotto il controllo dell'utente.</p></section>
+<section aria-labelledby="memo-procedure"><h2 id="memo-procedure">Come funziona il registro delle memorie</h2><p>Le testimonianze ricevute saranno esaminate dalla redazione ADC. Saranno distinti ricordi diretti, racconti tramandati e fatti supportati da documenti. Per i racconti autorizzati, la redazione potrà proporre l'inserimento in una futura sezione pubblica, senza modificare il significato della testimonianza e senza esporre i recapiti privati.</p><p class="note" id="memo-channel-note"><strong>Invio attuale:</strong> la testimonianza viene preparata nel programma di posta. L’archivio privato per la ricezione diretta sarà attivato solo dopo il collaudo del sistema; non è ancora in funzione.</p></section>
 </main><footer>Archivio Documentale Calatabiano · A cura di Michele Bottino · <a href="/adc/">Torna all'Archivio</a></footer>
 <script>
 (function(){
 'use strict';
 const form=document.getElementById('memo-form'),status=document.getElementById('memo-status');
+let direct=null;
+const sendButton=document.getElementById('memo-send');
+const channelNote=document.getElementById('memo-channel-note');
+fetch('/adc/memorie/config.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('config');return r.json()}).then(cfg=>{
+ if(!cfg.enabled || !cfg.turnstile_site_key || typeof cfg.endpoint!=='string')return;
+ const api=new URL(cfg.endpoint);
+ if(api.protocol!=='https:' || !/^[-a-z0-9.]+$/i.test(api.hostname) || api.username || api.password || api.search || api.hash)return;
+ direct={endpoint:api.origin,siteKey:cfg.turnstile_site_key};
+ const container=document.getElementById('memo-antispam');
+ container.classList.remove('hidden');
+ const widget=document.createElement('div');
+ widget.className='cf-turnstile';widget.dataset.sitekey=direct.siteKey;
+ container.append(widget);
+ const js=document.createElement('script');js.src='https://challenges.cloudflare.com/turnstile/v0/api.js';js.async=true;js.defer=true;document.head.append(js);
+ sendButton.textContent='Invia la testimonianza all’ADC';
+ channelNote.textContent='L’invio diretto è disponibile. La redazione riceverà il racconto nell’archivio privato; nessuna pubblicazione avverrà automaticamente.';
+}).catch(()=>{});
+
 const get=id=>document.getElementById(id).value.trim();
 const selection=()=>form.querySelector('input[name="pubblicazione"]:checked')?.value||'non_autorizzata';
 function pack(){
@@ -53,8 +71,24 @@ const file=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charse
 const url=URL.createObjectURL(file),a=document.createElement('a');a.href=url;a.download='memoria-calatabiano-bozza.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 status.textContent='Copia salvata sul dispositivo. Questo non equivale a un invio all’ADC.';
 });
-document.getElementById('memo-send').addEventListener('click',()=>{
+document.getElementById('memo-send').addEventListener('click',async()=>{
 const d=pack();if(!d)return;
+if(direct){
+ const token=form.querySelector('[name="cf-turnstile-response"]')?.value||'';
+ if(!token){status.textContent='Completa prima la verifica antispam.';return;}
+ sendButton.disabled=true;status.textContent='Invio in corso…';
+ try{
+   const response=await fetch(direct.endpoint+'/v1/memorie',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,consent:true,turnstile_token:token,website:''})});
+   const reply=await response.json();
+   if(!response.ok)throw Error(reply.error||'Invio non riuscito');
+   status.textContent='Racconto ricevuto per la valutazione. Identificativo: '+reply.id+'. Non è stato pubblicato. Conserva questo codice.';
+   form.reset();
+   if(window.turnstile)window.turnstile.reset();
+ }catch(e){
+   status.textContent='Impossibile confermare la ricezione: '+e.message+'. Salva una copia e contatta la redazione.';
+ }finally{sendButton.disabled=false;}
+ return;
+}
 const body=['Testimonianza personale per ADC','Titolo: '+d.title,'Periodo: '+d.period,'Luogo: '+d.place,'Scelta sulla pubblicazione: '+({nome:'Autorizzazione con nome',anonima:'Autorizzazione anonima',non_autorizzata:'Nessuna autorizzazione alla pubblicazione'}[d.publication]),'Nome per attribuzione: '+d.attribution,'Recapito facoltativo: '+d.private_contact,'','Racconto:',d.story,'','Testimonianza da verificare e valutare prima di eventuale pubblicazione.'].join('\n');
 const email='michele.bottino@gmail.com';
 const subject='ADC — proposta di memoria personale: '+d.title;
