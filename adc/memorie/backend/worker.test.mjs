@@ -1,0 +1,57 @@
+// Controlli di regressione per API ADC Memorie — non utilizzano credenziali reali.
+import {readFile} from 'node:fs/promises';
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+
+const source=await readFile(new URL('./worker.js',import.meta.url),'utf8');
+const worker=(await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'))).default;
+let operations=0;
+const db={prepare(sql){return {bind(){return this},async all(){return {results:[]}},async first(){return null},async run(){operations++;return {success:true}}}}};
+const live={DB:db,ADMIN_TOKEN:'A'.repeat(40),RATE_SALT:'B'.repeat(40),TURNSTILE_SECRET:'C'.repeat(40)};
+const base='https://adc-memorie-api.example.workers.dev';
+const call=(path,options={},env=live)=>worker.fetch(new Request(base+path,options),env);
+const origin='https://michelebottino-autor.github.io';
+
+test('servizio incompleto: HTTP 503',async()=>{
+ const response=await call('/v1/health',{}, {...live,TURNSTILE_SECRET:undefined});
+ assert.equal(response.status,503);
+});
+test('health con configurazione completa',async()=>{
+ const response=await call('/v1/health');
+ assert.equal(response.status,200);
+ assert.equal((await response.json()).status,'ready');
+});
+test('origine estranea respinta',async()=>{
+ assert.equal((await call('/v1/pubbliche',{headers:{Origin:'https://example.org'}})).status,403);
+});
+test('registro pubblico vuoto, senza dati privati',async()=>{
+ const response=await call('/v1/pubbliche');
+ assert.equal(response.status,200);
+ assert.deepEqual((await response.json()).entries,[]);
+});
+test('redazione non consultabile senza credenziale',async()=>{
+ assert.equal((await call('/v1/redazione/elenco')).status,401);
+});
+test('redazione con credenziale presente',async()=>{
+ const response=await call('/v1/redazione/elenco',{headers:{Authorization:'Bearer '+'A'.repeat(40)}});
+ assert.equal(response.status,200);
+});
+test('nessun invio senza origine ADC',async()=>{
+ assert.equal((await call('/v1/memorie',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).status,403);
+});
+test('JSON non valido respinto',async()=>{
+ assert.equal((await call('/v1/memorie',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:'{'})).status,400);
+});
+test('invio senza consenso respinto, senza scritture',async()=>{
+ const data={title:'Ricordo',period:'1970',place:'Calatabiano',story:'Un ricordo del paese abbastanza lungo da superare il limite.',attribution:'',private_contact:'',publication:'anonima',consent:false};
+ const before=operations;
+ const response=await call('/v1/memorie',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(data)});
+ assert.equal(response.status,400);
+ assert.equal(operations,before);
+});
+test('richiesta troppo lunga respinta senza scritture',async()=>{
+ const before=operations;
+ const response=await call('/v1/memorie',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:'x'.repeat(65001)});
+ assert.equal(response.status,413);
+ assert.equal(operations,before);
+});
