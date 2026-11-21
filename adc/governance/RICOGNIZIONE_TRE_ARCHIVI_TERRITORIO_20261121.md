@@ -1,0 +1,49 @@
+# Ricognizione digitale Palermo–Messina–Catania e territorio intorno a Calatabiano
+**Data:** 21 novembre 2026 · **Scopo:** diario tecnico-documentario ADC, non trascrizione certificata né censimento esaustivo dei fondi archivistici.
+
+## Metodo e perimetro effettivamente eseguito
+1. Siti istituzionali consultati per Palermo, Messina e Catania, con parole di ricerca `Calatabiano`, `Calathabianum`, `Calatabien`, `Taormina`, `Tauromenium`, `Castelmola`, `Giardini Naxos`, `Piedimonte Etneo`, `Fiumefreddo`, `Francavilla`, `Mascali`, `Fragalà`, `Maniace`, `monasteri`, `pergamene`.
+2. Accesso al PC autorizzato **Michele**, dove il materiale della ricerca preesisteva. Il dossier dei Riveli 1681 e il laboratorio HTR sono stati controllati direttamente; nessun file originario sostituito.
+3. Spoglio del **layer testuale**, non OCR, dei PDF presenti nella cartella locale `Documenti/Calatabiano - Archivio di ricerca/Fonti digitalizzate`: **49 PDF, 5.829 pagine, 43 file con corrispondenze, zero eccezioni**. Lo script e il JSON integrale sono sul PC in `Documenti/ADC_Ricerche/RICOGNIZIONE_TRE_ARCHIVI_20261121/`, file `spoglio_pdf_locali.py` e `risultati_spoglio_pdf_locali.json`. I risultati comprendono **falsi positivi** (es. Piemonte non è Piedimonte Etneo; «Giardini» e «Naxos» possono comparire in altri contesti); non rappresentano 43 attestazioni di Calatabiano.
+4. Collaudo già previsto del sistema locale `CALATABIANO_SACRA_SECONDA_EDIZIONE/00_GESTIONE_E_FONTI/DOSSIER_PILOTA_RIVELI_1681_20261018/test_pipeline_locale_20261018.py`: **PASS** (`filters_operational:true`, `original_unchanged:true`, `draft_model_executed:false`). Python 3.14 e OpenCV sono disponibili; l'ambiente separato `ADC_HTR_CORPORA_20261021/.venv-kraken` contiene Kraken e PyTorch. **Non** è stato eseguito un nuovo riconoscimento paleografico con conferma umana.
+5. Il pacchetto ZIP preesistente `Downloads/Riveli_Calatabiano_1681_Fotografie_Originali_Della_Chat_e_Filtri.zip` ha SHA-256 `A0B23002C18678AAEBA775061F77FE8B77FC2C97D0320B8BEDB8C77DE601CA06` e contiene **otto fotografie derivate da screenshot**, filtri e manifesti; non va confuso con l'immagine nativa di una carta d'archivio.
+
+## A. Nuova attestazione su Fiumefreddo e il territorio di Taormina
+
+**Documento nell'edizione:** Antonio Mursia, *Abbas episcopus dominus. Potere tripartito e ruoli convergenti nella Sicilia normanno-sveva (secoli XI–XIII)*, Università degli Studi di Catania, tesi di dottorato 2023–2024, appendice documentaria **6.1.7 e 6.1.8, pp. 141–146**, PDF:
+https://www.iris.unict.it/retrieve/f4cf5d87-7d31-42d8-a772-6d0be9bac954/TESI.pdf
+
+- **20 maggio 1103, greco (appendice 6.1.7):** il vescovo Giacomo dispone della chiesa di San Giovanni «del fiume freddo» in favore dell'ente di Sant'Agata a Catania, rappresentato da Ansgerio. Nel testo trascritto compaiono case, vigne, **un mulino**, campi e diritti. Espressione testuale indicativa `τὴν ἐκκλησίαν τοῦ ἁγίου ἰωάννου ... ψυχροῦ ποταμοῦ`. **Non** localizzare il mulino a Calatabiano.
+- **3 luglio 1106, latino (appendice 6.1.8):** il vescovo Roberto di Messina dona la chiesa `ecclesiam sancti Iohannis de flumine frigido` e relativi diritti al monastero di Sant'Agata di Catania; l'atto descrive espressamente la chiesa come `in territorio tauromenitanae civitatis sita est`. La situazione giurisdizionale di Taormina è parte del testo. Atti 1103 e 1106 **distinti**, non due scansioni della stessa carta.
+- **Livello B:** testo greco e latino letto in **edizione universitaria**, corredata da rinvii a Cusa, Scalia, Ménager e Adolfo Longhitano, *La donazione del monastero San Giovanni di Fiumefreddo all'abbazia Sant'Agata di Catania (1103, 1106)*, «Synaxis» 21/2 (2003), pp. 383–402. Originali NON collazionati su immagine; controllo grafico screenshot del PDF online non riuscito.
+- **Acquisizione sul PC Michele:** `Documenti/ADC_Ricerche/RICOGNIZIONE_TRE_ARCHIVI_20261121/Mursia_Tesi_Appendice_Fonti_1103_1106.pdf` (2.022.105 byte; SHA-256 `54DADE67F87600E696BBAD95F53D4E43237D4F92ACBF51F994DB8F8498780687`).
+- **Conseguenza:** chiesa e rapporti religiosi di Fiumefreddo e Taormina documentati nei testi editi. **Nessuna** prova di proprietà o comunità a Calatabiano derivabile automaticamente.
+
+**Fonte di contesto distinta:** Giovan Giuseppe Mellusi, *Governare il sacro. La Chiesa di Messina e i suoi arcivescovi dal tramonto del Medioevo al Cinquecento*, tesi Università di Messina, PDF locale `Mellusi_Tesi_Governare_il_Sacro.pdf`, pp. PDF 13–16, nota 19 (citazione da Starrabba, doc. XII): l'elenco con `Tauromenium, Castellionem, Calatabien, Masclam` è riportato nel quadro della delimitazione della diocesi messinese nel **1151**. Non è la donazione del 1103/1106 e non va usato per attribuire a Calatabiano il monastero di San Giovanni.
+URL edizione: https://iris.unime.it/retrieve/a6a85580-4b0b-489d-a5f4-e6838a661b76/tesi%20MELLUSI.pdf
+
+## B. Archivio di Stato di Palermo: fonti digitali
+- **Fondo Diplomatico:** l'istituto dichiara tutte le pergamene digitalizzate e consultabili sul portale Archivio Digitale ICAR, https://saassipa.cultura.gov.it/patrimonio-archivistico/patrimonio-digitalizzato/ . **La consultazione delle immagini specifiche non è ancora riuscita** in questo ciclo.
+- **Inventario n. 156, Pergamene varie (253 documenti, dal sec. XII):** contiene atti anche greco-latini; nei regesti iniziali rientrano testimonianze relative a San Filippo di Fragalà (1105 e 1125), con luoghi quali Castro, Limina e Storiano. Nell'inventario ricercabile non è individuata una menzione diretta di Calatabiano. NON trasformare queste località in contrade calatabianesi. PDF https://saassipa.cultura.gov.it/wp-content/uploads/2020/05/156-Pergame-varie.pdf .
+- **Download PC:** `Palermo_Inventario156_Pergamene_Varie.pdf` nella cartella della ricognizione (580.041 byte; SHA-256 `DFFCAE8AA28924FA3B8740D145CE7D462F022DD07C88ACCDA611C1BD5B1A510D`). È **un inventario-regesto**, non facsimile manoscritto.
+- **Riveli 1681 e 1747–1750:** continuano a valere le segnature 1039 e 2146–2149 nel registro Palermo specifico. Il sito Antenati pubblica dal 27 aprile 2026 numerose unità, ma l'accesso HTTP diretto a quel portale aveva prodotto 403. Non dichiarare immagini consultate senza codice canvas/foglio.
+- **Fascicolo Agostiniani 1799, voce 417, vol. antico 86:** il testo è confermato nell'inventario 81, ma il fascicolo originale non è stato individuato in forma pubblicamente scaricabile.
+
+## C. Archivio di Stato di Messina
+- Catalogo istituzionale delle **720 pergamene, 1.463 immagini**, estremi 1184–1832: https://asmessina.cultura.gov.it/patrimonio-archivistico/pergamene .
+- Nel gruppo «Conventi e Monasteri», è censita una pergamena **CFM — Frati Minori di Francavilla, 1264**, con due immagini; altre serie comprendono Santa Caterina Valverde e Santa Maria del Carmelo. Catalogo: https://asmessina.cultura.gov.it/patrimonio-archivistico/pergamene/conventi-e-monasteri .
+- La disponibilità del **numero di immagini dichiarato in catalogo** non prova che i singoli JPEG/TIFF siano stati scaricati. Nessuna lettura paleografica della pergamena CFM del 1264 eseguita oggi.
+- I PDF già sul PC `Salvo_Regesti_Pergamene_Messina.pdf` ed `Archivio_Storico_Messinese_96.pdf` hanno dato riscontri testuali in **pagine PDF 22 e 191** rispettivamente, riguardanti il notaio Nicolò Iacobello a Taormina/Calatabiano/Mascali e l'arbitrio zuccheriero di Calatabiano del 1537: testimonianze **edite o storiografiche** da riesaminare nei documenti originali.
+
+## D. Archivio di Stato di Catania
+- SIAS descrive il fondo «Pergamene ex copertine di volumi notarili del distretto di Catania», oltre 300 documenti, alcuni liturgici e notarili greco-latini; la descrizione non contiene una citazione specifica di Calatabiano. https://sias-archivi.cultura.gov.it/cgi-bin/pagina.pl?Chiave=471171&RicFrmChiaveClassificazioneCaL1=5&RicFrmChiaveClassificazioneCaL2=45&RicFrmChiaveConservatore=17664&RicSez=fondiclass&RicTipoScheda=ca&RicVM=indice&TipoPag=comparc . Le fonti istituzionali indicano 327 pergamene o 336 frammenti in descrizioni differenti: non armonizzare meccanicamente i conteggi.
+- Atti del 1103/1106 relativi a San Giovanni di Fiumefreddo: **edizione recuperata** nella tesi Mursia (v. § A).
+- Per la storia di opere pubbliche e amministrazioni della fascia etnea: la Prefettura di Catania, serie II affari speciali dei comuni, dispone di un fondo dal 1860 al 1939 descritto dal Ministero. Non si è eseguito lo spoglio integrale di tale fondo.
+
+## E. Estensione territoriale e restrizioni interpretative
+Ricercare inoltre Taormina, Castelmola, Giardini Naxos, Piedimonte Etneo, Fiumefreddo, Mascali, Giarre, Francavilla, Castiglione, Linguaglossa e varianti medievali. Non confondere `Piemonte` regione con `Piedimonte Etneo`, `Castellionem` senza controllo geografico, `San Marco d'Alunzio` con il territorio di San Marco presso Calatabiano, né Fiumefreddo calabrese con quello etneo quando gli atti non lo chiariscono.
+
+## F. Stato e prossime operazioni
+- **Eseguito:** controllo programmi PC e corpus, prova filtri, spoglio di 5.829 pagine testuali, consultazione cataloghi di tre archivi, acquisizione di due PDF con SHA-256, identificazione e lettura di due testi medievali editi (greco 1103, latino 1106), prima scheda pubblica `/adc/monasteri/san-giovanni-fiumefreddo/` con rimandi.
+- **Non eseguito:** spoglio esaustivo di tutti i fondi, download delle 720 pergamene messinesi, recupero degli identificativi IIIF dei singoli facsimili o collazione autoptica degli originali greci/latini.
+- **Priorità reale:** (1) individuare il canvas dell'atto San Giovanni 1103/1106 se presente nel Diplomatico; (2) trovare gli originali CFM Francavilla 1264; (3) leggere Riveli 1039 e fascicolo 417; (4) confrontare gli atti con i luoghi vicini e solo dopo aggiornare le attribuzioni storiche.
