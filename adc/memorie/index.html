@@ -75,10 +75,15 @@ const form=document.getElementById('memo-form'),status=document.getElementById('
 let direct=null;
 const sendButton=document.getElementById('memo-send');
 const channelNote=document.getElementById('memo-channel-note');
-fetch('/adc/memorie/config.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('config');return r.json()}).then(cfg=>{
+fetch('/adc/memorie/config.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('config');return r.json()}).then(async cfg=>{
  if(!cfg.enabled || !cfg.turnstile_site_key || typeof cfg.endpoint!=='string')return;
  const api=new URL(cfg.endpoint);
  if(api.protocol!=='https:' || !/^[-a-z0-9.]+$/i.test(api.hostname) || api.username || api.password || api.search || api.hash)return;
+ // Mostra l'invio diretto solo quando il Worker conferma di essere operativo.
+ const health=await fetch(api.origin+'/v1/health',{cache:'no-store',signal:AbortSignal.timeout(7000)});
+ if(!health.ok)return;
+ const check=await health.json();
+ if(check.status!=='ready')return;
  direct={endpoint:api.origin,siteKey:cfg.turnstile_site_key};
  const container=document.getElementById('memo-antispam');
  container.classList.remove('hidden');
