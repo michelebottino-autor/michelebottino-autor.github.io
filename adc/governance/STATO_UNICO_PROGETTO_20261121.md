@@ -45,7 +45,7 @@ Questi conteggi descrivono **un'istantanea**, non il numero di opere o ricerche 
 ## 4. Conflitti e sovrapposizioni rilevati
 
 ### C-01 — Nuovo riepilogo delle chiese
-Il 21 novembre è stata creata `/adc/chiese/quadro-storico/`. Riassume le dieci schede e le questioni medievali, ma l'audit di unicità del 18 novembre prescrive una sola sede narrativa per ciascuna chiesa. **Stato: da razionalizzare.** Non cancellare il testo: confrontarlo con `/adc/chiese/` e con `/adc/chiese/studi/medievali/`; conservare soltanto i raccordi nuovi e sostituire eventuali doppioni con rimandi. Il semplice fatto di essere una pagina di raccordo non comporta necessariamente duplicazione letterale: è una sovrapposizione di funzione editoriale.
+Il 21 novembre è stata creata `/adc/chiese/quadro-storico/`. Riassume le dieci schede e le questioni medievali, ma l'audit di unicità del 18 novembre prescrive una sola sede narrativa per ciascuna chiesa. **Stato: risolto sul piano della navigazione il 21 novembre 2026.** Il contenuto è stato confrontato con `/adc/chiese/` e con `/adc/chiese/studi/medievali/`; e sono stati mantenuti nell'indice i raccordi alle fonti medievali, mentre la pagina di riepilogo è stata trasformata in reindirizzamento con `noindex` e canonical verso `/adc/chiese/`. Il testo precedente è conservato nella cronologia Git. Non è stata effettuata alcuna nuova collazione archivistica.
 
 ### C-02 — Audit con fotografie cronologiche differenti
 `adc/AUDIT-STATO-PROGETTO.md` (12 ottobre), `.github/audits/ADC-REVISIONE-GENERALE-2026-11-18.md` e i registri di revisione riportano perimetri e conteggi di date diverse. **Stato: chiarito.** Non sostituire i loro conteggi con quelli attuali nei rapporti storici; presentare unicamente questo registro come istantanea più recente.
@@ -73,7 +73,7 @@ L'ADC conserva riferimenti alle `Rationes Decimarum`, ai diplomi medievali, al P
 | ID | Attività | Stato | Prova necessaria |
 | --- | --- | --- | --- |
 | P-01 | Collazione integrale delle citazioni ecclesiastiche e medievali | Aperta | PDF/scansione leggibile, pagina, trascrizione confrontata |
-| P-02 | Consolidare la pagina di raccordo sulle chiese senza nuova narrazione parallela | Aperta | confronto testuale e verifica dei rimandi |
+| P-02 | Consolidare la pagina di raccordo sulle chiese senza nuova narrazione parallela | Risolta nel repository; verifica distribuzione aperta | confronto testi, sostituzione con reindirizzamento e verifica link nell'indice |
 | P-03 | Verificare le URL pubbliche e i PDF esterni | Aperta | risposte HTTP e controllo del contenuto |
 | P-04 | Collaudo grafico e accessibilità su browser reale | Aperta | esiti verificabili su dispositivi e viewport |
 | P-05 | Analisi della ricerca interna e copertura dell'indice | Aperta | test su query note, null result e file non indicizzati |
@@ -103,3 +103,12 @@ L'ADC conserva riferimenti alle `Rationes Decimarum`, ai diplomi medievali, al P
 - `adc/governance/registro-revisioni.json` (decisioni di revisione scientifica indipendente)
 
 **Regola finale:** consolidare ciò che è già verificato e non dichiarare terminato un lavoro senza un esito osservabile.
+
+
+## 9. Bonifica della sovrapposizione sulle chiese — 21 novembre 2026
+
+- Confrontati direttamente `/adc/chiese/`, `/adc/chiese/quadro-storico/` e `/adc/chiese/studi/medievali/` sul ramo principale.
+- Il riepilogo aggiuntivo ripeteva in forma breve le dieci schede già presenti nell'indice; le note sul Medioevo rimandavano allo studio dedicato.
+- L'indice conserva le dieci schede e ora collega direttamente gli studi medievali e la sezione fonti.
+- L'URL `/adc/chiese/quadro-storico/` resta funzionante come reindirizzamento `noindex` verso l'indice, per non perdere eventuali link condivisi; il contenuto precedente è recuperabile nella cronologia Git.
+- Verifica residua: controllare la distribuzione GitHub Pages e la navigazione nel browser reale. Nessun dato storico, fotografia o studio specialistico è stato eliminato.
