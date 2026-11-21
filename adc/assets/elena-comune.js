@@ -12,7 +12,7 @@
  };
  const link=(title,url)=>official(url)?{title,url}:null;
  const recent=(date,ageDays)=>{const t=Date.parse(date);return Number.isFinite(t)&&Date.now()-t>=-2*86400000&&Date.now()-t<=ageDays*86400000};
- function reply(query,base,news){
+ function replyInternal(query,base,news){
    const q=norm(query);
    if(!base||base.schema!==1||!base.contacts||!base.directories)return null;
    const has=pattern=>pattern.test(q);
@@ -130,6 +130,28 @@
      text:'Per trovare il servizio corretto consulta l’elenco ufficiale degli uffici comunali, che contiene competenze e recapiti. Puoi anche chiedermi gli orari di Anagrafe, Stato Civile, Protocollo o Tributi.',
      links:[link('Elenco degli uffici comunali',base.directories.offices),officialLink].filter(Boolean),
      limitation:'Non attribuisco orari o numeri diretti a uffici per i quali non ho dati verificati.',source:'Comune di Calatabiano'};
+ }
+ function reply(query,base,news,checks){
+   const result=replyInternal(query,base,news);
+   if(!result||result.kind!=='civic')return result;
+   const valid=checks?.schema===1&&Array.isArray(checks.entries)&&recent(checks.checked_at,7);
+   const listed=valid?checks.entries.filter(e=>e&&official(e.url)&&
+      Array.isArray(result.links)&&result.links.some(l=>l.url===e.url)):[];
+   const unavailable=listed.filter(e=>e.status==='non_disponibile'||e.status==='redirect_non_ufficiale'||e.status==='url_non_ufficiale');
+   if(unavailable.length){
+     return {kind:'civic',title:'Fonte istituzionale da riconfermare',
+       text:'Il controllo automatico segnala una fonte non disponibile o non più collegata al portale comunale. Evito di riportare qui recapiti, orari o disposizioni potenzialmente non aggiornati.',
+       links:[{title:'Portale ufficiale del Comune',url:base.directories.municipality}],
+       limitation:'La pagina sorgente va verificata direttamente prima di utilizzare questi dati.',
+       source:'Comune di Calatabiano'};
+   }
+   if(!valid){
+     result.limitation=(result.limitation?result.limitation+' ':'')+
+       'Il controllo tecnico delle pagine istituzionali non è stato aggiornato negli ultimi sette giorni.';
+   }else if(listed.length){
+     result.source_health_checked_at=checks.checked_at;
+   }
+   return result;
  }
  return {reply,official,norm,recent};
 });
