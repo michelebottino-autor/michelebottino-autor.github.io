@@ -13,7 +13,7 @@ if(!permitted.includes(command)||(command!=='elenco'&&!idValid(id))||(command===
  stderr.write('Uso: node redazione-cli.mjs elenco | leggi ID | stato ID NUOVO_STATO | elimina ID\n');
  process.exitCode=2;
 }else{
- const rl=createInterface({input:stdin,output:stdout});
+ let rl;
  let token='';
  try{
   // Digitare soltanto su un terminale locale sicuro. Non inserire il token negli argomenti.
@@ -31,6 +31,7 @@ if(!permitted.includes(command)||(command!=='elenco'&&!idValid(id))||(command===
    stdin.on('data',key);
   });
   if(token.length<32)throw Error('Token non valido.');
+  rl=createInterface({input:stdin,output:stdout});
   const ask=async(question)=>await rl.question(question);
   let method='GET',path='/v1/redazione/elenco',body;
   if(command!=='elenco')path='/v1/redazione/'+id;
@@ -51,5 +52,5 @@ if(!permitted.includes(command)||(command!=='elenco'&&!idValid(id))||(command===
   // Risultati visibili soltanto nel terminale locale autorizzato.
   stdout.write(JSON.stringify(data,null,2)+'\n');
  }catch(err){stderr.write('Errore: '+err.message+'\n');process.exitCode=1}
- finally{token='';rl.close()}
+ finally{token='';rl?.close()}
 }
