@@ -162,3 +162,14 @@ Creato il registro interno `adc/governance/REGISTRO_RISCONTRI_FONTI_20261121.md`
 ## 13. Matrice delle fonti per tutte le chiese — 21 novembre 2026
 
 Sono stati aperti e letti i dieci apparati `ECC-001`–`ECC-009` e `ECC-014`. Le evidenze da essi riportate, i limiti interpretativi e le priorità di nuova collazione sono stati registrati in `adc/governance/MATRICE_FONTI_CHIESE_20261121.md`. Le fonti esterne citate negli apparati non sono state tutte riaperte in questo ciclo, perciò la matrice costituisce un controllo della documentazione del sito, **non** una nuova verifica filologica indipendente. Nessuna pagina storica è stata modificata.
+
+
+## 14. Revisione retrospettiva e sitemap — 21 novembre 2026
+
+Ricostruito l'ordine dei lavori della conversazione: ricognizione iniziale delle chiese e dei PDF; correzione della falsa impressione che mancassero le dieci schede; creazione e successivo accorpamento di un riepilogo ridondante; istituzione del registro unico; distinzione dei tre percorsi storici; registrazione separata dei riscontri del 1213, delle Rationes e del vincolo del 2020; lettura degli apparati ECC. Si tratta di operazioni diverse: le modifiche del repository sono verificabili con SHA, la collazione scientifica rimane parziale.
+
+**Controllo sitemap attuale:** 198 URL presenti prima dell'aggiornamento; tutti corrispondevano a percorsi esistenti sul ramo `main`. Restavano fuori nove HTML ADC, in prevalenza vecchi redirect, widget, pagine tecniche e la galleria fotografica dell'Annunziata. Non è stato considerato necessario pubblicare ogni pagina tecnica nell'indice.
+
+**Correzione circoscritta:** aggiunto un link canonical alla galleria fotografica dell'Annunziata e inserita la galleria in `sitemap.xml`. Numero di URL previsto dopo l'aggiornamento: 199. Conservati tutti i 40 riferimenti alle immagini della galleria. Non è stato dichiarato un esito di indicizzazione Google né eseguita una verifica visiva in browser.
+
+**Distinzione essenziale:** lo ZIP allegato è un'istantanea precedente e non include l'ADC corrente. Il repository è la base operativa; i registri sono documentazione storica del processo, non attestazioni di avvenuta revisione filologica di ogni fonte.
