@@ -425,3 +425,13 @@ Nella stessa cartella sono state aggiunte e riscontrate via ricerca Drive altre 
 - `BACKUP_20261121_Cronologia_critica_Calatabiano`, ID `1V04XosZHwmAQ6GhV7wsH-VSGckR048a4Ck1X9fKIW_o`.
 - `BACKUP_20261121_Manoscritto_canonico_Calatabiano_Sacra`, ID `1yUqPSMNA9dkyup-zScmiRmYtMCgjun6t17LKBnEfo3Y`.
 **Totale: sette documenti duplicati nella cartella**. I risultati Drive includono sette documenti e la cartella. Si tratta di copie di file già esistenti su Google Drive, non di un caricamento dei cinque ZIP salvati localmente.
+
+
+## 28. Copia verificata sul secondo disco fisico del PC — 21 novembre 2026
+
+- Il computer `Michele` dispone di due dischi fisici distinti secondo `Get-Partition`: **C: sul disco 0** (sistema) e **D: sul disco 1** (`ARCHIVIO_MICHELE`). Il disco D non è il medesimo volume/partizione del disco C.
+- Copiati su `D:\ADC_BACKUP_STORICO_20261121\` i cinque ZIP documentati in §26, `MANIFESTO_FONTI_DIGITALIZZATE_SHA256.csv` e `VERIFICA_BACKUP.json`.
+- **Verifica effettiva dopo copia:** calcolato SHA-256 su sorgente C e copia D per ciascuno dei sette file, **7/7 coincidenti**. Log `D:\ADC_BACKUP_STORICO_20261121\VERIFICA_COPIA_DISCO_D_20261121.json`; `COMPLETED 0` differenze.
+- Questo protegge il corpus da perdita di uno dei due dischi, ma entrambi sono nello stesso computer e quindi non sostituiscono una copia in sede fisicamente separata contro furto, incendio, malware o guasto comune.
+- Il volume Google Drive `G:\` è montato o indicato da PowerShell, ma il tentativo `Get-ChildItem G:\` restituisce **Accesso negato**; non è stato usato né sono stati modificati permessi/credenziali. Le **sette copie Drive** di §27 rimangono conservate, ma non sono i cinque ZIP locali.
+- Lo stato delle pagine pubbliche è conservato anche nel ramo GitHub `backup/adc-2026-11-21-dopo-consolidamento`; la nuova copia di lavoro su D è materiale privato e **non va indicizzata o esposta nel sito**.
