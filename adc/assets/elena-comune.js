@@ -57,8 +57,8 @@
        let match=0;
        for(const keyword of g.keywords){
          const words=cleanTokens(keyword);
-         if(words.length&&words.every((w,i)=>qwords.some((v,j)=>v===w&&
-            (words.length===1||words.every((x,k)=>qwords[j+k]===x)))))match=Math.max(match,words.length);
+         if(words.length&&qwords.some((v,j)=>v===words[0]&&
+            words.every((x,k)=>qwords[j+k]===x)))match=Math.max(match,words.length);
        }
        return match?{g,match}:null;
      }).filter(Boolean).sort((a,b)=>b.match-a.match);
