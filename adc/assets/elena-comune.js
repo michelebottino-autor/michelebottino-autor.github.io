@@ -194,8 +194,14 @@
        limitation:'Per variazioni, sostituzioni o surroghe successive occorre consultare le deliberazioni più recenti.',
        source:'Comune di Calatabiano',checked_at:admin.verified_at};
    }
-   const person=(government.executive.members.concat(government.council.members))
-     .find(name=>q.includes(norm(name))||norm(name).split(' ').filter(x=>x.length>4).some(x=>q.includes(x)));
+   const allPeople=[...new Set(government.executive.members.concat(government.council.members))];
+   const matches=allPeople.filter(name=>{
+     const parts=norm(name).split(' ').filter(Boolean);
+     const surname=parts[parts.length-1];
+     return q.includes(norm(name))||Boolean(surname&&surname.length>=4&&
+       q.split(/[^a-z0-9]+/).includes(surname));
+   });
+   const person=matches.length===1?matches[0]:null;
    if(person&&has(/\b(chi e|che ruolo|incarico|funzione|ruolo|amministrazione|comune)\b/)){
      const roles=[];
      if(government.executive.members.includes(person))roles.push('componente della Giunta');
