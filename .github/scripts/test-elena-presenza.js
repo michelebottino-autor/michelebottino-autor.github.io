@@ -28,12 +28,24 @@ async function run(query, resources={}){
   const widget=new Element('aside'),form=new Element('form'),send=new Element('button');
   const input=new Element('input'),result=new Element('div');
   form.selectors={'button':send};
-  widget.selectors={'.elena-presenza-toggle':new Element('button'),'.elena-presenza-panel':new Element('section'),'.elena-presenza-close':new Element('button'),'.elena-presenza-message':new Element('p'),'form':form,'input':input,'.elena-presenza-result':result};
+  widget.selectors={
+    '.elena-presenza-toggle':new Element('button'),
+    '.elena-presenza-panel':new Element('section'),
+    '.elena-presenza-close':new Element('button'),
+    '.elena-presenza-message':new Element('p'),
+    'form':form,'input':input,'.elena-presenza-result':result,
+    '.elena-paola-sample':new Element('button'),
+    '.elena-voice-read':new Element('button'),
+    '.elena-voice-page':new Element('button'),
+    '.elena-voice-stop':new Element('button'),
+    '.elena-voice-note':new Element('p'),
+  };
   const requests=[];
-  const document={querySelector(){return null;},createElement(tag){return tag==='aside'?widget:new Element(tag);},body:{append(){}},head:{append(){throw Error('Motore inatteso');}},addEventListener(){}};
-  const window={ElenaADCDialogo:engine,scrollY:0,addEventListener(){},matchMedia(){return {matches:false};},requestAnimationFrame(fn){fn();}};
+  const document={querySelector(){return null;},createElement(tag){return tag==='aside'?widget:new Element(tag);},body:{append(){}},head:{append(){}},addEventListener(){}};
+  const window={ElenaADCDialogo:engine,location:{pathname:'/adc/'},scrollY:0,addEventListener(){},matchMedia(){return {matches:false};},requestAnimationFrame(fn){fn();}};
   const data={'/adc/assets/elena-indice.json':index,'/adc/assets/elena-risposte-approvate.json':approved,...resources};
-  const context={document,window,location:{pathname:'/adc/'},fetch:async url=>{requests.push(url);return {ok:Object.hasOwn(data,url),json:async()=>data[url]};},Promise,Error,Array,String};
+  class FakeAudio {constructor(){this.paused=true;this.currentTime=0;} addEventListener(){} pause(){this.paused=true;} play(){this.paused=false;return Promise.resolve();}}
+  const context={document,window,Audio:FakeAudio,location:{pathname:'/adc/'},fetch:async url=>{requests.push(url);return {ok:Object.hasOwn(data,url),json:async()=>data[url]};},Promise,Error,Array,String};
   vm.runInNewContext(source,context,{filename:'elena-presenza.js'});
   input.value=query;
   await form.listeners.submit({preventDefault(){}});
