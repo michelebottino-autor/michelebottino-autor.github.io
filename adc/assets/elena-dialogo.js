@@ -42,7 +42,41 @@
     if(!keywords.length)return current;
     return (current+' '+keywords.join(' ')).slice(0,160);
   }
-  function reply(q, index, approved) {
+  // Motore documentario controllato: usa esclusivamente enunciati validati e
+  // ricondotti a una risposta approvata, senza costruire nuovi fatti storici.
+  function knowledgeAnswer(q, knowledge, approved) {
+    const query=normalize(q), words=new Set(query.split(/[^a-z0-9]+/).filter(Boolean));
+    if(!Array.isArray(knowledge?.entries)||!Array.isArray(approved))return null;
+    const allowedEvidence=new Set(['SOURCE_IDENTIFIED','EDITION_TEXT_CHECKED','IMAGE_COLLATED','ORIGINAL_COLLATED']);
+    const validEntry=e=>{
+      if(!e||e.status!=='APPROVED_FOR_PUBLICATION'||!e.reviewer||!e.reviewed_at||!e.review_rationale||
+         !allowedEvidence.has(e.evidence_status)||typeof e.evidence_limitations!=='string'||
+         !e.evidence_limitations.trim()||!Array.isArray(e.sources)||!e.sources.length||
+         typeof e.answer!=='string'||!e.answer.trim()||!Array.isArray(e.must_match_any)||
+         !Array.isArray(e.must_match_subject)||!Array.isArray(e.keywords)||!e.source_answer_id)return false;
+      const canonical=approved.find(x=>x.id===e.source_answer_id && x.status==='APPROVED_FOR_PUBLICATION'&&
+        x.reviewer&&x.reviewed_at&&x.review_rationale&&Array.isArray(x.sources)&&x.sources.length);
+      if(!canonical)return false;
+      return e.sources.every(src=>src&&safeUrl(src.url)&&src.title&&src.page&&src.source_type&&
+        canonical.sources.some(c=>c.url===src.url&&c.page===src.page&&c.source_type===src.source_type));
+    };
+    const match=a=>a.some(word=>words.has(normalize(word).replace(/[^a-z0-9]+/g,'')));
+    const candidates=knowledge.entries.filter(validEntry).filter(e=>
+      match(e.must_match_any)&&match(e.must_match_subject)
+    ).map(e=>{
+      const matched=e.keywords.filter(k=>words.has(normalize(k).replace(/[^a-z0-9]+/g,''))).length;
+      return {e,score:matched+(e.must_match_subject.some(k=>words.has(normalize(k)))?1:0)};
+    }).filter(x=>x.score>=1).sort((a,b)=>b.score-a.score||a.e.id.localeCompare(b.e.id));
+    if(!candidates.length)return null;
+    // Se due attestazioni hanno pari pertinenza, meglio rimandare alle fonti che attribuire una risposta arbitraria.
+    if(candidates.length>1&&candidates[0].score===candidates[1].score)return null;
+    const entry=candidates[0].e;
+    return {kind:'documentary',id:entry.id,title:'Risposta documentaria verificata',
+      text:entry.answer,links:entry.sources.map(src=>({title:src.title+' — p. '+src.page,url:src.url})),
+      limitation:entry.evidence_limitations,evidence_status:entry.evidence_status,
+      reviewer:entry.reviewer,reviewed_at:entry.reviewed_at};
+  }
+  function reply(q, index, approved, knowledge) {
     const n = normalize(q);
     // Richiesta esplicita di contribuire con una memoria personale: nessuna raccolta implicita nella chat.
     if(/(?:raccont|testimonianz|ricord|memori)/.test(n) && /(?:voglio|vorrei|posso|condivid|inviar|pubblic|personal|infanzia|nonni|famiglia)/.test(n)){
@@ -51,6 +85,8 @@
     // Risposte canoniche consentite soltanto con stato, fonte e testo approvati.
     const answer = (approved || []).find(x => x && x.status === 'APPROVED_FOR_PUBLICATION' && x.question && normalize(x.question)===n && typeof x.answer==='string' && x.answer.trim() && Array.isArray(x.sources) && x.sources.length && x.sources.every(s=>s && safeUrl(s.url) && s.page && s.title) && x.reviewer && x.reviewed_at && x.review_rationale && ['SOURCE_IDENTIFIED','EDITION_TEXT_CHECKED','IMAGE_COLLATED','ORIGINAL_COLLATED'].includes(x.evidence_status) && typeof x.evidence_limitations==='string' && x.sources.every(s=>s.source_type));
     if (answer) return {kind:'documentary',id:answer.id,title:'Risposta documentata',text:answer.answer,links:answer.sources.map(s=>({title:s.title+' — p. '+s.page,url:s.url})),limitation:answer.evidence_limitations,evidence_status:answer.evidence_status};
+    const controlled=knowledgeAnswer(q,knowledge,approved);
+    if(controlled)return controlled;
     const matches = rank(q, index?.entries);
     if (matches.length) return {kind:'index',title:'Fonti e percorsi da consultare',text:'Non è disponibile una risposta sintetica verificata per questa domanda. Questi percorsi potrebbero essere pertinenti: consulta le fonti prima di trarre conclusioni.',links:matches.map(e=>({title:e.title,url:e.url,description:e.description}))};
     return {kind:'empty',title:'Nessuna fonte sufficiente individuata',text:'Non ho trovato un percorso sufficientemente pertinente nell’indice pubblico. Puoi consultare il repertorio generale oppure riprovare indicando una località, un anno o un argomento.',links:[{title:'Consulta le fonti e i documenti',url:'/adc/fonti/'},{title:'Leggi la storia di Calatabiano',url:'/adc/storia/'}]};
@@ -58,7 +94,7 @@
   function mount() {
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
-    let index={entries:[]}, approved=[], turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
+    let index={entries:[]}, approved=[], knowledge={entries:[]}, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
     const tools=document.createElement('div');tools.className='elena-conversation-tools';
     const availability=document.createElement('p');availability.className='elena-source-status';availability.setAttribute('role','status');
     availability.textContent='Caricamento del repertorio documentario…';
@@ -109,9 +145,12 @@
       window.addEventListener('pagehide',()=>welcomeAudio.pause());
     }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
-    const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json')]).then(a=>{
+    const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json'),load('/adc/assets/elena-conoscenza-verificata.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)){index=a[0].value;indexAvailable=true;}
       if(a[1].status==='fulfilled' && Array.isArray(a[1].value?.answers)){approved=a[1].value.answers;approvedAvailable=true;}
+      if(a[2].status==='fulfilled'&&a[2].value?.schema===1&&Array.isArray(a[2].value.entries)){
+        knowledge=a[2].value;knowledgeAvailable=true;
+      }
       availability.textContent=indexAvailable
         ? 'Indice consultabile: '+index.entries.length+' percorsi · '+(approvedAvailable?approved.filter(a=>a.status==='APPROVED_FOR_PUBLICATION').length+' risposte approvate':'risposte approvate non disponibili')
         : 'Indice non disponibile. La consultazione è temporaneamente limitata.';
@@ -170,7 +209,7 @@
         const partial=(!indexAvailable || !approvedAvailable);
         const r=(!indexAvailable && !approvedAvailable)
           ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
-          : reply(effective,index,approved);
+          : reply(effective,index,approved,knowledge);
         if(!indexAvailable && r.kind!=='documentary'){
           r.kind='unavailable';
           r.title='Indice documentario non disponibile';
@@ -270,5 +309,5 @@
     if(loc.searchParams.has('q')||loc.hash.startsWith('#q=')){loc.searchParams.delete('q');loc.hash='';try{history.replaceState(null,'',loc.pathname+loc.search)}catch(e){}}
     if(initial && initial.length<=160)run(initial);
   }
-  return {normalize,tokens,rank,reply,contextualQuery,safeUrl,mount};
+  return {normalize,tokens,rank,reply,knowledgeAnswer,contextualQuery,safeUrl,mount};
 });
