@@ -33,9 +33,9 @@
    utterance.lang='it-IT';utterance.rate=.94;utterance.pitch=1;
    const italian=synthesis.getVoices().filter(v=>/^it(?:-|_)/i.test(v.lang));
    const paola=italian.find(v=>/paola/i.test(v.name));
-   if(!paola){voiceNote.textContent='La voce Paola non è disponibile per questa lettura sul dispositivo. Non verrà utilizzata un’altra voce.';return;}
+   if(!paola){voiceNote.textContent='La voce di Elena non è disponibile per questa lettura sul dispositivo. Non verrà utilizzata un’altra voce.';return;}
    utterance.voice=paola;
-   voiceNote.textContent='Lettura con la voce Paola disponibile sul dispositivo.';
+   voiceNote.textContent='Lettura con la voce di Elena disponibile sul dispositivo.';
    utterance.onend=()=>{stopButton.hidden=true;};
    utterance.onerror=()=>{stopButton.hidden=true;voiceNote.textContent='Lettura interrotta. Verifica le impostazioni vocali del dispositivo.';};
    stopButton.hidden=false;
@@ -51,8 +51,8 @@
    }else if(spokenKind==='documentary' && /^[A-Za-z0-9_-]{1,80}$/.test(spokenId)){
      stopSpeech();
      paolaAnswerAudio.src='/adc/audio/elena-paola-documentaria-'+spokenId+'.mp3';
-     paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Paola sta leggendo la risposta documentaria.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Registrazione Paola non ancora disponibile per questa risposta.';});
-   }else{voiceNote.textContent='Nessuna registrazione Paola disponibile per questa risposta.';}
+     paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Elena sta leggendo la risposta documentaria.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Registrazione vocale non ancora disponibile per questa risposta.';});
+   }else{voiceNote.textContent='Nessuna registrazione vocale disponibile per questa risposta.';}
  });
  pageButton.addEventListener('click',()=>{
    const path=window.location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');

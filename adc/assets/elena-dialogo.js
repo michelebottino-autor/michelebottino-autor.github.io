@@ -171,7 +171,7 @@
       welcome.addEventListener('click',()=>{
         if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta Elena';return;}
         welcomeAudio.currentTime=0;
-        welcomeAudio.play().then(()=>{welcome.textContent='Ferma Elena';}).catch(()=>{welcome.textContent='Audio Paola non disponibile';});
+        welcomeAudio.play().then(()=>{welcome.textContent='Ferma Elena';}).catch(()=>{welcome.textContent='Il messaggio vocale non è disponibile';});
       });
       welcomeAudio.addEventListener('ended',()=>{welcome.textContent='Ascolta Elena';});
       window.addEventListener('pagehide',()=>welcomeAudio.pause());
