@@ -35,7 +35,32 @@ function admin(request,env){
   let mismatch=0;for(let i=0;i<received.length;i++)mismatch|=received[i]^expected[i];
   return mismatch===0;
 }
+// Manutenzione giornaliera, senza pubblicazione o lettura di testimonianze private.
+const daysAgo=(date,days)=>new Date(date.getTime()-days*86400000).toISOString();
+async function maintenance(env,now=new Date()){
+ if(!env.DB)return;
+ const antiSpamCutoff=daysAgo(now,7);
+ await env.DB.prepare('DELETE FROM richieste_giornaliere WHERE scadenza < ?').bind(antiSpamCutoff).run();
+ // Per prevenire cancellazioni irreversibili, queste regole partono disattivate.
+ if(env.RETENTION_PURGE_ENABLED!=='true')return;
+ const rules=[
+  ['ricevuta','in_revisione',180],
+  ['approvata',null,365],
+  ['ritirata','respinta',30]
+ ];
+ for(const [first,second,days] of rules){
+  const cutoff=daysAgo(now,days);
+  const sql=second
+   ?'DELETE FROM testimonianze WHERE stato IN (?,?) AND updated_at < ?'
+   :'DELETE FROM testimonianze WHERE stato=? AND updated_at < ?';
+  const statement=env.DB.prepare(sql);
+  await (second?statement.bind(first,second,cutoff):statement.bind(first,cutoff)).run();
+ }
+}
 export default {
+ async scheduled(event,env,ctx){
+  ctx.waitUntil(maintenance(env));
+ },
  async fetch(request,env){
   const origin=request.headers.get('Origin')||'';
   const allow=origin===ORIGIN?ORIGIN:'';
