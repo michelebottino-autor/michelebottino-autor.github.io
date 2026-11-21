@@ -468,3 +468,15 @@ Intervento diretto su **sei pagine pubbliche**, conservando riferimenti archivis
 - `/adc/dossier-1213-1537/`: rimossa la riga relativa al software «Cervello» e i codici di tracciamento A01–A06 dalla tabella destinata ai lettori; mantenute le differenze fra edizione del privilegio del 1213, storiografia e originale non consultato.
 
 La rilettura delle sei pagine dopo le modifiche non ha rilevato percorsi interni mancanti nei collegamenti del corpo pagina. I dati di questo controllo non certificano la qualità stilistica dell'intero ADC: gli altri contenuti sono da esaminare con lo stesso metodo. I registri interni conservano le informazioni operative e non vanno copiati negli articoli.
+
+
+## 32. Secondo passaggio di pulizia stilistica — 21 novembre 2026
+
+Revisionate direttamente, con conservazione dei riferimenti storici e bibliografici, le seguenti **cinque pagine pubbliche**:
+- `/adc/chiese/studi/ecc-001/`: rimossa l'introduzione sul funzionamento dell'apparato editoriale e la nota destinata agli addetti; sostituita con una descrizione della successione storica fra comunità, borgo, edificio e opere.
+- `/adc/chiese/studi/ecc-006/`: eliminate l'intestazione «Dossier ECC-006 · Revisione...» e l'avvertenza generica sul perimetro della ricerca; riscritta l'apertura sulla croce del 1502, mantenendo la dipendenza dalla testimonianza di Di Marzo e la cautela sull'opera.
+- `/adc/chiese/studi/ecc-009/`: riscritta in forma narrativa l'introduzione alla Madonna dell'Imperio, conservando la distinzione fra tradizione sul 1092 e decreto di tutela 2020.
+- `/adc/monasteri/san-filippo-fragala/`: semplificata la sezione delle segnature `PDP 124.1`, `PDP 125.2`; conservata la divergenza fra 1117 e 1125 senza anticiparne una soluzione.
+- `/adc/archivio-gravina-cruillas/`: rimossa dalla nota pubblica l'istruzione operativa per chiedere riproduzioni, mantenendo il riferimento a Vesco, inventario p. 150, I serie b. 55 bis fasc. 228 ter.
+
+**Controllo dopo il salvataggio:** le cinque pagine esistono in GitHub, hanno canonical e i collegamenti interni principali controllati non sono mancanti. Il controllo automatico dei link non è una verifica in browser né una valutazione scientifica frase per frase. Sono stati controllati anche contenuti di altre pagine senza applicare trasformazioni automatiche su citazioni, date o segnature. Non creare nuovi dossier paralleli e non nascondere lacune documentarie sotto formulazioni assertive.
