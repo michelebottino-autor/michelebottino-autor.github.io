@@ -10,6 +10,7 @@ on:
       - '.github/scripts/test-elena-presenza.js'
       - '.github/scripts/test-elena-contesto.js'
       - 'scripts/test_elena_upgrade.cjs'
+      - 'scripts/test_elena_search.cjs'
       - '.github/scripts/test-elena-dialogo.js'
       - '.github/workflows/elena-dialogo-check.yml'
   workflow_dispatch:
@@ -23,6 +24,7 @@ jobs:
           node-version: '22'
       - run: node --check adc/assets/elena-dialogo.js
       - run: node scripts/test_elena_upgrade.cjs
+      - run: node scripts/test_elena_search.cjs
       - run: node .github/scripts/test-elena-dialogo.js
       - run: node .github/scripts/test-elena-contesto.js
       - run: node .github/scripts/test-elena-presenza.js

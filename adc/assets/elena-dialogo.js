@@ -11,25 +11,51 @@
   const aliases = {mulino:'mulini',mulini:'mulino',chiesa:'chiese',chiese:'chiesa',origine:'origini',origini:'origine',mappa:'cartografia',mappe:'cartografia',foto:'fotografie',fotografia:'fotografie',fotografie:'foto',ponte:'alcantara',castelli:'castello',castello:'castelli',pergamena:'pergamene',pergamene:'pergamena',monastero:'monasteri',monasteri:'monastero',decime:'rationes',rationes:'decime',zuccherificio:'zucchero',trappeto:'zucchero',trappeti:'zucchero',crocifisso:'croce',croce:'crocifisso',ferroviaria:'ferrovia',stazioni:'stazione',stazione:'ferrovia',terremoti:'terremoto'};
   const safeUrl = u => typeof u === 'string' && (/^\/adc\/[a-z0-9/_-]*(?:\.html)?$/i.test(u) || /^https:\/\/(?:www\.|pagamentipa\.)?comune\.calatabiano\.ct\.it\/[a-z0-9/?&=_.%-]*$/i.test(u) || /^https:\/\/(?:dark-aronte|michelebottino-autor)\.github\.io\/$/.test(u));
   const tokens = q => [...new Set(normalize(q).split(/[^a-z0-9]+/).filter(x => x.length > 2 && !stop.has(x)).flatMap(x => aliases[x] ? [x, aliases[x]] : [x]))];
+  // Ricerca lessicale verificabile: le schede sono suggerimenti di lettura, non risposte storiche.
+  // Peso maggiore alle espressioni esatte (es. "Madonna del Carmine") e alle date;
+  // nessuna generazione di contenuti non presenti nel repertorio.
   function rank(q, entries) {
-    const ts = tokens(q);
-    if (!ts.length) return [];
-    const generic = new Set(['archivio','ricerca','bibliografia','territorio','medievale','medievali','medioevo']);
-    const specific = ts.filter(t => !generic.has(t));
-    const candidates = (entries || []).filter(e => e && safeUrl(e.url)).map(e => {
-      const title = normalize(e.title), tags = (e.tags || []).map(normalize), description = normalize(e.description);
-      const titleWords=title.split(/[^a-z0-9]+/), descriptionWords=description.split(/[^a-z0-9]+/);
-      const match=t=>titleWords.includes(t) || tags.some(tag => tag === t || tag.split(/[^a-z0-9]+/).includes(t));
-      const score = ts.reduce((sum,t) => sum + (titleWords.includes(t) ? 6 : 0) + (tags.some(tag => tag === t || tag.split(/[^a-z0-9]+/).includes(t)) ? 5 : 0) + (descriptionWords.includes(t) ? 1 : 0),0);
-      const matchedSpecific=specific.filter(match).length;
-      return {e,score,strong:matchedSpecific>0,matchedSpecific};
-    }).filter(x => x.score >= 5 && x.strong);
-    // Per domande con più termini, privilegia la copertura massima quando almeno due coincidono.
-    const bestCoverage=candidates.reduce((max,x)=>Math.max(max,x.matchedSpecific),0);
-    const requireCoverage=specific.length>1 && bestCoverage>1;
-    return candidates.filter(x=>!requireCoverage || x.matchedSpecific===bestCoverage)
-      .sort((a,b) => b.score-a.score || a.e.title.localeCompare(b.e.title,'it'))
-      .filter((x,i,all) => all.findIndex(y => y.e.url===x.e.url)===i).slice(0,5).map(x=>x.e);
+    const query=normalize(q), terms=tokens(q);
+    if(!terms.length || !Array.isArray(entries))return [];
+    const common=new Set(['archivio','ricerca','bibliografia','territorio','medievale','medievali','medioevo','documentale']);
+    const specific=terms.filter(t=>!common.has(t));
+    if(!specific.length)return [];
+    const queryWords=new Set(query.split(/[^a-z0-9]+/).filter(Boolean));
+    const containsPhrase=(haystack,phrase)=>{
+      const normalized=normalize(haystack).replace(/[^a-z0-9]+/g,' ').trim();
+      const target=normalize(phrase).replace(/[^a-z0-9]+/g,' ').trim();
+      return target.length>=5 && (' '+normalized+' ').includes(' '+target+' ');
+    };
+    const candidates=entries.filter(e=>e&&safeUrl(e.url)&&typeof e.title==='string'&&e.title.trim()).map(e=>{
+      const title=normalize(e.title), description=normalize(e.description);
+      const rawTags=Array.isArray(e.tags)?e.tags.filter(t=>typeof t==='string'):[];
+      const tags=rawTags.map(normalize);
+      const titleWords=new Set(title.split(/[^a-z0-9]+/).filter(Boolean));
+      const descriptionWords=new Set(description.split(/[^a-z0-9]+/).filter(Boolean));
+      const tagWords=new Set(tags.flatMap(tag=>tag.split(/[^a-z0-9]+/).filter(Boolean)));
+      const matched=specific.filter(t=>titleWords.has(t)||tagWords.has(t));
+      let score=terms.reduce((total,t)=>total+
+        (titleWords.has(t)?7:0)+(tagWords.has(t)?6:0)+(descriptionWords.has(t)?1:0),0);
+      // Una locuzione presente nella domanda e nelle parole chiave identifica più precisamente la scheda.
+      for(const tag of tags){
+        const words=tag.split(/[^a-z0-9]+/).filter(Boolean);
+        if(words.length>=2 && words.length<=6 && words.some(w=>!stop.has(w)) && containsPhrase(query,tag))score+=18;
+      }
+      const normalizedTitle=title.replace(/[^a-z0-9]+/g,' ').trim();
+      if(normalizedTitle.length>=8 && containsPhrase(query,normalizedTitle))score+=22;
+      // Le date specifiche hanno priorità; non interpretare anni non presenti nella domanda.
+      const years=[...queryWords].filter(w=>/^(?:1[0-9]{3}|20[0-9]{2})$/.test(w));
+      const available=new Set([...titleWords,...tagWords]);
+      if(years.length && years.every(y=>available.has(y)))score+=10;
+      return {e,score,matched:matched.length,yearMismatch:years.length>0&&!years.some(y=>available.has(y))};
+    }).filter(x=>x.matched>0&&x.score>=6);
+    // Se almeno una scheda contiene tutti i termini specifici, escludi quelle che ne colgono uno soltanto.
+    const maxCoverage=candidates.reduce((value,x)=>Math.max(value,x.matched),0);
+    const subset=candidates.filter(x=>specific.length<2 || maxCoverage<2 || x.matched===maxCoverage);
+    // Evita che una data diversa domini una ricerca con anno esplicito.
+    return subset.sort((a,b)=>a.yearMismatch-b.yearMismatch||b.score-a.score||a.e.title.localeCompare(b.e.title,'it'))
+      .filter((x,i,all)=>all.findIndex(y=>y.e.url===x.e.url)===i)
+      .slice(0,5).map(x=>x.e);
   }
   // Contesto effimero: solo l'ultima domanda in questa scheda, senza memorizzazione.
   function contextualQuery(q, previous) {
