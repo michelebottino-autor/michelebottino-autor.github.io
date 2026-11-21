@@ -324,3 +324,44 @@ Ricontrollati inventari ufficiali dell'Archivio di Stato di Palermo, incrociati 
 **Pubblicazione tecnica:** introdotti otto URL nella sitemap (passaggio da 199 a 207), file CSS condiviso `/adc/monasteri/assets/monasteri.css` e otto nuove rotte nell'indice documentario di Elena (da 43 a 51). Gli URL sono intenzionalmente distinti fra istituzioni e status, senza unificare identità geografiche estranee.
 
 **Criterio di prova:** la creazione GitHub e l'indicizzazione dei percorsi sono fatti tecnici. La presenza di un monastero a Calatabiano è un fatto storico che necessita documenti autonomi; non confondere gli esiti.
+
+
+## 24. Revisione retrospettiva integrata e ordine unico di avanzamento — 21 novembre 2026
+
+**Metodo della verifica:** confrontati direttamente l'istantanea ZIP iniziale, il Git tree corrente, il presente stato unico, il registro editoriale originario (`adc/REGISTRO_REVISIONE_EDITORIALE.md`), la matrice dei dieci apparati ecclesiastici e il testo integrale della prima edizione *Calatabiano Sacra* 2025 su Google Drive, con il documento `01_REGISTRO_EVIDENZE – Calatabiano Sacra – Seconda Edizione`. L'analisi del testo della prima edizione e del registro successivo è avvenuta su copie effettivamente aperte; **non** equivale alla consultazione integrale di tutti i manoscritti citati nel libro.
+
+### 24.1 Istantanea operativa attuale
+- Git tree ramo `main`: **1.117 file** (non confondere con le 1.101 unità registrate in §2 in un momento precedente), **281 file HTML**, di cui **98 sotto `adc/`**. Il vecchio ZIP allegato al progetto comprende 105 elementi e nessun elemento `adc/`; è una copia storica, non un backup completo dello stato corrente.
+- `sitemap.xml`: **207 URL unici**, inclusi **8 URL `/adc/monasteri/`** (indice e sette schede); `adc/assets/elena-indice.json`: **51 percorsi**, inclusi gli stessi otto URL monastici.
+- Le sette schede monastiche e l'indice sono file reali sul ramo `main`, presentano titoli/canonical e collegamenti di ritorno. Controllo statico dei loro collegamenti locali: nessun percorso mancante rilevato; il link `/` è correttamente riferito alla homepage principale.
+- Ultima distribuzione GitHub Pages rilevata nell'elenco esecuzioni: run `44883161541`, esito `success`. Audit SEO e regressione Elena: run `44882824056` e `44882824057`, esito `success`; eseguiti prima di alcune distribuzioni successive. Non trasformare l'esito CI in certificazione di visualizzazione desktop/mobile o completezza storica.
+
+### 24.2 Fonte storica prevalente e livelli di affidabilità
+1. **Originale:** fotografie/scansioni con archivio, fondo, busta, fascicolo, carta e data verificabili; trascrizione controllata, non mera OCR.
+2. **Edizione critica o diplomatica:** testo effettivamente letto e citabile con pagina o numero documento; spiegare la distanza dall'originale.
+3. **Studio secondario:** citazione circoscritta attribuita allo studioso; risalire all'atto indicato.
+4. **Inventario/regesto:** esistenza di unità archivistica e descrizione, non necessariamente il contenuto integrale dell'atto.
+5. **Prima edizione *Calatabiano Sacra*:** corpus autoriale utile per individuare ipotesi, formule, persone e luoghi, **non controllo indipendente** delle stesse tesi. Questo principio era già registrato nel documento delle evidenze della seconda edizione e resta vincolante.
+
+Nessuna nuova scheda narrativa deve essere pubblicata come dato certo senza esplicitare il livello.
+
+### 24.3 Monasteri: realtà del censimento
+Le sette schede **non** descrivono sette monasteri storicamente provati in Calatabiano. Il convento carmelitano è riportato da tradizione storiografica da verificare sugli atti; per i Frati Minori di Gesù e Maria e la *domus* di Sant'Anna non esistono ancora atti fondativi verificati; gli Agostiniani sono attestati indirettamente da una descrizione inventariale di **rapporti patrimoniali**, non da una sede conventuale; Fragalà, Maniace e Santa Croce sono istituti **esterni**. La pagina pubblica conserva questa distinzione e deve continuare a farlo.
+
+### 24.4 Incongruenze già rilevate dalla seconda edizione
+- La postilla del **1239**, i monaci «Calathabiani ad Nicosiam» e la *domus virginum S. Annae* sono esplicitamente **non riscontrati** in E-004, E-005, E-012; non usare le formule latine del 2025 come trascrizioni originali finché manchi la segnatura.
+- E-014 corregge il legame con le pergamene Fragalà–Maniace del **1217**: attestano controversie su terre e acque presso Santo Marchetto, ma **non** una proprietà a Calatabiano in base al regesto consultato.
+- Le badesse Marullo, la loro parentela e i beni nelle contrade Orti/Carfalotto richiedono confronto con gli atti completi del **1566–1567** prima di dimostrare rapporti patrimoniali locali.
+- Non confondere **San Marco di Calatabiano**, **San Marco d'Alunzio**, **Santo Marchetto** e i toponimi del territorio di Naso. La convergenza lessicale non costituisce prova topografica.
+
+### 24.5 Sequenza vincolante dei prossimi lavori
+1. **Agostiniani, 1799:** acquisire il fascicolo **voce 417, volume antico 86** dell'inventario 81 Gravina-Cruillas, registrare immagini e testo; cercare la provenienza dei titoli censuari e le localizzazioni, senza anticipare un convento.
+2. **Riveli, 1681:** reperire il registro **1039**, **carte 229, 254 e 307** citate da Trasselli, verificare nomi, contrade, censi e tipo di «canne», senza dedurre automaticamente coltivazioni zuccheriere. Poi procedere ai volumi **2146–2149** del Settecento.
+3. **Frati Minori:** cercare documentazione conventuale/visite pastorali per Gesù e Maria, e verificare con foto/descrizione diretta la custodia del **1714**; il simbolo non prova un insediamento.
+4. **Carmelitani:** atti per fondazione **1518**, soppressione **1652**, inventario della campana e del simulacro; distinguere notizie riportate da fonti carmelitane e atti originali.
+5. **Monache e monasteri esterni:** riprendere Fragalà/Maniace, Santa Croce e *domus* di Sant'Anna soltanto attraverso segnature e documenti realmente riferiti a Calatabiano.
+6. **Pubblicazione:** aggiornare la scheda canonica già esistente soltanto dopo ogni riscontro; quindi adeguare indice monasteri, scheda chiesa collegata, repertorio fonti ed Elena **per rinvio**, evitando di copiare gli stessi paragrafi in più sedi.
+7. **Collaudo:** dopo ogni modifica pubblica, confrontare GitHub Pages, sitemap, test HTML/JS, navigazione da mobile e link interni; non confondere CI, HTTP 200 e prova end-to-end.
+
+### 24.6 Regola per registri e pagine
+Questo `STATO_UNICO_PROGETTO_20261121.md` è il **coordinamento attuale**, non sostituisce la provenienza analitica del vecchio registro editoriale né il `01_REGISTRO_EVIDENZE` scientifico della seconda edizione. Il fascicolo specifico su Palermo è `SEGNATURE_PALERMO_CALATABIANO_MONASTERI_20261121.md`; il fascicolo di confronto della prima edizione è `RISCONTRI_CALATABIANO_SACRA_2025_MONACHESIMO_20261121.md`. Non aprire altri registri generali paralleli.
