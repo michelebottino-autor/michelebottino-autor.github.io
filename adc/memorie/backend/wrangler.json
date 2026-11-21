@@ -9,5 +9,10 @@
       "database_name": "adc-memorie-private",
       "database_id": "50766b5a-2e3c-4995-b6be-04c65e568700"
     }
-  ]
+  ],
+  "triggers": {
+    "crons": [
+      "25 3 * * *"
+    ]
+  }
 }
