@@ -41,7 +41,7 @@ async function run(query, resources={}){
     '.elena-voice-note':new Element('p'),
   };
   const requests=[];
-  const document={querySelector(){return null;},createElement(tag){return tag==='aside'?widget:new Element(tag);},body:{append(){}},head:{append(){}},addEventListener(){}};
+  const document={querySelector(){return null;},createElement(tag){return tag==='aside'?widget:new Element(tag);},body:{append(){}},head:{append(){},appendChild(){}},addEventListener(){}};
   const window={ElenaADCDialogo:engine,location:{pathname:'/adc/'},scrollY:0,addEventListener(){},matchMedia(){return {matches:false};},requestAnimationFrame(fn){fn();}};
   const data={'/adc/assets/elena-indice.json':index,'/adc/assets/elena-risposte-approvate.json':approved,...resources};
   class FakeAudio {constructor(){this.paused=true;this.currentTime=0;} addEventListener(){} pause(){this.paused=true;} play(){this.paused=false;return Promise.resolve();}}
