@@ -157,3 +157,8 @@ Ricognizione strutturale sui file completata per i dossier sopra elencati; nessu
 ## 12. Verifica dei PDF: 1213 e decime medievali — 21 novembre 2026
 
 Creato il registro interno `adc/governance/REGISTRO_RISCONTRI_FONTI_20261121.md` per separare edizioni lette, citazioni indirette e PDF non effettivamente disponibili. Il PDF del privilegio del 1213, nella raccolta di Hillen (2007), è stato consultato in testo ricercabile: n. 4, pp. 47–49, con riferimento a Calatabiano e ai 15.000 tarì. La fonte è una raccolta di stampe precedenti, non una nuova edizione critica, come già correttamente dichiarato nel dossier pubblico. Per Sella (1944), l'esistenza dell'edizione è confermata in catalogo, ma non è stata ottenuta una nuova lettura integrale libera del PDF; **resta aperta la discrepanza 525/536** e non è stata modificata la trascrizione pubblica. Nessun PDF è stato salvato localmente in questo ciclo, e nessuna nuova attestazione di visita pastorale è stata dichiarata.
+
+
+## 13. Matrice delle fonti per tutte le chiese — 21 novembre 2026
+
+Sono stati aperti e letti i dieci apparati `ECC-001`–`ECC-009` e `ECC-014`. Le evidenze da essi riportate, i limiti interpretativi e le priorità di nuova collazione sono stati registrati in `adc/governance/MATRICE_FONTI_CHIESE_20261121.md`. Le fonti esterne citate negli apparati non sono state tutte riaperte in questo ciclo, perciò la matrice costituisce un controllo della documentazione del sito, **non** una nuova verifica filologica indipendente. Nessuna pagina storica è stata modificata.
