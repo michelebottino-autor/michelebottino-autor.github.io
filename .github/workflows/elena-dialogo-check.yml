@@ -3,6 +3,12 @@ on:
   push:
     paths:
       - 'adc/assets/elena-dialogo.js'
+      - 'adc/assets/elena-presenza.js'
+      - 'adc/assets/elena-indice.json'
+      - 'adc/assets/elena-risposte-approvate.json'
+      - 'adc/assets/elena-risposte.json'
+      - '.github/scripts/test-elena-presenza.js'
+      - '.github/scripts/test-elena-contesto.js'
       - '.github/scripts/test-elena-dialogo.js'
       - '.github/workflows/elena-dialogo-check.yml'
   workflow_dispatch:
@@ -16,3 +22,5 @@ jobs:
           node-version: '22'
       - run: node --check adc/assets/elena-dialogo.js
       - run: node .github/scripts/test-elena-dialogo.js
+      - run: node .github/scripts/test-elena-contesto.js
+      - run: node .github/scripts/test-elena-presenza.js
