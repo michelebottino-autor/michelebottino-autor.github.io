@@ -21,6 +21,8 @@ jobs:
           python-version: '3.12'
       - name: Importa metadati da fonte istituzionale
         run: python scripts/aggiorna_news_comune.py
+      - name: Controlla raggiungibilità fonti comunali
+        run: python scripts/verifica_fonti_comune.py
       - name: Controlla che solo i metadati ammessi siano aggiornati
         run: |
           python - <<'PY'
@@ -35,7 +37,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- adc/assets/elena-comune-news.json
+          git add -- adc/assets/elena-comune-news.json adc/assets/elena-comune-verifiche.json
           if ! git diff --cached --quiet; then
             git commit -m "Elena ADC: aggiorna notizie comunali da fonte ufficiale"
             git push
