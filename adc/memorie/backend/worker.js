@@ -50,7 +50,9 @@ export default {
     if(origin!==ORIGIN)return json({error:'Invio consentito solo dal sito ADC'},403,allow);
     if(Number(request.headers.get('content-length')||0)>65000)return json({error:'Testo troppo lungo'},413,allow);
     if(!(request.headers.get('content-type')||'').toLowerCase().startsWith('application/json'))return json({error:'Formato non supportato'},415,allow);
-    const d=await request.json();
+    const raw=await request.text();
+    if(new TextEncoder().encode(raw).length>65000)return json({error:'Testo troppo lungo'},413,allow);
+    let d;try{d=JSON.parse(raw)}catch(_){return json({error:'Richiesta JSON non valida'},400,allow)}
     if(!d||typeof d!=='object'||Array.isArray(d)||d.website||!valid(d.title,140)||!valid(d.story,20000)||clean(d.story).length<30||!valid(d.period,100)||!valid(d.place,180)||!valid(d.attribution,100)||!valid(d.private_contact,180)||!['non_autorizzata','nome','anonima'].includes(d.publication)||d.consent!==true)return json({error:'Controlla il racconto e le autorizzazioni'},400,allow);
     if(d.publication==='nome'&&!clean(d.attribution))return json({error:'Indica il nome o scegli anonimato'},400,allow);
     if(d.private_contact&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.private_contact))return json({error:'Recapito email non valido'},400,allow);
