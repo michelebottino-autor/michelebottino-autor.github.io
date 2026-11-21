@@ -112,3 +112,26 @@ L'ADC conserva riferimenti alle `Rationes Decimarum`, ai diplomi medievali, al P
 - L'indice conserva le dieci schede e ora collega direttamente gli studi medievali e la sezione fonti.
 - L'URL `/adc/chiese/quadro-storico/` resta funzionante come reindirizzamento `noindex` verso l'indice, per non perdere eventuali link condivisi; il contenuto precedente è recuperabile nella cronologia Git.
 - Verifica residua: controllare la distribuzione GitHub Pages e la navigazione nel browser reale. Nessun dato storico, fotografia o studio specialistico è stato eliminato.
+
+
+## 10. Verifica dossier storici — 21 novembre 2026
+
+### Documenti controllati nel repository
+
+- `/adc/dossier-1213-1537/`: dossier autonomo che tratta distintamente il privilegio del 1213 e una notizia notarile del 1537. Conserva collegamenti a PDF di edizioni diplomatiche e studi. Non è una duplicazione integrale del dossier sullo zucchero; l'intersezione del 1537 va mantenuta come rimando al dossier specialistico.
+- `/adc/dossier-zucchero/`: dossier economico incentrato su Cruylles, Mirulla, trappeto e produzione zuccheriera, con riferimento al 1537. La sua funzione distinta è confermata.
+- `/adc/chiese/studi/rationes/`: dossier sulle decime, Santa Maria, San Giorgio e cappellani, con passi attribuiti alla riproduzione testuale di Sella. Il vecchio indirizzo `/adc/dossier-rationes/` è già un reindirizzamento corretto.
+- `/adc/chiese/studi/cinquecento/`: storia istituzionale delle attestazioni 1531 e 1594, distinta dal racconto sulle singole chiese. Il vecchio indirizzo `/adc/chiese-cinquecento/` è già un reindirizzamento.
+- `/adc/percorsi.html`, `/adc/storia/` e `/adc/storia-per-tutti/`: hanno funzioni potenzialmente sovrapponibili come percorsi narrativi generali. Non sono stati modificati senza confronto completo dei capitoli.
+
+### Anomalie puntuali
+
+**D-01 — Numerazione delle Rationes.** Nel testo pubblico del dossier è presente una nota secondo cui una trascrizione preliminare indica il n. 525, mentre la riproduzione testuale consultata indica il n. 536 a p. 53. L'audit storico del 19 novembre dichiara verificate nell'edizione di Sella le voci 536 (p. 53), 670 (p. 59) e 897 (p. 67). Rimane inoltre nel prospetto la frase «numerazione della voce da ricontrollare». Il dossier risulta quindi meno aggiornato dell'audit; la discrepanza va risolta soltanto controllando il PDF della pagina a stampa. **Non è stata eseguita una correzione filologica automatica.**
+
+**D-02 — 1537.** Il dossier 1213–1537 e quello sullo zucchero menzionano entrambi l'anno 1537, ma hanno funzioni documentarie diverse. La sovrapposizione tematica non giustifica cancellare uno dei testi; occorre mantenere l'approfondimento economico nel dossier sullo zucchero e un rimando contestuale nell'altro, dopo collazione completa.
+
+**D-03 — Tre racconti storici generali.** `/adc/storia/`, `/adc/storia-per-tutti/` e `/adc/percorsi.html` sono tutti navigabili come testi storici. Occorre individuare il rispettivo destinatario e limitare sovrapposizioni narrative. Non modificati in questa sessione.
+
+### Stato
+
+Ricognizione strutturale sui file completata per i dossier sopra elencati; nessuna modifica ai testi storici. Resta aperto il controllo esterno dei PDF e la valutazione editoriale dei tre racconti generali.
