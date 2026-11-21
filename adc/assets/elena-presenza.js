@@ -106,13 +106,14 @@
      fetch('/adc/assets/elena-conoscenza-verificata.json',{cache:'no-store'}),
      fetch('/adc/assets/elena-comune-fonti.json',{cache:'no-store'}).catch(()=>({ok:false})),
      fetch('/adc/assets/elena-comune-news.json',{cache:'no-store'}).catch(()=>({ok:false})),
-     fetch('/adc/assets/elena-comune-verifiche.json',{cache:'no-store'}).catch(()=>({ok:false}))
+     fetch('/adc/assets/elena-comune-verifiche.json',{cache:'no-store'}).catch(()=>({ok:false})),
+     fetch('/adc/assets/elena-amministrazione.json',{cache:'no-store'}).catch(()=>({ok:false}))
    ]).then(async responses=>{
      if(!responses[0].ok||!responses[1].ok)throw Error('Indice delle risposte non disponibile');
      return Promise.all(responses.map(r=>r.ok?r.json().catch(()=>null):null));
-   }).then(([index,approved,knowledge,municipality,news,checks])=>{
+   }).then(([index,approved,knowledge,municipality,news,checks,admin])=>{
      if(!Array.isArray(index?.entries)||!Array.isArray(approved?.answers))throw Error('Formato delle risorse documentarie non valido');
-     return {index,approved:approved.answers,knowledge:knowledge?.schema===1&&Array.isArray(knowledge.entries)?knowledge:{entries:[]},municipality:municipality?.schema===1?municipality:null,news:news?.schema===1?news:null,checks:checks?.schema===1?checks:null};
+     return {index,approved:approved.answers,knowledge:knowledge?.schema===1&&Array.isArray(knowledge.entries)?knowledge:{entries:[]},municipality:municipality?.schema===1?municipality:null,news:news?.schema===1?news:null,checks:checks?.schema===1?checks:null,admin:admin?.schema===1?admin:null};
    }).catch(err=>{resources=null;throw err});
    return resources;
  }
@@ -144,7 +145,7 @@
    try{
      const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
      const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
-     const reply=engine.reply(effective,data.index,data.approved,data.knowledge,data.municipality,data.news,data.checks);
+     const reply=engine.reply(effective,data.index,data.approved,data.knowledge,data.municipality,data.news,data.checks,data.admin);
      previousQuestion=effective;
      spokenKind=reply.kind;spokenId=reply.id||'';spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary'||reply.kind==='civic');result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
