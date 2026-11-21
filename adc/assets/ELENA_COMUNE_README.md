@@ -30,3 +30,11 @@ La fonte primaria è `https://comune.calatabiano.ct.it/`. Recapiti e orari sono 
 Il monitoraggio automatico riguarda **solo le novità istituzionali presenti nella prima pagina** del portale e può interrompersi se il Comune modifica il formato HTML o se GitHub Actions non esegue il workflow. Il funzionamento ricorrente del workflow deve essere verificato nei log GitHub. Non è un sistema di notizie in tempo reale né copre automaticamente tutte le associazioni, gli eventi privati, il traffico o le comunicazioni di altri enti.
 
 Le variazioni dei recapiti e degli orari richiedono un controllo distinto e la revisione delle fonti in `elena-comune-fonti.json`. La disponibilità dell'applicazione nel browser richiede collaudi ulteriori su dispositivi mobili e desktop.
+
+## Estensione recapiti e calendario — 21 novembre 2026
+
+Sono stati aggiunti numeri di telefono presenti nelle pagine ufficiali per Servizi Demografici, Protocollo, Tributi, Pubblica Istruzione, Cultura/Sport/Turismo. Il programma restituisce il numero dell'ufficio solo se la domanda riguarda contatti o telefono; se riguarda l'orario usa esclusivamente l'avviso pertinente. Per «quanti uffici» non inventa un numero e rimanda alla directory istituzionale. Per richieste su eventi e spettacoli rimanda al calendario comunale senza dichiarare che un evento è effettivamente in programma.
+
+La verifica automatica delle novità comunali è configurata in GitHub Actions, ma al controllo odierno non risultano ancora esecuzioni del workflow dedicato. I dati statici di recapito **non** vengono aggiornati dal workflow delle notizie: richiedono una revisione separata delle pagine di ufficio.
+
+Il 21 novembre 2026 il build GitHub Pages relativo all'ultimo commit risultava in corso; non presentare i nuovi recapiti come già visibili fino a deployment concluso e verifica HTTP. I test locali del motore hanno confermato i casi di contatto, orario e calendario.
