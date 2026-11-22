@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "version": "2026-11-22",
+  "scope": "public_editorial",
+  "description": "Estratto editoriale delle sole questioni sospese o chiuse al limite. Non sostituisce la concordanza o il registro privato ADC. Le corrispondenze sono circoscritte alla domanda esplicita e non generano nuove interpretazioni.",
+  "entries": [
+    {
+      "id": "ADC-001",
+      "subject": "Cripta dell'Annunziata: funzione funeraria delle nicchie",
+      "status": "SOSPESA",
+      "groups": [
+        [
+          "cripta",
+          "nicchie"
+        ],
+        [
+          "annunziata",
+          "chiesa madre",
+          "mortuarie",
+          "funerarie",
+          "sepolture",
+          "sepolti",
+          "sepoltura",
+          "tombe"
+        ]
+      ],
+      "title": "La funzione funeraria della cripta non è accertata",
+      "text": "La guida comunale del 2007 definisce alcune nicchie della cripta «mortuarie». Questo è il contenuto della testimonianza pubblicata, non una prova indipendente dell'effettivo utilizzo funerario. Le fotografie documentano le strutture visibili, ma non permettono di stabilirne la funzione originaria. L'indagine è sospesa al limite delle fonti finora esaminate.",
+      "limitation": "Riapertura soltanto in presenza di una relazione archeologica, un inventario antico o un documento funerario pertinente alle specifiche nicchie.",
+      "links": [
+        {
+          "title": "Chiesa Madre: descrizione e limiti della verifica",
+          "url": "/adc/chiese/schede/maria-santissima-annunziata/"
+        }
+      ]
+    },
+    {
+      "id": "ADC-010",
+      "subject": "Madonna dell'Imperio: presunta fondazione nel 1092",
+      "status": "SOSPESA",
+      "groups": [
+        [
+          "imperio"
+        ],
+        [
+          "1092",
+          "normanna",
+          "normanno",
+          "fondazione",
+          "fondata"
+        ]
+      ],
+      "title": "La data del 1092 è una tradizione da verificare",
+      "text": "La data del 1092 compare nella tradizione relativa alla Madonna dell'Imperio. Nel corpus esaminato dall'ADC non è stato verificato un atto di fondazione coevo che confermi quella cronologia. Il riferimento viene conservato come notizia tramandata, non presentato come data storica dimostrata.",
+      "limitation": "L'ipotesi si riapre soltanto con una testimonianza primaria pertinente o una nuova identificazione documentaria controllabile.",
+      "links": [
+        {
+          "title": "Madonna dell'Imperio: storia e testimonianze",
+          "url": "/adc/chiese/schede/madonna-dell-imperio/"
+        }
+      ]
+    },
+    {
+      "id": "ADC-016",
+      "subject": "Processo d'investitura 184: disponibilità documentaria",
+      "status": "CHIUSA PER INDISPONIBILITÀ",
+      "groups": [
+        [
+          "processo",
+          "investitura",
+          "fascicolo"
+        ],
+        [
+          "184"
+        ]
+      ],
+      "title": "Il Processo 184 non è disponibile nel corpus ADC",
+      "text": "Il Processo d'investitura n. 184 è descritto nel repertorio archivistico, ma non è disponibile come fascicolo verificato nell'archivio di studio ADC. Alcune fotografie un tempo etichettate P184 sono state ricondotte al Processo 334; non costituiscono quindi prova del possesso del 184.",
+      "limitation": "La ricerca sul contenuto del Processo 184 rimane chiusa per indisponibilità del fascicolo. Il Processo 334 è distinto e non può sostituirlo.",
+      "links": [
+        {
+          "title": "Processo 334: diario e limiti della lettura",
+          "url": "/adc/processo-334/"
+        }
+      ]
+    },
+    {
+      "id": "ADC-002",
+      "subject": "Attribuzione della tomba a Ignazio II Gravina nella cripta",
+      "status": "SOSPESA",
+      "groups": [
+        [
+          "ignazio",
+          "gravina"
+        ],
+        [
+          "cripta",
+          "tomba",
+          "sepolto",
+          "sepoltura"
+        ]
+      ],
+      "title": "La sepoltura attribuita a Ignazio Gravina richiede verifica",
+      "text": "Una guida locale riferisce una tradizione relativa alla tomba di un principe Gravina. La testimonianza non identifica con certezza una sepoltura nella cripta dell'Annunziata e non è stata confermata da un'epigrafe o da un documento funerario originale. Occorre inoltre distinguere le persone omonime della famiglia.",
+      "limitation": "Non attribuire la cripta a una sepoltura nominativa senza riscontro epigrafico o documentario specifico.",
+      "links": [
+        {
+          "title": "Annunziata: fonti e questioni aperte",
+          "url": "/adc/chiese/schede/maria-santissima-annunziata/"
+        }
+      ]
+    }
+  ]
+}
