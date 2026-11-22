@@ -7,7 +7,7 @@ const kb=require('../adc/assets/elena-conoscenza-verificata.json');
 let tests=0;
 const t=(name,fn)=>{fn();tests++;console.log('PASS',name)};
 const ask=q=>e.reply(q,idx,app,kb);
-t('castle passage and exact editorial text',()=>{const x=ask('Mostrami il passaggio sul castello del 1213');assert.equal(x.kind,'passage');assert.equal(x.text,kb.entries[0].answer);assert.match(x.limitation,/non una trascrizione letterale/);});
+t('castle passage and exact editorial text',()=>{const x=ask('Mostrami il passaggio sul castello del 1213');assert.equal(x.kind,'passage');assert.equal(x.text,kb.entries[0].answer);assert.match(x.limitation,/non la trascrizione letterale/);});
 t('referenced edition page',()=>{const x=ask('cerca il passaggio castello 1213');assert.match(x.links[0].title,/47–49/);assert.equal(x.links[0].url,'/adc/dossier-1213-1537/')});
 t('amount passage',()=>{const x=ask('mostrami estratto 15000 tari');assert.equal(x.kind,'passage');assert.equal(x.text,kb.entries[1].answer);});
 t('source limitations retained',()=>assert.match(ask('passaggio 15000 tari').limitation,/originale della pergamena/));

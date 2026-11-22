@@ -145,7 +145,7 @@
     return {kind:'passage',id:best.id,title:'Passaggio redazionale verificato',
       text:best.answer,
       links:best.sources.map(src=>({title:src.title+' — pp. '+src.page,url:src.url})),
-      limitation:'Questo è un estratto redazionale ADC approvato, non una trascrizione letterale dell’originale. '+best.evidence_limitations,
+      limitation:'La ricerca utilizza un testo redazionale, non la trascrizione letterale dell’originale. '+best.evidence_limitations,
       evidence_status:best.evidence_status,reviewer:best.reviewer,reviewed_at:best.reviewed_at};
   }
   // Orientamento editoriale: informazioni sul servizio, mai risposte storiche create dal sistema.
@@ -334,13 +334,13 @@
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
         const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary' || r.kind==='passage'
-          ? (r.kind==='passage' ? 'Estratto redazionale approvato, non trascrizione letterale dell’originale. Fonte e pagine sono indicate sotto.' : 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.')
+          ? (r.kind==='passage' ? 'Testo approvato dalla redazione ADC. La fonte e le pagine sono indicate sotto.' : 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.')
           : r.kind==='unavailable'
             ? 'Caricamento delle fonti non riuscito: nessuna conclusione storica può essere tratta.'
           : r.kind==='civic'
             ? 'Servizi e comunicazioni del Comune: informazioni attribuite al portale istituzionale. Verifica date e possibili aggiornamenti.'
           : r.kind==='passage-empty'
-            ? 'Nessun estratto redazionale approvato trovato in questo primo nucleo di documenti.'
+            ? 'Non viene proposta alcuna citazione priva di un riferimento approvato.'
           : r.kind==='index'
             ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
           : r.kind==='guide' || r.kind==='about' || r.kind==='contribution'
