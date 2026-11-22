@@ -1,7 +1,7 @@
 # ADC — Backend privato per le memorie
 
 ## Stato
-**Stato verificato il 21 novembre 2026:** database D1 `adc-memorie-private` creato nella regione WEUR e schema importato (tabelle `testimonianze` e `richieste_giornaliere`); Worker `adc-memorie-api` distribuito con binding `DB` su `https://adc-memorie-api.darkaronteanonymous-72c.workers.dev`. Il servizio risponde con HTTP 503 / `Servizio non ancora configurato` perché non risultano ancora completati i segreti. Widget Turnstile ADC creato; chiave pubblica nel file `../config.json`, segreto mai nel repository. **Il modulo pubblico resta disattivato**, `enabled:false`. Non interpretare la distribuzione del Worker come avvio del trattamento di testimonianze.
+**Verifica aggiornata al 22 novembre 2026:** Worker Cloudflare adc-memorie-api raggiungibile in HTTPS, collegato al database privato D1 adc-memorie-private. I segreti ADMIN_TOKEN, RATE_SALT e TURNSTILE_SECRET sono registrati nell'ambiente Worker, senza valori nel repository. La verifica /v1/health restituisce HTTP 200 (ready). I controlli remoti hanno dato HTTP 401 senza credenziale amministrativa, HTTP 200 con credenziale autorizzata, HTTP 403 per origine estranea e HTTP 400 per invio senza consenso. La pagina pubblica resta disattivata (enabled:false) finché non sono completati il collaudo Turnstile end-to-end, la valutazione privacy, la conservazione, i backup e le misure antiabuso.
 
 ## Manutenzione automatica e collaudo D1 (21 novembre 2026)
 - Cron Trigger distribuito sul Worker: `25 3 * * *` (03:25 UTC) per la manutenzione quotidiana.
@@ -9,7 +9,7 @@
 - Criteri e durate predisposti: [CONSERVAZIONE.md](./CONSERVAZIONE.md). È necessaria la loro validazione prima di trattare testimonianze reali.
 - Test di regressione JavaScript: **15/15 superati** sul PC Michele.
 - Collaudo D1 remoto con una testimonianza sintetica: inserimento, lettura, cancellazione e conferma di **0 record residui**.
-- Il Worker resta in `HTTP 503` per i segreti non configurati. `config.json.enabled=false`: nessun invio diretto dal sito ADC.
+- Il Worker risponde ora con HTTP 200 al controllo di salute. config.json.enabled=false: nessun invio diretto dal sito ADC.
 
 ## Componenti
 - `schema.sql`: schema per Cloudflare D1 (database privato).
@@ -45,7 +45,7 @@ Esempi nella cartella di distribuzione, dopo l'attivazione protetta del Worker:
 
 Il programma chiede il token con digitazione nascosta e lo mantiene in memoria per la singola operazione. Non inserire il token in file pubblici, variabili di configurazione GitHub o argomenti della linea di comando. Proteggere comunque la sessione Windows e non stampare i risultati contenenti dati privati.
 
-**Stato dei segreti:** la verifica `wrangler secret list` del 21 novembre 2026 ha restituito `[]`. L'inserimento delle credenziali tramite accesso remoto è stato bloccato dai controlli di sicurezza; non è stato aggirato. L'interfaccia pubblica resta disattivata.
+**Stato dei segreti:** i tre nomi sono stati verificati nell'ambiente Cloudflare il 22 novembre 2026. ADMIN_TOKEN e RATE_SALT sono generati distinti; la copia amministrativa è protetta localmente con DPAPI nell'account Windows autorizzato. TURNSTILE_SECRET proviene dal widget ADC esistente. Nessuna credenziale è pubblicata nel codice o nei log di questa documentazione. L'API è pronta, l'acquisizione pubblica resta disabilitata per le verifiche indicate sopra.
 
 ## Modello editoriale
 - `ricevuta`: conservazione privata; nessun pubblico accesso.
@@ -60,5 +60,6 @@ Il programma chiede il token con digitazione nascosta e lo mantiene in memoria p
 ## Pubblicazione / protezione dati
 Non caricare nel repository pubblico testimonianze grezze, nomi di persone non autorizzate, contatti, indirizzi, email, consensi, esportazioni del database o credenziali. Per modifiche o ritiro l'utente deve poter contattare il titolare, che dovrà identificare la pratica e intervenire nell'archivio privato.
 
-## Limiti attuali
-Questa release è un **prototipo distribuito ma non ancora attivo per l'acquisizione**. Manca la configurazione riservata dei tre segreti, la validazione dell'HTTPS da rete esterna, una prova integrale Turnstile/invio/lettura amministrativa e l'informativa privacy per la raccolta. L'ultimo controllo HTTPS da Node.js ha ricevuto HTTP 503, in linea con i segreti mancanti. Non contiene dashboard amministrativa autenticata pronta all'uso e non fornisce trascrizione di audio, archiviazione di fotografie o riconoscimento automatico di fonti.
+## Limiti ancora da chiudere
+
+Il backend è operativo per controlli di salute e autenticazione amministrativa; sono superati 15 test locali. Non risultano ancora conclusi il collaudo reale di un token Turnstile seguito da inserimento e cancellazione di una testimonianza sintetica tramite API, la revisione delle condizioni privacy e dei termini di conservazione, la verifica di backup/ripristino e del WAF/rate limiting su Cloudflare. Finché questi controlli non sono conclusi non impostare enabled:true nella configurazione pubblica. L'assenza di invio diretto non impedisce il salvataggio locale della bozza né l'invio volontario via email.
