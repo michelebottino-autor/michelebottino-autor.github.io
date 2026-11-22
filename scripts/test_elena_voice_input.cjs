@@ -1,0 +1,31 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('fs');
+const voice=require('../adc/assets/elena-voce-input.js');
+const listeners={};
+const button={textContent:'',attributes:{},disabled:false,setAttribute(k,v){this.attributes[k]=v},addEventListener(k,fn){listeners[k]=fn}};
+const status={textContent:''},input={value:''};
+let sent=0,clicked=0;
+const form={requestSubmit(){sent++}};
+const read={click(){clicked++}};
+let answers=[];
+const results={querySelectorAll(){return answers}};
+let observer;
+class Observer{constructor(callback){this.callback=callback;observer=this}observe(){}disconnect(){}}
+class Recognition{constructor(){Recognition.latest=this;this.started=false;this.stopped=false}start(){this.started=true}stop(){this.stopped=true;this.onend?.()}}
+const c=voice.createController({Recognition,form,input,button,status,autoRead:{checked:true},results,MutationObserverCtor:Observer});
+let n=0;
+const test=(name,fn)=>{fn();n++;console.log('PASS',name)};
+test('no implicit microphone start',()=>assert.equal(Recognition.latest,undefined));
+test('intentional mic click starts',()=>{listeners.click();assert.equal(Recognition.latest.started,true)});
+test('status and language',()=>{assert.equal(Recognition.latest.lang,'it-IT');assert.equal(button.attributes['aria-pressed'],'true')});
+test('speech produces question',()=>{Recognition.latest.onresult({results:[[{transcript:'Che cosa sai del castello del 1213?'}]]});assert.match(input.value,/castello/);assert.equal(sent,1)});
+test('read after answer rendered and explicitly opted in',()=>{answers=[{querySelector:()=>read}];observer.callback([{addedNodes:[{classList:{contains:v=>v==='elena-dialogue-answer'},querySelector:()=>read}]}]);assert.equal(clicked,1)});
+test('no duplicate read',()=>{observer.callback([{addedNodes:[{classList:{contains:v=>v==='elena-dialogue-answer'},querySelector:()=>read}]}]);assert.equal(clicked,1)});
+test('microphone ends',()=>{Recognition.latest.onend();assert.equal(c.isActive(),false)});
+test('second click supports stop',()=>{listeners.click();listeners.click();assert.equal(Recognition.latest.stopped,true)});
+test('permission denial explains',()=>{listeners.click();Recognition.latest.onerror({error:'not-allowed'});assert.match(status.textContent,/non autorizzato/)});
+test('unsupported browser disables voice',()=>{const b={...button,addEventListener(){}};voice.createController({Recognition:null,form,input,button:b,status});assert.equal(b.disabled,true)});
+test('page references microphone module',()=>assert.match(fs.readFileSync('adc/elena/index.html','utf8'),/elena-voce-input\.js/));
+test('no hidden mic activation',()=>assert.doesNotMatch(fs.readFileSync('adc/assets/elena-voce-input.js','utf8'),/getUserMedia|sendBeacon|XMLHttpRequest|fetch\s*\(/));
+test('cleanup',()=>{c.dispose();assert.equal(c.isActive(),false)});
+console.log('ELENA_VOICE_INPUT_TESTS',n);

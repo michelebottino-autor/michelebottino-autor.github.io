@@ -13,6 +13,9 @@ on:
       - 'scripts/test_elena_search.cjs'
       - 'scripts/test_elena_passages.cjs'
       - 'scripts/test_elena_corpus.cjs'
+      - 'scripts/test_elena_voice_input.cjs'
+      - 'adc/assets/elena-voce-input.js'
+      - 'adc/elena/index.html'
       - 'scripts/build_elena_corpus.py'
       - 'adc/assets/elena-corpus-search.js'
       - 'adc/assets/elena-corpus-documentario.json'
@@ -34,6 +37,8 @@ jobs:
       - run: node scripts/test_elena_passages.cjs
       - run: python3 scripts/build_elena_corpus.py --check
       - run: node scripts/test_elena_corpus.cjs
+      - run: node --check adc/assets/elena-voce-input.js
+      - run: node scripts/test_elena_voice_input.cjs
       - run: node .github/scripts/test-elena-dialogo.js
       - run: node .github/scripts/test-elena-contesto.js
       - run: node .github/scripts/test-elena-presenza.js
