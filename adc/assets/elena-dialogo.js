@@ -175,8 +175,29 @@
     }
     return null;
   }
-  function reply(q, index, approved, knowledge, municipality, news, checks, admin) {
+  // Gli stati editoriali sono verbali di un'indagine, non nuove prove del fatto storico.
+  function researchStatus(query, registry) {
+    if(!registry || registry.schema!==1 || !Array.isArray(registry.entries))return null;
+    const words=new Set(normalize(query).split(/[^a-z0-9]+/).filter(Boolean));
+    const matches=registry.entries.filter(e=>{
+      if(!e || !['SOSPESA','CHIUSA AL LIMITE','CHIUSA PER INDISPONIBILITÀ'].includes(e.status) ||
+         !Array.isArray(e.groups) || e.groups.length<2 || e.groups.some(g=>!Array.isArray(g)||!g.length) ||
+         typeof e.text!=='string'||!e.text.trim()||typeof e.limitation!=='string'||!e.limitation.trim() ||
+         !Array.isArray(e.links) || !e.links.length || !e.links.every(l=>l&&safeUrl(l.url)&&l.title))return false;
+      return e.groups.every(g=>g.some(term=>{
+        const parts=normalize(term).split(/[^a-z0-9]+/).filter(Boolean);
+        return parts.length>0 && parts.every(w=>words.has(w));
+      }));
+    });
+    if(matches.length!==1)return null;
+    const e=matches[0];
+    return {kind:'research-status',id:e.id,title:e.title,text:e.text,
+      limitation:e.limitation,links:e.links.map(l=>({title:l.title,url:l.url})),research_status:e.status};
+  }
+  function reply(q, index, approved, knowledge, municipality, news, checks, admin, researchRegistry) {
     const n = normalize(q);
+    const recordedStatus=researchStatus(q,researchRegistry);
+    if(recordedStatus)return recordedStatus;
     const passage=findPassages(q,knowledge,approved);
     if(passage)return passage;
     const orientation=serviceAnswer(q);
@@ -200,7 +221,7 @@
   function mount() {
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
-    let index={entries:[]}, approved=[], knowledge={entries:[]}, municipality=null, municipalNews=null, sourceChecks=null, administration=null, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
+    let index={entries:[]}, approved=[], knowledge={entries:[]}, municipality=null, municipalNews=null, sourceChecks=null, administration=null, researchRegistry=null, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
     const tools=document.createElement('div');tools.className='elena-conversation-tools';
     const availability=document.createElement('p');availability.className='elena-source-status';availability.setAttribute('role','status');
     availability.textContent='Caricamento del repertorio documentario…';
@@ -251,7 +272,7 @@
       window.addEventListener('pagehide',()=>welcomeAudio.pause());
     }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
-    const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json'),load('/adc/assets/elena-conoscenza-verificata.json'),load('/adc/assets/elena-comune-fonti.json'),load('/adc/assets/elena-comune-news.json'),load('/adc/assets/elena-comune-verifiche.json'),load('/adc/assets/elena-amministrazione.json')]).then(a=>{
+    const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json'),load('/adc/assets/elena-conoscenza-verificata.json'),load('/adc/assets/elena-comune-fonti.json'),load('/adc/assets/elena-comune-news.json'),load('/adc/assets/elena-comune-verifiche.json'),load('/adc/assets/elena-amministrazione.json'),load('/adc/assets/elena-stati-ricerca.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)){index=a[0].value;indexAvailable=true;}
       if(a[1].status==='fulfilled' && Array.isArray(a[1].value?.answers)){approved=a[1].value.answers;approvedAvailable=true;}
       if(a[2].status==='fulfilled'&&a[2].value?.schema===1&&Array.isArray(a[2].value.entries)){
@@ -261,6 +282,7 @@
       if(a[4].status==='fulfilled'&&a[4].value?.schema===1)municipalNews=a[4].value;
       if(a[5].status==='fulfilled'&&a[5].value?.schema===1)sourceChecks=a[5].value;
       if(a[6].status==='fulfilled'&&a[6].value?.schema===1)administration=a[6].value;
+      if(a[7].status==='fulfilled'&&a[7].value?.schema===1&&Array.isArray(a[7].value.entries))researchRegistry=a[7].value;
       availability.textContent=indexAvailable
         ? 'Indice consultabile: '+index.entries.length+' percorsi · '+(approvedAvailable?approved.filter(a=>a.status==='APPROVED_FOR_PUBLICATION').length+' risposte approvate':'risposte approvate non disponibili')
         : 'Indice non disponibile. La consultazione è temporaneamente limitata.';
@@ -322,8 +344,8 @@
           ? {kind:'unavailable',title:'Estratti temporaneamente non disponibili',text:'Le unità documentarie approvate non sono al momento consultabili. Riprova quando saranno disponibili: non è possibile stabilire se esista un passaggio pertinente.',links:[]}
           : (!indexAvailable && !approvedAvailable && !municipality && !administration && !serviceAnswer(effective) && !passageQuery)
           ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
-          : reply(effective,index,approved,knowledge,municipality,municipalNews,sourceChecks,administration);
-        if(!indexAvailable && !['documentary','passage','passage-empty','civic','guide','about','contribution','unavailable'].includes(r.kind)){
+          : reply(effective,index,approved,knowledge,municipality,municipalNews,sourceChecks,administration,researchRegistry);
+        if(!indexAvailable && !['documentary','passage','passage-empty','civic','guide','about','contribution','unavailable','research-status'].includes(r.kind)){
           r.kind='unavailable';
           r.title='Indice documentario non disponibile';
           r.text='Non è stato possibile consultare l’indice delle fonti. Non si può concludere che manchino testimonianze pertinenti.';
@@ -359,7 +381,7 @@
           ? 'Non è stato possibile consultare l’intero repertorio. La ricerca non è completa.'
           : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
         if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
-        if((r.kind==='documentary'||r.kind==='passage') && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
+        if((r.kind==='documentary'||r.kind==='passage'||r.kind==='research-status') && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         const voiceControls=make('div','elena-dialogue-voice');
         const read=make('button','elena-dialogue-read','Ascolta la risposta');
         read.type='button';
@@ -384,7 +406,7 @@
             status.textContent='La lettura vocale non è supportata da questo browser.';return;
           }
           stopAudio();
-          const spoken=r.title+'. '+r.text+((r.kind==='documentary'||r.kind==='passage') && r.limitation ? ' Limiti della verifica: '+r.limitation : '');
+          const spoken=r.title+'. '+r.text+((r.kind==='documentary'||r.kind==='passage'||r.kind==='research-status') && r.limitation ? ' Limiti della verifica: '+r.limitation : '');
           utterance=new SpeechSynthesisUtterance(spoken);
           utterance.lang='it-IT';utterance.rate=Number(speed.value);utterance.pitch=1;
           const voices=synthesis.getVoices();
@@ -437,5 +459,5 @@
     if(loc.searchParams.has('q')||loc.hash.startsWith('#q=')){loc.searchParams.delete('q');loc.hash='';try{history.replaceState(null,'',loc.pathname+loc.search)}catch(e){}}
     if(initial && initial.length<=160)run(initial);
   }
-  return {normalize,tokens,rank,reply,findPassages,serviceAnswer,knowledgeAnswer,contextualQuery,safeUrl,mount};
+  return {normalize,tokens,rank,reply,findPassages,serviceAnswer,knowledgeAnswer,researchStatus,contextualQuery,safeUrl,mount};
 });
