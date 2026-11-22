@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "kind": "editorial-corpus",
+  "description": "Testi redazionali approvati ADC; non trascrizioni diplomatiche o letture automatiche degli originali.",
+  "entries": [
+    {
+      "id": "ADC-KB-1213-CASTELLO",
+      "title": "Castello di Calatabiano, privilegio del marzo 1213",
+      "text": "Nel marzo 1213 Costanza, insieme al figlio Enrico, confermò alla Chiesa di Catania il castello di Calatabiano con le sue pertinenze. Il documento ricorda che il castello era passato al fisco regio dopo la vicenda del conte Pagano de Parisio e successivamente era stato affidato al conte Arnaldo.",
+      "text_type": "editorial_summary",
+      "transcription": false,
+      "approval_id": "E-026-A01-A03",
+      "reviewed_at": "2026-11-01",
+      "evidence_status": "IMAGE_COLLATED",
+      "limitations": "La verifica riguarda le pagine 47–49 dell'edizione Hillen, non la pergamena originale. Il privilegio è un atto di concessione e conferma; non è il contratto originale di compravendita.",
+      "keywords": [
+        "costanza",
+        "enrico",
+        "vescovo",
+        "chiesa",
+        "catania",
+        "privilegio",
+        "feudo",
+        "concessione",
+        "possedeva",
+        "apparteneva",
+        "possesso"
+      ],
+      "sources": [
+        {
+          "title": "Dossier ADC — Calatabiano nel 1213, Hillen n. 4",
+          "url": "/adc/dossier-1213-1537/",
+          "page": "47–49",
+          "source_type": "printed_edition"
+        }
+      ]
+    },
+    {
+      "id": "ADC-KB-1213-TARI",
+      "title": "Somma indicata nel privilegio del 1213",
+      "text": "Il privilegio del marzo 1213 menziona un pagamento di 15.000 tarì ad Arnaldo o al suo procuratore. Questa indicazione proviene dal testo della concessione e conferma, non da un contratto originale di compravendita.",
+      "text_type": "editorial_summary",
+      "transcription": false,
+      "approval_id": "E-026-A01-A03",
+      "reviewed_at": "2026-11-01",
+      "evidence_status": "IMAGE_COLLATED",
+      "limitations": "Dato ricavato dalle pagine 47–49 dell'edizione Hillen. Non è stato esaminato l'originale della pergamena; la sola menzione della somma non documenta autonomamente tutte le circostanze della transazione.",
+      "keywords": [
+        "arnaldo",
+        "tari",
+        "pagamento",
+        "pagati",
+        "somma",
+        "denaro",
+        "15000"
+      ],
+      "sources": [
+        {
+          "title": "Dossier ADC — Calatabiano nel 1213, Hillen n. 4",
+          "url": "/adc/dossier-1213-1537/",
+          "page": "47–49",
+          "source_type": "printed_edition"
+        }
+      ]
+    }
+  ]
+}
