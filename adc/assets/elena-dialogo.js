@@ -102,6 +102,52 @@
       limitation:entry.evidence_limitations,evidence_status:entry.evidence_status,
       reviewer:entry.reviewer,reviewed_at:entry.reviewed_at};
   }
+  // Ricerca di estratti REDAZIONALI approvati: non sono trascrizioni letterali di pergamene.
+  // Una unità è citabile solo se coincide con il relativo registro di approvazione.
+  function findPassages(query, knowledge, approved) {
+    const n=normalize(query);
+    const requested=/(?:passagg|estratt|nel testo|nella trascrizion|nel document|pagina (?:esatta|della fonte)|cerca (?:nel|all.interno del) testo)/.test(n);
+    if(!requested)return null;
+    const fallback={kind:'passage-empty',title:'Passaggi documentari da verificare',
+      text:'Non ho trovato un estratto redazionale approvato per questa ricerca. L’assenza di risultati non esclude altre testimonianze nell’archivio. Per ora la consultazione dei passaggi verificati è limitata al dossier sul 1213.',
+      links:[{title:'Repertorio generale delle fonti',url:'/adc/fonti/'}]};
+    if(!Array.isArray(knowledge?.entries)||!Array.isArray(approved))return fallback;
+    const ignore=new Set(['passaggio','passaggi','estratto','estratti','testo','testi','pagina','pagine','citazione','citazioni','trascrizione','mostrami','mostra','trovami','trova','documento','documenti','ricerca','cerca','verificata','approvato','nel','alla','dei','della','fonte','fonti']);
+    const words=new Set(n.split(/[^a-z0-9]+/).filter(t=>t.length>2&&!stop.has(t)&&!ignore.has(t)));
+    if(!words.size)return fallback;
+    const allowed=new Set(['SOURCE_IDENTIFIED','EDITION_TEXT_CHECKED','IMAGE_COLLATED','ORIGINAL_COLLATED']);
+    const matches=knowledge.entries.filter(e=>{
+      if(!e||e.status!=='APPROVED_FOR_PUBLICATION'||!allowed.has(e.evidence_status)||
+        !e.reviewer||!e.reviewed_at||!e.review_rationale||!e.source_answer_id||
+        typeof e.answer!=='string'||!e.answer.trim()||!e.evidence_limitations||
+        !Array.isArray(e.sources)||!e.sources.length||!Array.isArray(e.keywords))return false;
+      const parent=approved.find(a=>a.id===e.source_answer_id&&a.status==='APPROVED_FOR_PUBLICATION'&&
+        a.reviewer&&a.reviewed_at&&a.review_rationale&&Array.isArray(a.sources));
+      if(!parent)return false;
+      if(!e.sources.every(src=>src&&safeUrl(src.url)&&src.page&&src.source_type&&src.title&&
+         parent.sources.some(ps=>ps.url===src.url&&ps.page===src.page&&ps.source_type===src.source_type)))return false;
+      const subjectTokens=new Set(tokens(e.subject||''));
+      const answerTokens=new Set(tokens(e.answer));
+      const keywordTokens=new Set(e.keywords.flatMap(t=>tokens(t)));
+      const intersects=[...words].filter(w=>subjectTokens.has(w)||keywordTokens.has(w)||answerTokens.has(w));
+      // Evita coincidenze generiche su parole comuni a molte schede: occorre un ancoraggio
+      // nel soggetto/parole chiave, più una seconda parola o un identificativo specifico.
+      const subjectMatch=[...words].filter(w=>subjectTokens.has(w)||keywordTokens.has(w));
+      return subjectMatch.length>=1 && intersects.length>=2;
+    }).map(e=>{
+      const subject=new Set(tokens(e.subject||'')),answer=new Set(tokens(e.answer));
+      const tags=new Set(e.keywords.flatMap(t=>tokens(t)));
+      const score=[...words].reduce((n,w)=>n+(subject.has(w)?5:0)+(tags.has(w)?3:0)+(answer.has(w)?1:0),0);
+      return {e,score};
+    }).sort((a,b)=>b.score-a.score||a.e.id.localeCompare(b.e.id)).slice(0,3);
+    if(!matches.length)return fallback;
+    const best=matches[0].e;
+    return {kind:'passage',id:best.id,title:'Passaggio redazionale verificato',
+      text:best.answer,
+      links:best.sources.map(src=>({title:src.title+' — pp. '+src.page,url:src.url})),
+      limitation:'Questo è un estratto redazionale ADC approvato, non una trascrizione letterale dell’originale. '+best.evidence_limitations,
+      evidence_status:best.evidence_status,reviewer:best.reviewer,reviewed_at:best.reviewed_at};
+  }
   // Orientamento editoriale: informazioni sul servizio, mai risposte storiche create dal sistema.
   function serviceAnswer(q) {
     const n=normalize(q);
@@ -131,6 +177,8 @@
   }
   function reply(q, index, approved, knowledge, municipality, news, checks, admin) {
     const n = normalize(q);
+    const passage=findPassages(q,knowledge,approved);
+    if(passage)return passage;
     const orientation=serviceAnswer(q);
     if(orientation)return orientation;
     // Richiesta esplicita di contribuire con una memoria personale: nessuna raccolta implicita nella chat.
@@ -269,10 +317,13 @@
         if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
         const effective=contextualQuery(q,previousQuestion);
         const partial=(!indexAvailable || !approvedAvailable);
-        const r=(!indexAvailable && !approvedAvailable && !municipality && !administration && !serviceAnswer(effective))
+        const passageQuery=findPassages(effective,knowledge,approved);
+        const r=(passageQuery && (!knowledgeAvailable || !approvedAvailable))
+          ? {kind:'unavailable',title:'Estratti temporaneamente non disponibili',text:'Le unità documentarie approvate non sono al momento consultabili. Riprova quando saranno disponibili: non è possibile stabilire se esista un passaggio pertinente.',links:[]}
+          : (!indexAvailable && !approvedAvailable && !municipality && !administration && !serviceAnswer(effective) && !passageQuery)
           ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
           : reply(effective,index,approved,knowledge,municipality,municipalNews,sourceChecks,administration);
-        if(!indexAvailable && !['documentary','civic','guide','about','contribution'].includes(r.kind)){
+        if(!indexAvailable && !['documentary','passage','passage-empty','civic','guide','about','contribution','unavailable'].includes(r.kind)){
           r.kind='unavailable';
           r.title='Indice documentario non disponibile';
           r.text='Non è stato possibile consultare l’indice delle fonti. Non si può concludere che manchino testimonianze pertinenti.';
@@ -282,19 +333,21 @@
         output.append(make('p','elena-dialogue-question',q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
-        const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary'
-          ? 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.'
+        const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary' || r.kind==='passage'
+          ? (r.kind==='passage' ? 'Estratto redazionale approvato, non trascrizione letterale dell’originale. Fonte e pagine sono indicate sotto.' : 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.')
           : r.kind==='unavailable'
             ? 'Caricamento delle fonti non riuscito: nessuna conclusione storica può essere tratta.'
           : r.kind==='civic'
             ? 'Servizi e comunicazioni del Comune: informazioni attribuite al portale istituzionale. Verifica date e possibili aggiornamenti.'
+          : r.kind==='passage-empty'
+            ? 'Nessun estratto redazionale approvato trovato in questo primo nucleo di documenti.'
           : r.kind==='index'
             ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
           : r.kind==='guide' || r.kind==='about' || r.kind==='contribution'
             ? 'Informazioni sul servizio ADC. Per i dati storici consulta le fonti documentarie indicate.'
             : 'Nessuna attestazione approvata individuata per questa domanda.');
         article.append(evidence);
-        if(r.kind==='documentary' && r.reviewed_at && r.evidence_status){
+        if((r.kind==='documentary'||r.kind==='passage') && r.reviewed_at && r.evidence_status){
           const levels={SOURCE_IDENTIFIED:'Fonte identificata',EDITION_TEXT_CHECKED:'Edizione controllata',
             IMAGE_COLLATED:'Collazione su immagini',ORIGINAL_COLLATED:'Originale collazionato'};
           article.append(make('p','elena-dialogue-evidence',
@@ -302,11 +355,11 @@
             ' · Revisione: '+r.reviewed_at+
             (r.reviewer?' · '+r.reviewer:'')));
         }
-        if(partial && !['civic','guide','about','contribution'].includes(r.kind)) article.append(make('p','elena-dialogue-evidence',!indexAvailable
+        if(partial && !['civic','guide','about','contribution','passage','passage-empty'].includes(r.kind)) article.append(make('p','elena-dialogue-evidence',!indexAvailable
           ? 'Non è stato possibile consultare l’intero repertorio. La ricerca non è completa.'
           : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
         if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
-        if(r.kind==='documentary' && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
+        if((r.kind==='documentary'||r.kind==='passage') && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         const voiceControls=make('div','elena-dialogue-voice');
         const read=make('button','elena-dialogue-read','Ascolta la risposta');
         read.type='button';
@@ -331,7 +384,7 @@
             status.textContent='La lettura vocale non è supportata da questo browser.';return;
           }
           stopAudio();
-          const spoken=r.title+'. '+r.text+(r.kind==='documentary' && r.limitation ? ' Limiti della verifica: '+r.limitation : '');
+          const spoken=r.title+'. '+r.text+((r.kind==='documentary'||r.kind==='passage') && r.limitation ? ' Limiti della verifica: '+r.limitation : '');
           utterance=new SpeechSynthesisUtterance(spoken);
           utterance.lang='it-IT';utterance.rate=Number(speed.value);utterance.pitch=1;
           const voices=synthesis.getVoices();
@@ -347,7 +400,7 @@
         // Il comando vocale precede il testo lungo: resta subito visibile anche su smartphone.
         article.insertBefore(voiceControls,article.children[1] || null);
         if(r.links.length) {
-          article.append(make('p','elena-dialogue-sources',r.kind==='documentary'?'Fonti della risposta:':r.kind==='civic'?'Fonte ufficiale del Comune:':'Apri i documenti e i percorsi:'));
+          article.append(make('p','elena-dialogue-sources',(r.kind==='documentary'||r.kind==='passage')?'Fonti della risposta:':r.kind==='civic'?'Fonte ufficiale del Comune:':'Apri i documenti e i percorsi:'));
           const list=make('ul','elena-dialogue-links');
           for (const link of r.links) {
             if(!safeUrl(link.url))continue;
@@ -384,5 +437,5 @@
     if(loc.searchParams.has('q')||loc.hash.startsWith('#q=')){loc.searchParams.delete('q');loc.hash='';try{history.replaceState(null,'',loc.pathname+loc.search)}catch(e){}}
     if(initial && initial.length<=160)run(initial);
   }
-  return {normalize,tokens,rank,reply,serviceAnswer,knowledgeAnswer,contextualQuery,safeUrl,mount};
+  return {normalize,tokens,rank,reply,findPassages,serviceAnswer,knowledgeAnswer,contextualQuery,safeUrl,mount};
 });
