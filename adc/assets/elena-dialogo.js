@@ -361,6 +361,8 @@
             ? 'Caricamento delle fonti non riuscito: nessuna conclusione storica può essere tratta.'
           : r.kind==='civic'
             ? 'Servizi e comunicazioni del Comune: informazioni attribuite al portale istituzionale. Verifica date e possibili aggiornamenti.'
+          : r.kind==='research-status'
+            ? 'Stato della ricerca ADC: indagine sospesa o chiusa al limite delle fonti consultate. Non costituisce prova che il fatto storico non sia mai avvenuto.'
           : r.kind==='passage-empty'
             ? 'Non viene proposta alcuna citazione priva di un riferimento approvato.'
           : r.kind==='index'
@@ -377,7 +379,7 @@
             ' · Revisione: '+r.reviewed_at+
             (r.reviewer?' · '+r.reviewer:'')));
         }
-        if(partial && !['civic','guide','about','contribution','passage','passage-empty'].includes(r.kind)) article.append(make('p','elena-dialogue-evidence',!indexAvailable
+        if(partial && !['civic','guide','about','contribution','passage','passage-empty','research-status'].includes(r.kind)) article.append(make('p','elena-dialogue-evidence',!indexAvailable
           ? 'Non è stato possibile consultare l’intero repertorio. La ricerca non è completa.'
           : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
         if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
@@ -422,7 +424,7 @@
         // Il comando vocale precede il testo lungo: resta subito visibile anche su smartphone.
         article.insertBefore(voiceControls,article.children[1] || null);
         if(r.links.length) {
-          article.append(make('p','elena-dialogue-sources',(r.kind==='documentary'||r.kind==='passage')?'Fonti della risposta:':r.kind==='civic'?'Fonte ufficiale del Comune:':'Apri i documenti e i percorsi:'));
+          article.append(make('p','elena-dialogue-sources',(r.kind==='documentary'||r.kind==='passage')?'Fonti della risposta:':r.kind==='civic'?'Fonte ufficiale del Comune:':r.kind==='research-status'?'Consulta il dossier della questione:':'Apri i documenti e i percorsi:'));
           const list=make('ul','elena-dialogue-links');
           for (const link of r.links) {
             if(!safeUrl(link.url))continue;
