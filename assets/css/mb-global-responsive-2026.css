@@ -131,3 +131,9 @@ html.mb-global main :where(img,video,iframe){max-width:100%}
 @media(prefers-reduced-motion:reduce){
   html.mb-global :where(*, *::before, *::after){scroll-behavior:auto!important}
 }
+
+/* Correzione comune 2026: evita il taglio laterale di schede autore e opere su mobile/tablet. */
+@media(max-width:1024px){
+ html.mb-global main{box-sizing:border-box!important;max-width:100%!important}
+ html.mb-global body.mb-book-page main>.panel{box-sizing:border-box!important;max-width:100%!important}
+}

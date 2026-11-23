@@ -26,3 +26,11 @@ html.adc-mobile-audit :is(a,button,summary,input,textarea,select):focus-visible{
 
 /* Preserve historical maps, facsimiles, embedded media, and specialist multi-column data grids. */
 @media(max-width:700px){html.adc-mobile-audit main :is(figure,.map-frame,.document-image){max-width:100%;min-width:0}html.adc-mobile-audit main :is(.map-frame img,.document-image img){max-width:100%;object-fit:contain}}
+
+/* Correzione condivisa ADC: contenitori principali dentro il viewport mobile/tablet. */
+@media(max-width:1024px){
+ body.adc-inner-2026>main,
+ body.adc-inner-2026>header:not(#adc-unified-header){
+  box-sizing:border-box!important;max-width:100%!important
+ }
+}
