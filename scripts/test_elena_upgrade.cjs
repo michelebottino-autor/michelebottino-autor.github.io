@@ -14,7 +14,7 @@ let count=0;
 function t(label,fn){fn();console.log('OK',label);count++}
 t('elena capability guidance',()=>{const x=ask('Che cosa puoi fare?');assert.equal(x.kind,'guide');assert.match(x.text,/documenti/);assert.ok(x.links.every(x=>engine.safeUrl(x.url)))});
 t('elena self introduction',()=>assert.equal(ask('Chi sei?').kind,'guide'));
-t('creators clear',()=>{const x=ask('Chi ha ideato Elena?');assert.equal(x.kind,'about');assert.match(x.text,/Michele Bottino/);assert.match(x.text,/Dark Aronte/)});
+t('creators clear',()=>{const x=ask('Chi ha ideato Elena?');assert.equal(x.kind,'about');assert.match(x.text,/Michele Bottino/);assert.match(x.text,/DarkAronte/)});
 t('developers clear',()=>assert.equal(ask('Chi ha sviluppato Elena?').kind,'about'));
 t('dark aronte identity',()=>assert.equal(ask('Chi è Dark Aronte?').kind,'about'));
 t('privacy guidance',()=>assert.equal(ask('Memorizzi le domande della chat?').kind,'guide'));
