@@ -173,3 +173,66 @@ body.adc-inner-2026 figcaption,body.adc-mobile-audit figcaption,body.adc-utility
   #adc-unified-header .adc-u-brand .adc-u-emblem{flex-basis:44px;width:44px;height:44px;}
   #adc-unified-header .adc-u-brand{gap:8px;}
 }
+
+/* ADC — consolidamento grafico: un unico menu e una gerarchia di accesso coerente. */
+#adc-unified-header .adc-u-more{
+  position:relative;align-self:center;margin-left:auto;min-width:0;
+  font:600 .9rem/1.45 system-ui,sans-serif;color:#e5edf0;
+}
+#adc-unified-header .adc-u-more summary{
+  list-style:none;cursor:pointer;min-height:43px;padding:9px 13px;
+  display:flex;align-items:center;gap:7px;border:1px solid #c7a56780;
+  border-radius:8px;user-select:none;color:#f6e5c6;
+}
+#adc-unified-header .adc-u-more summary::-webkit-details-marker{display:none}
+#adc-unified-header .adc-u-more summary::after{content:"⌄";font-size:1.1em;line-height:1}
+#adc-unified-header .adc-u-more[open] summary::after{content:"⌃"}
+#adc-unified-header .adc-u-more summary:hover,
+#adc-unified-header .adc-u-more summary:focus-visible{background:#284653;color:#fff;outline-offset:2px}
+#adc-unified-header .adc-u-more:not([open]) .adc-u-more-links{display:none!important}
+#adc-unified-header .adc-u-more-links{
+  position:absolute;right:0;top:calc(100% + 6px);z-index:30;
+  width:min(310px,90vw);display:grid;grid-template-columns:1fr;gap:3px;
+  padding:10px;background:#0c202e;border:1px solid #b99b67;
+  border-radius:11px;box-shadow:0 16px 36px #071d2b40;
+}
+#adc-unified-header .adc-u-more-links a{
+  width:100%;min-height:43px;padding:10px 12px!important;
+  display:flex;align-items:center;white-space:normal;line-height:1.4
+}
+#adc-unified-header .adc-u-more summary:focus-visible{
+  outline:3px solid #d8b87c!important
+}
+@media(max-width:760px){
+  #adc-unified-header .adc-u-more{width:100%;margin:4px 0 0;align-self:stretch}
+  #adc-unified-header .adc-u-more summary{min-height:47px;padding:12px;border-radius:9px}
+  #adc-unified-header .adc-u-more-links{
+    position:static;width:100%;box-shadow:none;margin-top:5px;
+    padding:5px 6px 6px 14px;border-color:#ffffff35;background:#173440
+  }
+  #adc-unified-header .adc-u-more-links a{min-height:47px}
+}
+/* Identità cromatica e leggibilità condivisa nelle sezioni dell'Archivio. */
+body.adc-archive-home,body.adc-inner-2026{
+  --adc-design-bg:#f4f4f0;--adc-design-paper:#fffdf9;
+  --adc-design-ink:#213746;--adc-design-accent:#b99b67;
+  --adc-design-border:#dbe4e6;
+  background:var(--adc-design-bg)!important;color:var(--adc-design-ink)!important;
+}
+body.adc-archive-home main :is(h1,h2,h3),
+body.adc-inner-2026 main :is(h1,h2,h3){
+  font-family:Georgia,"Times New Roman",serif;
+  text-wrap:balance;overflow-wrap:break-word
+}
+body.adc-archive-home main :is(a,button,input,select,summary):focus-visible,
+body.adc-inner-2026 main :is(a,button,input,select,summary):focus-visible{
+  outline:3px solid var(--adc-design-accent)!important;outline-offset:3px!important
+}
+body.adc-archive-home main img,body.adc-inner-2026 main img{
+  max-width:100%;height:auto
+}
+@media(prefers-reduced-motion:reduce){
+  #adc-unified-header *,body.adc-archive-home main *,body.adc-inner-2026 main *{
+    scroll-behavior:auto!important;transition-duration:.01ms!important
+  }
+}
