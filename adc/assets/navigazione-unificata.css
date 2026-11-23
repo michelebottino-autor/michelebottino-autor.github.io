@@ -265,3 +265,19 @@ html.adc-mobile-audit main :where(a){text-underline-offset:3px}
   transform:translateY(8px)!important;outline:3px solid #b99b67!important;
   outline-offset:3px!important
 }
+
+/* Identità ADC / DarkAronte 2026 — navigazione e superfici comuni a tutte le sezioni */
+#adc-unified-header{--adc-nav-night:#073333;--adc-nav-gold:#e0b978;background:linear-gradient(108deg,#042a2d,#104c45)!important;border-bottom:1px solid #dcba7d95!important;color:#f4f4e8!important;box-shadow:0 7px 24px #001d1d42!important}
+#adc-unified-header .adc-u-brand{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.02em;color:#f9f3e4!important}
+#adc-unified-header .adc-u-brand small{color:#e4cca2!important}
+#adc-unified-header .adc-u-links a{color:#edf4ec!important;border-radius:10px!important}
+#adc-unified-header .adc-u-links a:hover,#adc-unified-header .adc-u-links a[aria-current=page]{color:#ffe3ab!important;background:#23655a!important}
+#adc-unified-header .adc-u-toggle{border:1px solid #ddb978!important;background:#18534c!important;color:#fff!important}
+body.adc-inner-2026:not(:has(.adc-lux-elena-hero)),body.adc-archive-home{background-color:#0b3434!important;background-image:linear-gradient(150deg,#0b3434 0,#15483e 45%,#052a2d 100%)!important}
+body.adc-inner-2026:not(:has(.adc-lux-elena-hero)) :is(main.adc-unified-page,main#contenuto){border-radius:18px;box-shadow:0 16px 45px #001f1f30}
+body.adc-inner-2026:not(:has(.adc-lux-elena-hero)) :is(main.adc-unified-page,main#contenuto) :is(h1,h2){text-decoration-color:#d7b474}
+body.adc-inner-2026 :is(.adc-inner-footer,.adc-archive-footer){border-top:1px solid #d3ae7666}
+body.adc-archive-home :is(.adc-archive-footer,.adc-inner-footer){background:#072d2c!important;color:#eaf2e7!important}
+body.adc-archive-home :is(.adc-archive-footer,.adc-inner-footer) a{color:#f6ddae!important}
+html.adc-mobile-audit :focus-visible{outline:3px solid #e7c27e!important;outline-offset:3px}
+@media(max-width:760px){#adc-unified-header .adc-u-links[data-open=true]{background:#083737!important;border:1px solid #d0b17d65!important;border-radius:13px!important}}
