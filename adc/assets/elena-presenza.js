@@ -8,7 +8,7 @@
  document.body.append(root);
  const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result'),send=form.querySelector('button');
  const paolaSampleButton=root.querySelector('.elena-paola-sample');
- const paolaSampleAudio=new Audio('/adc/audio/elena-paola-benvenuto.mp3');
+ const paolaSampleAudio=new Audio('/adc/audio/elena-ufficiale-20261123.wav');
  paolaSampleAudio.preload='none';
  paolaSampleButton.addEventListener('click',()=>{
    if(!paolaSampleAudio.paused){paolaSampleAudio.pause();paolaSampleAudio.currentTime=0;paolaSampleButton.textContent='Ascolta Elena';return;}
@@ -26,6 +26,7 @@
  const synthesis=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window)?window.speechSynthesis:null;
  function stopSpeech(){if(synthesis)synthesis.cancel();paolaAnswerAudio.pause();paolaAnswerAudio.currentTime=0;paolaPageAudio.pause();paolaPageAudio.currentTime=0;paolaSampleAudio.pause();paolaSampleButton.textContent='Ascolta Elena';stopButton.hidden=true;}
  function speakText(text){
+   stopSpeech();voiceNote.textContent='La lettura di questo testo con la nuova voce ufficiale di Elena non è ancora stata validata. Il campione approvato è disponibile con «Ascolta Elena».';return;
    if(!synthesis){voiceNote.textContent='La lettura vocale non è disponibile in questo browser.';return;}
    stopSpeech();
    if(!text.trim())return;
@@ -42,6 +43,7 @@
    synthesis.speak(utterance);
  }
  readButton.addEventListener('click',()=>{
+   stopSpeech();voiceNote.textContent='La lettura di questo testo con la nuova voce ufficiale di Elena non è ancora stata validata. Il campione approvato è disponibile con «Ascolta Elena».';return;
    if(spokenKind==='index'||spokenKind==='empty'){
      stopSpeech();
      paolaAnswerAudio.src='/adc/audio/elena-paola-risposta-'+(spokenKind==='index'?'indice':'vuota')+'.mp3';
@@ -55,6 +57,7 @@
    }else{voiceNote.textContent='Nessuna registrazione vocale disponibile per questa risposta.';}
  });
  pageButton.addEventListener('click',()=>{
+   stopSpeech();voiceNote.textContent='La lettura di questo testo con la nuova voce ufficiale di Elena non è ancora stata validata. Il campione approvato è disponibile con «Ascolta Elena».';return;
    const path=window.location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');
    const recordings={'/adc/storia-per-tutti':'/adc/audio/elena-paola-storia-per-tutti.mp3','/adc/elena':'/adc/audio/elena-paola-pagina-elena.mp3'};
    if(!recordings[path]){

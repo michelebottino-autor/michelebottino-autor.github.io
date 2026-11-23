@@ -1,0 +1,8 @@
+Elena ADC — campione vocale ufficiale approvato il 23 novembre 2026.
+Traccia: elena-ufficiale-20261123.wav.
+Testo: Ai suoi piedi cresceva un borgo attraversato da vie, piazze e quartieri nei quali si svolgevano le attività quotidiane.
+Sintesi: modello it_IT-serena-medium di committa, motore Piper.
+Modello: https://huggingface.co/committa/it_IT-serena-medium
+Licenza del modello: Creative Commons Attribution 4.0 International (CC BY 4.0).
+Non confondere la licenza del modello con i diritti sui testi dell'Archivio Documentale Calatabiano.
+La stessa voce per testi diversi richiede ulteriore sintesi e verifica prima della pubblicazione.

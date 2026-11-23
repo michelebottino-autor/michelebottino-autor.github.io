@@ -262,7 +262,7 @@
     // Il benvenuto usa la registrazione originale Paola anche nella pagina completa.
     const welcome=document.getElementById('elena-paola-welcome');
     if(welcome){
-      const welcomeAudio=new Audio('/adc/audio/elena-paola-benvenuto.mp3');welcomeAudio.preload='none';welcomeAudio.playbackRate=0.95;welcomeAudio.preservesPitch=true;
+      const welcomeAudio=new Audio('/adc/audio/elena-ufficiale-20261123.wav');welcomeAudio.preload='none';welcomeAudio.playbackRate=1;welcomeAudio.preservesPitch=true;
       welcome.addEventListener('click',()=>{
         if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta Elena';return;}
         welcomeAudio.currentTime=0;
@@ -404,6 +404,7 @@
         }
         speedLabel.append(speed);
         read.addEventListener('click',()=>{
+          status.textContent='La lettura di questo testo con la nuova voce ufficiale di Elena non è ancora stata validata. Il campione approvato è disponibile con «Ascolta Elena».';return;
           if(!synthesis || typeof SpeechSynthesisUtterance==='undefined'){
             status.textContent='La lettura vocale non è supportata da questo browser.';return;
           }
