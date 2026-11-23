@@ -36,3 +36,9 @@ test('shared page surfaces define consistent cards, headings and footer colors',
   assert.match(css, /footer\.adc-global-footer/);
   assert.match(css, /Georgia/);
 });
+
+test('secondary menu closes on mobile menu dismissal and Escape', () => {
+  assert.match(js, /if \(!open\) more\.open = false/);
+  assert.match(js, /if \(event\.key === 'Escape'\)/);
+  assert.match(js, /more\.open \|\| button\.getAttribute\('aria-expanded'\)/);
+});
