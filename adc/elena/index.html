@@ -78,7 +78,25 @@ document.addEventListener('DOMContentLoaded',function(){
     const data=JSON.parse(raw);
     if(typeof data.q==='string' && data.q.length<=160 && Date.now()>=data.at && Date.now()-data.at<120000){
       const input=document.getElementById('elena-query');
-      if(input){input.value=data.q;input.scrollIntoView({behavior:'smooth',block:'center'});input.focus();}
+      if(input){
+        input.value=data.q;
+        input.scrollIntoView({behavior:'smooth',block:'center'});
+        const form=document.getElementById('elena-form');
+        const sourceStatus=document.querySelector('.elena-source-status');
+        let submitted=false;
+        const run=()=>{
+          if(submitted||!form||!sourceStatus)return;
+          if(sourceStatus.textContent.includes('pronte per la consultazione')){
+            submitted=true;form.requestSubmit();
+          }
+        };
+        run();
+        if(!submitted && sourceStatus){
+          const observer=new MutationObserver(()=>{run();if(submitted)observer.disconnect()});
+          observer.observe(sourceStatus,{childList:true,characterData:true,subtree:true});
+          window.setTimeout(()=>observer.disconnect(),9000);
+        }
+      }
     }
   }catch(_){}
 });
