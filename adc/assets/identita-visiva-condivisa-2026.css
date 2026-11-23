@@ -168,3 +168,26 @@ body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-her
 body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-scholars-access a{
  color:#ffdc98!important;-webkit-text-fill-color:#ffdc98!important;
 }
+
+/* Schede tematiche e moduli: superfici glass con testo ad alto contrasto. */
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.adc-access-grid>.route,.adc-access-grid>a,.adc-scholars-grid>a,.route,.sheet,.media-videos,.media-card,.media-note,.adc-photo-context,.evidenze-table,[id^="adc-"],#territorio,#castello,#comunita,#memo-form,#registro-pubblico,#registro-stato){
+ color:#f0f0e7!important;-webkit-text-fill-color:#f0f0e7!important;
+ background:linear-gradient(145deg,rgba(24,91,79,.86),rgba(7,54,52,.94))!important;
+ border-color:var(--adc-visual-line)!important;border-radius:14px;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.adc-access-grid>.route,.adc-access-grid>a,.adc-scholars-grid>a,.route,.sheet,.media-videos,.media-card,.media-note,.adc-photo-context,.evidenze-table,[id^="adc-"],#territorio,#castello,#comunita,#memo-form,#registro-pubblico,#registro-stato) :is(h1,h2,h3,h4,p,li,dt,dd,label,small,span,strong){
+ color:#f0f0e7!important;-webkit-text-fill-color:#f0f0e7!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.adc-access-grid>.route,.adc-access-grid>a,.adc-scholars-grid>a,.route,.sheet,.media-videos,.media-card,.media-note,.adc-photo-context,.evidenze-table,[id^="adc-"],#territorio,#castello,#comunita,#memo-form,#registro-pubblico,#registro-stato) :is(h1,h2,h3,h4){
+ color:#ffdfa2!important;-webkit-text-fill-color:#ffdfa2!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.adc-access-grid>.route,.adc-access-grid>a,.adc-scholars-grid>a,.route,.sheet,.media-videos,.media-card,.media-note,.adc-photo-context,.evidenze-table,[id^="adc-"],#territorio,#castello,#comunita,#memo-form,#registro-pubblico,#registro-stato) a{
+ color:#ffdc98!important;-webkit-text-fill-color:#ffdc98!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .tag{
+ background:rgba(213,173,103,.24)!important;color:#fff0c8!important;-webkit-text-fill-color:#fff0c8!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .evidenze-table :is(th,td){
+ background:rgba(8,57,54,.82)!important;color:#f0f0e7!important;-webkit-text-fill-color:#f0f0e7!important;
+ border-color:var(--adc-visual-line)!important;
+}

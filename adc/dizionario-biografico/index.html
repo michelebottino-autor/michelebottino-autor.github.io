@@ -252,4 +252,4 @@ a{color:#765337;text-underline-offset:3px}a:hover{color:#23594f}a:focus-visible,
 </footer></main>
 <script>
 (function(){const input=document.getElementById("cerca"),cards=Array.from(document.querySelectorAll(".entry")),links=Array.from(document.querySelectorAll("#alphabet li")),count=document.getElementById("count"),empty=document.getElementById("empty");function normalize(s){return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim()}function apply(){const q=normalize(input.value);let n=0;cards.forEach(card=>{const ok=!q||normalize(card.dataset.name+" "+card.textContent).includes(q);card.hidden=!ok;if(ok)n++});links.forEach(li=>{const id=li.firstElementChild.getAttribute("href").slice(1),card=document.getElementById(id);li.hidden=!!card.hidden});count.textContent=n+(n===1?" voce":" voci");empty.style.display=n?"none":"block"}input.addEventListener("input",apply);})();
-</script><script src="/adc/assets/navigazione-unificata.js?v=20261123-visual-theme-2" defer></script></body></html>
+</script><script src="/adc/assets/navigazione-unificata.js?v=20261123-visual-theme-3" defer></script></body></html>
