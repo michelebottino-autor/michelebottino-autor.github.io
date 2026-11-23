@@ -18,7 +18,7 @@ test('archive navigation preserves people and press links while separating main 
 test('mobile navigation exposes state and supports Escape', () => {
   assert.match(js, /aria-expanded/);
   assert.match(js, /event\.key === 'Escape'/);
-  assert.match(js, /button\.focus\(\)/);
+  assert.match(js, /\(mobileMenuOpen \? button : summary\)\.focus\(\)/);
   assert.match(css, /:focus-visible/);
 });
 
