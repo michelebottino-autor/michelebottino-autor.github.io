@@ -259,16 +259,16 @@
       input.placeholder='Scrivi la tua domanda a Elena…';
       input.focus();
     }));
-    // Il benvenuto usa la registrazione originale Paola anche nella pagina completa.
+    // Il pulsante riproduce unicamente il campione P approvato; non è un lettore dinamico.
     const welcome=document.getElementById('elena-paola-welcome');
     if(welcome){
       const welcomeAudio=new Audio('/adc/audio/elena-ufficiale-20261123.wav');welcomeAudio.preload='none';welcomeAudio.playbackRate=1;welcomeAudio.preservesPitch=true;
       welcome.addEventListener('click',()=>{
-        if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta Elena';return;}
+        if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta un campione della voce';return;}
         welcomeAudio.currentTime=0;
-        welcomeAudio.play().then(()=>{welcome.textContent='Ferma Elena';}).catch(()=>{welcome.textContent='Il messaggio vocale non è disponibile';});
+        welcomeAudio.play().then(()=>{welcome.textContent='Ferma il campione';}).catch(()=>{welcome.textContent='Il messaggio vocale non è disponibile';});
       });
-      welcomeAudio.addEventListener('ended',()=>{welcome.textContent='Ascolta Elena';});
+      welcomeAudio.addEventListener('ended',()=>{welcome.textContent='Ascolta un campione della voce';});
       window.addEventListener('pagehide',()=>welcomeAudio.pause());
     }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
@@ -404,7 +404,7 @@
         }
         speedLabel.append(speed);
         read.addEventListener('click',()=>{
-          status.textContent='La lettura di questo testo con la nuova voce ufficiale di Elena non è ancora stata validata. Il campione approvato è disponibile con «Ascolta Elena».';return;
+          status.textContent='La lettura di questo testo con la nuova voce ufficiale di Elena non è ancora stata validata. Il campione approvato è disponibile con «Ascolta un campione della voce».';return;
           if(!synthesis || typeof SpeechSynthesisUtterance==='undefined'){
             status.textContent='La lettura vocale non è supportata da questo browser.';return;
           }
