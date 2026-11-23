@@ -70,7 +70,11 @@ export default {
   if(origin && origin!==ORIGIN)return json({error:'Origine non ammessa'},403);
   if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{'access-control-allow-origin':ORIGIN,'access-control-allow-methods':'GET,POST,PATCH,DELETE,OPTIONS','access-control-allow-headers':'Content-Type,Authorization','access-control-max-age':'3600'}});
   try{
-   if(url.pathname==='/v1/health'&&request.method==='GET')return json({status:'ready'},200,allow);
+   if(url.pathname==='/v1/health'&&request.method==='GET'){
+    // Stato pronto soltanto se il collegamento D1 risponde realmente.
+    await env.DB.prepare('SELECT 1 AS ok').first();
+    return json({status:'ready'},200,allow);
+   }
    if(url.pathname==='/v1/memorie'&&request.method==='POST'){
     if(origin!==ORIGIN)return json({error:'Invio consentito solo dal sito ADC'},403,allow);
     if(Number(request.headers.get('content-length')||0)>65000)return json({error:'Testo troppo lungo'},413,allow);
