@@ -40,7 +40,13 @@
        // The audio track can be passed directly only where SpeechRecognition.start(track) is supported.
        // Browser-based recognition may still rely on its own service, not Elena's private PC.
        let mode='standard del browser';
-       if(root.navigator?.mediaDevices?.getUserMedia){
+       // Android Chrome does not currently accept the experimental audioTrack parameter.
+       // Do not acquire a separate microphone stream that cannot feed recognition.
+       const android=/Android/i.test(root.navigator?.userAgent||'');
+       if(android){
+         recognition.start();
+         mode='del browser su Android (riduzione del rumore non verificabile)';
+       }else if(root.navigator?.mediaDevices?.getUserMedia){
          try{
            const supported=root.navigator.mediaDevices.getSupportedConstraints?.()||{};
            const constraints={};
