@@ -251,3 +251,17 @@ html.adc-mobile-audit main :where(a){text-underline-offset:3px}
   #adc-unified-header .adc-u-more-links{max-height:42dvh;overflow-y:auto}
   #adc-unified-header .adc-u-more-links a{min-height:46px}
 }
+
+/* Navigazione accessibile da tastiera su tutte le pagine ADC. */
+#adc-unified-header .adc-u-skip{
+  position:absolute!important;left:14px;top:0;z-index:100;
+  transform:translateY(-180%);padding:11px 16px;
+  background:#fffdf9!important;color:#0c202e!important;
+  border:2px solid #b99b67!important;border-radius:7px;
+  font:700 .95rem/1.45 system-ui,sans-serif;
+}
+#adc-unified-header .adc-u-skip:focus,
+#adc-unified-header .adc-u-skip:focus-visible{
+  transform:translateY(8px)!important;outline:3px solid #b99b67!important;
+  outline-offset:3px!important
+}
