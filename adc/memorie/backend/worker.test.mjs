@@ -21,6 +21,13 @@ test('health con configurazione completa',async()=>{
  assert.equal(response.status,200);
  assert.equal((await response.json()).status,'ready');
 });
+test('health non dichiara pronto il servizio se D1 non risponde',async()=>{
+ const unavailable={...live,DB:{prepare(){return {async first(){throw new Error('D1 temporarily unreachable')}}}}};
+ const response=await call('/v1/health',{},unavailable);
+ assert.equal(response.status,500);
+ assert.deepEqual(await response.json(),{error:'Richiesta non completata'});
+});
+
 test('origine estranea respinta',async()=>{
  assert.equal((await call('/v1/pubbliche',{headers:{Origin:'https://example.org'}})).status,403);
 });
