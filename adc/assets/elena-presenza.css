@@ -102,3 +102,10 @@
 .elena-presenza-panel .elena-presenza-credits{margin:13px 0 2px;font-size:.76rem;color:#e8d3ad!important;border-top:1px solid #edd09d5c;padding-top:12px}
 .elena-presenza-panel :is(button,a,input):focus-visible{outline:3px solid #f6d394!important;outline-offset:3px}
 @media(max-width:600px){.elena-presenza-toggle{border-radius:999px!important;padding:11px 14px!important}.elena-presenza-panel{border-radius:17px!important}}
+
+/* Android: presenza discreta e accessibile, senza occupare una scheda intera. */
+@media(max-width:600px){
+ .elena-presenza{right:10px!important;bottom:calc(18px + env(safe-area-inset-bottom,0px))!important;max-width:calc(100vw - 20px)!important}
+ .elena-presenza-toggle{display:grid!important;place-items:center!important;width:49px!important;height:49px!important;min-width:49px!important;min-height:49px!important;padding:5px!important;border-radius:50%!important;font-size:1.15rem!important;line-height:1!important;box-shadow:0 5px 16px #001b1b88!important}
+ .elena-presenza-panel{width:min(365px,calc(100vw - 20px))!important;max-width:calc(100vw - 20px)!important;max-height:min(72dvh,620px)!important;right:0!important;bottom:60px!important}
+}
