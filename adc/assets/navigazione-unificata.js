@@ -71,6 +71,7 @@
     nav.appendChild(more);
     header.appendChild(nav);
     function setOpen(open) {
+      if (!open) more.open = false;
       button.setAttribute('aria-expanded',String(open));
       nav.setAttribute('data-open',String(open));
       button.textContent = open ? '✕ Chiudi' : '☰ Menu';
@@ -94,8 +95,12 @@
       if (!header.contains(event.target)) setOpen(false);
     });
     document.addEventListener('keydown',function (event) {
-      if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
-        setOpen(false); button.focus();
+      if (event.key === 'Escape') {
+        if (more.open || button.getAttribute('aria-expanded') === 'true') {
+          event.preventDefault();
+          setOpen(false);
+          button.focus();
+        }
       }
     });
     // Limit legacy navigation cleanup to direct body children: never hide article or section headers.
