@@ -1,5 +1,21 @@
 name: Audit automatico accessibilità WCAG
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'adc/index.html'
+      - 'adc/assets/**'
+      - 'adc/elena/**'
+      - 'adc/memorie/**'
+      - 'catalogo/**'
+      - 'opere/**'
+      - 'assets/css/**'
+      - 'accessibilita/**'
+      - 'privacy/**'
+      - 'cookie/**'
+      - 'tests/accessibility/**'
+      - '.github/workflows/wcag-browser-audit.yml'
   pull_request:
     paths:
       - 'index.html'
