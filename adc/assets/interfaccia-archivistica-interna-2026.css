@@ -61,8 +61,8 @@ body.adc-inner-2026 main#contenuto #items :is(article,.item),body.adc-inner-2026
 body.adc-inner-2026 main#contenuto #count,body.adc-inner-2026 main#contenuto #status{color:#405765!important;font-weight:600}
 body.adc-inner-2026 main#contenuto .adc-share-entry{background:#eaf2f2!important;border-color:#d0dfe0!important;color:#274953!important}
 body.adc-inner-2026 main#contenuto .adc-share-entry a{color:#205663!important}
-body.adc-inner-2026 main#contenuto .elena-panel{background:#fff!important;border:1px solid #dce4e6!important;border-top:3px solid #b99b67!important;border-radius:15px!important;box-shadow:0 10px 28px #11293611!important;padding:clamp(18px,3vw,32px)!important}
-body.adc-inner-2026 main#contenuto .elena-panel h2{color:#173947!important}
+body.adc-inner-2026:not(:has(.adc-lux-elena-hero)) main#contenuto .elena-panel{background:#fff!important;border:1px solid #dce4e6!important;border-top:3px solid #b99b67!important;border-radius:15px!important;box-shadow:0 10px 28px #11293611!important;padding:clamp(18px,3vw,32px)!important}
+body.adc-inner-2026:not(:has(.adc-lux-elena-hero)) main#contenuto .elena-panel h2{color:#173947!important}
 body.adc-inner-2026 main#contenuto .elena-form :is(input,button){min-height:48px;border-radius:9px!important}
 body.adc-inner-2026 main#contenuto .elena-form button{background:#123947!important;color:#fff!important}
 body.adc-inner-2026 main#contenuto .elena-examples button{min-height:43px}
