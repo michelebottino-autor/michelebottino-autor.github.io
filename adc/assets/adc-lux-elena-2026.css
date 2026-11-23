@@ -331,7 +331,7 @@ body.adc-archive-home .adc-lux-footer .adc-lux-footer-extra #adc-visite-footer{
 body.adc-archive-home .adc-lux-footer .adc-lux-footer-extra #adc-visite-footer strong{
  font:inherit!important;color:#e7d19d!important;
 }
-body.adc-archive-home .adc-lux-footer .adc-lux-footer-extra .mb-preferences-control{
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-bottom .mb-preferences-control{
  position:static!important;inset:auto!important;z-index:auto!important;
  display:inline-flex!important;align-items:center!important;justify-content:center!important;
  width:auto!important;max-width:none!important;height:auto!important;min-height:36px!important;
