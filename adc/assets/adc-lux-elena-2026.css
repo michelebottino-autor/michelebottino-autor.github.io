@@ -355,3 +355,46 @@ body.adc-archive-home .adc-lux-footer> .adc-u-footer-line{display:none!important
  body.adc-archive-home #contenuto .adc-lux-card{min-height:168px!important}
  body.adc-archive-home .adc-lux-footer .adc-lux-footer-more{padding-bottom:13px!important}
 }
+
+
+/* Correzione specifica Android: titoli delle due sidebar senza eredità di colori scuri. */
+html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side .adc-lux-glass h2,
+html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side .adc-lux-glass h2 *,
+html body.adc-archive-home main#contenuto .adc-lux-lower-layout .adc-lux-side h2{
+ color:#ffe5b5!important;
+ -webkit-text-fill-color:#ffe5b5!important;
+ text-shadow:0 2px 8px rgba(0,20,19,.4)!important;
+ opacity:1!important;
+}
+html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side .adc-lux-glass{
+ background:#0a403b!important;
+}
+html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side .adc-lux-glass a{
+ color:#f5f4e8!important;
+ -webkit-text-fill-color:#f5f4e8!important;
+}
+html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side .adc-lux-glass a span{
+ color:#efcb88!important;
+ -webkit-text-fill-color:#efcb88!important;
+}
+@media(max-width:760px){
+ html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side{
+  gap:11px!important;margin:14px 0 0!important;
+ }
+ html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side .adc-lux-glass{
+  padding:15px 16px!important;border-radius:18px!important;
+ }
+ html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side .adc-lux-glass h2{
+  font-size:1.32rem!important;line-height:1.22!important;margin:0 0 9px!important;
+ }
+ html body.adc-archive-home main#contenuto .adc-lux-lower-layout aside.adc-lux-side .adc-lux-glass a{
+  padding:9px 0!important;font-size:.94rem!important;
+ }
+ html body.adc-archive-home main#contenuto>.adc-extra-resources>summary{
+  padding:12px 15px!important;
+  font-size:1rem!important;
+ }
+ html body.adc-archive-home main#contenuto>.adc-extra-resources>summary .adc-extra-resources-description{
+  font-size:.82rem!important;line-height:1.4!important;
+ }
+}
