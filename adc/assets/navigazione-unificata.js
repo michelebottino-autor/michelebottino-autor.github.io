@@ -20,6 +20,16 @@
     var header = document.createElement('div');
     header.id = 'adc-unified-header';
     header.setAttribute('role','banner');
+    // Salta la navigazione e raggiungi direttamente la scheda consultata.
+    var mainContent = document.querySelector('main');
+    if (mainContent) {
+      if (!mainContent.id) mainContent.id = 'adc-main-content';
+      var skip = document.createElement('a');
+      skip.className = 'adc-u-skip';
+      skip.href = '#' + mainContent.id;
+      skip.textContent = 'Vai al contenuto';
+      header.appendChild(skip);
+    }
     var bar = document.createElement('div'); bar.className = 'adc-u-bar';
     var brand = document.createElement('a'); brand.className = 'adc-u-brand';
     brand.href = '/adc/';
