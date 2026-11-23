@@ -18,5 +18,7 @@ const widget=fs.readFileSync(path.join(root,'adc/assets/elena-presenza.js'),'utf
 assert(widget.includes('Ascolta un campione della voce'),'Pulsante del campione vocale Elena assente');
 assert(widget.includes('Ferma il campione'),'Comando di arresto del campione vocale assente');
 assert(widget.includes('Elena sta leggendo la risposta.'),'Conferma lettura della risposta Elena assente');
-assert(widget.includes('/adc/audio/elena-paola-benvenuto.mp3'),'Audio originale mancante');
+const home=fs.readFileSync(path.join(root,'adc/index.html'),'utf8');
+assert.match(home,/src="\/adc\/audio\/elena-paola-benvenuto\.mp3"/,'Audio di benvenuto non collegato dalla homepage');
+assert.ok(fs.existsSync(path.join(root,'adc/audio/elena-paola-benvenuto.mp3')),'File audio di benvenuto mancante');
 console.log('ELENA_IDENTITA_OK: interfaccia pubblica Elena; percorsi tecnici Paola conservati.');
