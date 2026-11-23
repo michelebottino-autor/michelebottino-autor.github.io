@@ -1,6 +1,12 @@
 const { chromium } = require('playwright');
 const AxeBuilder = require('@axe-core/playwright').default;
-const pages = ['/', '/adc/', '/accessibilita/', '/privacy/', '/cookie/'];
+const pages = [
+ '/', '/adc/', '/accessibilita/', '/privacy/', '/cookie/',
+ '/adc/storia-per-tutti/', '/adc/fonti/', '/adc/cerca/',
+ '/adc/inventario/', '/adc/elena/', '/adc/memorie/',
+ '/adc/chiese/', '/adc/mediateca/', '/adc/atlante/',
+ '/opere/', '/opere/stige/', '/catalogo/', '/contatti/'
+];
 (async () => {
  const browser = await chromium.launch({ headless: true });
  let failures = 0;
