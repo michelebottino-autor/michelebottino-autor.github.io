@@ -446,7 +446,16 @@
             copyStatus.textContent='Testo e collegamenti copiati.';
           }catch(_){copyStatus.textContent='Copia non disponibile in questo browser: seleziona il testo della risposta.';}
         });
-        actions.append(copy,copyStatus);article.append(actions);
+        actions.append(copy,copyStatus);
+        if((r.kind==='documentary'||r.kind==='passage') && r.links?.some(link=>safeUrl(link.url))){
+          const exploreText=make('button','elena-approved-text-link','Cerca nei testi verificati');exploreText.type='button';
+          exploreText.addEventListener('click',()=>{
+            try{sessionStorage.setItem('adc-elena-corpus-handoff',JSON.stringify({q:q.slice(0,160),at:Date.now()}))}catch(_){}
+            window.location.assign('/adc/elena/documenti/');
+          });
+          actions.append(exploreText);
+        }
+        article.append(actions);
         output.append(article);turns++;
         while(output.children.length>16){output.removeChild(output.firstElementChild);output.removeChild(output.firstElementChild);}
         if(turns>1)article.scrollIntoView({block:'nearest',behavior:'smooth'});
