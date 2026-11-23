@@ -136,6 +136,9 @@
       footer = document.createElement('footer');
       document.body.appendChild(footer);
     }
+    footer.querySelectorAll('.aegis-footer-signature a[aria-label]').forEach(function(a){
+      if(a.textContent.trim())a.removeAttribute('aria-label');
+    });
     footer.classList.add('adc-global-footer');
     footer.setAttribute('aria-label', 'Informazioni e collegamenti dell’Archivio Documentale Calatabiano');
     if (footer.querySelector('[data-adc-footer-identity]')) return;
