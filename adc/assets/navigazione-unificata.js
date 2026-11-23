@@ -170,7 +170,7 @@
     wrap.id = 'adc-visite-footer';
     wrap.style.cssText = 'text-align:center;margin:18px auto 8px;padding:12px 14px;max-width:400px;border-top:1px solid rgba(194,170,111,.35);font-variant-numeric:tabular-nums;';
     var label = document.createElement('strong');
-    label.textContent = 'Conteggio sessioni: ';
+    label.textContent = 'Visite totali registrate: ';
     var count = document.createElement('span');
     count.id = 'adc-visite-numero';
     count.textContent = '—';
@@ -179,9 +179,12 @@
     state.textContent = '';
     wrap.append(label, count, state);
     var bottom = footer.querySelector('.adc-archive-footer__bottom,.adc-inner-footer__bottom');
-    var homeExtra = location.pathname === '/adc/' && footer.classList.contains('adc-lux-footer') ? footer.querySelector('.adc-lux-footer-extra') : null;
-    if (homeExtra) homeExtra.appendChild(wrap);
-    else if (bottom) footer.insertBefore(wrap, bottom);
+    var homeBottom = location.pathname === '/adc/' && footer.classList.contains('adc-lux-footer') ? footer.querySelector('.adc-lux-footer-bottom') : null;
+    if (homeBottom) {
+      wrap.classList.add('adc-lux-visible-counter');
+      wrap.style.cssText = 'display:inline-flex;gap:6px;align-items:baseline;margin:0;padding:0;border:0;max-width:none;text-align:left;font-variant-numeric:tabular-nums;';
+      homeBottom.appendChild(wrap);
+    } else if (bottom) footer.insertBefore(wrap, bottom);
     else footer.appendChild(wrap);
     var format = function (value) { return Number(value).toLocaleString('it-IT'); };
     fetch('/adc/contatore-config.json', {cache:'no-store'}).then(function(r){if(!r.ok)throw Error('config');return r.json();}).then(function(cfg){
