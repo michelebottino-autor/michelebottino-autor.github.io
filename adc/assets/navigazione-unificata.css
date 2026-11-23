@@ -389,7 +389,7 @@ body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-her
 body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) footer :is(p,span,small,li){
  color:#f0f2e9!important;-webkit-text-fill-color:#f0f2e9!important;
 }
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) footer a{
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) footer a:not([href$="#contenuto"]){
  color:#ffdc9b!important;-webkit-text-fill-color:#ffdc9b!important;
 }
 body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) footer #adc-visite-footer{
