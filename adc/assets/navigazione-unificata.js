@@ -1,3 +1,19 @@
+/* Carica la grafica condivisa dopo gli stili specifici della pagina. */
+(function () {
+  'use strict';
+  if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/custode/')) return;
+  function loadTheme() {
+    if (!document.head || document.getElementById('adc-visual-theme')) return;
+    var link = document.createElement('link');
+    link.id = 'adc-visual-theme';
+    link.rel = 'stylesheet';
+    link.href = '/adc/assets/identita-visiva-condivisa-2026.css?v=20261123';
+    document.head.appendChild(link);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadTheme, {once:true});
+  else loadTheme();
+})();
+
 (function () {
   'use strict';
   function start() {
