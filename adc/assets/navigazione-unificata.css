@@ -236,3 +236,18 @@ body.adc-archive-home main img,body.adc-inner-2026 main img{
     scroll-behavior:auto!important;transition-duration:.01ms!important
   }
 }
+
+/* Rifinitura comune: preferenze cromatiche e controllo di leggibilità su tutte le schede ADC. */
+#adc-unified-header{--adc-nav-night:#0c202e;--adc-nav-gold:#b99b67}
+#adc-unified-header .adc-u-links a{line-height:1.35}
+#adc-unified-header .adc-u-links a:focus-visible,
+#adc-unified-header .adc-u-more summary:focus-visible{
+  outline:3px solid var(--adc-nav-gold)!important;outline-offset:3px!important
+}
+html.adc-mobile-audit main :where(figure,figcaption){max-width:100%}
+html.adc-mobile-audit main :where(figcaption){line-height:1.55}
+html.adc-mobile-audit main :where(a){text-underline-offset:3px}
+@media(max-width:760px){
+  #adc-unified-header .adc-u-more-links{max-height:42dvh;overflow-y:auto}
+  #adc-unified-header .adc-u-more-links a{min-height:46px}
+}

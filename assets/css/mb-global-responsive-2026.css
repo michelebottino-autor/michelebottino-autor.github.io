@@ -100,3 +100,34 @@ html.mb-global main :is(.book-cover,.cover-book,img[src*="/opere/"][alt*="Copert
  html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:16px 10px}
  html.mb-global body.mb-unified-shell > footer.mb-unified-footer .mb-footer-links a{font-size:.85rem!important}
 }
+
+/* Consolidamento 23 novembre 2026: identità editoriale comune nelle pagine pubbliche.
+   Regole a bassa specificità: corsi, libri e applicazioni mantengono i propri layout. */
+html.mb-global{
+  --mb-brand-night:#0c202e;
+  --mb-brand-paper:#f4f4f0;
+  --mb-brand-ink:#213746;
+  --mb-brand-gold:#b99b67;
+  --mb-brand-line:#dbe4e6;
+  scroll-padding-top:20px;
+}
+html.mb-global body{font-kerning:normal}
+html.mb-global main :where(h1,h2,h3){
+  font-family:Georgia,"Times New Roman",serif;
+  text-wrap:balance;overflow-wrap:break-word;
+}
+html.mb-global main :where(p,li,figcaption){hyphens:none;overflow-wrap:break-word}
+html.mb-global main :where(a){text-underline-offset:3px;text-decoration-thickness:from-font}
+html.mb-global :where(a,button,summary,input,select,textarea){touch-action:manipulation}
+html.mb-global :where(a,button,summary,input,select,textarea):focus-visible{
+  outline:3px solid var(--mb-brand-gold)!important;outline-offset:3px!important
+}
+html.mb-global main :where(img,video,iframe){max-width:100%}
+@media(max-width:700px){
+  html.mb-global main :where(figure){max-width:100%;min-width:0}
+  html.mb-global main :where(figcaption){line-height:1.55}
+  html.mb-global main :where(button,[role="button"]){min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+  html.mb-global :where(*, *::before, *::after){scroll-behavior:auto!important}
+}
