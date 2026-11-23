@@ -29,28 +29,28 @@
   const make=(tag,txt)=>{const el=document.createElement(tag);el.textContent=txt;return el};
   const draw=q=>{
    results.replaceChildren();
-   if(!corpus){status.textContent='I testi approvati non sono disponibili in questo momento.';return}
+   if(!corpus){status.textContent='Non riesco ad aprire i testi in questo momento. Riprova più tardi.';return}
    const hits=search(corpus,q);
    if(!q.trim()){status.textContent='Inserisci un argomento, un nome o un anno.';return}
-   status.textContent=hits.length?hits.length+' passaggi approvati individuati.':'Nessun passaggio approvato trovato per questa ricerca. L’assenza di risultati non esclude altre fonti nell’archivio.';
+   status.textContent=hits.length?hits.length+' testi trovati.':'Non ho trovato un testo verificato su questo argomento. Puoi consultare anche le altre sezioni dell’Archivio.';
    for(const e of hits){
     const article=document.createElement('article');article.className='corpus-record';
     article.append(make('h2',e.title),make('p',e.text));
-    article.append(make('p','Tipo: sintesi redazionale ADC, non trascrizione originale.'));
+    article.append(make('p','Questo testo riassume il documento esaminato; non è una trascrizione dell’originale.'));
     article.append(make('h3','Fonte e pagine'));
     const ul=document.createElement('ul');
     for(const s of e.sources){const li=document.createElement('li'),a=document.createElement('a');a.href=s.url;a.textContent=s.title+', pp. '+s.page;li.append(a);ul.append(li)}
-    article.append(ul,make('p','Limiti della verifica: '+e.limitations));
-    article.append(make('small','Approvazione '+e.approval_id+' · '+e.reviewed_at));
+    article.append(ul,make('p','Che cosa resta da verificare: '+e.limitations));
+    article.append(make('small','Verificato il '+e.reviewed_at));
     results.append(article);
    }
   };
   form.addEventListener('submit',event=>{event.preventDefault();draw(input.value)});
-  fetcher('/adc/assets/elena-corpus-documentario.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Corpus non disponibile');return r.json()}).then(payload=>{validated(payload);corpus=payload;status.textContent='Consulta i passaggi redazionali approvati ADC.';
+  fetcher('/adc/assets/elena-corpus-documentario.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Corpus non disponibile');return r.json()}).then(payload=>{validated(payload);corpus=payload;status.textContent='Cerca nei testi già verificati dell’Archivio.';
     let handoff='';
     try{const raw=sessionStorage.getItem('adc-elena-corpus-handoff');if(raw){sessionStorage.removeItem('adc-elena-corpus-handoff');const item=JSON.parse(raw);if(typeof item.q==='string'&&item.q.length<=160&&Date.now()>=item.at&&Date.now()-item.at<120000)handoff=item.q;}}catch(_){}
     const q=handoff||(new URLSearchParams(location.search).get('q')||'');
-    if(q&&q.length<=160){input.value=q;draw(q)}}).catch(()=>{status.textContent='I testi approvati non sono disponibili in questo momento.'});
+    if(q&&q.length<=160){input.value=q;draw(q)}}).catch(()=>{status.textContent='Non riesco ad aprire i testi in questo momento. Riprova più tardi.'});
  }
  return {normalize,terms,validated,search,mount};
 });
