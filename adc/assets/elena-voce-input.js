@@ -45,7 +45,7 @@
        const android=/Android/i.test(browser?.navigator?.userAgent||'');
        if(android){
          recognition.start();
-         mode='del browser su Android (riduzione del rumore non verificabile)';
+         mode='tramite il microfono del dispositivo';
        }else if(browser?.navigator?.mediaDevices?.getUserMedia){
          try{
            const supported=browser.navigator.mediaDevices.getSupportedConstraints?.()||{};
@@ -60,17 +60,17 @@
            // Unsupported browsers use their own capture pipeline; do not claim filtered recognition.
            if(track){
              recognition.start(track);
-             mode=settings.noiseSuppression===true?'con soppressione richiesta al microfono':'con traccia audio del dispositivo';
+             mode=settings.noiseSuppression===true?'con riduzione del rumore, se supportata':'tramite il microfono del dispositivo';
            }else{
              releaseMic();
              recognition.start();
-             mode='standard del browser (filtro non verificato)';
+             mode='tramite il microfono del dispositivo';
            }
          }catch(error){
            releaseMic();
            if(error?.name==='NotAllowedError'||error?.name==='SecurityError')throw error;
            recognition.start();
-           mode='standard del browser (filtro non disponibile)';
+           mode='tramite il microfono del dispositivo';
          }
        }else recognition.start();
        setActive(true);
@@ -90,7 +90,7 @@
    const button=document.createElement('button');button.type='button';button.textContent='Parla con Elena';button.className='elena-microphone-start';button.setAttribute('aria-pressed','false');
    const label=document.createElement('label');label.className='elena-microphone-autoread';
    const checkbox=document.createElement('input');checkbox.type='checkbox';label.append(checkbox,document.createTextNode(' Leggi automaticamente la risposta'));
-   const status=document.createElement('p');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.textContent='La dettatura richiede il permesso del microfono. La riduzione del rumore viene richiesta solo dove supportata; il riconoscimento può usare servizi del browser.';
+   const status=document.createElement('p');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.textContent='Premi «Parla con Elena» e autorizza il microfono quando richiesto. La qualità della dettatura dipende dal dispositivo.';
    container.append(button,label,status);form.insertAdjacentElement('afterend',container);
    return createController({Recognition:root.SpeechRecognition||root.webkitSpeechRecognition,form,input,button,status,autoRead:checkbox,results,MutationObserverCtor:root.MutationObserver,browser:root});
  }
