@@ -145,9 +145,9 @@
     footer.setAttribute('aria-label', 'Informazioni e collegamenti dell’Archivio Documentale Calatabiano');
     // La homepage ha già un footer editoriale completo: non duplicare le sue voci.
     if (location.pathname === '/adc/' && footer.classList.contains('adc-lux-footer')) {
-      var extras = footer.querySelector('.adc-lux-footer-extra');
+      var bottom = footer.querySelector('.adc-lux-footer-bottom');
       var preferences = footer.querySelector('.mb-preferences-control');
-      if (extras && preferences) extras.appendChild(preferences);
+      if (bottom && preferences) bottom.appendChild(preferences);
       return;
     }
     // Conserva i footer editoriali esistenti. Evita di duplicarne menu e crediti.
