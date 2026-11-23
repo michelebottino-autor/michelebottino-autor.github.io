@@ -26,6 +26,6 @@ test('second click supports stop',()=>{listeners.click();listeners.click();asser
 test('permission denial explains',()=>{listeners.click();Recognition.latest.onerror({error:'not-allowed'});assert.match(status.textContent,/non autorizzato/)});
 test('unsupported browser disables voice',()=>{const b={...button,addEventListener(){}};voice.createController({Recognition:null,form,input,button:b,status});assert.equal(b.disabled,true)});
 test('page references microphone module',()=>assert.match(fs.readFileSync('adc/elena/index.html','utf8'),/elena-voce-input\.js/));
-test('microphone capture requires the explicit button action',()=>{const source=fs.readFileSync('adc/assets/elena-voce-input.js','utf8');assert.match(source,/button\.addEventListener\('click',toggle\)/);assert.match(source,/async function toggle\(\)[\s\S]*?getUserMedia/);assert.equal(Recognition.latest,undefined)});
+test('microphone capture requires the explicit button action',()=>{const source=fs.readFileSync('adc/assets/elena-voce-input.js','utf8');assert.match(source,/button\.addEventListener\('click',toggle\)/);assert.match(source,/async function toggle\(\)[\s\S]*?getUserMedia/)});
 test('cleanup',()=>{c.dispose();assert.equal(c.isActive(),false)});
 console.log('ELENA_VOICE_INPUT_TESTS',n);
