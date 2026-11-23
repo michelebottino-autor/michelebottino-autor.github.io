@@ -1,0 +1,31 @@
+name: ADC Memorie - test sicurezza API
+on:
+  push:
+    paths:
+      - 'adc/memorie/backend/**'
+      - 'adc/memorie/config.json'
+      - '.github/workflows/adc-memorie-security.yml'
+  pull_request:
+    paths:
+      - 'adc/memorie/backend/**'
+      - 'adc/memorie/config.json'
+      - '.github/workflows/adc-memorie-security.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  security-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verifica sintassi Worker
+        run: node --check adc/memorie/backend/worker.js
+      - name: Esegue test isolati di sicurezza e redazione
+        run: node --test adc/memorie/backend/worker.test.mjs
+      - name: Controlla configurazione pubblica
+        run: |
+          node -e "const fs=require('fs');const c=JSON.parse(fs.readFileSync('adc/memorie/config.json','utf8'));if(typeof c.enabled!=='boolean'||!/^https:\/\//.test(c.endpoint)||!c.turnstile_site_key)process.exit(1);console.log('Configurazione pubblica valida; segreti non ispezionati.')"
