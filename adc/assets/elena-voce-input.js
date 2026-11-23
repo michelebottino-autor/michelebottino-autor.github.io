@@ -88,11 +88,9 @@
    if(!form||!input||!results)return;
    const container=document.createElement('div');container.className='elena-microphone-controls';
    const button=document.createElement('button');button.type='button';button.textContent='Parla con Elena';button.className='elena-microphone-start';button.setAttribute('aria-pressed','false');
-   const label=document.createElement('label');label.className='elena-microphone-autoread';
-   const checkbox=document.createElement('input');checkbox.type='checkbox';label.append(checkbox,document.createTextNode(' Leggi automaticamente la risposta'));
    const status=document.createElement('p');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.textContent='Premi «Parla con Elena» e autorizza il microfono quando richiesto. La qualità della dettatura dipende dal dispositivo.';
-   container.append(button,label,status);form.insertAdjacentElement('afterend',container);
-   return createController({Recognition:root.SpeechRecognition||root.webkitSpeechRecognition,form,input,button,status,autoRead:checkbox,results,MutationObserverCtor:root.MutationObserver,browser:root});
+   container.append(button,status);form.insertAdjacentElement('afterend',container);
+   return createController({Recognition:root.SpeechRecognition||root.webkitSpeechRecognition,form,input,button,status,autoRead:null,results,MutationObserverCtor:root.MutationObserver,browser:root});
  }
  return {createController,mount};
 });
