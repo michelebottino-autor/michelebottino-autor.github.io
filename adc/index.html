@@ -146,6 +146,7 @@ p{max-width:76ch}
 .adc-ingresso>span:not(.adc-ingresso-label):not(.adc-ingresso-action){line-height:1.5}
 .adc-ingresso-action{margin-top:auto;padding-top:9px;color:#1c557d;font-weight:750}
 .adc-ingresso:hover,.adc-ingresso:focus-visible{outline:2px solid #a77c47;outline-offset:2px}
+@media(max-width:1100px){.adc-first-intro .adc-ingressi{grid-template-columns:1fr}.adc-first-intro .adc-ingresso{padding:18px}}
 @media(max-width:760px){.adc-ingressi{grid-template-columns:1fr;gap:11px;margin:12px 0 20px}.adc-ingresso{padding:19px}}
 </style>
 <!-- Statistiche GA4: predisposizione non attiva.
@@ -377,6 +378,20 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
     <p class="adc-first-kicker">Archivio Documentale Calatabiano · ADC</p>
     <h1 id="adc-landing-title">Esplora l’Archivio Documentale Calatabiano</h1>
     <p class="adc-first-lead">Cerca documenti, persone, luoghi, fotografie e testimonianze sulla storia di Calatabiano. Consulta le schede dell’Archivio, approfondisci le fonti oppure segui un percorso storico.</p>
+    <div class="adc-ingressi" aria-label="Scegli come consultare l'Archivio">
+      <a class="adc-ingresso adc-ingresso-cittadini" href="/adc/storia-per-tutti/">
+        <span class="adc-ingresso-label">Ingresso per i cittadini</span>
+        <strong>Voglio conoscere la storia di Calatabiano</strong>
+        <span>Un percorso chiaro attraverso i luoghi, le persone e gli avvenimenti del paese.</span>
+        <span class="adc-ingresso-action">Leggi la storia →</span>
+      </a>
+      <a class="adc-ingresso adc-ingresso-studiosi" href="/adc/fonti/">
+        <span class="adc-ingresso-label">Ingresso per studiosi e ricercatori</span>
+        <strong>Voglio consultare le fonti storiche</strong>
+        <span>Documenti, riferimenti archivistici, testimonianze e studi verificabili.</span>
+        <span class="adc-ingresso-action">Esamina le fonti →</span>
+      </a>
+    </div>
     <p class="adc-first-about">L’ADC è un archivio storico digitale indipendente, curato da Michele Bottino e consultabile gratuitamente.</p>
     <form action="/adc/cerca/" method="get" role="search" class="adc-first-search">
       <label for="adc-first-query">Che cosa vuoi sapere su Calatabiano?</label>
