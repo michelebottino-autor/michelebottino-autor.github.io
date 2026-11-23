@@ -4,12 +4,18 @@
     if (document.getElementById('adc-unified-header')) return;
     var body = document.body;
     if (!body) return;
-    var names = [
-      ['Archivio','/adc/'], ['Cerca','/adc/cerca/'], ['Inventario','/adc/inventario/'], ['Luoghi','/adc/atlante/'], ['Persone','/adc/persone/'], ['Percorso storico','/adc/storia-per-tutti/'], ['Le chiese','/adc/chiese/'], ['Monasteri','/adc/monasteri/'],
-      ['Fonti','/adc/fonti/'],
+    // Due percorsi d'accesso chiari, strumenti principali e sezioni secondarie.
+    var mainNames = [
+      ['Archivio','/adc/'], ['Per i cittadini','/adc/storia-per-tutti/'],
+      ['Per gli studiosi','/adc/fonti/'], ['Cerca','/adc/cerca/'],
+      ['Inventario','/adc/inventario/'], ['Luoghi','/adc/atlante/'],
+      ['Persone','/adc/persone/'], ['Elena','/adc/elena/']
+    ];
+    var otherNames = [
+      ['Le chiese','/adc/chiese/'], ['Monasteri','/adc/monasteri/'],
       ['Mediateca','/adc/mediateca/'], ['Patrimonio','/adc/materiali-patrimonio/'],
-      ['Stampa','/adc/stampa/'],
-      ['Elena','/adc/elena/'], ['Origini e dedica','/adc/#dedica-comunita'], ['Carta ADC','/adc/carta/'], ['Michele Bottino','/']
+      ['Stampa','/adc/stampa/'], ['Origini e dedica','/adc/#dedica-comunita'],
+      ['Carta ADC','/adc/carta/'], ['Michele Bottino','/']
     ];
     var header = document.createElement('div');
     header.id = 'adc-unified-header';
@@ -40,11 +46,19 @@
     header.appendChild(bar);
     var nav = document.createElement('nav'); nav.className = 'adc-u-links';
     nav.id = 'adc-u-links'; nav.setAttribute('aria-label','Navigazione principale ADC');
-    names.forEach(function (item) {
+    function makeLink(item) {
       var a = document.createElement('a'); a.href = item[1]; a.textContent = item[0];
       if (location.pathname === item[1] || (item[1] === '/adc/#dedica-comunita' && location.pathname === '/adc/' && location.hash === '#dedica-comunita') || (item[1] === '/adc/chiese/' && location.pathname.startsWith('/adc/chiese/')) || (item[1] === '/adc/monasteri/' && location.pathname.startsWith('/adc/monasteri/'))) a.setAttribute('aria-current','page');
-      nav.appendChild(a);
-    });
+      return a;
+    }
+    mainNames.forEach(function (item) { nav.appendChild(makeLink(item)); });
+    var more = document.createElement('details'); more.className = 'adc-u-more';
+    var summary = document.createElement('summary'); summary.textContent = 'Altre sezioni';
+    more.appendChild(summary);
+    var moreLinks = document.createElement('div'); moreLinks.className = 'adc-u-more-links';
+    otherNames.forEach(function (item) { moreLinks.appendChild(makeLink(item)); });
+    more.appendChild(moreLinks);
+    nav.appendChild(more);
     header.appendChild(nav);
     function setOpen(open) {
       button.setAttribute('aria-expanded',String(open));
@@ -57,7 +71,7 @@
     });
     nav.addEventListener('click',function (event) {
       var link = event.target.closest('a[href]');
-      if (link && nav.contains(link)) setOpen(false);
+      if (link && nav.contains(link)) { setOpen(false); more.open = false; }
     });
     window.addEventListener('hashchange', function () {
       nav.querySelectorAll('a[aria-current]').forEach(function (link) { link.removeAttribute('aria-current'); });
