@@ -19,6 +19,6 @@ test('invalid root rejected',()=>assert.throws(()=>core.validated({schema:2,entr
 test('untrusted external source excluded',()=>{const fake=structuredClone(corpus);fake.entries[0].sources[0].url='https://evil.example';assert.equal(core.validated(fake).length,1)});
 test('unsafe string not used as HTML',()=>{const script=fs.readFileSync('adc/assets/elena-corpus-search.js','utf8');assert.doesNotMatch(script,/innerHTML|eval\s*\(|new Function/);assert.match(script,/textContent/)});
 test('no document upload',()=>assert.doesNotMatch(fs.readFileSync('adc/assets/elena-corpus-search.js','utf8'),/method:\s*['"]POST['"]|XMLHttpRequest|sendBeacon/));
-test('public page points to approved corpus',()=>{const html=fs.readFileSync('adc/elena/documenti/index.html','utf8');assert.match(html,/elena-corpus-search\.js/);assert.match(html,/non trascrizioni letterali/);assert.match(html,/aria-live="polite"/)});
+test('public page points to approved corpus',()=>{const html=fs.readFileSync('adc/elena/documenti/index.html','utf8');assert.match(html,/elena-corpus-search\.js/);assert.match(html,/Non sono trascrizioni integrali degli originali/);assert.match(html,/aria-live="polite"/)});
 test('elena main links to the document page',()=>assert.match(fs.readFileSync('adc/elena/index.html','utf8'),/href="\/adc\/elena\/documenti\/"/));
 console.log('ELENA_CORPUS_TESTS',n);
