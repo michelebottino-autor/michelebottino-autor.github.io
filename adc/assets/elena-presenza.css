@@ -84,3 +84,21 @@
  .elena-presenza-panel .elena-presenza-heading{top:-14px}
  .elena-presenza-panel .elena-voice-controls button{font-size:13px;padding:9px 11px}
 }
+
+/* Elena presente in tutto l'ADC: pannello coordinato al nuovo tema */
+.elena-presenza{color:#f4f6ee!important;z-index:1900!important}
+.elena-presenza-toggle{background:linear-gradient(130deg,#0c4944,#0b302f)!important;color:#fff8e7!important;border:1px solid #edc98c!important;border-radius:18px!important;padding:13px 19px!important;box-shadow:inset 0 1px #f8ebba70,0 10px 32px #00222483!important;letter-spacing:.015em}
+.elena-presenza-panel{background:linear-gradient(145deg,#0e4944f7,#052c2ffb)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #e0c18b!important;border-radius:21px!important;box-shadow:0 22px 54px #001717a1!important;color:#f4f6ee!important}
+.elena-presenza-panel :is(p,small,label,strong,li,h2,h3){color:#f4f3e8!important}
+.elena-presenza-panel .elena-presenza-heading{background:#0e4843!important;border-bottom:1px solid #d8b77c88!important;border-radius:10px!important}
+.elena-presenza-panel .elena-presenza-heading strong{font:400 1.15rem Georgia,serif!important;color:#fce8b7!important}
+.elena-presenza-panel .elena-presenza-close{color:#f7dcab!important}
+.elena-presenza-panel :is(input,textarea){color:#f6f7ed!important;background:#0a3536!important;border:1px solid #b5cebc!important;border-radius:11px!important}
+.elena-presenza-panel :is(input,textarea)::placeholder{color:#c8dad1!important}
+.elena-presenza-panel button:not(.elena-presenza-close){background:linear-gradient(145deg,#f4dba0,#c4964c)!important;color:#153830!important;border:1px solid #f6e6b9!important;border-radius:11px!important}
+.elena-presenza-panel a{color:#f0d292!important}
+.elena-presenza-panel .elena-presenza-result{color:#fff!important}
+.elena-presenza-panel .elena-presenza-evidence{background:#23584e!important;color:#fbf4df!important;border-left:3px solid #e5c17e!important;border-radius:8px}
+.elena-presenza-panel .elena-presenza-credits{margin:13px 0 2px;font-size:.76rem;color:#e8d3ad!important;border-top:1px solid #edd09d5c;padding-top:12px}
+.elena-presenza-panel :is(button,a,input):focus-visible{outline:3px solid #f6d394!important;outline-offset:3px}
+@media(max-width:600px){.elena-presenza-toggle{border-radius:999px!important;padding:11px 14px!important}.elena-presenza-panel{border-radius:17px!important}}
