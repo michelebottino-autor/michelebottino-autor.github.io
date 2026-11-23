@@ -96,10 +96,11 @@
     });
     document.addEventListener('keydown',function (event) {
       if (event.key === 'Escape') {
-        if (more.open || button.getAttribute('aria-expanded') === 'true') {
+        var mobileMenuOpen = button.getAttribute('aria-expanded') === 'true';
+        if (more.open || mobileMenuOpen) {
           event.preventDefault();
           setOpen(false);
-          button.focus();
+          (mobileMenuOpen ? button : summary).focus();
         }
       }
     });
