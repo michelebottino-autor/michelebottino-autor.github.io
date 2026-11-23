@@ -46,7 +46,11 @@
    }
   };
   form.addEventListener('submit',event=>{event.preventDefault();draw(input.value)});
-  fetcher('/adc/assets/elena-corpus-documentario.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Corpus non disponibile');return r.json()}).then(payload=>{validated(payload);corpus=payload;status.textContent='Consulta i passaggi redazionali approvati ADC.';const q=new URLSearchParams(location.search).get('q');if(q&&q.length<=160){input.value=q;draw(q)}}).catch(()=>{status.textContent='I testi approvati non sono disponibili in questo momento.'});
+  fetcher('/adc/assets/elena-corpus-documentario.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Corpus non disponibile');return r.json()}).then(payload=>{validated(payload);corpus=payload;status.textContent='Consulta i passaggi redazionali approvati ADC.';
+    let handoff='';
+    try{const raw=sessionStorage.getItem('adc-elena-corpus-handoff');if(raw){sessionStorage.removeItem('adc-elena-corpus-handoff');const item=JSON.parse(raw);if(typeof item.q==='string'&&item.q.length<=160&&Date.now()>=item.at&&Date.now()-item.at<120000)handoff=item.q;}}catch(_){}
+    const q=handoff||(new URLSearchParams(location.search).get('q')||'');
+    if(q&&q.length<=160){input.value=q;draw(q)}}).catch(()=>{status.textContent='I testi approvati non sono disponibili in questo momento.'});
  }
  return {normalize,terms,validated,search,mount};
 });
