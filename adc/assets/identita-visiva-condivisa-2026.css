@@ -55,23 +55,13 @@ body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-her
  border:1px solid var(--adc-visual-line)!important;border-radius:20px!important;
  box-shadow:var(--adc-visual-shadow)!important;
 }
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(h1,h2,h3,h4){
- color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
- text-decoration-color:var(--adc-visual-gold)!important;
-}
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(p,li,dt,dd,label,figcaption,small){
- color:#f0f0e7!important;-webkit-text-fill-color:#f0f0e7!important;
-}
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main a:not(.cta):not([class*="button"]){
- color:#ffdc98!important;text-decoration-color:rgba(255,220,152,.65);
-}
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.card,.resource,.note,.fact,.box,.panel,.case,.unitlist a,article,fieldset,details:not(.adc-u-more)){
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.hero,.card,.resource,.note,.fact,.box,.panel,.case,.unitlist a,article,fieldset,details:not(.adc-u-more)){
  color:var(--adc-visual-ivory)!important;
  background:linear-gradient(145deg,rgba(24,91,79,.76),rgba(8,57,54,.86))!important;
  border:1px solid var(--adc-visual-line)!important;border-radius:15px!important;
  box-shadow:0 8px 23px rgba(0,25,25,.2)!important;
 }
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.card,.resource,.note,.fact,.box,.panel,.case,.unitlist a,article,fieldset,details:not(.adc-u-more)) :is(h2,h3,h4){
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.hero,.card,.resource,.note,.fact,.box,.panel,.case,.unitlist a,article,fieldset,details:not(.adc-u-more)) :is(h2,h3,h4){
  color:#ffdfa2!important;-webkit-text-fill-color:#ffdfa2!important;
 }
 body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(input,select,textarea){
@@ -145,4 +135,36 @@ body.adc-shared-lux :is(a,button,input,textarea,select,summary):focus-visible{ou
 }
 @media(prefers-reduced-motion:reduce){
  body:has(#adc-unified-header) :is(a,button){transition:none!important}
+}
+/* Testi chiari soltanto sui pannelli scuri; le superfici documentarie restano leggibili. */
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main>h1,
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main>.hero>h1{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-decoration-color:var(--adc-visual-gold)!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.hero,.card,.resource,.note,.fact,.box,.panel,.case,.unitlist a,article,fieldset,details:not(.adc-u-more)) :is(h1,h2,h3,h4,p,li,dt,dd,label,small){
+ color:#f0f0e7!important;-webkit-text-fill-color:#f0f0e7!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.hero,.card,.resource,.note,.fact,.box,.panel,.case,.unitlist a,article,fieldset,details:not(.adc-u-more)) :is(h1,h2,h3,h4){
+ color:#ffdfa2!important;-webkit-text-fill-color:#ffdfa2!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.hero,.card,.resource,.note,.fact,.box,.panel,.case,.unitlist a,article,fieldset,details:not(.adc-u-more)) a:not(.cta):not([class*="button"]){
+ color:#ffdc98!important;-webkit-text-fill-color:#ffdc98!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main figure figcaption{
+ display:block;padding:10px 12px;border-radius:0 0 9px 9px;
+ color:#30463d!important;-webkit-text-fill-color:#30463d!important;background:#f7f1e4!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main figure figcaption a{
+ color:#17594f!important;-webkit-text-fill-color:#17594f!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-scholars-access{
+ background:linear-gradient(145deg,rgba(24,91,79,.9),rgba(7,54,52,.95))!important;
+ color:#f0f0e7!important;border:1px solid var(--adc-visual-line)!important;border-radius:15px;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-scholars-access :is(p,a){
+ color:#f0f0e7!important;-webkit-text-fill-color:#f0f0e7!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-scholars-access a{
+ color:#ffdc98!important;-webkit-text-fill-color:#ffdc98!important;
 }

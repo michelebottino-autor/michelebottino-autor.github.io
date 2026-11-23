@@ -7,7 +7,7 @@
     var link = document.createElement('link');
     link.id = 'adc-visual-theme';
     link.rel = 'stylesheet';
-    link.href = '/adc/assets/identita-visiva-condivisa-2026.css?v=20261123';
+    link.href = '/adc/assets/identita-visiva-condivisa-2026.css?v=20261123-2';
     document.head.appendChild(link);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadTheme, {once:true});
