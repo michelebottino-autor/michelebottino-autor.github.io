@@ -1,0 +1,95 @@
+/* ADC · Identità visiva DarkAronte, novembre 2026.
+   Stile condiviso: verde petrolio, oro tenue, superfici vetrate.
+   Le immagini utilizzate sono già presenti nell'archivio ADC. */
+:root{--adc-lux-night:#062b2c;--adc-lux-deep:#083c39;--adc-lux-teal:#12524c;--adc-lux-gold:#d5ad67;--adc-lux-paper:#edf5ee;--adc-lux-border:rgba(227,199,138,.38);--adc-lux-shadow:0 18px 54px rgba(1,19,20,.3)}
+body.adc-archive-home,body.adc-inner-2026:has(.adc-lux-elena-hero){background:#072d2e!important;color:var(--adc-lux-paper)!important;background-image:radial-gradient(ellipse at 8% 10%,#1c656060,transparent 35%),linear-gradient(150deg,#062a2b 12%,#0b403c 55%,#052729 100%)!important}
+body.adc-archive-home #adc-unified-header,body.adc-inner-2026 #adc-unified-header,.adc-unified-header{background:linear-gradient(95deg,#04282b,#0c4741)!important;border-bottom:1px solid var(--adc-lux-border)!important;color:#f7f5e9!important;box-shadow:0 8px 22px #001d1d48!important}
+#adc-unified-header .adc-u-links a,.adc-unified-nav a{color:#eaf4ec!important;border-radius:9px!important}
+#adc-unified-header .adc-u-links a:hover,#adc-unified-header .adc-u-links a[aria-current=page],.adc-unified-nav a:hover,.adc-unified-nav a[aria-current=page]{background:#1e635c!important;color:#ffdda0!important}
+body.adc-archive-home main#contenuto{max-width:1460px!important;width:100%!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) main.adc-unified-page{max-width:1450px!important;width:100%!important}
+.adc-lux-hero,.adc-lux-elena-hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(90deg,#052b30f2 0%,#063a3dc9 47%,#092f3099 100%),url('/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-1536.webp') center 42%/cover;border:1px solid var(--adc-lux-border);border-radius:26px;box-shadow:var(--adc-lux-shadow);padding:clamp(23px,4vw,56px);margin:20px 0 24px;color:#f8f6ed}
+.adc-lux-hero:before,.adc-lux-elena-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 65%,#062a2bc9)}
+.adc-lux-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);align-items:center;gap:clamp(18px,4vw,52px)}
+.adc-lux-eyebrow{font:650 .75rem/1.4 system-ui,sans-serif;letter-spacing:.23em;text-transform:uppercase;color:#efcd93!important;margin:0 0 16px!important}
+.adc-lux-hero h1,.adc-lux-elena-hero h1{font:400 clamp(2.35rem,5.15vw,5.2rem)/1.08 Georgia,'Times New Roman',serif!important;letter-spacing:-.042em;color:#fff8e9!important;text-shadow:0 5px 30px #001c20a1;margin:0 0 16px!important;max-width:19ch!important}
+.adc-lux-hero h1 em,.adc-lux-elena-hero h1 em{font-style:normal;color:#e2b878}
+.adc-lux-lead{max-width:62ch;font:400 clamp(1.01rem,1.5vw,1.19rem)/1.6 system-ui,sans-serif;color:#f0f3ec!important;margin:12px 0 22px!important}
+.adc-lux-credit{font:.88rem/1.5 system-ui,sans-serif;color:#f4e0ba!important;margin:12px 0!important}
+.adc-lux-glass{background:linear-gradient(135deg,rgba(9,66,61,.89),rgba(4,38,42,.84))!important;border:1px solid rgba(227,205,160,.52)!important;border-radius:22px!important;box-shadow:inset 0 1px #ffffff40,0 15px 35px #001b1c65!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.adc-lux-chat{padding:clamp(20px,2.4vw,30px)}
+.adc-lux-chat h2,.adc-lux-section h2{font:400 clamp(1.4rem,2.5vw,2.25rem)/1.2 Georgia,serif!important;color:#fff7e5!important;margin:0 0 12px!important}
+.adc-lux-chat p{color:#eaf1ec!important;font-size:.94rem;line-height:1.6}
+.adc-lux-chat form{display:flex;gap:8px;margin:19px 0}
+.adc-lux-chat input,.adc-lux-chat textarea,.adc-lux-search input{flex:1;min-width:0;min-height:53px;border:1px solid #afc8b9!important;background:rgba(236,249,245,.12)!important;border-radius:14px!important;padding:13px 17px!important;color:#fff!important;font:inherit}
+.adc-lux-chat input::placeholder,.adc-lux-search input::placeholder{color:#e3e9dd!important;opacity:.89}
+.adc-lux-chat form button,.adc-lux-search button,.adc-lux-gold-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:49px;background:linear-gradient(145deg,#fae3a6,#c89443)!important;border:1px solid #fff0c5!important;border-radius:12px!important;color:#14342e!important;font:700 .95rem system-ui,sans-serif!important;padding:11px 19px!important;text-decoration:none!important;box-shadow:inset 0 1px #fff9c2,0 6px 18px #001b1c88;cursor:pointer}
+.adc-lux-chat form button:hover,.adc-lux-search button:hover,.adc-lux-gold-button:hover{filter:brightness(1.08)}
+.adc-lux-chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.adc-lux-chips a,.adc-lux-chips button{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:7px 13px!important;color:#f7f5e8!important;background:rgba(235,255,241,.1)!important;border:1px solid #d6c69a87!important;border-radius:999px!important;text-decoration:none!important;font:.86rem/1.3 system-ui,sans-serif!important;cursor:pointer}
+.adc-lux-chips a:hover,.adc-lux-chips button:hover{background:#306b61!important}
+.adc-lux-search{display:flex;gap:8px;max-width:700px;margin:18px 0 20px}
+.adc-lux-tile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:15px}
+.adc-lux-tile{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;min-height:95px;text-align:center;color:#f6f3e9!important;text-decoration:none!important;background:linear-gradient(135deg,#d9f1e522,#12544d98);border:1px solid #d7c7a376;border-radius:16px;font:.88rem/1.3 system-ui,sans-serif;transition:transform .2s,background .2s}
+.adc-lux-tile:hover,.adc-lux-card:hover{transform:translateY(-3px);background-color:#26706729}
+.adc-lux-icon{font-size:1.7rem;color:#f1c475;line-height:1}
+.adc-lux-section{margin:26px 0 30px;color:#eff7f1}
+.adc-lux-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:17px}
+.adc-lux-heading p{color:#c8dad2;margin:0}
+.adc-lux-heading a{color:#eed193!important}
+.adc-lux-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.adc-lux-cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.adc-lux-card{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:205px;padding:18px;text-decoration:none!important;color:#fff!important;border:1px solid #e6d3a77c;border-radius:17px;background:linear-gradient(0deg,#052b2cf6 4%,#0736348c 52%,#05232220),var(--adc-lux-photo,linear-gradient(130deg,#244c46,#0a393a)) center/cover;box-shadow:0 9px 25px #00191955;transition:transform .2s,background-color .2s}
+.adc-lux-card:focus-visible,.adc-lux-tile:focus-visible,.adc-lux-gold-button:focus-visible{outline:3px solid #f6d69e!important;outline-offset:3px}
+.adc-lux-card strong{font:400 1.3rem/1.2 Georgia,serif;color:#fff6e1}
+.adc-lux-card span{font:.83rem/1.45 system-ui,sans-serif;color:#edf0e7;margin-top:7px}
+.adc-lux-tag{display:inline-flex;align-self:start;width:max-content;background:linear-gradient(#efd796,#bf8f46);border-radius:6px;padding:4px 9px;font:700 .66rem system-ui,sans-serif;color:#16352d;margin-bottom:10px}
+.adc-lux-side{display:grid;align-content:start;gap:15px}
+.adc-lux-side .adc-lux-glass{padding:18px 19px}
+.adc-lux-side h2{font:400 1.28rem Georgia,serif;color:#fff2d6;margin:0 0 10px}
+.adc-lux-side a{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid #c9dbc02e;color:#f5f3e7!important;text-decoration:none!important;font:.93rem/1.3 system-ui,sans-serif}
+.adc-lux-side a:last-child{border-bottom:0}
+.adc-lux-side a:hover{color:#f6c877!important}
+.adc-lux-wide{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:linear-gradient(105deg,#184a448c,#093a38e8),url('/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-960.webp') center/cover;border:1px solid var(--adc-lux-border);border-radius:18px;padding:24px 28px;margin:22px 0;color:white}
+.adc-lux-wide h2{font:400 1.8rem/1.2 Georgia,serif!important;color:white!important;margin:0!important}.adc-lux-wide p{color:#ebf1e5!important;margin:7px 0!important}
+.adc-lux-voice{display:flex;gap:15px;flex-wrap:wrap;align-items:center;background:linear-gradient(100deg,#103f3b,#22635a80,#103a38);border:1px solid #e4c58e99;border-radius:17px;padding:18px 22px;margin:22px 0;color:#eff7f1}
+.adc-lux-voice .adc-lux-icon{font-size:2rem}
+.adc-lux-voice strong{font:400 1.55rem Georgia,serif;color:#fff4df}
+.adc-lux-voice p{margin:2px 0!important;color:#d7e6db!important;font-size:.92rem}
+.adc-lux-voice a{color:#f5d69c!important}
+.adc-lux-foot-credit{font:.85rem system-ui,sans-serif;color:#e4c998;text-align:center;padding:18px}
+body.adc-archive-home .adc-first-visit{display:none!important}
+body.adc-archive-home .adc-first-explore{margin-top:36px!important}
+body.adc-archive-home .adc-first-explore,body.adc-archive-home .adc-extra-resources{background:rgba(7,55,51,.42)!important;color:#ecf5ee!important;border-color:#e3c58b61!important;border-radius:18px}
+body.adc-archive-home .adc-first-explore a{color:#f3d5a1!important}
+body.adc-archive-home .adc-first-grid a{background:#174d46!important;border-color:#e2c78a61!important;color:#fff!important}
+body.adc-archive-home .adc-first-grid a span{color:#dae8de!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-panel,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-memorie,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-accoglienza,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-explorer{background:linear-gradient(135deg,#104a45f2,#0b3436f2)!important;color:#f4f7f0!important;border:1px solid #e2c99274!important;border-radius:21px!important;box-shadow:var(--adc-lux-shadow)!important;backdrop-filter:blur(10px)}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-panel h2,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-accoglienza h2,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-memorie h2,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-explorer h2{color:#fff1cf!important;font-family:Georgia,serif!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-panel p,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-memorie p,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-accoglienza p{color:#dce9dc!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-results{background:#073634e8!important;border-color:#a4c4a47d!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-dialogue-answer{background:#184e49!important;border-color:#d1c69b67!important;color:#f4f4e9!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-dialogue-answer p,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-dialogue-answer h2{color:#f4f4e9!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-results>.elena-chat-welcome{background:#1c544c!important;color:#fff!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-dialogue-question{background:#9f7a42!important;color:#fff!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-help,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-source-status{color:#e0eee1!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-examples button,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-examples a,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-profili button{background:#205b51!important;color:#f2f5e9!important;border:1px solid #e4c99084!important;border-radius:999px!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-form input{background:#0b3435!important;border-color:#bbd7bc!important;color:#fff!important;border-radius:14px!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-form input::placeholder{color:#d7e5da!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-form button,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-memorie-action{background:linear-gradient(#f8e0a0,#c6974b)!important;color:#173831!important;border-radius:13px!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-note{background:#1b4a43!important;color:#f2f1e5!important;border-left:4px solid #e8c680!important;border-radius:14px}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-dialogue-links a,body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-explorer a{color:#f3d696!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-microphone-controls p{color:#dce9dd!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-microphone-start{border-color:#e0c37e!important;background:#235d53!important;color:white!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-results a{color:#f4d69d!important}
+.adc-lux-elena-hero{min-height:370px;background-position:center 40%;margin-bottom:22px}
+.adc-lux-elena-hero .adc-lux-grid{grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr)}
+.adc-lux-elena-hero .adc-lux-glass{padding:22px}
+.adc-lux-elena-hero .adc-lux-glass h2{font:400 1.55rem Georgia,serif;color:#fff2d6;margin:0}
+.adc-lux-elena-hero .adc-lux-glass a{display:block;color:#f5e5c6!important;text-decoration:none;border-bottom:1px solid #e8c78b36;padding:11px 0}
+.adc-lux-elena-hero #elena-paola-welcome{background:linear-gradient(#f6dca0,#be914e)!important;border:1px solid #f6e7bd!important;color:#1b3b37!important;border-radius:12px!important;padding:12px 18px!important}
+body.adc-inner-2026:has(.adc-lux-elena-hero) .adc-inner-footer{background:#072e30!important;color:#f2f2e5!important;border-top:1px solid #deb97f80}
+@media(max-width:980px){.adc-lux-grid,.adc-lux-elena-hero .adc-lux-grid{grid-template-columns:1fr}.adc-lux-side{grid-template-columns:repeat(2,minmax(0,1fr))}.adc-lux-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.adc-lux-cards.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.adc-lux-hero,.adc-lux-elena-hero{padding:22px 16px;margin:10px 0 18px;border-radius:18px}.adc-lux-hero h1,.adc-lux-elena-hero h1{font-size:clamp(2rem,9vw,3.3rem)!important}.adc-lux-hero .adc-lux-glass{padding:18px}.adc-lux-tile-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.adc-lux-tile{font-size:.75rem;min-height:78px}.adc-lux-cards,.adc-lux-cards.three{grid-template-columns:1fr 1fr;gap:10px}.adc-lux-card{min-height:180px;padding:12px}.adc-lux-card strong{font-size:1.06rem}.adc-lux-side{grid-template-columns:1fr}.adc-lux-wide{padding:18px}.adc-lux-search{flex-wrap:wrap}.adc-lux-search button{min-width:100px}.adc-lux-voice{align-items:flex-start}}
+@media(max-width:390px){.adc-lux-cards,.adc-lux-cards.three{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.adc-lux-card,.adc-lux-tile{transition:none!important}}
