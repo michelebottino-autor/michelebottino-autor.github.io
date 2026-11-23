@@ -385,7 +385,7 @@
         if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
         if((r.kind==='documentary'||r.kind==='passage'||r.kind==='research-status') && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         const voiceControls=make('div','elena-dialogue-voice');
-        const read=make('button','elena-dialogue-read','Ascolta la risposta');
+        const read=make('button','elena-dialogue-read','Lettura non disponibile');read.disabled=true;read.title='La sintesi pubblica con la voce ufficiale non è ancora collegata.';
         read.type='button';
         const stop=make('button','elena-dialogue-stop','Interrompi');
         stop.type='button';stop.hidden=true;
@@ -421,7 +421,7 @@
           synthesis.speak(utterance);
         });
         stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
-        voiceControls.append(read,stop,speedLabel,status);
+        const sampleLink=make('a','elena-dialogue-sample','Ascolta il campione ufficiale');sampleLink.href='/adc/audio/elena-ufficiale-20261123.wav';sampleLink.setAttribute('aria-label','Ascolta il campione approvato della voce, non la risposta corrente');status.textContent='La lettura della risposta non è ancora disponibile con la voce ufficiale.';voiceControls.append(read,sampleLink,status);
         // Il comando vocale precede il testo lungo: resta subito visibile anche su smartphone.
         article.insertBefore(voiceControls,article.children[1] || null);
         if(r.links.length) {
