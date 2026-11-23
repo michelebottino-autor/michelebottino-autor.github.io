@@ -103,6 +103,12 @@ window.MB_ANALYTICS_ID = "G-5MVH0PN6E5";
       window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}),{once:true});
     }
   }
-  function init(){setupPwa();mobileNavigation();usageTracking();preferenceControl();banner()}
+  function normalizeFooterAccessibleName(){
+    // Il testo visibile deve contribuire al nome accessibile del collegamento AEGIS.
+    document.querySelectorAll('.aegis-footer-signature a[aria-label]').forEach(a=>{
+      if(a.textContent.trim())a.removeAttribute('aria-label');
+    });
+  }
+  function init(){setupPwa();mobileNavigation();usageTracking();normalizeFooterAccessibleName();preferenceControl();banner()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

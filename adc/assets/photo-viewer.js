@@ -44,7 +44,6 @@
    const original=figure.querySelector('img');
    const button=document.createElement('button');
    button.type='button';button.className='adc-photo-open';
-   button.setAttribute('aria-label','Ingrandisci fotografia: '+original.alt);
    original.parentNode.insertBefore(button,original);
    button.append(original);
    const hint=document.createElement('span');hint.className='adc-photo-hint';hint.textContent='Tocca per ingrandire';

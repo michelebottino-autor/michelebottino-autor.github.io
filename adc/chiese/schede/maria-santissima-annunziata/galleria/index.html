@@ -45,7 +45,7 @@ function render(){
  if(!listed.length){const p=document.createElement('p');p.className='empty';p.textContent='Nessun elemento corrisponde alla ricerca.';el.append(p);return}
  for(const w of listed){
  const card=document.createElement('article');card.className='tile';const btn=document.createElement('button');
- btn.type='button';btn.setAttribute('aria-label','Apri '+w.title);
+ btn.type='button';
  btn.innerHTML='<figure><img src="'+w.photos[0].thumb+'" loading="lazy" decoding="async" alt="'+text(w.title)+'">'+(w.photos.length>1?'<span class="countTag">'+w.photos.length+' fotografie</span>':'')+'</figure><div class="tileBody"><span class="type">'+text(w.category)+'</span><h2>'+text(w.title)+'</h2></div>';
  btn.onclick=()=>{focused=btn;open(listed.indexOf(w))};card.append(btn);el.append(card)
  }
