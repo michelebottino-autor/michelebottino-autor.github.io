@@ -155,7 +155,7 @@
     const asksIdentity=/(?:chi|cos.?e|che cos.?e|cosa significa|parlami di)\s+(?:e\s+)?dark\s*aronte|(?:dark\s*aronte).*(?:chi|cos.?e|significa)/.test(n);
     const asksCreators=/(?:chi|da chi).*(?:ideat|creat|realizzat|sviluppat|progettat|costruit).*(?:elena|assistente)|(?:elena).*(?:chi l.ha|chi ti ha|chi ha).*(?:ideat|creat|realizzat|sviluppat)/.test(n);
     if(asksCreators || asksIdentity){
-      return {kind:'about',title:asksIdentity?'Chi è Dark Aronte':'Chi ha realizzato Elena?',
+      return {kind:'about',title:asksIdentity?'Chi è DarkAronte?':'Chi ha realizzato Elena?',
         text:asksIdentity
           ? 'DarkAronte cura lo sviluppo tecnologico e software di Elena, nata da un’idea di Michele Bottino per l’Archivio Documentale Calatabiano.'
           : 'Elena nasce da un’idea di Michele Bottino, che cura l’Archivio Documentale Calatabiano. Lo sviluppo tecnologico e software è affidato a DarkAronte. Elena è uno strumento indipendente dell’Archivio, non un servizio del Comune.',
