@@ -93,3 +93,24 @@ body.adc-inner-2026:has(.adc-lux-elena-hero) .adc-inner-footer{background:#072e3
 @media(max-width:640px){.adc-lux-hero,.adc-lux-elena-hero{padding:22px 16px;margin:10px 0 18px;border-radius:18px}.adc-lux-hero h1,.adc-lux-elena-hero h1{font-size:clamp(2rem,9vw,3.3rem)!important}.adc-lux-hero .adc-lux-glass{padding:18px}.adc-lux-tile-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.adc-lux-tile{font-size:.75rem;min-height:78px}.adc-lux-cards,.adc-lux-cards.three{grid-template-columns:1fr 1fr;gap:10px}.adc-lux-card{min-height:180px;padding:12px}.adc-lux-card strong{font-size:1.06rem}.adc-lux-side{grid-template-columns:1fr}.adc-lux-wide{padding:18px}.adc-lux-search{flex-wrap:wrap}.adc-lux-search button{min-width:100px}.adc-lux-voice{align-items:flex-start}}
 @media(max-width:390px){.adc-lux-cards,.adc-lux-cards.three{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.adc-lux-card,.adc-lux-tile{transition:none!important}}
+
+/* Sezione testi verificati, stessa identità senza cambiare i dati. */
+body:has(#corpus-form){background:linear-gradient(135deg,#072c2d,#104b43)!important;color:#eef5e8!important}
+body:has(#corpus-form)>header{background:linear-gradient(90deg,#052b2d,#185a4f)!important;border-bottom:1px solid #e2be8099;color:#f4efe1!important}
+body:has(#corpus-form)>header a{color:#f5ddaa!important}
+body:has(#corpus-form)>main{max-width:1160px}
+body:has(#corpus-form) main>h1{color:#fff7e6!important;font:400 clamp(2.2rem,5vw,4.3rem)/1.14 Georgia,serif!important;letter-spacing:-.04em}
+body:has(#corpus-form) main>.eyebrow{color:#e6c589!important}
+body:has(#corpus-form) main>p{color:#e5f0e5!important}
+body:has(#corpus-form) .info{background:#1e5850!important;color:#f9f0da!important;border-left:4px solid #e4bc7e!important;border-radius:12px}
+body:has(#corpus-form) .search{background:linear-gradient(140deg,#114b45,#0a3839)!important;color:#eef3e8!important;border:1px solid #e6c890a1!important;border-radius:20px!important;box-shadow:0 15px 44px #001c1c6a!important}
+body:has(#corpus-form) .search label{color:#f5e4bf!important}
+body:has(#corpus-form) .search input{color:#fff!important;background:#0a3334!important;border:1px solid #abcbb8!important;border-radius:12px!important}
+body:has(#corpus-form) .search input::placeholder{color:#d9e6de!important}
+body:has(#corpus-form) .search button{background:linear-gradient(#f2d99b,#c89545)!important;color:#173b34!important;border:1px solid #ffebbd!important;border-radius:12px!important}
+body:has(#corpus-form) #corpus-status{color:#deebe0!important}
+body:has(#corpus-form) .corpus-record{background:linear-gradient(140deg,#154b45,#0b3839)!important;color:#f4f6ed!important;border:1px solid #dec48e91!important;border-radius:18px!important;box-shadow:0 12px 30px #001c1c6b!important}
+body:has(#corpus-form) .corpus-record :is(h2,h3){color:#ffe4aa!important}
+body:has(#corpus-form) .corpus-record :is(p,small){color:#e9f1e6!important}
+body:has(#corpus-form) .corpus-record a,body:has(#corpus-form) main>a,body:has(#corpus-form) main>p>a{color:#f7d391!important}
+body:has(#corpus-form) footer{color:#e5d1af!important;border-top:1px solid #dabd8a7b!important}
