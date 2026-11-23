@@ -114,3 +114,134 @@ body:has(#corpus-form) .corpus-record :is(h2,h3){color:#ffe4aa!important}
 body:has(#corpus-form) .corpus-record :is(p,small){color:#e9f1e6!important}
 body:has(#corpus-form) .corpus-record a,body:has(#corpus-form) main>a,body:has(#corpus-form) main>p>a{color:#f7d391!important}
 body:has(#corpus-form) footer{color:#e5d1af!important;border-top:1px solid #dabd8a7b!important}
+
+
+/* ADC — correzione definitiva mobile e desktop dal confronto con Android.
+   Sovrascrive le vecchie palette, NON i documenti e le funzioni. */
+html:has(body.adc-archive-home){background:#062e2f!important}
+html:has(body.adc-archive-home) body.adc-archive-home{background:#062f30!important;background-image:linear-gradient(160deg,#072e31,#0b4640 50%,#05282b)!important;color:#f7f3e6!important}
+body.adc-archive-home main#contenuto,
+body.adc-archive-home main#contenuto.page.container{background:transparent!important;color:#f7f4e9!important;max-width:1480px!important;box-shadow:none!important;overflow:visible!important}
+body.adc-archive-home main#contenuto > .adc-lux-hero,
+body.adc-inner-2026 .adc-lux-elena-hero{background:linear-gradient(90deg,#052e31ed,#063b3cb8 52%,#062d30ae),url('/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-1536.webp') center 42%/cover!important;color:#fffaf0!important}
+body.adc-archive-home #contenuto .adc-lux-hero h1,
+body.adc-inner-2026 .adc-lux-elena-hero h1{color:#fff8eb!important;font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;line-height:1.08!important;text-shadow:0 4px 18px #001d1d85!important}
+body.adc-archive-home #contenuto .adc-lux-hero h1 em{color:#f2ca85!important}
+body.adc-archive-home #contenuto .adc-lux-hero .adc-lux-chat h2,
+body.adc-inner-2026 .adc-lux-elena-hero .adc-lux-glass h2{color:#fff1d4!important;font:400 clamp(1.5rem,2.5vw,2.4rem)/1.2 Georgia,serif!important}
+body.adc-archive-home #contenuto :is(.adc-lux-hero,.adc-lux-section,.adc-lux-voice,.adc-lux-wide) :is(p,li){color:#e8efe5!important;line-height:1.5!important}
+body.adc-archive-home #contenuto .adc-lux-section h2,
+body.adc-archive-home #contenuto .adc-lux-wide h2{color:#fff4dc!important;font:400 clamp(1.45rem,2.4vw,2.1rem)/1.2 Georgia,serif!important}
+body.adc-archive-home #contenuto .adc-lux-chat :is(input,textarea),
+body.adc-archive-home #contenuto .adc-lux-search input{box-sizing:border-box!important;color:#fff!important}
+body.adc-archive-home #contenuto .adc-lux-chat :is(input,textarea)::placeholder,
+body.adc-archive-home #contenuto .adc-lux-search input::placeholder{color:#dceae1!important}
+body.adc-archive-home #contenuto :is(.adc-lux-chat,.adc-lux-glass,.adc-lux-side .adc-lux-glass){background:linear-gradient(135deg,#0d4945ed,#073437ed)!important;border:1px solid #e7c99288!important}
+body.adc-archive-home #contenuto .adc-lux-tile{min-width:0;overflow-wrap:anywhere;color:#fff7e6!important}
+body.adc-archive-home #contenuto .adc-lux-tile .adc-lux-icon{color:#f2cd86!important}
+body.adc-archive-home #contenuto .adc-lux-chips a{color:#fff8e8!important}
+body.adc-archive-home #contenuto .adc-lux-card strong{color:#fff5e1!important}
+body.adc-archive-home #contenuto .adc-lux-card span:not(.adc-lux-tag){color:#f1efe5!important}
+body.adc-archive-home #contenuto .adc-lux-tag{color:#17362e!important;background:linear-gradient(#f6dca0,#bf9149)!important}
+body.adc-archive-home #contenuto .adc-lux-section a:not(.adc-lux-card){color:#f2d398!important}
+body.adc-archive-home #contenuto .adc-lux-hero :is(a,button,input):focus-visible,
+body.adc-archive-home #contenuto .adc-lux-section :is(a,button,input):focus-visible{outline:3px solid #ffe4a3!important;outline-offset:3px}
+.adc-lux-lower-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(245px,285px);gap:22px;align-items:start}
+.adc-lux-lower-main{min-width:0}
+.adc-lux-lower-layout .adc-lux-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.adc-lux-lower-layout .adc-lux-cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.adc-lux-lower-layout .adc-lux-side{display:grid;grid-template-columns:minmax(0,1fr);gap:15px;margin-top:25px}
+.adc-lux-lower-layout .adc-lux-side .adc-lux-glass{padding:18px}
+.adc-lux-lower-layout .adc-lux-side h2{color:#ffe5b6!important;font:400 1.22rem/1.2 Georgia,serif!important}
+.adc-lux-lower-layout .adc-lux-side a{color:#fff7e9!important;font-size:.91rem!important}
+.adc-lux-lower-layout .adc-lux-side a span{color:#edce90}
+body.adc-archive-home #contenuto>.adc-first-explore{display:none!important}
+body.adc-archive-home #contenuto>.adc-extra-resources{background:#10423d!important;border:1px solid #d5b57c9e!important;margin:23px 0 30px!important;color:#fff5e2!important}
+body.adc-archive-home #contenuto>.adc-extra-resources>summary{background:#104941!important;color:#f4f0df!important;padding:17px 22px!important}
+body.adc-archive-home #contenuto>.adc-extra-resources>summary :is(strong,span){color:#f4f0df!important}
+body.adc-archive-home #contenuto>.adc-extra-resources>summary:after{color:#ebc680!important}
+body.adc-archive-home #contenuto .adc-legacy-paths{margin-bottom:16px}
+body.adc-archive-home #contenuto .adc-legacy-paths .adc-first-explore{background:transparent!important;color:#fff!important}
+body.adc-archive-home #contenuto .adc-legacy-paths h2{color:#fff0d4!important}
+body.adc-archive-home #contenuto .adc-legacy-paths .adc-first-grid a{color:#fff!important;background:#1b554c!important;border:1px solid #d9bc8288!important}
+body.adc-archive-home #contenuto .adc-legacy-paths .adc-first-grid a :is(strong,span){color:#f5f3e6!important}
+body.adc-archive-home #contenuto .adc-legacy-paths .adc-first-more a{color:#f1d09b!important}
+body.adc-archive-home .adc-lux-footer{background:linear-gradient(120deg,#05272a,#0a4140)!important;color:#e8efe6!important;border-top:1px solid #d5ad76c9!important;box-shadow:0 -12px 30px #001c1c4d!important}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-top{max-width:1480px;padding:24px 25px;margin:auto;display:grid;grid-template-columns:auto 1fr 2.4fr;gap:26px;align-items:center}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-brand{display:flex;align-items:center;gap:12px;color:#fff9ed!important;text-decoration:none!important}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-brand strong{font:400 2rem Georgia,serif}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-brand span{font:600 .79rem/1.25 system-ui,sans-serif}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-top>p{font:italic .99rem/1.4 Georgia,serif;color:#dcdccf!important;margin:0}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-top nav{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px 16px}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-top nav a{color:#eaf0e6!important;font:.85rem system-ui,sans-serif;text-decoration:none!important}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-top nav a:hover{color:#f9d395!important}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-bottom{max-width:1480px;margin:auto;border-top:1px solid #dcbd7a63;display:flex;justify-content:space-between;gap:10px 22px;flex-wrap:wrap;padding:13px 25px;font:.77rem/1.4 system-ui,sans-serif;color:#d8e2d9!important}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-bottom a{color:#efcf95!important}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-more{max-width:1480px;margin:auto;padding:0 25px 16px;font:.8rem system-ui,sans-serif;color:#d5c5a5}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-more summary{cursor:pointer;max-width:max-content;color:#e4c88e}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-extra{display:flex;flex-wrap:wrap;gap:8px 20px;padding:15px 0}
+body.adc-archive-home .adc-lux-footer .adc-lux-footer-extra a{color:#f0dab2!important}
+body.adc-archive-home .adc-lux-footer :is(a,summary):focus-visible{outline:3px solid #ffe4a0!important;outline-offset:3px}
+@media(max-width:1100px){
+ .adc-lux-lower-layout{grid-template-columns:minmax(0,1fr)}
+ .adc-lux-lower-layout .adc-lux-side{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0}
+}
+@media(max-width:760px){
+ html:has(body.adc-archive-home){overflow-x:clip}
+ body.adc-archive-home{overflow-x:clip!important}
+ body.adc-archive-home main#contenuto{width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;padding:12px 13px 25px!important;margin:0!important}
+ body.adc-archive-home #contenuto .adc-lux-hero{margin:0 0 20px!important;padding:21px 16px!important;border-radius:19px!important;overflow:hidden!important}
+ body.adc-archive-home #contenuto .adc-lux-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+ body.adc-archive-home #contenuto .adc-lux-grid>*{min-width:0!important;max-width:100%!important}
+ body.adc-archive-home #contenuto .adc-lux-hero h1{font-size:clamp(1.95rem,7.8vw,3rem)!important;line-height:1.09!important;margin:0 0 13px!important;letter-spacing:-.035em!important}
+ body.adc-archive-home #contenuto .adc-lux-eyebrow{font-size:.68rem!important;letter-spacing:.14em!important;line-height:1.35!important;margin:0 0 10px!important}
+ body.adc-archive-home #contenuto .adc-lux-lead{font-size:.96rem!important;line-height:1.48!important;margin:0 0 17px!important}
+ body.adc-archive-home #contenuto .adc-lux-search{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;max-width:100%!important;gap:8px!important;margin:16px 0!important}
+ body.adc-archive-home #contenuto .adc-lux-search input,
+ body.adc-archive-home #contenuto .adc-lux-chat input{width:100%!important;min-width:0!important;max-width:100%!important;min-height:45px!important;padding:10px 12px!important;font:400 .93rem system-ui,sans-serif!important}
+ body.adc-archive-home #contenuto .adc-lux-search button{min-width:78px!important;min-height:45px!important;padding:9px 12px!important;font-size:.89rem!important}
+ body.adc-archive-home #contenuto .adc-lux-tile-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+ body.adc-archive-home #contenuto .adc-lux-tile{min-height:76px!important;padding:7px 3px!important;gap:4px!important;font-size:.78rem!important;line-height:1.2!important;border-radius:13px!important}
+ body.adc-archive-home #contenuto .adc-lux-tile .adc-lux-icon{font-size:1.3rem!important}
+ body.adc-archive-home #contenuto .adc-lux-chat{padding:17px 14px!important;border-radius:17px!important}
+ body.adc-archive-home #contenuto .adc-lux-chat h2{font-size:1.65rem!important}
+ body.adc-archive-home #contenuto .adc-lux-chat p{font-size:.91rem!important;line-height:1.45!important}
+ body.adc-archive-home #contenuto .adc-lux-chat form{display:grid!important;grid-template-columns:minmax(0,1fr) 45px!important;gap:8px!important;margin:12px 0!important}
+ body.adc-archive-home #contenuto .adc-lux-chat form button{min-width:0!important;width:45px!important;padding:8px!important;font-size:1.2rem!important}
+ body.adc-archive-home #contenuto .adc-lux-credit{font-size:.76rem!important;line-height:1.45!important}
+ body.adc-archive-home #contenuto .adc-lux-chips{gap:6px!important}
+ body.adc-archive-home #contenuto .adc-lux-chips a{font-size:.78rem!important;min-height:33px!important;padding:7px 10px!important}
+ body.adc-archive-home #contenuto .adc-lux-lower-layout{display:block!important}
+ body.adc-archive-home #contenuto .adc-lux-section{margin:20px 0!important}
+ body.adc-archive-home #contenuto .adc-lux-heading{margin:0 0 12px!important}
+ body.adc-archive-home #contenuto .adc-lux-section h2{font-size:1.55rem!important;margin:0 0 5px!important}
+ body.adc-archive-home #contenuto .adc-lux-heading p{font-size:.84rem!important;line-height:1.45!important}
+ body.adc-archive-home #contenuto .adc-lux-cards,
+ body.adc-archive-home #contenuto .adc-lux-lower-layout .adc-lux-cards,
+ body.adc-archive-home #contenuto .adc-lux-lower-layout .adc-lux-cards.three{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ body.adc-archive-home #contenuto .adc-lux-card{min-width:0!important;min-height:170px!important;height:auto!important;padding:11px!important;overflow:hidden!important;box-sizing:border-box!important;border-radius:13px!important}
+ body.adc-archive-home #contenuto .adc-lux-card strong{font-size:1.03rem!important;line-height:1.18!important}
+ body.adc-archive-home #contenuto .adc-lux-card span:not(.adc-lux-tag){font-size:.75rem!important;line-height:1.32!important}
+ body.adc-archive-home #contenuto .adc-lux-tag{font-size:.58rem!important;padding:3px 7px!important;margin-bottom:7px!important}
+ body.adc-archive-home #contenuto .adc-lux-side{display:grid!important;grid-template-columns:1fr!important;margin:17px 0 0!important}
+ body.adc-archive-home #contenuto .adc-lux-side .adc-lux-glass{padding:15px!important}
+ body.adc-archive-home #contenuto .adc-lux-side h2{font-size:1.24rem!important}
+ body.adc-archive-home #contenuto .adc-lux-wide{padding:17px!important;gap:14px!important;margin:17px 0!important}
+ body.adc-archive-home #contenuto .adc-lux-wide h2{font-size:1.44rem!important}
+ body.adc-archive-home #contenuto .adc-lux-wide p{font-size:.87rem!important}
+ body.adc-archive-home #contenuto .adc-lux-voice{padding:14px!important;gap:11px!important;margin:15px 0!important}
+ body.adc-archive-home #contenuto .adc-lux-voice strong{font-size:1.32rem!important}
+ body.adc-archive-home #contenuto .adc-lux-voice p{font-size:.83rem!important}
+ body.adc-archive-home #contenuto>.adc-extra-resources{margin:18px 0!important}
+ body.adc-archive-home #contenuto>.adc-extra-resources>summary{padding:14px!important}
+ body.adc-archive-home .adc-lux-footer .adc-lux-footer-top{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;padding:20px 18px}
+ body.adc-archive-home .adc-lux-footer .adc-lux-footer-top>p{font-size:.88rem}
+ body.adc-archive-home .adc-lux-footer .adc-lux-footer-top nav{justify-content:flex-start;gap:8px 13px}
+ body.adc-archive-home .adc-lux-footer .adc-lux-footer-bottom{padding:14px 18px;flex-direction:column;gap:7px}
+ body.adc-archive-home .adc-lux-footer .adc-lux-footer-more{padding:0 18px 18px}
+}
+@media(max-width:350px){
+ body.adc-archive-home #contenuto .adc-lux-cards,
+ body.adc-archive-home #contenuto .adc-lux-lower-layout .adc-lux-cards,
+ body.adc-archive-home #contenuto .adc-lux-lower-layout .adc-lux-cards.three{grid-template-columns:1fr!important}
+}
