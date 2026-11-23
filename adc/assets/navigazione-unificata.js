@@ -5,10 +5,10 @@
     var body = document.body;
     if (!body) return;
     var names = [
-      ['Archivio','/adc/'], ['Storia','/adc/storia-per-tutti/'], ['Le chiese','/adc/chiese/'], ['Monasteri','/adc/monasteri/'],
-      ['Fonti','/adc/fonti/'], ['Atlante','/adc/atlante/'],
+      ['Archivio','/adc/'], ['Cerca','/adc/cerca/'], ['Inventario','/adc/inventario/'], ['Luoghi','/adc/atlante/'], ['Persone','/adc/persone/'], ['Percorso storico','/adc/storia-per-tutti/'], ['Le chiese','/adc/chiese/'], ['Monasteri','/adc/monasteri/'],
+      ['Fonti','/adc/fonti/'],
       ['Mediateca','/adc/mediateca/'], ['Patrimonio','/adc/materiali-patrimonio/'],
-      ['Stampa','/adc/stampa/'], ['Persone e libri','/adc/persone/'],
+      ['Stampa','/adc/stampa/'],
       ['Elena','/adc/elena/'], ['Origini e dedica','/adc/#dedica-comunita'], ['Carta ADC','/adc/carta/'], ['Michele Bottino','/']
     ];
     var header = document.createElement('div');
