@@ -4,11 +4,13 @@ on:
     paths:
       - 'adc/memorie/backend/**'
       - 'adc/memorie/config.json'
+      - '.github/scripts/test-adc-memorie-live.mjs'
       - '.github/workflows/adc-memorie-security.yml'
   pull_request:
     paths:
       - 'adc/memorie/backend/**'
       - 'adc/memorie/config.json'
+      - '.github/scripts/test-adc-memorie-live.mjs'
       - '.github/workflows/adc-memorie-security.yml'
   workflow_dispatch:
 permissions:
@@ -26,6 +28,9 @@ jobs:
         run: node --check adc/memorie/backend/worker.js
       - name: Esegue test isolati di sicurezza e redazione
         run: node --test adc/memorie/backend/worker.test.mjs
+      - name: Smoke test remoto read-only API Production
+        timeout-minutes: 2
+        run: node .github/scripts/test-adc-memorie-live.mjs
       - name: Controlla configurazione pubblica
         run: |
           node -e "const fs=require('fs');const c=JSON.parse(fs.readFileSync('adc/memorie/config.json','utf8'));if(typeof c.enabled!=='boolean'||!/^https:\/\//.test(c.endpoint)||!c.turnstile_site_key)process.exit(1);console.log('Configurazione pubblica valida; segreti non ispezionati.')"
