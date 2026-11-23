@@ -15,8 +15,8 @@ for(const file of targets){
  assert.deepEqual(visible,[],file+' contiene testo pubblico Paola: '+visible.join('; '));
 }
 const widget=fs.readFileSync(path.join(root,'adc/assets/elena-presenza.js'),'utf8');
-assert(widget.includes('Ascolta Elena'),'Pulsante Elena assente');
-assert(widget.includes('Ferma Elena'),'Arresto Elena assente');
-assert(widget.includes('Elena sta leggendo'),'Conferma lettura Elena assente');
+assert(widget.includes('Ascolta un campione della voce'),'Pulsante del campione vocale Elena assente');
+assert(widget.includes('Ferma il campione'),'Comando di arresto del campione vocale assente');
+assert(widget.includes('Elena sta leggendo la risposta.'),'Conferma lettura della risposta Elena assente');
 assert(widget.includes('/adc/audio/elena-paola-benvenuto.mp3'),'Audio originale mancante');
 console.log('ELENA_IDENTITA_OK: interfaccia pubblica Elena; percorsi tecnici Paola conservati.');
