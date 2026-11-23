@@ -5,17 +5,19 @@
     var body = document.body;
     if (!body) return;
     // Due percorsi d'accesso chiari, strumenti principali e sezioni secondarie.
+    // In evidenza i percorsi del patrimonio; Elena resta uno strumento di consultazione.
     var mainNames = [
-      ['Archivio','/adc/'], ['Per i cittadini','/adc/storia-per-tutti/'],
-      ['Per gli studiosi','/adc/fonti/'], ['Cerca','/adc/cerca/'],
-      ['Inventario','/adc/inventario/'], ['Luoghi','/adc/atlante/'],
-      ['Persone','/adc/persone/'], ['Elena','/adc/elena/']
+      ['Archivio','/adc/'], ['Documenti','/adc/inventario/'],
+      ['Fonti','/adc/fonti/'], ['Luoghi','/adc/atlante/'],
+      ['Chiese e arte','/adc/chiese/'], ['Fotografie','/adc/mediateca/'],
+      ['Cerca','/adc/cerca/']
     ];
     var otherNames = [
-      ['Le chiese','/adc/chiese/'], ['Monasteri','/adc/monasteri/'],
-      ['Mediateca','/adc/mediateca/'], ['Patrimonio','/adc/materiali-patrimonio/'],
-      ['Stampa','/adc/stampa/'], ['Origini e dedica','/adc/#dedica-comunita'],
-      ['Carta ADC','/adc/carta/'], ['Michele Bottino','/']
+      ['Persone e memorie','/adc/persone/'], ['Storia per tutti','/adc/storia-per-tutti/'],
+      ['Monasteri','/adc/monasteri/'], ['Patrimonio','/adc/materiali-patrimonio/'],
+      ['Stampa','/adc/stampa/'], ['Elena','/adc/elena/'],
+      ['Origini e dedica','/adc/#dedica-comunita'],
+      ['Carta ADC','/adc/carta/'], ['Sito dell’autore','/']
     ];
     var header = document.createElement('div');
     header.id = 'adc-unified-header';
@@ -148,11 +150,13 @@
       if (extras && preferences) extras.appendChild(preferences);
       return;
     }
+    // Conserva i footer editoriali esistenti. Evita di duplicarne menu e crediti.
     if (footer.querySelector('[data-adc-footer-identity]')) return;
+    if (footer.textContent.trim().length > 65) return;
     var line = document.createElement('div');
     line.className = 'adc-u-footer-line';
     line.dataset.adcFooterIdentity = 'true';
-    line.innerHTML = '<span>Archivio Documentale Calatabiano · A cura di Michele Bottino</span><nav aria-label="Collegamenti principali"><a href="/adc/">Archivio</a><a href="/adc/stampa/">Giornali storici</a><a href="/adc/persone/">Persone, libri e studi</a><a href="/adc/#dedica-comunita">Origini e dedica</a><a href="/adc/carta/">Carta ADC</a><a href="/">Sito dell’autore</a></nav>';
+    line.innerHTML = '<span>Archivio Documentale Calatabiano · A cura di Michele Bottino</span><a href="/adc/">Torna all’Archivio</a>';
     footer.appendChild(line);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
