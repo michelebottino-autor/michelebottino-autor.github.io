@@ -16,7 +16,7 @@
       "limiti": "Atto originale non esaminato; la notizia del prezzo di 15.000 tarì è mediata dagli studi.",
       "livello": "C",
       "tema": "Castello e potere vescovile",
-      "pagina": "../dossier-1213-1537/"
+      "pagina": "../dossier-1213-1537/#adc-notizia-1213"
     },
     {
       "id": "ADC-0002",
@@ -27,7 +27,7 @@
       "limiti": "Grafia e importo da confrontare con la pagina a stampa; manoscritto non collazionato.",
       "livello": "B",
       "tema": "Chiese medievali",
-      "pagina": "../dossier-rationes/"
+      "pagina": "../chiese/studi/rationes/#adc-0002"
     },
     {
       "id": "ADC-0003",
@@ -38,7 +38,7 @@
       "limiti": "Rinvio manoscritto incompleto; lettura dalla riproduzione testuale, non dall'originale.",
       "livello": "B",
       "tema": "Chiese medievali",
-      "pagina": "../dossier-rationes/"
+      "pagina": "../chiese/studi/rationes/#adc-0003"
     },
     {
       "id": "ADC-0004",
@@ -49,7 +49,7 @@
       "limiti": "Numerazione 536/525 discordante tra riproduzione testuale e indice; non attribuire un numero definitivo. La formula Capellanus Calatabiani non identifica la dedicazione della chiesa; nessun originale collazionato.",
       "livello": "B",
       "tema": "Chiese medievali",
-      "pagina": "../dossier-rationes/"
+      "pagina": "../chiese/studi/rationes/#adc-0004"
     },
     {
       "id": "ADC-0005",
@@ -60,7 +60,7 @@
       "limiti": "Fogli non specificati; superficie delle caselle non convertibile con certezza.",
       "livello": "C",
       "tema": "Zucchero e Mirulla",
-      "pagina": "../dossier-zucchero/"
+      "pagina": "../dossier-zucchero/#adc-0005"
     },
     {
       "id": "ADC-0006",
@@ -71,7 +71,7 @@
       "limiti": "Data precisa e fogli dell'atto non indicati; originale non esaminato.",
       "livello": "C",
       "tema": "Zucchero e Mirulla",
-      "pagina": "../dossier-zucchero/"
+      "pagina": "../dossier-zucchero/#adc-0006"
     },
     {
       "id": "ADC-0007",
@@ -82,7 +82,7 @@
       "limiti": "Atto non consultato direttamente; significato preciso delle clausole da accertare.",
       "livello": "C",
       "tema": "Zucchero e Mirulla",
-      "pagina": "../dossier-1213-1537/"
+      "pagina": "../dossier-1213-1537/#adc-notizia-1537"
     },
     {
       "id": "ADC-0008",
@@ -93,7 +93,7 @@
       "limiti": "Data approssimativa riferita dallo studio; documento locale non identificato.",
       "livello": "C",
       "tema": "Zucchero e Mirulla",
-      "pagina": "../dossier-zucchero/"
+      "pagina": "../dossier-zucchero/#adc-0008"
     },
     {
       "id": "ADC-0009",
@@ -104,7 +104,7 @@
       "limiti": "Il testo menziona un ponte; l'identificazione con quello di Calatabiano dipende dalla nota moderna.",
       "livello": "B",
       "tema": "Ponte sull'Alcantara",
-      "pagina": "../ponte-alcantara-medievale/"
+      "pagina": "../ponte-alcantara-medievale/#adc-0009"
     },
     {
       "id": "ADC-0010",
@@ -115,7 +115,7 @@
       "limiti": "Non identifica il Panagia con l'Alcantara; pergamena originale non collazionata.",
       "livello": "B",
       "tema": "Acque e monasteri",
-      "pagina": "../acque-mulini-confini/"
+      "pagina": "../acque-mulini-confini/#adc-0010"
     },
     {
       "id": "ADC-0011",
@@ -126,7 +126,7 @@
       "limiti": "Non prova la coincidenza con il feudo Gullia del 1408 né la localizzazione a Calatabiano.",
       "livello": "B",
       "tema": "Acque e monasteri",
-      "pagina": "../acque-mulini-confini/"
+      "pagina": "../acque-mulini-confini/#adc-0011"
     },
     {
       "id": "ADC-0012",
@@ -137,7 +137,7 @@
       "limiti": "Il regesto non equivale alla collazione della pergamena originale.",
       "livello": "B",
       "tema": "Acque e monasteri",
-      "pagina": "../acque-mulini-confini/"
+      "pagina": "../acque-mulini-confini/#adc-0012"
     },
     {
       "id": "ADC-0013",
@@ -148,7 +148,7 @@
       "limiti": "Le date si riferiscono ad atti distinti contenuti nella pergamena; nessuna identificazione dimostrata con i de Parisio di Calatabiano.",
       "livello": "B",
       "tema": "Acque e monasteri",
-      "pagina": "../acque-mulini-confini/"
+      "pagina": "../acque-mulini-confini/#adc-0013"
     },
     {
       "id": "ADC-0014",
@@ -159,7 +159,7 @@
       "limiti": "Contesto regionale: non prova un mulino nel territorio di Calatabiano.",
       "livello": "B",
       "tema": "Acque e monasteri",
-      "pagina": "../acque-mulini-confini/"
+      "pagina": "../acque-mulini-confini/#adc-0014"
     },
     {
       "id": "ADC-0015",
@@ -170,7 +170,7 @@
       "limiti": "Il confine fluviale citato non è identificato con certezza; non attribuire automaticamente a Calatabiano.",
       "livello": "B",
       "tema": "Acque e monasteri",
-      "pagina": "../acque-mulini-confini/"
+      "pagina": "../acque-mulini-confini/#adc-0015"
     },
     {
       "id": "ADC-0016",
@@ -181,7 +181,7 @@
       "limiti": "Novanta abitazioni danneggiate secondo il catalogo; categorie da verificare sui prospetti originali.",
       "livello": "C",
       "tema": "Terremoto del 1818",
-      "pagina": "../terremoto-1818/"
+      "pagina": "../terremoto-1818/#adc-0016"
     },
     {
       "id": "ADC-0017",
@@ -192,7 +192,7 @@
       "limiti": "Documento identificato tramite riferimento archivistico; testo integrale non qui trascritto.",
       "livello": "C",
       "tema": "Terremoto del 1818",
-      "pagina": "../terremoto-1818/"
+      "pagina": "../terremoto-1818/#adc-0017"
     },
     {
       "id": "ADC-0018",
@@ -203,7 +203,7 @@
       "limiti": "Il protocollo notarile originale non è stato consultato direttamente. Il prezzo pattuito di cinque onze non dimostra la provenienza del denaro né il pagamento effettivo. L'identificazione e la collocazione dell'opera sono discusse nella bibliografia specialistica.",
       "livello": "C",
       "tema": "Arte e committenza religiosa",
-      "pagina": "../crocifisso-1502/"
+      "pagina": "../crocifisso-1502/#adc-0018"
     }
   ]
 }
