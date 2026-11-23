@@ -565,3 +565,9 @@ html body.adc-archive-home footer.adc-lux-footer .adc-footer-tutela a{
   margin-top:12px;padding:12px;border-radius:10px
  }
 }
+
+
+/* Touch target leggibili nel footer della pagina Elena. */
+body.adc-inner-2026:has(.adc-lux-elena-hero) footer.adc-inner-footer nav[aria-label="Consulta"] a{
+ display:inline-flex;align-items:center;min-height:32px;padding-block:5px;
+}
