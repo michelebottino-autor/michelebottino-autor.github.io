@@ -536,3 +536,32 @@ html body.adc-archive-home #tutela-persone-fonti p{line-height:1.65!important}
   font-size:.86rem!important;min-height:43px!important;
  }
 }
+
+/* ADC: documento al centro, tutela nel footer senza riquadri esterni. */
+html body.adc-archive-home,
+html body.adc-archive-home main#contenuto,
+html body.adc-archive-home footer.adc-lux-footer{
+ background-clip:border-box;
+}
+html body.adc-archive-home footer.adc-lux-footer .adc-footer-tutela{
+ width:100%;max-width:760px;margin:15px 0 0;padding:14px 16px;
+ border:1px solid rgba(235,207,154,.4);border-radius:12px;
+ background:rgba(5,46,43,.22);color:#f4f1e5;
+ box-sizing:border-box;
+}
+html body.adc-archive-home footer.adc-lux-footer .adc-footer-tutela h2{
+ color:#f7dfa9!important;-webkit-text-fill-color:#f7dfa9!important;
+ font:500 1rem/1.35 Georgia,serif!important;margin:0 0 7px!important;
+}
+html body.adc-archive-home footer.adc-lux-footer .adc-footer-tutela p{
+ color:#eff2e7!important;-webkit-text-fill-color:#eff2e7!important;
+ font:.83rem/1.6 system-ui,sans-serif!important;margin:0!important;
+}
+html body.adc-archive-home footer.adc-lux-footer .adc-footer-tutela a{
+ color:#ffde9a!important;-webkit-text-fill-color:#ffde9a!important;
+}
+@media(max-width:760px){
+ html body.adc-archive-home footer.adc-lux-footer .adc-footer-tutela{
+  margin-top:12px;padding:12px;border-radius:10px
+ }
+}
