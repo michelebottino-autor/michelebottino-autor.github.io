@@ -284,7 +284,7 @@
       if(a[6].status==='fulfilled'&&a[6].value?.schema===1)administration=a[6].value;
       if(a[7].status==='fulfilled'&&a[7].value?.schema===1&&Array.isArray(a[7].value.entries))researchRegistry=a[7].value;
       availability.textContent=indexAvailable
-        ? 'Indice consultabile: '+index.entries.length+' percorsi · '+(approvedAvailable?approved.filter(a=>a.status==='APPROVED_FOR_PUBLICATION').length+' risposte approvate':'risposte approvate non disponibili')
+        ? 'Indice consultabile: '+index.entries.length+' percorsi · '+(approvedAvailable?approved.filter(a=>a.status==='APPROVED_FOR_PUBLICATION').length+' risposte approvate':'risposte approvate non disponibili')+' · '+(knowledgeAvailable?knowledge.entries.filter(e=>e.status==='APPROVED_FOR_PUBLICATION').length+' unità di conoscenza verificata':'conoscenza verificata non disponibile')
         : 'Indice non disponibile. La consultazione è temporaneamente limitata.';
     });
     const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e};
