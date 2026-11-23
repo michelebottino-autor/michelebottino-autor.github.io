@@ -48,12 +48,12 @@
          mode='del browser su Android (riduzione del rumore non verificabile)';
        }else if(browser?.navigator?.mediaDevices?.getUserMedia){
          try{
-           const supported=root.navigator.mediaDevices.getSupportedConstraints?.()||{};
+           const supported=browser.navigator.mediaDevices.getSupportedConstraints?.()||{};
            const constraints={};
            if(supported.noiseSuppression)constraints.noiseSuppression=true;
            if(supported.echoCancellation)constraints.echoCancellation=true;
            if(supported.autoGainControl)constraints.autoGainControl=true;
-           micStream=await root.navigator.mediaDevices.getUserMedia({audio:constraints,video:false});
+           micStream=await browser.navigator.mediaDevices.getUserMedia({audio:constraints,video:false});
            const track=micStream.getAudioTracks()[0];
            const settings=track?.getSettings?.()||{};
            // Passing a track is only valid for browsers implementing this API extension.
