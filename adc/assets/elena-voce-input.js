@@ -5,7 +5,7 @@
  else root.ElenaVoiceInput=api;
 })(typeof globalThis!=='undefined'?globalThis:this,function(){
  'use strict';
- function createController({Recognition,form,input,button,status,autoRead,results,MutationObserverCtor}){
+ function createController({Recognition,form,input,button,status,autoRead,results,MutationObserverCtor,browser}){
    if(!form||!input||!button||!status)return null;
    if(!Recognition){button.disabled=true;status.textContent='La dettatura non è supportata da questo browser.';return null}
    let recognition=null,active=false,submitting=false,armed=false,micStream=null;
@@ -42,11 +42,11 @@
        let mode='standard del browser';
        // Android Chrome does not currently accept the experimental audioTrack parameter.
        // Do not acquire a separate microphone stream that cannot feed recognition.
-       const android=/Android/i.test(root.navigator?.userAgent||'');
+       const android=/Android/i.test(browser?.navigator?.userAgent||'');
        if(android){
          recognition.start();
          mode='del browser su Android (riduzione del rumore non verificabile)';
-       }else if(root.navigator?.mediaDevices?.getUserMedia){
+       }else if(browser?.navigator?.mediaDevices?.getUserMedia){
          try{
            const supported=root.navigator.mediaDevices.getSupportedConstraints?.()||{};
            const constraints={};
@@ -92,7 +92,7 @@
    const checkbox=document.createElement('input');checkbox.type='checkbox';label.append(checkbox,document.createTextNode(' Leggi automaticamente la risposta'));
    const status=document.createElement('p');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.textContent='La dettatura richiede il permesso del microfono. La riduzione del rumore viene richiesta solo dove supportata; il riconoscimento può usare servizi del browser.';
    container.append(button,label,status);form.insertAdjacentElement('afterend',container);
-   return createController({Recognition:root.SpeechRecognition||root.webkitSpeechRecognition,form,input,button,status,autoRead:checkbox,results,MutationObserverCtor:root.MutationObserver});
+   return createController({Recognition:root.SpeechRecognition||root.webkitSpeechRecognition,form,input,button,status,autoRead:checkbox,results,MutationObserverCtor:root.MutationObserver,browser:root});
  }
  return {createController,mount};
 });
