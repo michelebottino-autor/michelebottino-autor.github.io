@@ -360,6 +360,7 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
 @media(prefers-reduced-motion:reduce){.adc-first-grid a{transition:none}}
 </style>
 <link rel="stylesheet" href="/aegis/footer.css">
+<link rel="stylesheet" href="/adc/assets/adc-lux-elena-2026.css?v=20261123a">
 </head>
 <body class="adc-archive-home"><a class="skip-link" href="#contenuto">Vai al contenuto</a>
 <header class="container"><nav class="nav" id="site-nav"><div class="logo"><a href="../">Michele Bottino</a></div><button id="menu-toggle" type="button" aria-controls="menu" aria-expanded="false"  aria-label="Apri il menu di navigazione" class="menu-toggle"><span></span><span></span><span></span></button><ul class="nav-menu" id="menu"><li><a href="/">Home</a></li>
@@ -373,39 +374,72 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
 <nav id="adc-design-nav" class="adc-project-nav" aria-label="Sezioni dell’Archivio Documentale Calatabiano"><a class="adc-project-brand" href="/adc/">Archivio Documentale Calatabiano<small>Al servizio della comunità · A cura di Michele Bottino</small></a><div class="adc-project-links"><a href="/adc/" aria-current="page">Archivio</a><a href="/adc/esplora/">Esplora per argomento</a><a href="/adc/fonti/">Fonti</a><a href="/adc/atlante/">Atlante</a><a href="/adc/storia-per-tutti/">Storia</a><a href="/adc/mediateca/">Mediateca</a><a href="/adc/elena/">Elena</a><a href="/adc/materiali-patrimonio/">Patrimonio artistico</a><a href="/adc/stampa-ricerca/">Stampa e ricerca</a><a href="/adc/stampa/">Stampa storica</a></div></nav>
 <main class="page container" id="contenuto">
 
-<section class="adc-first-visit" aria-labelledby="adc-landing-title">
-  <div class="adc-first-intro">
-    <p class="adc-first-kicker">Archivio Documentale Calatabiano · ADC</p>
-    <h1 id="adc-landing-title">Esplora l’Archivio Documentale Calatabiano</h1>
-    <p class="adc-first-lead">Cerca documenti, persone, luoghi, fotografie e testimonianze sulla storia di Calatabiano. Consulta le schede dell’Archivio, approfondisci le fonti oppure segui un percorso storico.</p>
-    <div class="adc-ingressi" aria-label="Scegli come consultare l'Archivio">
-      <a class="adc-ingresso adc-ingresso-cittadini" href="/adc/storia-per-tutti/">
-        <span class="adc-ingresso-label">Ingresso per i cittadini</span>
-        <strong>Voglio conoscere la storia di Calatabiano</strong>
-        <span>Un percorso chiaro attraverso i luoghi, le persone e gli avvenimenti del paese.</span>
-        <span class="adc-ingresso-action">Leggi la storia →</span>
-      </a>
-      <a class="adc-ingresso adc-ingresso-studiosi" href="/adc/fonti/">
-        <span class="adc-ingresso-label">Ingresso per studiosi e ricercatori</span>
-        <strong>Voglio consultare le fonti storiche</strong>
-        <span>Documenti, riferimenti archivistici, testimonianze e studi verificabili.</span>
-        <span class="adc-ingresso-action">Esamina le fonti →</span>
-      </a>
-    </div>
-    <p class="adc-first-about">L’ADC è un archivio storico digitale indipendente, curato da Michele Bottino e consultabile gratuitamente.</p>
-    <form action="/adc/cerca/" method="get" role="search" class="adc-first-search">
-      <label for="adc-first-query">Che cosa vuoi sapere su Calatabiano?</label>
-      <div class="adc-first-search-row">
-        <input id="adc-first-query" type="search" name="q" minlength="2" required autocomplete="off" placeholder="Per esempio: castello, antiche botteghe, famiglie">
+
+<section class="adc-lux-hero" aria-labelledby="adc-lux-home-title">
+  <div class="adc-lux-grid">
+    <div>
+      <p class="adc-lux-eyebrow">Memoria · Territorio · Comunità</p>
+      <h1 id="adc-lux-home-title">L'Archivio Documentale <em>di Calatabiano</em></h1>
+      <p class="adc-lux-lead">Documenti, fotografie e testimonianze per conoscere la storia, il territorio e la memoria di Calatabiano.</p>
+      <form action="/adc/cerca/" method="get" class="adc-lux-search" role="search" aria-label="Cerca nell'archivio">
+        <input type="search" name="q" minlength="2" required aria-label="Cerca nell'archivio" placeholder="Cerca un documento, una persona o un luogo…">
         <button type="submit">Cerca</button>
+      </form>
+      <div class="adc-lux-tile-grid" aria-label="Sezioni dell'Archivio">
+        <a class="adc-lux-tile" href="/adc/inventario/"><span class="adc-lux-icon" aria-hidden="true">▤</span>Documenti</a>
+        <a class="adc-lux-tile" href="/adc/mediateca/"><span class="adc-lux-icon" aria-hidden="true">▧</span>Fotografie</a>
+        <a class="adc-lux-tile" href="/adc/atlante/"><span class="adc-lux-icon" aria-hidden="true">◇</span>Mappe</a>
+        <a class="adc-lux-tile" href="/adc/dossier-1213-1537/"><span class="adc-lux-icon" aria-hidden="true">▣</span>Dossier</a>
+        <a class="adc-lux-tile" href="/adc/storia-per-tutti/"><span class="adc-lux-icon" aria-hidden="true">♧</span>Persone</a>
+        <a class="adc-lux-tile" href="/adc/fonti/"><span class="adc-lux-icon" aria-hidden="true">▥</span>Fonti</a>
       </div>
-    </form>
+    </div>
+    <div class="adc-lux-glass adc-lux-chat" aria-label="Elena, guida dell'Archivio">
+      <p class="adc-lux-eyebrow">La guida dell'Archivio</p>
+      <h2>✦ ELENA</h2>
+      <p>Chiedimi di un luogo, di una persona o di un documento. Ti aiuterò a trovare le fonti consultabili e a distinguere ciò che sappiamo da ciò che resta da verificare.</p>
+      <form id="adc-lux-home-elena" action="/adc/elena/" method="get">
+        <input id="adc-lux-home-question" type="search" maxlength="160" required aria-label="Domanda per Elena" placeholder="Scrivi qui la tua domanda…">
+        <button type="submit" aria-label="Vai a Elena">➤</button>
+      </form>
+      <p>Prova a chiedere:</p>
+      <div class="adc-lux-chips">
+        <a href="/adc/elena/" data-lux-question="Che cosa sappiamo del castello di Calatabiano?">Il castello</a>
+        <a href="/adc/chiese/">Le chiese</a>
+        <a href="/adc/elena/documenti/">Pergamene</a>
+        <a href="/adc/memorie/">Memorie</a>
+      </div>
+      <p class="adc-lux-credit">Un'idea di <strong>Michele Bottino</strong> · Sviluppo <strong>DarkAronte</strong></p>
+    </div>
   </div>
-  <figure class="adc-first-image">
-    <img src="/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-720.webp" srcset="/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-480.webp 480w, /adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-720.webp 720w, /adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-960.webp 960w" sizes="(max-width: 740px) 100vw, 42vw" width="720" height="451" alt="Veduta panoramica di Calatabiano dalla Terra Vecchia" decoding="async" fetchpriority="high">
-    <figcaption>Calatabiano dalla Terra Vecchia · Elaborazione illustrativa © Michele Bottino</figcaption>
-  </figure>
 </section>
+<section class="adc-lux-section" aria-labelledby="adc-lux-dossier">
+  <div class="adc-lux-heading"><div><h2 id="adc-lux-dossier">Dossier in evidenza</h2><p>Studi, testimonianze e percorsi per approfondire la storia del territorio.</p></div><a href="/adc/inventario/">Esplora i documenti</a></div>
+  <div class="adc-lux-cards">
+    <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/castello-sopralluogo/castello-calatabiano-panoramica-sommitale.webp')" href="/adc/dossier-1213-1537/"><span class="adc-lux-tag">STORIA</span><strong>Il castello di Calatabiano</strong><span>Documenti e vicende della fortezza.</span></a>
+    <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/foto-territorio/calatabiano-centro-2024.webp')" href="/adc/calatabiano-1922-1943/"><span class="adc-lux-tag">VITA DEL PAESE</span><strong>Calatabiano nel Novecento</strong><span>Persone, luoghi e trasformazioni.</span></a>
+    <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/foto-territorio/paesaggio-calatabiano-michele-bottino-2026-960.webp')" href="/adc/atlante/"><span class="adc-lux-tag">TERRITORIO</span><strong>Il territorio e le sue radici</strong><span>Paesaggi, mappe e storia locale.</span></a>
+    <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/foto-territorio/veduta-calatabiano-2026.webp')" href="/adc/mediateca/"><span class="adc-lux-tag">MEMORIA</span><strong>Feste e tradizioni</strong><span>Immagini e testimonianze della comunità.</span></a>
+  </div>
+</section>
+<section class="adc-lux-section" aria-label="Percorsi principali dell'Archivio">
+  <div class="adc-lux-cards three">
+    <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/foto-territorio/calatabiano-dalla-rocca-2006.webp')" href="/adc/elena/documenti/"><strong>Testi verificati</strong><span>Passaggi esaminati, con indicazione delle fonti e dei limiti della verifica.</span></a>
+    <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/foto-territorio/calatabiano-verso-castello-2024.jpg')" href="/adc/fonti/"><strong>Fonti</strong><span>Documenti, registri e riferimenti consultabili.</span></a>
+    <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/foto-territorio/paesaggio-calatabiano-taormina-2024.webp')" href="/adc/storia-per-tutti/"><strong>Percorsi di ricerca</strong><span>Luoghi, persone e avvenimenti di Calatabiano.</span></a>
+  </div>
+</section>
+<div class="adc-lux-wide"><div><h2>Esplora l'Archivio</h2><p>Consulta le raccolte, le fonti e i percorsi storici disponibili.</p></div><a class="adc-lux-gold-button" href="/adc/inventario/">Vai alle raccolte →</a></div>
+<div class="adc-lux-voice"><span class="adc-lux-icon" aria-hidden="true">◉</span><div><strong>Parla con Elena</strong><p>Puoi dettare la tua domanda quando il browser supporta il microfono.</p></div><a class="adc-lux-gold-button" href="/adc/elena/">Parla con Elena</a><a href="/adc/elena/">Ascolta il campione della voce</a></div>
+<p class="adc-lux-foot-credit">Elena · Ideazione Michele Bottino · Sviluppo tecnologico DarkAronte</p>
+<script>
+(function(){
+  function sendQuestion(q){try{sessionStorage.setItem('adc-elena-home-handoff',JSON.stringify({q:q.slice(0,160),at:Date.now()}));}catch(_){} window.location.assign('/adc/elena/');}
+  const form=document.getElementById('adc-lux-home-elena');
+  if(form)form.addEventListener('submit',function(ev){ev.preventDefault();const el=document.getElementById('adc-lux-home-question');if(el&&el.value.trim())sendQuestion(el.value.trim());});
+  document.querySelectorAll('[data-lux-question]').forEach(a=>a.addEventListener('click',function(ev){ev.preventDefault();sendQuestion(a.dataset.luxQuestion);}));
+})();
+</script>
 <section class="adc-first-explore" aria-labelledby="adc-first-explore-title">
   <h2 id="adc-first-explore-title">Da dove vuoi cominciare?</h2>
   <div class="adc-first-grid">
