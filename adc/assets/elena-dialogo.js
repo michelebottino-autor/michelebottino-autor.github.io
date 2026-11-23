@@ -157,20 +157,20 @@
     if(asksCreators || asksIdentity){
       return {kind:'about',title:asksIdentity?'Chi è Dark Aronte':'Chi ha realizzato Elena?',
         text:asksIdentity
-          ? 'Dark Aronte è il nome di un progetto tecnologico indipendente dedicato allo sviluppo di software e strumenti digitali. Nell’Archivio Documentale Calatabiano cura lo sviluppo tecnologico di Elena. Non rappresenta il Comune di Calatabiano.'
-          : 'Elena è un progetto ideato da Michele Bottino, scrittore, saggista e ricercatore indipendente, per l’Archivio Documentale Calatabiano. Lo sviluppo tecnologico è curato da Dark Aronte. È un’iniziativa indipendente, non un servizio ufficiale del Comune.',
-        links:[{title:'Archivio Documentale Calatabiano',url:'/adc/'},{title:'Sito di Michele Bottino',url:'https://michelebottino-autor.github.io/'},{title:'Dark Aronte',url:'https://dark-aronte.github.io/'}]};
+          ? 'DarkAronte cura lo sviluppo tecnologico e software di Elena, nata da un’idea di Michele Bottino per l’Archivio Documentale Calatabiano.'
+          : 'Elena nasce da un’idea di Michele Bottino, che cura l’Archivio Documentale Calatabiano. Lo sviluppo tecnologico e software è affidato a DarkAronte. Elena è uno strumento indipendente dell’Archivio, non un servizio del Comune.',
+        links:[{title:'Archivio Documentale Calatabiano',url:'/adc/'},{title:'Sito di Michele Bottino',url:'https://michelebottino-autor.github.io/'},{title:'DarkAronte',url:'https://dark-aronte.github.io/'}]};
     }
     const asksAbilities=/(?:cosa|che cosa|quali cose|come).*(?:puoi fare|sai fare|mi puoi aiutare|aiutarmi|funzioni|funziona elena)|(?:chi sei|presentati|a cosa servi|cosa sei|sei una intelligenza artificiale)/.test(n);
     if(asksAbilities){
       return {kind:'guide',title:'Come posso aiutarti',
-        text:'Posso orientarti fra documenti, luoghi e vicende di Calatabiano, cercare percorsi nell’archivio ADC e indicarti informazioni comunali presenti nelle fonti pubbliche disponibili. Quando una risposta storica non è stata verificata, ti segnalo soltanto i documenti da consultare. Non posso svolgere pratiche amministrative al posto tuo.',
+        text:'Posso aiutarti a trovare documenti, luoghi e vicende di Calatabiano. Quando una risposta storica è verificata, ti indico la fonte. In caso contrario, ti propongo i documenti da consultare. Posso anche indirizzarti alle informazioni pubblicate dal Comune, ma non svolgere pratiche al posto tuo.',
         links:[{title:'Fonti e documenti ADC',url:'/adc/fonti/'},{title:'Storia di Calatabiano',url:'/adc/storia/'},{title:'Esplora l’archivio',url:'/adc/'}]};
     }
     const asksPrivacy=/(?:registri|memorizzi|conservi|salvi|registrazione|privacy|dati personali|dati privati).*(?:domand|chat|conversazion|messagg|ricerc)|(?:chat|conversazion|domand).*(?:salvat|conservat|registrat)/.test(n);
     if(asksPrivacy){
       return {kind:'guide',title:'Le domande e la riservatezza',
-        text:'Questa interfaccia consulta repertori pubblici dal browser. La conversazione corrente non viene salvata da questo modulo; la risposta può usare la domanda precedente soltanto per capire meglio un seguito. Non inserire documenti personali, password o dati riservati nella chat. L’eventuale raccolta volontaria di memorie è un percorso distinto.',
+        text:'Le domande di questa pagina non vengono conservate nella cronologia di Elena. Per rispondere a una domanda successiva, Elena può tenere conto di quella precedente durante la visita. Non inserire password o dati personali. Per condividere un ricordo, utilizza la pagina dedicata alle testimonianze.',
         links:[{title:'Archivio Documentale Calatabiano',url:'/adc/'}]};
     }
     return null;
@@ -224,7 +224,7 @@
     let index={entries:[]}, approved=[], knowledge={entries:[]}, municipality=null, municipalNews=null, sourceChecks=null, administration=null, researchRegistry=null, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
     const tools=document.createElement('div');tools.className='elena-conversation-tools';
     const availability=document.createElement('p');availability.className='elena-source-status';availability.setAttribute('role','status');
-    availability.textContent='Caricamento del repertorio documentario…';
+    availability.textContent='Sto aprendo le fonti dell’Archivio…';
     const clear=document.createElement('button');clear.type='button';clear.className='elena-clear';clear.textContent='Nuova conversazione';
     tools.append(availability,clear);
     output.parentNode.insertBefore(tools,output);
@@ -234,7 +234,7 @@
       if(window.speechSynthesis)window.speechSynthesis.cancel();
       if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
       previousQuestion='';turns=0;input.value='';
-      output.replaceChildren(Object.assign(document.createElement('p'),{className:'elena-chat-welcome',textContent:'Nuova conversazione. Puoi cercare un documento, una persona o un luogo nelle fonti pubbliche ADC.'}));
+      output.replaceChildren(Object.assign(document.createElement('p'),{className:'elena-chat-welcome',textContent:'Nuova conversazione. Che cosa vuoi cercare?'}));
       input.focus();
     });
     // Percorsi d'accesso: non alterano le evidenze né il controllo delle risposte.
@@ -366,7 +366,7 @@
           : r.kind==='passage-empty'
             ? 'Non viene proposta alcuna citazione priva di un riferimento approvato.'
           : r.kind==='index'
-            ? 'Percorsi di consultazione: i collegamenti non costituiscono una risposta storica approvata.'
+            ? 'Questi collegamenti aiutano a proseguire la ricerca. Non sono, da soli, una prova storica.'
           : r.kind==='guide' || r.kind==='about' || r.kind==='contribution'
             ? 'Informazioni sul servizio ADC. Per i dati storici consulta le fonti documentarie indicate.'
             : 'Nessuna attestazione approvata individuata per questa domanda.');
@@ -385,7 +385,7 @@
         if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
         if((r.kind==='documentary'||r.kind==='passage'||r.kind==='research-status') && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         const voiceControls=make('div','elena-dialogue-voice');
-        const read=make('button','elena-dialogue-read','Lettura non disponibile');read.disabled=true;read.title='La sintesi pubblica con la voce ufficiale non è ancora collegata.';
+        const read=make('button','elena-dialogue-read','Lettura non disponibile');read.disabled=true;read.title='La lettura di questa risposta non è ancora disponibile.';
         read.type='button';
         const stop=make('button','elena-dialogue-stop','Interrompi');
         stop.type='button';stop.hidden=true;
@@ -404,7 +404,7 @@
         }
         speedLabel.append(speed);
         read.addEventListener('click',()=>{
-          status.textContent='La lettura di questo testo con la nuova voce ufficiale di Elena non è ancora stata validata. Il campione approvato è disponibile con «Ascolta un campione della voce».';return;
+          status.textContent='Puoi ascoltare un esempio della voce di Elena. La lettura completa della risposta non è ancora disponibile.';return;
           if(!synthesis || typeof SpeechSynthesisUtterance==='undefined'){
             status.textContent='La lettura vocale non è supportata da questo browser.';return;
           }
@@ -421,7 +421,7 @@
           synthesis.speak(utterance);
         });
         stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
-        const sampleLink=make('a','elena-dialogue-sample','Ascolta il campione ufficiale');sampleLink.href='/adc/audio/elena-ufficiale-20261123.wav';sampleLink.setAttribute('aria-label','Ascolta il campione approvato della voce, non la risposta corrente');status.textContent='La lettura della risposta non è ancora disponibile con la voce ufficiale.';voiceControls.append(read,sampleLink,status);
+        const sampleLink=make('a','elena-dialogue-sample','Ascolta il campione ufficiale');sampleLink.href='/adc/audio/elena-ufficiale-20261123.wav';sampleLink.setAttribute('aria-label','Ascolta il campione approvato della voce, non la risposta corrente');status.textContent='La lettura di questa risposta non è ancora disponibile.';voiceControls.append(read,sampleLink,status);
         // Il comando vocale precede il testo lungo: resta subito visibile anche su smartphone.
         article.insertBefore(voiceControls,article.children[1] || null);
         if(r.links.length) {
