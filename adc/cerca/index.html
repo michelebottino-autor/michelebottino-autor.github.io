@@ -74,9 +74,15 @@ async function loadIndex(){
    if(!response.ok)throw Error("indice");
    const data=await response.json();
    if(!Array.isArray(data.pages)||!data.pages.length)throw Error("indice vuoto");
-   const pages=data.pages.filter(page=>page&&typeof page.url==="string"&&typeof page.title==="string"&&typeof page.text==="string"&&page.url.startsWith(location.origin+"/adc/")).map(page=>({
-     url:page.url,title:page.title,text:page.text,normalized:normalize(page.title+" "+page.text)
-   }));
+   const pages=[];
+   for(const page of data.pages){
+     if(!page||typeof page.url!=="string"||typeof page.title!=="string"||typeof page.text!=="string")continue;
+     let target;
+     try{target=new URL(page.url,location.origin);}catch(e){continue;}
+     if(![location.origin,"https://michelebottino-autor.github.io"].includes(target.origin)||!target.pathname.startsWith("/adc/"))continue;
+     const path=target.pathname+target.search+target.hash;
+     pages.push({url:location.origin+path,title:page.title,text:page.text,normalized:normalize(page.title+" "+page.text)});
+   }
    if(!pages.length)throw Error("indice senza pagine");
    cache={pages,failed:0};
    return cache;
