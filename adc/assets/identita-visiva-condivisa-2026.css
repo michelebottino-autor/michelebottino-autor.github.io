@@ -191,3 +191,71 @@ body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-her
  background:rgba(8,57,54,.82)!important;color:#f0f0e7!important;-webkit-text-fill-color:#f0f0e7!important;
  border-color:var(--adc-visual-line)!important;
 }
+
+
+/* Correzioni di leggibilità e contenimento della barra condivisa. */
+@media (min-width:761px) {
+  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header {
+    box-sizing:border-box;
+    min-width:0;
+    flex-wrap:wrap;
+  }
+  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header .adc-u-bar {
+    min-width:0;
+    flex:0 1 auto;
+  }
+  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header .adc-u-links {
+    min-width:0;
+    flex:1 1 600px;
+    flex-wrap:wrap;
+  }
+}
+
+/* I capitoli di lettura mantengono testo chiaro solo sul fondo scuro. */
+body:has(#adc-unified-header) main#top-storia .chapter {
+  color:var(--adc-visual-ivory)!important;
+  background:linear-gradient(145deg,rgba(24,91,79,.88),rgba(7,54,52,.94))!important;
+  border-color:var(--adc-visual-line)!important;
+}
+body:has(#adc-unified-header) main#top-storia .chapter :is(p,li,small) {
+  color:#f0f0e7!important;
+  -webkit-text-fill-color:#f0f0e7!important;
+}
+body:has(#adc-unified-header) main#top-storia .chapter :is(h2,h3) {
+  color:#ffdfa2!important;
+  -webkit-text-fill-color:#ffdfa2!important;
+}
+body:has(#adc-unified-header) main#top-storia .chapter a {
+  color:#ffdc98!important;
+  -webkit-text-fill-color:#ffdc98!important;
+}
+
+/* Il pulsante secondario conserva un contrasto netto sulla scheda scura. */
+body:has(#adc-unified-header) main .sheet button.secondary {
+  background:#0c3f3b!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  border-color:#d8b879!important;
+}
+body:has(#adc-unified-header) main .sheet button.secondary:hover {
+  background:#15574e!important;
+}
+
+/* Le didascalie restano documentarie, con testo scuro sul fondo avorio. */
+body:has(#adc-unified-header) main figure figcaption :is(strong,em) {
+  color:#30463d!important;
+  -webkit-text-fill-color:#30463d!important;
+}
+body:has(#adc-unified-header) main figure figcaption a {
+  color:#17594f!important;
+  -webkit-text-fill-color:#17594f!important;
+}
+body:has(#adc-unified-header) main .adc-photo-context .adc-photo-hint {
+  display:inline-block;
+  margin-top:7px;
+  padding:6px 10px;
+  border-radius:7px;
+  background:#0b3f3a!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+}
