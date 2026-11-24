@@ -34,6 +34,7 @@ async function verifyControls(context) {
   const page = await context.newPage();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(origin + '/adc/cerca/');
+  await page.locator('#mb-consent [data-choice="no"]').click();
   const menu = page.locator('#adc-unified-header .adc-u-toggle');
   await menu.focus();
   await menu.press('Enter');
