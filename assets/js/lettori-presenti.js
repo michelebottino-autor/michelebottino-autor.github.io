@@ -28,15 +28,15 @@
     }
     host = document.createElement('aside');
     host.className = 'mb-presence';
-    host.setAttribute('aria-label', 'Lettori attivi nell’Archivio Documentale Calatabiano');
-    host.title = 'Schede attive con statistiche abilitate in tutto l’Archivio';
+    const onlineLabel = 'Utenti online in questo momento';
+    host.setAttribute('aria-label', onlineLabel);
     const dot = document.createElement('span');
     dot.className = 'mb-presence-icon';
     dot.setAttribute('aria-hidden', 'true');
     dot.textContent = '●';
     const label = document.createElement('span');
     label.className = 'mb-presence-label';
-    label.textContent = 'Schede attive online nell’ADC';
+    label.textContent = onlineLabel;
     const count = document.createElement('strong');
     count.className = 'mb-presence-count';
     count.setAttribute('aria-live', 'off');
