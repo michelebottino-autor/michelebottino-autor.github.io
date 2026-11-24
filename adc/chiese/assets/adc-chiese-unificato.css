@@ -68,3 +68,14 @@ body.adc-chiese main>.adc-chiese-hero p,body.adc-chiese main>.hero p{font-size:1
 body.adc-chiese main>.hero .local{gap:6px}
 body.adc-chiese main>.hero .local a{padding:6px 10px}
 }
+.adc-chiese .adc-audio-transcript {
+  margin-block-start: .85rem;
+  max-width: 74ch;
+}
+.adc-chiese .adc-audio-transcript summary {
+  display: list-item;
+  min-height: 44px;
+  padding-block: .6rem;
+  font-weight: 650;
+  cursor: pointer;
+}

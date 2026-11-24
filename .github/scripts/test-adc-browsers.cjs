@@ -95,6 +95,34 @@ async function verifyRecordings(context) {
   }
 }
 
+async function verifyChurchGuides(context) {
+  const page = await context.newPage();
+  try {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(origin + '/adc/chiese/');
+    const links = await page.locator('.card a[href$="#elena-audioguida"]').evaluateAll(anchors => anchors.map(anchor => anchor.href));
+    assert.equal(links.length, 10, 'Una audioguida per ogni scheda dell’indice delle chiese');
+    assert.equal(new Set(links).size, links.length);
+    for (const link of links) {
+      assert((await page.goto(link)).ok(), link);
+      const guide = page.locator('#elena-audioguida');
+      const player = guide.locator('audio[controls]');
+      await player.waitFor({ state: 'visible' });
+      const src = await player.getAttribute('src');
+      const response = await page.request.head(new URL(src, link).href);
+      assert(response.ok() && /audio/i.test(response.headers()['content-type']), src);
+      assert(await guide.evaluate(section => section.getBoundingClientRect().right <= innerWidth + 1), link);
+      if (src.endsWith('audioguida-elena.mp3')) {
+        const transcript = guide.locator('details');
+        await transcript.locator('summary').click();
+        assert(await transcript.locator('p').first().isVisible(), link);
+      }
+    }
+  } finally {
+    await page.close();
+  }
+}
+
 async function run() {
   assert(browsers[engine], 'Browser sconosciuto: ' + engine);
   const channel = { edge: 'msedge', chrome: 'chrome' }[engine];
@@ -125,6 +153,8 @@ async function run() {
     catch (error) { failures.push('Menu, ricerca ed Elena: ' + error.message); }
     try { await verifyRecordings(basic); }
     catch (error) { failures.push('Voce di Elena e audioguida: ' + error.message); }
+    try { await verifyChurchGuides(basic); }
+    catch (error) { failures.push('Audioguide delle chiese: ' + error.message); }
     await basic.close();
   } finally {
     await browser.close();
