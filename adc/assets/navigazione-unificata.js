@@ -192,7 +192,7 @@
   for (const src of scripts) {
     if (document.querySelector('script[src^="' + src + '"]')) continue;
     const script = document.createElement('script');
-    script.src = src + '?v=20261124-statistiche';
+    script.src = src + (src.endsWith('/lettori-presenti.js') ? '?v=20261124-utenti-online' : '?v=20261124-statistiche');
     document.head.appendChild(script);
   }
 })();

@@ -31,7 +31,7 @@ self.addEventListener('fetch',event=>{
  if(req.mode==='navigate'){
   event.respondWith((async()=>{
    try{
-    const res=await fetch(req);
+    const res=await fetch(req,{cache:'no-cache'});
     if(res.ok&&cacheablePage(url)){
      const cache=await caches.open(VERSION);
      await cache.put(url.pathname,res.clone());
