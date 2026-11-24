@@ -213,7 +213,7 @@
       box.append(button,status);target.append(box);
     }
     const main=document.querySelector('main');
-    if(main&&!location.pathname.startsWith('/adc/elena/')&&!location.pathname.startsWith('/adc/cerca/')&&!location.pathname.startsWith('/adc/memorie/')){
+    if(main&&!main.querySelector('[data-adc-audio]')&&!location.pathname.startsWith('/adc/elena/')&&!location.pathname.startsWith('/adc/cerca/')&&!location.pathname.startsWith('/adc/memorie/')){
       const box=document.createElement('div');main.insertBefore(box,main.firstChild);
       controls(box,()=>{const copy=main.cloneNode(true);copy.querySelectorAll('nav,footer,form,button,script,style,aside,.adc-reading-controls,[hidden],details:not([open])').forEach(e=>e.remove());return copy.textContent;},'Ascolta il testo della pagina');
     }

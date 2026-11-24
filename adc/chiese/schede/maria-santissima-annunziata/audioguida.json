@@ -1,0 +1,54 @@
+{
+  "voice": "Serena",
+  "engine": "piper-tts 1.8.0",
+  "model_sha256": "fe4e26b2c1236e2a44d2e295cad564d94a0d8b0a9fca1ccdfd70dd4af3116eb5",
+  "source_text_sha256": "58196684917ec6ba9c2c62a13d3f5fd52d9b73fc32b507cff89d75030f8eff9a",
+  "original_wav_sha256": "0435031dca88efb0bddea9c89e7770fd4beeb8803b77fe6e1dd377dfbe360750",
+  "duration_seconds": 774.197,
+  "format": "MP3 40 kbps mono; 9 sequential segments",
+  "human_listening_verified": false,
+  "settings": {
+    "length_scale": 1.24,
+    "noise_scale": 0.34,
+    "noise_w_scale": 0.2,
+    "sentence_silence": 0.4
+  },
+  "parts": [
+    {
+      "path": "parte-00.mp3",
+      "git_blob": "571ee7a54663adcfcfe99b1c732228ab0ffca951"
+    },
+    {
+      "path": "parte-01.mp3",
+      "git_blob": "95c69680f8d75b0243fbb8943ee91a02d5c5d706"
+    },
+    {
+      "path": "parte-02.mp3",
+      "git_blob": "09ee84372312cff83a0549dbf7c485f3d6ba0f8e"
+    },
+    {
+      "path": "parte-03.mp3",
+      "git_blob": "be0f94e83c0cfbf8654fb0b2f5e1effad469cedc"
+    },
+    {
+      "path": "parte-04.mp3",
+      "git_blob": "28182eebd2d2bf8e0b0eff8e2d784e619cfe33d1"
+    },
+    {
+      "path": "parte-05.mp3",
+      "git_blob": "8695536226abd37595cdb551b3d684d27504329c"
+    },
+    {
+      "path": "parte-06.mp3",
+      "git_blob": "f1574c175fcf3de5078640e25ead67dd08608fe5"
+    },
+    {
+      "path": "parte-07.mp3",
+      "git_blob": "2c8e15fc721b7cecf8ada8dc2d8fd9cc979b68b5"
+    },
+    {
+      "path": "parte-08.mp3",
+      "git_blob": "5e10bbc1de530c5091a41bd5f82e3c2dbd8bea50"
+    }
+  ]
+}
