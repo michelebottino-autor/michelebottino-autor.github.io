@@ -295,7 +295,7 @@ body:has(#adc-unified-header) main :is(h1,h2,h3,h4,h5,h6) {
   color:#ffdfa2!important;
   -webkit-text-fill-color:#ffdfa2!important;
 }
-body:has(#adc-unified-header) main :is(p,li,dt,dd,label,small,summary,span) {
+body:has(#adc-unified-header) main :is(p,li,dt,dd,label,small,summary) {
   color:#f0f0e7!important;
   -webkit-text-fill-color:#f0f0e7!important;
 }
@@ -357,4 +357,14 @@ body:has(#adc-unified-header) main :is(pre,blockquote,.transcription,.document-t
 body:has(#adc-unified-header) main :is(pre,blockquote,.transcription,.document-transcription,.source-transcription,.source-text,.facsimile,.document-original,[data-document-text]) :is(h1,h2,h3,h4,p,li,a,small,strong,em) {
   color:#263a33!important;
   -webkit-text-fill-color:#263a33!important;
+}
+
+/* I crediti e i comandi della mediateca hanno fondi chiari. */
+body:has(#adc-unified-header) main .adc-share-author a {
+  color:#17594f!important;
+  -webkit-text-fill-color:#17594f!important;
+}
+body:has(#adc-unified-header) main a:is([href$="#video-calata"],[href$="#storia-video"],[href$="#territorio-video"],[href$="#testimonianze-video"]) span {
+  color:#30463d!important;
+  -webkit-text-fill-color:#30463d!important;
 }
