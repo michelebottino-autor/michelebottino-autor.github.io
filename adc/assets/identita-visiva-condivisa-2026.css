@@ -397,3 +397,127 @@ body:has(#adc-unified-header) main#contenuto .more-results{color:#173b33!importa
  body:has(#adc-unified-header) main#contenuto .search-topics{gap:8px;margin:16px 0 22px}
  body:has(#adc-unified-header) main#contenuto .search-topics a{min-height:44px}
 }
+
+/* Contrasto delle superfici documentarie e delle sezioni inferiori. */
+body.adc-archive-home main#contenuto :is(section:not(.adc-feature,#adc-risultati-verificabili) > h2, section:not(.adc-feature,#adc-risultati-verificabili) > p, details > summary strong, details > summary span, .adc-welcome-inner > h2, .adc-editorial-rights) {
+  color:#fff3dc!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body.adc-archive-home:has(#adc-unified-header) main#contenuto :is(section:not(.adc-feature,#adc-risultati-verificabili) > p, .adc-editorial-rights) a[href]:not(.button,.btn) {
+  color:#ffdf9f!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+
+body:has(#adc-unified-header) :is(.editorial-breadcrumb,.adc-chiese-breadcrumb,.mono-crumb,.adc-page-trail,body > .breadcrumb,body > nav[aria-label="Percorso"]) {
+  color:#f5ead2!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header) :is(.editorial-breadcrumb,.adc-chiese-breadcrumb,.mono-crumb,.adc-page-trail,body > .breadcrumb,body > nav[aria-label="Percorso"]) :is(a,span) {
+  color:#ffe0a1!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header) main :is(.eyebrow,.mono-card .mono-tag,.entry .meta,.entry .kind):not(:is(.breadcrumb,.editorial-breadcrumb) *) {
+  color:#ffe0a1!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+
+body:has(#adc-unified-header):not(.adc-archive-home) :is(
+  main[data-adc-paper="sections"] section:not(.hero,.adc-share,[class*="grid"]),
+  main[data-adc-paper="chapters"] .chapter,
+  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue),
+   .mono-status,
+  main > aside:not([class])
+) {
+  color:#263a33!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home) :is(
+  main[data-adc-paper="sections"] section:not(.hero,.adc-share,[class*="grid"]),
+  main[data-adc-paper="chapters"] .chapter,
+  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue),
+   .mono-status,
+  main > aside:not([class])
+) :is(h1,h2,h3,h4,h5,h6,p,li,td,dt,dd,label,small,strong,em,b,span,summary,a):not(.contrib-link):not(
+  :is(.card,.route,.media-card,.mono-card,.resource,.sheet,.fact,.panel,table,.adc-share-actions,.adc-gold-button,.contrib-link) *
+) {
+  color:inherit!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home) :is(
+  main[data-adc-paper="sections"] section:not(.hero,.adc-share,[class*="grid"]),
+  main[data-adc-paper="chapters"] .chapter,
+  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue)
+) a:not(.contrib-link):not(:is(.card,.route,.media-card,.mono-card,.resource,.sheet,.fact,.panel,table,.adc-share-actions) *) {
+  color:#145348!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+
+/* Le celle mantengono il proprio fondo anche nella vista impilata su telefono. */
+body:has(#adc-unified-header):not(.adc-archive-home) main table :is(th,td):not([hidden]) {
+  background:#123f3b!important;
+  color:#fff3dc!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home) main table :is(th,td):not([hidden]) :is(p,li,small,span,strong,em,a) {
+  color:inherit!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home) main table :is(th,td):not([hidden]) a {
+  color:#ffe0a1!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header) :is(.adc-page-trail,.editorial-breadcrumb,.adc-chiese-breadcrumb,.mono-crumb) a[href],
+body:has(#adc-unified-header) main#contenuto nav[aria-label="Indice dell'Atlante"] a[href] {
+  color:#ffe0a1!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header) main#contenuto figure figcaption :is(a,small,strong,em,.tag) {
+  color:#17483d!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+.adc-lux-card .adc-lux-tag {
+  color:#17362e!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+
+/* Le note, i collegamenti interni e le azioni mantengono una coppia di colori leggibile. */
+body:has(#adc-unified-header) :is(.adc-page-trail,.editorial-breadcrumb) a[href],
+body:has(#adc-unified-header) main#contenuto .contrib-card .contrib-link {
+  color:#fff3dc!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header) main :is(.entry .kind,.adc-chiese .source a,.adc-photo-gallery .type) {
+  color:#fff3dc!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header) :is(main .reading,main[data-adc-paper="notes"] :is(.status,.fact)) {
+  background:#f7f1e4!important;
+  color:#263a33!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header) :is(main .reading,main[data-adc-paper="notes"] :is(.status,.fact)) :is(h2,h3,p,strong,em,a) {
+  color:#263a33!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(#adc-unified-header) :is(.skip-link,.sr-only,.mono-small,.skip,body > a[href="#contenuto"]):focus-visible {
+  background:#fff3dc!important;
+  color:#17362e!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body.adc-archive-home:has(#adc-unified-header) #contenuto #adc-risorse-complete :is(.adc-intro-short p,.adc-editorial-rights,section:not(.adc-feature,#adc-risultati-verificabili) > p) a[href] {
+  color:#ffdf9f!important;
+  -webkit-text-fill-color:#ffdf9f!important;
+}
+body.adc-chiese:has(#adc-unified-header) main#contenuto :is(.entry .source a,.tile .type) {
+  color:#fff3dc!important;
+  -webkit-text-fill-color:#fff3dc!important;
+}
+body:has(#adc-unified-header) main#contenuto nav[aria-label="Indice dell'Atlante"] a[href] {
+  color:#ffe0a1!important;
+  -webkit-text-fill-color:#ffe0a1!important;
+}
+body:has(#adc-unified-header) main :is(article.entry p.source a, article.tile .type) {
+  background:#174f45!important;
+  color:#fff3dc!important;
+  -webkit-text-fill-color:#fff3dc!important;
+}
