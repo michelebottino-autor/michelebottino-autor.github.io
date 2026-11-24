@@ -16,7 +16,7 @@ async function verifyLayout(page, width, height, failures) {
     const path = '/adc/' + route;
     try {
       const response = await page.goto(origin + path, { waitUntil: 'load' });
-      assert(response?.ok(), 'HTTP ' + response?.status());
+      assert(response?.ok() || response?.status() === 304, 'HTTP ' + response?.status());
       const layout = await page.evaluate(() => ({
         width: document.documentElement.clientWidth,
         scroll: document.documentElement.scrollWidth,
