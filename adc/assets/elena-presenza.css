@@ -109,3 +109,12 @@
  .elena-presenza-toggle{display:grid!important;place-items:center!important;width:49px!important;height:49px!important;min-width:49px!important;min-height:49px!important;padding:5px!important;border-radius:50%!important;font-size:1.15rem!important;line-height:1!important;box-shadow:0 5px 16px #001b1b88!important}
  .elena-presenza-panel{width:min(365px,calc(100vw - 20px))!important;max-width:calc(100vw - 20px)!important;max-height:min(72dvh,620px)!important;right:0!important;bottom:60px!important}
 }
+
+
+/* Il comando resta compatto su Android: il testo completo rimane accessibile. */
+@media(max-width:600px){
+ .elena-presenza{right:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;max-width:calc(100vw - 20px)!important}
+ .elena-presenza-toggle{width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;padding:0!important;font-size:0!important;line-height:1!important;overflow:hidden!important;white-space:nowrap!important}
+ .elena-presenza-toggle::before{content:"Elena"!important;font:700 11px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif!important;color:#fff8e7!important}
+ .elena-presenza-panel{right:0!important;bottom:64px!important;width:min(365px,calc(100vw - 20px))!important;max-width:calc(100vw - 20px)!important;max-height:min(68dvh,540px)!important}
+}
