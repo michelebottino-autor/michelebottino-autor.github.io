@@ -4,7 +4,7 @@
   <!-- ROOT -->
   <url>
     <loc>https://michelebottino-autor.github.io/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <priority>1.0</priority>
   </url>
 
@@ -136,7 +136,7 @@
   <url><loc>https://michelebottino-autor.github.io/scrittura-investigativa/unita-8/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/scrittura-investigativa/unita-9/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/scrittura-investigativa/unita-10/</loc></url>
-  <url><loc>https://michelebottino-autor.github.io/adc/</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://michelebottino-autor.github.io/adc/gioco/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/adc/carta/</loc></url>
   <url><loc>https://michelebottino-autor.github.io/formazione/</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority></url>
@@ -178,7 +178,7 @@
   </url>
 
   <url><loc>https://michelebottino-autor.github.io/adc/elena/</loc><priority>0.7</priority></url>
-  <url><loc>https://michelebottino-autor.github.io/adc/mediateca/</loc><priority>0.7</priority></url>
+  <url><loc>https://michelebottino-autor.github.io/adc/mediateca/</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/installa/</loc><priority>0.5</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/notai-medievali/</loc><priority>0.7</priority></url>
   <url><loc>https://michelebottino-autor.github.io/adc/chiese/studi/cinquecento/</loc><lastmod>2026-11-17</lastmod><priority>0.7</priority></url>
