@@ -7,9 +7,9 @@ const css = fs.readFileSync('adc/assets/navigazione-unificata.css','utf8');
 test('archive navigation preserves people and press links while separating main and secondary entries', () => {
   assert.match(js, /var mainNames = \[/);
   assert.match(js, /var otherNames = \[/);
-  assert.match(js, /\['Storia per tutti','\/adc\/storia-per-tutti\/'\]/);
+  assert.match(js, /\['Storia','\/adc\/storia-per-tutti\/'\]/);
   assert.match(js, /\['Fonti','\/adc\/fonti\/'\]/);
-  assert.match(js, /\['Persone e memorie','\/adc\/persone\/'\]/);
+  assert.match(js, /\['Persone e famiglie','\/adc\/persone\/'\]/);
   assert.match(js, /\['Stampa','\/adc\/stampa\/'\]/);
   assert.match(js, /document\.createElement\('details'\)/);
   assert.match(css, /\.adc-u-more-links/);

@@ -14,7 +14,7 @@ const index=JSON.parse(fs.readFileSync(path.join(root,'adc/assets/elena-indice.j
 const approved=JSON.parse(fs.readFileSync(path.join(root,'adc/assets/elena-risposte-approvate.json'),'utf8'));
 
 class Element {
-  constructor(tag){this.tagName=tag;this.dataset={};this.children=[];this.listeners={};this.textContent='';this.disabled=false;this.hidden=true;this.value='';this.classList={remove(){},add(){}};}
+  constructor(tag){this.tagName=tag;this.style={};this.dataset={};this.children=[];this.listeners={};this.textContent='';this.disabled=false;this.hidden=true;this.value='';this.classList={remove(){},add(){}};}
   set innerHTML(value){this.html=value;}
   append(...nodes){this.children.push(...nodes);}
   replaceChildren(...nodes){this.children=nodes;}
@@ -34,7 +34,7 @@ async function run(query, resources={}){
     '.elena-presenza-close':new Element('button'),
     '.elena-presenza-message':new Element('p'),
     'form':form,'input':input,'.elena-presenza-result':result,
-    '.elena-paola-sample':new Element('button'),
+    '.elena-voice-sample':new Element('button'),
     '.elena-voice-note':new Element('p'),
   };
   const requests=[];
@@ -49,7 +49,7 @@ async function run(query, resources={}){
   const links=[];
   function walk(node){if(node.tagName==='a')links.push({title:node.textContent,url:node.href});for(const child of node.children)walk(child);}
   walk(result);
-  return {text:result.innerText,links,requests,send,input};
+  return {text:result.innerText,links,requests,send,input,recording:result.children.find(node=>node.tagName==='audio')};
 }
 (async()=>{
   const a=await run('Processo 334');
@@ -69,6 +69,14 @@ async function run(query, resources={}){
   assert.equal(a.send.disabled,false);
   assert.equal(a.input.value,'');
   console.log('PASS: dati reali → indice → link Processo 334, senza risposta inventata.');
+
+  const official=await run(approved.answers[0].question);
+  assert(official.recording?.src.endsWith('/elena-serena-risposta-E-026-A01-A03.mp3'));
+
+  const changed=structuredClone(approved);
+  changed.answers[0].answer+=' Testo modificato.';
+  const replaced=await run(changed.answers[0].question,{'/adc/assets/elena-risposte-approvate.json':changed});
+  assert.equal(replaced.recording,undefined,'Una registrazione non può accompagnare una risposta modificata.');
 
   const malformed=await run('Processo 334',{'/adc/assets/elena-risposte-approvate.json':{answers:{}}});
   assert(malformed.text.includes('La consultazione non è disponibile'));

@@ -217,8 +217,6 @@
       const box=document.createElement('div');main.insertBefore(box,main.firstChild);
       controls(box,()=>{const copy=main.cloneNode(true);copy.querySelectorAll('nav,footer,form,button,script,style,aside,.adc-reading-controls,[hidden],details:not([open])').forEach(e=>e.remove());return copy.textContent;},'Ascolta con la voce del dispositivo');
     }
-    function scan(){document.querySelectorAll('.elena-dialogue-answer').forEach(article=>{if(article.matches('[data-adc-audio]')||article.querySelector('.adc-reading-controls'))return;controls(article,()=>{const c=article.cloneNode(true);c.querySelectorAll('button,.adc-reading-controls,.elena-copy-status').forEach(e=>e.remove());return c.textContent;},'Ascolta con la voce del dispositivo');});}
-    if(location.pathname.startsWith('/adc/elena/')){scan();const output=document.getElementById('elena-results');if(output)new MutationObserver(scan).observe(output,{childList:true,subtree:true});}
     window.addEventListener('pagehide',stop);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();

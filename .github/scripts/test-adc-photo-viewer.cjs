@@ -19,7 +19,7 @@ const assert=require('node:assert/strict');
     const reject=consent.getByRole('button',{name:/Rifiuta/i});
     if(await reject.count())await reject.click();
    }
-   const open=first.getByRole('button',{name:/Ingrandisci fotografia/i});
+   const open=first.getByRole('button',{name:/Tocca per ingrandire/i});
    await open.click();
    const modal=page.locator('#adc-photo-viewer');
    assert.equal(await modal.evaluate(el=>el.open),true);

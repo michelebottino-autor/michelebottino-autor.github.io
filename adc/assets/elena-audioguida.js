@@ -1,1 +1,69 @@
-(()=>{'use strict';const p=document.getElementById('elena-audio-player');if(!p)return;const el=id=>document.getElementById(id),play=el('elena-play'),prev=el('elena-prev'),next=el('elena-next'),mute=el('elena-mute'),seek=el('elena-seek'),status=el('elena-audio-status'),time=el('elena-time');let i=0;const fmt=n=>Number.isFinite(n)?Math.floor(n/60)+':'+String(Math.floor(n%60)).padStart(2,'0'):'0:00';function sync(){play.textContent=p.paused?'▶':'Ⅱ';play.setAttribute('aria-label',p.paused?'Riproduci':'Pausa');seek.value=p.duration?Math.round(1000*p.currentTime/p.duration):0;time.textContent=fmt(p.currentTime)+(Number.isFinite(p.duration)?' / '+fmt(p.duration):'');}function run(){p.play().catch(()=>{status.textContent='Premi Riproduci per ascoltare.';sync();});}function load(n,go){if(n<0||n>=29)return;i=n;p.src='./elena-'+String(i).padStart(2,'0')+'.mp3';status.textContent='Parte '+(i+1)+' di 29';prev.disabled=i===0;next.disabled=i===28;sync();if(go)run();}play.onclick=()=>p.paused?run():p.pause();prev.onclick=()=>load(i-1,!p.paused);next.onclick=()=>load(i+1,!p.paused);mute.onclick=()=>{p.muted=!p.muted;mute.textContent=p.muted?'×':'♫';mute.setAttribute('aria-label',p.muted?'Riattiva audio':'Disattiva audio');};seek.oninput=()=>{if(Number.isFinite(p.duration))p.currentTime=Number(seek.value)*p.duration/1000;};for(const e of ['play','pause','timeupdate','loadedmetadata','durationchange'])p.addEventListener(e,sync);p.addEventListener('ended',()=>{if(i<28)load(i+1,true);else{status.textContent='Audioguida terminata.';sync();}});p.addEventListener('error',()=>{status.textContent='Audio non disponibile. Riprova.';sync();});window.addEventListener('pagehide',()=>p.pause());sync();})();
+(() => {
+  'use strict';
+
+  const player = document.getElementById('elena-audio-player');
+  if (!player) return;
+
+  const previous = document.getElementById('elena-prev');
+  const next = document.getElementById('elena-next');
+  const status = document.getElementById('elena-audio-status');
+  let parts = [];
+  let current = 0;
+
+  function showPart() {
+    status.textContent = `Parte ${current + 1} di ${parts.length}`;
+    previous.disabled = current === 0;
+    next.disabled = current === parts.length - 1;
+  }
+
+  function selectPart(index, resume) {
+    current = index;
+    player.src = parts[current];
+    showPart();
+    if (resume) {
+      player.play().catch(error => {
+        if (current === index && error.name !== 'AbortError') {
+          status.textContent += ' · Premi Riproduci per continuare.';
+        }
+      });
+    }
+  }
+
+  previous.addEventListener('click', () => selectPart(current - 1, !player.paused));
+  next.addEventListener('click', () => selectPart(current + 1, !player.paused));
+  player.addEventListener('ended', () => {
+    if (current + 1 < parts.length) {
+      selectPart(current + 1, true);
+    } else if (parts.length) {
+      status.textContent = 'Audioguida terminata.';
+    }
+  });
+  player.addEventListener('error', () => {
+    status.textContent = 'Questa parte non è disponibile. Ricarica la pagina o scegli un’altra parte.';
+    status.parentElement.hidden = false;
+  });
+  window.addEventListener('pagehide', () => player.pause());
+
+  async function loadParts() {
+    const directory = new URL('.', player.src);
+    const response = await fetch(new URL('audioguida.json', directory));
+    if (!response.ok) throw new Error('Audioguida non disponibile');
+
+    const { parts: entries } = await response.json();
+    if (!Array.isArray(entries) || entries.length === 0 ||
+        entries.some(entry => !/^elena-\d+\.mp3$/.test(entry?.path)) ||
+        new URL(entries[0].path, directory).href !== player.src) {
+      throw new Error('Indice audio non valido');
+    }
+    parts = entries.map(entry => new URL(entry.path, directory).href);
+    showPart();
+    status.parentElement.hidden = false;
+    // The visitor may have finished the first track before the list arrived.
+    if (player.ended && parts.length > 1) selectPart(1, true);
+  }
+
+  loadParts().catch(() => {
+    status.textContent = 'Puoi ascoltare la prima parte. Ricarica la pagina per consultare le altre.';
+    status.parentElement.hidden = false;
+  });
+})();

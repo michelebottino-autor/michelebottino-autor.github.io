@@ -6,7 +6,8 @@ const { chromium, firefox, webkit, devices } = require('playwright');
 const origin = process.env.ADC_TEST_ORIGIN || 'http://127.0.0.1:8765';
 const engine = process.argv[2] || 'chromium';
 const browsers = { chromium, firefox, webkit, edge: chromium, chrome: chromium };
-const routes = ['', 'cerca/', 'fonti/', 'chiese/', 'atlante/', 'mediateca/',
+const guide = 'chiese/schede/maria-santissima-annunziata/';
+const routes = ['', guide, 'cerca/', 'fonti/', 'chiese/', 'atlante/', 'mediateca/',
   'inventario/', 'elena/', 'elena/documenti/', 'widget/', 'widget/compatto/'];
 const widths = [320, 360, 384, 390, 412, 768, 1024, 1440];
 
@@ -38,6 +39,9 @@ async function verifyControls(context) {
   const menu = page.locator('#adc-unified-header .adc-u-toggle');
   await menu.focus();
   await menu.press('Enter');
+  await page.locator('#adc-u-links a[href="/adc/elena/"]').waitFor({ state: 'visible' });
+  const more = page.locator('#adc-u-links .adc-u-more summary');
+  await more.press('Enter');
   await page.locator('#adc-u-links a[href="/adc/fonti/"]').waitFor({ state: 'visible' });
   await menu.press('Enter');
   await page.locator('#adc-u-links').waitFor({ state: 'hidden' });
@@ -55,6 +59,40 @@ async function verifyControls(context) {
   await page.goto(origin + '/adc/elena/');
   await page.locator('main input[type="search"], main input[type="text"], main textarea').first().waitFor({ state: 'visible' });
   await page.close();
+}
+
+async function verifyRecordings(context) {
+  const page = await context.newPage();
+  await page.setViewportSize({ width: 390, height: 844 });
+  try {
+    await page.goto(origin + '/adc/');
+    const consent = page.locator('#mb-consent [data-choice="no"]');
+    if (await consent.isVisible()) await consent.click();
+    const guideLink = page.locator('main .adc-elena-listen a[href$="#elena-audioguida"]');
+    const homeSample = page.locator('main .adc-elena-listen audio');
+    assert.equal(await homeSample.getAttribute('src'), '/adc/audio/elena-ufficiale.mp3');
+    await guideLink.click();
+    assert.equal(new URL(page.url()).pathname, '/adc/' + guide);
+
+    const audio = page.locator('#elena-audio-player');
+    await page.getByText('Parte 1 di 29', { exact: true }).waitFor();
+    assert(await page.locator('#elena-prev').isDisabled());
+    await page.locator('#elena-next').click();
+    assert.match(await audio.getAttribute('src'), /elena-01\.mp3$/);
+    await audio.dispatchEvent('ended');
+    assert.match(await audio.getAttribute('src'), /elena-02\.mp3$/);
+
+    await page.goto(origin + '/adc/elena/');
+    assert.equal(await page.locator('main .adc-elena-listen audio').getAttribute('src'), '/adc/audio/elena-ufficiale.mp3');
+    await page.locator('#elena-query').fill('Chi possedeva il castello di Calatabiano nel 1213?');
+    await page.locator('#elena-form button[type="submit"]').click();
+    const answer = page.locator('.elena-dialogue-answer audio');
+    await answer.waitFor();
+    assert.match(await answer.getAttribute('src'), /elena-serena-risposta-E-026-A01-A03\.mp3$/);
+    assert((await page.request.get(new URL(await answer.getAttribute('src'), origin).href)).ok());
+  } finally {
+    await page.close();
+  }
 }
 
 async function run() {
@@ -85,6 +123,8 @@ async function run() {
     });
     try { await verifyControls(basic); }
     catch (error) { failures.push('Menu, ricerca ed Elena: ' + error.message); }
+    try { await verifyRecordings(basic); }
+    catch (error) { failures.push('Voce di Elena e audioguida: ' + error.message); }
     await basic.close();
   } finally {
     await browser.close();

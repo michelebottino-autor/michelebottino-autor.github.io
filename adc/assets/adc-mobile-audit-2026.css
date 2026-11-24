@@ -38,15 +38,10 @@ html.adc-mobile-audit :is(a,button,summary,input,textarea,select):focus-visible{
 /* Lettore ADC e attestazioni: contrasto e impaginazione. */
 #elena-audioguida{margin-block:2rem;padding-block:1rem;border-block:1px solid #bba16d80}
 #elena-audioguida .adc-audio-card{background:#0b3937;color:#fff5db;border:1px solid #d9ba7a;border-radius:18px;padding:clamp(12px,3vw,22px);max-width:100%;box-sizing:border-box}
-#elena-audioguida audio:not([controls]){display:none}
-#elena-audioguida .adc-audio-row{display:flex;align-items:center;gap:12px;min-width:0}
-#elena-audioguida .adc-audio-progress{flex:1;min-width:0;display:grid;gap:7px;color:#fff5db}
-#elena-audioguida .adc-audio-progress label,#elena-audioguida #elena-time{color:#fff5db!important;font-size:.9rem}
-#elena-audioguida input[type=range]{width:100%;min-width:0;accent-color:#e9cb8d}
+#elena-audioguida audio{display:block;width:100%}
+#elena-audioguida .adc-audio-nav:not([hidden]){display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+#elena-audioguida #elena-audio-status{flex-basis:100%;margin:0;color:#fff5db!important;font-size:.9rem}
 #elena-audioguida button{min-height:44px!important;border:1px solid #d9ba7a!important;background:#e9cb8d!important;color:#102e2b!important;border-radius:12px!important;padding:9px 12px!important;font:600 .95rem system-ui!important;cursor:pointer}
-#elena-audioguida #elena-play,#elena-audioguida #elena-mute{flex:0 0 44px;min-width:44px;padding:0!important;border-radius:50%!important;font-size:1.2rem!important}
-#elena-audioguida .adc-audio-nav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-#elena-audioguida #elena-prev{background:#174540!important;color:#fff5db!important}
 #elena-audioguida button:disabled{opacity:.65;cursor:default}
 #elena-audioguida button:focus-visible{outline:3px solid #fff5db;outline-offset:3px}
 @media(max-width:700px){

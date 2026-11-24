@@ -87,7 +87,6 @@ body.adc-inner-2026:has(.adc-lux-elena-hero) .elena-results a{color:#f4d69d!impo
 .adc-lux-elena-hero .adc-lux-glass{padding:22px}
 .adc-lux-elena-hero .adc-lux-glass h2{font:400 1.55rem Georgia,serif;color:#fff2d6;margin:0}
 .adc-lux-elena-hero .adc-lux-glass a{display:block;color:#f5e5c6!important;text-decoration:none;border-bottom:1px solid #e8c78b36;padding:11px 0}
-.adc-lux-elena-hero #elena-paola-welcome{background:linear-gradient(#f6dca0,#be914e)!important;border:1px solid #f6e7bd!important;color:#1b3b37!important;border-radius:12px!important;padding:12px 18px!important}
 body.adc-inner-2026:has(.adc-lux-elena-hero) .adc-inner-footer{background:#072e30!important;color:#f2f2e5!important;border-top:1px solid #deb97f80}
 @media(max-width:980px){.adc-lux-grid,.adc-lux-elena-hero .adc-lux-grid{grid-template-columns:1fr}.adc-lux-side{grid-template-columns:repeat(2,minmax(0,1fr))}.adc-lux-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.adc-lux-cards.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.adc-lux-hero,.adc-lux-elena-hero{padding:22px 16px;margin:10px 0 18px;border-radius:18px}.adc-lux-hero h1,.adc-lux-elena-hero h1{font-size:clamp(2rem,9vw,3.3rem)!important}.adc-lux-hero .adc-lux-glass{padding:18px}.adc-lux-tile-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.adc-lux-tile{font-size:.75rem;min-height:78px}.adc-lux-cards,.adc-lux-cards.three{grid-template-columns:1fr 1fr;gap:10px}.adc-lux-card{min-height:180px;padding:12px}.adc-lux-card strong{font-size:1.06rem}.adc-lux-side{grid-template-columns:1fr}.adc-lux-wide{padding:18px}.adc-lux-search{flex-wrap:wrap}.adc-lux-search button{min-width:100px}.adc-lux-voice{align-items:flex-start}}
@@ -544,3 +543,19 @@ html body.adc-archive-home footer.adc-lux-footer .adc-footer-tutela a{
 body.adc-inner-2026:has(.adc-lux-elena-hero) footer.adc-inner-footer nav[aria-label="Consulta"] a{
  display:inline-flex;align-items:center;min-height:32px;padding-block:5px;
 }
+
+.adc-elena-listen {
+  display: grid;
+  max-width: 30rem;
+  gap: .5rem;
+  margin-block: 1rem;
+  padding: .85rem 1rem;
+  border: 1px solid #d9ba7a;
+  border-radius: 14px;
+  background: #0b3937;
+  color: #fff5db;
+}
+.adc-elena-listen p { margin: 0; color: inherit!important; font-weight: 650; }
+.adc-elena-listen a { color: #ffe5aa!important; text-decoration: underline; }
+.adc-elena-listen audio { display: block; width: 100%; min-width: 0; }
+.elena-dialogue-answer .elena-recorded-answer { display: block; width: min(100%, 30rem); margin-block: .75rem; }

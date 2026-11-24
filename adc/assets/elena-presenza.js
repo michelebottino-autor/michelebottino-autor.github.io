@@ -3,28 +3,30 @@
  'use strict';
  if(document.querySelector('[data-elena-assistente]'))return;
  const root=document.createElement('aside');root.dataset.elenaAssistente='';root.className='elena-presenza';
- root.innerHTML=`<button class="elena-presenza-toggle" type="button" aria-expanded="false" aria-controls="elena-presenza-panel">Elena · Posso aiutarti?</button><section id="elena-presenza-panel" class="elena-presenza-panel" hidden aria-label="Assistenza di Elena"><div class="elena-presenza-heading"><strong>Elena · Archivio Documentale Calatabiano</strong><button type="button" class="elena-presenza-close" aria-label="Chiudi Elena">×</button></div><p class="elena-presenza-message"></p><form class="elena-presenza-form"><label for="elena-presenza-query">Che cosa stai cercando?</label><input id="elena-presenza-query" type="search" maxlength="160" autocomplete="off" placeholder="Un luogo, una data, un documento" required><button type="submit">Chiedi a Elena</button></form><div class="elena-presenza-result" aria-live="polite"></div><div class="elena-voice-controls"><button type="button" class="elena-paola-sample">Ascolta un campione della voce</button></div><p class="elena-voice-note" role="status"></p><a href="/adc/elena/">Apri la pagina completa di Elena</a><p class="elena-presenza-credits">Un’idea di Michele Bottino · Sviluppo DarkAronte</p><p class="elena-presenza-privacy">Elena consulta le schede pubbliche dell’Archivio. Le domande non compaiono nell’indirizzo della pagina.</p></section>`;
+ root.innerHTML=`<button class="elena-presenza-toggle" type="button" aria-expanded="false" aria-controls="elena-presenza-panel">Elena · Posso aiutarti?</button><section id="elena-presenza-panel" class="elena-presenza-panel" hidden aria-label="Assistenza di Elena"><div class="elena-presenza-heading"><strong>Elena · Archivio Documentale Calatabiano</strong><button type="button" class="elena-presenza-close" aria-label="Chiudi Elena">×</button></div><p class="elena-presenza-message"></p><form class="elena-presenza-form"><label for="elena-presenza-query">Che cosa stai cercando?</label><input id="elena-presenza-query" type="search" maxlength="160" autocomplete="off" placeholder="Un luogo, una data, un documento" required><button type="submit">Chiedi a Elena</button></form><div class="elena-presenza-result" aria-live="polite"></div><div class="elena-voice-controls"><button type="button" class="elena-voice-sample">Ascolta un campione della voce</button></div><p class="elena-voice-note" role="status"></p><p><a href="/adc/chiese/schede/maria-santissima-annunziata/#elena-audioguida">Audioguida della Chiesa Madre</a></p><a href="/adc/elena/">Apri la pagina completa di Elena</a><p class="elena-presenza-credits">Un’idea di Michele Bottino · Sviluppo DarkAronte</p><p class="elena-presenza-privacy">Elena consulta le schede pubbliche dell’Archivio. Le domande non compaiono nell’indirizzo della pagina.</p></section>`;
  const voiceStyle=document.createElement('style');voiceStyle.textContent='.elena-open-full{display:block;margin:12px 0;padding:10px 13px;border:1px solid #8b997e;border-radius:8px;background:#e9f0e9;color:#163d34;font:600 .9rem system-ui;cursor:pointer}.elena-open-full:focus-visible{outline:3px solid #b39256;outline-offset:2px}.elena-voice-controls{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 6px}.elena-voice-controls button{border:1px solid #8b997e;border-radius:7px;background:#f5f3eb;color:#163d34;padding:9px 12px;font:600 .87rem system-ui;cursor:pointer}.elena-voice-controls button:focus-visible{outline:3px solid #b39256;outline-offset:2px}.elena-voice-controls button[hidden]{display:none}.elena-voice-note{font-size:.76rem;color:#4f6057;margin:5px 0 12px}';document.head.appendChild(voiceStyle);
  document.body.append(root);
  const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result'),send=form.querySelector('button');
- const paolaSampleButton=root.querySelector('.elena-paola-sample');
- const paolaSampleAudio=new Audio('/adc/audio/elena-ufficiale.mp3');
- paolaSampleAudio.preload='none';
+ const voiceSampleButton=root.querySelector('.elena-voice-sample');
+ const voiceSampleAudio=new Audio('/adc/audio/elena-ufficiale.mp3');
+ voiceSampleAudio.preload='none';
  const voiceNote=root.querySelector('.elena-voice-note');
  const sampleLabel='Ascolta un campione della voce';
  function stopSpeech(){
-   paolaSampleAudio.pause();
-   paolaSampleAudio.currentTime=0;
-   paolaSampleButton.textContent=sampleLabel;
+   voiceSampleAudio.pause();
+   voiceSampleAudio.currentTime=0;
+   result.querySelector('audio')?.pause();
+   voiceSampleButton.textContent=sampleLabel;
  }
- paolaSampleButton.addEventListener('click',()=>{
-   if(!paolaSampleAudio.paused){stopSpeech();return;}
+ voiceSampleButton.addEventListener('click',()=>{
+   if(!voiceSampleAudio.paused){stopSpeech();return;}
+   result.querySelector('audio')?.pause();
    voiceNote.textContent='';
-   paolaSampleAudio.play().then(()=>{
-     if(!paolaSampleAudio.paused)paolaSampleButton.textContent='Ferma il campione';
+   voiceSampleAudio.play().then(()=>{
+     if(!voiceSampleAudio.paused)voiceSampleButton.textContent='Ferma il campione';
    }).catch(()=>{if(!panel.hidden)voiceNote.textContent='Impossibile riprodurre il campione. Riprova.';});
  });
- paolaSampleAudio.addEventListener('ended',stopSpeech);
+ voiceSampleAudio.addEventListener('ended',stopSpeech);
  window.addEventListener('pagehide',stopSpeech);
 
  // Messaggio uguale per tutti i visitatori e per tutte le sezioni ADC.
@@ -72,7 +74,7 @@
      }
      loadMain();
      function loadMain(){
-     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261124-consultazione';script.async=true;
+     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261124-ascolto';script.async=true;
      script.onload=()=>window.ElenaADCDialogo?resolve(window.ElenaADCDialogo):reject(Error('Motore documentario non disponibile'));
      script.onerror=()=>reject(Error('Impossibile caricare il motore documentario'));
      document.head.append(script);
@@ -123,6 +125,7 @@
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)setOpen(false)});
  form.addEventListener('submit',async e=>{
    e.preventDefault();const q=input.value.trim();if(!q||busy)return;
+   stopSpeech();
    busy=true;send.disabled=true;result.replaceChildren(make('p','Consulto le schede pubbliche dell’Archivio…'));
    try{
      const localReply=pageReply(q);
@@ -140,6 +143,15 @@
      previousQuestion=effective;
      if (reply.kind==='empty') reply=await engine.findPublicPages(effective,reply);
      result.replaceChildren(make('p',reply.title),make('p',reply.text));
+     const recording=engine.officialRecording(reply,document);
+     if(recording){
+       recording.style.width='100%';
+       recording.addEventListener('play',()=>{
+         voiceSampleAudio.pause();
+         voiceSampleButton.textContent=sampleLabel;
+       });
+       result.append(recording);
+     }
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
      if(reply.kind==='documentary'&&reply.reviewed_at&&reply.evidence_status){
        const levels={SOURCE_IDENTIFIED:'Fonte identificata',EDITION_TEXT_CHECKED:'Edizione controllata',IMAGE_COLLATED:'Collazione su immagini',ORIGINAL_COLLATED:'Originale collazionato'};
