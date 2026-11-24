@@ -3,79 +3,28 @@
  'use strict';
  if(document.querySelector('[data-elena-assistente]'))return;
  const root=document.createElement('aside');root.dataset.elenaAssistente='';root.className='elena-presenza';
- root.innerHTML=`<button class="elena-presenza-toggle" type="button" aria-expanded="false" aria-controls="elena-presenza-panel">Elena · Posso aiutarti?</button><section id="elena-presenza-panel" class="elena-presenza-panel" hidden aria-label="Assistenza di Elena"><div class="elena-presenza-heading"><strong>Elena · Archivio Documentale Calatabiano</strong><button type="button" class="elena-presenza-close" aria-label="Chiudi Elena">×</button></div><p class="elena-presenza-message"></p><form class="elena-presenza-form"><label for="elena-presenza-query">Che cosa stai cercando?</label><input id="elena-presenza-query" type="search" maxlength="160" autocomplete="off" placeholder="Un luogo, una data, un documento" required><button type="submit">Chiedi a Elena</button></form><div class="elena-presenza-result" aria-live="polite"></div><div class="elena-voice-controls"><button type="button" class="elena-paola-sample">Ascolta un campione della voce</button><button type="button" class="elena-voice-read" hidden disabled>Lettura risposta non disponibile</button><button type="button" class="elena-voice-page" disabled title="Lettura con la voce ufficiale in attesa di validazione">Lettura pagina non disponibile</button><button type="button" class="elena-voice-stop" hidden>Interrompi lettura</button></div><p class="elena-voice-note">Il campione della voce è disponibile. La lettura delle risposte è ancora in preparazione.</p><a href="/adc/elena/">Apri la pagina completa di Elena</a><p class="elena-presenza-credits">Un’idea di Michele Bottino · Sviluppo DarkAronte</p><p class="elena-presenza-privacy">Elena consulta le schede pubbliche dell’Archivio. Le domande non compaiono nell’indirizzo della pagina.</p></section>`;
+ root.innerHTML=`<button class="elena-presenza-toggle" type="button" aria-expanded="false" aria-controls="elena-presenza-panel">Elena · Posso aiutarti?</button><section id="elena-presenza-panel" class="elena-presenza-panel" hidden aria-label="Assistenza di Elena"><div class="elena-presenza-heading"><strong>Elena · Archivio Documentale Calatabiano</strong><button type="button" class="elena-presenza-close" aria-label="Chiudi Elena">×</button></div><p class="elena-presenza-message"></p><form class="elena-presenza-form"><label for="elena-presenza-query">Che cosa stai cercando?</label><input id="elena-presenza-query" type="search" maxlength="160" autocomplete="off" placeholder="Un luogo, una data, un documento" required><button type="submit">Chiedi a Elena</button></form><div class="elena-presenza-result" aria-live="polite"></div><div class="elena-voice-controls"><button type="button" class="elena-paola-sample">Ascolta un campione della voce</button></div><p class="elena-voice-note" role="status"></p><a href="/adc/elena/">Apri la pagina completa di Elena</a><p class="elena-presenza-credits">Un’idea di Michele Bottino · Sviluppo DarkAronte</p><p class="elena-presenza-privacy">Elena consulta le schede pubbliche dell’Archivio. Le domande non compaiono nell’indirizzo della pagina.</p></section>`;
  const voiceStyle=document.createElement('style');voiceStyle.textContent='.elena-open-full{display:block;margin:12px 0;padding:10px 13px;border:1px solid #8b997e;border-radius:8px;background:#e9f0e9;color:#163d34;font:600 .9rem system-ui;cursor:pointer}.elena-open-full:focus-visible{outline:3px solid #b39256;outline-offset:2px}.elena-voice-controls{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 6px}.elena-voice-controls button{border:1px solid #8b997e;border-radius:7px;background:#f5f3eb;color:#163d34;padding:9px 12px;font:600 .87rem system-ui;cursor:pointer}.elena-voice-controls button:focus-visible{outline:3px solid #b39256;outline-offset:2px}.elena-voice-controls button[hidden]{display:none}.elena-voice-note{font-size:.76rem;color:#4f6057;margin:5px 0 12px}';document.head.appendChild(voiceStyle);
  document.body.append(root);
  const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result'),send=form.querySelector('button');
  const paolaSampleButton=root.querySelector('.elena-paola-sample');
  const paolaSampleAudio=new Audio('/adc/audio/elena-ufficiale-20261123.wav');
  paolaSampleAudio.preload='none';
- paolaSampleButton.addEventListener('click',()=>{
-   if(!paolaSampleAudio.paused){paolaSampleAudio.pause();paolaSampleAudio.currentTime=0;paolaSampleButton.textContent='Ascolta un campione della voce';return;}
-   if('speechSynthesis' in window)window.speechSynthesis.cancel();
+ const voiceNote=root.querySelector('.elena-voice-note');
+ const sampleLabel='Ascolta un campione della voce';
+ function stopSpeech(){
+   paolaSampleAudio.pause();
    paolaSampleAudio.currentTime=0;
-   paolaSampleAudio.play().then(()=>{paolaSampleButton.textContent='Ferma il campione';}).catch(()=>{voiceNote.textContent='Il messaggio vocale non è disponibile in questo momento.';});
- });
- paolaSampleAudio.addEventListener('ended',()=>{paolaSampleButton.textContent='Ascolta un campione della voce';});
- window.addEventListener('pagehide',()=>paolaSampleAudio.pause());
- const readButton=root.querySelector('.elena-voice-read'),pageButton=root.querySelector('.elena-voice-page'),stopButton=root.querySelector('.elena-voice-stop'),voiceNote=root.querySelector('.elena-voice-note');
- let spokenAnswer='',spokenKind='',spokenId='';
- const paolaAnswerAudio=new Audio();paolaAnswerAudio.preload='none';
- const paolaPageAudio=new Audio();paolaPageAudio.preload='none';paolaPageAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
- paolaAnswerAudio.addEventListener('ended',()=>{stopButton.hidden=true;});
- const synthesis=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window)?window.speechSynthesis:null;
- function stopSpeech(){if(synthesis)synthesis.cancel();paolaAnswerAudio.pause();paolaAnswerAudio.currentTime=0;paolaPageAudio.pause();paolaPageAudio.currentTime=0;paolaSampleAudio.pause();paolaSampleButton.textContent='Ascolta un campione della voce';stopButton.hidden=true;}
- function speakText(text){
-   stopSpeech();voiceNote.textContent='Puoi ascoltare il campione della voce di Elena. La lettura di questo testo non è ancora disponibile.';return;
-   if(!synthesis){voiceNote.textContent='La lettura vocale non è disponibile in questo browser.';return;}
-   stopSpeech();
-   if(!text.trim())return;
-   const utterance=new SpeechSynthesisUtterance(text.slice(0,14000));
-   utterance.lang='it-IT';utterance.rate=.94;utterance.pitch=1;
-   const italian=synthesis.getVoices().filter(v=>/^it(?:-|_)/i.test(v.lang));
-   const paola=italian.find(v=>/paola/i.test(v.name));
-   if(!paola){voiceNote.textContent='La voce di Elena non è disponibile per questa lettura sul dispositivo. Non verrà utilizzata un’altra voce.';return;}
-   utterance.voice=paola;
-   voiceNote.textContent='Lettura con la voce di Elena disponibile sul dispositivo.';
-   utterance.onend=()=>{stopButton.hidden=true;};
-   utterance.onerror=()=>{stopButton.hidden=true;voiceNote.textContent='Lettura interrotta. Verifica le impostazioni vocali del dispositivo.';};
-   stopButton.hidden=false;
-   synthesis.speak(utterance);
+   paolaSampleButton.textContent=sampleLabel;
  }
- readButton.addEventListener('click',()=>{
-   stopSpeech();voiceNote.textContent='Puoi ascoltare il campione della voce di Elena. La lettura di questo testo non è ancora disponibile.';return;
-   if(spokenKind==='index'||spokenKind==='empty'){
-     stopSpeech();
-     paolaAnswerAudio.src='/adc/audio/elena-paola-risposta-'+(spokenKind==='index'?'indice':'vuota')+'.mp3';
-     paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Elena sta leggendo la risposta.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Registrazione vocale non disponibile. Riprova più tardi.';});
-   }else if(spokenKind==='civic'){
-     speakText(spokenAnswer);
-   }else if(spokenKind==='documentary' && /^[A-Za-z0-9_-]{1,80}$/.test(spokenId)){
-     stopSpeech();
-     paolaAnswerAudio.src='/adc/audio/elena-paola-documentaria-'+spokenId+'.mp3';
-     paolaAnswerAudio.play().then(()=>{voiceNote.textContent='Elena sta leggendo la risposta documentaria.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='Registrazione vocale non ancora disponibile per questa risposta.';});
-   }else{voiceNote.textContent='Nessuna registrazione vocale disponibile per questa risposta.';}
+ paolaSampleButton.addEventListener('click',()=>{
+   if(!paolaSampleAudio.paused){stopSpeech();return;}
+   voiceNote.textContent='';
+   paolaSampleAudio.play().then(()=>{
+     if(!paolaSampleAudio.paused)paolaSampleButton.textContent='Ferma il campione';
+   }).catch(()=>{if(!panel.hidden)voiceNote.textContent='Impossibile riprodurre il campione. Riprova.';});
  });
- pageButton.addEventListener('click',()=>{
-   stopSpeech();voiceNote.textContent='Puoi ascoltare il campione della voce di Elena. La lettura di questo testo non è ancora disponibile.';return;
-   const path=window.location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');
-   const recordings={'/adc/storia-per-tutti':'/adc/audio/elena-paola-storia-per-tutti.mp3','/adc/elena':'/adc/audio/elena-paola-pagina-elena.mp3'};
-   if(!recordings[path]){
-     const main=document.querySelector('main')||document.querySelector('article');
-     if(!main){voiceNote.textContent='Non è stato individuato il testo principale della pagina.';return;}
-     const copy=main.cloneNode(true);
-     copy.querySelectorAll('nav,aside,footer,script,style,button,form,iframe,svg,[aria-hidden="true"],[hidden],.elena-presenza').forEach(node=>node.remove());
-     const text=(copy.innerText||copy.textContent||'').replace(/\s+/g,' ').trim();
-     if(!text){voiceNote.textContent='Questa pagina non contiene testo leggibile.';return;}
-     speakText(text.slice(0,3500));
-     voiceNote.textContent='Lettura del testo principale della pagina (prima parte, fino a 3.500 caratteri), con la voce disponibile sul dispositivo.';
-     return;
-   }
-   stopSpeech();
-   paolaPageAudio.src=recordings[path];
-   paolaPageAudio.play().then(()=>{voiceNote.textContent='Elena sta leggendo la pagina.';stopButton.hidden=false;}).catch(()=>{voiceNote.textContent='La registrazione della pagina non è ancora disponibile.';});
- });
- stopButton.addEventListener('click',stopSpeech);
+ paolaSampleAudio.addEventListener('ended',stopSpeech);
  window.addEventListener('pagehide',stopSpeech);
 
  // Messaggio uguale per tutti i visitatori e per tutte le sezioni ADC.
@@ -94,7 +43,7 @@
      }
      loadMain();
      function loadMain(){
-     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js';script.async=true;
+     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261124-consultazione';script.async=true;
      script.onload=()=>window.ElenaADCDialogo?resolve(window.ElenaADCDialogo):reject(Error('Motore documentario non disponibile'));
      script.onerror=()=>reject(Error('Impossibile caricare il motore documentario'));
      document.head.append(script);
@@ -110,13 +59,14 @@
      fetch('/adc/assets/elena-comune-fonti.json',{cache:'no-store'}).catch(()=>({ok:false})),
      fetch('/adc/assets/elena-comune-news.json',{cache:'no-store'}).catch(()=>({ok:false})),
      fetch('/adc/assets/elena-comune-verifiche.json',{cache:'no-store'}).catch(()=>({ok:false})),
-     fetch('/adc/assets/elena-amministrazione.json',{cache:'no-store'}).catch(()=>({ok:false}))
+     fetch('/adc/assets/elena-amministrazione.json',{cache:'no-store'}).catch(()=>({ok:false})),
+     fetch('/adc/assets/elena-stati-ricerca.json',{cache:'no-store'}).catch(()=>({ok:false}))
    ]).then(async responses=>{
      if(!responses[0].ok||!responses[1].ok)throw Error('Indice delle risposte non disponibile');
      return Promise.all(responses.map(r=>r.ok?r.json().catch(()=>null):null));
-   }).then(([index,approved,knowledge,municipality,news,checks,admin])=>{
+   }).then(([index,approved,knowledge,municipality,news,checks,admin,researchRegistry])=>{
      if(!Array.isArray(index?.entries)||!Array.isArray(approved?.answers))throw Error('Formato delle risorse documentarie non valido');
-     return {index,approved:approved.answers,knowledge:knowledge?.schema===1&&Array.isArray(knowledge.entries)?knowledge:{entries:[]},municipality:municipality?.schema===1?municipality:null,news:news?.schema===1?news:null,checks:checks?.schema===1?checks:null,admin:admin?.schema===1?admin:null};
+     return {index,approved:approved.answers,knowledge:knowledge?.schema===1&&Array.isArray(knowledge.entries)?knowledge:{entries:[]},municipality:municipality?.schema===1?municipality:null,news:news?.schema===1?news:null,checks:checks?.schema===1?checks:null,admin:admin?.schema===1?admin:null,researchRegistry};
    }).catch(err=>{resources=null;throw err});
    return resources;
  }
@@ -148,9 +98,10 @@
    try{
      const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
      const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
-     const reply=engine.reply(effective,data.index,data.approved,data.knowledge,data.municipality,data.news,data.checks,data.admin);
+     let reply=engine.reply(effective,data.index,data.approved,data.knowledge,data.municipality,data.news,data.checks,data.admin,data.researchRegistry);
      previousQuestion=effective;
-     spokenKind=reply.kind;spokenId=reply.id||'';spokenAnswer=[reply.title,reply.text,reply.limitation?'Limite della documentazione: '+reply.limitation:''].filter(Boolean).join('. ');readButton.hidden=!(reply.kind==='index'||reply.kind==='empty'||reply.kind==='documentary'||reply.kind==='civic');result.replaceChildren(make('p',reply.title),make('p',reply.text));
+     if (reply.kind==='empty') reply=await engine.findPublicPages(effective,reply);
+     result.replaceChildren(make('p',reply.title),make('p',reply.text));
      if(reply.limitation)result.append(make('p','Limite della documentazione: '+reply.limitation,'elena-presenza-evidence'));
      if(reply.kind==='documentary'&&reply.reviewed_at&&reply.evidence_status){
        const levels={SOURCE_IDENTIFIED:'Fonte identificata',EDITION_TEXT_CHECKED:'Edizione controllata',IMAGE_COLLATED:'Collazione su immagini',ORIGINAL_COLLATED:'Originale collazionato'};
@@ -169,7 +120,7 @@
      });
      result.append(more);
      input.value='';
-   }catch(_){readButton.hidden=true;spokenAnswer='';spokenKind='';result.replaceChildren(make('p','La consultazione non è disponibile in questo momento. Puoi aprire la pagina completa di Elena.'));}
+   }catch(_){result.replaceChildren(make('p','La consultazione non è disponibile in questo momento. Puoi aprire la pagina completa di Elena.'));}
    finally{busy=false;send.disabled=false;}
  });
 })();

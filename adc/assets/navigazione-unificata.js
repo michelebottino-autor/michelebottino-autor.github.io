@@ -29,7 +29,7 @@
     var mainNames = [
       ['Archivio','/adc/'], ['Documenti','/adc/inventario/'],
       ['Fonti','/adc/fonti/'], ['Luoghi','/adc/atlante/'],
-      ['Chiese e arte','/adc/chiese/'], ['Fotografie','/adc/mediateca/'],
+      ['Chiese e arte','/adc/chiese/'], ['Foto e video','/adc/mediateca/'],
       ['Cerca','/adc/cerca/']
     ];
     var otherNames = [

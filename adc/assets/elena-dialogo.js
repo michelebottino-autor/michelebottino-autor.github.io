@@ -218,10 +218,50 @@
     if (matches.length) return {kind:'index',title:'Fonti e percorsi da consultare',text:'Non è disponibile una risposta sintetica verificata per questa domanda. Questi percorsi potrebbero essere pertinenti: consulta le fonti prima di trarre conclusioni.',links:matches.map(e=>({title:e.title,url:e.url,description:e.description}))};
     return {kind:'empty',title:'Nessuna fonte sufficiente individuata',text:'Non ho trovato un percorso sufficientemente pertinente nell’indice pubblico. Puoi consultare il repertorio generale oppure riprovare indicando una località, un anno o un argomento.',links:[{title:'Consulta le fonti e i documenti',url:'/adc/fonti/'},{title:'Leggi la storia di Calatabiano',url:'/adc/storia/'}]};
   }
+  // Il testo delle pagine serve a individuare percorsi, non a formulare risposte.
+  let publicPages;
+  async function findPublicPages(query, response) {
+    if (response.kind !== 'empty') return response;
+    const terms = normalize(query).match(/[a-z0-9]+/g) || [];
+    const words = [...new Set(terms.filter(w => w.length > 2 && !stop.has(w)
+      && !['puoi','potresti','mostrami','trovare','archivio','qualche','riguardo','riguarda'].includes(w)))];
+    if (!words.length) return response;
+    try {
+      if (!publicPages) {
+        publicPages = fetch('/adc/cerca/indice-pagine.json', {cache:'no-cache'}).then(async result => {
+          if (!result.ok) throw Error('Indice delle pagine non disponibile');
+          const data = await result.json();
+          if (!Array.isArray(data.pages)) throw Error('Indice delle pagine non valido');
+          return data.pages.flatMap(page => {
+            const url = typeof page?.url === 'string'
+              ? page.url.replace(/^https:\/\/michelebottino-autor\.github\.io(?=\/)/, '') : '';
+            if (!safeUrl(url) || !url.startsWith('/adc/') || url === '/adc/' || url.startsWith('/adc/elena/')
+              || typeof page.title !== 'string' || typeof page.text !== 'string') return [];
+            const titleWords = new Set(normalize(page.title).match(/[a-z0-9]+/g));
+            const bodyWords = new Set(normalize(page.text).match(/[a-z0-9]+/g));
+            return [{title:page.title, url, titleWords, bodyWords}];
+          });
+        }).catch(error => {publicPages=undefined;throw error;});
+      }
+      const links = (await publicPages).map(page => {
+        const titleHits = words.filter(word => page.titleWords.has(word)).length;
+        const matches = words.every(word => page.titleWords.has(word) || page.bodyWords.has(word));
+        return {title:page.title, url:page.url, score:matches ? 1 + titleHits : 0};
+      }).filter(page => page.score > 0).sort((a,b) => b.score-a.score)
+        .slice(0,5).map(({title,url}) => ({title,url}));
+      if (links.length) return {
+        kind:'index', title:'Pagine dell’Archivio da consultare',
+        text:'Ho trovato queste pagine nel catalogo pubblico. Aprile per leggere i testi e controllare i riferimenti.', links
+      };
+    } catch (_) {}
+    return response;
+  }
   function mount() {
     const form=document.getElementById('elena-form'), input=document.getElementById('elena-query'), output=document.getElementById('elena-results');
     if (!form || !input || !output) return;
-    let index={entries:[]}, approved=[], knowledge={entries:[]}, municipality=null, municipalNews=null, sourceChecks=null, administration=null, researchRegistry=null, knowledgeAvailable=false, turns=0, previousQuestion='', activeAudio=null, indexAvailable=false, approvedAvailable=false;
+    let index={entries:[]}, approved=[], knowledge={entries:[]}, municipality=null, municipalNews=null, sourceChecks=null, administration=null, researchRegistry=null, knowledgeAvailable=false, turns=0, previousQuestion='', indexAvailable=false, approvedAvailable=false;
+    let pendingTurn=Promise.resolve();
+    let conversationRevision=0;
     const tools=document.createElement('div');tools.className='elena-conversation-tools';
     const availability=document.createElement('p');availability.className='elena-source-status';availability.setAttribute('role','status');
     availability.textContent='Sto aprendo le fonti dell’Archivio…';
@@ -231,9 +271,7 @@
     output.setAttribute('role','log');output.setAttribute('aria-label','Conversazione con Elena');
     output.setAttribute('aria-relevant','additions');
     clear.addEventListener('click',()=>{
-      if(window.speechSynthesis)window.speechSynthesis.cancel();
-      if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
-      previousQuestion='';turns=0;input.value='';
+      conversationRevision++;previousQuestion='';turns=0;input.value='';
       output.replaceChildren(Object.assign(document.createElement('p'),{className:'elena-chat-welcome',textContent:'Nuova conversazione. Che cosa vuoi cercare?'}));
       input.focus();
     });
@@ -333,14 +371,13 @@
     ready.then(renderExplorer);
     function run(query) {
       const q=String(query||'').trim().slice(0,160);if(!q)return;
-      ready.then(()=>{
-        if(!turns)output.replaceChildren();
-        if(window.speechSynthesis)window.speechSynthesis.cancel();
-        if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
+      const revision=conversationRevision;
+      pendingTurn=pendingTurn.then(()=>ready).then(async ()=>{
+        if (revision!==conversationRevision) return;
         const effective=contextualQuery(q,previousQuestion);
         const partial=(!indexAvailable || !approvedAvailable);
         const passageQuery=findPassages(effective,knowledge,approved);
-        const r=(passageQuery && (!knowledgeAvailable || !approvedAvailable))
+        let r=(passageQuery && (!knowledgeAvailable || !approvedAvailable))
           ? {kind:'unavailable',title:'Estratti temporaneamente non disponibili',text:'Le unità documentarie approvate non sono al momento consultabili. Riprova quando saranno disponibili: non è possibile stabilire se esista un passaggio pertinente.',links:[]}
           : (!indexAvailable && !approvedAvailable && !municipality && !administration && !serviceAnswer(effective) && !passageQuery)
           ? {kind:'unavailable',title:'Archivio temporaneamente non disponibile',text:'Non è stato possibile caricare le fonti documentarie. Riprova più tardi: l’assenza di risultati non indica assenza di testimonianze.',links:[]}
@@ -352,6 +389,9 @@
           r.links=[];
         }
         previousQuestion=effective;
+        if (r.kind==='empty') r=await findPublicPages(effective,r);
+        if (revision!==conversationRevision) return;
+        if (!turns) output.replaceChildren();
         output.append(make('p','elena-dialogue-question',q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
@@ -384,46 +424,6 @@
           : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
         if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
         if((r.kind==='documentary'||r.kind==='passage'||r.kind==='research-status') && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
-        const voiceControls=make('div','elena-dialogue-voice');
-        const read=make('button','elena-dialogue-read','Lettura non disponibile');read.disabled=true;read.title='La lettura di questa risposta non è ancora disponibile.';
-        read.type='button';
-        const stop=make('button','elena-dialogue-stop','Interrompi');
-        stop.type='button';stop.hidden=true;
-        const status=make('p','elena-dialogue-voice-status','');
-        const synthesis=window.speechSynthesis;
-        let utterance=null;
-        const stopAudio=()=>{
-          if(synthesis) synthesis.cancel();
-          if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null;}
-          utterance=null;stop.hidden=true;read.hidden=false;
-        };
-        const speedLabel=make('label','elena-dialogue-speed-label','Velocità: ');
-        const speed=make('select','elena-dialogue-speed');speed.setAttribute('aria-label','Velocità della risposta vocale');
-        for(const [value,label] of [['0.85','Lenta'],['0.95','Naturale'],['1','Normale'],['1.1','Rapida']]){
-          const option=make('option','',label);option.value=value;if(value==='0.95')option.selected=true;speed.append(option);
-        }
-        speedLabel.append(speed);
-        read.addEventListener('click',()=>{
-          status.textContent='Puoi ascoltare un esempio della voce di Elena. La lettura completa della risposta non è ancora disponibile.';return;
-          if(!synthesis || typeof SpeechSynthesisUtterance==='undefined'){
-            status.textContent='La lettura vocale non è supportata da questo browser.';return;
-          }
-          stopAudio();
-          const spoken=r.title+'. '+r.text+((r.kind==='documentary'||r.kind==='passage'||r.kind==='research-status') && r.limitation ? ' Limiti della verifica: '+r.limitation : '');
-          utterance=new SpeechSynthesisUtterance(spoken);
-          utterance.lang='it-IT';utterance.rate=Number(speed.value);utterance.pitch=1;
-          const voices=synthesis.getVoices();
-          const italian=voices.filter(v=>v.lang && v.lang.toLowerCase().startsWith('it'));
-          utterance.voice=italian.find(v=>/female|femmina|elsa|paola|alice|lucia|elsa/i.test(v.name)) || italian[0] || null;
-          utterance.onend=()=>{utterance=null;stop.hidden=true;read.hidden=false;status.textContent='Lettura terminata.';};
-          utterance.onerror=()=>{utterance=null;stop.hidden=true;read.hidden=false;status.textContent='Lettura vocale non riuscita. Verifica le impostazioni vocali del dispositivo.';};
-          stop.hidden=false;read.hidden=true;status.textContent='Elena sta leggendo la risposta visualizzata.';
-          synthesis.speak(utterance);
-        });
-        stop.addEventListener('click',()=>{stopAudio();status.textContent='Lettura interrotta.';});
-        const sampleLink=make('a','elena-dialogue-sample','Ascolta il campione ufficiale');sampleLink.href='/adc/audio/elena-ufficiale-20261123.wav';sampleLink.setAttribute('aria-label','Ascolta il campione approvato della voce, non la risposta corrente');status.textContent='La lettura di questa risposta non è ancora disponibile.';voiceControls.append(read,sampleLink,status);
-        // Il comando vocale precede il testo lungo: resta subito visibile anche su smartphone.
-        article.insertBefore(voiceControls,article.children[1] || null);
         if(r.links.length) {
           article.append(make('p','elena-dialogue-sources',(r.kind==='documentary'||r.kind==='passage')?'Fonti della risposta:':r.kind==='civic'?'Fonte ufficiale del Comune:':r.kind==='research-status'?'Consulta il dossier della questione:':'Apri i documenti e i percorsi:'));
           const list=make('ul','elena-dialogue-links');
@@ -471,5 +471,5 @@
     if(loc.searchParams.has('q')||loc.hash.startsWith('#q=')){loc.searchParams.delete('q');loc.hash='';try{history.replaceState(null,'',loc.pathname+loc.search)}catch(e){}}
     if(initial && initial.length<=160)run(initial);
   }
-  return {normalize,tokens,rank,reply,findPassages,serviceAnswer,knowledgeAnswer,researchStatus,contextualQuery,safeUrl,mount};
+  return {normalize,tokens,rank,reply,findPassages,serviceAnswer,knowledgeAnswer,researchStatus,contextualQuery,safeUrl,findPublicPages,mount};
 });

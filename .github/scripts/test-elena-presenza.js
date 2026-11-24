@@ -35,9 +35,6 @@ async function run(query, resources={}){
     '.elena-presenza-message':new Element('p'),
     'form':form,'input':input,'.elena-presenza-result':result,
     '.elena-paola-sample':new Element('button'),
-    '.elena-voice-read':new Element('button'),
-    '.elena-voice-page':new Element('button'),
-    '.elena-voice-stop':new Element('button'),
     '.elena-voice-note':new Element('p'),
   };
   const requests=[];
@@ -66,7 +63,8 @@ async function run(query, resources={}){
     '/adc/assets/elena-comune-fonti.json',
     '/adc/assets/elena-comune-news.json',
     '/adc/assets/elena-comune-verifiche.json',
-    '/adc/assets/elena-amministrazione.json'
+    '/adc/assets/elena-amministrazione.json',
+    '/adc/assets/elena-stati-ricerca.json'
   ]);
   assert.equal(a.send.disabled,false);
   assert.equal(a.input.value,'');
@@ -88,9 +86,28 @@ async function run(query, resources={}){
   assert(!rejected.text.includes(draft.answer));
   console.log('PASS: fixture DRAFT → non viene presentata come risposta approvata.');
 
+  const publicIndex=JSON.parse(fs.readFileSync(path.join(root,'adc/cerca/indice-pagine.json'),'utf8'));
+  const realFetch=global.fetch;
+  const publicRequests=[];
+  global.fetch=async url=>{
+    publicRequests.push(url);
+    return {ok:true,json:async()=>publicIndex};
+  };
+  try {
+    const credit=await run('Gerd Eichmann');
+    assert(credit.text.includes('Pagine dell’Archivio da consultare'));
+    assert(credit.links.some(link=>link.url==='/adc/mediateca/'));
+    const unknownCredit=await run('Gerd Eichmann xyzxyz');
+    assert(!unknownCredit.text.includes('Pagine dell’Archivio da consultare'));
+    assert.deepEqual(publicRequests,['/adc/cerca/indice-pagine.json']);
+  } finally {
+    global.fetch=realFetch;
+  }
+  console.log('PASS: ricerca nel testo delle pagine pubbliche, senza inviare la domanda e senza simulare una risposta verificata.');
+
   const unknown=await run('zxqvtrpl inesistente');
   assert(unknown.text.includes('Non ho trovato un percorso sufficientemente pertinente'));
   assert(unknown.links.every(x=>x.url.startsWith('/adc/')));
   console.log('PASS: domanda priva di riscontri → astensione e soli percorsi ADC.');
-  console.log('ELENA_WIDGET_REGRESSION_OK: 5 casi mirati; nessuna prova del flusso archivistico end-to-end.');
+  console.log('ELENA_WIDGET_REGRESSION_OK: 6 casi mirati; nessuna prova del flusso archivistico end-to-end.');
 })().catch(error=>{console.error(error);process.exitCode=1;});

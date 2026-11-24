@@ -17,7 +17,7 @@ for(const file of targets){
 const widget=fs.readFileSync(path.join(root,'adc/assets/elena-presenza.js'),'utf8');
 assert(widget.includes('Ascolta un campione della voce'),'Pulsante del campione vocale Elena assente');
 assert(widget.includes('Ferma il campione'),'Comando di arresto del campione vocale assente');
-assert(widget.includes('Elena sta leggendo la risposta.'),'Conferma lettura della risposta Elena assente');
+assert.doesNotMatch(widget,/speechSynthesis|elena-paola-.*\.mp3/,'Il campione ufficiale non deve essere sostituito');
 assert.match(widget,/\/adc\/audio\/elena-ufficiale-20261123\.wav/,'Percorso del campione vocale Elena assente dal widget');
 assert.ok(fs.existsSync(path.join(root,'adc/audio/elena-ufficiale-20261123.wav')),'File della voce ufficiale mancante');
-console.log('ELENA_IDENTITA_OK: interfaccia pubblica Elena; percorsi tecnici Paola conservati.');
+console.log('ELENA_IDENTITA_OK: interfaccia pubblica Elena e campione ufficiale.');
