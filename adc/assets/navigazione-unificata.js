@@ -3,11 +3,15 @@
   'use strict';
   if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/custode/')) return;
   function loadTheme() {
+    var presenceLink = document.querySelector('link[rel="stylesheet"][href*="/adc/assets/elena-presenza.css"]');
+    if (presenceLink && !presenceLink.href.includes('v=20261124-mobile-modal-1')) {
+      presenceLink.href = '/adc/assets/elena-presenza.css?v=20261124-mobile-modal-1';
+    }
     if (!document.head || document.getElementById('adc-visual-theme')) return;
     var link = document.createElement('link');
     link.id = 'adc-visual-theme';
     link.rel = 'stylesheet';
-    link.href = '/adc/assets/identita-visiva-condivisa-2026.css?v=20261124-1';
+    link.href = '/adc/assets/identita-visiva-condivisa-2026.css?v=20261124-2';
     document.head.appendChild(link);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadTheme, {once:true});
