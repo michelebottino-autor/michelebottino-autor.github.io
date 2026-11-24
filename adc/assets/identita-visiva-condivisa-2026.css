@@ -288,3 +288,73 @@ body:has(#adc-unified-header) main#contenuto #fotografie-mediateca figure figcap
   color:#17594f!important;
   -webkit-text-fill-color:#17594f!important;
 }
+
+
+/* Tipografia leggibile per i contenuti liberi delle pagine ADC. */
+body:has(#adc-unified-header) main :is(h1,h2,h3,h4,h5,h6) {
+  color:#ffdfa2!important;
+  -webkit-text-fill-color:#ffdfa2!important;
+}
+body:has(#adc-unified-header) main :is(p,li,dt,dd,label,summary,small) {
+  color:#f0f0e7!important;
+  -webkit-text-fill-color:#f0f0e7!important;
+}
+body:has(#adc-unified-header) main a:not(.cta):not([class*="button"]):not(.adc-share-actions a) {
+  color:#ffdc98!important;
+  -webkit-text-fill-color:#ffdc98!important;
+  text-decoration-color:#cba66b!important;
+}
+
+/* Contrasto netto sui pulsanti dorati e sulle scorciatoie della ricerca. */
+body:has(#adc-unified-header) main :is(a.cta,.adc-lux-gold-button) {
+  color:#173b33!important;
+  -webkit-text-fill-color:#173b33!important;
+  opacity:1!important;
+}
+body:has(#adc-unified-header) main .search-topics a {
+  color:#14564c!important;
+  -webkit-text-fill-color:#14564c!important;
+}
+body:has(#adc-unified-header) main .search-topics span {
+  color:#f0f0e7!important;
+  -webkit-text-fill-color:#f0f0e7!important;
+}
+body:has(#adc-unified-header) main #search-form label {
+  color:#173b33!important;
+  -webkit-text-fill-color:#173b33!important;
+}
+body:has(#adc-unified-header) main #search-form input::placeholder {
+  color:#53645c!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#53645c!important;
+}
+
+/* Superfici chiare: mantengono la tipografia scura prevista per la lettura. */
+body:has(#adc-unified-header) main :is(.adc-share,.adc-share-entry) {
+  color:#25302e!important;
+  -webkit-text-fill-color:#25302e!important;
+}
+body:has(#adc-unified-header) main .adc-share :is(h2,h3,h4,p,li,small,strong) {
+  color:#30463d!important;
+  -webkit-text-fill-color:#30463d!important;
+}
+body:has(#adc-unified-header) main .adc-share a,
+body:has(#adc-unified-header) main .adc-share-entry a {
+  color:#17594f!important;
+  -webkit-text-fill-color:#17594f!important;
+}
+body:has(#adc-unified-header) main figure figcaption,
+body:has(#adc-unified-header) main figure figcaption :is(strong,em) {
+  color:#30463d!important;
+  -webkit-text-fill-color:#30463d!important;
+  background:#f7f1e4!important;
+}
+body:has(#adc-unified-header) main figure figcaption a {
+  color:#17594f!important;
+  -webkit-text-fill-color:#17594f!important;
+}
+body:has(#adc-unified-header) main :is(pre,blockquote,.transcription,.document-transcription,.source-transcription,.source-text,.facsimile,.document-original,[data-document-text]),
+body:has(#adc-unified-header) main :is(pre,blockquote,.transcription,.document-transcription,.source-transcription,.source-text,.facsimile,.document-original,[data-document-text]) :is(h1,h2,h3,h4,p,li,a,small,strong,em) {
+  color:#263a33!important;
+  -webkit-text-fill-color:#263a33!important;
+}
