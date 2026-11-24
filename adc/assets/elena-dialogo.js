@@ -309,7 +309,7 @@
     // Il pulsante riproduce unicamente il campione P approvato; non è un lettore dinamico.
     const welcome=document.getElementById('elena-paola-welcome');
     if(welcome){
-      const welcomeAudio=new Audio('/adc/audio/elena-ufficiale-20261123.wav');welcomeAudio.preload='none';welcomeAudio.playbackRate=1;welcomeAudio.preservesPitch=true;
+      const welcomeAudio=new Audio('/adc/audio/elena-ufficiale.mp3');welcomeAudio.preload='none';welcomeAudio.playbackRate=1;welcomeAudio.preservesPitch=true;
       welcome.addEventListener('click',()=>{
         if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta un campione della voce';return;}
         welcomeAudio.currentTime=0;

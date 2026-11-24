@@ -8,7 +8,7 @@
  document.body.append(root);
  const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result'),send=form.querySelector('button');
  const paolaSampleButton=root.querySelector('.elena-paola-sample');
- const paolaSampleAudio=new Audio('/adc/audio/elena-ufficiale-20261123.wav');
+ const paolaSampleAudio=new Audio('/adc/audio/elena-ufficiale.mp3');
  paolaSampleAudio.preload='none';
  const voiceNote=root.querySelector('.elena-voice-note');
  const sampleLabel='Ascolta un campione della voce';
