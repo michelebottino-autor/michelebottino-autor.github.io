@@ -27,16 +27,16 @@
     // Due percorsi d'accesso chiari, strumenti principali e sezioni secondarie.
     // In evidenza i percorsi del patrimonio; Elena resta uno strumento di consultazione.
     var mainNames = [
-      ['Archivio','/adc/'], ['Documenti','/adc/inventario/'],
-      ['Fonti','/adc/fonti/'], ['Luoghi','/adc/atlante/'],
+      ['Archivio','/adc/'], ['Storia','/adc/storia-per-tutti/'],
+      ['Persone e famiglie','/adc/persone/'], ['Luoghi','/adc/atlante/'],
       ['Chiese e arte','/adc/chiese/'], ['Foto e video','/adc/mediateca/'],
-      ['Cerca','/adc/cerca/']
+      ['Cerca','/adc/cerca/'], ['Elena','/adc/elena/']
     ];
     var otherNames = [
-      ['Persone e memorie','/adc/persone/'], ['Storia per tutti','/adc/storia-per-tutti/'],
-      ['Monasteri','/adc/monasteri/'], ['Patrimonio','/adc/materiali-patrimonio/'],
-      ['Stampa','/adc/stampa/'], ['Elena','/adc/elena/'],
-      ['Origini e dedica','/adc/#dedica-comunita'],
+      ['Tutti gli argomenti','/adc/esplora/'], ['Documenti','/adc/inventario/'],
+      ['Fonti','/adc/fonti/'], ['Monasteri','/adc/monasteri/'],
+      ['Patrimonio','/adc/materiali-patrimonio/'], ['Stampa','/adc/stampa/'],
+      ['Contribuisci','/adc/contribuisci/'], ['Origini e dedica','/adc/#dedica-comunita'],
       ['Carta ADC','/adc/carta/'], ['Sito dell’autore','/']
     ];
     var header = document.createElement('div');
