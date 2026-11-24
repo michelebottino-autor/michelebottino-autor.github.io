@@ -424,7 +424,7 @@ body:has(#adc-unified-header) main :is(.eyebrow,.mono-card .mono-tag,.entry .met
 body:has(#adc-unified-header):not(.adc-archive-home) :is(
   main[data-adc-paper="sections"] section:not(.hero,.adc-share,[class*="grid"]),
   main[data-adc-paper="chapters"] .chapter,
-  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue),
+  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p,article.entry p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue),
    .mono-status,
   main > aside:not([class])
 ) {
@@ -434,7 +434,7 @@ body:has(#adc-unified-header):not(.adc-archive-home) :is(
 body:has(#adc-unified-header):not(.adc-archive-home) :is(
   main[data-adc-paper="sections"] section:not(.hero,.adc-share,[class*="grid"]),
   main[data-adc-paper="chapters"] .chapter,
-  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue),
+  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p,article.entry p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue),
    .mono-status,
   main > aside:not([class])
 ) :is(h1,h2,h3,h4,h5,h6,p,li,td,dt,dd,label,small,strong,em,b,span,summary,a):not(.contrib-link):not(
@@ -446,7 +446,7 @@ body:has(#adc-unified-header):not(.adc-archive-home) :is(
 body:has(#adc-unified-header):not(.adc-archive-home) :is(
   main[data-adc-paper="sections"] section:not(.hero,.adc-share,[class*="grid"]),
   main[data-adc-paper="chapters"] .chapter,
-  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue)
+  main :is(#oltre-il-documento,#bilancio-critico-2026,.adc-paper-note,.racconto-storico,.directory,.contrib-card,.contrib-note,.adc-reading-nav,.indice-storia,.adc-story-reading-link,.publication-tools,.mono-notice,.sample,.quote,.reading,p.source:not(.adc-chiese p,article.entry p),div.source,.notice,.no-photo,nav.index,figure figcaption,.unit,#clue)
 ) a:not(.contrib-link):not(:is(.card,.route,.media-card,.mono-card,.resource,.sheet,.fact,.panel,table,.adc-share-actions) *) {
   color:#145348!important;
   -webkit-text-fill-color:currentColor!important;
