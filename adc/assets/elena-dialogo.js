@@ -404,6 +404,9 @@
         output.append(make('p','elena-dialogue-question',q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
+        if(r.kind==='documentary' && r.id==='E-026-A01-A03' && r.text==="Nel marzo 1213 Costanza, insieme al figlio Enrico, confermò alla Chiesa di Catania il castello di Calatabiano con le sue pertinenze. Il privilegio ricorda che il castello era stato acquisito al fisco regio dopo la vicenda del conte Pagano de Parisio e successivamente affidato al conte Arnaldo. Il testo menziona un pagamento di 15.000 tarì ad Arnaldo o al suo procuratore. Si tratta di un privilegio di concessione e conferma, non del contratto originale di compravendita."){
+          const audio=document.createElement('audio');audio.controls=true;audio.preload='none';audio.src='/adc/audio/elena-serena-risposta-E-026-A01-A03.mp3';audio.setAttribute('aria-label','Ascolta la risposta con la voce ufficiale di Elena');article.dataset.adcAudio='official';article.append(audio);
+        }
         const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary' || r.kind==='passage'
           ? (r.kind==='passage' ? 'Testo approvato dalla redazione ADC. La fonte e le pagine sono indicate sotto.' : 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.')
           : r.kind==='unavailable'

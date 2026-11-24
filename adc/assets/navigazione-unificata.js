@@ -215,9 +215,9 @@
     const main=document.querySelector('main');
     if(main&&!main.querySelector('[data-adc-audio]')&&!location.pathname.startsWith('/adc/elena/')&&!location.pathname.startsWith('/adc/cerca/')&&!location.pathname.startsWith('/adc/memorie/')){
       const box=document.createElement('div');main.insertBefore(box,main.firstChild);
-      controls(box,()=>{const copy=main.cloneNode(true);copy.querySelectorAll('nav,footer,form,button,script,style,aside,.adc-reading-controls,[hidden],details:not([open])').forEach(e=>e.remove());return copy.textContent;},'Ascolta il testo della pagina');
+      controls(box,()=>{const copy=main.cloneNode(true);copy.querySelectorAll('nav,footer,form,button,script,style,aside,.adc-reading-controls,[hidden],details:not([open])').forEach(e=>e.remove());return copy.textContent;},'Ascolta con la voce del dispositivo');
     }
-    function scan(){document.querySelectorAll('.elena-dialogue-answer').forEach(article=>{if(article.querySelector('.adc-reading-controls'))return;controls(article,()=>{const c=article.cloneNode(true);c.querySelectorAll('button,.adc-reading-controls,.elena-copy-status').forEach(e=>e.remove());return c.textContent;},'Ascolta la risposta');});}
+    function scan(){document.querySelectorAll('.elena-dialogue-answer').forEach(article=>{if(article.matches('[data-adc-audio]')||article.querySelector('.adc-reading-controls'))return;controls(article,()=>{const c=article.cloneNode(true);c.querySelectorAll('button,.adc-reading-controls,.elena-copy-status').forEach(e=>e.remove());return c.textContent;},'Ascolta con la voce del dispositivo');});}
     if(location.pathname.startsWith('/adc/elena/')){scan();const output=document.getElementById('elena-results');if(output)new MutationObserver(scan).observe(output,{childList:true,subtree:true});}
     window.addEventListener('pagehide',stop);
   }
