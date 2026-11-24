@@ -429,6 +429,53 @@ body:has(.adc-project-nav) :where(main) a {
  .elena-presenza-panel .elena-voice-controls button{font-size:13px;padding:9px 11px}
 }
 
+/* Elena presente in tutto l'ADC: pannello coordinato al nuovo tema */
+.elena-presenza{color:#f4f6ee!important;z-index:1900!important}
+.elena-presenza-toggle{background:linear-gradient(130deg,#0c4944,#0b302f)!important;color:#fff8e7!important;border:1px solid #edc98c!important;border-radius:18px!important;padding:13px 19px!important;box-shadow:inset 0 1px #f8ebba70,0 10px 32px #00222483!important;letter-spacing:.015em}
+.elena-presenza-panel{background:linear-gradient(145deg,#0e4944f7,#052c2ffb)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #e0c18b!important;border-radius:21px!important;box-shadow:0 22px 54px #001717a1!important;color:#f4f6ee!important}
+.elena-presenza-panel :is(p,small,label,strong,li,h2,h3){color:#f4f3e8!important}
+.elena-presenza-panel .elena-presenza-heading{background:#0e4843!important;border-bottom:1px solid #d8b77c88!important;border-radius:10px!important}
+.elena-presenza-panel .elena-presenza-heading strong{font:400 1.15rem Georgia,serif!important;color:#fce8b7!important}
+.elena-presenza-panel .elena-presenza-close{color:#f7dcab!important}
+.elena-presenza-panel :is(input,textarea){color:#f6f7ed!important;background:#0a3536!important;border:1px solid #b5cebc!important;border-radius:11px!important}
+.elena-presenza-panel :is(input,textarea)::placeholder{color:#c8dad1!important}
+.elena-presenza-panel button:not(.elena-presenza-close){background:linear-gradient(145deg,#f4dba0,#c4964c)!important;color:#153830!important;border:1px solid #f6e6b9!important;border-radius:11px!important}
+.elena-presenza-panel a{color:#f0d292!important}
+.elena-presenza-panel .elena-presenza-result{color:#fff!important}
+.elena-presenza-panel .elena-presenza-evidence{background:#23584e!important;color:#fbf4df!important;border-left:3px solid #e5c17e!important;border-radius:8px}
+.elena-presenza-panel .elena-presenza-credits{margin:13px 0 2px;font-size:.76rem;color:#e8d3ad!important;border-top:1px solid #edd09d5c;padding-top:12px}
+.elena-presenza-panel :is(button,a,input):focus-visible{outline:3px solid #f6d394!important;outline-offset:3px}
+@media(max-width:600px){.elena-presenza-toggle{border-radius:999px!important;padding:11px 14px!important}.elena-presenza-panel{border-radius:17px!important}}
+
+/* Android: presenza discreta e accessibile, senza occupare una scheda intera. */
+@media(max-width:600px){
+ .elena-presenza{right:10px!important;bottom:calc(18px + env(safe-area-inset-bottom,0px))!important;max-width:calc(100vw - 20px)!important}
+ .elena-presenza-toggle{display:grid!important;place-items:center!important;width:49px!important;height:49px!important;min-width:49px!important;min-height:49px!important;padding:5px!important;border-radius:50%!important;font-size:1.15rem!important;line-height:1!important;box-shadow:0 5px 16px #001b1b88!important}
+ .elena-presenza-panel{width:min(365px,calc(100vw - 20px))!important;max-width:calc(100vw - 20px)!important;max-height:min(72dvh,620px)!important;right:0!important;bottom:60px!important}
+}
+
+
+/* Il comando resta compatto su Android: il testo completo rimane accessibile. */
+@media(max-width:600px){
+ .elena-presenza{right:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;max-width:calc(100vw - 20px)!important}
+ .elena-presenza-toggle{width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;padding:0!important;font-size:0!important;line-height:1!important;overflow:hidden!important;white-space:nowrap!important}
+ .elena-presenza-toggle::before{content:"Elena"!important;font:700 11px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif!important;color:#fff8e7!important}
+ .elena-presenza-panel{right:0!important;bottom:64px!important;width:min(365px,calc(100vw - 20px))!important;max-width:calc(100vw - 20px)!important;max-height:min(68dvh,540px)!important}
+}
+
+
+/* Pannello mobile di Elena come finestra di consultazione a schermo pieno. */
+@media(max-width:600px){
+ .elena-presenza .elena-presenza-toggle{box-sizing:border-box!important;display:grid!important;place-items:center!important;width:52px!important;min-width:52px!important;height:52px!important;min-height:52px!important;padding:0!important;overflow:hidden!important;font-size:0!important;line-height:1!important;white-space:nowrap!important;border-radius:50%!important}
+ .elena-presenza .elena-presenza-toggle::before{content:"Elena"!important;color:#fff8e7!important;font:700 11px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif!important}
+ .elena-presenza:has(.elena-presenza-panel:not([hidden])){z-index:3000!important}
+ .elena-presenza:has(.elena-presenza-panel:not([hidden]))::before{content:"";position:fixed;inset:0;background:rgba(0,20,21,.58);z-index:0}
+ .elena-presenza .elena-presenza-panel:not([hidden]){position:fixed!important;top:calc(8px + env(safe-area-inset-top,0px))!important;right:10px!important;bottom:calc(8px + env(safe-area-inset-bottom,0px))!important;left:10px!important;width:auto!important;max-width:520px!important;max-height:none!important;margin:0 auto!important;z-index:1!important;overflow-x:hidden!important;overflow-y:auto!important;box-shadow:0 22px 54px rgba(0,17,18,.6)!important}
+ .elena-presenza-panel input[type="search"]{font-size:1rem!important}
+ body:has(.elena-presenza-panel:not([hidden])){overflow:hidden!important}
+}
+@media(prefers-reduced-motion:reduce){.elena-presenza .elena-presenza-toggle{transition:none!important}}
+
 
 
 /* Sorgente: /adc/assets/ricerca-home-2026.css */
