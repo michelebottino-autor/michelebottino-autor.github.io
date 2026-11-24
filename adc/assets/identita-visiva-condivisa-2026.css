@@ -291,86 +291,78 @@ body:has(#adc-unified-header) main#contenuto #fotografie-mediateca figure figcap
 
 
 /* Tipografia leggibile per i contenuti liberi delle pagine ADC. */
-body:has(#adc-unified-header) main :is(h1,h2,h3,h4,h5,h6) {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(h1,h2,h3,h4,h5,h6) {
   color:#ffdfa2!important;
   -webkit-text-fill-color:#ffdfa2!important;
 }
-body:has(#adc-unified-header) main :is(p,li,dt,dd,label,small,summary) {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(p,li,dt,dd,label,small,summary) {
   color:#f0f0e7!important;
   -webkit-text-fill-color:#f0f0e7!important;
 }
 /* I collegamenti inseriti nel testo ereditano l'oro; i link-card mantengono il loro stile. */
-body:has(#adc-unified-header) main :is(p,li,dt,dd,h1,h2,h3,h4,h5,h6) a:not(.cta):not([class*="button"]) {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(p,li,dt,dd,h1,h2,h3,h4,h5,h6) a:not(.cta):not([class*="button"]) {
   color:#ffdc98!important;
   -webkit-text-fill-color:#ffdc98!important;
   text-decoration-color:#cba66b!important;
 }
 
-/* Contrasto netto sui pulsanti dorati e sui moduli chiari di ricerca. */
-body:has(#adc-unified-header) main .adc-lux-gold-button {
+/* Il bottone dorato mantiene testo scuro anche nella pagina Elena. */
+body:has(#adc-unified-header) main a.adc-lux-gold-button {
   color:#173b33!important;
   -webkit-text-fill-color:#173b33!important;
   opacity:1!important;
 }
-body:has(#adc-unified-header) main :is(#search-form,form[role="search"]) label {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(#search-form,form[role="search"]) label {
   color:#173b33!important;
   -webkit-text-fill-color:#173b33!important;
 }
-body:has(#adc-unified-header) main #search-form input::placeholder {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main #search-form input::placeholder {
   color:#53645c!important;
   opacity:1!important;
   -webkit-text-fill-color:#53645c!important;
 }
-body:has(#adc-unified-header) main .search-topics span {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .search-topics span {
   color:#f0f0e7!important;
   -webkit-text-fill-color:#f0f0e7!important;
 }
 
 /* Superfici chiare: mantengono la tipografia scura prevista per la lettura. */
-body:has(#adc-unified-header) main :is(.adc-share,.adc-share-entry) {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.adc-share,.adc-share-entry) {
   color:#25302e!important;
   -webkit-text-fill-color:#25302e!important;
 }
-body:has(#adc-unified-header) main .adc-share :is(h1,h2,h3,h4,h5,h6,p,li,small,strong) {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-share :is(h1,h2,h3,h4,h5,h6,p,li,small,strong) {
   color:#30463d!important;
   -webkit-text-fill-color:#30463d!important;
 }
-body:has(#adc-unified-header) main .adc-share :is(p,li,h1,h2,h3,h4,h5,h6) a:not(.cta):not([class*="button"]) {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-share :is(p,li,h1,h2,h3,h4,h5,h6) a:not(.cta):not([class*="button"]) {
   color:#17594f!important;
   -webkit-text-fill-color:#17594f!important;
 }
-body:has(#adc-unified-header) main p.adc-share-entry a {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main p.adc-share-entry a:not(.cta):not([class*="button"]):not(.adc-share-actions a) {
   color:#17594f!important;
   -webkit-text-fill-color:#17594f!important;
 }
-body:has(#adc-unified-header) main figure figcaption,
-body:has(#adc-unified-header) main figure figcaption :is(strong,em) {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-share-author a {
+  color:#17594f!important;
+  -webkit-text-fill-color:#17594f!important;
+}
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main figure figcaption,
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main figure figcaption :is(strong,em) {
   color:#30463d!important;
   -webkit-text-fill-color:#30463d!important;
   background:#f7f1e4!important;
 }
-body:has(#adc-unified-header) main figure figcaption a {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main figure figcaption a {
   color:#17594f!important;
   -webkit-text-fill-color:#17594f!important;
 }
-body:has(#adc-unified-header) main :is(pre,blockquote,.transcription,.document-transcription,.source-transcription,.source-text,.facsimile,.document-original,[data-document-text]),
-body:has(#adc-unified-header) main :is(pre,blockquote,.transcription,.document-transcription,.source-transcription,.source-text,.facsimile,.document-original,[data-document-text]) :is(h1,h2,h3,h4,p,li,a,small,strong,em) {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(pre,blockquote,.transcription,.document-transcription,.source-transcription,.source-text,.facsimile,.document-original,[data-document-text]),
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(pre,blockquote,.transcription,.document-transcription,.source-transcription,.source-text,.facsimile,.document-original,[data-document-text]) :is(h1,h2,h3,h4,p,li,a,small,strong,em) {
   color:#263a33!important;
   -webkit-text-fill-color:#263a33!important;
-}
-
-/* I crediti e i comandi della mediateca hanno fondi chiari. */
-body:has(#adc-unified-header) main .adc-share-author a {
-  color:#17594f!important;
-  -webkit-text-fill-color:#17594f!important;
 }
 body:has(#adc-unified-header) main a:is([href$="#video-calata"],[href$="#storia-video"],[href$="#territorio-video"],[href$="#testimonianze-video"]) span {
   color:#30463d!important;
   -webkit-text-fill-color:#30463d!important;
-}
-
-/* Priorità sufficiente per i link inline nel riquadro chiaro di condivisione. */
-body:has(#adc-unified-header) main p.adc-share-entry a:not(.cta):not([class*="button"]):not(.adc-share-actions a) {
-  color:#17594f!important;
-  -webkit-text-fill-color:#17594f!important;
 }
