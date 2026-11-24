@@ -183,3 +183,43 @@
   script.src = '/adc/condividi.js?v=20261124-archive';
   document.head.appendChild(script);
 })();
+
+/* adc-reading-controls-v1 — Lettura su richiesta con la sintesi vocale del dispositivo. */
+(function(){
+  'use strict';
+  if(!location.pathname.startsWith('/adc/')||location.pathname.startsWith('/adc/widget/'))return;
+  function init(){
+    const synth=window.speechSynthesis, Utterance=window.SpeechSynthesisUtterance;
+    if(!synth||!Utterance)return;
+    let generation=0, active=null;
+    function stop(){generation++;synth.cancel();if(active){active.button.textContent=active.label;active.status.textContent='Lettura interrotta.';active=null;}}
+    function controls(target,extract,label){
+      const box=document.createElement('div');box.className='adc-reading-controls';box.style.cssText='display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0';
+      const button=document.createElement('button');button.type='button';button.textContent=label;button.style.cssText='min-height:44px;padding:8px 14px;border:1px solid #56766b;border-radius:8px;background:#fff;color:#173c36;font:600 1rem system-ui';
+      const status=document.createElement('span');status.setAttribute('role','status');status.style.fontSize='.85rem';
+      button.addEventListener('click',()=>{
+        if(active&&active.button===button){stop();return;}
+        stop();const text=extract().replace(/\s+/g,' ').trim();if(!text){status.textContent='Nessun testo da leggere.';return;}
+        const chunks=text.match(/.{1,220}(?:\s|$)|.{1,220}/g)||[];let index=0;const token=++generation;
+        active={button,status,label};button.textContent='Ferma lettura';status.textContent='Voce italiana del dispositivo, se disponibile.';
+        function next(){
+          if(token!==generation)return;
+          if(index>=chunks.length){button.textContent=label;status.textContent='Lettura terminata.';active=null;return;}
+          const u=new Utterance(chunks[index++]);u.lang='it-IT';const voice=synth.getVoices().find(v=>/^it(?:-|_)/i.test(v.lang));if(voice)u.voice=voice;
+          u.onend=next;u.onerror=()=>{if(token===generation){stop();status.textContent='Lettura non disponibile sul dispositivo.';}};
+          synth.speak(u);
+        }next();
+      });
+      box.append(button,status);target.append(box);
+    }
+    const main=document.querySelector('main');
+    if(main&&!location.pathname.startsWith('/adc/elena/')&&!location.pathname.startsWith('/adc/cerca/')&&!location.pathname.startsWith('/adc/memorie/')){
+      const box=document.createElement('div');main.insertBefore(box,main.firstChild);
+      controls(box,()=>{const copy=main.cloneNode(true);copy.querySelectorAll('nav,footer,form,button,script,style,aside,.adc-reading-controls,[hidden],details:not([open])').forEach(e=>e.remove());return copy.textContent;},'Ascolta il testo della pagina');
+    }
+    function scan(){document.querySelectorAll('.elena-dialogue-answer').forEach(article=>{if(article.querySelector('.adc-reading-controls'))return;controls(article,()=>{const c=article.cloneNode(true);c.querySelectorAll('button,.adc-reading-controls,.elena-copy-status').forEach(e=>e.remove());return c.textContent;},'Ascolta la risposta');});}
+    if(location.pathname.startsWith('/adc/elena/')){scan();const output=document.getElementById('elena-results');if(output)new MutationObserver(scan).observe(output,{childList:true,subtree:true});}
+    window.addEventListener('pagehide',stop);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
