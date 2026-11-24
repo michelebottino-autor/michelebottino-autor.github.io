@@ -1,0 +1,130 @@
+/* Il footer ADC usa il modello della homepage su ogni pagina consultabile. */
+@layer adc-footer {
+  footer[data-adc-common-footer] {
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:24px 0 0!important;
+    padding:0!important;
+    border:0!important;
+    border-top:1px solid #d5ad76!important;
+    border-radius:0!important;
+    background:linear-gradient(120deg,#05272a,#0a4140)!important;
+    color:#e8efe6!important;
+    -webkit-text-fill-color:currentColor!important;
+    font:400 .9rem/1.55 system-ui,sans-serif!important;
+    text-align:start!important;
+    box-shadow:0 -12px 30px #001c1c4d!important;
+  }
+  [data-adc-common-footer] :is(.adc-lux-footer-top,.adc-lux-footer-bottom,.adc-footer-stats,.adc-lux-footer-more) {
+    box-sizing:border-box!important;
+    max-width:1480px!important;
+    margin:0 auto!important;
+    padding:16px 25px!important;
+  }
+  [data-adc-common-footer] .adc-lux-footer-top {
+    display:grid!important;
+    grid-template-columns:auto 1fr 2fr!important;
+    gap:20px!important;
+    align-items:center!important;
+    padding-block:24px!important;
+  }
+  [data-adc-common-footer] .adc-lux-footer-brand {
+    display:flex!important;
+    align-items:center!important;
+    gap:10px!important;
+    color:#fff9ed!important;
+    text-decoration:none!important;
+  }
+  [data-adc-common-footer] .adc-lux-footer-brand :is(strong,span) {color:inherit!important;-webkit-text-fill-color:currentColor!important}
+  [data-adc-common-footer] .adc-lux-footer-brand strong {font:400 2rem Georgia,serif!important}
+  [data-adc-common-footer] .adc-lux-footer-brand span {font:600 .79rem/1.25 system-ui,sans-serif!important}
+  [data-adc-common-footer] .adc-lux-footer-top > p {font:italic .95rem/1.45 Georgia,serif!important;margin:0!important}
+  [data-adc-common-footer] .adc-lux-footer-top nav {
+    display:flex!important;
+    flex-wrap:wrap!important;
+    justify-content:flex-end!important;
+    gap:6px 16px!important;
+    padding:0!important;
+  }
+  [data-adc-common-footer] :is(a,summary) {
+    color:#ffdfa2!important;
+    -webkit-text-fill-color:currentColor!important;
+    overflow-wrap:anywhere;
+  }
+  [data-adc-common-footer] :is(a,summary):hover {text-decoration:underline!important}
+  [data-adc-common-footer] :is(a,button,summary):focus-visible {outline:3px solid #ffe4a0!important;outline-offset:3px!important}
+  [data-adc-common-footer] .adc-lux-footer-bottom {
+    display:flex!important;
+    flex-wrap:wrap!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:12px 20px!important;
+    border-top:1px solid #dcbd7a63!important;
+  }
+  [data-adc-common-footer] .adc-lux-footer-bottom {font-size:.8rem!important}
+  [data-adc-common-footer] .adc-footer-stats {
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    align-items:start!important;
+    border-top:1px solid #dcbd7a63!important;
+  }
+  [data-adc-common-footer] .adc-footer-stats > div {min-width:0!important}
+  [data-adc-common-footer] .adc-footer-visits {text-align:right!important;justify-self:end!important}
+  [data-adc-common-footer] .adc-footer-online {justify-self:start!important}
+  [data-adc-common-footer] :is(#adc-visite-footer,.mb-presence,.mb-preferences-control) {
+    position:static!important;
+    overflow-wrap:anywhere!important;
+    box-sizing:border-box!important;
+    margin:0!important;
+    padding:8px 11px!important;
+    max-width:100%!important;
+    min-width:0!important;
+    border:1px solid #d5ad7680!important;
+    border-radius:9px!important;
+    background:#113f3c!important;
+    color:#fff3d9!important;
+    -webkit-text-fill-color:currentColor!important;
+    font:500 .84rem/1.4 system-ui,sans-serif!important;
+    font-variant-numeric:tabular-nums!important;
+    box-shadow:none!important;
+  }
+  [data-adc-common-footer] :is(#adc-visite-footer,.mb-presence) :is(span,strong) {
+    font-family:inherit!important;
+    font-size:inherit!important;
+    line-height:inherit!important;
+    color:inherit!important;
+    -webkit-text-fill-color:currentColor!important;
+  }
+  [data-adc-common-footer] .mb-presence[hidden] {display:none!important}
+  [data-adc-common-footer] .mb-presence .mb-presence-icon {color:#b6e9bb!important}
+  [data-adc-common-footer] .adc-lux-footer-more summary {cursor:pointer}
+  [data-adc-common-footer] :is(.adc-lux-footer-extra,.adc-footer-page-links) {
+    display:flex!important;
+    flex-wrap:wrap!important;
+    gap:8px 18px!important;
+    padding-block:10px!important;
+  }
+  [data-adc-common-footer] :is(.adc-footer-tutela,.adc-footer-page-notes) {
+    flex-basis:100%!important;
+    border-top:1px solid #dcbd7a63!important;
+    padding-top:8px!important;
+  }
+  [data-adc-common-footer] :is(.adc-footer-tutela,.adc-footer-page-notes) :is(h2,p) {
+    background:transparent!important;
+    color:#e8efe6!important;
+    -webkit-text-fill-color:currentColor!important;
+    font:inherit!important;
+  }
+  @media(max-width:760px) {
+    [data-adc-common-footer] :is(.adc-lux-footer-top,.adc-lux-footer-bottom,.adc-footer-stats,.adc-lux-footer-more) {padding:14px 16px!important}
+    [data-adc-common-footer] .adc-lux-footer-top {grid-template-columns:minmax(0,1fr)!important;gap:10px!important}
+    [data-adc-common-footer] .adc-lux-footer-top nav {justify-content:flex-start!important}
+    [data-adc-common-footer] .adc-lux-footer-bottom {flex-direction:column!important;align-items:flex-start!important}
+    [data-adc-common-footer] .adc-footer-stats :is(#adc-visite-footer,.mb-presence) {
+      padding:7px 8px!important;
+      font-size:.79rem!important;
+    }
+  }
+}

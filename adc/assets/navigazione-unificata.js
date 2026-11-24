@@ -148,51 +148,17 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true});
   else start();
 })();
-/* Applica un footer comune senza alterare i contenuti editoriali esistenti. */
+/* Il footer principale e le statistiche sono condivisi da tutte le pagine ADC. */
 (function () {
   'use strict';
-  if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/')) return;
-  function init() {
-    var footer = document.querySelector('footer');
-    if (!footer) {
-      footer = document.createElement('footer');
-      document.body.appendChild(footer);
-    }
-    footer.querySelectorAll('.aegis-footer-signature a[aria-label]').forEach(function(a){
-      if(a.textContent.trim())a.removeAttribute('aria-label');
-    });
-    footer.classList.add('adc-global-footer');
-    footer.setAttribute('aria-label', 'Informazioni e collegamenti dell’Archivio Documentale Calatabiano');
-    // La homepage ha già un footer editoriale completo: non duplicare le sue voci.
-    if (location.pathname === '/adc/' && footer.classList.contains('adc-lux-footer')) {
-      var bottom = footer.querySelector('.adc-lux-footer-bottom');
-      var preferences = footer.querySelector('.mb-preferences-control');
-      if (bottom && preferences) bottom.appendChild(preferences);
-      return;
-    }
-    // Conserva i footer editoriali esistenti. Evita di duplicarne menu e crediti.
-    if (footer.querySelector('[data-adc-footer-identity]')) return;
-    if (footer.textContent.trim().length > 65) return;
-    var line = document.createElement('div');
-    line.className = 'adc-u-footer-line';
-    line.dataset.adcFooterIdentity = 'true';
-    line.innerHTML = '<span>Archivio Documentale Calatabiano · A cura di Michele Bottino</span><a href="/adc/">Torna all’Archivio</a>';
-    footer.appendChild(line);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
-  else init();
-})();
-
-/* Statistiche ADC condivise, anche nelle pagine senza script dedicati. */
-(function () {
-  'use strict';
-  if (document.querySelector('meta[http-equiv="refresh" i]')) return;
   if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/') || location.pathname === '/adc/offline.html') return;
-  const scripts = ['/adc/assets/visite.js', '/assets/js/lettori-presenti.js'];
+  if (document.querySelector('meta[http-equiv="refresh" i]')) return;
+  const scripts = ['/adc/assets/footer.js', '/adc/assets/visite.js', '/assets/js/lettori-presenti.js'];
   for (const src of scripts) {
     if (document.querySelector('script[src^="' + src + '"]')) continue;
     const script = document.createElement('script');
-    script.src = src + (src.endsWith('/lettori-presenti.js') ? '?v=20261124-utenti-online' : '?v=20261124-statistiche');
+    script.src = src + '?v=20261124-footer-adc';
+    script.async = false;
     document.head.appendChild(script);
   }
 })();

@@ -42,8 +42,8 @@
     count.setAttribute('aria-live', 'off');
     host.append(dot, label, count);
     host.hidden = true;
-    const footer = document.querySelector('footer');
-    if (footer) footer.prepend(host);
+    const footer = document.querySelector('[data-adc-footer-online]') || document.querySelector('footer');
+    if (footer) footer.append(host);
     else document.querySelector('main').append(host);
   }
   async function loadEndpoint() {

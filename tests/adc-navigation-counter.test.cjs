@@ -23,7 +23,7 @@ test('mobile navigation exposes state and supports Escape', () => {
 });
 
 test('shared footer includes the archive paths and displays the measured session counter', () => {
-  assert.match(js, /data-adc-footer-identity/);
+  assert.match(fs.readFileSync('adc/assets/footer.js','utf8'), /data-adc-footer-identity/);
   assert.match(js, /\/adc\/stampa\//);
   assert.match(js, /\/adc\/persone\//);
   assert.match(js, /\/adc\/assets\/visite\.js/);
@@ -51,6 +51,7 @@ async function renderVisits(storage, replies) {
     classList: {add() {}},
     append(...children) { count = children.at(-1); },
     appendChild() {},
+    prepend() {},
     querySelector() { return null; }
   });
   const methods = [];

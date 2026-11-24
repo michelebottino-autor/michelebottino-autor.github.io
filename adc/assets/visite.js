@@ -4,25 +4,19 @@
   if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/') || location.pathname === '/adc/offline.html') return;
   if (document.querySelector('meta[http-equiv="refresh" i]')) return;
   function init() {
-    var footer = document.querySelector('footer') || document.querySelector('main');
+    var footer = document.querySelector('[data-adc-common-footer]') || document.querySelector('footer') || document.querySelector('main');
     if (!footer || document.getElementById('adc-visite-footer')) return;
     var wrap = document.createElement('p');
     wrap.id = 'adc-visite-footer';
-    wrap.style.cssText = 'text-align:center;margin:18px auto 8px;padding:12px 14px;max-width:400px;border-top:1px solid rgba(194,170,111,.35);font-variant-numeric:tabular-nums;';
+
     var label = document.createElement('strong');
-    label.textContent = 'Visite totali registrate: ';
+    label.textContent = 'Visite totali a oggi: ';
     var count = document.createElement('span');
     count.id = 'adc-visite-numero';
     count.textContent = '—';
     wrap.append(label, count);
-    var bottom = footer.querySelector('.adc-archive-footer__bottom,.adc-inner-footer__bottom');
-    var homeBottom = location.pathname === '/adc/' && footer.classList.contains('adc-lux-footer') ? footer.querySelector('.adc-lux-footer-bottom') : null;
-    if (homeBottom) {
-      wrap.classList.add('adc-lux-visible-counter');
-      wrap.style.cssText = 'display:inline-flex;gap:6px;align-items:baseline;margin:0;padding:0;border:0;max-width:none;text-align:left;font-variant-numeric:tabular-nums;';
-      homeBottom.appendChild(wrap);
-    } else if (bottom) footer.insertBefore(wrap, bottom);
-    else footer.appendChild(wrap);
+    var stats = footer.querySelector('[data-adc-footer-visits]') || footer;
+    stats.prepend(wrap);
     var format = function (value) { return Number(value).toLocaleString('it-IT'); };
     load();
     async function load() {
