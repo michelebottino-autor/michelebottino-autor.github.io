@@ -1,54 +1,126 @@
 {
-  "voice": "Serena",
-  "engine": "piper-tts 1.8.0",
-  "model_sha256": "fe4e26b2c1236e2a44d2e295cad564d94a0d8b0a9fca1ccdfd70dd4af3116eb5",
-  "source_text_sha256": "58196684917ec6ba9c2c62a13d3f5fd52d9b73fc32b507cff89d75030f8eff9a",
-  "original_wav_sha256": "0435031dca88efb0bddea9c89e7770fd4beeb8803b77fe6e1dd377dfbe360750",
-  "duration_seconds": 774.197,
-  "format": "MP3 40 kbps mono; 9 sequential segments",
+  "voice": "ELENA_ADC_GUIDA_MUSEALE_20261124",
+  "duration_seconds": 815.3984126984127,
+  "blocks": 47,
+  "format": "MP3 96 kbps mono",
+  "wav_sha256": "62c7c931fb0277fc79236a0a206d052b957136bc525331585c90d8e8f87e3e0c",
   "human_listening_verified": false,
-  "settings": {
-    "length_scale": 1.24,
-    "noise_scale": 0.34,
-    "noise_w_scale": 0.2,
-    "sentence_silence": 0.4
-  },
   "parts": [
     {
-      "path": "parte-00.mp3",
-      "git_blob": "571ee7a54663adcfcfe99b1c732228ab0ffca951"
+      "path": "elena-00.mp3",
+      "git_blob": "d9ded125014cb17597bb0110b1e0092856649271"
     },
     {
-      "path": "parte-01.mp3",
-      "git_blob": "95c69680f8d75b0243fbb8943ee91a02d5c5d706"
+      "path": "elena-01.mp3",
+      "git_blob": "09f5a5b0829af264eb6ef523deea24300414cd6e"
     },
     {
-      "path": "parte-02.mp3",
-      "git_blob": "09ee84372312cff83a0549dbf7c485f3d6ba0f8e"
+      "path": "elena-02.mp3",
+      "git_blob": "715eee09ead562c64965aa37ccd1211a1add0cb3"
     },
     {
-      "path": "parte-03.mp3",
-      "git_blob": "be0f94e83c0cfbf8654fb0b2f5e1effad469cedc"
+      "path": "elena-03.mp3",
+      "git_blob": "d859921c25f64f765f19745afd5294e4dc545315"
     },
     {
-      "path": "parte-04.mp3",
-      "git_blob": "28182eebd2d2bf8e0b0eff8e2d784e619cfe33d1"
+      "path": "elena-04.mp3",
+      "git_blob": "a10a84312f94dceb196b7ff54369a6eacccbd6b7"
     },
     {
-      "path": "parte-05.mp3",
-      "git_blob": "8695536226abd37595cdb551b3d684d27504329c"
+      "path": "elena-05.mp3",
+      "git_blob": "4ff41665db19264958192a30c1da3b2c6ec0cfa8"
     },
     {
-      "path": "parte-06.mp3",
-      "git_blob": "f1574c175fcf3de5078640e25ead67dd08608fe5"
+      "path": "elena-06.mp3",
+      "git_blob": "f670ce85cb3092e741af9827a28b9c39bb781e2d"
     },
     {
-      "path": "parte-07.mp3",
-      "git_blob": "2c8e15fc721b7cecf8ada8dc2d8fd9cc979b68b5"
+      "path": "elena-07.mp3",
+      "git_blob": "37f8f0869f420e0e455ca29ee527c8b1254a2512"
     },
     {
-      "path": "parte-08.mp3",
-      "git_blob": "5e10bbc1de530c5091a41bd5f82e3c2dbd8bea50"
+      "path": "elena-08.mp3",
+      "git_blob": "8ff40c6f0b3056ad0c7a0063e1969e999c1cd5f1"
+    },
+    {
+      "path": "elena-09.mp3",
+      "git_blob": "c08bd3144be1bbd7e68b44f6acad82a5cc39d156"
+    },
+    {
+      "path": "elena-10.mp3",
+      "git_blob": "a3b894cd1971d57194983fb804a61956883756c5"
+    },
+    {
+      "path": "elena-11.mp3",
+      "git_blob": "39adafd859dff81b25641e733c484dab6bac3bff"
+    },
+    {
+      "path": "elena-12.mp3",
+      "git_blob": "35a18a29724c03921eb0cd8436166d03cd32eb7d"
+    },
+    {
+      "path": "elena-13.mp3",
+      "git_blob": "9fe235e9b90330efec41759bd45f74ba3c8d7f05"
+    },
+    {
+      "path": "elena-14.mp3",
+      "git_blob": "e6f0068cf67fa9f17bf1b26e4fb171bed2db23c3"
+    },
+    {
+      "path": "elena-15.mp3",
+      "git_blob": "2d0947c39a09fd663d8460505855161715bcdfb0"
+    },
+    {
+      "path": "elena-16.mp3",
+      "git_blob": "e982b3388faa3765655133a2e472d53c21ba538f"
+    },
+    {
+      "path": "elena-17.mp3",
+      "git_blob": "8bb6b66d4561b1b1822274cafce759c5a5863bc5"
+    },
+    {
+      "path": "elena-18.mp3",
+      "git_blob": "e3fcf74a6ce6ecb1b5625ccd839bcdd679fcfa6a"
+    },
+    {
+      "path": "elena-19.mp3",
+      "git_blob": "1f25d50feee13e1db5672a89d988dc5da594f2eb"
+    },
+    {
+      "path": "elena-20.mp3",
+      "git_blob": "7c84ce21a8447cfbd408974957416fb4ae58e412"
+    },
+    {
+      "path": "elena-21.mp3",
+      "git_blob": "2e37acf15877b26d9c678e2b1cb3315604bcb9ef"
+    },
+    {
+      "path": "elena-22.mp3",
+      "git_blob": "969c45ff702fd804f7823d0ae282af3d5887a981"
+    },
+    {
+      "path": "elena-23.mp3",
+      "git_blob": "2b29b66c65e433204d1d1366ac422a6c8828c519"
+    },
+    {
+      "path": "elena-24.mp3",
+      "git_blob": "9507bdcd626ce5f20700e6c1e9a7155ef9de7128"
+    },
+    {
+      "path": "elena-25.mp3",
+      "git_blob": "5c2039693ad9514357de94ea17cd00236f05b9fa"
+    },
+    {
+      "path": "elena-26.mp3",
+      "git_blob": "b4c80c2ebe1678b91d057560331018f5531981cb"
+    },
+    {
+      "path": "elena-27.mp3",
+      "git_blob": "42b06e43cf8ceac68a356e61173b56430ba08bbc"
+    },
+    {
+      "path": "elena-28.mp3",
+      "git_blob": "509c74d0d02a9ceada51ff9f3526eaa41ffd16b3"
     }
   ]
 }
