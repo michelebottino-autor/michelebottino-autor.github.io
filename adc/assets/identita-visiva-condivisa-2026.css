@@ -368,3 +368,9 @@ body:has(#adc-unified-header) main a:is([href$="#video-calata"],[href$="#storia-
   color:#30463d!important;
   -webkit-text-fill-color:#30463d!important;
 }
+
+/* Priorità sufficiente per i link inline nel riquadro chiaro di condivisione. */
+body:has(#adc-unified-header) main p.adc-share-entry a:not(.cta):not([class*="button"]):not(.adc-share-actions a) {
+  color:#17594f!important;
+  -webkit-text-fill-color:#17594f!important;
+}
