@@ -1,4 +1,4 @@
 {
   "endpoint": "https://adc-contatore-visite.michele-bottino.workers.dev/visite",
-  "note": "Il servizio restituisce un totale comprensivo di 2000 unità iniziali; il frontend sottrae queste unità e visualizza soltanto le sessioni registrate."
+  "legacyBase": 2000
 }

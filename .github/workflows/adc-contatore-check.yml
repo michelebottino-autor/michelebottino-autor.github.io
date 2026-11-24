@@ -6,6 +6,11 @@ on:
       - 'adc/contatore-config.json'
       - 'adc/assets/navigazione-unificata.js'
       - 'tests/adc-navigation-counter.test.cjs'
+      - 'adc/assets/visite.js'
+      - 'adc/presenza-config.json'
+      - 'assets/js/lettori-presenti.js'
+      - 'infrastruttura/presenza/**'
+      - 'tests/adc-presence.test.mjs'
       - 'adc-contatore/**'
       - '.github/workflows/adc-contatore-check.yml'
 jobs:
@@ -20,7 +25,9 @@ jobs:
         run: |
           node --check adc/assets/navigazione-unificata.js
           node --check adc-contatore/src/worker.js
-          node --test tests/adc-navigation-counter.test.cjs
+          node --check adc/assets/visite.js
+          node --check assets/js/lettori-presenti.js
+          node --test tests/adc-navigation-counter.test.cjs tests/adc-presence.test.mjs
       - name: Verifica configurazione e schema
         run: |
           python - <<'PY'
@@ -29,6 +36,6 @@ jobs:
           endpoint=cfg.get('endpoint','')
           assert endpoint.startswith('https://') and endpoint.endswith('/visite')
           sql=pathlib.Path('adc-contatore/schema.sql').read_text()
-          assert "('adc', 2000)" in sql
+          assert f"('adc', {cfg['legacyBase']})" in sql
           print('Contatore ADC: controlli statici superati')
           PY

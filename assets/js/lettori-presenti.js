@@ -3,11 +3,11 @@
 (() => {
   'use strict';
   if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/')) return;
-  if (window.__mbPresenceClientInstalled) return;
+  if (location.pathname === '/adc/offline.html' || document.querySelector('meta[http-equiv="refresh" i]')) return;
+  if (window.__mbPresenceClientInstalled || typeof WebSocket !== 'function') return;
   window.__mbPresenceClientInstalled = true;
   const consentKey = 'mb_analytics_consent_v1';
   const consentDateKey = 'mb_analytics_consent_date_v1';
-  const tokenKey = 'adc-presenza-scheda-v1';
   const consent = () => {
     try {
       const date = Number(localStorage.getItem(consentDateKey));
@@ -15,22 +15,9 @@
         date > 0 && date <= Date.now() && Date.now() - date <= 180 * 24 * 60 * 60 * 1000;
     } catch (_) { return false; }
   };
-  let host, timer, endpoint, started = false, busy = false;
-  const page = location.pathname.replace(/\/index\.html$/i, '/').replace(/\/+$/, '/') || '/adc/';
-  const active = () => consent() && !document.hidden;
-  function ensureToken() {
-    try {
-      let existing = sessionStorage.getItem(tokenKey);
-      if (existing && /^[a-f0-9-]{32,36}$/i.test(existing)) return existing;
-      const created = crypto.randomUUID ? crypto.randomUUID()
-        : Array.from(crypto.getRandomValues(new Uint8Array(16)), v => v.toString(16).padStart(2, '0')).join('');
-      sessionStorage.setItem(tokenKey, created);
-      return created;
-    } catch (_) {
-      return crypto.randomUUID ? crypto.randomUUID()
-        : Array.from(crypto.getRandomValues(new Uint8Array(16)), v => v.toString(16).padStart(2, '0')).join('');
-    }
-  }
+  let host, socket, retry, poll, connecting = false, eligible = true;
+  let lastResponse = 0;
+  const active = () => eligible && consent() && !document.hidden;
   function mount() {
     if (host || !document.querySelector('main')) return;
     if (!document.querySelector('link[href="/assets/css/lettori-presenti.css"]')) {
@@ -42,14 +29,14 @@
     host = document.createElement('aside');
     host.className = 'mb-presence';
     host.setAttribute('aria-label', 'Lettori attivi nell’Archivio Documentale Calatabiano');
-    host.title = 'Stima delle schede attive negli ultimi due minuti, non delle persone uniche';
+    host.title = 'Schede attive con statistiche abilitate in tutto l’Archivio';
     const dot = document.createElement('span');
     dot.className = 'mb-presence-icon';
     dot.setAttribute('aria-hidden', 'true');
     dot.textContent = '●';
     const label = document.createElement('span');
     label.className = 'mb-presence-label';
-    label.textContent = 'Lettori online nell’ADC';
+    label.textContent = 'Schede attive online nell’ADC';
     const count = document.createElement('strong');
     count.className = 'mb-presence-count';
     count.setAttribute('aria-live', 'off');
@@ -64,53 +51,63 @@
       const r = await fetch('/adc/presenza-config.json', { cache: 'no-store', credentials: 'omit' });
       if (!r.ok) return null;
       const config = await r.json();
-      const url = typeof config.endpoint === 'string' ? config.endpoint.replace(/\/+$/, '') : '';
-      const parsed = new URL(url);
-      if (parsed.protocol !== 'https:' || parsed.username || parsed.password || parsed.search || parsed.hash) return null;
-      return parsed.href.replace(/\/+$/, '');
+      const url = new URL(config.endpoint);
+      if (url.protocol !== 'wss:' || url.username || url.password || url.search || url.hash || url.pathname !== '/presence') return null;
+      return url.href;
     } catch (_) { return null; }
   }
-  async function beat() {
-    if (!active() || !endpoint || busy) return;
-    busy = true;
-    try {
-      const response = await fetch(endpoint + '/presence', {
-        method: 'POST', mode: 'cors', credentials: 'omit', cache: 'no-store',
-        referrerPolicy: 'no-referrer',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ page, id: ensureToken() })
-      });
-      if (!response.ok) throw Error('unavailable');
-      const data = await response.json();
-      if (!Number.isSafeInteger(data.total) || data.total < 1 || data.total > 1000000) throw Error('invalid count');
-      mount();
-      if (host) {
-        host.querySelector('.mb-presence-count').textContent = String(data.total);
-        host.hidden = false;
-      }
-    } catch (_) { if (host) host.hidden = true; }
-    finally { busy = false; }
-  }
-  async function start() {
-    if (!active() || started) return;
-    started = true;
-    endpoint = await loadEndpoint();
-    if (!started || !active() || !endpoint) { started = false; return; }
-    await beat();
-    timer = setInterval(beat, 40000);
-  }
+  function hide() { if (host) host.hidden = true; }
   function stop() {
-    started = false;
-    if (timer) clearInterval(timer);
-    timer = null;
-    if (host) host.hidden = true;
+    clearTimeout(retry);
+    clearInterval(poll);
+    retry = poll = undefined;
+    const closing = socket;
+    socket = null;
+    if (closing) closing.close();
+    hide();
   }
-  function refresh() { if (active()) start(); else stop(); }
+  function reconnect() {
+    stop();
+    if (active()) retry = setTimeout(() => { retry = undefined; refresh(); }, 10000);
+  }
+  async function refresh() {
+    if (!active()) { stop(); return; }
+    if (socket || connecting || retry) return;
+    connecting = true;
+    try {
+      const endpoint = await loadEndpoint();
+      if (!active() || !endpoint) return;
+      const connection = new WebSocket(endpoint);
+      socket = connection;
+      lastResponse = Date.now();
+      connection.addEventListener('message', event => {
+        if (socket !== connection || !active()) return;
+        try {
+          const data = JSON.parse(event.data);
+          if (!Number.isSafeInteger(data.total) || data.total < 1 || data.total > 5000) throw Error('invalid count');
+          lastResponse = Date.now();
+          mount();
+          if (host) {
+            host.querySelector('.mb-presence-count').textContent = data.total.toLocaleString('it-IT');
+            host.hidden = false;
+          }
+        } catch (_) { hide(); }
+      });
+      connection.addEventListener('close', () => { if (socket === connection) reconnect(); });
+      connection.addEventListener('error', () => { if (socket === connection) reconnect(); });
+      poll = setInterval(() => {
+        if (!active()) { stop(); return; }
+        if (Date.now() - lastResponse > 60000) { reconnect(); return; }
+        if (socket === connection && connection.readyState === WebSocket.OPEN) connection.send('count');
+      }, 30000);
+    } catch (_) { reconnect(); }
+    finally { connecting = false; }
+  }
   function init() {
     refresh();
     document.addEventListener('visibilitychange', refresh);
-    window.addEventListener('pagehide', stop);
-    window.addEventListener('pageshow', refresh);
+    window.addEventListener('pagehide', () => { eligible = false; stop(); });
+    window.addEventListener('pageshow', () => { eligible = true; refresh(); });
     window.addEventListener('storage', event => { if (event.key === consentKey) refresh(); });
     // Il pannello delle preferenze salva il consenso prima della fine del click.
     document.addEventListener('click', event => {

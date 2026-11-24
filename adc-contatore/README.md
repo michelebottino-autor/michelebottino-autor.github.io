@@ -14,8 +14,8 @@ Serve un account Cloudflare autorizzato. Da `adc-contatore`:
 7. Aggiornare il campo `endpoint` in `/adc/contatore-config.json` con l'indirizzo HTTPS effettivo (incluso `/visite`). Solo allora il contatore registra sessioni nuove.
 
 ## Semantica e limiti
-- Alla prima visita alla sezione ADC di ciascuna sessione di scheda browser viene inviata una richiesta POST. Le altre pagine e ricariche della stessa scheda eseguono solo GET.
+- Alla prima visita alla sezione ADC di ciascuna sessione di scheda browser viene inviata una richiesta POST. Le altre pagine e ricariche della stessa scheda eseguono solo GET. Il tentativo viene riservato in memoria di scheda prima dell’invio, per evitare un secondo incremento in caso di risposta persa. Senza memoria di scheda il browser legge il totale senza incrementarlo.
 - Il conteggio è atomico mediante D1 e compare nel footer. JavaScript disabilitato, blocchi della rete e bot possono sottostimare o gonfiare il valore; **non è un contatore di persone uniche**.
 - Non sono usati servizi Google, Google Analytics né pixel di tracciamento.
 - Le protezioni anti-abuso e la valutazione privacy del provider devono essere verificate prima della messa in produzione.
-- Il valore 2.000 è una base scelta dall'editore, non una statistica storicamente misurata.
+- Il valore 2.000 è una base tecnica esclusa dal totale mostrato al pubblico, non una statistica storicamente misurata.

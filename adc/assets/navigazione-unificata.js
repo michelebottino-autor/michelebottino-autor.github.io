@@ -183,65 +183,18 @@
   else init();
 })();
 
-/* Contatore ADC nel footer di tutte le pagine: nessun Google Analytics. */
+/* Statistiche ADC condivise, anche nelle pagine senza script dedicati. */
 (function () {
   'use strict';
-  if (!location.pathname.startsWith('/adc/')) return;
-  function init() {
-    var footer = document.querySelector('footer');
-    if (!footer || document.getElementById('adc-visite-footer')) return;
-    var wrap = document.createElement('p');
-    wrap.id = 'adc-visite-footer';
-    wrap.style.cssText = 'text-align:center;margin:18px auto 8px;padding:12px 14px;max-width:400px;border-top:1px solid rgba(194,170,111,.35);font-variant-numeric:tabular-nums;';
-    var label = document.createElement('strong');
-    label.textContent = 'Visite totali registrate: ';
-    var count = document.createElement('span');
-    count.id = 'adc-visite-numero';
-    count.textContent = '—';
-    var state = document.createElement('small');
-    state.style.cssText = 'display:block;font-size:.76rem;margin-top:4px;opacity:.8;';
-    state.textContent = '';
-    wrap.append(label, count, state);
-    var bottom = footer.querySelector('.adc-archive-footer__bottom,.adc-inner-footer__bottom');
-    var homeBottom = location.pathname === '/adc/' && footer.classList.contains('adc-lux-footer') ? footer.querySelector('.adc-lux-footer-bottom') : null;
-    if (homeBottom) {
-      wrap.classList.add('adc-lux-visible-counter');
-      wrap.style.cssText = 'display:inline-flex;gap:6px;align-items:baseline;margin:0;padding:0;border:0;max-width:none;text-align:left;font-variant-numeric:tabular-nums;';
-      homeBottom.appendChild(wrap);
-    } else if (bottom) footer.insertBefore(wrap, bottom);
-    else footer.appendChild(wrap);
-    var format = function (value) { return Number(value).toLocaleString('it-IT'); };
-    fetch('/adc/contatore-config.json', {cache:'no-store'}).then(function(r){if(!r.ok)throw Error('config');return r.json();}).then(function(cfg){
-      if (!cfg || !/^https:\/\/[-a-zA-Z0-9.]+\/visite$/.test(cfg.endpoint || '')) return;
-      var endpoint = cfg.endpoint;
-      var registered = false;
-      try { registered = sessionStorage.getItem('adc-visita-registrata-v1') === '1'; } catch(_) {}
-      return fetch(endpoint, {method: registered ? 'GET' : 'POST', mode:'cors', cache:'no-store'}).then(function(r){if(!r.ok)throw Error('counter');return r.json();}).then(function(result){
-        if (!Number.isSafeInteger(result.total) || result.total < 2000) return;
-        // Il servizio include 2.000 unità iniziali non corrispondenti a sessioni registrate.
-        count.textContent = format(result.total - 2000);
-        state.textContent = '';
-        if (!registered) { try {sessionStorage.setItem('adc-visita-registrata-v1','1');} catch(_) {} }
-      });
-    }).catch(function(){
-      state.textContent = '';
-    });
+  if (document.querySelector('meta[http-equiv="refresh" i]')) return;
+  if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/') || location.pathname === '/adc/offline.html') return;
+  const scripts = ['/adc/assets/visite.js', '/assets/js/lettori-presenti.js'];
+  for (const src of scripts) {
+    if (document.querySelector('script[src^="' + src + '"]')) continue;
+    const script = document.createElement('script');
+    script.src = src + '?v=20261124-statistiche';
+    document.head.appendChild(script);
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
-  else init();
-})();
-
-/* Carica il client di presenza anonima su tutte le pagine ADC che usano la navigazione condivisa.
-   Il client rimane inattivo in assenza di consenso o di un backend verificato. */
-(function () {
-  'use strict';
-  if (!location.pathname.startsWith('/adc/') || location.pathname.startsWith('/adc/widget/')) return;
-  if (document.querySelector('script[data-adc-presence]')) return;
-  var script = document.createElement('script');
-  script.src = '/assets/js/lettori-presenti.js';
-  script.defer = true;
-  script.dataset.adcPresence = 'true';
-  document.head.appendChild(script);
 })();
 
 /* Collega le pagine ADC alla PWA con ambito esclusivo /adc/. */
