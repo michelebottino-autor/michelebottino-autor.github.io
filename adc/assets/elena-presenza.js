@@ -28,8 +28,37 @@
  window.addEventListener('pagehide',stopSpeech);
 
  // Messaggio uguale per tutti i visitatori e per tutte le sezioni ADC.
- msg.textContent='Posso aiutarti a trovare documenti, luoghi e testimonianze nelle fonti dell’Archivio.';
+ const pageMain=document.querySelector('main')||document.querySelector('article');
+ const pageHeading=pageMain?.querySelector('h1')||document.querySelector('h1');
+ const pageTitle=(pageHeading?.textContent||document.title||'').replace(/\s+/g,' ').trim().slice(0,180);
+ const pagePath=location.pathname;
+ const canUsePage=!!pageMain&&!!pageTitle&&!/^\/adc\/(?:elena|cerca|memorie|widget|custode)(?:\/|$)/.test(pagePath)&&pagePath!=='/adc/';
+ const normal=value=>String(value||'').toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+ function pageParagraphs(){
+   if(!canUsePage)return [];
+   return [...pageMain.querySelectorAll('p,li,blockquote,figcaption')].filter(e=>!e.closest('nav,footer,form,aside,button,[hidden],details:not([open]),.adc-reading-controls,.elena-presenza')&&e.getClientRects().length).map(e=>e.textContent.replace(/\s+/g,' ').trim()).filter(t=>t.length>=45);
+ }
+ msg.textContent=canUsePage?'Stai consultando: '+pageTitle+'. Puoi chiedermi indicazioni sul testo di questa pagina oppure cercare in tutto l’Archivio.':'Posso aiutarti a trovare documenti, luoghi e testimonianze nelle fonti dell’Archivio.';
  const make=(tag,text,cls)=>{const el=document.createElement(tag);el.textContent=text||'';if(cls)el.className=cls;return el;};
+ if(canUsePage){
+   const shortcuts=make('div','','elena-voice-controls');
+   const options=[['Di cosa parla questa pagina?','Di cosa parla questa pagina?'],['Trova un passaggio','Trova un passaggio in questa pagina']];
+   for(const [label,query] of options){const b=make('button',label);b.type='button';b.addEventListener('click',()=>{if(label==='Trova un passaggio'){input.value='In questa pagina cerca ';input.focus();}else{input.value=query;form.requestSubmit();}});shortcuts.append(b);}
+   msg.after(shortcuts);
+ }
+ function pageReply(q){
+   if(!canUsePage)return null;
+   const n=normal(q);
+   const overview=/^(?:di cosa parla|cosa tratta|cosa dice|riassumi|spiegami|presentami) (?:questa|la) pagina[?.! ]*$/.test(n);
+   const local=/\b(?:questa pagina|qui nel testo|in questo testo)\b/.test(n);
+   if(!overview&&!local)return null;
+   const paragraphs=pageParagraphs();
+   const omitted=new Set('in questa pagina cerca trova un una il lo la le di del della dei delle che cosa dice parla testo qui nel questo spiegami mostrami quali quale come dove quando sono e a su per'.split(' '));
+   const terms=[...new Set((n.match(/[a-z0-9]+/g)||[]).filter(w=>w.length>2&&!omitted.has(w)))];
+   const selected=overview?paragraphs.slice(0,3):terms.length?paragraphs.map((t,i)=>({t,i,score:terms.filter(w=>normal(t).includes(w)).length})).filter(x=>x.score===terms.length).sort((a,b)=>b.score-a.score||a.i-b.i).slice(0,3).map(x=>x.t):[];
+   if(!selected.length)return {kind:'page-context',title:'Nessun passaggio individuato nella pagina',text:'Non ho individuato un passaggio che corrisponda alla richiesta nel testo attualmente visibile. Prova con un termine più breve oppure cerca in tutto l’Archivio.',links:[{title:'Ricerca nell’Archivio',url:'/adc/cerca/'}]};
+   return {kind:'page-context',title:overview?'Introduzione alla pagina: '+pageTitle:'Passaggi della pagina: '+pageTitle,text:'Estratti dal testo pubblicato (non una nuova verifica storica):',extracts:selected.map(t=>t.length>650?t.slice(0,650).trim()+'…':t),links:[{title:'Pagina consultata',url:pagePath}]};
+ }
  let loader=null,resources=null,busy=false,previousQuestion='';
  function loadEngine(){
    if(window.ElenaADCDialogo)return Promise.resolve(window.ElenaADCDialogo);
@@ -96,8 +125,17 @@
    e.preventDefault();const q=input.value.trim();if(!q||busy)return;
    busy=true;send.disabled=true;result.replaceChildren(make('p','Consulto le schede pubbliche dell’Archivio…'));
    try{
+     const localReply=pageReply(q);
+     if(localReply){
+       result.replaceChildren(make('p',localReply.title),make('p',localReply.text));
+       for(const excerpt of localReply.extracts||[])result.append(make('blockquote',excerpt));
+       for(const source of localReply.links){const p=make('p'),a=make('a',source.title);a.href=source.url;p.append(a);result.append(p);}
+       input.value='';return;
+     }
      const [engine,data]=await Promise.all([loadEngine(),loadResources()]);
-     const effective=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
+     const contextual=engine.contextualQuery?engine.contextualQuery(q,previousQuestion):q;
+     const referring=canUsePage&&/^(?:e\s+)?(?:quali? (?:fonti|documenti)|dove (?:si )?trova|in che (?:anno|periodo)|puoi approfondire|puoi spiegare)\b/i.test(q)&&!previousQuestion;
+     const effective=referring?(q+' '+pageTitle).slice(0,160):contextual;
      let reply=engine.reply(effective,data.index,data.approved,data.knowledge,data.municipality,data.news,data.checks,data.admin,data.researchRegistry);
      previousQuestion=effective;
      if (reply.kind==='empty') reply=await engine.findPublicPages(effective,reply);
@@ -114,7 +152,7 @@
      const more=make('button','Apri questa domanda nella pagina completa di Elena','elena-open-full');
      more.type='button';
      more.addEventListener('click',()=>{
-       try{sessionStorage.setItem('adc-elena-handoff',JSON.stringify({q:q.slice(0,160),at:Date.now()}));}
+       try{sessionStorage.setItem('adc-elena-handoff',JSON.stringify({q:effective.slice(0,160),at:Date.now()}));}
        catch(_){}
        window.location.assign('/adc/elena/');
      });
