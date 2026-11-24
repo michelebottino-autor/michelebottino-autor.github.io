@@ -120,13 +120,18 @@ body:has(#adc-unified-header) :is(a,button,input,textarea,select,summary):focus-
 body.adc-shared-lux :is(a,button,input,textarea,select,summary):focus-visible{outline:3px solid #f0c774!important;outline-offset:3px!important}
 @media(max-width:1100px){
  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header{display:block!important;padding:0 12px}
- body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header .adc-u-bar{width:100%;max-width:1180px;margin:auto;padding:10px 5px!important}
+ body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header .adc-u-bar{box-sizing:border-box;width:100%;max-width:1180px;margin:auto;padding:10px 5px!important}
  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header .adc-u-toggle{display:block!important}
  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header .adc-u-links{display:none;flex-direction:column;align-items:stretch;padding:7px 8px 14px}
  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header .adc-u-links[data-open=true]{display:flex!important}
  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) #adc-unified-header .adc-u-links a{display:flex;min-height:46px;align-items:center}
  body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) > main{width:calc(100% - 22px);padding:19px 15px;margin:11px auto 22px}
  body.adc-document-search>main{width:calc(100% - 22px);padding:18px 14px}
+}
+@media(max-width:1100px){
+ #adc-unified-header .adc-u-brand{flex:1 1 auto;min-width:0}
+ #adc-unified-header .adc-u-brand-text{overflow-wrap:anywhere}
+ #adc-unified-header .adc-u-toggle{flex:0 0 auto;white-space:nowrap}
 }
 @media(max-width:600px){
  body.adc-widget .top,body.adc-widget .head{padding:16px}

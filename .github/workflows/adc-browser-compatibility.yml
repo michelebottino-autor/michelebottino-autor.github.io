@@ -1,0 +1,54 @@
+name: Compatibilità browser ADC
+on:
+  push:
+    paths:
+      - 'adc/**'
+      - '.github/scripts/test-adc-browsers.cjs'
+      - '.github/workflows/adc-browser-compatibility.yml'
+  pull_request:
+    paths:
+      - 'adc/**'
+      - '.github/scripts/test-adc-browsers.cjs'
+      - '.github/workflows/adc-browser-compatibility.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browsers:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, browser: chromium }
+          - { os: ubuntu-latest, browser: firefox }
+          - { os: macos-latest, browser: webkit }
+          - { os: windows-latest, browser: edge }
+          - { os: windows-latest, browser: chrome }
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm install --no-save playwright
+      - if: runner.os == 'Linux'
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+      - if: matrix.browser == 'webkit'
+        run: npx playwright install webkit
+      - name: Verifica il sito
+        shell: bash
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 > site-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          for attempt in {1..30}; do
+            if curl -fsS -o /dev/null http://127.0.0.1:8765/adc/; then break; fi
+            sleep 1
+          done
+          node .github/scripts/test-adc-browsers.cjs ${{ matrix.browser }}

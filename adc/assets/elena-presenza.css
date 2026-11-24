@@ -127,6 +127,7 @@
  .elena-presenza:has(.elena-presenza-panel:not([hidden])){z-index:2000!important}
  .elena-presenza:has(.elena-presenza-panel:not([hidden]))::before{content:"";position:fixed;inset:0;background:rgba(0,20,21,.58);z-index:0}
  .elena-presenza .elena-presenza-panel:not([hidden]){position:fixed!important;top:calc(8px + env(safe-area-inset-top,0px))!important;right:10px!important;bottom:calc(8px + env(safe-area-inset-bottom,0px))!important;left:10px!important;width:auto!important;max-width:520px!important;max-height:none!important;margin:0 auto!important;z-index:1!important;overflow-x:hidden!important;overflow-y:auto!important;box-shadow:0 22px 54px rgba(0,17,18,.6)!important}
+ .elena-presenza-panel input[type="search"]{font-size:1rem!important}
  body:has(.elena-presenza-panel:not([hidden])){overflow:hidden!important}
 }
 @media(prefers-reduced-motion:reduce){.elena-presenza .elena-presenza-toggle{transition:none!important}}
