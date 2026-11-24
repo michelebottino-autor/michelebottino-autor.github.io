@@ -39,6 +39,9 @@ async function verifyControls(context) {
   const menu = page.locator('#adc-unified-header .adc-u-toggle');
   await menu.focus();
   await menu.press('Enter');
+  await page.locator('#adc-u-links a[href="/adc/elena/"]').waitFor({ state: 'visible' });
+  const more = page.locator('#adc-u-links .adc-u-more summary');
+  await more.press('Enter');
   await page.locator('#adc-u-links a[href="/adc/fonti/"]').waitFor({ state: 'visible' });
   await menu.press('Enter');
   await page.locator('#adc-u-links').waitFor({ state: 'hidden' });
