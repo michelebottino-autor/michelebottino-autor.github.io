@@ -34,3 +34,27 @@ html.adc-mobile-audit :is(a,button,summary,input,textarea,select):focus-visible{
   box-sizing:border-box!important;max-width:100%!important
  }
 }
+
+/* Lettore ADC e attestazioni: contrasto e impaginazione. */
+#elena-audioguida{margin-block:2rem;padding-block:1rem;border-block:1px solid #bba16d80}
+#elena-audioguida .adc-audio-card{background:#0b3937;color:#fff5db;border:1px solid #d9ba7a;border-radius:18px;padding:clamp(12px,3vw,22px);max-width:100%;box-sizing:border-box}
+#elena-audioguida audio:not([controls]){display:none}
+#elena-audioguida .adc-audio-row{display:flex;align-items:center;gap:12px;min-width:0}
+#elena-audioguida .adc-audio-progress{flex:1;min-width:0;display:grid;gap:7px;color:#fff5db}
+#elena-audioguida .adc-audio-progress label,#elena-audioguida #elena-time{color:#fff5db!important;font-size:.9rem}
+#elena-audioguida input[type=range]{width:100%;min-width:0;accent-color:#e9cb8d}
+#elena-audioguida button{min-height:44px!important;border:1px solid #d9ba7a!important;background:#e9cb8d!important;color:#102e2b!important;border-radius:12px!important;padding:9px 12px!important;font:600 .95rem system-ui!important;cursor:pointer}
+#elena-audioguida #elena-play,#elena-audioguida #elena-mute{flex:0 0 44px;min-width:44px;padding:0!important;border-radius:50%!important;font-size:1.2rem!important}
+#elena-audioguida .adc-audio-nav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+#elena-audioguida #elena-prev{background:#174540!important;color:#fff5db!important}
+#elena-audioguida button:disabled{opacity:.65;cursor:default}
+#elena-audioguida button:focus-visible{outline:3px solid #fff5db;outline-offset:3px}
+@media(max-width:700px){
+body.adc-inner-2026 main table.attestazioni,body.adc-inner-2026 main table.attestazioni tbody{background:transparent!important;border:0!important;padding:0!important}
+body.adc-inner-2026 main table.attestazioni tbody tr{background:#0b3937!important;border:1px solid #d9ba7a!important;border-radius:15px!important;padding:14px!important;margin:0 0 18px!important;box-shadow:none!important}
+body.adc-inner-2026 main table.attestazioni td{background:transparent!important;color:#fff5e4!important;border:0!important;padding:10px 0!important;line-height:1.55!important}
+body.adc-inner-2026 main table.attestazioni td+td{border-top:1px solid #bba16d80!important}
+body.adc-inner-2026 main table.attestazioni td::before{color:#f2d9a2!important;opacity:1!important;font-weight:700!important}
+body.adc-inner-2026 main table.attestazioni td:first-child{color:#f2d9a2!important;font:700 1.22rem/1.35 Georgia,serif!important}
+body.adc-inner-2026 main table.attestazioni td[data-label="Ancora da accertare"]::before{background:#e9cb8d;color:#102e2b!important;display:table;border-radius:12px;padding:3px 8px}
+}

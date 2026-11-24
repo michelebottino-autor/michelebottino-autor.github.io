@@ -131,3 +131,5 @@
  body:has(.elena-presenza-panel:not([hidden])){overflow:hidden!important}
 }
 @media(prefers-reduced-motion:reduce){.elena-presenza .elena-presenza-toggle{transition:none!important}}
+
+@media(max-width:600px){body:has(.elena-presenza) main{padding-bottom:80px!important}.elena-presenza .elena-presenza-toggle{background:#0b3937!important;border:1px solid #e9cb8d!important;opacity:1!important}.elena-presenza .elena-presenza-toggle::before{color:#f2d9a2!important}}
