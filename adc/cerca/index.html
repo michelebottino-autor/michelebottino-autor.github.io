@@ -199,18 +199,28 @@ function highlight(element,text,words){
 async function search(){
  const query=input.value.trim();results.replaceChildren();documentary.replaceChildren();
  if(query.length<2){status.textContent="Inserisci almeno due caratteri.";return;}
- const words=[...new Set(normalize(query).split(/\s+/).filter(x=>x.length>1))];
+ const stop=new Set("che cosa come quando dove quale quali quanto perché perche chi era erano sono stato stata stati state è e il lo la i gli le un una uno di del della dei delle degli da dal dalla in nel nella nelle al alla alle ai a con per su sul sulla si mi ci ne non vorrei sapere conoscere trovare cercare mostrami raccontami spiegami posso".split(" ").map(normalize));
+ const tokens=normalize(query).match(/[a-z0-9]+/g)||[];
+ const meaningful=tokens.filter(x=>x.length>1&&!stop.has(x));
+ const words=[...new Set(meaningful.length?meaningful:tokens.filter(x=>x.length>1))];
  if(!words.length){status.textContent="Inserisci una parola da cercare.";return;}
  const url=new URL(location.href);url.searchParams.set("q",query);history.replaceState(null,"",url);
  status.textContent="Ricerca nelle pagine ADC in corso…";
  try{
   const {pages,failed}=await loadIndex();
-  const matches=pages.filter(page=>words.every(word=>page.normalized.includes(word))).map(page=>({...page,score:relevance(page,words)})).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,"it"));
+  let partial=false;
+  let matches=pages.filter(page=>words.every(word=>page.normalized.includes(word))).map(page=>({...page,score:relevance(page,words)})).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,"it"));
+  if(!matches.length&&words.length>1){
+    const useful=words.filter(w=>w!=="calatabiano"&&w!=="paese");
+    const terms=useful.length?useful:words;
+    const candidates=pages.map(page=>({...page,coverage:terms.filter(w=>page.normalized.includes(w)).length,score:relevance(page,terms)})).filter(page=>page.coverage>=Math.max(1,Math.ceil(terms.length/2))).sort((a,b)=>b.coverage-a.coverage||b.score-a.score||a.title.localeCompare(b.title,"it"));
+    if(candidates.length){const best=candidates[0].coverage;matches=candidates.filter(x=>x.coverage===best);partial=true;}
+  }
   let testimonianze=[];let inventarioDisponibile=true;
   try{const response=await fetch("../inventario/testimonianze.json");if(!response.ok)throw Error();const inventory=await response.json();testimonianze=inventory.schede.map(x=>{const text=normalize([x.data,x.titolo,x.tipo,x.provenienza,x.tema,x.limiti].join(" "));return {...x,score:words.reduce((n,w)=>n+(normalize(x.titolo).includes(w)?10:0)+(text.includes(w)?1:0),0),text};}).filter(x=>words.every(w=>x.text.includes(w))).sort((a,b)=>b.score-a.score).slice(0,8);}catch(e){inventarioDisponibile=false;}
   if(testimonianze.length){const heading=document.createElement("h2");heading.textContent="Testimonianze documentarie";documentary.append(heading);const note=document.createElement("p");note.textContent="Schede dell'inventario con provenienza e limiti delle fonti.";documentary.append(note);for(const x of testimonianze){const article=document.createElement("article");article.className="result";const h=document.createElement("h2"),link=document.createElement("a");link.href=new URL(x.pagina,new URL("../inventario/",location.href)).href;link.textContent=x.titolo;link.title="Vai direttamente alla testimonianza nel dossier";h.append(link);const meta=document.createElement("p");meta.className="meta";meta.textContent=x.data+" · "+x.tema+" · "+x.id;const source=document.createElement("p");source.textContent="Fonte: "+x.provenienza;const caution=document.createElement("p");caution.textContent="Limite documentario: "+x.limiti;article.append(h,meta,source,caution);documentary.append(article);}}
-  status.textContent=matches.length+" "+(matches.length===1?"pagina pertinente":"pagine pertinenti")+" e "+testimonianze.length+" "+(testimonianze.length===1?"testimonianza":"testimonianze")+" in inventario."+(failed?" Alcune pagine non sono raggiungibili.":"")+(inventarioDisponibile?"":" Inventario temporaneamente non disponibile.");
-  if(matches.length){const h=document.createElement("h2");h.textContent="Articoli e approfondimenti";results.append(h);}
+  status.textContent=(partial?"Nessuna corrispondenza completa: risultati parziali per orientarti. ":"")+matches.length+" "+(matches.length===1?"pagina pertinente":"pagine pertinenti")+" e "+testimonianze.length+" "+(testimonianze.length===1?"testimonianza":"testimonianze")+" in inventario."+(failed?" Alcune pagine non sono raggiungibili.":"")+(inventarioDisponibile?"":" Inventario temporaneamente non disponibile.");
+  if(matches.length){const h=document.createElement("h2");h.textContent=partial?"Articoli e approfondimenti correlati":"Articoli e approfondimenti";results.append(h);}
   function showResult(page){const article=document.createElement("article");article.className="result";const h=document.createElement("h2"),link=document.createElement("a");link.href=page.url;link.textContent=page.title;h.append(link);const p=document.createElement("p");highlight(p,excerpt(page.text,words),words);article.append(h,p);results.append(article);}
   matches.slice(0,12).forEach(showResult);
   if(matches.length>12){
