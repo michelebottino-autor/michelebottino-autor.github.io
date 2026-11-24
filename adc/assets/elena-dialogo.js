@@ -214,6 +214,15 @@
     const civic=(typeof globalThis!=='undefined'&&globalThis.ElenaComune&&typeof globalThis.ElenaComune.reply==='function')
       ?globalThis.ElenaComune.reply(q,municipality,news,checks,admin):null;
     if(civic)return civic;
+    // Percorsi divulgativi: orientamento, non attestazioni storiche.
+    const everyday=[
+      [/\b(nonni|bisnonni|antenati|vita quotidiana|come si viveva|come vivevano|paese di una volta)\b/, [['Mestieri, botteghe e fondaci','/adc/locali-storici/'],['Storia del paese','/adc/storia-per-tutti/'],['Calatabiano nel Novecento','/adc/calatabiano-1922-1943/'],['Memorie e testimonianze','/adc/memorie/']]],
+      [/\b(foto|fotografie|cartoline)\b/, [['Fotografie e video','/adc/mediateca/']]],
+      [/\b(chiesa madre|matrice|annunziata)\b/, [['Le chiese di Calatabiano','/adc/chiese/']]],
+      [/\b(cognome|cognomi|famiglia|famiglie)\b/, [['Repertorio biografico','/adc/dizionario-biografico/'],['Persone e protagonisti','/adc/persone/']]]
+    ];
+    const suggested=everyday.filter(([pattern])=>pattern.test(n)).flatMap(([,links])=>links.map(([title,url])=>({title,url})));
+    if(suggested.length)return {kind:'index',title:'Da dove cominciare',text:'Questi percorsi possono aiutarti a trovare ciò che cerchi. Non dispongo ancora di una risposta documentata specifica alla tua domanda.',links:suggested.filter((x,i,a)=>a.findIndex(y=>y.url===x.url)===i)};
     const matches = rank(q, index?.entries);
     if (matches.length) return {kind:'index',title:'Fonti e percorsi da consultare',text:'Non è disponibile una risposta sintetica verificata per questa domanda. Questi percorsi potrebbero essere pertinenti: consulta le fonti prima di trarre conclusioni.',links:matches.map(e=>({title:e.title,url:e.url,description:e.description}))};
     return {kind:'empty',title:'Nessuna fonte sufficiente individuata',text:'Non ho trovato un percorso sufficientemente pertinente nell’indice pubblico. Puoi consultare il repertorio generale oppure riprovare indicando una località, un anno o un argomento.',links:[{title:'Consulta le fonti e i documenti',url:'/adc/fonti/'},{title:'Leggi la storia di Calatabiano',url:'/adc/storia/'}]};
