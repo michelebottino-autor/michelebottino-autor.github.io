@@ -443,10 +443,9 @@ html body.adc-archive-home footer.adc-lux-footer a:hover{
  color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;
 }
 
-/* Le sezioni con persone, condivisione e tutela sono parte della stessa pagina,
+/* Le sezioni con persone e tutela sono parte della stessa pagina,
    non riquadri di una vecchia interfaccia avorio. */
 html body.adc-archive-home main#contenuto .adc-persone-accesso,
-html body.adc-archive-home main#contenuto .adc-share,
 html body.adc-archive-home #tutela-persone-fonti{
  background:linear-gradient(125deg,rgba(21,88,78,.97),rgba(10,62,59,.97))!important;
  color:#f6f5e9!important;
@@ -455,32 +454,17 @@ html body.adc-archive-home #tutela-persone-fonti{
  box-shadow:0 12px 32px rgba(2,36,35,.26)!important;
 }
 html body.adc-archive-home main#contenuto .adc-persone-accesso :is(h2,p),
-html body.adc-archive-home main#contenuto .adc-share :is(h2,p),
 html body.adc-archive-home #tutela-persone-fonti :is(h2,p){
  color:#f5f4e9!important;-webkit-text-fill-color:#f5f4e9!important;
 }
 html body.adc-archive-home main#contenuto .adc-persone-accesso h2,
-html body.adc-archive-home main#contenuto .adc-share h2,
 html body.adc-archive-home #tutela-persone-fonti h2{
  font:400 clamp(1.45rem,3vw,2rem)/1.24 Georgia,serif!important;
  color:#ffe0ac!important;-webkit-text-fill-color:#ffe0ac!important;
 }
 html body.adc-archive-home main#contenuto .adc-persone-accesso a,
-html body.adc-archive-home main#contenuto .adc-share a,
 html body.adc-archive-home #tutela-persone-fonti a{
  color:#ffe2a7!important;-webkit-text-fill-color:#ffe2a7!important;
-}
-html body.adc-archive-home main#contenuto .adc-share-actions :is(a,button){
- background:#eaf2ed!important;color:#103d38!important;-webkit-text-fill-color:#103d38!important;
- border:1px solid rgba(212,190,145,.9)!important;
-}
-html body.adc-archive-home main#contenuto .adc-share-actions :is(a,button) span,
-html body.adc-archive-home main#contenuto .adc-share-actions :is(a,button) svg{
- color:#16594d!important;-webkit-text-fill-color:#16594d!important;
-}
-html body.adc-archive-home main#contenuto .adc-share-actions .adc-share-primary{
- background:linear-gradient(130deg,#f6dfa6,#c49a54)!important;
- color:#103c36!important;-webkit-text-fill-color:#103c36!important;
 }
 html body.adc-archive-home #tutela-persone-fonti{
  box-sizing:border-box!important;
@@ -510,13 +494,11 @@ html body.adc-archive-home #tutela-persone-fonti p{line-height:1.65!important}
   padding:0 18px 13px!important;
  }
  html body.adc-archive-home main#contenuto .adc-persone-accesso,
- html body.adc-archive-home main#contenuto .adc-share,
  html body.adc-archive-home #tutela-persone-fonti{
   padding:17px!important;margin:15px 13px!important;
   border-radius:16px!important;
  }
  html body.adc-archive-home main#contenuto .adc-persone-accesso{margin:18px 0!important}
- html body.adc-archive-home main#contenuto .adc-share{margin:17px 0!important}
  html body.adc-archive-home #tutela-persone-fonti{
   margin:14px 13px 17px!important;
  }
@@ -525,15 +507,6 @@ html body.adc-archive-home #tutela-persone-fonti p{line-height:1.65!important}
  }
  html body.adc-archive-home main#contenuto .adc-persone-accesso p{
   font:400 .96rem/1.5 system-ui,sans-serif!important;
- }
- html body.adc-archive-home main#contenuto .adc-share p{
-  font:400 .93rem/1.5 system-ui,sans-serif!important;
- }
- html body.adc-archive-home main#contenuto .adc-share-actions{
-  gap:8px!important;
- }
- html body.adc-archive-home main#contenuto .adc-share-actions :is(button,a){
-  font-size:.86rem!important;min-height:43px!important;
  }
 }
 

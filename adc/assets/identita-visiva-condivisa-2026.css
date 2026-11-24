@@ -331,24 +331,12 @@ body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-her
   -webkit-text-fill-color:#f0f0e7!important;
 }
 
-/* Superfici chiare: mantengono la tipografia scura prevista per la lettura. */
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main :is(.adc-share,.adc-share-entry) {
+/* L'invito a incorporare l'Archivio conserva la superficie chiara. */
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main p.adc-share-entry {
   color:#25302e!important;
   -webkit-text-fill-color:#25302e!important;
 }
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-share :is(h1,h2,h3,h4,h5,h6,p,li,small,strong) {
-  color:#30463d!important;
-  -webkit-text-fill-color:#30463d!important;
-}
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-share :is(p,li,h1,h2,h3,h4,h5,h6) a:not(.cta):not([class*="button"]) {
-  color:#17594f!important;
-  -webkit-text-fill-color:#17594f!important;
-}
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main p.adc-share-entry a:not(.cta):not([class*="button"]):not(.adc-share-actions a) {
-  color:#17594f!important;
-  -webkit-text-fill-color:#17594f!important;
-}
-body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main .adc-share-author a {
+body:has(#adc-unified-header):not(.adc-archive-home):not(:has(.adc-lux-elena-hero)) main p.adc-share-entry a:not(.cta):not([class*="button"]) {
   color:#17594f!important;
   -webkit-text-fill-color:#17594f!important;
 }

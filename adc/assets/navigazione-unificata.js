@@ -252,3 +252,15 @@
  const app=document.createElement('script');app.src='/adc/app-init.js';
  app.defer=true;app.dataset.adcAppInit='true';document.head.appendChild(app);
 })();
+
+
+/* Il riquadro di condivisione è il medesimo su tutte le pagine pubbliche ADC. */
+(function () {
+  'use strict';
+  if (!location.pathname.startsWith('/adc/') || location.pathname === '/adc/offline.html') return;
+  if (location.pathname.startsWith('/adc/widget/') || document.querySelector('meta[http-equiv="refresh" i]')) return;
+  if (document.querySelector('script[src*="/adc/condividi.js"], [data-adc-share]')) return;
+  const script = document.createElement('script');
+  script.src = '/adc/condividi.js?v=20261124-archive';
+  document.head.appendChild(script);
+})();

@@ -2,28 +2,34 @@
 (function(){
 "use strict";
 function ready(){
-  if(!document.querySelector('link[data-adc-share-style]')){
-    var css=document.createElement("link");css.rel="stylesheet";css.href="/adc/assets/condivisione-responsive.css";css.dataset.adcShareStyle="true";document.head.appendChild(css);
-  }
-  if(document.querySelector("[data-adc-share]"))return;
+  if(document.querySelector("[data-adc-share]")||document.querySelector('meta[http-equiv="refresh" i]'))return;
+  if(location.pathname==='/adc/offline.html'||location.pathname.startsWith('/adc/widget/'))return;
   var main=document.querySelector("main")||document.querySelector("article");
   if(!main)return;
-  var title=(document.querySelector("h1")||{}).textContent||document.title;
+  if(!document.querySelector('link[data-adc-share-style]')){
+    var css=document.createElement("link");
+    css.rel="stylesheet";
+    css.href="/adc/assets/condivisione-responsive.css?v=20261124-archive";
+    css.dataset.adcShareStyle="true";
+    document.head.appendChild(css);
+  }
+  var title=(main.querySelector("h1")||document.querySelector("h1")||{}).textContent||document.title;
   title=title.trim();
   var canonical=document.querySelector('link[rel="canonical"]');
-  var url=canonical&&canonical.href?canonical.href:location.href.split("#")[0];
-  var description=document.querySelector('meta[name="description"]');
-  var desc=description?description.content:"";
+  var url=new URL(canonical&&canonical.href?canonical.href:location.href);
+  url.hash="";
+  url.search="";
+  url=url.href;
   var author="Michele Bottino";
   var authorPage="https://www.facebook.com/michelebottinoautor";
-  var credit="Articolo di "+author+" — Archivio Documentale Calatabiano";
+  var credit="Archivio Documentale Calatabiano · A cura di "+author;
   var authorCredit=credit+"\nPagina Facebook dell’autore: "+authorPage;
   var enc=encodeURIComponent, u=enc(url), t=enc(title);
   var shareText=title+" — "+credit;
   var box=document.createElement("section");box.className="adc-share";box.setAttribute("data-adc-share","");
-  box.setAttribute("aria-label","Condividi questo articolo");
-  var heading=document.createElement("h2");heading.textContent="Condividi questo articolo";box.appendChild(heading);
-  var note=document.createElement("p");note.textContent="Articolo di Michele Bottino · Archivio Documentale Calatabiano. Condividilo con chi è interessato alla storia del territorio.";box.appendChild(note);
+  box.setAttribute("aria-label","Condividi questa pagina");
+  var heading=document.createElement("h2");heading.textContent="Condividi questa pagina";box.appendChild(heading);
+  var note=document.createElement("p");note.textContent="Archivio Documentale Calatabiano · A cura di Michele Bottino.";box.appendChild(note);
   var authorLink=document.createElement("p");var authorAnchor=document.createElement("a");authorAnchor.href=authorPage;authorAnchor.target="_blank";authorAnchor.rel="noopener noreferrer";authorAnchor.textContent="Pagina Facebook ufficiale: Michele Bottino Author";authorLink.appendChild(authorAnchor);box.appendChild(authorLink);
   var links=document.createElement("div");links.className="adc-share-actions";
   var icons={
@@ -37,7 +43,8 @@ function ready(){
     copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>',
     quote:'<path d="M10 11H5V6h6v7l-4 5m12-7h-5V6h6v7l-4 5"/>'
   };
-  function decorate(el,key){el.dataset.network=key;var holder=document.createElement("span");holder.className="adc-share-icon";holder.setAttribute("aria-hidden","true");holder.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">'+icons[key]+'</svg>';el.prepend(holder);return el;}
+  function setLabel(el,text){el.querySelector(".adc-share-label").textContent=text;}
+  function decorate(el,key){var label=document.createElement("span");label.className="adc-share-label";label.textContent=el.textContent;el.replaceChildren(label);el.dataset.network=key;var holder=document.createElement("span");holder.className="adc-share-icon";holder.setAttribute("aria-hidden","true");holder.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">'+icons[key]+'</svg>';el.prepend(holder);return el;}
   function anchor(label,href,key){var a=document.createElement("a");a.textContent=label;a.href=href;a.target="_blank";a.rel="noopener noreferrer";decorate(a,key);links.appendChild(a)}
   if(typeof navigator.share==="function"){
     var native=document.createElement("button");native.type="button";native.textContent="Condividi…";
@@ -49,10 +56,10 @@ function ready(){
   anchor("LinkedIn","https://www.linkedin.com/sharing/share-offsite/?url="+u,"linkedin");
   anchor("X","https://twitter.com/intent/tweet?url="+u+"&text="+enc(title+" — "+author+" "+authorPage),"x");
   anchor("Email / Gmail","mailto:?subject="+t+"&body="+enc(shareText+"\n"+url),"email");
-  var attribution=document.createElement("button");attribution.type="button";attribution.textContent="Copia testo con autore";attribution.addEventListener("click",function(){var message=shareText+"\n"+authorPage+"\n"+url;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(message).then(function(){attribution.textContent="Testo copiato";setTimeout(function(){attribution.textContent="Copia testo con autore"},2400)},function(){window.prompt("Copia il testo:",message)})}else window.prompt("Copia il testo:",message)});attribution.className="adc-share-copy";decorate(attribution,"quote");links.appendChild(attribution);
+  var attribution=document.createElement("button");attribution.type="button";attribution.textContent="Copia testo con autore";attribution.addEventListener("click",function(){var message=shareText+"\n"+authorPage+"\n"+url;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(message).then(function(){setLabel(attribution,"Testo copiato");setTimeout(function(){setLabel(attribution,"Copia testo con autore")},2400)},function(){window.prompt("Copia il testo:",message)})}else window.prompt("Copia il testo:",message)});attribution.className="adc-share-copy";decorate(attribution,"quote");links.appendChild(attribution);
   var copy=document.createElement("button");copy.type="button";copy.textContent="Copia link";
   copy.addEventListener("click",function(){
-    function success(){copy.textContent="Link copiato";setTimeout(function(){copy.textContent="Copia link"},2400)}
+    function success(){setLabel(copy,"Link copiato");setTimeout(function(){setLabel(copy,"Copia link")},2400)}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(success,function(){fallback()})}
     else fallback();
     function fallback(){var field=document.createElement("textarea");field.value=url;field.style.position="fixed";field.style.left="-9999px";document.body.appendChild(field);field.select();try{if(document.execCommand("copy"))success();else window.prompt("Copia l'indirizzo:",url)}catch(e){window.prompt("Copia l'indirizzo:",url)}field.remove()}
