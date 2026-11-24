@@ -306,18 +306,6 @@
       input.placeholder='Scrivi la tua domanda a Elena…';
       input.focus();
     }));
-    // Il pulsante riproduce unicamente il campione P approvato; non è un lettore dinamico.
-    const welcome=document.getElementById('elena-paola-welcome');
-    if(welcome){
-      const welcomeAudio=new Audio('/adc/audio/elena-ufficiale.mp3');welcomeAudio.preload='none';welcomeAudio.playbackRate=1;welcomeAudio.preservesPitch=true;
-      welcome.addEventListener('click',()=>{
-        if(!welcomeAudio.paused){welcomeAudio.pause();welcomeAudio.currentTime=0;welcome.textContent='Ascolta un campione della voce';return;}
-        welcomeAudio.currentTime=0;
-        welcomeAudio.play().then(()=>{welcome.textContent='Ferma il campione';}).catch(()=>{welcome.textContent='Il messaggio vocale non è disponibile';});
-      });
-      welcomeAudio.addEventListener('ended',()=>{welcome.textContent='Ascolta un campione della voce';});
-      window.addEventListener('pagehide',()=>welcomeAudio.pause());
-    }
     const load=url=>fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Risorsa non disponibile');return r.json()});
     const ready=Promise.allSettled([load('/adc/assets/elena-indice.json'),load('/adc/assets/elena-risposte-approvate.json'),load('/adc/assets/elena-conoscenza-verificata.json'),load('/adc/assets/elena-comune-fonti.json'),load('/adc/assets/elena-comune-news.json'),load('/adc/assets/elena-comune-verifiche.json'),load('/adc/assets/elena-amministrazione.json'),load('/adc/assets/elena-stati-ricerca.json')]).then(a=>{
       if(a[0].status==='fulfilled' && Array.isArray(a[0].value?.entries)){index=a[0].value;indexAvailable=true;}
@@ -404,8 +392,10 @@
         output.append(make('p','elena-dialogue-question',q));
         const article=make('article','elena-dialogue-answer');
         article.append(make('h2','',r.title),make('p','',r.text));
-        if(r.kind==='documentary' && r.id==='E-026-A01-A03' && r.text==="Nel marzo 1213 Costanza, insieme al figlio Enrico, confermò alla Chiesa di Catania il castello di Calatabiano con le sue pertinenze. Il privilegio ricorda che il castello era stato acquisito al fisco regio dopo la vicenda del conte Pagano de Parisio e successivamente affidato al conte Arnaldo. Il testo menziona un pagamento di 15.000 tarì ad Arnaldo o al suo procuratore. Si tratta di un privilegio di concessione e conferma, non del contratto originale di compravendita."){
-          const audio=document.createElement('audio');audio.controls=true;audio.preload='none';audio.src='/adc/audio/elena-serena-risposta-E-026-A01-A03.mp3';audio.setAttribute('aria-label','Ascolta la risposta con la voce ufficiale di Elena');article.dataset.adcAudio='official';article.append(audio);
+        const recording = officialRecording(r, document);
+        if (recording) {
+          article.dataset.adcAudio = 'official';
+          article.append(recording);
         }
         const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary' || r.kind==='passage'
           ? (r.kind==='passage' ? 'Testo approvato dalla redazione ADC. La fonte e le pagine sono indicate sotto.' : 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.')
@@ -483,5 +473,16 @@
     if(loc.searchParams.has('q')||loc.hash.startsWith('#q=')){loc.searchParams.delete('q');loc.hash='';try{history.replaceState(null,'',loc.pathname+loc.search)}catch(e){}}
     if(initial && initial.length<=160)run(initial);
   }
-  return {normalize,tokens,rank,reply,findPassages,serviceAnswer,knowledgeAnswer,researchStatus,contextualQuery,safeUrl,findPublicPages,mount};
+  function officialRecording(r, document) {
+    if (!(r.kind==='documentary' && r.id==='E-026-A01-A03' && r.text==="Nel marzo 1213 Costanza, insieme al figlio Enrico, confermò alla Chiesa di Catania il castello di Calatabiano con le sue pertinenze. Il privilegio ricorda che il castello era stato acquisito al fisco regio dopo la vicenda del conte Pagano de Parisio e successivamente affidato al conte Arnaldo. Il testo menziona un pagamento di 15.000 tarì ad Arnaldo o al suo procuratore. Si tratta di un privilegio di concessione e conferma, non del contratto originale di compravendita.")) return null;
+    const audio = document.createElement('audio');
+    audio.className = 'elena-recorded-answer';
+    audio.controls = true;
+    audio.preload = 'none';
+    audio.src = '/adc/audio/elena-serena-risposta-E-026-A01-A03.mp3';
+    audio.setAttribute('aria-label', 'Ascolta la risposta con la voce ufficiale di Elena');
+    return audio;
+  }
+
+  return {normalize,tokens,rank,reply,officialRecording,findPassages,serviceAnswer,knowledgeAnswer,researchStatus,contextualQuery,safeUrl,findPublicPages,mount};
 });
