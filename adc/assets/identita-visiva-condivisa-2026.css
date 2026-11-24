@@ -295,31 +295,24 @@ body:has(#adc-unified-header) main :is(h1,h2,h3,h4,h5,h6) {
   color:#ffdfa2!important;
   -webkit-text-fill-color:#ffdfa2!important;
 }
-body:has(#adc-unified-header) main :is(p,li,dt,dd,label,summary,small) {
+body:has(#adc-unified-header) main :is(p,li,dt,dd,label,small,summary,span) {
   color:#f0f0e7!important;
   -webkit-text-fill-color:#f0f0e7!important;
 }
-body:has(#adc-unified-header) main a:not(.cta):not([class*="button"]):not(.adc-share-actions a) {
+/* I collegamenti inseriti nel testo ereditano l'oro; i link-card mantengono il loro stile. */
+body:has(#adc-unified-header) main :is(p,li,dt,dd,h1,h2,h3,h4,h5,h6) a:not(.cta):not([class*="button"]) {
   color:#ffdc98!important;
   -webkit-text-fill-color:#ffdc98!important;
   text-decoration-color:#cba66b!important;
 }
 
-/* Contrasto netto sui pulsanti dorati e sulle scorciatoie della ricerca. */
-body:has(#adc-unified-header) main :is(a.cta,.adc-lux-gold-button) {
+/* Contrasto netto sui pulsanti dorati e sui moduli chiari di ricerca. */
+body:has(#adc-unified-header) main .adc-lux-gold-button {
   color:#173b33!important;
   -webkit-text-fill-color:#173b33!important;
   opacity:1!important;
 }
-body:has(#adc-unified-header) main .search-topics a {
-  color:#14564c!important;
-  -webkit-text-fill-color:#14564c!important;
-}
-body:has(#adc-unified-header) main .search-topics span {
-  color:#f0f0e7!important;
-  -webkit-text-fill-color:#f0f0e7!important;
-}
-body:has(#adc-unified-header) main #search-form label {
+body:has(#adc-unified-header) main :is(#search-form,form[role="search"]) label {
   color:#173b33!important;
   -webkit-text-fill-color:#173b33!important;
 }
@@ -328,18 +321,25 @@ body:has(#adc-unified-header) main #search-form input::placeholder {
   opacity:1!important;
   -webkit-text-fill-color:#53645c!important;
 }
+body:has(#adc-unified-header) main .search-topics span {
+  color:#f0f0e7!important;
+  -webkit-text-fill-color:#f0f0e7!important;
+}
 
 /* Superfici chiare: mantengono la tipografia scura prevista per la lettura. */
 body:has(#adc-unified-header) main :is(.adc-share,.adc-share-entry) {
   color:#25302e!important;
   -webkit-text-fill-color:#25302e!important;
 }
-body:has(#adc-unified-header) main .adc-share :is(h2,h3,h4,p,li,small,strong) {
+body:has(#adc-unified-header) main .adc-share :is(h1,h2,h3,h4,h5,h6,p,li,small,strong) {
   color:#30463d!important;
   -webkit-text-fill-color:#30463d!important;
 }
-body:has(#adc-unified-header) main .adc-share a,
-body:has(#adc-unified-header) main .adc-share-entry a {
+body:has(#adc-unified-header) main .adc-share :is(p,li,h1,h2,h3,h4,h5,h6) a:not(.cta):not([class*="button"]) {
+  color:#17594f!important;
+  -webkit-text-fill-color:#17594f!important;
+}
+body:has(#adc-unified-header) main p.adc-share-entry a {
   color:#17594f!important;
   -webkit-text-fill-color:#17594f!important;
 }
