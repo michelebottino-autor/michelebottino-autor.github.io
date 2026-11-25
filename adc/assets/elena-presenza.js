@@ -74,7 +74,7 @@
      }
      loadMain();
      function loadMain(){
-     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261124-ascolto';script.async=true;
+     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261125-passaggi';script.async=true;
      script.onload=()=>window.ElenaADCDialogo?resolve(window.ElenaADCDialogo):reject(Error('Motore documentario non disponibile'));
      script.onerror=()=>reject(Error('Impossibile caricare il motore documentario'));
      document.head.append(script);
@@ -141,7 +141,7 @@
      const effective=referring?(q+' '+pageTitle).slice(0,160):contextual;
      let reply=engine.reply(effective,data.index,data.approved,data.knowledge,data.municipality,data.news,data.checks,data.admin,data.researchRegistry);
      previousQuestion=effective;
-     if (reply.kind==='empty') reply=await engine.findPublicPages(effective,reply);
+     if(engine.findPublicPages) reply=await engine.findPublicPages(effective,reply);
      result.replaceChildren(make('p',reply.title),make('p',reply.text));
      const recording=engine.officialRecording(reply,document);
      if(recording){
