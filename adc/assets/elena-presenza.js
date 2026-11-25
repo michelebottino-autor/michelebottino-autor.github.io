@@ -8,7 +8,7 @@
  document.body.append(root);
  const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result'),send=form.querySelector('button');
  const voiceSampleButton=root.querySelector('.elena-voice-sample');
- const voiceSampleAudio=new Audio('/adc/audio/elena-voce-ufficiale-r18.mp3');
+ const voiceSampleAudio=new Audio('/adc/audio/elena-presentazione-adc.mp3?v=20261125-r18');
  voiceSampleAudio.preload='none';
  const voiceNote=root.querySelector('.elena-voice-note');
  const sampleLabel='Ascolta un campione della voce';
