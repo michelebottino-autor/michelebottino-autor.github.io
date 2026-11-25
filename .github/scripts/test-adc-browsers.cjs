@@ -125,6 +125,47 @@ async function verifyChurchGuides(context) {
   }
 }
 
+async function verifyMobileColors(context) {
+  const page = await context.newPage();
+  try {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.addInitScript(() => Object.defineProperty(navigator, 'standalone', { value: true }));
+    await page.goto(origin + '/adc/');
+    await page.waitForFunction(() => {
+      const link = document.querySelector('.adc-lux-intro-links a');
+      return link && getComputedStyle(link).color === 'rgb(255, 224, 161)';
+    }, null, { timeout: 5000 });
+    const introLink = page.locator('.adc-lux-intro-links a').first();
+    assert.equal(await introLink.evaluate(a => getComputedStyle(a).color), 'rgb(255, 224, 161)');
+
+    const toolbar = page.locator('#adc-app-toolbar');
+    const elena = page.locator('.elena-presenza-toggle');
+    const [barBounds, elenaBounds] = await Promise.all([toolbar.boundingBox(), elena.boundingBox()]);
+    assert(barBounds && elenaBounds, 'Barra o pulsante Elena assente');
+    assert(elenaBounds.y + elenaBounds.height <= barBounds.y, 'Elena copre la barra installata');
+
+    for (const route of ['atlante/', 'dossier-1213-1537/']) {
+      await page.goto(origin + '/adc/' + route);
+      const row = page.locator('table.adc-mobile-cards:not(.attestazioni) tbody tr').first();
+      assert.equal(await row.evaluate(tr => getComputedStyle(tr).backgroundColor), 'rgb(18, 63, 59)', route);
+      const label = row.locator('td[data-label]').nth(1);
+      assert.equal(await label.evaluate(td => getComputedStyle(td, '::before').color), 'rgb(255, 224, 161)', route);
+    }
+
+    await page.goto(origin + '/adc/cerca/?q=comune');
+    const highlight = page.locator('#results mark').first();
+    await highlight.waitFor({ state: 'visible' });
+    const colors = await highlight.evaluate(mark => {
+      const style = getComputedStyle(mark);
+      return [style.color, style.backgroundColor];
+    });
+    assert.deepEqual(colors, ['rgb(25, 46, 39)', 'rgb(255, 223, 153)']);
+  } finally {
+    await page.close();
+  }
+}
+
 async function run() {
   assert(browsers[engine], 'Browser sconosciuto: ' + engine);
   const channel = { edge: 'msedge', chrome: 'chrome' }[engine];
@@ -157,6 +198,8 @@ async function run() {
     catch (error) { failures.push('Voce di Elena e audioguida: ' + error.message); }
     try { await verifyChurchGuides(basic); }
     catch (error) { failures.push('Audioguide delle chiese: ' + error.message); }
+    try { await verifyMobileColors(basic); }
+    catch (error) { failures.push('Contrasto e barra mobile: ' + error.message); }
     await basic.close();
   } finally {
     await browser.close();

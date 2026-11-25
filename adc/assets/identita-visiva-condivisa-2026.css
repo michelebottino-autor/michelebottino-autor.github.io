@@ -509,3 +509,59 @@ body:has(#adc-unified-header) main :is(article.entry p.source a, article.tile .t
   color:#fff3dc!important;
   -webkit-text-fill-color:#fff3dc!important;
 }
+
+/* Contrasto sui fondi scuri della home e dei risultati. */
+body.adc-archive-home main#contenuto .adc-lux-intro-links a[href] {
+  color:#ffe0a1!important;
+  -webkit-text-fill-color:currentColor!important;
+  text-shadow:0 1px 2px #082b2b;
+}
+body:has(#adc-unified-header) main#contenuto #results mark {
+  color:#192e27!important;
+  -webkit-text-fill-color:currentColor!important;
+  background:#ffdf99!important;
+  border-radius:.16em;
+  padding-inline:.12em;
+}
+
+@media(max-width:680px) {
+  body.adc-inner-2026:has(#adc-unified-header) main#contenuto table:is(.adc-mobile-cards,.evidenze-table):not(.attestazioni) {
+    background:transparent!important;
+    border:0!important;
+  }
+  body.adc-inner-2026:has(#adc-unified-header) main#contenuto table:is(.adc-mobile-cards,.evidenze-table):not(.attestazioni) tbody tr {
+    background:#123f3b!important;
+    border:1px solid #a89366!important;
+    box-shadow:none!important;
+  }
+  body.adc-inner-2026:has(#adc-unified-header) main#contenuto table:is(.adc-mobile-cards,.evidenze-table):not(.attestazioni) tbody :is(td,th[scope="row"]):not([hidden]) {
+    background:transparent!important;
+    hyphens:none!important;
+  }
+  body.adc-inner-2026:has(#adc-unified-header) main#contenuto table:is(.adc-mobile-cards,.evidenze-table):not(.attestazioni) tbody :is(td,th[scope="row"]) + td {
+    border-top:1px solid #bca87778!important;
+  }
+  body.adc-inner-2026:has(#adc-unified-header) main#contenuto table:is(.adc-mobile-cards,.evidenze-table):not(.attestazioni) tbody :is(td,th[scope="row"])::before {
+    color:#ffe0a1!important;
+    -webkit-text-fill-color:currentColor!important;
+  }
+}
+
+@media(max-width:760px) {
+  html.adc-app-installed:has(#adc-app-toolbar) body .elena-presenza {
+    bottom:calc(84px + env(safe-area-inset-bottom,0px))!important;
+  }
+  html.adc-app-installed:has(#adc-app-toolbar) body:has(.elena-presenza) main#contenuto {
+    padding-bottom:80px!important;
+  }
+  html.adc-app-installed body:has(#adc-app-toolbar) #adc-reader-controls {
+    background:#123f3b!important;
+    border-color:#a89366!important;
+  }
+  html.adc-app-installed body:has(#adc-app-toolbar) #adc-reader-controls button {
+    background:#22524d!important;
+    color:#fff4d9!important;
+    -webkit-text-fill-color:currentColor!important;
+    border-color:#b8a479!important;
+  }
+}

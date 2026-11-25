@@ -11,7 +11,7 @@
     var link = document.createElement('link');
     link.id = 'adc-visual-theme';
     link.rel = 'stylesheet';
-    link.href = '/adc/assets/identita-visiva-condivisa-2026.css?v=20261124-contrast';
+    link.href = '/adc/assets/identita-visiva-condivisa-2026.css?v=20261125-mobile';
     document.head.appendChild(link);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadTheme, {once:true});
