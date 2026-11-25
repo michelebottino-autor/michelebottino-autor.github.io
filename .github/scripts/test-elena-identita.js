@@ -19,15 +19,15 @@ const widget=fs.readFileSync(path.join(root,'adc/assets/elena-presenza.js'),'utf
 assert(widget.includes('Ascolta un campione della voce'),'Pulsante del campione vocale Elena assente');
 assert(widget.includes('Ferma il campione'),'Comando di arresto del campione vocale assente');
 assert.doesNotMatch(widget,/speechSynthesis|elena-paola-.*\.mp3/,'Il campione ufficiale non deve essere sostituito');
-const sample='/adc/audio/elena-presentazione-adc.mp3';
+const sample='/adc/audio/elena-voce-ufficiale-tramonto.mp3';
 for(const target of ['adc/assets/elena-presenza.js','adc/elena/index.html']){
  assert(fs.readFileSync(path.join(root,target),'utf8').includes(sample),target+' non usa il campione ufficiale');
 }
 assert.ok(fs.existsSync(path.join(root,sample)),'File della voce ufficiale mancante');
 const officialAudio=fs.readFileSync(path.join(root,sample));
 assert.equal(crypto.createHash('sha256').update(officialAudio).digest('hex'),
- 'd6a70d3695835b6998c994bac2a9f19483386957799c559e33ce5b2942d6021c',
- 'La presentazione ufficiale deve coincidere con la traccia editoriale sintetizzata con il profilo R18');
+ '523d919574761f896600d3b484775ce058dfb3a53aa7ee8cdd3c9b0da6cd2526',
+ 'Il campione ufficiale deve coincidere con la registrazione approvata');
 const welcome='/adc/audio/elena-presentazione-adc.mp3';
 const home=fs.readFileSync(path.join(root,'adc/index.html'),'utf8');
 assert.match(home, /<audio[^>]+src="\/adc\/audio\/elena-presentazione-adc\.mp3\?v=20261125-r18"/);
