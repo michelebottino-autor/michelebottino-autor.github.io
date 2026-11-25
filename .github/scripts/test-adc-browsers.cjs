@@ -70,7 +70,7 @@ async function verifyRecordings(context) {
     if (await consent.isVisible()) await consent.click();
     const guideLink = page.locator('main .adc-elena-listen a[href$="#elena-audioguida"]');
     const homeIntro = page.locator('main .adc-elena-listen audio');
-    assert.equal(await homeIntro.getAttribute('src'), '/adc/audio/elena-presentazione-adc.mp3?v=20261125-voce');
+    assert.equal(await homeIntro.getAttribute('src'), '/adc/audio/elena-presentazione-adc.mp3?v=20261125-r18');
     const introResponse = await page.request.head(new URL(await homeIntro.getAttribute('src'), origin).href);
     assert(introResponse.ok() && /audio/i.test(introResponse.headers()['content-type']));
     await guideLink.click();
@@ -85,7 +85,7 @@ async function verifyRecordings(context) {
     assert.match(await audio.getAttribute('src'), /elena-02\.mp3$/);
 
     await page.goto(origin + '/adc/elena/');
-    assert.equal(await page.locator('main .adc-elena-listen audio').getAttribute('src'), '/adc/audio/elena-ufficiale.mp3?v=20261125-voce');
+    assert.equal(await page.locator('main .adc-elena-listen audio').getAttribute('src'), '/adc/audio/elena-presentazione-adc.mp3?v=20261125-r18');
     await page.locator('#elena-query').fill('Chi possedeva il castello di Calatabiano nel 1213?');
     await page.locator('#elena-form button[type="submit"]').click();
     const answer = page.locator('.elena-dialogue-answer audio');
