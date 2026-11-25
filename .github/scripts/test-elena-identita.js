@@ -3,6 +3,7 @@
 const fs=require('node:fs');
 const assert=require('node:assert/strict');
 const path=require('node:path');
+const crypto=require('node:crypto');
 const root=path.resolve(__dirname,'../..');
 const targets=['adc/assets/elena-presenza.js','adc/elena/index.html','adc/assets/elena-dialogo.js'];
 for(const file of targets){
@@ -18,11 +19,15 @@ const widget=fs.readFileSync(path.join(root,'adc/assets/elena-presenza.js'),'utf
 assert(widget.includes('Ascolta un campione della voce'),'Pulsante del campione vocale Elena assente');
 assert(widget.includes('Ferma il campione'),'Comando di arresto del campione vocale assente');
 assert.doesNotMatch(widget,/speechSynthesis|elena-paola-.*\.mp3/,'Il campione ufficiale non deve essere sostituito');
-const sample='/adc/audio/elena-ufficiale.mp3';
+const sample='/adc/audio/elena-voce-ufficiale-r18.mp3';
 for(const target of ['adc/assets/elena-presenza.js','adc/elena/index.html']){
- assert(fs.readFileSync(path.join(root,target),'utf8').includes(sample+'?v=20261125-voce'),target+' non usa il campione ufficiale');
+ assert(fs.readFileSync(path.join(root,target),'utf8').includes(sample),target+' non usa il campione ufficiale');
 }
 assert.ok(fs.existsSync(path.join(root,sample)),'File della voce ufficiale mancante');
+const officialAudio=fs.readFileSync(path.join(root,sample));
+assert.equal(crypto.createHash('sha256').update(officialAudio).digest('hex'),
+ 'bf4ab100caa44649daa018f0981a14de867bbfa5f561ae38db67ece7c236cd9d',
+ 'La registrazione ufficiale R18 deve coincidere byte per byte con il master approvato');
 const welcome='/adc/audio/elena-presentazione-adc.mp3';
 const home=fs.readFileSync(path.join(root,'adc/index.html'),'utf8');
 assert.match(home, /<audio[^>]+src="\/adc\/audio\/elena-presentazione-adc\.mp3\?v=20261125-voce"/);
