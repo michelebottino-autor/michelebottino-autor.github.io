@@ -9,7 +9,7 @@
   const normalize = s => String(s || '').toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
   const stop = new Set('calatabiano storia storico storica documento documenti fonte fonti cosa quale quali dove quando come sapere informazioni vorrei vorremmo cerca cercare trovare parla dice del della delle degli dello nella nelle nei sui sul con per alla alle anche sono hanno un una che chi gli dai dai dal dei era erano e il la di da a in si'.split(' '));
   const aliases = {mulino:'mulini',mulini:'mulino',chiesa:'chiese',chiese:'chiesa',origine:'origini',origini:'origine',mappa:'cartografia',mappe:'cartografia',foto:'fotografie',fotografia:'fotografie',fotografie:'foto',ponte:'alcantara',castelli:'castello',castello:'castelli',pergamena:'pergamene',pergamene:'pergamena',monastero:'monasteri',monasteri:'monastero',decime:'rationes',rationes:'decime',zuccherificio:'zucchero',trappeto:'zucchero',trappeti:'zucchero',crocifisso:'croce',croce:'crocifisso',ferroviaria:'ferrovia',stazioni:'stazione',stazione:'ferrovia',terremoti:'terremoto'};
-  const safeUrl = u => typeof u === 'string' && (/^\/adc\/[a-z0-9/_-]*(?:\.html)?$/i.test(u) || /^https:\/\/(?:www\.|pagamentipa\.)?comune\.calatabiano\.ct\.it\/[a-z0-9/?&=_.%-]*$/i.test(u) || /^https:\/\/(?:dark-aronte|michelebottino-autor)\.github\.io\/$/.test(u));
+  const safeUrl = u => typeof u === 'string' && (/^\/adc\/[a-z0-9/_-]*(?:\.html)?(?:#[a-z0-9_-]+)?$/i.test(u) || /^https:\/\/(?:www\.|pagamentipa\.)?comune\.calatabiano\.ct\.it\/[a-z0-9/?&=_.%-]*$/i.test(u) || /^https:\/\/(?:dark-aronte|michelebottino-autor)\.github\.io\/$/.test(u));
   const tokens = q => [...new Set(normalize(q).split(/[^a-z0-9]+/).filter(x => x.length > 2 && !stop.has(x)).flatMap(x => aliases[x] ? [x, aliases[x]] : [x]))];
   // Ricerca lessicale verificabile: le schede sono suggerimenti di lettura, non risposte storiche.
   // Peso maggiore alle espressioni esatte (es. "Madonna del Carmine") e alle date;
@@ -228,8 +228,54 @@
     return {kind:'empty',title:'Nessuna fonte sufficiente individuata',text:'Non ho trovato un percorso sufficientemente pertinente nell’indice pubblico. Puoi consultare il repertorio generale oppure riprovare indicando una località, un anno o un argomento.',links:[{title:'Consulta le fonti e i documenti',url:'/adc/fonti/'},{title:'Leggi la storia di Calatabiano',url:'/adc/storia/'}]};
   }
   // Il testo delle pagine serve a individuare percorsi, non a formulare risposte.
+  const publishedPassages = [
+    {
+      path:'/adc/dossier-1213-1537/', anchor:'adc-notizia-1537',
+      topic:/\b(?:zuccher\w*|cannamela|mirulla|faraone)\b/,
+      years:['1537'], requiresYear:true,
+      source:'Dossier ADC · Stracuzzi, Archivio Storico Messinese, vol. 96, p. 190, nota 51'
+    },
+    {
+      path:'/adc/chiese/studi/rationes/', anchor:'adc-0002',
+      topic:/\b(?:santa maria|cappellano tommaso|voce 897)\b/,
+      context:/\b(?:decime|rationes|tommaso|897)\b/,
+      years:['1308','1309','1310'],
+      source:'Dossier ADC · Sella, Rationes decimarum, Sicilia, p. 67, voce 897'
+    }
+  ];
+  function publishedPassageFor(query) {
+    const n=normalize(query);
+    const years=n.match(/\b[12][0-9]{3}\b/g) || [];
+    const matches=publishedPassages.filter(p=>p.topic.test(n)&&(!p.context||p.context.test(n))&&
+      (!p.requiresYear||years.length)&&years.every(year=>p.years.includes(year)));
+    return matches.length===1 ? matches[0] : null;
+  }
+  async function findPublishedPassage(query) {
+    const entry=publishedPassageFor(query);
+    if(!entry)return null;
+    try {
+      const response=await fetch(entry.path,{redirect:'error'});
+      if(!response.ok)return null;
+      const page=new DOMParser().parseFromString(await response.text(),'text/html');
+      const anchor=page.querySelector('main #'+entry.anchor);
+      const section=anchor?.closest('section');
+      const title=anchor?.matches('section')?anchor.querySelector('h2')?.textContent:anchor?.textContent;
+      const elements=section?.querySelectorAll('[data-elena-passaggio="'+entry.anchor+'"]');
+      if(!title || elements?.length!==2)return null;
+      const extract=element=>element.textContent.replace(/\s+/g,' ').trim();
+      const [text,limitation]=Array.from(elements,extract);
+      if(!text||!limitation)return null;
+      return {kind:'published-passage',title:title.trim(),text,limitation,
+        links:[{title:entry.source,url:entry.path+'#'+entry.anchor}]};
+    } catch (_) {return null;}
+  }
+
   let publicPages;
   async function findPublicPages(query, response) {
+    if (response.kind === 'empty' || response.kind === 'index') {
+      const passage=await findPublishedPassage(query);
+      if(passage)return passage;
+    }
     if (response.kind !== 'empty') return response;
     const terms = normalize(query).match(/[a-z0-9]+/g) || [];
     const words = [...new Set(terms.filter(w => w.length > 2 && !stop.has(w)
@@ -386,7 +432,7 @@
           r.links=[];
         }
         previousQuestion=effective;
-        if (r.kind==='empty') r=await findPublicPages(effective,r);
+        r=await findPublicPages(effective,r);
         if (revision!==conversationRevision) return;
         if (!turns) output.replaceChildren();
         output.append(make('p','elena-dialogue-question',q));
@@ -399,6 +445,8 @@
         }
         const evidence=make('p','elena-dialogue-evidence',r.kind==='documentary' || r.kind==='passage'
           ? (r.kind==='passage' ? 'Testo approvato dalla redazione ADC. La fonte e le pagine sono indicate sotto.' : 'Risposta verificata nel registro editoriale ADC. Controlla le fonti citate qui sotto.')
+          : r.kind==='published-passage'
+            ? 'Passaggio ripreso da una scheda pubblicata dell’Archivio.'
           : r.kind==='unavailable'
             ? 'Caricamento delle fonti non riuscito: nessuna conclusione storica può essere tratta.'
           : r.kind==='civic'
@@ -425,7 +473,7 @@
           ? 'Non è stato possibile consultare l’intero repertorio. La ricerca non è completa.'
           : 'Le risposte approvate non sono momentaneamente consultabili. I suggerimenti non esauriscono la documentazione.'));
         if(r.kind==='civic' && r.limitation) article.append(make('p','elena-dialogue-evidence','Avvertenza: '+r.limitation));
-        if((r.kind==='documentary'||r.kind==='passage'||r.kind==='research-status') && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
+        if((r.kind==='documentary'||r.kind==='passage'||r.kind==='published-passage'||r.kind==='research-status') && r.limitation) article.append(make('p','elena-dialogue-evidence','Limiti della verifica: '+r.limitation));
         if(r.links.length) {
           article.append(make('p','elena-dialogue-sources',(r.kind==='documentary'||r.kind==='passage')?'Fonti della risposta:':r.kind==='civic'?'Fonte ufficiale del Comune:':r.kind==='research-status'?'Consulta il dossier della questione:':'Apri i documenti e i percorsi:'));
           const list=make('ul','elena-dialogue-links');
@@ -484,5 +532,5 @@
     return audio;
   }
 
-  return {normalize,tokens,rank,reply,officialRecording,findPassages,serviceAnswer,knowledgeAnswer,researchStatus,contextualQuery,safeUrl,findPublicPages,mount};
+  return {normalize,tokens,rank,reply,officialRecording,findPassages,serviceAnswer,knowledgeAnswer,publishedPassageFor,researchStatus,contextualQuery,safeUrl,findPublicPages,mount};
 });

@@ -125,6 +125,47 @@ async function verifyChurchGuides(context) {
   }
 }
 
+async function verifyPublishedPassages(context) {
+  const page = await context.newPage({ viewport: { width: 390, height: 844 } });
+  try {
+    await page.goto(origin + '/adc/elena/');
+    const consent = page.locator('#mb-consent [data-choice="no"]');
+    if (await consent.isVisible()) await consent.click();
+    const field = page.locator('#elena-query');
+    const send = page.locator('#elena-form button[type="submit"]');
+    const responses = page.locator('.elena-dialogue-answer');
+    const cases = [
+      ['Trascrivi l’atto originale del 1537 sugli zuccheri', 'Francesco Mirulla', 'fogli 330–332', '/adc/dossier-1213-1537/#adc-notizia-1537'],
+      ['Santa Maria e il cappellano Tommaso nelle decime', 'Presbiter Thomasius', 'riscontro sull’immagine', '/adc/chiese/studi/rationes/#adc-0002']
+    ];
+    for (const [index, [query, excerpt, limit, href]] of cases.entries()) {
+      await field.fill(query);
+      await send.click();
+      const answer = responses.nth(index);
+      await answer.getByText(/Passaggio ripreso da una scheda pubblicata/).waitFor();
+      const text = await answer.innerText();
+      assert(text.includes(excerpt) && text.includes(limit), query);
+      assert.equal(await answer.locator('a').first().getAttribute('href'), href);
+      assert.equal(await answer.locator('audio').count(), 0);
+    }
+
+    await field.fill('Chi ottenne l’arbitrio degli zuccheri nel 1538?');
+    await send.click();
+    await responses.nth(2).waitFor();
+    assert.equal(await responses.nth(2).getByText(/Passaggio ripreso/).count(), 0);
+
+    await page.goto(origin + '/adc/dossier-1213-1537/');
+    await page.locator('.elena-presenza-toggle').click();
+    await page.locator('#elena-presenza-query').fill(cases[0][0]);
+    await page.locator('.elena-presenza-form button[type="submit"]').click();
+    const panelLink = page.locator('.elena-presenza-result a');
+    await panelLink.waitFor();
+    assert.equal(await panelLink.getAttribute('href'), cases[0][3]);
+  } finally {
+    await page.close();
+  }
+}
+
 async function verifyDesktopHome(context) {
   const page = await context.newPage();
   try {
@@ -234,6 +275,8 @@ async function run() {
     catch (error) { failures.push('Voce di Elena e audioguida: ' + error.message); }
     try { await verifyChurchGuides(basic); }
     catch (error) { failures.push('Audioguide delle chiese: ' + error.message); }
+    try { await verifyPublishedPassages(basic); }
+    catch (error) { failures.push('Passaggi pubblicati di Elena: ' + error.message); }
     try { await verifyDesktopHome(basic); }
     catch (error) { failures.push('Impaginazione home desktop: ' + error.message); }
     try { await verifyMobileColors(basic); }

@@ -20,4 +20,10 @@ assert(historical.links.some(l=>l.url==='/adc/dossier-1213-1537/'));
 assert(historical.limitation.includes('edizione a stampa'));
 
 assert(!first.text.includes('è attestato che'));
+assert.equal(e.publishedPassageFor('Zuccheri 1537').anchor, 'adc-notizia-1537');
+assert.equal(e.publishedPassageFor('Zuccheri 1537 o 1538'), null);
+assert.equal(e.publishedPassageFor('Cosa dice la voce 897?').anchor, 'adc-0002');
+assert.equal(e.publishedPassageFor('Chiesa di Santa Maria'), null);
+assert.equal(e.publishedPassageFor('Processo 334'), null);
+
 console.log('ELENA_DIALOGO_VERIFICATO: indice, risposta E-026 documentata, domanda successiva, astensione senza fonti.');
