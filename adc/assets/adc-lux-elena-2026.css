@@ -576,6 +576,14 @@ body.adc-inner-2026:has(.adc-lux-elena-hero) footer.adc-inner-footer nav[aria-la
   }
 }
 
+@layer adc-footer {
+  @media(min-width:761px){
+    body.adc-archive-home footer[data-adc-common-footer]{
+      margin-top:0!important;
+    }
+  }
+}
+
 @layer adc-sharing {
   @media(min-width:761px){
     body.adc-archive-home .adc-share .adc-share-actions > :is(a,button):not(.adc-share-primary){

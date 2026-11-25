@@ -138,11 +138,12 @@ async function verifyDesktopHome(context) {
       const stories = main.locator('.adc-lux-cards').first();
       const dedication = main.locator(':scope > #dedica-comunita');
       const resources = main.locator(':scope > #adc-risorse-complete');
-      const footer = page.locator('body > footer.adc-lux-footer');
+      const footer = page.locator('body > footer.adc-lux-footer[data-adc-common-footer]');
       const share = main.locator('[data-adc-share] [data-network="facebook"]');
 
       await dedication.getByText(/Antonino Bottino/).waitFor();
       await share.waitFor();
+      await footer.waitFor();
       const [mainBox, storyBox, dedicationBox, resourcesBox, footerBox, chatBox, introBox] =
         await Promise.all([main, stories, dedication, resources, footer, chat, intro].map(node => node.boundingBox()));
       assert(chatBox.x > introBox.x + introBox.width, width + ': Elena deve affiancare l’introduzione');
@@ -150,7 +151,8 @@ async function verifyDesktopHome(context) {
       assert(dedicationBox.width >= storyBox.width * 0.95, width + ': dedica troppo stretta');
       assert(Math.abs(resourcesBox.x - dedicationBox.x) <= 1 &&
         resourcesBox.width >= dedicationBox.width * 0.95, width + ': risorse disallineate');
-      assert(Math.abs(footerBox.y - mainBox.y - mainBox.height) <= 2, width + ': spazio prima del footer');
+      const footerGap = footerBox.y - mainBox.y - mainBox.height;
+      assert(Math.abs(footerGap) <= 2, width + ': spazio prima del footer (' + footerGap + ' px)');
       assert.equal(await page.locator('.elena-presenza-toggle').isVisible(), false);
       assert.equal(await share.evaluate(link => getComputedStyle(link).backgroundColor), 'rgb(22, 72, 66)');
     }
