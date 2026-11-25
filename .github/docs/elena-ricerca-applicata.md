@@ -10,3 +10,9 @@ Il primo intervento estende la consultazione a passaggi identificati nei dossier
 | [Cloudflare Workers AI, JSON Mode](https://developers.cloudflare.com/workers-ai/features/json-mode/) | Uno schema può rappresentare identificativi dei passaggi, riserve e astensione. Il controllo della struttura e quello della corrispondenza fra affermazione e fonte sono verifiche distinte. L'eventuale generazione va prima valutata come bozza redazionale. |
 
 Le prime prove riguardano il rinvio archivistico del 1537 e la voce 897 delle decime. Sono inclusi casi con anno incompatibile, assenza di riferimento alla fonte e conservazione del caso vocale del 1213. I test verificano questo insieme di casi e possono essere ripetuti nella suite ADC.
+
+## Repertorio dei passaggi
+
+`adc/assets/elena-passaggi-pubblicati.json` contiene percorso, ancora, riferimento, anni compatibili e gruppi di espressioni. Per inserire un passaggio, usare un'ancora già presente in un dossier pubblico e marcare due elementi nel suo contenuto, nell'ordine estratto e limite, con `data-elena-passaggio` uguale all'ancora. Aggiungere la voce e le prove di riconoscimento. La ricerca richiede almeno un'espressione per gruppo e una sola voce compatibile. Il testo è letto dal dossier ogni volta; un errore di caricamento lascia disponibili i normali percorsi di ricerca.
+
+Le 30 domande di regressione comprendono 20 riformulazioni per cinque passaggi e dieci richieste senza passaggio ammesso. Verificano le regole già definite e non valutano la generalizzazione semantica. Le prove in browser controllano ciascun estratto e il relativo limite, il collegamento puntuale, l'assenza dell'audio per gli estratti e la risposta audio canonica già pubblicata.
