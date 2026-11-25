@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "entries": [
+    {
+      "path": "/adc/dossier-1213-1537/",
+      "anchor": "adc-notizia-1537",
+      "groups": [["zucchero", "zuccheri", "cannamela", "canna da zucchero", "mirulla", "faraone"]],
+      "years": ["1537"],
+      "requiresYear": true,
+      "source": "Dossier ADC · Stracuzzi, Archivio Storico Messinese, vol. 96, p. 190, nota 51"
+    },
+    {
+      "path": "/adc/chiese/studi/rationes/",
+      "anchor": "adc-0002",
+      "groups": [["santa maria", "cappellano tommaso", "voce 897"], ["decime", "rationes", "tommaso", "897"]],
+      "years": ["1308", "1309", "1310"],
+      "source": "Dossier ADC · Sella, Rationes decimarum, Sicilia, p. 67, voce 897"
+    },
+    {
+      "path": "/adc/processo-334/",
+      "anchor": "aggiornamento-20261111",
+      "groups": [["processo 334", "processo n 334", "processo numero 334", "processo d investitura 334", "processo di investitura 334", "fascicolo 334"]],
+      "years": ["1484", "1485", "1486", "1487", "1488", "1489"],
+      "source": "Dossier ADC · Archivio di Stato di Palermo, Protonotaro del Regno, repertorio dei processi d’investitura, n. 334"
+    },
+    {
+      "path": "/adc/dossier-1213-1537/",
+      "anchor": "adc-notizia-1213",
+      "groups": [["castello", "castrum calatabianum", "privilegio regio"], ["privilegio", "conferma", "pergamena", "concessione", "originale", "hillen"]],
+      "years": ["1213"],
+      "requiresYear": true,
+      "source": "Dossier ADC · Hillen, Die Urkunden des Königs Heinrichs (VII.), n. 4, pp. 47–49"
+    },
+    {
+      "path": "/adc/acque-mulini-confini/",
+      "anchor": "adc-0012",
+      "groups": [["gullia"], ["mulino", "acqua", "pascoli", "1217", "de fimi"]],
+      "years": ["1217"],
+      "source": "Dossier ADC · Inventario, pergamena 24; Cusa, pp. 439–443"
+    }
+  ]
+}

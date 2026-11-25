@@ -95,11 +95,12 @@ async function run(query, resources={}){
   console.log('PASS: fixture DRAFT → non viene presentata come risposta approvata.');
 
   const publicIndex=JSON.parse(fs.readFileSync(path.join(root,'adc/cerca/indice-pagine.json'),'utf8'));
+  const passages=require(path.join(root,'adc/assets/elena-passaggi-pubblicati.json'));
   const realFetch=global.fetch;
   const publicRequests=[];
   global.fetch=async url=>{
     publicRequests.push(url);
-    return {ok:true,json:async()=>publicIndex};
+    return {ok:true,json:async()=>url==='/adc/assets/elena-passaggi-pubblicati.json'?passages:publicIndex};
   };
   try {
     const credit=await run('Gerd Eichmann');
@@ -107,7 +108,7 @@ async function run(query, resources={}){
     assert(credit.links.some(link=>link.url==='/adc/mediateca/'));
     const unknownCredit=await run('Gerd Eichmann xyzxyz');
     assert(!unknownCredit.text.includes('Pagine dell’Archivio da consultare'));
-    assert.deepEqual(publicRequests,['/adc/cerca/indice-pagine.json']);
+    assert.deepEqual(publicRequests,['/adc/assets/elena-passaggi-pubblicati.json','/adc/cerca/indice-pagine.json']);
   } finally {
     global.fetch=realFetch;
   }

@@ -5,6 +5,7 @@ on:
       - 'adc/assets/elena-dialogo.js'
       - 'adc/assets/elena-presenza.js'
       - 'adc/assets/elena-indice.json'
+      - 'adc/assets/elena-passaggi-pubblicati.json'
       - 'adc/assets/elena-risposte-approvate.json'
       - 'adc/assets/elena-risposte.json'
       - '.github/scripts/test-elena-presenza.js'

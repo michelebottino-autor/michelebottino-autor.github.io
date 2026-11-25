@@ -227,40 +227,45 @@
     if (matches.length) return {kind:'index',title:'Fonti e percorsi da consultare',text:'Non è disponibile una risposta sintetica verificata per questa domanda. Questi percorsi potrebbero essere pertinenti: consulta le fonti prima di trarre conclusioni.',links:matches.map(e=>({title:e.title,url:e.url,description:e.description}))};
     return {kind:'empty',title:'Nessuna fonte sufficiente individuata',text:'Non ho trovato un percorso sufficientemente pertinente nell’indice pubblico. Puoi consultare il repertorio generale oppure riprovare indicando una località, un anno o un argomento.',links:[{title:'Consulta le fonti e i documenti',url:'/adc/fonti/'},{title:'Leggi la storia di Calatabiano',url:'/adc/storia/'}]};
   }
-  // Il testo delle pagine serve a individuare percorsi, non a formulare risposte.
-  const publishedPassages = [
-    {
-      path:'/adc/dossier-1213-1537/', anchor:'adc-notizia-1537',
-      topic:/\b(?:zuccher\w*|cannamela|mirulla|faraone)\b/,
-      years:['1537'], requiresYear:true,
-      source:'Dossier ADC · Stracuzzi, Archivio Storico Messinese, vol. 96, p. 190, nota 51'
-    },
-    {
-      path:'/adc/chiese/studi/rationes/', anchor:'adc-0002',
-      topic:/\b(?:santa maria|cappellano tommaso|voce 897)\b/,
-      context:/\b(?:decime|rationes|tommaso|897)\b/,
-      years:['1308','1309','1310'],
-      source:'Dossier ADC · Sella, Rationes decimarum, Sicilia, p. 67, voce 897'
-    }
-  ];
-  function publishedPassageFor(query) {
-    const n=normalize(query);
-    const years=n.match(/\b[12][0-9]{3}\b/g) || [];
-    const matches=publishedPassages.filter(p=>p.topic.test(n)&&(!p.context||p.context.test(n))&&
-      (!p.requiresYear||years.length)&&years.every(year=>p.years.includes(year)));
+  // Il repertorio collega domande a brani pubblicati con le rispettive riserve.
+  const phrase = text=>normalize(text).replace(/[^a-z0-9]+/g,' ').trim();
+  function publishedPassageFor(query, catalog) {
+    if(catalog?.schema!==1 || !Array.isArray(catalog.entries))return null;
+    const n=phrase(query);
+    const years=new Set(n.match(/\b[12][0-9]{3}\b/g) || []);
+    const matches=catalog.entries.filter(p=>p&&
+      /^\/adc\/(?:[a-z0-9_-]+\/)+$/i.test(p.path || '')&&
+      /^[a-z0-9_-]+$/i.test(p.anchor || '')&&typeof p.source==='string'&&p.source.trim()&&
+      Array.isArray(p.years)&&(!p.requiresYear||years.size)&&[...years].every(y=>p.years.includes(y))&&
+      Array.isArray(p.groups)&&p.groups.length&&p.groups.every(group=>
+        Array.isArray(group)&&group.some(value=>typeof value==='string'&&phrase(value)&&
+          (' '+n+' ').includes(' '+phrase(value)+' '))));
     return matches.length===1 ? matches[0] : null;
   }
+  let passageCatalog;
+  async function loadPassageCatalog() {
+    if(!passageCatalog)passageCatalog=fetch('/adc/assets/elena-passaggi-pubblicati.json',{redirect:'error'})
+      .then(response=>{
+        if(!response.ok)throw Error('Repertorio dei passaggi non disponibile');
+        return response.json();
+      }).then(data=>{
+        if(data?.schema!==1||!Array.isArray(data.entries))throw Error('Repertorio dei passaggi non valido');
+        return data;
+      }).catch(error=>{passageCatalog=undefined;throw error;});
+    return passageCatalog;
+  }
+
   async function findPublishedPassage(query) {
-    const entry=publishedPassageFor(query);
-    if(!entry)return null;
     try {
+      const entry=publishedPassageFor(query,await loadPassageCatalog());
+      if(!entry)return null;
       const response=await fetch(entry.path,{redirect:'error'});
       if(!response.ok)return null;
       const page=new DOMParser().parseFromString(await response.text(),'text/html');
-      const anchor=page.querySelector('main #'+entry.anchor);
-      const section=anchor?.closest('section');
-      const title=anchor?.matches('section')?anchor.querySelector('h2')?.textContent:anchor?.textContent;
-      const elements=section?.querySelectorAll('[data-elena-passaggio="'+entry.anchor+'"]');
+      const main=page.querySelector('main');
+      const anchor=main?.querySelector('#'+entry.anchor);
+      const title=anchor?.matches('section,article')?anchor.querySelector('h2')?.textContent:anchor?.textContent;
+      const elements=main?.querySelectorAll('[data-elena-passaggio="'+entry.anchor+'"]');
       if(!title || elements?.length!==2)return null;
       const extract=element=>element.textContent.replace(/\s+/g,' ').trim();
       const [text,limitation]=Array.from(elements,extract);

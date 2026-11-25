@@ -136,7 +136,10 @@ async function verifyPublishedPassages(context) {
     const responses = page.locator('.elena-dialogue-answer');
     const cases = [
       ['Trascrivi l’atto originale del 1537 sugli zuccheri', 'Francesco Mirulla', 'fogli 330–332', '/adc/dossier-1213-1537/#adc-notizia-1537'],
-      ['Santa Maria e il cappellano Tommaso nelle decime', 'Presbiter Thomasius', 'riscontro sull’immagine', '/adc/chiese/studi/rationes/#adc-0002']
+      ['Santa Maria e il cappellano Tommaso nelle decime', 'Presbiter Thomasius', 'riscontro sull’immagine', '/adc/chiese/studi/rationes/#adc-0002'],
+      ['Che cosa è stato accertato sul Processo 334?', 'Tommaso Mirulla', 'Restano da identificare', '/adc/processo-334/#aggiornamento-20261111'],
+      ['Che cosa conferma il privilegio regio del 1213?', 'Costanza', 'originale manoscritto', '/adc/dossier-1213-1537/#adc-notizia-1213'],
+      ['Chi aveva diritto all’acqua del mulino di Gullia?', 'Costantino de Fimi', 'identificare il Panagia', '/adc/acque-mulini-confini/#adc-0012']
     ];
     for (const [index, [query, excerpt, limit, href]] of cases.entries()) {
       await field.fill(query);
@@ -151,8 +154,8 @@ async function verifyPublishedPassages(context) {
 
     await field.fill('Chi ottenne l’arbitrio degli zuccheri nel 1538?');
     await send.click();
-    await responses.nth(2).waitFor();
-    assert.equal(await responses.nth(2).getByText(/Passaggio ripreso/).count(), 0);
+    await responses.nth(cases.length).waitFor();
+    assert.equal(await responses.nth(cases.length).getByText(/Passaggio ripreso/).count(), 0);
 
     await page.goto(origin + '/adc/dossier-1213-1537/');
     await page.locator('.elena-presenza-toggle').click();
