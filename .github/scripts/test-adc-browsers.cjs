@@ -69,8 +69,10 @@ async function verifyRecordings(context) {
     const consent = page.locator('#mb-consent [data-choice="no"]');
     if (await consent.isVisible()) await consent.click();
     const guideLink = page.locator('main .adc-elena-listen a[href$="#elena-audioguida"]');
-    const homeSample = page.locator('main .adc-elena-listen audio');
-    assert.equal(await homeSample.getAttribute('src'), '/adc/audio/elena-ufficiale.mp3');
+    const homeIntro = page.locator('main .adc-elena-listen audio');
+    assert.equal(await homeIntro.getAttribute('src'), '/adc/audio/elena-presentazione-adc.mp3');
+    const introResponse = await page.request.head(new URL(await homeIntro.getAttribute('src'), origin).href);
+    assert(introResponse.ok() && /audio/i.test(introResponse.headers()['content-type']));
     await guideLink.click();
     assert.equal(new URL(page.url()).pathname, '/adc/' + guide);
 
