@@ -129,9 +129,13 @@ async function verifyMobileColors(context) {
   const page = await context.newPage();
   try {
     await page.setViewportSize({ width: 390, height: 844 });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.addInitScript(() => Object.defineProperty(navigator, 'standalone', { value: true }));
     await page.goto(origin + '/adc/');
-    await page.locator('#adc-visual-theme').waitFor({ state: 'attached' });
+    await page.waitForFunction(() => {
+      const link = document.querySelector('.adc-lux-intro-links a');
+      return link && getComputedStyle(link).color === 'rgb(255, 224, 161)';
+    }, null, { timeout: 5000 });
     const introLink = page.locator('.adc-lux-intro-links a').first();
     assert.equal(await introLink.evaluate(a => getComputedStyle(a).color), 'rgb(255, 224, 161)');
 
