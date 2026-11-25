@@ -360,7 +360,7 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
 @media(prefers-reduced-motion:reduce){.adc-first-grid a{transition:none}}
 </style>
 <link rel="stylesheet" href="/aegis/footer.css">
-<link rel="stylesheet" href="/adc/assets/adc-lux-elena-2026.css?v=20261124-ascolto">
+<link rel="stylesheet" href="/adc/assets/adc-lux-elena-2026.css?v=20261125-desktop">
 </head>
 <body class="adc-archive-home"><a class="skip-link" href="#contenuto">Vai al contenuto</a>
 <header class="container"><nav class="nav" id="site-nav"><div class="logo"><a href="../">Michele Bottino</a></div><button id="menu-toggle" type="button" aria-controls="menu" aria-expanded="false"  aria-label="Apri il menu di navigazione" class="menu-toggle"><span></span><span></span><span></span></button><ul class="nav-menu" id="menu"><li><a href="/">Home</a></li>
@@ -395,10 +395,14 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
       </div>
     </div>
     <div class="adc-lux-glass adc-lux-chat" aria-label="Elena, guida dell'Archivio">
-<img class="adc-lux-portrait adc-lux-home-portrait" src="/adc/assets/elena-ritratto-approvato.svg" width="155" height="247" alt="Ritratto illustrativo di Elena, come nella grafica del progetto" loading="lazy" decoding="async">
-      <p class="adc-lux-eyebrow">La guida dell'Archivio</p>
-      <h2>✦ ELENA</h2>
-      <p>Chiedimi di un luogo, di una persona o di un documento. Ti aiuterò a trovare le fonti consultabili e a distinguere ciò che sappiamo da ciò che resta da verificare.</p>
+    <div class="adc-lux-chat-intro">
+      <img class="adc-lux-portrait adc-lux-home-portrait" src="/adc/assets/elena-ritratto-approvato.svg" width="155" height="247" alt="Ritratto illustrativo di Elena, come nella grafica del progetto" loading="lazy" decoding="async">
+      <div>
+        <p class="adc-lux-eyebrow">La guida dell'Archivio</p>
+        <h2>✦ ELENA</h2>
+        <p>Chiedimi di un luogo, di una persona o di un documento. Ti aiuterò a trovare le fonti consultabili e a distinguere ciò che sappiamo da ciò che resta da verificare.</p>
+      </div>
+    </div>
       <form id="adc-lux-home-elena" action="/adc/elena/" method="get">
         <input id="adc-lux-home-question" type="search" maxlength="160" required aria-label="Fai una domanda a Elena" placeholder="Fai una domanda a Elena…">
         <button type="submit" aria-label="Vai a Elena">➤</button>
@@ -419,7 +423,7 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
     </div>
   </div>
 </section>
-<div class="adc-lux-lower-layout"><div class="adc-lux-lower-main"><section class="adc-lux-section" aria-labelledby="adc-lux-dossier">
+<section class="adc-lux-section" aria-labelledby="adc-lux-dossier">
   <div class="adc-lux-heading"><div><h2 id="adc-lux-dossier">Storie da scoprire</h2><p>Studi, testimonianze e percorsi per approfondire la storia del territorio.</p></div><a href="/adc/inventario/">Esplora i documenti</a></div>
   <div class="adc-lux-cards">
     <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/castello-sopralluogo/castello-calatabiano-panoramica-sommitale.webp')" href="/adc/dossier-1213-1537/"><span class="adc-lux-tag">STORIA</span><strong>Il castello di Calatabiano</strong><span>Documenti e vicende della fortezza.</span></a>
@@ -428,7 +432,6 @@ body.adc-archive-home main#contenuto .adc-landing-intro > p:not(.adc-landing-eye
     <a class="adc-lux-card" style="--adc-lux-photo:url('/adc/assets/foto-territorio/veduta-calatabiano-2026.webp')" href="/adc/mediateca/"><span class="adc-lux-tag">MEMORIA</span><strong>Feste e tradizioni</strong><span>Immagini e testimonianze della comunità.</span></a>
   </div>
 </section>
-</div>
 <script>
 (function(){
   function sendQuestion(q){try{sessionStorage.setItem('adc-elena-home-handoff',JSON.stringify({q:q.slice(0,160),at:Date.now()}));}catch(_){} window.location.assign('/adc/elena/');}

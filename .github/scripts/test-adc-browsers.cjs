@@ -125,6 +125,42 @@ async function verifyChurchGuides(context) {
   }
 }
 
+async function verifyDesktopHome(context) {
+  const page = await context.newPage();
+  try {
+    for (const width of [1024, 1366, 1440]) {
+      await page.setViewportSize({ width, height: 720 });
+      await page.goto(origin + '/adc/');
+      const main = page.locator('main#contenuto');
+      const hero = main.locator('.adc-lux-hero');
+      const chat = hero.locator('.adc-lux-chat');
+      const intro = hero.locator('#adc-lux-home-title');
+      const stories = main.locator('.adc-lux-cards').first();
+      const dedication = main.locator(':scope > #dedica-comunita');
+      const resources = main.locator(':scope > #adc-risorse-complete');
+      const footer = page.locator('body > footer.adc-lux-footer[data-adc-common-footer]');
+      const share = main.locator('[data-adc-share] [data-network="facebook"]');
+
+      await dedication.getByText(/Antonino Bottino/).waitFor();
+      await share.waitFor();
+      await footer.waitFor();
+      const [mainBox, storyBox, dedicationBox, resourcesBox, footerBox, chatBox, introBox] =
+        await Promise.all([main, stories, dedication, resources, footer, chat, intro].map(node => node.boundingBox()));
+      assert(chatBox.x > introBox.x + introBox.width, width + ': Elena deve affiancare l’introduzione');
+      assert(dedicationBox.y >= storyBox.y + storyBox.height, width + ': dedica sotto le schede');
+      assert(dedicationBox.width >= storyBox.width * 0.95, width + ': dedica troppo stretta');
+      assert(Math.abs(resourcesBox.x - dedicationBox.x) <= 1 &&
+        resourcesBox.width >= dedicationBox.width * 0.95, width + ': risorse disallineate');
+      const footerGap = footerBox.y - mainBox.y - mainBox.height;
+      assert(Math.abs(footerGap) <= 2, width + ': spazio prima del footer (' + footerGap + ' px)');
+      assert.equal(await page.locator('.elena-presenza-toggle').isVisible(), false);
+      assert.equal(await share.evaluate(link => getComputedStyle(link).backgroundColor), 'rgb(22, 72, 66)');
+    }
+  } finally {
+    await page.close();
+  }
+}
+
 async function verifyMobileColors(context) {
   const page = await context.newPage();
   try {
@@ -198,6 +234,8 @@ async function run() {
     catch (error) { failures.push('Voce di Elena e audioguida: ' + error.message); }
     try { await verifyChurchGuides(basic); }
     catch (error) { failures.push('Audioguide delle chiese: ' + error.message); }
+    try { await verifyDesktopHome(basic); }
+    catch (error) { failures.push('Impaginazione home desktop: ' + error.message); }
     try { await verifyMobileColors(basic); }
     catch (error) { failures.push('Contrasto e barra mobile: ' + error.message); }
     await basic.close();
