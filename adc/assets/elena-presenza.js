@@ -8,7 +8,7 @@
  document.body.append(root);
  const toggle=root.querySelector('.elena-presenza-toggle'),panel=root.querySelector('.elena-presenza-panel'),close=root.querySelector('.elena-presenza-close'),msg=root.querySelector('.elena-presenza-message'),form=root.querySelector('form'),input=root.querySelector('input'),result=root.querySelector('.elena-presenza-result'),send=form.querySelector('button');
  const voiceSampleButton=root.querySelector('.elena-voice-sample');
- const voiceSampleAudio=new Audio('/adc/audio/elena-ufficiale.mp3');
+ const voiceSampleAudio=new Audio('/adc/audio/elena-ufficiale.mp3?v=20261125-voce');
  voiceSampleAudio.preload='none';
  const voiceNote=root.querySelector('.elena-voice-note');
  const sampleLabel='Ascolta un campione della voce';
@@ -74,7 +74,7 @@
      }
      loadMain();
      function loadMain(){
-     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261125-repertorio';script.async=true;
+     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261125-voce';script.async=true;
      script.onload=()=>window.ElenaADCDialogo?resolve(window.ElenaADCDialogo):reject(Error('Motore documentario non disponibile'));
      script.onerror=()=>reject(Error('Impossibile caricare il motore documentario'));
      document.head.append(script);
