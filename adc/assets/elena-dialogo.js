@@ -532,7 +532,7 @@
     audio.className = 'elena-recorded-answer';
     audio.controls = true;
     audio.preload = 'none';
-    audio.src = '/adc/audio/elena-serena-risposta-E-026-A01-A03.mp3?v=20261125-voce';
+    audio.src = '/adc/audio/elena-serena-risposta-E-026-A01-A03.mp3?v=20261126';
     audio.setAttribute('aria-label', 'Ascolta la risposta con la voce ufficiale di Elena');
     return audio;
   }

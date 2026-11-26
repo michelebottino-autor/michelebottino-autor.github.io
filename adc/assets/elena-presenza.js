@@ -74,7 +74,7 @@
      }
      loadMain();
      function loadMain(){
-     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261125-voce';script.async=true;
+     const script=document.createElement('script');script.src='/adc/assets/elena-dialogo.js?v=20261126';script.async=true;
      script.onload=()=>window.ElenaADCDialogo?resolve(window.ElenaADCDialogo):reject(Error('Motore documentario non disponibile'));
      script.onerror=()=>reject(Error('Impossibile caricare il motore documentario'));
      document.head.append(script);

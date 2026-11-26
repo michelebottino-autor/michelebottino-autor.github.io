@@ -71,7 +71,7 @@ async function run(query, resources={}){
   console.log('PASS: dati reali → indice → link Processo 334, senza risposta inventata.');
 
   const official=await run(approved.answers[0].question);
-  assert(official.recording?.src.endsWith('/elena-serena-risposta-E-026-A01-A03.mp3?v=20261125-voce'));
+  assert(official.recording?.src.endsWith('/elena-serena-risposta-E-026-A01-A03.mp3?v=20261126'));
 
   const changed=structuredClone(approved);
   changed.answers[0].answer+=' Testo modificato.';
