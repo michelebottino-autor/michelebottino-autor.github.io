@@ -1,6 +1,8 @@
-Elena ADC — voce per la presentazione e la conversazione, approvata il 25 novembre 2026.
-Il campione riproduce la lettura scelta da Michele Bottino.
-Sintesi basata su it_IT-serena-medium di Marco Baccarani (Committa).
-Fonte: https://huggingface.co/committa/it_IT-serena-medium
-Licenza del modello: https://creativecommons.org/licenses/by/4.0/
-Le registrazioni ADC adattano ritmo, pause e brillantezza alla lettura. Le risposte audio sono associate al testo approvato corrispondente.
+Elena ADC — voce approvata da Michele Bottino il 26 novembre 2026.
+Il campione della pagina Elena e la presentazione dell’archivio usano la nuova interpretazione vocale. Il riferimento è la voce di Tramonto a Calatabiano.
+Motore di sintesi: Chatterbox Multilingual di Resemble AI.
+Fonte: https://github.com/resemble-ai/chatterbox
+
+Per le registrazioni precedenti realizzate con it_IT-serena-medium:
+Modello di Marco Baccarani (Committa), https://huggingface.co/committa/it_IT-serena-medium
+Licenza: https://creativecommons.org/licenses/by/4.0/

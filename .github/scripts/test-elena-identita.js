@@ -30,6 +30,6 @@ assert.equal(crypto.createHash('sha256').update(officialAudio).digest('hex'),
  'Il campione ufficiale deve coincidere con la registrazione approvata');
 const welcome='/adc/audio/elena-presentazione-adc.mp3';
 const home=fs.readFileSync(path.join(root,'adc/index.html'),'utf8');
-assert.match(home, /<audio[^>]+src="\/adc\/audio\/elena-presentazione-adc\.mp3\?v=20261125-tramonto"/);
+assert.match(home, /<audio[^>]+src="\/adc\/audio\/elena-presentazione-adc\.mp3\?v=20261126"/);
 assert.ok(fs.existsSync(path.join(root,welcome)),'Presentazione audio ADC mancante');
 console.log('ELENA_IDENTITA_OK: interfaccia pubblica Elena e campione ufficiale.');
