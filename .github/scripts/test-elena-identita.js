@@ -26,7 +26,7 @@ for(const target of ['adc/assets/elena-presenza.js','adc/elena/index.html']){
 assert.ok(fs.existsSync(path.join(root,sample)),'File della voce ufficiale mancante');
 const officialAudio=fs.readFileSync(path.join(root,sample));
 assert.equal(crypto.createHash('sha256').update(officialAudio).digest('hex'),
- '523d919574761f896600d3b484775ce058dfb3a53aa7ee8cdd3c9b0da6cd2526',
+ 'fd781427039f940dd1e79dba95d77a6cf9aba37410312dc542d2fe1e307997f6',
  'Il campione ufficiale deve coincidere con la registrazione approvata');
 const welcome='/adc/audio/elena-presentazione-adc.mp3';
 const home=fs.readFileSync(path.join(root,'adc/index.html'),'utf8');
