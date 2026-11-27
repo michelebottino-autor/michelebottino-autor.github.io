@@ -61,6 +61,18 @@
       ]
     },
     {
+      "name": "Area lettori",
+      "short_name": "Letture",
+      "url": "/lettori/",
+      "icons": [
+        {
+          "src": "/icons/mb-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
       "name": "Ricerca storico-documentaria",
       "short_name": "Ricerca",
       "url": "/ricerca/",
