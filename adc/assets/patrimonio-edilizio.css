@@ -57,7 +57,6 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;margi
   --adc-green:#123c31;--adc-gold:#c5a16a;--adc-paper:#f5f2eb;--adc-ink:#253d34;
   --paper:var(--adc-paper);--ink:var(--adc-ink);--bronze:#805b37;
 }
-body{background:var(--adc-paper);color:var(--adc-ink)}
 body>.adc-heritage-header{
   max-width:none;margin:0;padding:18px max(20px,calc((100vw - 1160px)/2));
   background:var(--adc-green);color:#fff;border-bottom:3px solid var(--adc-gold)
