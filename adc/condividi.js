@@ -21,16 +21,24 @@ function ready(){
   url.search="";
   url=url.href;
   var author="Michele Bottino";
-  var authorPage="https://www.facebook.com/michelebottinoautor";
+  var authorPage="https://www.facebook.com/share/1Cgu8E47hw/";
   var credit="Archivio Documentale Calatabiano · A cura di "+author;
-  var authorCredit=credit+"\nPagina Facebook dell’autore: "+authorPage;
+  var authorCredit=credit;
   var enc=encodeURIComponent, u=enc(url), t=enc(title);
+  var tags=["#ArchivioDocumentaleCalatabiano","#Calatabiano"];
+  var path=url;
+  if(/\/adc\/chiese(?:\/|$)/.test(path))tags.push("#PatrimonioEcclesiastico","#StoriaLocale");
+  else if(/\/adc\/(?:atlante|castello|patrimonio-edilizio)(?:\/|$)/.test(path))tags.push("#PatrimonioCulturale","#StoriaLocale");
+  else if(/\/adc\/mediateca(?:\/|$)/.test(path))tags.push("#MemoriaStorica");
+  else tags.push("#RicercaStorica","#MemoriaStorica");
+  var hashtags=tags.join(" ");
   var shareText=title+" — "+credit;
   var box=document.createElement("section");box.className="adc-share";box.setAttribute("data-adc-share","");
   box.setAttribute("aria-label","Condividi questa pagina");
   var heading=document.createElement("h2");heading.textContent="Condividi questa pagina";box.appendChild(heading);
   var note=document.createElement("p");note.textContent="Archivio Documentale Calatabiano · A cura di Michele Bottino.";box.appendChild(note);
-  var authorLink=document.createElement("p");var authorAnchor=document.createElement("a");authorAnchor.href=authorPage;authorAnchor.target="_blank";authorAnchor.rel="noopener noreferrer";authorAnchor.textContent="Pagina Facebook ufficiale: Michele Bottino Author";authorLink.appendChild(authorAnchor);box.appendChild(authorLink);
+  var authorLink=document.createElement("p");var authorAnchor=document.createElement("a");authorAnchor.href=authorPage;authorAnchor.target="_blank";authorAnchor.rel="noopener noreferrer";authorAnchor.textContent="Segui l’Archivio Documentale Calatabiano su Facebook";authorLink.appendChild(authorAnchor);box.appendChild(authorLink);
+  var tagNote=document.createElement("p");tagNote.textContent=hashtags;tagNote.className="adc-share-hashtags";box.appendChild(tagNote);
   var links=document.createElement("div");links.className="adc-share-actions";
   var icons={
     share:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.8 10.6 6.4-4.2m-6.4 7 6.4 4.1"/>',
@@ -48,15 +56,15 @@ function ready(){
   function anchor(label,href,key){var a=document.createElement("a");a.textContent=label;a.href=href;a.target="_blank";a.rel="noopener noreferrer";decorate(a,key);links.appendChild(a)}
   if(typeof navigator.share==="function"){
     var native=document.createElement("button");native.type="button";native.textContent="Condividi…";
-    native.addEventListener("click",function(){navigator.share({title:title,text:authorCredit,url:url}).catch(function(){})});native.className="adc-share-primary";decorate(native,"share");links.appendChild(native);
+    native.addEventListener("click",function(){navigator.share({title:title,text:authorCredit+"\n"+hashtags,url:url}).catch(function(){})});native.className="adc-share-primary";decorate(native,"share");links.appendChild(native);
   }
-  anchor("Facebook","https://www.facebook.com/sharer/sharer.php?u="+u,"facebook");
-  anchor("WhatsApp","https://api.whatsapp.com/send?text="+enc(shareText+"\n"+authorPage+"\n"+url),"whatsapp");
-  anchor("Telegram","https://t.me/share/url?url="+u+"&text="+enc(shareText+" — "+authorPage),"telegram");
+  anchor("Facebook","https://www.facebook.com/sharer/sharer.php?u="+u+"&hashtag="+enc(tags[0]),"facebook");
+  anchor("WhatsApp","https://api.whatsapp.com/send?text="+enc(shareText+"\n"+url+"\n\n"+hashtags),"whatsapp");
+  anchor("Telegram","https://t.me/share/url?url="+u+"&text="+enc(shareText+"\n"+hashtags),"telegram");
   anchor("LinkedIn","https://www.linkedin.com/sharing/share-offsite/?url="+u,"linkedin");
-  anchor("X","https://twitter.com/intent/tweet?url="+u+"&text="+enc(title+" — "+author+" "+authorPage),"x");
+  anchor("X","https://twitter.com/intent/tweet?url="+u+"&text="+enc(title+" — "+author)+"&hashtags="+enc(tags.map(function(t){return t.slice(1)}).join(",")),"x");
   anchor("Email / Gmail","mailto:?subject="+t+"&body="+enc(shareText+"\n"+url),"email");
-  var attribution=document.createElement("button");attribution.type="button";attribution.textContent="Copia testo con autore";attribution.addEventListener("click",function(){var message=shareText+"\n"+authorPage+"\n"+url;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(message).then(function(){setLabel(attribution,"Testo copiato");setTimeout(function(){setLabel(attribution,"Copia testo con autore")},2400)},function(){window.prompt("Copia il testo:",message)})}else window.prompt("Copia il testo:",message)});attribution.className="adc-share-copy";decorate(attribution,"quote");links.appendChild(attribution);
+  var attribution=document.createElement("button");attribution.type="button";attribution.textContent="Copia testo e hashtag";attribution.addEventListener("click",function(){var message=shareText+"\n"+url+"\n\n"+hashtags;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(message).then(function(){setLabel(attribution,"Testo copiato");setTimeout(function(){setLabel(attribution,"Copia testo e hashtag")},2400)},function(){window.prompt("Copia il testo:",message)})}else window.prompt("Copia il testo:",message)});attribution.className="adc-share-copy";decorate(attribution,"quote");links.appendChild(attribution);
   var copy=document.createElement("button");copy.type="button";copy.textContent="Copia link";
   copy.addEventListener("click",function(){
     function success(){setLabel(copy,"Link copiato");setTimeout(function(){setLabel(copy,"Copia link")},2400)}
