@@ -1,0 +1,16 @@
+body{background:#f8f6f1;color:#25302e}
+.mb-reader{max-width:76rem;margin:auto;padding:clamp(1.2rem,4vw,3rem)}
+.mb-reader nav,.mb-reader-links{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem}
+.mb-reader header{margin:2rem 0 2.5rem;padding:clamp(1rem,3vw,2.4rem);background:#fff;border:1px solid #d6cfc3;border-radius:16px}
+.mb-reader h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.12;margin:.25rem 0 .7rem}
+.mb-reader h2{font-size:clamp(1.5rem,3vw,2.2rem)}.mb-reader p{line-height:1.65}
+.mb-reader-kicker{font-size:.82rem;font-weight:650;letter-spacing:.07em;color:#72573d}
+.mb-reader-tools{display:flex;align-items:flex-end;flex-wrap:wrap;gap:.8rem;padding:1rem;background:#fff;border:1px solid #d6cfc3;border-radius:12px}
+.mb-reader-tools label{display:grid;gap:.3rem;flex:1;min-width:min(100%,14rem);font-size:.9rem;font-weight:600}
+.mb-reader input,.mb-reader select,.mb-reader button{min-height:44px;padding:.65rem .85rem;border:1px solid #9b9387;border-radius:8px;font:inherit;background:#fff;color:#25302e}
+.mb-reader button{cursor:pointer}.mb-reader button[aria-pressed=true]{background:#e5eee9;border-color:#416353}.mb-reader button:hover{background:#eee9df}
+.mb-reader-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:1rem;margin:1.4rem 0}
+.mb-reader-card{display:flex;flex-direction:column;gap:.7rem;min-width:0;background:#fff;border:1px solid #d6cfc3;border-radius:12px;padding:1.2rem}
+.mb-reader-card h3{margin:0;font:600 clamp(1.2rem,2vw,1.5rem)/1.25 Georgia,serif}.mb-reader-card p{margin:0}.mb-reader-card .mb-reader-category{color:#72573d;font-size:.82rem;font-weight:650}
+.mb-reader-actions{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:auto}.mb-reader-actions a{display:inline-flex;align-items:center;padding:.5rem .7rem;min-height:44px;border-radius:7px;background:#25302e;color:#fff!important;text-decoration:none}
+.mb-reader-note{font-size:.86rem;color:#59635f}.mb-reader footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #d6cfc3}.mb-reader [hidden]{display:none!important}.mb-reader :focus-visible{outline:3px solid #806447;outline-offset:3px}
