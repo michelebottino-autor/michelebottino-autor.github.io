@@ -29,7 +29,7 @@
     var mainNames = [
       ['Archivio','/adc/'], ['Storia','/adc/storia-per-tutti/'],
       ['Persone e famiglie','/adc/persone/'], ['Luoghi','/adc/atlante/'],
-      ['Chiese e arte','/adc/chiese/'], ['Foto e video','/adc/mediateca/'],
+      ['Chiese e arte','/adc/chiese/'], ['Foto e video','/adc/mediateca/'], ['Fumetti','/adc/fumetti/'],
       ['Cerca','/adc/cerca/'], ['Elena','/adc/elena/']
     ];
     var otherNames = [
