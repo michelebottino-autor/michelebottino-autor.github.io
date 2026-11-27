@@ -76,13 +76,20 @@ async function verifyRecordings(context) {
     await guideLink.click();
     assert.equal(new URL(page.url()).pathname, '/adc/' + guide);
 
-    const audio = page.locator('#elena-audio-player');
-    await page.getByText('Parte 1 di 29', { exact: true }).waitFor();
-    assert(await page.locator('#elena-prev').isDisabled());
-    await page.locator('#elena-next').click();
-    assert.match(await audio.getAttribute('src'), /elena-01\.mp3$/);
-    await audio.dispatchEvent('ended');
-    assert.match(await audio.getAttribute('src'), /elena-02\.mp3$/);
+    const section = page.locator('#elena-audioguida');
+    const audio = section.locator('audio[controls]');
+    await audio.waitFor({ state: 'visible' });
+    assert.equal(await audio.count(), 1, 'Una sola traccia continua');
+    const source = await audio.getAttribute('src');
+    assert.match(source, /ascolto-elena-r18-20261126\.mp3$/);
+    const recording = await page.request.head(new URL(source, page.url()).href);
+    assert(recording.ok() && /audio/i.test(recording.headers()['content-type']), source);
+    assert(Number(recording.headers()['content-length']) > 0, 'Traccia audio vuota');
+    const transcript = section.locator('details.adc-audio-transcript');
+    assert.equal(await transcript.count(), 1);
+    if (!(await transcript.evaluate(el => el.open))) await transcript.locator('summary').click();
+    assert(await transcript.locator('p').first().isVisible(), 'Trascrizione non consultabile');
+    assert((await transcript.innerText()).length > 1000, 'Trascrizione troppo breve');
 
     await page.goto(origin + '/adc/elena/');
     assert.equal(await page.locator('main .adc-elena-listen audio').getAttribute('src'), '/adc/audio/elena-voce-ufficiale-tramonto.mp3?v=20261126');
