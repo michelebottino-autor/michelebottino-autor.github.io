@@ -1,0 +1,44 @@
+name: Aggiornamento feed editoriale
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'articoli/**/index.html'
+      - 'articoli/feed.xml'
+      - '.github/scripts/generate_article_feed.py'
+      - '.github/workflows/update-article-feed.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mb-editorial-rss-main
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Rigenera e verifica RSS
+        run: |
+          python3 .github/scripts/generate_article_feed.py
+          python3 .github/scripts/generate_article_feed.py --check
+      - name: Salva soltanto il feed se modificato
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- articoli/feed.xml; then
+            echo "RSS invariato"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- articoli/feed.xml
+          git commit -m "Aggiorna feed RSS editoriale"
+          git push origin HEAD:main
