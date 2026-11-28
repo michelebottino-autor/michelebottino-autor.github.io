@@ -1,47 +1,23 @@
 <!DOCTYPE html>
 
-<html class="mb-global" lang="it">
-<head>
-<link rel="manifest" href="/manifest.webmanifest"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
-<meta name="apple-mobile-web-app-title" content="Michele Bottino"/>
-<link rel="apple-touch-icon" href="/images/logo.png"/>
+<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta name="robots" content="index,follow"><title>Michele Bottino | Scrittore, saggista e ricercatore indipendente</title><style>
+:root{--paper:#f3f1ec;--ink:#191a18;--red:#a12c23;--line:#c1bfb6;--muted:#55564e;--sans:Arial,Helvetica,sans-serif;--serif:Georgia,'Times New Roman',serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--sans)}a{color:inherit;text-underline-offset:4px}a:hover{color:var(--red)}a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:4px}h1,h2,h3,p,figure{margin:0}img{display:block;max-width:100%}button{font:inherit;cursor:pointer}.shell{max-width:1520px;margin:auto;padding-inline:clamp(16px,4vw,64px)}.micro{font-size:.68rem;letter-spacing:.13em;font-weight:700;text-transform:uppercase;line-height:1.5}.red{color:var(--red)}.top{border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:11px 0;gap:12px;flex-wrap:wrap}.top a{text-decoration:none;font-size:.75rem}.top .utility{display:flex;gap:18px;align-items:center}.masthead{padding:clamp(20px,4vw,50px) 0 15px;border-bottom:3px solid var(--ink)}h1{font:900 clamp(2.6rem,9.3vw,9.5rem)/.87 var(--sans);letter-spacing:-.088em;text-transform:uppercase;white-space:nowrap}.identity{display:flex;justify-content:space-between;gap:16px;margin-top:18px;align-items:baseline}.identity p{font-size:.83rem;font-weight:600;letter-spacing:.03em}.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--ink);padding:13px 0;font-weight:700;font-size:.85rem}.nav a{text-decoration:none}.nav a:last-child{color:var(--red)}.section-line{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:16px}.section-line h2{font-size:.77rem;letter-spacing:.13em;text-transform:uppercase}.section-line a{font-size:.76rem}.spread{display:grid;grid-template-columns: minmax(0,1.7fr) minmax(0,1fr) minmax(0,.82fr);gap:0;margin-top:32px}.spread>section,.spread>aside{min-width:0;padding:0 clamp(16px,2.4vw,34px);border-left:1px solid var(--line)}.spread>section:first-child{border-left:0;padding-left:0}.spread>aside:last-child{padding-right:0}.lead-img{display:block;background:#d4d1c9;aspect-ratio:16/8.4;overflow:hidden}.lead-img img{width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:saturate(.6)}.lead-head{font:500 clamp(2.1rem,3.55vw,4.2rem)/1.02 var(--serif);letter-spacing:-.045em;margin:12px 0}.lead-head a{text-decoration:none}.summary{color:var(--muted);max-width:64ch;font-size:.94rem}.article-link{display:inline-flex;align-items:center;gap:20px;text-decoration:none;font-weight:700;font-size:.82rem;margin-top:16px;border-bottom:2px solid var(--red);padding-bottom:5px}.brief{position:relative;display:grid;gap:8px;text-decoration:none;border-bottom:1px solid var(--line);padding:18px 22px 18px 0}.brief:first-of-type{padding-top:5px}.brief strong{font:400 clamp(1.3rem,2.1vw,1.85rem)/1.12 var(--serif);letter-spacing:-.025em}.arrow{position:absolute;right:0;top:20px;color:var(--red)}.portrait{background:#d4d1c9;aspect-ratio:5/4;overflow:hidden}.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 27%;filter:grayscale(100%)}.author-title{font:400 clamp(1.6rem,2.5vw,2.4rem)/1.04 var(--serif);margin:15px 0 10px;letter-spacing:-.03em}.bio{font-size:.87rem;color:var(--muted)}.orcid{display:block;font-size:.74rem;margin:16px 0 0;overflow-wrap:anywhere}.orcid b{color:#477219}.band{margin-top:42px;border-top:3px solid var(--ink);padding:16px 0 36px}.band-head{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-bottom:24px}.band-head h2{font:400 clamp(2.5rem,5vw,4.8rem)/1 var(--serif);letter-spacing:-.05em}.band-head a{font-size:.8rem;font-weight:700}.shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,3vw,42px)}.book{display:flex;flex-direction:column;text-decoration:none;gap:12px;font:400 clamp(1.05rem,2vw,1.5rem)/1.2 var(--serif)}.book figure{height:clamp(135px,23vw,300px);display:flex;align-items:center;justify-content:center;background:#e5e2db;border-bottom:1px solid var(--line);padding:10px}.book img{height:100%;width:100%;object-fit:contain}.edition{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;border-top:1px solid var(--line);margin-top:24px;padding-top:12px;font-size:.83rem}.black{background:var(--ink);color:var(--paper);padding:36px 0}.black a:hover{color:#ffb1a7}.black .micro{color:#f3a198}.index{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px}.index h2{font:400 clamp(2.5rem,5vw,4.6rem)/.97 var(--serif);letter-spacing:-.055em;margin:14px 0}.index p{color:#d1d1c9;max-width:42ch;font-size:.9rem}.directory a{display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:12px;border-top:1px solid #6c6d65;text-decoration:none;padding:17px 0}.directory a:last-child{border-bottom:1px solid #6c6d65}.directory strong{font-size:clamp(1.05rem,2vw,1.5rem)}.directory small{color:#d1d1c9;display:block;font-size:.76rem;margin-top:3px}.projects{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding:35px 0}.project{border-top:3px solid var(--ink);padding:16px 0}.project h2{font:400 clamp(1.8rem,3.5vw,3rem)/1.1 var(--serif);letter-spacing:-.035em;margin:14px 0}.project p{color:var(--muted);font-size:.9rem}.project .links{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:20px;font-size:.8rem;font-weight:700}.readerbar{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding:24px 0;margin-bottom:36px}.readerbar h2{font:400 2rem/1.1 var(--serif);margin:6px 0}.readerbar p{font-size:.88rem;color:var(--muted)}.reader-actions{display:flex;gap:9px;flex-wrap:wrap}.button{display:inline-flex;min-height:44px;align-items:center;padding:10px 16px;background:var(--red);color:white;text-decoration:none;font-weight:700;font-size:.8rem}.button.alt{border:1px solid var(--ink);background:transparent;color:var(--ink)}.button:hover{background:var(--ink);color:white}.site-footer{background:var(--ink);color:var(--paper);padding:32px 0;font-size:.84rem}.site-footer .wrap{max-width:1520px;margin:auto;padding-inline:clamp(16px,4vw,64px)}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:24px}.footer-grid h3{font-size:1.1rem;margin-bottom:12px}.footer-grid a{display:block;margin:7px 0;color:#dddcd5;text-decoration:none}.footer-bottom{border-top:1px solid #686961;margin-top:28px;padding-top:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.skip{position:absolute;left:8px;top:-100px;background:white;padding:10px}.skip:focus{top:8px}.notice{font-size:.7rem;color:var(--muted)}.share{display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:.8rem;padding:0 0 28px}.share button{background:transparent;border:1px solid var(--line);padding:6px 10px}.share-status{font-size:.8rem;color:var(--muted)}
+@media(max-width:980px){.spread{grid-template-columns:1.5fr 1fr}.spread>section:nth-child(2){padding-right:0}.spread>aside:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);padding:20px 0 0;margin-top:24px;display:grid;grid-template-columns:160px 1fr;gap:18px}.spread>aside .section-line{grid-column:1/-1;margin-bottom:0}.portrait{aspect-ratio:1/1}.index{grid-template-columns:1fr 1.25fr}}@media(max-width:600px){h1{font-size:clamp(2rem,9.1vw,4rem);letter-spacing:-.065em}.identity{display:block}.identity .micro{margin-top:5px}.nav{justify-content:flex-start;gap:8px 18px;font-size:.8rem}.spread{display:block;margin-top:22px}.spread>section,.spread>aside{border-left:0;padding:0!important}.spread>section+section,.spread>aside:last-child{margin-top:28px;border-top:1px solid var(--line);padding-top:18px!important}.spread>aside:last-child{display:grid;grid-template-columns:105px 1fr;gap:12px}.author-title{margin-top:0}.shelf{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.book figure{height:clamp(150px,50vw,250px)}.index,.projects{grid-template-columns:1fr;gap:20px}.footer-grid{grid-template-columns:1fr 1fr}.band-head{align-items:flex-start;flex-direction:column;gap:8px}.top .utility{gap:10px}.lead-head{font-size:clamp(2rem,9vw,3rem)}}
 
-<meta charset="utf-8"/>
-
-<meta content="SHE16qd4qwiNzoct42zFbUdlPiSc3U6vLx2myFcnAEI" name="google-site-verification"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Michele Bottino | Scrittore, saggista e ricercatore indipendente – Sito ufficiale</title>
-<meta content="Michele Bottino, scrittore, saggista e ricercatore storico-documentario indipendente. Opere, biografia, pubblicazioni e Archivio Documentale Calatabiano." name="description"/>
-<meta content="Michele Bottino" name="author"/>
-<meta content="index, follow" name="robots"/>
-<meta content="#0A1A3A" name="theme-color"/>
-
-<meta content="default-src 'self';
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com;
-    font-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    media-src 'self' https://resource2.heygen.ai;
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests; frame-src https://www.facebook.com https://web.facebook.com;" http-equiv="Content-Security-Policy"/>
-<meta content="website" property="og:type"/>
-<meta content="it_IT" property="og:locale"/>
-<meta content="Michele Bottino" property="og:site_name"/>
-<meta content="Michele Bottino | Scrittore, saggista e ricercatore indipendente – Sito ufficiale" property="og:title"/>
-<meta content="Michele Bottino, scrittore, saggista e ricercatore storico-documentario indipendente. Opere, biografia, pubblicazioni e Archivio Documentale Calatabiano." property="og:description"/>
-<meta content="https://michelebottino-autor.github.io/" property="og:url"/>
-<meta content="https://michelebottino-autor.github.io/images/logo.png" property="og:image"/>
-<meta content="Logo di Michele Bottino" property="og:image:alt"/>
-<meta content="summary" name="twitter:card"/>
-<meta content="Michele Bottino | Scrittore, saggista e ricercatore indipendente – Sito ufficiale" name="twitter:title"/>
-<meta content="Michele Bottino, scrittore, saggista e ricercatore storico-documentario indipendente. Opere, biografia, pubblicazioni e Archivio Documentale Calatabiano." name="twitter:description"/>
-<meta content="https://michelebottino-autor.github.io/images/logo.png" name="twitter:image"/>
+.language-selector{display:inline-flex;gap:0;align-items:center;border:1px solid var(--ink)}.language-selector a{min-width:40px;min-height:44px;background:transparent;color:var(--ink);border:0;padding:5px 8px;font-size:.73rem;font-weight:700;letter-spacing:.04em}.language-selector a[aria-current=page]{background:var(--ink);color:var(--paper)}.language-selector a:hover{color:var(--red)}.language-selector a[aria-current=page]:hover{color:white}.translation-note{font-size:.76rem;line-height:1.5;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--line)}.top .utility{flex-wrap:wrap}.language-selector a:focus-visible{outline-offset:1px}.translation-note[hidden]{display:none}html[lang=de] .directory strong{overflow-wrap:anywhere}html[lang=de] .nav{gap:12px}
+.text-fragment{display:contents}
+.language-selector a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none!important;min-width:40px;min-height:44px}.language-selector a[aria-current=page]{background:var(--ink);color:var(--paper)}.lang-origin{font-size:.64rem;letter-spacing:.02em;display:inline-block;margin-left:.35em;color:inherit;opacity:.8}.translation-note{max-width:none} @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.institution-links{display:flex;flex-wrap:wrap;gap:12px 20px;border-top:1px solid var(--line);padding:16px 0;font-size:.85rem}.institution-links a{min-height:44px;display:inline-flex;align-items:center;color:inherit}</style><meta content="Romanzi, saggi, articoli e ricerca storico-documentaria di Michele Bottino. Catalogo delle opere, pubblicazioni e Archivio Documentale Calatabiano." name="description"/><meta content="Michele Bottino" name="author"/><meta content="website" property="og:type"/><meta content="Michele Bottino | Scrittore, saggista e ricercatore indipendente" property="og:title"/><meta content="Romanzi, saggi, articoli e ricerca storico-documentaria di Michele Bottino. Catalogo delle opere, pubblicazioni e Archivio Documentale Calatabiano." property="og:description"/><meta content="it_IT" property="og:locale"/><link rel="canonical" href="https://michelebottino-autor.github.io/">
+<link rel="alternate" hreflang="it" href="https://michelebottino-autor.github.io/">
+<link rel="alternate" hreflang="en" href="https://michelebottino-autor.github.io/en/">
+<link rel="alternate" hreflang="de" href="https://michelebottino-autor.github.io/de/">
+<link rel="alternate" hreflang="es" href="https://michelebottino-autor.github.io/es/">
+<link rel="alternate" hreflang="x-default" href="https://michelebottino-autor.github.io/">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icons/mb-192.png">
+<meta property="og:url" content="https://michelebottino-autor.github.io/">
+<meta property="og:image" content="/images/logo.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,318 +47,24 @@
   }
 }
 </script>
-<style>
-:root{--navy:#0a1a3a;--deep:#07162b;--sapphire:#243a5a;--gold:#c49b5a;--ink:#172b46;--muted:#56657a;--paper:#f8f9fa;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-*,*:before,*:after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font:16px/1.65 var(--sans);overflow-x:hidden}img{max-width:100%;height:auto}a{color:inherit;text-underline-offset:.2em}button{font:inherit}a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:4px}h1,h2,h3{font-family:var(--serif);line-height:1.15;letter-spacing:-.018em}h1{font-size:clamp(2.15rem,4.2vw,4.6rem)}h2{font-size:clamp(1.7rem,2.7vw,2.75rem)}h3{font-size:1.42rem}p{margin:0 0 1em}section{scroll-margin-top:90px}.wrap{max-width:1280px;margin:0 auto;padding-left:clamp(18px,3vw,40px);padding-right:clamp(18px,3vw,40px)}.skip{position:absolute;top:-120px;left:1rem;z-index:1000;background:white;color:var(--navy);padding:12px}.skip:focus{top:10px}
-.site-header{position:relative;z-index:20;background:var(--deep);color:#fff;border-bottom:2px solid var(--gold)}.header-inner{max-width:1280px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px clamp(18px,3vw,40px);min-height:78px}.brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:max-content}.monogram{font:2.25rem/.95 var(--serif);color:var(--gold);border-right:1px solid #a7a3a3;padding-right:13px}.brand-name{display:block;font:1.38rem/1.12 var(--serif)}.brand small{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:.56rem;color:#d6c2a0;margin-top:4px}.desktop-nav{margin-left:auto;display:flex;align-items:center;gap:clamp(9px,1.3vw,20px)}.desktop-nav a{font-size:.83rem;white-space:nowrap;text-decoration:none;padding:10px 0}.desktop-nav a:hover,.desktop-nav a[aria-current=page]{color:#edc57f}.header-cta{margin-left:12px;white-space:nowrap}.pill{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:46px;padding:10px 23px;border-radius:7px;text-decoration:none;font-weight:650;font-size:.91rem}.pill.gold{background:var(--gold);color:#101d31}.pill.outline{border:1px solid var(--gold);color:white}.pill:hover{filter:brightness(1.09)}.mobile-nav{display:none}.mobile-nav summary{cursor:pointer;list-style:none;min-width:48px;min-height:48px;border:1px solid var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}.mobile-nav summary::-webkit-details-marker{display:none}.mobile-nav[open] summary{background:#263d59}.mobile-menu{background:#102544;padding:12px 18px 20px;border-top:1px solid #425168}.mobile-menu a{display:block;text-decoration:none;border-bottom:1px solid #ffffff24;padding:12px 8px;min-height:48px}.mobile-menu a:hover{color:#f0c987}
-.hero{background:linear-gradient(100deg,#07162b 5%,#0a1a3a 68%,#172e4c);color:white}.hero-grid{display:grid;grid-template-columns:.95fr 1.17fr .87fr;min-height:440px;max-width:1600px;margin:auto}.hero-photo{position:relative;overflow:hidden;min-height:390px}.hero-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 22%;filter:saturate(.83)}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 65%,#091b33 100%)}.hero-copy{padding:clamp(28px,4vw,55px) 22px 36px;align-self:center}.eyebrow{font-size:.77rem;letter-spacing:.23em;text-transform:uppercase;color:var(--gold);font-weight:700}.hero h1{margin:12px 0 16px}.hero h1 em{color:var(--gold);font-style:normal}.hero .lead{font-size:1rem;line-height:1.7;max-width:55ch;color:#e3e9f1}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:23px}.hero-land{position:relative;overflow:hidden;min-height:250px}.hero-land img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(.68) saturate(.8)}.hero-land:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0a1a3a 0%,transparent 65%)}.hero-land figcaption{position:absolute;z-index:1;top:24px;right:20px;max-width:210px;font:italic 1.08rem/1.5 var(--serif);text-shadow:0 1px 6px black}
-.intro-strip{background:#f4f4f2;border-bottom:1px solid #dddfe4}.two-paths{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:18px;padding-bottom:18px}.path{display:flex;align-items:center;gap:16px}.path b{color:#956d31;font:1.55rem var(--serif)}.path strong{display:block;color:var(--navy);font-family:var(--serif)}.path small{color:var(--muted)}
-.section-head{padding-top:48px;padding-bottom:16px}.section-head h2{margin:0 0 7px}.section-head p{color:var(--muted)}.gold-line{display:block;width:45px;height:3px;background:var(--gold);margin-bottom:14px}.features{background:var(--paper);padding-bottom:50px}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.feature{overflow:hidden;background:#fff;border:1px solid #e2e5e8;border-radius:12px;box-shadow:0 9px 22px #0a1a3a0b;display:flex;flex-direction:column}.feature figure{margin:0;aspect-ratio:16/8.5;overflow:hidden;background:#203552}.feature figure img{width:100%;height:100%;object-fit:cover}.feature-content{padding:21px 23px 24px;flex:1;display:flex;flex-direction:column}.feature h3{margin:0 0 10px}.feature p{font-size:.92rem;color:var(--muted);line-height:1.6}.feature a{margin-top:auto;color:#78531c;font-weight:700;text-decoration:none}.feature a:hover{text-decoration:underline}
-.audience{display:grid;grid-template-columns:1fr 1fr;background:var(--navy);color:white}.audience article{padding:45px max(25px,calc((100vw - 1200px)/4));background:linear-gradient(105deg,#0c2746,#0a1a3a);border-right:1px solid #c49b5a77}.audience article+article{background:linear-gradient(105deg,#122f51,#07162b)}.audience h2{margin:10px 0;font-size:clamp(1.7rem,2.8vw,2.7rem)}.audience p{color:#d8e2ef}.audience .pill{margin-top:8px}
-.books{padding-bottom:54px}.book-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.book{padding:18px;background:#fff;border:1px solid #e4e4e4;border-radius:10px}.book img{display:block;margin:0 auto 12px;max-height:245px;max-width:100%;width:auto;object-fit:contain;box-shadow:4px 8px 15px #0002}.book strong{font-family:var(--serif);display:block}.book a{font-size:.89rem;color:#8b631f;font-weight:700}.adc-band{background:#091d36;color:white;padding:50px 0}.adc-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:35px;align-items:center}.adc-grid h2{margin:12px 0}.adc-grid p{color:#d7e2ef}.adc-preview{border:1px solid #657995;background:#142f4e;padding:18px;border-radius:12px}.adc-preview-head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #ffffff2b;padding-bottom:12px}.adc-search{border:1px solid #92a3b6;border-radius:6px;padding:9px 12px;background:#0a1a3a;color:#dae4f0;font-size:.87rem}.adc-files{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:14px}.adc-file{display:block;background:#10243d;color:#fff;text-decoration:none;border-radius:8px;overflow:hidden}.adc-file img{width:100%;height:112px;object-fit:cover}.adc-file span{display:block;font-size:.78rem;padding:8px}.adc-files a:hover{outline:2px solid var(--gold)}
-.footer{background:#061429;color:#d1dcea;padding:35px 0}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}.footer strong{color:#fff;font:1.4rem var(--serif)}.footer a{display:inline-block;margin:5px 13px 5px 0;font-size:.85rem}.footer small{display:block;margin-top:15px;color:#abb8c9}
-@media(max-width:1120px){.desktop-nav{gap:9px}.desktop-nav a{font-size:.74rem}.header-cta{display:none}.hero-grid{grid-template-columns:.75fr 1fr}.hero-land{display:none}}
-@media(max-width:850px){.desktop-nav,.header-cta{display:none}.mobile-nav{display:block;margin-left:auto}.header-inner{min-height:70px}.hero-grid{grid-template-columns:.8fr 1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.book-list{grid-template-columns:repeat(2,1fr)}.adc-grid{grid-template-columns:1fr}}
-@media(max-width:600px){body{font-size:15.5px}.brand-name{font-size:1.25rem}.monogram{font-size:1.85rem}.brand small{font-size:.5rem}.hero-grid{display:flex;flex-direction:column}.hero-photo{min-height:260px;max-height:310px}.hero-photo:after{background:linear-gradient(0deg,#091b33,transparent 35%)}.hero-copy{padding:23px 20px 35px}.hero h1{font-size:clamp(2rem,8vw,2.8rem)}.two-paths,.audience,.footer-grid{grid-template-columns:1fr}.two-paths{gap:13px}.feature-grid{grid-template-columns:1fr;gap:15px}.book-list{gap:13px}.book{padding:12px}.book img{max-height:185px}.adc-files{grid-template-columns:repeat(2,minmax(0,1fr))}.adc-preview-head{display:block}.adc-search{margin-top:10px}.section-head{padding-top:35px}.footer-grid{gap:18px}}
-/* FIX MENU SMARTPHONE: il pannello non deve aumentare l'altezza dell'header */
-@media(max-width:850px){
- .site-header{position:relative;overflow:visible}
- .header-inner{position:relative;min-height:74px;height:auto;align-items:center;flex-wrap:nowrap}
- .brand{min-width:0;max-width:calc(100% - 116px);flex:1 1 auto}
- .brand-name{white-space:normal}
- .mobile-nav{display:block;position:relative;flex:0 0 auto;margin-left:auto;align-self:center;min-width:0}
- .mobile-nav summary{display:flex;gap:6px;white-space:nowrap;padding:8px 12px;min-width:92px}
- .mobile-nav .mobile-menu{position:absolute;display:block;top:calc(100% + 12px);right:0;left:auto;width:min(340px,calc(100vw - 32px));max-width:calc(100vw - 32px);max-height:calc(100dvh - 110px);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;z-index:1100;box-shadow:0 16px 36px #0006;border:1px solid #b99458;border-radius:0 0 10px 10px}
- .mobile-nav:not([open]) .mobile-menu{display:none}
- .mobile-menu a{white-space:normal;overflow-wrap:break-word;min-height:48px;padding:11px 13px;font-size:1rem}
-}
-
-/* Presentazione fotografica premium: ogni settore usa una vera risorsa distinta. */
-.features{background:linear-gradient(180deg,#f7f8fa,#fff);padding-bottom:64px}
-.feature-grid{gap:17px}
-.feature{border-radius:9px;border:1px solid #d5dce5;box-shadow:0 12px 28px #0a1a3a15;transition:transform .2s,box-shadow .2s}
-.feature:hover{transform:translateY(-3px);box-shadow:0 18px 32px #0a1a3a20}
-.feature figure{aspect-ratio:16/9;background:#0a1a3a;position:relative}
-.feature figure:after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,#07162b55);pointer-events:none}
-.feature figure img{object-fit:cover;object-position:center}
-.feature-content{padding:21px 23px 23px;border-top:3px solid var(--gold)}
-.feature h3{font-size:clamp(1.28rem,1.7vw,1.65rem);color:var(--navy)}
-.feature-content>a{display:inline-flex;align-items:center;min-height:44px}
-@media(max-width:600px){
- .features{padding-bottom:42px}
- .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
- .feature{min-width:0}
- .feature figure{aspect-ratio:4/3}
- .feature-content{padding:13px 12px 15px}
- .feature h3{font-size:clamp(1.02rem,4vw,1.25rem);line-height:1.22}
- .feature p{font-size:.85rem;line-height:1.48}
- .feature a{font-size:.84rem;line-height:1.3}
-}
-@media(max-width:380px){.feature-grid{grid-template-columns:1fr}.feature figure{aspect-ratio:16/8}}
-
-/* Landing release: proporzioni, navigazione e leggibilità */
-@media(min-width:851px) and (max-width:1280px){.hero-grid{grid-template-columns:.72fr 1.28fr}.hero-land{display:none}}
-@media(max-width:850px){.hero-grid{grid-template-columns:.85fr 1.15fr}.hero-land{display:none}}
-@media(max-width:600px){.hero-grid{grid-template-columns:1fr}.hero-photo{max-height:255px}.hero-photo img{object-position:center 14%}.hero-copy{padding:22px 20px 35px}.hero-actions .pill{width:100%;max-width:340px}.features .section-head p{font-size:.94rem}.book-list{grid-template-columns:repeat(2,minmax(0,1fr))}.adc-preview{padding:12px}.adc-files{gap:8px}.adc-file img{height:94px}}
-@media(max-width:420px){.hero h1{font-size:clamp(1.88rem,8.3vw,2.4rem)}.feature h3{overflow-wrap:normal;hyphens:none}.hero-copy p{hyphens:none}.feature figure{aspect-ratio:5/4}}
-
-/* Centralità editoriale: opere e autore precedono l'archivio. */
-.author-path{padding-bottom:60px}.author-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.author-links a{display:flex;flex-direction:column;gap:9px;text-decoration:none;min-height:130px;padding:22px 18px;background:#f8f9fa;border:1px solid #e0e6ed;border-top:3px solid var(--gold);border-radius:9px}.author-links a strong{font:1.25rem/1.23 var(--serif);color:var(--navy)}.author-links a span{font-size:.89rem;color:#725628}.author-links a:hover{box-shadow:0 9px 24px #0a1a3a18}.research-intro{padding-top:50px;padding-bottom:10px}.research-intro h2{margin:9px 0 13px}.research-intro p{max-width:77ch;color:var(--muted)}.research-intro .eyebrow{color:#87632f}.books{padding-top:8px}.books .section-head{padding-top:34px}
-@media(max-width:850px){.author-links{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.author-links{gap:10px}.author-links a{min-height:120px;padding:15px 12px}.author-links a strong{font-size:1.12rem}.research-intro{padding-top:36px}.author-path{padding-bottom:32px}}
-
-/* Rifinitura: sezioni editoriali non duplicate e griglia ADC dedicata. */
-.features .feature-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.features .feature figure{aspect-ratio:4/3}
-.features .feature h3{font-size:clamp(1.12rem,1.55vw,1.4rem);line-height:1.22}
-.book{display:flex;flex-direction:column;gap:7px}
-.book a{margin-top:auto;display:inline-flex;align-items:center;min-height:44px}
-.book img{aspect-ratio:3/4;max-height:240px;object-fit:contain}
-@media(max-width:980px){.features .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.features .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.features .feature h3{font-size:1.07rem}.books .book-list{gap:12px}.book strong{line-height:1.25}}
-@media(max-width:380px){.features .feature-grid{grid-template-columns:1fr}}
-
-/* ADC homepage: corregge clipping dei titoli su viewport stretti */
-.adc-grid,.adc-grid>*{min-width:0}
-.adc-preview{min-width:0;max-width:100%;overflow:hidden}
-.adc-preview-head{display:block;min-width:0}
-.adc-preview-heading{min-width:0;display:grid;gap:5px;overflow-wrap:break-word}
-.adc-preview-heading strong{display:block;font-size:clamp(1.02rem,2.2vw,1.35rem);line-height:1.3;white-space:normal;overflow-wrap:break-word}
-.adc-preview-heading span{display:block;color:#c0ccda;font-size:.86rem;line-height:1.45}
-.adc-files{min-width:0}
-.adc-file{min-width:0}
-.adc-file span{white-space:normal;overflow-wrap:break-word}
-@media(max-width:600px){.adc-grid{gap:22px}.adc-preview{padding:13px}.adc-files{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.adc-preview-heading strong{font-size:1.08rem}.adc-file span{font-size:.79rem;line-height:1.42}}
-@media(max-width:360px){.adc-files{grid-template-columns:1fr}.adc-file img{height:150px}}
-
-/* ADC: terza scheda panoramica in mobile; evita l'ultimo elemento isolato. */
-@media(min-width:361px) and (max-width:600px){
- .adc-files>.adc-file:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);min-height:112px;align-items:stretch}
- .adc-files>.adc-file:last-child:nth-child(odd) img{width:100%;height:100%;min-height:112px;object-fit:cover}
- .adc-files>.adc-file:last-child:nth-child(odd) span{display:flex;align-items:center;padding:12px;font-size:.93rem;line-height:1.4}
-}
-.adc-file:focus-visible{outline:3px solid #f1c77f;outline-offset:3px}
-
-/* Condivisione landing: griglia compatta, icone inline e zero librerie esterne */
-.home-sharing{background:#f8f9fa;border-top:1px solid #e3e6ed;color:#0a1a3a}
-.home-sharing-inner{display:grid;grid-template-columns:minmax(210px,.85fr) minmax(0,1.4fr);align-items:center;column-gap:35px;row-gap:8px;padding-top:37px;padding-bottom:32px}
-.home-sharing-intro h2{font-size:clamp(1.45rem,2vw,2rem);margin:0 0 8px}
-.home-sharing-intro p{color:#56657a;font-size:.94rem;line-height:1.5;margin:0}
-.home-sharing-intro .gold-line{margin-bottom:10px}
-.home-share-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.home-share-button{display:flex;gap:9px;align-items:center;justify-content:center;min-height:48px;min-width:0;padding:10px 12px;border:1px solid #d5dce5;border-radius:9px;background:#fff;color:#152d4a;font:600 .91rem/1.2 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-decoration:none;cursor:pointer;transition:background-color .16s,border-color .16s,transform .16s;box-shadow:0 2px 8px #0a1a3a0a}
-.home-share-button svg{width:19px;height:19px;flex:none}
-.home-share-button:hover{background:#fff9ee;border-color:#c49b5a;transform:translateY(-1px)}
-.home-share-button:focus-visible{outline:3px solid #b7843f;outline-offset:3px}
-.home-copy-button{background:#0a1a3a;color:#fff;border-color:#0a1a3a}
-.home-copy-button:hover{background:#243a5a;color:#fff}
-.home-share-status{grid-column:2;font-size:.84rem;min-height:1.3em;margin:0;color:#37604b}
-@media(max-width:780px){.home-sharing-inner{grid-template-columns:1fr;gap:20px}.home-share-status{grid-column:1}}
-@media(max-width:440px){.home-share-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.home-share-button{flex-direction:column;gap:5px;padding:8px 4px;font-size:.74rem;min-height:65px}.home-share-button svg{width:22px;height:22px}}
-
-/* Footer unificato della landing, pensato per mobile e lettori assistivi */
-.footer{background:#061429;color:#dce4ef;padding:0;border-top:2px solid #c49b5a}
-.footer-refined{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,44px);padding-top:42px;padding-bottom:36px}
-.footer-about{min-width:0}.footer-logo{display:flex;gap:14px;align-items:center;max-width:max-content;margin:0 0 18px!important;color:#fff!important;text-decoration:none;font:1.35rem/1.16 Georgia,serif!important}
-.footer-logo small{display:block;color:#b7c7dc;font:600 .65rem/1.6 system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin:4px 0 0}
-.footer-monogram{font:2.25rem/1 Georgia,serif;color:#c49b5a;border-right:1px solid #c49b5a;padding-right:14px}
-.footer-about p{font-size:.92rem;line-height:1.65;color:#bbc9d8;max-width:35ch;margin:0}
-.footer-column h2{font:600 1rem/1.4 system-ui,sans-serif;letter-spacing:.02em;color:#edc888;margin:0 0 14px}
-.footer-column ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
-.footer-column li{margin:0;padding:0;min-width:0}
-.footer-column a{display:inline-flex;align-items:center;min-height:42px;margin:0!important;padding:5px 0;text-decoration:none;font-size:.93rem;line-height:1.35;color:#e1e9f4}
-.footer-column a:hover,.footer-bottom a:hover{color:#f0c987;text-decoration:underline}
-.footer a:focus-visible{outline:3px solid #e9bf77;outline-offset:4px}
-.footer-bottom{border-top:1px solid #ffffff2b;padding-top:18px;padding-bottom:21px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.79rem;color:#aebdd0}
-.footer-bottom a{color:#d8bf98;text-decoration:none;white-space:nowrap;font-weight:600}
-@media(max-width:1000px){.footer-refined{grid-template-columns:repeat(3,minmax(0,1fr))}.footer-about{grid-column:1/-1}.footer-about p{max-width:65ch}}
-@media(max-width:600px){.footer-refined{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px;row-gap:27px;padding-top:30px;padding-bottom:22px}.footer-about{grid-column:1/-1}.footer-logo{font-size:1.26rem!important}.footer-monogram{font-size:2rem}.footer-about p{font-size:.9rem}.footer-column h2{font-size:.94rem}.footer-column a{font-size:.87rem;overflow-wrap:anywhere}.footer-column:last-child{grid-column:1/-1}.footer-column:last-child ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.footer-bottom{padding-top:15px;padding-bottom:22px;align-items:flex-start;font-size:.76rem}.footer-bottom span{max-width:26ch}}
-
-/* Footer smartphone: corregge conflitto CSS storico .footer a su brand.
-   Il collegamento PWA è incluso nella lista Informazioni, non aggiunto fuori griglia. */
-.footer .footer-logo{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-start!important;gap:17px!important;margin:0 0 20px!important;max-width:100%;width:max-content;min-width:0}
-.footer .footer-logo>.footer-monogram{display:block;flex:0 0 auto;font:2rem/1 Georgia,serif;color:#c49b5a;border-right:1px solid #c49b5a;padding-right:15px;margin-right:0}
-.footer .footer-logo>span:last-child{display:flex;min-width:0;flex-direction:column;align-items:flex-start;font:1.34rem/1.18 Georgia,serif;white-space:normal;overflow-wrap:break-word}
-.footer .footer-logo small{font:600 .6rem/1.6 system-ui,sans-serif;letter-spacing:.075em;white-space:normal}
-.footer .footer-column a{display:inline-flex!important;margin:0!important}
-.footer .pwa-install-link{max-width:1280px;margin:0 auto;padding:0 20px 22px;font-size:.85rem}
-@media(max-width:600px){.footer .footer-logo{gap:14px!important}.footer .footer-logo>.footer-monogram{font-size:1.9rem;padding-right:13px}.footer .footer-logo>span:last-child{font-size:1.27rem}.footer .footer-logo small{font-size:.55rem}.footer-bottom{padding-bottom:34px}}
-@media(prefers-reduced-motion:reduce){.home-share-button{transition:none}}
-
-/* Landing: modulo formazione editoriale, distinto dall'ADC */
-.home-training{background:linear-gradient(120deg,#0a1a3a,#162e4e);color:#fff;padding:52px 0 56px}
-.home-training-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}
-.home-training-head>div{min-width:0;max-width:740px}
-.home-training .eyebrow{color:#e6bb74}
-.home-training h2{color:#fff;margin:9px 0 12px;font-size:clamp(1.8rem,3.2vw,2.8rem)}
-.home-training-head p{color:#d9e2ed;font-size:1rem;line-height:1.7;margin:0}
-.home-training-head>.pill{flex:0 0 auto}
-.home-training-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.home-training-card{min-width:0;background:#ffffff0c;border:1px solid #ffffff30;border-top:3px solid #c49b5a;border-radius:10px;padding:24px;display:flex;flex-direction:column}
-.home-training-index{font:600 .8rem/1 system-ui,sans-serif;letter-spacing:.16em;color:#dfb578}
-.home-training-card h3{font-size:1.35rem;line-height:1.25;color:#fff;margin:13px 0 10px}
-.home-training-card p{font-size:.93rem;color:#cbd7e6;line-height:1.6}
-.home-training-card a{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;color:#ebc27f;font-weight:700;text-decoration:none}
-.home-training-card a:hover{text-decoration:underline}
-.home-training a:focus-visible{outline:3px solid #f2c779;outline-offset:4px}
-@media(max-width:850px){.home-training-head{align-items:start;flex-direction:column}.home-training-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.home-training{padding:35px 0 39px}.home-training-grid{grid-template-columns:1fr;gap:11px}.home-training-card{padding:19px}.home-training-card h3{font-size:1.23rem}.home-training-head>.pill{width:100%;max-width:340px}.home-training-head{margin-bottom:20px}}
-
-/* Identità accademica: ORCID come riferimento, non certificazione */
-.author-identifier{margin-top:19px;margin-bottom:4px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
-.author-identifier-label{font:600 .7rem/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.11em;color:#cad6e5}
-.author-identifier a{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:44px;border:1px solid #e0c28b80;border-radius:8px;background:#ffffff10;color:#fff;text-decoration:none;padding:8px 11px;font-size:.86rem;max-width:100%;overflow-wrap:anywhere}
-.author-identifier a:hover{border-color:#c49b5a;background:#ffffff1d}
-.author-identifier a:focus-visible{outline:3px solid #efc67d;outline-offset:4px}
-.author-orcid-symbol{display:inline-flex;align-items:center;justify-content:center;flex:none;width:26px;height:26px;border-radius:50%;background:#a6ce39;color:#172118;font:700 14px/1 system-ui,sans-serif}
-.author-orcid-number{font-variant-numeric:tabular-nums;white-space:nowrap;color:#f4dbaa}
-@media(max-width:370px){.author-identifier a{font-size:.77rem;padding:8px}.author-orcid-number{white-space:normal}}
-
-/* Identificativi e pubblicazioni: modulo di ricerca secondario alla narrativa */
-.research-identity{margin-top:23px;padding:23px;background:#fff;border:1px solid #dce3eb;border-top:3px solid #c49b5a;border-radius:12px;box-shadow:0 8px 26px #0a1a3a0a}
-.research-identity-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:20px;align-items:start}
-.research-identity h3{font-size:1.45rem;margin:0 0 7px;color:#0a1a3a}
-.research-identity-head p{color:#5b697e;font-size:.86rem;line-height:1.55;margin:0}
-.research-identity-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
-.research-identity-links a{display:inline-flex;gap:5px;flex-wrap:wrap;align-items:center;min-height:46px;padding:9px 13px;background:#f4f7fa;border:1px solid #d7e0e9;border-radius:7px;text-decoration:none;color:#173250;font-weight:700;font-size:.87rem;overflow-wrap:anywhere}
-.research-identity-links a:hover{border-color:#c49b5a;background:#fff8ec}
-.research-identity-links a span{font-weight:500;font-variant-numeric:tabular-nums}
-.research-work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
-.research-work-grid article{display:flex;flex-direction:column;gap:8px;min-width:0;padding:17px;border-radius:8px;border:1px solid #e4e8ee;background:#f8f9fa}
-.research-work-type{color:#84622f;font:700 .73rem/1.4 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em}
-.research-work-grid h4{font:600 1.03rem/1.36 Georgia,serif;color:#0a1a3a;margin:0;overflow-wrap:break-word}
-.research-work-grid a{display:inline-flex;align-items:center;min-height:42px;margin-top:auto;color:#805b26;font-size:.84rem;line-height:1.4;font-weight:700;text-decoration:none;overflow-wrap:anywhere}
-.research-work-grid a:hover{text-decoration:underline}
-.research-identity a:focus-visible{outline:3px solid #c49b5a;outline-offset:3px}
-@media(max-width:850px){.research-identity-head{grid-template-columns:1fr}.research-identity-links{justify-content:flex-start}.research-work-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.research-identity{padding:17px 14px}.research-identity-links a{width:100%;justify-content:flex-start}.research-work-grid{gap:9px;margin-top:14px}.research-work-grid article{padding:15px}.research-identity h3{font-size:1.3rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-/* Novità editoriali: edizione inglese di Stige, 3 novembre 2026 */
-.stige-news{padding:44px 0 48px;background:#f5f7f9;border-bottom:1px solid #e0e5eb}
-.stige-news .stige-kicker{margin:0 0 10px;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:#84642b;font-weight:800}
-.stige-news h2{margin:0 0 19px;color:#0a1a3a;font-size:clamp(1.7rem,3vw,2.45rem)}
-.stige-news-card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(180px,.7fr);align-items:center;gap:30px;background:linear-gradient(115deg,#071b25,#0e3437 75%,#173c3d);border:1px solid #526b64;border-radius:12px;color:#fff;overflow:hidden;box-shadow:0 15px 36px #06162523}
-.stige-news-copy{padding:36px clamp(22px,4vw,55px);min-width:0}
-.stige-news-copy .stige-date{color:#e6c781;font-size:.82rem;letter-spacing:.07em;margin-bottom:16px}
-.stige-news-copy h3{font:normal clamp(2.8rem,6vw,5.5rem)/1.06 Georgia,serif;letter-spacing:.025em;color:#f5d88d;margin:0 0 8px}
-.stige-news-copy .stige-english-title{font:normal clamp(1.08rem,2.15vw,1.52rem)/1.3 Georgia,serif;color:#f1d591;margin-bottom:18px}
-.stige-news-copy p{max-width:53ch;color:#e3e8e5;line-height:1.7}
-.stige-news-copy .stige-news-action{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:9px;padding:10px 20px;color:#0b2228;background:#f0ce83;font-weight:750;border-radius:7px;text-decoration:none}
-.stige-news-copy .stige-news-action:hover{background:#ffe2a0}
-.stige-news-cover{padding:22px 28px 22px 0;text-align:center}
-.stige-news-cover img{display:block;width:min(100%,250px);height:auto;margin:auto;aspect-ratio:2/3;object-fit:contain;box-shadow:0 14px 28px #0008;border:1px solid #d2b66f55}
-@media(max-width:650px){.stige-news{padding:30px 0}.stige-news-card{grid-template-columns:1fr;gap:0}.stige-news-copy{padding:26px 22px 12px}.stige-news-cover{padding:10px 26px 28px}.stige-news-cover img{width:min(65%,210px)}.stige-news-copy h3{font-size:3.15rem}}
-
-a[href$="/installa/"]{display:inline-flex;align-items:center;min-height:30px;padding:5px 6px}
-a[href$="#inizio"]{display:inline-flex;align-items:center;min-height:30px;padding:5px 7px}
-
-/* Richiamo alla consulenza documentaria nella sezione ricerca */
-.home-document-review{padding:24px 0 42px;background:#fff}
-.home-document-review-inner{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(250px,.75fr);gap:clamp(24px,4vw,60px);align-items:center;padding:clamp(26px,4.5vw,50px);border:1px solid #dce2e8;border-left:4px solid #c49b5a;border-radius:12px;background:linear-gradient(115deg,#f9fafb,#f2f5f8)}
-.home-document-review-kicker{font-size:.76rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:#80623e;margin:0 0 12px}
-.home-document-review h2{font:400 clamp(1.6rem,3vw,2.55rem)/1.2 Georgia,"Times New Roman",serif;color:#0a1a3a;letter-spacing:-.02em;margin:0 0 16px}
-.home-document-review-copy>p:not(.home-document-review-kicker){max-width:65ch;color:#38495f;line-height:1.7}
-.home-document-review-link{display:inline-flex;align-items:center;min-height:46px;gap:9px;margin-top:12px;padding:10px 17px;border-radius:7px;color:#fff;background:#0a1a3a;text-decoration:none;font-weight:700}
-.home-document-review-link:hover,.home-document-review-link:focus-visible{background:#243a5a;color:#fff}
-.home-document-review-side{display:grid;gap:0;border-left:1px solid #d4dce5;padding-left:clamp(18px,2.8vw,32px)}
-.home-document-review-side p{margin:0;padding:13px 0;border-bottom:1px solid #d9e0e8}
-.home-document-review-side p:last-child{border-bottom:0}
-.home-document-review-side strong{display:block;color:#172b46;font-size:.97rem}
-.home-document-review-side span{display:block;font-size:.85rem;color:#56657a}
-@media(max-width:740px){.home-document-review-inner{grid-template-columns:1fr;gap:17px;padding:25px 22px}.home-document-review-side{border-left:0;border-top:1px solid #d4dce5;padding:6px 0 0}.home-document-review-side p{padding:10px 0}}
-.review-promo-video{margin:0 0 14px}.review-promo-video video{display:block;width:100%;max-height:360px;aspect-ratio:9/16;object-fit:contain;background:#091a32;border-radius:12px}.review-promo-video figcaption{padding:9px 0;color:#526276;font-size:.85rem}.home-document-review-side{min-width:0}
-</style><link rel="stylesheet" href="/assets/css/mb-navigation-final.css"><link rel="stylesheet" href="/assets/css/mb-rifinitura-comune.css">
-<link rel="stylesheet" href="/assets/css/mb-autore-finitura.css">
-<link rel="stylesheet" href="/assets/css/mb-layout-unificato.css">
-<link rel="stylesheet" href="/assets/css/mb-global-responsive-2026.css">
-<link rel="stylesheet" href="/aegis/footer.css">
-<style id="homepage-identita-autore-2026">
-/* Home editoriale centrata sulle opere e sulla voce dell’autore. */
-.hero-grid{grid-template-columns:minmax(270px,.8fr) minmax(0,1.25fr);max-width:1240px;min-height:445px}
-.hero-photo{min-height:445px}
-.hero-photo:after{background:linear-gradient(90deg,transparent 75%,#091b33 100%)}
-.hero-copy{padding:clamp(28px,5vw,72px);max-width:750px}
-.hero .lead{font-size:clamp(1.03rem,1.4vw,1.18rem);line-height:1.8;max-width:57ch}
-.hero h1{font-size:clamp(2.4rem,4.7vw,4.8rem);max-width:14ch}
-.books{padding-top:10px}
-.books .section-head{padding-top:55px}
-.book{display:flex;flex-direction:column;gap:7px;min-width:0}
-.book strong{font-size:1.12rem;line-height:1.35}
-.book a{margin-top:auto;min-height:42px;display:flex;align-items:center}
-.author-archive{background:#0b2340;color:#fff;padding:34px 0}
-.author-archive-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:35px;align-items:center}
-.author-archive h2{margin:8px 0 12px;font-size:clamp(1.65rem,2.5vw,2.5rem)}
-.author-archive p{max-width:72ch;color:#d9e4f0;margin:0}
-.author-archive .pill{white-space:nowrap}
-.home-training{margin-top:16px}
-@media(max-width:850px){.hero-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.author-archive-inner{grid-template-columns:1fr;gap:18px}}
-@media(max-width:600px){.hero-grid{display:flex;flex-direction:column}.hero-photo{min-height:290px;max-height:340px}.hero-photo img{object-position:center 15%}.hero-photo:after{background:linear-gradient(0deg,#091b33 0%,transparent 35%)}.hero-copy{padding:28px 22px 38px}.hero h1{font-size:clamp(2.15rem,8.4vw,3.15rem)}.hero .lead{font-size:1rem}.books .section-head{padding-top:35px}.author-archive{padding:30px 0}.author-archive .pill{width:100%;max-width:320px}}
-</style>
-<link rel="alternate" type="application/rss+xml" title="Michele Bottino — Articoli" href="/articoli/feed.xml"><link rel="canonical" href="https://michelebottino-autor.github.io/">
-<link rel="alternate" hreflang="it" href="https://michelebottino-autor.github.io/">
-<link rel="alternate" hreflang="en" href="https://michelebottino-autor.github.io/en/">
-<link rel="alternate" hreflang="de" href="https://michelebottino-autor.github.io/de/">
-<link rel="alternate" hreflang="es" href="https://michelebottino-autor.github.io/es/">
-<link rel="alternate" hreflang="x-default" href="https://michelebottino-autor.github.io/">
-</head>
-<body class="mb-author-refine mb-unified-shell"><a class="mb-skip-unified" href="#contenuto">Vai al contenuto</a>
-
-<header class="mb-nav" id="inizio"><div class="mb-inner"><a class="mb-brand" href="/"><span class="mb-mark" aria-hidden="true">MB</span><span><span class="mb-name">Michele Bottino</span><span class="mb-tag">Scrittore · Saggista · Autore</span></span></a><nav class="mb-desktop" aria-label="Navigazione principale"><a href="/" aria-current="page">Home</a><a href="/biografia/">Autore</a><a href="/opere/">Opere</a><a href="/testi-musicali/">Discografia</a><a href="/articoli/">Scritti</a><a href="/poetica/">Poetica</a><a href="/adc/">Archivio ADC</a><a href="/contatti/">Contatti</a><a href="/en/" lang="en" hreflang="en" aria-label="EN · English — Read the international edition">EN · English</a></nav><details class="mb-mobile"><summary>☰ Menu</summary><nav class="mb-dropdown" aria-label="Navigazione smartphone"><a href="/" aria-current="page">Home</a><a href="/biografia/">Autore</a><a href="/opere/">Opere</a><a href="/testi-musicali/">Discografia</a><a href="/articoli/">Scritti</a><a href="/poetica/">Poetica</a><a href="/adc/">Archivio ADC</a><a href="/contatti/">Contatti</a><a href="/en/" lang="en" hreflang="en" aria-label="EN · English — Read the international edition">EN · English</a></nav></details></div></header><nav data-editorial-languages="true" aria-label="Lingue" style="padding:.5rem 1rem;text-align:center"><a lang="it" hreflang="it" href="/" aria-current="page">Italiano</a> · <a lang="en" hreflang="en" href="/en/">English</a> · <a lang="de" hreflang="de" href="/de/">Deutsch</a> · <a lang="es" hreflang="es" href="/es/">Español</a></nav>
-<main id="contenuto">
-<section class="hero" aria-labelledby="hero-title"><div class="hero-grid">
- <div class="hero-photo"><img src="/images/michele-bottino-foto-ufficiale.webp" alt="Ritratto ufficiale di Michele Bottino" width="650" height="800" fetchpriority="high"></div>
- <div class="hero-copy"><span class="eyebrow">Michele Bottino</span><h1 id="hero-title">Scrivere storie. <em>Indagare l’uomo.</em></h1><p class="lead">Michele Bottino (1972) è uno scrittore, saggista e ricercatore storico-documentario indipendente italiano. La sua produzione letteraria affronta la dimensione umana, le dinamiche di potere e il rapporto tra esperienza individuale e contesto storico. Conduce inoltre ricerche archivistiche, sviluppa metodologie di analisi documentaria e cura l’Archivio Documentale Calatabiano.</p><div class="hero-actions"><a class="pill gold" href="/opere/">Scopri i libri <span aria-hidden="true">→</span></a><a class="pill outline" href="/biografia/">Conosci l’autore <span aria-hidden="true">→</span></a></div><div class="author-identifier"><a href="https://orcid.org/0009-0009-2797-9267" rel="me noopener noreferrer"><span class="author-orcid-symbol" aria-hidden="true">iD</span><span>ORCID <span class="author-orcid-number">0009-0009-2797-9267</span></span></a></div></div>
- 
-</div></section>
-<section class="books wrap" aria-labelledby="books-title"><div class="section-head"><span class="gold-line"></span><h2 id="books-title">I libri di Michele Bottino</h2><p>Storie e riflessioni, dalla narrativa alla saggistica. Scopri le opere e le relative schede bibliografiche.</p></div><div class="book-list">
-<article class="book"><img src="/images/opere/oniro_copertina.jpg" alt="Copertina di Oniro" loading="lazy"><strong>Oniro</strong><a href="/opere/">Scheda nel catalogo →</a></article>
-<article class="book"><img src="/images/opere/stige_copertina.jpg" alt="Copertina Stige" loading="lazy"><strong>Stige</strong><a href="/opere/">Scheda nel catalogo →</a></article>
-<article class="book"><img src="/images/opere/ildepositodelleanime_copertina.jpg" alt="Copertina Il deposito delle anime" loading="lazy"><strong>Il deposito delle anime</strong><a href="/opere/">Scheda nel catalogo →</a></article>
-<article class="book"><img src="/images/opere/europa_copertina.jpg" alt="Copertina EUROPA: Anatomia di un crimine" loading="lazy"><strong>EUROPA: Anatomia di un crimine</strong><a href="/opere/">Scheda nel catalogo →</a></article>
-</div></section>
-<section class="stige-news" aria-labelledby="stige-news-heading">
- <div class="wrap">
-  <p class="stige-kicker">Novità editoriali</p>
-  <h2 id="stige-news-heading">In evidenza</h2>
-  <article class="stige-news-card" aria-label="Pubblicazione in inglese di Stige">
-   <div class="stige-news-copy">
-    <p class="stige-date"><time datetime="2026-11-03">3 novembre 2026</time> · Nuova edizione</p>
-    <h3>STIGE</h3>
-    <p class="stige-english-title" lang="en">A Letter Without a Recipient</p>
-    <p>È disponibile su Amazon anche l’edizione in lingua inglese di <cite>Stige</cite>, di Michele Bottino. Il libro si apre così ai lettori internazionali.</p>
-    <a class="stige-news-action" href="https://www.amazon.it/s?k=Stige+A+Letter+Without+a+Recipient+Michele+Bottino" target="_blank" rel="noopener noreferrer" aria-label="Cerca l’edizione inglese su Amazon">Cerca l’edizione inglese su Amazon</a>
-   </div>
-   <figure class="stige-news-cover">
-    <img src="/images/stige-english-cover-thumb.webp" width="160" height="240" loading="lazy" decoding="async" alt="Copertina originale di Stige, A Letter Without a Recipient, edizione inglese, Michele Bottino">
-   </figure>
-  </article>
- </div>
-</section>
-<section class="author-path wrap" aria-labelledby="author-path-title"><div class="section-head"><span class="gold-line"></span><h2 id="author-path-title">L’autore e la sua scrittura</h2><p>Un percorso tra narrativa, saggistica e riflessione sul mestiere di scrivere.</p></div><div class="author-links"><a href="/biografia/"><strong>Chi è Michele Bottino</strong><span>Biografia e percorso autoriale →</span></a><a href="/poetica/"><strong>La poetica</strong><span>Temi, linguaggio e struttura narrativa →</span></a><a href="/articoli/"><strong>Articoli e scritti</strong><span>Approfondimenti e contributi →</span></a><a href="/formazione/"><strong>Formazione</strong><span>Percorsi e materiali di scrittura →</span></a></div></section><section class="home-training" aria-labelledby="formazione-home-title"><div class="wrap"><div class="home-training-head"><div><span class="eyebrow">Officina delle Storie · Formazione</span><h2 id="formazione-home-title">Dalla scrittura alla costruzione di una storia</h2><p>Un percorso formativo dedicato alla scrittura, all'indagine narrativa e al lavoro sulle fonti. Le attività dell'<em>Officina delle Storie</em> sono consultabili attraverso lezioni e laboratori già presenti sul sito.</p></div><a class="pill gold" href="/formazione/">Esplora la formazione <span aria-hidden="true">→</span></a></div><div class="home-training-grid"><article class="home-training-card"><span class="home-training-index" aria-hidden="true">01</span><h3>Bottino Method — Corso Base</h3><p>Il percorso introduttivo dedicato al metodo e agli strumenti della scrittura.</p><a href="/corso/">Scopri il corso <span aria-hidden="true">→</span></a></article><article class="home-training-card"><span class="home-training-index" aria-hidden="true">02</span><h3>Scrittura investigativa</h3><p>Lezioni e laboratori sulla ricostruzione dei fatti reali e sulla loro narrazione.</p><a href="/scrittura-investigativa/">Consulta le lezioni <span aria-hidden="true">→</span></a></article><article class="home-training-card"><span class="home-training-index" aria-hidden="true">03</span><h3>Catalogo dei percorsi</h3><p>Una panoramica dei percorsi dell'Officina delle Storie, con accesso alle schede.</p><a href="/catalogo/">Esplora il catalogo <span aria-hidden="true">→</span></a></article></div></div></section>
-<section class="wrap" aria-labelledby="research-home-title"><div class="research-identity"><div class="research-identity-head"><div><h3 id="research-home-title">Identità scientifica e pubblicazioni</h3><p>Ricerche storico-documentarie, metodologie e sistemi di analisi. Consulta il catalogo bibliografico e il profilo ORCID.</p></div><div class="research-identity-links"><a href="https://orcid.org/0009-0009-2797-9267" rel="me"><span class="author-orcid-symbol" aria-hidden="true">iD</span> ORCID <span>0009-0009-2797-9267</span></a><a href="/pubblicazioni-ricerca/">Pubblicazioni e DOI</a><a href="/ricerca/">Attività di ricerca</a></div></div></div></section>
-<section class="author-archive" aria-labelledby="author-archive-title"><div class="wrap author-archive-inner">
-<div><span class="eyebrow">Un progetto distinto dalla produzione letteraria</span><h2 id="author-archive-title">Archivio Documentale Calatabiano</h2>
-<p>Accanto ai romanzi e ai saggi, Michele Bottino cura un archivio indipendente dedicato alla storia di Calatabiano. Le fotografie, le testimonianze e gli studi sul territorio sono raccolti in una sezione autonoma.</p></div>
-<div><a class="pill outline" href="/adc/">Visita l’Archivio ADC <span aria-hidden="true">→</span></a><p><a href="/adc/storia-per-tutti/">Storia di Calatabiano</a> · <a href="/adc/fonti/">Fonti e documenti storici</a></p></div>
-</div></section>
-<section class="mb-follow-panel" aria-labelledby="mb-follow-heading" style="max-width:1120px;margin:2rem auto;padding:clamp(1rem,3vw,2rem);background:#fff;border:1px solid #d6cfc3;border-radius:14px;color:#25302e"><h2 id="mb-follow-heading" style="font-size:clamp(1.4rem,3vw,2rem);margin:.1rem 0 .7rem">Segui le pubblicazioni</h2><p>Leggi gli articoli direttamente sul sito, segui gli aggiornamenti tramite RSS o installa il sito sul tuo dispositivo.</p><div style="display:flex;gap:.7rem 1.3rem;flex-wrap:wrap;align-items:center"><a href="/segui/" style="display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1rem;background:#25302e;color:#fff!important;text-decoration:none;border-radius:7px">Come seguire il sito</a><a href="/lettori/" style="color:#59432e;min-height:44px;display:inline-flex;align-items:center;font-weight:650">Area lettori</a><a href="/articoli/feed.xml" style="color:#59432e;min-height:44px;display:inline-flex;align-items:center">Feed RSS</a><a href="/installa/" style="color:#59432e;min-height:44px;display:inline-flex;align-items:center">Installa il sito</a></div></section><section class="home-sharing" aria-labelledby="share-title"><div class="wrap home-sharing-inner"><div class="home-sharing-intro"><span class="gold-line" aria-hidden="true"></span><h2 id="share-title">Condividi il sito</h2><p>Fai conoscere i libri, gli scritti e i progetti di Michele Bottino.</p></div><div class="home-share-actions" role="group" aria-label="Condividi la homepage"><a class="home-share-button" href="https://api.whatsapp.com/send?text=Michele%20Bottino%20%E2%80%94%20sito%20ufficiale%20https%3A%2F%2Fmichelebottino-autor.github.io%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.5L3 20l1.1-5.1A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.5 8.3c-.5.5-.6 1.2-.3 1.9a9 9 0 0 0 5.6 5.5c.7.2 1.5.1 1.9-.5l.6-1.1-2.1-1.2-.9.9a8 8 0 0 1-3.5-3.5l.9-.9-1.2-2.1Z" transform="translate(0 3) scale(.85)"/></svg><span>WhatsApp</span></a><a class="home-share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmichelebottino-autor.github.io%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5v4h3v7h4v-7h3l.6-4H12V7.8c0-.6.3-.8.9-.8H15V3Z"/></svg><span>Facebook</span></a><a class="home-share-button" href="https://t.me/share/url?url=https%3A%2F%2Fmichelebottino-autor.github.io%2F&text=Michele%20Bottino%20%E2%80%94%20sito%20ufficiale" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Telegram" title="Telegram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 3.5 10.4c-1.1.5-1 1.2.1 1.5l4.6 1.4 1.8 5.5c.3.9.9 1 1.5.4l2.6-2.5 4.7 3.4c.8.6 1.5.2 1.7-.8L23 4.6c.2-1.2-.7-1.9-2-1.4Z" transform="translate(-1 -1) scale(.95)"/><path d="m8 13 11-7-8.7 9.4"/></svg><span>Telegram</span></a><a class="home-share-button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmichelebottino-autor.github.io%2F&text=Michele%20Bottino%20%E2%80%94%20sito%20ufficiale" target="_blank" rel="noopener noreferrer" aria-label="Condividi su X" title="X"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h4.2L20 21h-4.2L4 3ZM20 3 4 21"/></svg><span>X</span></a><a class="home-share-button" href="mailto:?subject=Michele%20Bottino%20%E2%80%94%20sito%20ufficiale&body=Visita%20il%20sito%20ufficiale%3A%20https%3A%2F%2Fmichelebottino-autor.github.io%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Email" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Email</span></a><button class="home-share-button home-copy-button" id="home-copy-link" type="button" aria-label="Copia link alla homepage" title="Copia link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copia link</span></button></div><p class="home-share-status" id="home-share-status" role="status" aria-live="polite"></p></div></section>
-</main>
-<footer class="mb-unified-footer" aria-label="Informazioni e collegamenti del sito"><div class="mb-footer-inner"><div class="mb-footer-about"><a class="mb-footer-brand" href="/">Michele Bottino</a><p>Romanzi, saggi e scritti di Michele Bottino. L’archivio storico è un progetto autonomo.</p></div><nav class="mb-footer-links" aria-label="Il sito dell'autore"><h2>Il sito dell'autore</h2><a href="/biografia/">Biografia</a><a href="/curriculum/">Curriculum</a><a href="/opere/">Libri e opere</a><a href="/poetica/">Poetica</a><a href="/testi-musicali/">Discografia</a><a href="/articoli/">Articoli</a><a href="/osservatorio/">Osservatorio</a><a href="/formazione/">Formazione</a><a href="/media/">Media</a><a href="/contatti/">Contatti</a></nav><nav class="mb-footer-links" aria-label="Archivio Documentale"><h2>Archivio Documentale</h2><a href="/adc/">Archivio ADC</a><a href="/adc/fonti/">Fonti e documenti</a><a href="/adc/atlante/">Atlante</a><a href="/adc/mediateca/">Mediateca</a><a href="/metodo/">Metodo di ricerca</a><a href="/analisi-documentaria/">Verifica delle fonti</a></nav><nav class="mb-footer-links" aria-label="Informazioni legali"><h2>Informazioni</h2><a href="/privacy/">Privacy</a><a href="/cookie/">Cookie</a><a href="/accessibilita/">Accessibilità</a><a href="/disclaimer/">Disclaimer</a><a href="/rettifiche-e-diritti/">Rettifiche</a><a href="/sitemap.xml">Mappa del sito</a></nav></div><div class="mb-footer-bottom"><span>© 2026 Michele Bottino · Tutti i diritti riservati</span><a href="#inizio">Torna all'inizio ↑</a></div><div class="aegis-footer-signature"><a href="https://dark-aronte.github.io/aegis-system/" target="_blank" rel="noopener noreferrer" aria-label="ARONTE AEGIS: informazioni sul sistema di verifica dell’integrità"><img src="/aegis/aegis.svg" width="33" height="33" alt="" loading="lazy"><span><strong>INTEGRITÀ DIGITALE · ARONTE AEGIS</strong><small>Tecnologia sviluppata da Dark Aronte</small></span></a></div>
-</footer>
-<script defer src="/analytics-consenso.js"></script><script defer src="/pwa-init.js"></script>
-<script>
-(function(){
-  var b=document.getElementById("home-copy-link"),s=document.getElementById("home-share-status");
-  if(!b||!s)return;
-  b.addEventListener("click",async function(){
-    var url="https://michelebottino-autor.github.io/";
-    try{
-      if(!navigator.clipboard||!window.isSecureContext)throw new Error("Clipboard unavailable");
-      await navigator.clipboard.writeText(url);
-      s.textContent="Collegamento copiato.";
-    }catch(e){
-      s.textContent="Seleziona e copia questo indirizzo: "+url;
-    }
-  });
-})();
-</script>
-</body></html>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+<meta name="apple-mobile-web-app-title" content="Michele Bottino"/>
+<meta content="SHE16qd4qwiNzoct42zFbUdlPiSc3U6vLx2myFcnAEI" name="google-site-verification"/>
+<meta content="default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    media-src 'self' https://resource2.heygen.ai;
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests; frame-src https://www.facebook.com https://web.facebook.com;" http-equiv="Content-Security-Policy"/>
+</head><body><a class="skip" href="#contenuto"><span class="text-fragment">Vai al contenuto</span></a><header class="shell"><div class="top"><span class="micro red"><span class="text-fragment">Sito ufficiale</span></span><div class="utility"><div aria-label="Lingua del sito" class="language-selector" role="group"><a aria-current="page" aria-label="Italiano" href="index.html" hreflang="it" lang="it">IT</a><a aria-label="English" href="en/index.html" hreflang="en" lang="en">EN</a><a aria-label="Deutsch" href="de/index.html" hreflang="de" lang="de">DE</a><a aria-label="Español" href="es/index.html" hreflang="es" lang="es">ES</a></div><a href="contatti/index.html" hreflang="it"><span class="text-fragment">Contatti</span></a><a href="lettori/index.html"><span class="text-fragment">Area lettori ↗</span></a></div></div><div class="masthead"><h1>Michele Bottino</h1><div class="identity"><p><span class="text-fragment">Scrittore · Saggista · Ricercatore indipendente</span></p><p class="micro red"><span class="text-fragment">Letteratura / Storia / Documenti</span></p></div></div><nav aria-label="Navigazione principale" class="nav"><a href="biografia/index.html" hreflang="it"><span class="text-fragment">Autore</span></a><a href="#opere"><span class="text-fragment">Opere</span></a><a href="#articoli"><span class="text-fragment">Articoli</span></a><a href="ricerca/index.html" hreflang="it"><span class="text-fragment">Ricerca</span></a><a href="poetica/index.html" hreflang="it"><span class="text-fragment">Poetica</span></a><a href="formazione/index.html" hreflang="it"><span class="text-fragment">Formazione</span></a><a href="https://michelebottino-autor.github.io/adc/"><span class="text-fragment">Archivio ADC ↗</span></a><a href="metodo/index.html">Metodo</a><a href="testi-musicali/index.html">Discografia</a><a href="lettori/index.html">Area lettori</a></nav></header>
+<main id="contenuto"><div class="shell"><div class="spread" id="articoli"><section><div class="section-line"><h2 class="red"><span class="text-fragment">In primo piano</span></h2><span class="micro">27.11.2026</span></div><a class="lead-img" href="/articoli/de-gennaro-contorno/"><img alt="Ritratto illustrato di Gianni De Gennaro" src="/articoli/media/gianni-de-gennaro.webp"/></a><p class="micro red" style="margin-top:16px"><span class="text-fragment">Analisi documentaria</span></p><h2 class="lead-head"><a href="/articoli/de-gennaro-contorno/"><span class="text-fragment">Gianni De Gennaro e Salvatore Contorno, dal verbale del 1989 alla telefonata del 2025</span></a></h2><p class="summary"><span class="text-fragment">Le audizioni parlamentari, le conversazioni del 2025 e i documenti dell’inchiesta di Caltanissetta.</span></p><a class="article-link" href="/articoli/de-gennaro-contorno/"><span class="text-fragment">Leggi l’articolo</span> <span aria-hidden="true">↗</span></a></section><section><div class="section-line"><h2><span class="text-fragment">Dall’archivio</span></h2><a href="articoli/index.html" hreflang="it"><span class="text-fragment">Tutti gli articoli</span></a></div><a class="brief" href="/articoli/angela-celentano/"><span class="micro"><span class="text-fragment">CASO REALE</span></span><strong><span class="text-fragment">Il caso Angela Celentano</span></strong><span class="arrow">↗</span></a><a class="brief" href="/articoli/denise/"><span class="micro"><span class="text-fragment">CASO REALE</span></span><strong><span class="text-fragment">Il caso Denise Pipitone</span></strong><span class="arrow">↗</span></a><a class="brief" href="/articoli/cristina-golinucci/"><span class="micro"><span class="text-fragment">CASO REALE</span></span><strong><span class="text-fragment">Il caso Cristina Golinucci</span></strong><span class="arrow">↗</span></a><a class="brief" href="https://michelebottino-autor.github.io/osservatorio/"><span class="micro"><span class="text-fragment">Approfondimenti</span></span><strong><span class="text-fragment">Osservatorio</span></strong><span class="arrow">↗</span></a><a class="article-link" href="articoli/index.html" hreflang="it"><span class="text-fragment">Archivio degli scritti ↗</span></a></section><aside><div class="section-line"><h2><span class="text-fragment">L’autore</span></h2><span class="micro"><span class="text-fragment">Profilo</span></span></div><figure class="portrait"><img alt="Ritratto ufficiale di Michele Bottino" src="/images/michele-bottino-foto-ufficiale.webp"/></figure><div><h2 class="author-title">Michele Bottino</h2><p class="bio"><span class="text-fragment">Scrittore e saggista italiano. La sua produzione affronta la dimensione umana, le dinamiche di potere e il rapporto tra esperienza individuale e contesto storico.</span></p><a class="article-link" href="biografia/index.html" hreflang="it"><span class="text-fragment">Biografia ↗</span></a><a class="orcid" href="https://orcid.org/0009-0009-2797-9267" rel="me"><b>ORCID</b> 0009-0009-2797-9267</a></div></aside></div>
+<section class="band" id="opere"><div class="band-head"><div><p class="micro red"><span class="text-fragment">Catalogo editoriale</span></p><h2><span class="text-fragment">Opere</span></h2></div><a href="opere/index.html" hreflang="it"><span class="text-fragment">Bibliografia completa ↗</span></a></div><div class="shelf"><a class="book" href="opere/index.html" hreflang="it"><figure><img alt="Copertina: Oniro" loading="lazy" src="/images/opere/oniro_copertina.jpg"/></figure><span class="text-fragment">Oniro</span></a><a class="book" href="opere/index.html" hreflang="it"><figure><img alt="Copertina: Stige" loading="lazy" src="/images/opere/stige_copertina.jpg"/></figure><span class="text-fragment">Stige</span></a><a class="book" href="opere/index.html" hreflang="it"><figure><img alt="Copertina: Il deposito delle anime" loading="lazy" src="/images/opere/ildepositodelleanime_copertina.jpg"/></figure><span class="text-fragment">Il deposito delle anime</span></a><a class="book" href="opere/index.html" hreflang="it"><figure><img alt="Copertina: EUROPA: Anatomia di un crimine" loading="lazy" src="/images/opere/europa_copertina.jpg"/></figure><span class="text-fragment">EUROPA: Anatomia di un crimine</span></a></div><div class="edition"><span class="text-fragment"><b><span class="text-fragment">Edizione internazionale</span></b> · <cite>Stige — A Letter Without a Recipient</cite></span><a href="https://www.amazon.it/s?k=Stige+A+Letter+Without+a+Recipient+Michele+Bottino"><span class="text-fragment">Edizione inglese ↗</span></a></div></section></div>
+<section class="black" id="ricerca"><div class="shell index"><div><span class="micro"><span class="text-fragment">Ricerca / Pubblicazioni</span></span><h2><span class="text-fragment">Fonti, studi e documenti.</span></h2><p><span class="text-fragment">Ricerche storico-documentarie, metodologie di analisi e pubblicazioni consultabili attraverso i repertori bibliografici.</span></p></div><div class="directory"><a href="pubblicazioni-ricerca/index.html" hreflang="it"><span class="micro">01</span><div><strong><span class="text-fragment">Pubblicazioni e DOI</span></strong><small><span class="text-fragment">Repertorio bibliografico</span></small></div>↗</a><a href="https://michelebottino-autor.github.io/analisi-documentaria/"><span class="micro">02</span><div><strong><span class="text-fragment">Analisi documentaria</span></strong><small><span class="text-fragment">Verifica delle fonti</span></small></div>↗</a><a href="ricerca/index.html" hreflang="it"><span class="micro">03</span><div><strong><span class="text-fragment">Attività di ricerca</span></strong><small><span class="text-fragment">Studi e progetti</span></small></div>↗</a><a href="https://orcid.org/0009-0009-2797-9267"><span class="micro">04</span><div><strong>ORCID</strong><small>0009-0009-2797-9267</small></div>↗</a></div></div></section>
+<div class="shell"><div class="projects"><section class="project"><span class="micro red"><span class="text-fragment">Formazione</span></span><h2>Officina delle Storie</h2><p><span class="text-fragment">Un percorso formativo dedicato alla scrittura, all’indagine narrativa e al lavoro sulle fonti.</span></p><div class="links"><a href="formazione/index.html" hreflang="it"><span class="text-fragment">Formazione ↗</span></a><a href="https://michelebottino-autor.github.io/corso/">Bottino Method</a><a href="https://michelebottino-autor.github.io/scrittura-investigativa/"><span class="text-fragment">Scrittura investigativa</span></a><a href="https://michelebottino-autor.github.io/catalogo/"><span class="text-fragment">Catalogo</span></a></div></section><section class="project"><span class="micro red"><span class="text-fragment">Progetto autonomo</span></span><h2>Archivio Documentale Calatabiano</h2><p><span class="text-fragment">Fotografie, testimonianze, documenti e studi dedicati alla storia del territorio.</span></p><div class="links"><a href="https://michelebottino-autor.github.io/adc/"><span class="text-fragment">Visita l’ADC ↗</span></a><a href="https://michelebottino-autor.github.io/adc/fonti/"><span class="text-fragment">Fonti storiche</span></a><a href="https://michelebottino-autor.github.io/adc/storia-per-tutti/"><span class="text-fragment">Storia di Calatabiano</span></a></div></section></div><section class="readerbar"><div><span class="micro red"><span class="text-fragment">Accesso libero</span></span><h2><span class="text-fragment">Segui le pubblicazioni</span></h2><p><span class="text-fragment">Leggi, salva e segui gli aggiornamenti direttamente dal sito.</span></p></div><div class="reader-actions"><a class="button" href="lettori/index.html"><span class="text-fragment">Area lettori ↗</span></a><a class="button alt" href="segui/index.html"><span class="text-fragment">RSS e aggiornamenti</span></a><a class="button alt" href="installa/index.html"><span class="text-fragment">Installa il sito</span></a></div></section><div aria-label="Condividi il sito ufficiale" class="share"><strong><span class="text-fragment">Condividi il sito:</span></strong><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmichelebottino-autor.github.io%2F">Facebook</a><a href="https://api.whatsapp.com/send?text=https%3A%2F%2Fmichelebottino-autor.github.io%2F">WhatsApp</a><a href="https://t.me/share/url?url=https%3A%2F%2Fmichelebottino-autor.github.io%2F">Telegram</a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmichelebottino-autor.github.io%2F">X</a><a href="mailto:?subject=Michele%20Bottino&amp;body=https%3A%2F%2Fmichelebottino-autor.github.io%2F">Email</a><button id="copy-link" type="button"><span class="text-fragment">Copia link</span></button></div><p class="share-status" id="share-status" role="status"></p></div></main><footer class="site-footer"><div class="wrap footer"><div class="footer-grid"><div><h3>Michele Bottino</h3><p><span class="text-fragment">Scrittore, saggista e ricercatore storico-documentario indipendente.</span></p></div><div><h3><span class="text-fragment">L’autore</span></h3><a href="biografia/index.html" hreflang="it"><span class="text-fragment">Biografia</span></a><a href="curriculum/index.html" hreflang="it"><span class="text-fragment">Curriculum</span></a><a href="poetica/index.html" hreflang="it"><span class="text-fragment">Poetica</span></a><a href="testi-musicali/index.html" hreflang="it"><span class="text-fragment">Discografia</span></a><a href="media/index.html" hreflang="it">Media</a></div><div><h3><span class="text-fragment">Esplora</span></h3><a href="opere/index.html" hreflang="it"><span class="text-fragment">Libri e opere</span></a><a href="articoli/index.html" hreflang="it"><span class="text-fragment">Articoli</span></a><a href="https://michelebottino-autor.github.io/osservatorio/"><span class="text-fragment">Osservatorio</span></a><a href="metodo/index.html" hreflang="it"><span class="text-fragment">Metodo</span></a><a href="https://michelebottino-autor.github.io/adc/atlante/"><span class="text-fragment">Atlante ADC</span></a><a href="https://michelebottino-autor.github.io/adc/mediateca/"><span class="text-fragment">Mediateca ADC</span></a></div><div><h3><span class="text-fragment">Informazioni</span></h3><a href="contatti/index.html" hreflang="it"><span class="text-fragment">Contatti</span></a><a href="https://michelebottino-autor.github.io/privacy/"><span class="text-fragment">Privacy</span></a><a href="https://michelebottino-autor.github.io/cookie/">Cookie</a><a href="https://michelebottino-autor.github.io/accessibilita/"><span class="text-fragment">Accessibilità</span></a><a href="https://michelebottino-autor.github.io/disclaimer/"><span class="text-fragment">Disclaimer</span></a><a href="https://michelebottino-autor.github.io/rettifiche-e-diritti/"><span class="text-fragment">Rettifiche</span></a><a href="https://michelebottino-autor.github.io/sitemap.xml"><span class="text-fragment">Mappa del sito</span></a></div></div><div class="footer-bottom"><span class="text-fragment"><span class="text-fragment">© 2026 Michele Bottino · Tutti i diritti riservati</span></span><a href="https://dark-aronte.github.io/aegis-system/"><span class="text-fragment">Integrità digitale · ARONTE AEGIS</span></a><a href="#contenuto"><span class="text-fragment">Torna all’inizio ↑</span></a></div></div><nav aria-label="Informazioni e diritti" class="institution-links"><a href="curriculum/index.html" hreflang="it">Curriculum</a><a href="media/index.html" hreflang="it">Media</a><a href="contatti/index.html" hreflang="it">Contatti</a><a href="informazioni/index.html" hreflang="it">Informazioni e diritti</a></nav></footer><script>(()=>{const button=document.getElementById('copy-link');if(button)button.addEventListener('click',async()=>{const u="https://michelebottino-autor.github.io/",s=document.getElementById('share-status');try{await navigator.clipboard.writeText(u);s.textContent="Collegamento copiato."}catch{s.textContent="Copia questo indirizzo: "+u}});})();</script><script defer src="/analytics-consenso.js"></script><script defer src="/pwa-init.js"></script></body></html>
