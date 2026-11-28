@@ -9,7 +9,7 @@
   const normalize = s => String(s || '').toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
   const stop = new Set('calatabiano storia storico storica documento documenti fonte fonti cosa quale quali dove quando come sapere informazioni vorrei vorremmo cerca cercare trovare parla dice del della delle degli dello nella nelle nei sui sul con per alla alle anche sono hanno un una che chi gli dai dai dal dei era erano e il la di da a in si'.split(' '));
   const aliases = {mulino:'mulini',mulini:'mulino',chiesa:'chiese',chiese:'chiesa',origine:'origini',origini:'origine',mappa:'cartografia',mappe:'cartografia',foto:'fotografie',fotografia:'fotografie',fotografie:'foto',ponte:'alcantara',castelli:'castello',castello:'castelli',pergamena:'pergamene',pergamene:'pergamena',monastero:'monasteri',monasteri:'monastero',decime:'rationes',rationes:'decime',zuccherificio:'zucchero',trappeto:'zucchero',trappeti:'zucchero',crocifisso:'croce',croce:'crocifisso',ferroviaria:'ferrovia',stazioni:'stazione',stazione:'ferrovia',terremoti:'terremoto'};
-  const safeUrl = u => typeof u === 'string' && (/^\/adc\/[a-z0-9/_-]*(?:\.html)?(?:#[a-z0-9_-]+)?$/i.test(u) || /^https:\/\/(?:www\.|pagamentipa\.)?comune\.calatabiano\.ct\.it\/[a-z0-9/?&=_.%-]*$/i.test(u) || /^https:\/\/(?:dark-aronte|michelebottino-autor)\.github\.io\/$/.test(u));
+  const safeUrl = u => typeof u === 'string' && (/^https:\/\/doi\.org\/10\.5281\/zenodo\.\d+$/.test(u) || /^\/adc\/[a-z0-9/_-]*(?:\.html)?(?:#[a-z0-9_-]+)?$/i.test(u) || /^https:\/\/(?:www\.|pagamentipa\.)?comune\.calatabiano\.ct\.it\/[a-z0-9/?&=_.%-]*$/i.test(u) || /^https:\/\/(?:dark-aronte|michelebottino-autor)\.github\.io\/$/.test(u));
   const tokens = q => [...new Set(normalize(q).split(/[^a-z0-9]+/).filter(x => x.length > 2 && !stop.has(x)).flatMap(x => aliases[x] ? [x, aliases[x]] : [x]))];
   // Ricerca lessicale verificabile: le schede sono suggerimenti di lettura, non risposte storiche.
   // Peso maggiore alle espressioni esatte (es. "Madonna del Carmine") e alle date;
@@ -180,7 +180,7 @@
     if(!registry || registry.schema!==1 || !Array.isArray(registry.entries))return null;
     const words=new Set(normalize(query).split(/[^a-z0-9]+/).filter(Boolean));
     const matches=registry.entries.filter(e=>{
-      if(!e || !['SOSPESA','CHIUSA AL LIMITE','CHIUSA PER INDISPONIBILITÀ'].includes(e.status) ||
+      if(!e || !['SOSPESA','CHIUSA AL LIMITE','CHIUSA PER INDISPONIBILITÀ','STUDIO PUBBLICATO'].includes(e.status) ||
          !Array.isArray(e.groups) || e.groups.length<2 || e.groups.some(g=>!Array.isArray(g)||!g.length) ||
          typeof e.text!=='string'||!e.text.trim()||typeof e.limitation!=='string'||!e.limitation.trim() ||
          !Array.isArray(e.links) || !e.links.length || !e.links.every(l=>l&&safeUrl(l.url)&&l.title))return false;
@@ -457,7 +457,7 @@
           : r.kind==='civic'
             ? 'Servizi e comunicazioni del Comune: informazioni attribuite al portale istituzionale. Verifica date e possibili aggiornamenti.'
           : r.kind==='research-status'
-            ? 'Stato della ricerca ADC: indagine sospesa o chiusa al limite delle fonti consultate. Non costituisce prova che il fatto storico non sia mai avvenuto.'
+            ? (r.research_status==='STUDIO PUBBLICATO'?'Stato della ricerca ADC: studio pubblicato. Consulta la fonte e i limiti documentari.':'Stato della ricerca ADC: indagine sospesa o chiusa al limite delle fonti consultate. Non costituisce prova che il fatto storico non sia mai avvenuto.')
           : r.kind==='passage-empty'
             ? 'Non viene proposta alcuna citazione priva di un riferimento approvato.'
           : r.kind==='index'

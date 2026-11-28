@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "2026-11-22",
+  "version": "2026-11-28",
   "scope": "public_editorial",
   "description": "Estratto editoriale delle sole questioni sospese o chiuse al limite. Non sostituisce la concordanza o il registro privato ADC. Le corrispondenze sono circoscritte alla domanda esplicita e non generano nuove interpretazioni.",
   "entries": [
@@ -63,7 +63,7 @@
     {
       "id": "ADC-016",
       "subject": "Processo d'investitura 184: disponibilità documentaria",
-      "status": "CHIUSA PER INDISPONIBILITÀ",
+      "status": "STUDIO PUBBLICATO",
       "groups": [
         [
           "processo",
@@ -74,12 +74,20 @@
           "184"
         ]
       ],
-      "title": "Il Processo 184 non è disponibile nel corpus ADC",
-      "text": "Il Processo d'investitura n. 184 è descritto nel repertorio archivistico, ma non è disponibile come fascicolo verificato nell'archivio di studio ADC. Alcune fotografie un tempo etichettate P184 sono state ricondotte al Processo 334; non costituiscono quindi prova del possesso del 184.",
-      "limitation": "La ricerca sul contenuto del Processo 184 rimane chiusa per indisponibilità del fascicolo. Il Processo 334 è distinto e non può sostituirlo.",
+      "title": "Il Processo 184: lo studio sul possesso signorile del 1479",
+      "text": "Il 25 novembre 2026 Michele Bottino ha pubblicato uno studio sul Processo 184, conservato presso l’Archivio di Stato di Palermo, Protonotaro del Regno, Processi d’investiture, busta 1484. Lo studio esamina nove riproduzioni e comprende la traduzione dei testi leggibili. Le deposizioni riguardano il possesso signorile di Calatabiano nel 1479; il fascicolo comprende anche una carta bancaria relativa alla vendita di Vicari.",
+      "limitation": "Restano da individuare i testi integrali delle due procure richiamate nelle carte. La pubblicazione dello studio non equivale alla disponibilità pubblica di tutte le riproduzioni originali. Il Processo 334 è un fascicolo distinto.",
       "links": [
         {
-          "title": "Processo 334: diario e limiti della lettura",
+          "title": "Processo 184: fonte archivistica e studio pubblicato",
+          "url": "/adc/fonti/#processo-184"
+        },
+        {
+          "title": "Studio e traduzione su Zenodo",
+          "url": "https://doi.org/10.5281/zenodo.24543077"
+        },
+        {
+          "title": "Processo 334: documentazione distinta",
           "url": "/adc/processo-334/"
         }
       ]
