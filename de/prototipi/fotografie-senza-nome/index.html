@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Experimentelle Werkstatt · Fotografien ohne Namen — Michele Bottino</title>
+<meta name="description" content="Lehrprototyp zur Beschreibung, Datierung und Zuordnung von Fotografien. Es gibt keine offene Einschreibung.">
+<link rel="stylesheet" href="/prototipi/fotografie-senza-nome/lab.css"><link rel="stylesheet" href="/aegis/footer.css">
+</head>
+<body><main id="contenuto"><nav aria-label="Sprachen" id="lingue-laboratorio"><a hreflang="it" lang="it" href="/prototipi/fotografie-senza-nome/">IT</a> · <a hreflang="en" lang="en" href="/en/prototipi/fotografie-senza-nome/">EN</a> · <a hreflang="es" lang="es" href="/es/prototipi/fotografie-senza-nome/">ES</a> · <a hreflang="de" lang="de" href="/de/prototipi/fotografie-senza-nome/" aria-current="page">DE</a></nav>
+<a class="back" href="/de/kurse/">Kursverzeichnis</a>
+<header><p class="eyebrow">Redaktioneller Prototyp · Per Direktlink zugänglich · Ohne Zertifikat</p>
+<h1>Fotografien ohne Namen</h1><p class="lead">Untersuchen Sie eine Fotografie und vergleichen Sie Ihre Beobachtungen mit dem Katalogeintrag. Welche Schlüsse sind belegt?</p>
+<p class="notice"><strong>Stand:</strong> Dies ist eine eigenständige technische Demonstration. Es gibt keine Anmeldung, persönliche Beurteilung oder Bescheinigung. Ihre Antworten bleiben im Browser und werden nicht an die Website gesendet.</p></header>
+<section class="workspace" id="photo-workspace" aria-labelledby="photo-heading">
+<div><h2 id="photo-heading">1. Bild und Herkunft untersuchen</h2>
+<figure><img width="500" height="620" loading="eager" decoding="async" src="https://tile.loc.gov/storage-services/service/pnp/ppmsca/68700/68742r.jpg" alt="Historisches Porträt einer sitzenden Person mit Blick zur Kamera, im Katalog der Library of Congress als Mary Church Terrell identifiziert">
+<figcaption><strong>Bildquelle:</strong> Library of Congress, <a href="https://www.loc.gov/item/97500102/" target="_blank" rel="noopener noreferrer">Eintrag 97500102</a>, digitale Kennung LC-DIG-ppmsca-68742. Der Katalog datiert die Aufnahme auf 1880–1900 und beschreibt einen späteren Abzug. Wer das Foto aufnahm, ist unbekannt. Der Katalog identifiziert die Porträtierte. Ungewiss ist <strong>die Datierung</strong>, nicht die Identität der Person.</figcaption></figure></div>
+<div><h2>2. Einen Zugang zur Quelle wählen</h2>
+<div role="group" aria-label="Zugänge zur Quelle" class="switches">
+<button type="button" data-view="visible" aria-pressed="false">Im Bild sichtbar</button>
+<button type="button" data-view="catalog" aria-pressed="false">Im Katalog</button>
+<button type="button" data-view="uncertain" aria-pressed="false">Ungeklärt</button></div>
+<p class="response" data-view-response role="status" aria-live="polite">Wählen Sie eine Ebene, um die Erläuterung zu lesen.</p>
+<h2>3. Schlussfolgerungen prüfen</h2>
+<div id="tasks">
+<fieldset data-question="date"><legend>Welche Datierung können Sie in den Eintrag aufnehmen?</legend>
+<label><input type="radio" name="date" value="exact"> 1890 als gesichertes Aufnahmejahr</label>
+<label><input type="radio" name="date" value="interval"> Zwischen 1880 und 1900 laut Katalog der Library of Congress</label>
+<label><input type="radio" name="date" value="print"> Den Tag, an dem der Abzug entstand</label>
+<button type="button" data-check="date">Antwort prüfen</button><p class="feedback" data-feedback="date" role="status" aria-live="polite"></p></fieldset>
+<fieldset data-question="author"><legend>Welche Angabe zur Urheberschaft ist zulässig?</legend>
+<label><input type="radio" name="author" value="named"> Mary Church Terrell hat die Aufnahme zweifelsfrei selbst gemacht</label>
+<label><input type="radio" name="author" value="unknown"> Der untersuchte Eintrag nennt keinen Fotografen</label>
+<label><input type="radio" name="author" value="guessed"> Die Kleidung verrät, wer das Bild aufgenommen hat</label>
+<button type="button" data-check="author">Antwort prüfen</button><p class="feedback" data-feedback="author" role="status" aria-live="polite"></p></fieldset>
+<fieldset data-question="caption"><legend>Welche Bildunterschrift vermeidet unbelegte Gewissheit?</legend>
+<label><input type="radio" name="caption" value="unsupported"> „Mary Church Terrell lächelnd im Jahr 1890“</label>
+<label><input type="radio" name="caption" value="supported"> „Porträt, von der Library of Congress als Mary Church Terrell identifiziert, 1880–1900. Späterer Abzug.“</label>
+<label><input type="radio" name="caption" value="fiction"> „Aufnahme zweifelsfrei in ihrem Atelier entstanden“</label>
+<button type="button" data-check="caption">Antwort prüfen</button><p class="feedback" data-feedback="caption" role="status" aria-live="polite"></p></fieldset>
+</div>
+<h2>4. Einen eigenen Kurzeintrag verfassen</h2><label for="caption-draft">Formulieren Sie eine vorsichtige Bildunterschrift mit Herkunft, Identifizierung und Datierung</label>
+<textarea id="caption-draft" rows="4" placeholder="Entwurf der Bildunterschrift …"></textarea>
+<p class="subtle">Sie können eine Textdatei exportieren, ohne etwas an den Server zu senden. Geben Sie keine vertraulichen personenbezogenen Daten ein.</p>
+<div class="actions"><button type="button" id="export-caption">Eintrag exportieren</button><button type="button" id="reset-lab">Neu beginnen</button></div>
+<p id="lab-status" role="status" aria-live="polite"></p></div></section>
+<footer>© 2026 Michele Bottino · Eigenes Lehrmaterial · Bildquelle: Library of Congress. Keine Zertifizierung oder Anmeldung.<div class="aegis-footer-signature"><a href="https://dark-aronte.github.io/aegis-system/" target="_blank" rel="noopener noreferrer" aria-label="ARONTE AEGIS: Informationen zum System für die Integritätsprüfung"><img src="/aegis/aegis.svg" width="33" height="33" alt="" loading="lazy"><span><strong>DIGITALE INTEGRITÄT · ARONTE AEGIS</strong><small>Technologie von Dark Aronte</small></span></a></div>
+</footer></main>
+<script defer src="./lab.js"></script></body></html>

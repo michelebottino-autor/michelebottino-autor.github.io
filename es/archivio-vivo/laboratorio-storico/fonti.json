@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "id": "LOC-1918-CURATION",
+  "title": "Tres números, un recorrido archivístico",
+  "publication": "The Morgan City Daily Review (Morgan City, Louisiana)",
+  "publisher_collection": "Chronicling America / Library of Congress",
+  "contributing_institution": "Louisiana State University",
+  "purpose": "Ejercicio de curaduría narrativa con tres números del mismo periódico. El corpus no reúne tres fuentes institucionales independientes.",
+  "type": "authentic_historical_source_metadata_and_prior_verified_facsimiles",
+  "rights": "Solo enlaces. No se reproduce ninguna página digitalizada completa. Consulta la información sobre derechos de la Library of Congress y los avisos de los colaboradores antes de reutilizar el material.",
+  "materials": [
+    {
+      "id": "MC-10",
+      "date": "1918-10-10",
+      "page": 1,
+      "title": "Noticias sobre medidas locales y la búsqueda de voluntarios",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-10/ed-1/?sp=1",
+      "status": "la página del 10 de octubre informa de medidas locales y de la búsqueda de voluntarios.",
+      "use": "Primer panel: primeros llamamientos públicos de ayuda",
+      "not_demonstrated": "El número total de actuaciones de ayuda efectivamente realizadas."
+    },
+    {
+      "id": "MC-11",
+      "date": "1918-10-11",
+      "page": 1,
+      "title": "Anuncio sobre el comité local de la Cruz Roja",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-11/ed-1/?sp=1",
+      "status": "la página del 11 de octubre informa sobre el comité local de la Cruz Roja.",
+      "use": "Segundo panel: la organización según el relato del periódico",
+      "not_demonstrated": "Los resultados administrativos del comité acreditados de forma independiente."
+    },
+    {
+      "id": "MC-14",
+      "date": "1918-10-14",
+      "page": 4,
+      "title": "More Nurses Needed / Shipyard Workers Organize for Relief",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-14/ed-1/?sp=4",
+      "status": "la página del 14 de octubre contiene dos noticias sobre el socorro y un fondo promovido por trabajadores de los astilleros.",
+      "use": "Tercer panel: nuevas peticiones, un fondo y colaboración prevista",
+      "not_demonstrated": "Si se llevó a cabo la colaboración o cuántas personas recibieron ayuda según registros independientes."
+    }
+  ],
+  "curatorial_questions": [
+    "¿Qué función cumple cada número en la cronología propuesta?",
+    "¿Cómo citarías la fecha, la página, el encabezado, la institución que digitalizó el documento y su procedencia?",
+    "¿Por qué tres números de una misma cabecera no constituyen tres comprobaciones independientes de la ayuda?",
+    "¿Qué frases deben atribuir la información al diario para evitar presentarla como un hecho ya comprobado?",
+    "¿Qué documentos de otro productor permitirían comprobar las actuaciones y sus resultados?"
+  ],
+  "panel_proposal": [
+    {
+      "title": "El llamamiento",
+      "source": "MC-10",
+      "label": "El diario informó de medidas y de la búsqueda de voluntarios",
+      "limitation": "No hay un informe independiente que dé cuenta de las actividades anunciadas."
+    },
+    {
+      "title": "El comité",
+      "source": "MC-11",
+      "label": "El periódico describe la formación de un comité y los ofrecimientos de ayuda declarados",
+      "limitation": "Una noticia no sustituye a los documentos internos de la organización."
+    },
+    {
+      "title": "Las nuevas necesidades",
+      "source": "MC-14",
+      "label": "Las noticias sobre la petición de enfermeras y el fondo de los trabajadores de los astilleros aparecen en la misma página",
+      "limitation": "La colaboración con la Cruz Roja es una previsión. La información sobre la ayuda prestada procede de funcionarios."
+    },
+    {
+      "title": "Lo que falta",
+      "source": null,
+      "label": "Datos administrativos y pruebas de ejecución aún por localizar",
+      "limitation": "La ausencia de registros no demuestra que la iniciativa fracasara ni que tuviera éxito."
+    }
+  ],
+  "review_points": [
+    "Los tres números se identifican expresamente como ejemplares de una sola cabecera.",
+    "Cada panel conserva el enlace a la fecha, la página y el recurso original.",
+    "Los paneles distinguen entre noticia, intención y acción comprobada.",
+    "Los consejos médicos de 1918 no se presentan como recomendaciones actuales.",
+    "Solo se reproducen imágenes tras comprobar los derechos."
+  ],
+  "limitations": [
+    "El cotejo previo con los facsímiles no constituye una nueva revisión independiente.",
+    "En esta revisión no se obtuvieron registros de otras instituciones que confirmaran la magnitud o los resultados de las ayudas.",
+    "El ejercicio propone una secuencia de paneles. No describe una exposición ya realizada."
+  ],
+  "reused_project": "https://michelebottino-autor.github.io/scrittura-investigativa/caso-pilota/",
+  "student_product": "Guion de cuatro paneles con inventario de tres unidades periodísticas, siete cartelas o notas y una sección sobre límites documentales."
+}

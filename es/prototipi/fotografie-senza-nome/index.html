@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Taller experimental · Fotografías sin nombre — Michele Bottino</title>
+<meta name="description" content="Prototipo didáctico sobre la descripción, datación e identificación de fotografías. No hay inscripción abierta.">
+<link rel="stylesheet" href="/prototipi/fotografie-senza-nome/lab.css"><link rel="stylesheet" href="/aegis/footer.css">
+</head>
+<body><main id="contenuto"><nav aria-label="Idiomas" id="lingue-laboratorio"><a hreflang="it" lang="it" href="/prototipi/fotografie-senza-nome/">IT</a> · <a hreflang="en" lang="en" href="/en/prototipi/fotografie-senza-nome/">EN</a> · <a hreflang="es" lang="es" href="/es/prototipi/fotografie-senza-nome/" aria-current="page">ES</a> · <a hreflang="de" lang="de" href="/de/prototipi/fotografie-senza-nome/">DE</a></nav>
+<a class="back" href="/es/formacion/">Catálogo de cursos</a>
+<header><p class="eyebrow">Prototipo editorial · Acceso por enlace directo · Sin certificado</p>
+<h1>Fotografías sin nombre</h1><p class="lead">En este taller observarás una fotografía y contrastarás lo que ves con su ficha de catálogo. ¿Qué conclusiones permiten las pruebas?</p>
+<p class="notice"><strong>Estado:</strong> Esta es una demostración técnica independiente. No hay matrícula, evaluación por parte de una persona ni certificado. Las respuestas permanecen en tu navegador y no se envían al sitio.</p></header>
+<section class="workspace" id="photo-workspace" aria-labelledby="photo-heading">
+<div><h2 id="photo-heading">1. Estudia la imagen y su procedencia</h2>
+<figure><img width="500" height="620" loading="eager" decoding="async" src="https://tile.loc.gov/storage-services/service/pnp/ppmsca/68700/68742r.jpg" alt="Retrato histórico catalogado por la Library of Congress como Mary Church Terrell, sentada y mirando hacia la cámara">
+<figcaption><strong>Fuente de la imagen:</strong> Library of Congress, <a href="https://www.loc.gov/item/97500102/" target="_blank" rel="noopener noreferrer">registro 97500102</a>, identificador digital LC-DIG-ppmsca-68742. El catálogo sitúa la toma entre 1880 y 1900 y describe una copia posterior. Se desconoce la autoría de la fotografía. El catálogo identifica a la retratada. La duda afecta <strong>a la datación</strong>, no a la identidad de la retratada.</figcaption></figure></div>
+<div><h2>2. Elige cómo leer la fuente</h2>
+<div role="group" aria-label="Formas de leer la fuente" class="switches">
+<button type="button" data-view="visible" aria-pressed="false">Visible en la imagen</button>
+<button type="button" data-view="catalog" aria-pressed="false">En el catálogo</button>
+<button type="button" data-view="uncertain" aria-pressed="false">Sin confirmar</button></div>
+<p class="response" data-view-response role="status" aria-live="polite">Selecciona un nivel para ver cómo se interpreta.</p>
+<h2>3. Comprueba tus conclusiones</h2>
+<div id="tasks">
+<fieldset data-question="date"><legend>¿Qué datación puedes indicar en la ficha?</legend>
+<label><input type="radio" name="date" value="exact"> 1890, año seguro de la toma</label>
+<label><input type="radio" name="date" value="interval"> Entre 1880 y 1900, según el catálogo de la Library of Congress</label>
+<label><input type="radio" name="date" value="print"> El día en que se imprimió la copia</label>
+<button type="button" data-check="date">Comprobar respuesta</button><p class="feedback" data-feedback="date" role="status" aria-live="polite"></p></fieldset>
+<fieldset data-question="author"><legend>¿Cómo debes registrar la autoría de la fotografía?</legend>
+<label><input type="radio" name="author" value="named"> Mary Church Terrell tomó la fotografía con toda seguridad</label>
+<label><input type="radio" name="author" value="unknown"> La ficha consultada no identifica a quien tomó la fotografía</label>
+<label><input type="radio" name="author" value="guessed"> La ropa revela quién tomó la fotografía</label>
+<button type="button" data-check="author">Comprobar respuesta</button><p class="feedback" data-feedback="author" role="status" aria-live="polite"></p></fieldset>
+<fieldset data-question="caption"><legend>¿Qué pie de foto evita una falsa certeza?</legend>
+<label><input type="radio" name="caption" value="unsupported"> «Mary Church Terrell sonriendo en 1890»</label>
+<label><input type="radio" name="caption" value="supported"> «Retrato identificado por la Library of Congress como Mary Church Terrell, 1880–1900. Copia posterior.»</label>
+<label><input type="radio" name="caption" value="fiction"> «Fotografía tomada con toda seguridad en su estudio»</label>
+<button type="button" data-check="caption">Comprobar respuesta</button><p class="feedback" data-feedback="caption" role="status" aria-live="polite"></p></fieldset>
+</div>
+<h2>4. Prepara tu propia ficha breve</h2><label for="caption-draft">Redacta un pie de foto prudente con la procedencia, la identificación y la datación</label>
+<textarea id="caption-draft" rows="4" placeholder="Borrador del pie de foto…"></textarea>
+<p class="subtle">Puedes exportar un archivo de texto sin enviar nada al servidor. Omite los datos personales confidenciales.</p>
+<div class="actions"><button type="button" id="export-caption">Exportar ficha</button><button type="button" id="reset-lab">Volver a empezar</button></div>
+<p id="lab-status" role="status" aria-live="polite"></p></div></section>
+<footer>© 2026 Michele Bottino · Material didáctico original · Fuente de la imagen: Library of Congress. Sin certificación ni matrícula abierta.<div class="aegis-footer-signature"><a href="https://dark-aronte.github.io/aegis-system/" target="_blank" rel="noopener noreferrer" aria-label="ARONTE AEGIS: información sobre el sistema de verificación de integridad"><img src="/aegis/aegis.svg" width="33" height="33" alt="" loading="lazy"><span><strong>INTEGRIDAD DIGITAL · ARONTE AEGIS</strong><small>Tecnología desarrollada por Dark Aronte</small></span></a></div>
+</footer></main>
+<script defer src="./lab.js"></script></body></html>

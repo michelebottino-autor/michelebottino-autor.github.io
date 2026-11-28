@@ -1,0 +1,73 @@
+'use strict';
+(()=> {
+ const KEY='scom_archivio_intermedio_2026_v1_';
+ const info=document.querySelector('[data-course-root]');
+ if(!info)return;
+ const unit=Number(document.body.dataset.unit||0);
+ const units=10;
+ const byId=id=>document.getElementById(id);
+ const setStatus=(t)=>{const el=byId('notebook-status');if(el)el.textContent=t;};
+ const safeGet=(name)=>{try{return JSON.parse(localStorage.getItem(KEY+name)||'null')}catch{return null}};
+ const safeSet=(name,value)=>{try{localStorage.setItem(KEY+name,JSON.stringify(value));return true}catch{return false}};
+ const download=(name,text)=>{
+  const blob=new Blob([text],{type:'text/markdown;charset=utf-8'});
+  const link=document.createElement('a'),url=URL.createObjectURL(blob);
+  link.href=url;link.download=name;document.body.append(link);link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2500);
+ };
+ function updateProgress(){
+  let checked=0,active=0,withNotes=0;
+  for(let i=1;i<=units;i++){const state=safeGet('unit'+i);if(state&&state.text?.trim()){withNotes++;active++}if(state?.checks){checked+=state.checks.filter(Boolean).length; if(state.checks.some(Boolean)&&!(state.text?.trim()))active++;}}
+  const track=byId('course-progress'),value=byId('progress-label');
+  if(track)track.style.width=(checked/(units*4)*100).toFixed(1)+'%';
+  if(value)value.textContent=checked+" self-check criteria out of "+(units*4)+' · '+withNotes+" units with working notes.";
+ }
+ function exportPortfolio(){
+  const lines=["# Turning an archive into a narrative — personal portfolio",'',"Exported from your device. No text was sent to the site.",''];
+  let n=0;
+  for(let i=1;i<=units;i++){
+   const title=document.querySelector('[data-unit-name="'+i+'"]')?.textContent||("Unit "+i);
+   const state=safeGet('unit'+i);
+   if(state?.text?.trim()){n++;lines.push('## '+title,'',state.text.trim(),'',"Self-check criteria: "+(state.checks||[]).filter(Boolean).length+'/4','');}
+  }
+  if(!n){alert("There are no notes saved in this browser yet.");return;}
+  lines.push("## Note on using sources",'', "Before publication, always check the provenance, permissions and limitations of real documents.",'',"This portfolio does not constitute an assessment or certificate.",'');
+  download('portfolio-le-archivio-vivo.md',lines.join('\n'));
+ }
+ const exportButton=byId('export-portfolio');
+ if(exportButton)exportButton.addEventListener('click',exportPortfolio);
+ if(unit>=1 && unit<=units){
+  const text=byId('notebook-text'),boxes=[...document.querySelectorAll('[data-check]')];
+  if(text){
+   const saved=safeGet('unit'+unit);
+   if(saved){text.value=saved.text||'';boxes.forEach((b,i)=>b.checked=Boolean(saved.checks?.[i]));setStatus("Draft restored from this browser.");}
+   const snapshot=()=>JSON.stringify([text.value,...boxes.map(box=>box.checked)]);
+   let savedSnapshot=snapshot();
+   const persist=()=>{
+    const good=safeSet('unit'+unit,{text:text.value,checks:boxes.map(box=>box.checked),saved_at:new Date().toISOString()});
+    if(good)savedSnapshot=snapshot();
+    setStatus(good?"Saved on this device. Export your portfolio to keep a copy.":"This browser could not save your draft. Copy the text somewhere else.");
+    updateProgress();
+   };
+   byId('save-draft')?.addEventListener('click',persist);
+   boxes.forEach(b=>b.addEventListener('change',persist));
+   byId('download-unit')?.addEventListener('click',()=>download('archivio-vivo-unita-'+unit+'.md',"# Turning an archive into a narrative — unit "+unit+'\n\n'+text.value+'\n'));
+   byId('delete-draft')?.addEventListener('click',()=>{
+    if(!confirm("Delete this unit’s text and self-checks from this browser? This cannot be undone."))return;
+    try{localStorage.removeItem(KEY+'unit'+unit);text.value='';boxes.forEach(b=>b.checked=false);savedSnapshot=snapshot();setStatus("Local draft deleted.");updateProgress();}
+    catch{setStatus("The local draft could not be deleted.");}
+   });
+   text.addEventListener('input',()=>setStatus("Changes have not yet been saved."));
+   addEventListener('beforeunload',event=>{
+    if(snapshot()!==savedSnapshot){event.preventDefault();event.returnValue='';}
+   });
+  }
+ }
+ const guideSelect=byId('guide-question'),guideAnswer=byId('guide-answer');
+ if(guideSelect&&guideAnswer){
+  const answers=[...guideSelect.options].map(x=>x.dataset.answer||'');
+  const update=()=>guideAnswer.textContent=answers[guideSelect.selectedIndex]||'';
+  guideSelect.addEventListener('change',update);update();
+ }
+ updateProgress();
+})();

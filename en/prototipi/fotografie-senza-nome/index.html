@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Experimental workshop · Unnamed photographs — Michele Bottino</title>
+<meta name="description" content="Teaching prototype on describing, dating and identifying photographs. Enrolment is closed.">
+<link rel="stylesheet" href="/prototipi/fotografie-senza-nome/lab.css"><link rel="stylesheet" href="/aegis/footer.css">
+</head>
+<body><main id="contenuto"><nav aria-label="Languages" id="lingue-laboratorio"><a hreflang="it" lang="it" href="/prototipi/fotografie-senza-nome/">IT</a> · <a hreflang="en" lang="en" href="/en/prototipi/fotografie-senza-nome/" aria-current="page">EN</a> · <a hreflang="es" lang="es" href="/es/prototipi/fotografie-senza-nome/">ES</a> · <a hreflang="de" lang="de" href="/de/prototipi/fotografie-senza-nome/">DE</a></nav>
+<a class="back" href="/en/training/">Course catalogue</a>
+<header><p class="eyebrow">Editorial prototype · Available by direct link · No certificate</p>
+<h1>Unnamed photographs</h1><p class="lead">In this guided workshop, examine a photograph and compare what you see with its catalogue entry. Which conclusions does the evidence support?</p>
+<p class="notice"><strong>Status:</strong> This is a standalone technical demonstration. There is no enrolment, human assessment or certificate. Your answers stay in your browser and are never sent to the site.</p></header>
+<section class="workspace" id="photo-workspace" aria-labelledby="photo-heading">
+<div><h2 id="photo-heading">1. Examine the photograph and its provenance</h2>
+<figure><img width="500" height="620" loading="eager" decoding="async" src="https://tile.loc.gov/storage-services/service/pnp/ppmsca/68700/68742r.jpg" alt="Historical portrait catalogued by the Library of Congress as Mary Church Terrell, seated and facing the camera">
+<figcaption><strong>Image source:</strong> Library of Congress, <a href="https://www.loc.gov/item/97500102/" target="_blank" rel="noopener noreferrer">record 97500102</a>, digital identifier LC-DIG-ppmsca-68742. The catalogue dates the photograph to 1880–1900 and describes a later print. The photographer is unidentified. The catalogue identifies the sitter, so this is <strong>a question about dating</strong>, rather than a case of unknown identity.</figcaption></figure></div>
+<div><h2>2. Choose a way to read the source</h2>
+<div role="group" aria-label="Ways to read the source" class="switches">
+<button type="button" data-view="visible" aria-pressed="false">Visible in the image</button>
+<button type="button" data-view="catalog" aria-pressed="false">In the catalogue</button>
+<button type="button" data-view="uncertain" aria-pressed="false">Unconfirmed</button></div>
+<p class="response" data-view-response role="status" aria-live="polite">Choose a level to see what it tells you.</p>
+<h2>3. Check your conclusions</h2>
+<div id="tasks">
+<fieldset data-question="date"><legend>Which date can you give in the entry?</legend>
+<label><input type="radio" name="date" value="exact"> 1890, the definite year of the exposure</label>
+<label><input type="radio" name="date" value="interval"> Between 1880 and 1900, according to the Library of Congress catalogue</label>
+<label><input type="radio" name="date" value="print"> The day the print was made</label>
+<button type="button" data-check="date">Check answer</button><p class="feedback" data-feedback="date" role="status" aria-live="polite"></p></fieldset>
+<fieldset data-question="author"><legend>How should you record the photographer?</legend>
+<label><input type="radio" name="author" value="named"> Mary Church Terrell definitely took the photograph</label>
+<label><input type="radio" name="author" value="unknown"> The entry does not identify the photographer</label>
+<label><input type="radio" name="author" value="guessed"> The clothing reveals who took the photograph</label>
+<button type="button" data-check="author">Check answer</button><p class="feedback" data-feedback="author" role="status" aria-live="polite"></p></fieldset>
+<fieldset data-question="caption"><legend>Which caption avoids claiming more than we know?</legend>
+<label><input type="radio" name="caption" value="unsupported"> “Mary Church Terrell smiling in 1890”</label>
+<label><input type="radio" name="caption" value="supported"> “Portrait identified by the Library of Congress as Mary Church Terrell, 1880–1900. Later print.”</label>
+<label><input type="radio" name="caption" value="fiction"> “Photograph definitely taken in her studio”</label>
+<button type="button" data-check="caption">Check answer</button><p class="feedback" data-feedback="caption" role="status" aria-live="polite"></p></fieldset>
+</div>
+<h2>4. Write your own short entry</h2><label for="caption-draft">Write a cautious caption giving the source, identification and dating</label>
+<textarea id="caption-draft" rows="4" placeholder="Draft caption…"></textarea>
+<p class="subtle">You can export a text file without sending anything to the server. Leave out sensitive personal details.</p>
+<div class="actions"><button type="button" id="export-caption">Export entry</button><button type="button" id="reset-lab">Start again</button></div>
+<p id="lab-status" role="status" aria-live="polite"></p></div></section>
+<footer>© 2026 Michele Bottino · Original teaching material · Image source: Library of Congress. No certification or enrolment.<div class="aegis-footer-signature"><a href="https://dark-aronte.github.io/aegis-system/" target="_blank" rel="noopener noreferrer" aria-label="ARONTE AEGIS: information about the integrity verification system"><img src="/aegis/aegis.svg" width="33" height="33" alt="" loading="lazy"><span><strong>DIGITAL INTEGRITY · ARONTE AEGIS</strong><small>Technology developed by Dark Aronte</small></span></a></div>
+</footer></main>
+<script defer src="./lab.js"></script></body></html>

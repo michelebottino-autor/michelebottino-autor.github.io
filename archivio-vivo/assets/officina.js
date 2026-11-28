@@ -41,18 +41,26 @@
   if(text){
    const saved=safeGet('unit'+unit);
    if(saved){text.value=saved.text||'';boxes.forEach((b,i)=>b.checked=Boolean(saved.checks?.[i]));setStatus('Bozza locale recuperata da questo browser.');}
-   const persist=()=>{const good=safeSet('unit'+unit,{text:text.value,checks:boxes.map(b=>b.checked),saved_at:new Date().toISOString()});setStatus(good?'Salvataggio locale completato. Esporta il portfolio per conservare una copia.':'Salvataggio non disponibile nel browser. Copia il testo altrove.');updateProgress();};
+   const snapshot=()=>JSON.stringify([text.value,...boxes.map(box=>box.checked)]);
+   let savedSnapshot=snapshot();
+   const persist=()=>{
+    const good=safeSet('unit'+unit,{text:text.value,checks:boxes.map(box=>box.checked),saved_at:new Date().toISOString()});
+    if(good)savedSnapshot=snapshot();
+    setStatus(good?'Salvataggio locale completato. Esporta il portfolio per conservare una copia.':'Salvataggio non disponibile nel browser. Copia il testo altrove.');
+    updateProgress();
+   };
    byId('save-draft')?.addEventListener('click',persist);
    boxes.forEach(b=>b.addEventListener('change',persist));
    byId('download-unit')?.addEventListener('click',()=>download('archivio-vivo-unita-'+unit+'.md','# L’archivio diventa racconto — Unità '+unit+'\n\n'+text.value+'\n'));
    byId('delete-draft')?.addEventListener('click',()=>{
     if(!confirm('Eliminare il testo e gli autocontrolli di questa unità dal browser? Questa operazione non è annullabile.'))return;
-    try{localStorage.removeItem(KEY+'unit'+unit);text.value='';boxes.forEach(b=>b.checked=false);setStatus('Bozza locale eliminata.');updateProgress();}
+    try{localStorage.removeItem(KEY+'unit'+unit);text.value='';boxes.forEach(b=>b.checked=false);savedSnapshot=snapshot();setStatus('Bozza locale eliminata.');updateProgress();}
     catch{setStatus('Non è stato possibile eliminare la bozza locale.');}
    });
-   let changed=false;text.addEventListener('input',()=>{changed=true;setStatus('Modifiche non ancora salvate.');});
-   addEventListener('beforeunload',e=>{if(changed&&text.value!==safeGet('unit'+unit)?.text){e.preventDefault();e.returnValue='';}});
-   byId('save-draft')?.addEventListener('click',()=>{changed=false;});
+   text.addEventListener('input',()=>setStatus('Modifiche non ancora salvate.'));
+   addEventListener('beforeunload',event=>{
+    if(snapshot()!==savedSnapshot){event.preventDefault();event.returnValue='';}
+   });
   }
  }
  const guideSelect=byId('guide-question'),guideAnswer=byId('guide-answer');

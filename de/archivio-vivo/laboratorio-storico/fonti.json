@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "id": "LOC-1918-CURATION",
+  "title": "Drei Ausgaben, ein Rundgang durch die Quellen",
+  "publication": "The Morgan City Daily Review (Morgan City, Louisiana)",
+  "publisher_collection": "Chronicling America / Library of Congress",
+  "contributing_institution": "Louisiana State University",
+  "purpose": "Übung zur kuratorischen Gestaltung einer Erzählung aus drei Ausgaben derselben Zeitung. Das Korpus umfasst keine drei unabhängigen institutionellen Quellen.",
+  "type": "authentic_historical_source_metadata_and_prior_verified_facsimiles",
+  "rights": "Nur Verweise. Es wird kein ganzseitiger Scan erneut veröffentlicht. Prüfen Sie vor der Nachnutzung die Rechtehinweise der Library of Congress und der beitragenden Stellen.",
+  "materials": [
+    {
+      "id": "MC-10",
+      "date": "1918-10-10",
+      "page": 1,
+      "title": "Berichte über örtliche Maßnahmen und die Suche nach Freiwilligen",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-10/ed-1/?sp=1",
+      "status": "Die Seite vom 10. Oktober berichtet über örtliche Maßnahmen und die Suche nach Freiwilligen.",
+      "use": "Erste Tafel: Beginn der öffentlichen Hilfsaufrufe",
+      "not_demonstrated": "Die Gesamtzahl der tatsächlich durchgeführten Hilfseinsätze."
+    },
+    {
+      "id": "MC-11",
+      "date": "1918-10-11",
+      "page": 1,
+      "title": "Meldung über das örtliche Rotkreuzkomitee",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-11/ed-1/?sp=1",
+      "status": "Die Seite vom 11. Oktober berichtet über das örtliche Rotkreuzkomitee.",
+      "use": "Zweite Tafel: die Organisation laut Zeitungsbericht",
+      "not_demonstrated": "Unabhängig belegte Verwaltungsergebnisse des Komitees."
+    },
+    {
+      "id": "MC-14",
+      "date": "1918-10-14",
+      "page": 4,
+      "title": "More Nurses Needed / Shipyard Workers Organize for Relief",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-14/ed-1/?sp=4",
+      "status": "Die Seite vom 14. Oktober enthält zwei Meldungen über Hilfe und einen von Werftarbeitern angeregten Fonds.",
+      "use": "Dritte Tafel: neue Aufrufe, ein Fonds und geplante Zusammenarbeit",
+      "not_demonstrated": "Ob die Zusammenarbeit stattfand oder wie viele Menschen nach unabhängigen Belegen Hilfe erhielten."
+    }
+  ],
+  "curatorial_questions": [
+    "Welche Rolle spielt jede Ausgabe in der vorgeschlagenen Chronologie?",
+    "Wie geben Sie Datum, Seite, Überschrift, digitalisierende Institution und Herkunft an?",
+    "Warum sind drei Ausgaben derselben Zeitung keine drei unabhängigen Belege für die Hilfe?",
+    "Bei welchen Sätzen müssen Sie die Zeitung als Quelle nennen, damit eine Meldung nicht als gesicherte Tatsache erscheint?",
+    "Welche Unterlagen anderer Urheber wären nötig, um Einsätze und Ergebnisse zu überprüfen?"
+  ],
+  "panel_proposal": [
+    {
+      "title": "Der Aufruf",
+      "source": "MC-10",
+      "label": "Die Zeitung berichtete über Maßnahmen und die Suche nach Freiwilligen",
+      "limitation": "Eine unabhängige Abrechnung der angekündigten Tätigkeiten liegt nicht vor."
+    },
+    {
+      "title": "Das Komitee",
+      "source": "MC-11",
+      "label": "Die Redaktion beschreibt die Bildung eines Komitees und bekundete Hilfsbereitschaft",
+      "limitation": "Eine Zeitungsmeldung ersetzt keine internen Unterlagen der Organisation."
+    },
+    {
+      "title": "Neuer Bedarf",
+      "source": "MC-14",
+      "label": "Die Meldungen über die Suche nach Pflegekräften und den Fonds der Werftarbeiter stehen auf derselben Seite",
+      "limitation": "Die Zusammenarbeit mit dem Roten Kreuz wird in Aussicht gestellt. Die Angaben über geleistete Hilfe stammen von Amtsträgern."
+    },
+    {
+      "title": "Was fehlt",
+      "source": null,
+      "label": "Verwaltungsunterlagen und Nachweise über die Durchführung stehen noch aus",
+      "limitation": "Fehlende Unterlagen beweisen weder das Scheitern noch den Erfolg der Initiative."
+    }
+  ],
+  "review_points": [
+    "Alle drei Ausgaben sind ausdrücklich derselben Zeitung zugeordnet.",
+    "Jede Tafel verweist auf Datum, Seite und Originalressource.",
+    "Die Tafeln unterscheiden Meldung, Absicht und nachgewiesene Handlung.",
+    "Medizinische Ratschläge von 1918 erscheinen nicht als heutige Empfehlungen.",
+    "Bilder werden nur nach Prüfung der Rechte reproduziert."
+  ],
+  "limitations": [
+    "Der frühere Abgleich mit den Faksimiles ist keine erneute unabhängige Prüfung.",
+    "Bei dieser Sichtung wurden keine Unterlagen anderer Institutionen erhoben, die Umfang oder Ergebnisse der Hilfe bestätigen.",
+    "Die Übung schlägt eine Abfolge von Ausstellungstafeln vor. Sie beschreibt keine bereits realisierte Ausstellung."
+  ],
+  "reused_project": "https://michelebottino-autor.github.io/scrittura-investigativa/caso-pilota/",
+  "student_product": "Entwurf für vier Tafeln mit Inventar der drei Zeitungseinheiten, sieben Objekttexten oder Anmerkungen und einem Abschnitt zu Aussagegrenzen."
+}

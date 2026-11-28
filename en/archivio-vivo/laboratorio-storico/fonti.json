@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "id": "LOC-1918-CURATION",
+  "title": "Three issues, one archival route",
+  "publication": "The Morgan City Daily Review (Morgan City, Louisiana)",
+  "publisher_collection": "Chronicling America / Library of Congress",
+  "contributing_institution": "Louisiana State University",
+  "purpose": "An exercise in designing a documentary narrative from three issues of one newspaper. The corpus does not represent three independent institutional sources.",
+  "type": "authentic_historical_source_metadata_and_prior_verified_facsimiles",
+  "rights": "Links only. No full-page scan is republished. Check Library of Congress rights information and contributor notices before reuse.",
+  "materials": [
+    {
+      "id": "MC-10",
+      "date": "1918-10-10",
+      "page": 1,
+      "title": "Reports on local measures and the recruitment of volunteers",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-10/ed-1/?sp=1",
+      "status": "the 10 October page reports local measures and the search for volunteers.",
+      "use": "First panel: initial public appeals for assistance",
+      "not_demonstrated": "The total number of relief operations actually carried out."
+    },
+    {
+      "id": "MC-11",
+      "date": "1918-10-11",
+      "page": 1,
+      "title": "Announcement about the local Red Cross committee",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-11/ed-1/?sp=1",
+      "status": "the 11 October page reports on the local Red Cross committee.",
+      "use": "Second panel: organisation as reported by the newspaper",
+      "not_demonstrated": "The committee’s administrative results as established independently."
+    },
+    {
+      "id": "MC-14",
+      "date": "1918-10-14",
+      "page": 4,
+      "title": "More Nurses Needed / Shipyard Workers Organize for Relief",
+      "url": "https://www.loc.gov/resource/sn88064293/1918-10-14/ed-1/?sp=4",
+      "status": "the 14 October page carries two reports on relief efforts and a fund promoted by shipyard workers.",
+      "use": "Third panel: new appeals, a fund and anticipated cooperation",
+      "not_demonstrated": "Whether the collaboration took place or how many people received aid according to independent records."
+    }
+  ],
+  "curatorial_questions": [
+    "What role does each issue play in the proposed chronology?",
+    "How would you cite the date, page, heading, digitising institution and provenance?",
+    "Why do three issues of one newspaper not provide three independent checks on the aid?",
+    "Which sentences need to attribute the information to the newspaper rather than present it as an established fact?",
+    "Which records from a different creator would help verify the interventions and their outcomes?"
+  ],
+  "panel_proposal": [
+    {
+      "title": "The appeal",
+      "source": "MC-10",
+      "label": "The newspaper reported measures and a search for volunteers",
+      "limitation": "No independent account documents the activities announced."
+    },
+    {
+      "title": "The committee",
+      "source": "MC-11",
+      "label": "The newspaper describes the formation of a committee and reported offers of help",
+      "limitation": "A news report cannot take the place of the organisation’s internal records."
+    },
+    {
+      "title": "New needs",
+      "source": "MC-14",
+      "label": "Reports on the appeal for nurses and the shipyard workers’ fund appear on the same page",
+      "limitation": "Cooperation with the Red Cross is anticipated. Officials are the source for the account of aid provided."
+    },
+    {
+      "title": "What is missing",
+      "source": null,
+      "label": "Administrative records and evidence of implementation still to be located",
+      "limitation": "Missing records prove neither the failure nor the success of the initiative."
+    }
+  ],
+  "review_points": [
+    "The three issues are explicitly identified as coming from one newspaper.",
+    "Each panel retains a link to the date, page and original resource.",
+    "The panels distinguish reporting, intention and verified action.",
+    "Medical advice from 1918 is not presented as a current recommendation.",
+    "Images are reproduced only after rights have been checked."
+  ],
+  "limitations": [
+    "The earlier comparison with the facsimiles does not constitute a new independent review.",
+    "This survey did not obtain records from other institutions confirming the extent or outcomes of the relief.",
+    "This exercise proposes a sequence of exhibition panels. It does not describe an exhibition already held."
+  ],
+  "reused_project": "https://michelebottino-autor.github.io/scrittura-investigativa/caso-pilota/",
+  "student_product": "A four-panel storyboard with an inventory of three newspaper items, seven captions or notes and a section on evidential limits."
+}
